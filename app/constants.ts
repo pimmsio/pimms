@@ -1,0 +1,35 @@
+const formatUrl = (path: string | undefined): string => {
+  if (!path) {
+    return "";
+  }
+
+  // Check if the path is in the format of "localhost:port"
+  if (/^localhost:\d+$/.test(path)) {
+    return `http://${path}`;
+  }
+
+  // For all other paths, prepend "https://"
+  return `https://${path}`;
+};
+
+const getRootDomain = (urlString: string) => {
+  try {
+    const url = new URL(urlString);
+    const hostnameParts = url.hostname.split(".");
+
+    // Ensuring there are at least two parts (second-level and top-level)
+    if (hostnameParts.length >= 2) {
+      const rootDomain = "." + hostnameParts.slice(-2).join(".");
+      return rootDomain;
+    }
+
+    return undefined;
+  } catch {
+    console.error("Invalid URL provided:", urlString);
+    return undefined;
+  }
+};
+
+export const WEB_DOMAIN = process.env.NEXT_PUBLIC_WEB_DOMAIN as string;
+export const WEB_URL = formatUrl(WEB_DOMAIN);
+export const COOKIE_DOMAIN = getRootDomain(WEB_URL);
