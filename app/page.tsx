@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { WaitlistForm } from "../components/waitlist-form";
 import { Metadata } from "next";
 import CtaButton from "./components/cta/CtaButton";
+import BouncingImages from "./components/BouncingImages";
 
 const title =
   "Pimms - le SaaS de lien direct : transformez chaque clic LinkedIn en vue, like ou abonnement YouTube.";
@@ -29,7 +30,7 @@ export default function Home() {
       <div className="min-h-screen bg-background text-foreground w-11/12 mx-auto">
         <header className="w-full bg-white relative py-3 my-4 border-4 px-1 md:px-6 flex justify-between items-center">
           <div className="flex items-start flex-col space-y-2 mx-auto md:mx-0">
-            <img src="/static/logo.svg" alt="pim.ms" className="h-6" />
+            <img src="/static/logo.svg" alt="pim.ms" className="w-[147px]" />
             <span className="font-bold text-sm tracking-wide">
               Liens directs pim.ms
             </span>
@@ -67,57 +68,50 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="w-full py-6 md:py-12 px-1 flex flex-col md:flex-row items-start mx-auto max-w-7xl gap-12">
-          <div className="bg-card flex flex-col w-full p-6 border-4">
+        <section className="bg-card border-4 border-[#D4F0FE] w-full py-6 px-1 flex flex-col md:flex-row items-start mx-auto max-w-7xl gap-4 mt-8">
+          <div className="flex flex-col w-full md:w-1/2 p-4">
             <h2 className="text-2xl md:text-3xl font-bold text-balance">
               Problème
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-balance mt-4">
-              Chaque clic depuis vos posts Linkedin ouvre le navigateur par
-              défaut et vous coûte un abonné.
+              Chaque clic depuis vos posts Linkedin vous coûte un abonné.
             </p>
             <ul className="list-decimal list-inside gap-2 flex flex-col mt-4">
               <li>
-                Personne n&apos;est connecté à son compte YouTube dans le
-                navigateur mobile (Google Chrome, Safari).
+                car personne n&apos;est connecté à son compte YouTube dans
+                Linkedin.
               </li>
               <li>
-                Ils doivent gérer les pop-ups et accepter les cookies, ce qui
-                casse l&apos;expérience.
+                résultat, vos visiteurs doivent se connecter à leur compte
+                Youtube.
               </li>
+              <li>ils passent par une série d’étapes frustrantes.</li>
               <li>
-                Ils ne peuvent pas interagir pleinement avec le contenu (liker,
-                commenter, s’abonner) sans passer par une série d’étapes
-                frustrantes.
+                conséquence, ils ne peuvent pas liker, commenter, ou
+                s&apos;abonner.
               </li>
             </ul>
           </div>
 
-          <div className="bg-card flex flex-col w-full p-6 border-4">
+          <div className="flex flex-col w-full md:w-1/2 p-4">
             <h2 className="text-2xl md:text-3xl font-bold text-balance">
               Solution
             </h2>
             <p className="text-lg md:text-xl leading-relaxed text-balance mt-4">
-              Finis les parcours cassés avec Pimms :{" "}
-              <strong>
-                en un clic sur le lien direct pim.ms, vos visiteurs ouvrent
-                directement l’application YouTube
-              </strong>
-              .
+              Finis les funnels cassés avec Pimms.
             </p>
             <p className="text-lg md:text-xl leading-relaxed text-balance mt-4">
-              Comme ils sont déjà connectés à leur compte Youtube sur
-              l&apos;app, ils s&apos;abonnent et like en un clic.
+              Chaque clic sur un lien pim.ms ouvrent directement l’application
+              YouTube.
             </p>
             <p className="text-lg md:text-xl leading-relaxed text-balance mt-4">
-              Résultat, vous multipliez x5 votre taux de conversion
-              LinkedIn‐vers‐YouTube grâce à nos liens directs.
+              Résultat, vous multipliez vos abonnements sur Youtube.
             </p>
           </div>
         </section>
 
-        <section className="w-full py-6 md:py-12 px-1 md:px-6 flex flex-col md:flex-row items-center mx-auto max-w-7xl">
-          <div className="w-full md:w-3/5 text-center md:text-left">
+        <section className="w-full py-6 md:py-12 px-1 flex flex-col md:flex-row items-center mx-auto max-w-7xl gap-6 mt-8">
+          <div className="w-full md:w-1/2 text-center md:text-left">
             <h2 className="text-2xl md:text-3xl font-bold text-balance">
               Accès en avant première à{" "}
               <span className="text-primary">Pimms</span>.
@@ -130,7 +124,9 @@ export default function Home() {
               <CtaButton />
             </div>
           </div>
-          <div className="w-full md:w-2/5 mt-6 md:mt-0 flex justify-center aspect-[16/9] bg-white outline outline-4 outline-[#D4F0FE]"></div>
+          <div className="flex flex-col w-full md:w-1/2">
+            <BouncingImages />
+          </div>
         </section>
       </div>
 
