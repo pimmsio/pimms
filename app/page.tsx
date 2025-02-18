@@ -3,8 +3,9 @@
 import { Toaster } from "@/components/ui/toaster";
 import { WaitlistForm } from "../components/waitlist-form";
 import { Metadata } from "next";
-import CtaButton from "./components/cta/CtaButton";
-import BouncingImages from "./components/BouncingImages";
+import CtaButton from "../components/cta/CtaButton";
+import BouncingImages from "../components/BouncingImages";
+import VideoSlide from "../components/VideoSlide";
 
 const title =
   "Pimms - le SaaS de lien direct : transformez chaque clic LinkedIn en vue, like ou abonnement YouTube.";
@@ -28,7 +29,7 @@ export default function Home() {
   return (
     <>
       <div className="min-h-screen bg-background text-foreground w-11/12 mx-auto">
-        <header className="w-full bg-white relative py-3 my-4 border-4 px-1 md:px-6 flex justify-between items-center">
+        <header className="w-full bg-white relative py-3 my-4 outline outline-4 outline-[#D4F0FE] px-1 md:px-6 flex justify-between items-center">
           <div className="flex items-start flex-col space-y-2 mx-auto md:mx-0">
             <img src="/static/logo.svg" alt="pim.ms" className="w-[147px]" />
             <span className="font-bold text-sm tracking-wide">
@@ -38,37 +39,34 @@ export default function Home() {
           <CtaButton />
         </header>
 
-        <section className="w-full py-6 md:py-12 text-center px-1 md:px-6">
+        <section
+          className="w-full my-12 md:my-20 text-center px-1 md:px-6"
+          id="waitlist"
+        >
           <div className="max-w-5xl mx-auto">
             <h1 className="text-2xl md:text-4xl font-extrabold leading-snug tracking-tight text-balance">
-              Transformez chaque post{" "}
+              Transformez vos posts{" "}
               <span className="text-primary">Linkedin</span> en machine à
               abonnés sur <span className="text-primary">YouTube</span>
             </h1>
             <p className="text-lg md:text-xl mt-3 max-w-3xl mx-auto leading-relaxed text-balance">
               Les <strong>liens directs</strong> pim.ms génèrent{" "}
-              <strong>5× plus d’abonnements</strong> sur votre chaîne YouTube.
+              <strong>5× plus d’abonnements</strong> sur votre chaîne YouTube
             </p>
           </div>
         </section>
 
-        <section id="waitlist" className="w-full py-8 px-1 md:px-6">
+        <section className="w-full my-12 md:my-20 md px-1 md:px-6">
           <div className="max-w-6xl mx-auto text-center">
             <WaitlistForm />
           </div>
         </section>
 
-        <section className="w-full py-6 flex justify-center px-1 md:px-6">
-          <div className="w-full max-w-4xl">
-            <div className="bg-card flex justify-center items-center aspect-[16/9] relative overflow-hidden outline outline-4 outline-[#D4F0FE]">
-              <button className="absolute bg-white h-12 w-12 outline outline-4 outline-[#DC2E65] hover:scale-105 transition-transform">
-                ▶
-              </button>
-            </div>
-          </div>
+        <section className="w-full max-w-7xl my-12 md:my-20 md mx-auto relative overflow-hidden outline outline-4 outline-[#D4F0FE] flex justify-center items-center">
+          <VideoSlide />
         </section>
 
-        <section className="bg-card border-4 border-[#D4F0FE] w-full py-6 px-1 flex flex-col md:flex-row items-start mx-auto max-w-7xl gap-4 mt-8">
+        <section className="bg-card outline outline-4 outline-[#D4F0FE] w-full py-6 px-1 flex flex-col md:flex-row items-start mx-auto max-w-7xl gap-4 mt-8">
           <div className="flex flex-col w-full md:w-1/2 p-4">
             <h2 className="text-2xl md:text-3xl font-bold text-balance">
               Problème
@@ -79,13 +77,13 @@ export default function Home() {
             <ul className="list-decimal list-inside gap-2 flex flex-col mt-4">
               <li>
                 car personne n&apos;est connecté à son compte YouTube dans
-                Linkedin.
+                Linkedin
               </li>
               <li>
                 résultat, vos visiteurs doivent se connecter à leur compte
-                Youtube.
+                Youtube
               </li>
-              <li>ils passent par une série d’étapes frustrantes.</li>
+              <li>ils passent par une série d’étapes frustrantes</li>
               <li>
                 conséquence, ils ne peuvent pas liker, commenter, ou
                 s&apos;abonner.

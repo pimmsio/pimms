@@ -20,12 +20,15 @@ export default function BouncingImages() {
       // 1. Start scale down
       setSwapStage("scaleDown");
 
-      // After 300ms (scaleDown done), swap front image
       setTimeout(() => {
         setFrontImage((prev) => (prev === 0 ? 1 : 0));
+      }, 200);
+
+      // After 300ms (scaleDown done), swap front image
+      setTimeout(() => {
         // Then scale up
         setSwapStage("scaleUp");
-      }, 300);
+      }, 400);
 
       // After another 300ms, return to idle
       setTimeout(() => {
@@ -65,7 +68,7 @@ export default function BouncingImages() {
   };
 
   return (
-    <div className="relative flex items-start w-full mb-16">
+    <div className="relative flex items-start w-full mb-24">
       <div
         className={`
           relative border-4 border-[#D4F0FE] mr-[-60px]
