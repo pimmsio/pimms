@@ -13,18 +13,17 @@ export function Footer({
     return (
       <Tailwind>
         <Hr className="mx-0 my-6 w-full border border-neutral-200" />
+        <Text className="text-[12px] text-neutral-500">
+          PIMMS. Chemin de Louis-Hubert 2. Petit-Lancy, 1213
+        </Text>
         <Text className="text-[12px] leading-6 text-neutral-500">
-          Nous envoyons des emails de mises à jour produit – pas de spam. Vous
-          ne souhaitez pas recevoir ces emails ?{" "}
+          Nous envoyons des emails de mises à jour produit – pas de spam.{" "}
           <Link
             className="text-neutral-700 underline"
             href="https://app.pimms.io/account/settings"
           >
-            Désabonnez-vous ici
+            Unsubscribe
           </Link>
-        </Text>
-        <Text className="text-[12px] text-neutral-500">
-          Pimms. Chemin de Louis-Hubert 2. Petit-Lancy, 1213
         </Text>
       </Tailwind>
     );

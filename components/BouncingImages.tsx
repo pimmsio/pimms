@@ -2,13 +2,16 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 /**
  * Demonstrates two images overlapping in normal flow.
  * Every 3s, they both shrink + move apart, swap z-index,
  * then scale back up to overlap again.
  */
-export default function BouncingImages() {
+export default function BouncingImages({ tkey }: { tkey: string }) {
+  const t = useTranslations(tkey);
+
   const [frontImage, setFrontImage] = useState(0);
   // Tracks the current animation stage: idle | scaleDown | scaleUp
   const [swapStage, setSwapStage] = useState<"idle" | "scaleDown" | "scaleUp">(
@@ -78,8 +81,8 @@ export default function BouncingImages() {
         `}
       >
         <Image
-          src="https://assets.pimms.io/dashboard-links-screenshot-2.webp"
-          alt="Image 1"
+          src={t("images.1")}
+          alt={t("images.alt1")}
           width={1200}
           height={1303}
           className="object-cover"
@@ -94,8 +97,8 @@ export default function BouncingImages() {
         `}
       >
         <Image
-          src="https://assets.pimms.io/dashboard-links-screenshot-3.webp"
-          alt="Image 2"
+          src={t("images.2")}
+          alt={t("images.alt2")}
           width={1200}
           height={1303}
           className="object-cover"

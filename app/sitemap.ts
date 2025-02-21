@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { headers } from "next/headers";
+import { pathnames } from "@/i18n/config";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const headersList = await headers();
@@ -10,7 +11,30 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       url: `https://${domain}`,
       lastModified: new Date(),
     },
+    {
+      url: `https://${domain}/fr`,
+      lastModified: new Date(),
+    },
   ];
+
+  // Add other localized paths from pathnames
+  Object.entries(pathnames).forEach(([, localizedPaths]) => {
+    if (typeof localizedPaths === "string") {
+      urls.push({
+        url: `https://${domain}${localizedPaths}`,
+        lastModified: new Date(),
+      });
+    } else {
+      Object.entries(localizedPaths).forEach(([locale, localizedPath]) => {
+        urls.push({
+          url: `https://${domain}${
+            locale === "en" ? "" : "/" + locale
+          }${localizedPath}`,
+          lastModified: new Date(),
+        });
+      });
+    }
+  });
 
   return urls;
 }

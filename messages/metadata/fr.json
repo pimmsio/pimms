@@ -1,0 +1,14 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Pimms - le SaaS de lien direct : transformez chaque clic LinkedIn en vue, like ou abonnement YouTube.",
+      "description": "Remplacez vos liens classiques par nos liens directs : vos lecteurs LinkedIn ouvrent directement l’app YouTube et s’abonnent sans effort.",
+      "image": "",
+      "href": "/"
+    },
+    "abuse": {
+      "title": "Signaler un abus",
+      "href": "/signaler-un-abus"
+    }
+  }
+}

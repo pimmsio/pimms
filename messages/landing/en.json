@@ -1,0 +1,48 @@
+{
+  "landing": {
+    "home": {
+      "hero": {
+        "title": "Transform your LinkedIn posts into a YouTube subscriber machine",
+        "description": "Direct links generate <strong>5x more subscribers</strong> on your YouTube channel"
+      },
+      "form": {
+        "email_placeholder": "Enter your email",
+        "button": "Join the waitlist",
+        "waiting": "Joining the waitlist...",
+        "success": "Thank you! You are on the waitlist.",
+        "error": "An error occurred. Please try again."
+      },
+      "problem": {
+        "title": "Problem",
+        "description": "Each click from your LinkedIn posts costs you a subscriber.",
+        "more": {
+          "1": "because no one is logged in to their YouTube account in LinkedIn",
+          "2": "result, your visitors must log in to their YouTube account",
+          "3": "they go through a series of frustrating steps",
+          "4": "consequence, they cannot like, comment, or subscribe."
+        }
+      },
+      "solution": {
+        "title": "Solution",
+        "description": "Stop broken funnels with Pimms.",
+        "more": {
+          "1": "Each click on a pim.ms link opens directly the YouTube app.",
+          "2": "Result, you multiply your YouTube subscribers."
+        }
+      },
+      "offer_details": {
+        "title": "Early access to <strong>PIMMS</strong>",
+        "description": "Stop losing YouTube subscribers from your LinkedIn posts – We offer you 3 direct links to start.",
+        "images": {
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
+          "alt1": "PIMMS Dashboard showing a list of direct links",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
+          "alt2": "PIMMS Dashboard showing analytics of direct links"
+        }
+      },
+      "cta": {
+        "button": "Join the waitlist"
+      }
+    }
+  }
+}

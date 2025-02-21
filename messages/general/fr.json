@@ -1,0 +1,16 @@
+{
+  "general": {
+    "header": {
+      "tagline": "Liens directs pim.ms"
+    },
+    "footer": {
+      "nav": {
+        "privacy": "Politique de confidentialité",
+        "terms": "Conditions d'utilisation",
+        "report": "Signaler un abus",
+        "imprint": "Mentions légales"
+      },
+      "copyright": "© 2025 PIMMS"
+    }
+  }
+}

@@ -1,25 +1,37 @@
 import { NextRequest, NextResponse } from "next/server";
-import { sendEmail } from "../../../components/emails";
-import WelcomeEmail from "../../../components/emails/templates/welcome-email";
-import { subscribe } from "../../../components/emails/resend/subscribe";
+import { sendEmail } from "@/components/emails";
+import WelcomeEmailFR from "@/components/emails/fr/templates/welcome-email";
+import WelcomeEmailEN from "@/components/emails/en/templates/welcome-email";
+import { subscribe } from "@/components/emails/resend/subscribe";
 
 export async function POST(request: NextRequest) {
-  const { email } = await request.json();
+  const { email, locale } = await request.json();
 
   await subscribe({
     email,
   });
 
-  await sendEmail({
-    email,
-    replyTo: "pimms@docduo.com",
-    subject: "Welcome to Pimms!",
-    react: WelcomeEmail({
+  if (locale === "fr") {
+    await sendEmail({
       email,
-    }),
-    // send the welcome email 5 minutes after the user signed up
-    marketing: true,
-  });
+      replyTo: "pimms@docduo.com",
+      subject: "Invitation à rejoindre PIMMS",
+      react: WelcomeEmailFR({
+        email,
+      }),
+      marketing: true,
+    });
+  } else {
+    await sendEmail({
+      email,
+      replyTo: "pimms@docduo.com",
+      subject: "Invitation to join PIMMS",
+      react: WelcomeEmailEN({
+        email,
+      }),
+      marketing: true,
+    });
+  }
 
   return NextResponse.json({ message: "Email received" });
 }

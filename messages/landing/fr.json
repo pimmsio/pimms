@@ -1,0 +1,48 @@
+{
+  "landing": {
+    "home": {
+      "hero": {
+        "title": "Transformez vos posts <strong>Linkedin</strong> en machine à abonnés sur <strong>YouTube</strong>",
+        "description": "Les <strong>liens directs</strong> pim.ms génèrent <strong>5× plus d’abonnements</strong> sur votre chaîne YouTube"
+      },
+      "form": {
+        "email_placeholder": "Entrez votre email",
+        "button": "Rejoindre la waitlist",
+        "waiting": "Inscription en cours...",
+        "success": "Merci! Vous êtes inscrit à la waitlist.",
+        "error": "Une erreur est survenue. Veuillez réessayer."
+      },
+      "problem": {
+        "title": "Problème",
+        "description": "Chaque clic depuis vos posts Linkedin vous coûte un abonné.",
+        "more": {
+          "1": "car personne n'est connecté à son compte YouTube dans Linkedin",
+          "2": "résultat, vos visiteurs doivent se connecter à leur compte Youtube",
+          "3": "ils passent par une série d’étapes frustrantes",
+          "4": "conséquence, ils ne peuvent pas liker, commenter, ou s’abonner."
+        }
+      },
+      "solution": {
+        "title": "Solution",
+        "description": "Finis les funnels cassés avec Pimms.",
+        "more": {
+          "1": "Chaque clic sur un lien pim.ms ouvre directement l’application YouTube.",
+          "2": "Résultat, vous multipliez vos abonnements sur Youtube."
+        }
+      },
+      "offer_details": {
+        "title": "Accès en avant première à <strong>PIMMS</strong>",
+        "description": "Arrêtez de perdre des abonnés YouTube depuis vos posts Linkedin – On vous offre 3 liens directs pour démarrer.",
+        "images": {
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
+          "alt1": "PIMMS Dashboard showing a list of direct links",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
+          "alt2": "PIMMS Dashboard showing analytics of direct links"
+        }
+      },
+      "cta": {
+        "button": "Rejoindre la waitlist"
+      }
+    }
+  }
+}
