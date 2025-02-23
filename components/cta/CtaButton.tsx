@@ -1,7 +1,13 @@
 "use client";
 import { useTranslations } from "next-intl";
 
-export default function CtaButton({ tkey }: { tkey: string }) {
+export default function CtaButton({
+  tkey,
+  show = false,
+}: {
+  tkey: string;
+  show?: boolean;
+}) {
   const t = useTranslations(tkey);
 
   const triggerFocus = () => {
@@ -23,7 +29,9 @@ export default function CtaButton({ tkey }: { tkey: string }) {
   return (
     <a
       onClick={handleClickFocus}
-      className="hidden md:block w-fit px-5 py-2 bg-primary text-primary-foreground font-semibold rounded-md outline outline-4 transition hover:outline-[#F0A8BF] cursor-pointer"
+      className={`w-full md:w-fit px-5 py-2 bg-primary text-primary-foreground font-semibold rounded-md outline outline-4 transition hover:outline-[#F0A8BF] cursor-pointer ${
+        show ? "block" : "hidden md:block"
+      }`}
     >
       {t("cta.button")}
     </a>

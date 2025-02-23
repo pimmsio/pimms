@@ -2,42 +2,44 @@
   "landing": {
     "home": {
       "hero": {
-        "title": "Transform your LinkedIn posts into a YouTube subscriber machine",
-        "description": "Direct links generate <strong>5x more subscribers</strong> on your YouTube channel"
+        "title": "Turn your <swap>LinkedIn</swap> posted links into <youtube>YouTube</youtube> subscriber magnets",
+        "description": "pim.ms links convert viewers into new subscribers. Smart links that work on mobile where others fail.",
+        "social_media": "social"
       },
       "form": {
         "email_placeholder": "Enter your email",
         "button": "Join the waitlist",
-        "waiting": "Joining the waitlist...",
-        "success": "Thank you! You are on the waitlist.",
-        "error": "An error occurred. Please try again."
+        "waiting": "Securing your spot...",
+        "success": "Success! You're on the waitlist.",
+        "error": "Something went wrong. Please try again."
       },
       "problem": {
-        "title": "Problem",
-        "description": "Each click from your LinkedIn posts costs you a subscriber.",
+        "title": "The mobile conversion killer",
+        "description": "Standard links of your YouTube videos sabotage your subscriber growth",
         "more": {
-          "1": "because no one is logged in to their YouTube account in LinkedIn",
-          "2": "result, your visitors must log in to their YouTube account",
-          "3": "they go through a series of frustrating steps",
-          "4": "consequence, they cannot like, comment, or subscribe."
+          "1": "Links open in browsers <strong>where viewers are not logged into YouTube</strong>",
+          "2": "Complicated login steps frustrate potential subscribers",
+          "3": "Most viewers abandon before subscribing",
+          "4": "Result: Lost engagement and monetization opportunities"
         }
       },
       "solution": {
-        "title": "Solution",
-        "description": "Stop broken funnels with Pimms.",
+        "title": "The Solution",
+        "description": "<strong>PIMMS</strong> removes all technical barriers to channel growth",
         "more": {
-          "1": "Each click on a pim.ms link opens directly the YouTube app.",
-          "2": "Result, you multiply your YouTube subscribers."
+          "1": "Instant access to the official YouTube app of Apple / Android stores with a single click",
+          "2": "Viewers stay engaged because they're already logged in",
+          "3": "As a result, you get much more subscribers and engagement"
         }
       },
       "offer_details": {
         "title": "Early access to <strong>PIMMS</strong>",
-        "description": "Stop losing YouTube subscribers from your LinkedIn posts – We offer you 3 direct links to start.",
+        "description": "Convert more viewers with our deep-linking technology - start with 3 free direct links today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
-          "alt1": "PIMMS Dashboard showing a list of direct links",
+          "alt1": "Advanced link management interface",
           "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
-          "alt2": "PIMMS Dashboard showing analytics of direct links"
+          "alt2": "Performance analytics dashboard"
         }
       },
       "cta": {

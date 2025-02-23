@@ -1,14 +1,14 @@
 {
   "metadata": {
     "home": {
-      "title": "Pimms - le SaaS de lien direct : transformez chaque clic LinkedIn en vue, like ou abonnement YouTube.",
-      "description": "Remplacez vos liens classiques par nos liens directs : vos lecteurs LinkedIn ouvrent directement l’app YouTube et s’abonnent sans effort.",
+      "title": "PIMMS - Turn your social media posted links into YouTube subscriber magnets",
+      "description": "pim.ms links convert viewers into new subscribers. Smart links that work on mobile where others fail. Works for LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
       "image": "",
       "href": "/"
     },
     "abuse": {
-      "title": "Signaler un abus",
-      "href": "/signaler-un-abus"
+      "title": "Report abuse",
+      "href": "/report-abuse"
     }
   }
 }

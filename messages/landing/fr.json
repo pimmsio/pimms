@@ -2,37 +2,39 @@
   "landing": {
     "home": {
       "hero": {
-        "title": "Transformez vos posts <strong>Linkedin</strong> en machine à abonnés sur <strong>YouTube</strong>",
-        "description": "Les <strong>liens directs</strong> pim.ms génèrent <strong>5× plus d’abonnements</strong> sur votre chaîne YouTube"
+        "title": "Transformez vos liens postés sur <swap>LinkedIn</swap> en machine à abonnés sur <youtube>YouTube</youtube>",
+        "description": "Les liens pim.ms convertissent les viewers en abonnés. Nos liens réussissent à convertir sur mobile, là où les autres ont échoué.",
+        "social_media": "les réseaux"
       },
       "form": {
-        "email_placeholder": "Entrez votre email",
-        "button": "Rejoindre la waitlist",
-        "waiting": "Inscription en cours...",
-        "success": "Merci! Vous êtes inscrit à la waitlist.",
-        "error": "Une erreur est survenue. Veuillez réessayer."
+        "email_placeholder": "Votre adresse email",
+        "button": "Rejoindre la liste d'attente",
+        "waiting": "Enregistrement en cours...",
+        "success": "Félicitations ! Vous êtes maintenant sur la liste d'attente.",
+        "error": "Oups ! Une erreur s'est produite. Merci de réessayer."
       },
       "problem": {
-        "title": "Problème",
-        "description": "Chaque clic depuis vos posts Linkedin vous coûte un abonné.",
+        "title": "Le Problème sur mobile",
+        "description": "Les liens classiques vers votre chaine YouTube vous font perdre beaucoup d'abonnés.",
         "more": {
-          "1": "car personne n'est connecté à son compte YouTube dans Linkedin",
-          "2": "résultat, vos visiteurs doivent se connecter à leur compte Youtube",
-          "3": "ils passent par une série d’étapes frustrantes",
-          "4": "conséquence, ils ne peuvent pas liker, commenter, ou s’abonner."
+          "1": "Ces liens s'ouvrent dans les navigateurs <strong>où l'utilisateur n'est pas connecté à son compte utilisateur YouTube</strong>",
+          "2": "Il doit alors passer par des étapes compliquées pour pouvoir interagir avec votre chaine",
+          "3": "ce qui le décourage vite et il abandonne dans 80% des cas",
+          "4": "en conséquence, il ne va pas liker votre vidéo, s’abonner à votre chaine et encore moins acheter."
         }
       },
       "solution": {
-        "title": "Solution",
-        "description": "Finis les funnels cassés avec Pimms.",
+        "title": "La Solution",
+        "description": "<strong>PIMMS</strong> supprime toutes les étapes compliquées",
         "more": {
-          "1": "Chaque clic sur un lien pim.ms ouvre directement l’application YouTube.",
-          "2": "Résultat, vous multipliez vos abonnements sur Youtube."
+          "1": "Chaque clic sur un lien pim.ms ouvre votre vidéo directement dans l’application officielle YouTube des Apple / Android stores",
+          "2": "Votre communauté n'a aucun effort supplémentaire à fournir pour interagir avec votre chaine",
+          "3": "Le résultat: vous proposez une expérience optimale et gagnez plus d'abonnés"
         }
       },
       "offer_details": {
         "title": "Accès en avant première à <strong>PIMMS</strong>",
-        "description": "Arrêtez de perdre des abonnés YouTube depuis vos posts Linkedin – On vous offre 3 liens directs pour démarrer.",
+        "description": "Arrêtez de perdre des abonnés grâce à une redirection intelligente vers l'application YouTube – On vous offre 3 liens directs pour démarrer.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "PIMMS Dashboard showing a list of direct links",
@@ -41,7 +43,7 @@
         }
       },
       "cta": {
-        "button": "Rejoindre la waitlist"
+        "button": "Rejoindre la liste d'attente"
       }
     }
   }

@@ -12,8 +12,8 @@ export default function Logo() {
         src="/static/logo.svg"
         alt="pim.ms"
         className={logoWidth}
-        width={256}
-        height={256}
+        width={1000}
+        height={179}
       />{" "}
       <span className="font-bold text-sm tracking-wide">
         {t("header.tagline")}
