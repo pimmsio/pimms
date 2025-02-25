@@ -3,7 +3,7 @@
     "home": {
       "hero": {
         "title": "Turn your <swap>LinkedIn</swap> posted links into <youtube>YouTube</youtube> subscriber magnets",
-        "description": "pim.ms links convert viewers into new subscribers. Smart links that work on mobile where others fail.",
+        "description": "pim.ms links generated for your YouTube channel convert much more viewers into new subscribers. Smart links that converts on mobile where others fail.",
         "social_media": "social"
       },
       "form": {
@@ -17,7 +17,7 @@
         "title": "The mobile conversion killer",
         "description": "Standard links of your YouTube videos sabotage your subscriber growth",
         "more": {
-          "1": "Links open in browsers <strong>where viewers are not logged into YouTube</strong>",
+          "1": "Links open in browsers <strong>where viewers are not logged into YouTube</strong> (in app or mobile browser)",
           "2": "Complicated login steps frustrate potential subscribers",
           "3": "Most viewers abandon before subscribing",
           "4": "Result: Lost engagement and monetization opportunities"
@@ -25,16 +25,62 @@
       },
       "solution": {
         "title": "The Solution",
-        "description": "<strong>PIMMS</strong> removes all technical barriers to channel growth",
+        "description": "<strong>PIMMS</strong> converts viewers into subscribers with direct links to your YouTube videos",
         "more": {
-          "1": "Instant access to the official YouTube app of Apple / Android stores with a single click",
+          "1": "pim.ms links open <strong>instantly your videos in the official YouTube app on viewers' phones</strong> (Apple store or Google Play)",
           "2": "Viewers stay engaged because they're already logged in",
           "3": "As a result, you get much more subscribers and engagement"
         }
       },
       "offer_details": {
         "title": "Early access to <strong>PIMMS</strong>",
-        "description": "Convert more viewers with our deep-linking technology - start with 3 free direct links today.",
+        "description": "Convert more viewers with our app-linking technology - start with 3 free direct links today.",
+        "images": {
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
+          "alt1": "Advanced link management interface",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
+          "alt2": "Performance analytics dashboard"
+        }
+      },
+      "cta": {
+        "button": "Join the waitlist"
+      }
+    },
+    "youtube": {
+      "hero": {
+        "title": "Turn your <swap>LinkedIn</swap> posted links into <youtube>YouTube</youtube> subscriber magnets",
+        "description": "pim.ms links generated for your YouTube channel convert much more viewers into new subscribers. Smart links that converts on mobile where others fail.",
+        "social_media": "social"
+      },
+      "form": {
+        "email_placeholder": "Enter your email",
+        "button": "Join the waitlist",
+        "waiting": "Securing your spot...",
+        "success": "Success! You're on the waitlist.",
+        "error": "Something went wrong. Please try again."
+      },
+      "problem": {
+        "title": "The mobile conversion killer",
+        "description": "Standard links of your YouTube videos sabotage your subscriber growth",
+        "more": {
+          "1": "Links open in browsers <strong>where viewers are not logged into YouTube</strong> (in app or mobile browser)",
+          "2": "Complicated login steps frustrate potential subscribers",
+          "3": "Most viewers abandon before subscribing",
+          "4": "Result: Lost engagement and monetization opportunities"
+        }
+      },
+      "solution": {
+        "title": "The Solution",
+        "description": "<strong>PIMMS</strong> converts viewers into subscribers with direct links to your YouTube videos",
+        "more": {
+          "1": "pim.ms links open <strong>instantly your videos in the official YouTube app on viewers' phones</strong> (Apple store or Google Play)",
+          "2": "Viewers stay engaged because they're already logged in",
+          "3": "As a result, you get much more subscribers and engagement"
+        }
+      },
+      "offer_details": {
+        "title": "Early access to <strong>PIMMS</strong>",
+        "description": "Convert more viewers with our app-linking technology - start with 3 free direct links today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "Advanced link management interface",

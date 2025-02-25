@@ -3,7 +3,7 @@
     "home": {
       "hero": {
         "title": "Transformez vos liens postés sur <swap>LinkedIn</swap> en machine à abonnés sur <youtube>YouTube</youtube>",
-        "description": "Les liens pim.ms convertissent les viewers en abonnés. Nos liens réussissent à convertir sur mobile, là où les autres ont échoué.",
+        "description": "Les liens pim.ms pour promouvoir votre chaine YouTube convertissent mieux les viewers en abonnés. Nos liens réussissent à convertir sur mobile, là où les autres ont échoué.",
         "social_media": "les réseaux"
       },
       "form": {
@@ -25,9 +25,55 @@
       },
       "solution": {
         "title": "La Solution",
-        "description": "<strong>PIMMS</strong> supprime toutes les étapes compliquées",
+        "description": "<strong>PIMMS</strong> convertit les viewers en abonnés grâce aux liens directs vers votre chaine YouTube.",
         "more": {
-          "1": "Chaque clic sur un lien pim.ms ouvre votre vidéo directement dans l’application officielle YouTube des Apple / Android stores",
+          "1": "Les liens pim.ms générés pour votre chaine YouTube ouvrent <strong>directement dans l’application officielle YouTube téléchargée sur le téléphone des viewers</strong> (Apple store ou Google Play)",
+          "2": "Votre communauté n'a aucun effort supplémentaire à fournir pour interagir avec votre chaine",
+          "3": "Le résultat: vous proposez une expérience optimale et gagnez plus d'abonnés"
+        }
+      },
+      "offer_details": {
+        "title": "Accès en avant première à <strong>PIMMS</strong>",
+        "description": "Arrêtez de perdre des abonnés grâce à une redirection intelligente vers l'application YouTube – On vous offre 3 liens directs pour démarrer.",
+        "images": {
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
+          "alt1": "PIMMS Dashboard showing a list of direct links",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
+          "alt2": "PIMMS Dashboard showing analytics of direct links"
+        }
+      },
+      "cta": {
+        "button": "Rejoindre la liste d'attente"
+      }
+    },
+    "youtube": {
+      "hero": {
+        "title": "Transformez vos liens postés sur <swap>LinkedIn</swap> en machine à abonnés sur <youtube>YouTube</youtube>",
+        "description": "Les liens pim.ms pour promouvoir votre chaine YouTube convertissent mieux les viewers en abonnés. Nos liens réussissent à convertir sur mobile, là où les autres ont échoué.",
+        "social_media": "les réseaux"
+      },
+      "form": {
+        "email_placeholder": "Votre adresse email",
+        "button": "Rejoindre la liste d'attente",
+        "waiting": "Enregistrement en cours...",
+        "success": "Félicitations ! Vous êtes maintenant sur la liste d'attente.",
+        "error": "Oups ! Une erreur s'est produite. Merci de réessayer."
+      },
+      "problem": {
+        "title": "Le Problème sur mobile",
+        "description": "Les liens classiques vers votre chaine YouTube vous font perdre beaucoup d'abonnés.",
+        "more": {
+          "1": "Ces liens s'ouvrent dans les navigateurs <strong>où l'utilisateur n'est pas connecté à son compte utilisateur YouTube</strong>",
+          "2": "Il doit alors passer par des étapes compliquées pour pouvoir interagir avec votre chaine",
+          "3": "ce qui le décourage vite et il abandonne dans 80% des cas",
+          "4": "en conséquence, il ne va pas liker votre vidéo, s’abonner à votre chaine et encore moins acheter."
+        }
+      },
+      "solution": {
+        "title": "La Solution",
+        "description": "<strong>PIMMS</strong> convertit les viewers en abonnés grâce aux liens directs vers votre chaine YouTube.",
+        "more": {
+          "1": "Les liens pim.ms générés pour votre chaine YouTube ouvrent <strong>directement dans l’application officielle YouTube téléchargée sur le téléphone des viewers</strong> (Apple store ou Google Play)",
           "2": "Votre communauté n'a aucun effort supplémentaire à fournir pour interagir avec votre chaine",
           "3": "Le résultat: vous proposez une expérience optimale et gagnez plus d'abonnés"
         }

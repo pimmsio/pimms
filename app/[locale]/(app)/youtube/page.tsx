@@ -9,7 +9,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 import TextTransition from "@/components/TextTransition";
 
-const tkey = "landing.home";
+const tkey = "landing.youtube";
 export default function Home() {
   const t = useTranslations(tkey);
 
