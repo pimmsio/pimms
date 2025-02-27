@@ -12,11 +12,13 @@ export const sendEmail = async ({
   scheduledAt,
   marketing,
   replyTo,
+  locale,
 }: Omit<CreateEmailOptions, "to" | "from"> & {
   email: string;
   from?: string;
   marketing?: boolean;
   replyTo?: string;
+  locale: "fr" | "en";
 }) => {
   if (resend) {
     console.log("Sending email via Resend");
@@ -30,6 +32,7 @@ export const sendEmail = async ({
       scheduledAt,
       marketing,
       replyTo,
+      locale,
     });
   }
 

@@ -35,4 +35,5 @@ export const WEB_URL = formatUrl(WEB_DOMAIN);
 export const COOKIE_DOMAIN = getRootDomain(WEB_URL);
 
 export const WORDMARK = "https://assets.pimms.io/wordmark.png";
+export const WORDMARK_BLACK = "https://assets.pimms.io/wordmark-black.png";
 export const THUMBNAIL = "https://assets.pimms.io/thumbnail.jpg";

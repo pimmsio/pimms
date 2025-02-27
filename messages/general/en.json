@@ -10,6 +10,10 @@
         "report": "Report abuse",
         "imprint": "Imprint"
       },
+      "solutions": {
+        "youtube": "Direct links for YouTube channels",
+        "site": "Direct links for sales pages"
+      },
       "copyright": "© 2025 PIMMS"
     }
   }

@@ -15,26 +15,29 @@ export const sendEmailViaResend = async ({
   react,
   scheduledAt,
   marketing,
+  locale,
 }: Omit<CreateEmailOptions, "to" | "from"> & {
   email: string;
   from?: string;
   replyTo?: string;
   marketing?: boolean;
+  locale: "fr" | "en";
 }) => {
   if (!resend) {
     console.info(
-      "RESEND_API_KEY is not set in the .env. Skipping sending email.",
+      "RESEND_API_KEY is not set in the .env. Skipping sending email."
     );
     return;
   }
 
+  const fromMarketing =
+    locale === "fr"
+      ? "Alexandre de PIMMS <alexandre@pimms.io>"
+      : "Alexandre from PIMMS <alexandre@pimms.io>";
+
   return await resend.emails.send({
     to: email,
-    from:
-      from ||
-      (marketing
-        ? "Alexandre from Pimms <alexandre@pimms.io>"
-        : "Pimms <system@pimms.io>"),
+    from: from || (marketing ? fromMarketing : "PIMMS <system@pimms.io>"),
     bcc: bcc,
     replyTo,
     subject,

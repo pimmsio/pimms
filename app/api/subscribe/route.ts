@@ -1,11 +1,13 @@
 import { NextRequest, NextResponse } from "next/server";
 import { sendEmail } from "@/components/emails";
-import WelcomeEmailFR from "@/components/emails/fr/templates/welcome-email";
-import WelcomeEmailEN from "@/components/emails/en/templates/welcome-email";
+import InviteYoutubeEmailFR from "@/components/emails/fr/templates/invite-youtube-email";
+import InviteYoutubeEmailEN from "@/components/emails/en/templates/invite-youtube-email";
+import InviteSalesEmailFR from "@/components/emails/fr/templates/invite-sales-email";
+import InviteSalesEmailEN from "@/components/emails/en/templates/invite-sales-email";
 import { subscribe } from "@/components/emails/resend/subscribe";
 
 export async function POST(request: NextRequest) {
-  const { email, locale } = await request.json();
+  const { email, locale, type } = await request.json();
 
   await subscribe({
     email,
@@ -15,21 +17,33 @@ export async function POST(request: NextRequest) {
     await sendEmail({
       email,
       replyTo: "pimms@docduo.com",
-      subject: "Invitation à rejoindre PIMMS",
-      react: WelcomeEmailFR({
-        email,
-      }),
+      subject: "Invitation à rejoindre la plateforme de liens directs",
+      react:
+        type === "youtube"
+          ? InviteYoutubeEmailFR({
+              email,
+            })
+          : InviteSalesEmailFR({
+              email,
+            }),
       marketing: true,
+      locale,
     });
   } else {
     await sendEmail({
       email,
       replyTo: "pimms@docduo.com",
-      subject: "Invitation to join PIMMS",
-      react: WelcomeEmailEN({
-        email,
-      }),
+      subject: "Invitation to join the pim.ms direct link platform",
+      react:
+        type === "youtube"
+          ? InviteYoutubeEmailEN({
+              email,
+            })
+          : InviteSalesEmailEN({
+              email,
+            }),
       marketing: true,
+      locale,
     });
   }
 

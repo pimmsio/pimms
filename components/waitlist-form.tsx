@@ -3,7 +3,13 @@
 import React, { useState, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 
-export function WaitlistForm({ tkey }: { tkey: string }) {
+export function WaitlistForm({
+  tkey,
+  type,
+}: {
+  tkey: string;
+  type: "youtube" | "sales";
+}) {
   const t = useTranslations(tkey);
   const locale = useLocale();
 
@@ -26,7 +32,7 @@ export function WaitlistForm({ tkey }: { tkey: string }) {
     try {
       await fetch("/api/subscribe", {
         method: "POST",
-        body: JSON.stringify({ email, locale }),
+        body: JSON.stringify({ email, locale, type }),
       });
 
       setMessage(t("form.success"));
@@ -41,34 +47,41 @@ export function WaitlistForm({ tkey }: { tkey: string }) {
   };
 
   return (
-    <div className="max-w-4xl w-full mx-auto flex flex-col gap-8">
-      <form onSubmit={handleSubmit} className="flex flex-col md:flex-row gap-8">
-        <div className="flex-1">
-          <label htmlFor="waitlist-form-input" className="sr-only">
-            Email
-          </label>
-          <input
-            ref={emailInputRef}
-            id="waitlist-form-input"
-            autoFocus
-            type="email"
-            required
-            placeholder={t("form.email_placeholder")}
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            disabled={isLoading}
-            className="w-full px-4 py-3 rounded-lg ring-4 ring-white focus:ring-[#F0A8BF] focus:outline-none transition-all placeholder:text-sm placeholder:text-gray-500"
-          />
+    <section className="w-full md px-1 md:px-6">
+      <div className="max-w-6xl mx-auto text-center">
+        <div className="max-w-4xl w-full mx-auto flex flex-col gap-8">
+          <form
+            onSubmit={handleSubmit}
+            className="flex flex-col md:flex-row gap-8"
+          >
+            <div className="flex-1">
+              <label htmlFor="waitlist-form-input" className="sr-only">
+                Email
+              </label>
+              <input
+                ref={emailInputRef}
+                id="waitlist-form-input"
+                autoFocus
+                type="email"
+                required
+                placeholder={t("form.email_placeholder")}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isLoading}
+                className="w-full px-4 py-3 rounded-lg ring-4 ring-white focus:ring-[#F0A8BF] focus:outline-none transition-all placeholder:text-sm placeholder:text-gray-500"
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="cursor-pointer block w-full md:w-auto px-5 py-2 bg-primary text-primary-foreground font-semibold rounded-md outline outline-4 transition hover:outline-[#F0A8BF]"
+            >
+              {isLoading ? t("form.waiting") : t("form.button")}
+            </button>
+          </form>
+          {message && <p>{message}</p>}
         </div>
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="cursor-pointer block w-full md:w-auto px-5 py-2 bg-primary text-primary-foreground font-semibold rounded-md outline outline-4 transition hover:outline-[#F0A8BF]"
-        >
-          {isLoading ? t("form.waiting") : t("form.button")}
-        </button>
-      </form>
-      {message && <p>{message}</p>}
-    </div>
+      </div>
+    </section>
   );
 }

@@ -1,10 +1,16 @@
 {
   "metadata": {
     "home": {
-      "title": "PIMMS - Turn your social media posted links into YouTube subscriber magnets",
-      "description": "pim.ms links convert viewers into new subscribers. Smart links that work on mobile where others fail. Works for LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
+      "title": "Boost your sales with direct links posted on Linkedin - PIMMS",
+      "description": "pim.ms links allow to convert more visitors into customers with direct links to your site.. Smart links that work on mobile where others fail. Works for LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
       "image": "",
       "href": "/"
+    },
+    "youtube": {
+      "title": "Boost new subscribers by posting direct links for your YouTube channel - PIMMS",
+      "description": "pim.ms links allow to convert more viewers into subscribers with direct links to your YouTube videos. Smart links that work on mobile where others fail. Works for LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
+      "image": "",
+      "href": "/solutions/youtube"
     },
     "abuse": {
       "title": "Report abuse",

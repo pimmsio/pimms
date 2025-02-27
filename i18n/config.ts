@@ -1,9 +1,9 @@
 export const locales = ["en", "fr"] as const;
 
 export const pathnames = {
-  "/youtube": {
-    en: "/youtube",
-    fr: "/youtube",
+  "/solutions/youtube": {
+    en: "/solutions/youtube",
+    fr: "/solutions/youtube",
   },
   // "/abuse": {
   //   en: "/report-abuse",

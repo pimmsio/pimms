@@ -1,10 +1,16 @@
 {
   "metadata": {
     "home": {
-      "title": "PIMMS - Transformez vos liens postés sur les réseaux sociaux en machine à abonnés sur YouTube",
-      "description": "Les liens pim.ms convertissent les viewers en abonnés. Nos liens réussissent à convertir sur mobile, là où les autres ont échoué. Fonctionne pour Linkedin, Instagram, Facebook, Twitter, TikTok, etc.",
+      "title": "Boostez vos ventes grâce à des liens directs postés sur Linkedin - PIMMS",
+      "description": "Les liens pim.ms permettent de convertir plus de visiteurs en acheteurs avec des liens directs vers votre site internet. Nos liens réussissent à convertir sur mobile, là où les autres ont échoué. Fonctionne pour tous les réseaux sociaux incluant Linkedin, Instagram, Facebook, Twitter, TikTok, etc.",
       "image": "",
       "href": "/"
+    },
+    "youtube": {
+      "title": "Boostez vos abonnés en postant des liens directs de vos chaines YouTube - PIMMS",
+      "description": "Les liens pim.ms permettent de convertir plus de viewers en abonnés avec des liens directs vers vos vidéos YouTube. Nos liens réussissent à convertir sur mobile, là où les autres ont échoué. Fonctionne pour tous les réseaux sociaux incluant Linkedin, Instagram, Facebook, Twitter, TikTok, etc.",
+      "image": "",
+      "href": "/solutions/youtube"
     },
     "abuse": {
       "title": "Signaler un abus",

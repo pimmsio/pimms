@@ -2,9 +2,24 @@ import { clsx, type ClassValue } from "clsx";
 import { Metadata } from "next";
 import { twMerge } from "tailwind-merge";
 import { THUMBNAIL } from "@/app/constants";
+import { getTranslations } from "next-intl/server";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
+}
+
+export async function generateLandingMetadata({
+  params,
+  lkey,
+}: MetadataProps & { lkey: string }) {
+  const locale = (await params).locale;
+  const t = await getTranslations({ locale, namespace: "metadata" });
+
+  return constructMetadata({
+    title: t(`${lkey}.title`),
+    description: t(`${lkey}.description`),
+    image: t(`${lkey}.image`),
+  });
 }
 
 export function constructMetadata({

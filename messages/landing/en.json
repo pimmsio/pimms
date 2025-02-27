@@ -2,39 +2,40 @@
   "landing": {
     "home": {
       "hero": {
-        "title": "Turn your <swap>LinkedIn</swap> posted links into <youtube>YouTube</youtube> subscriber magnets",
-        "description": "pim.ms links generated for your YouTube channel convert much more viewers into new subscribers. Smart links that converts on mobile where others fail.",
-        "social_media": "social"
+        "title": "Boost your sales with direct links posted on <linkedin>LinkedIn</linkedin>",
+        "description": "Smart links that convert on mobile where others have failed.",
+        "social_media": "social",
+        "cta_youtube": "<strong>You have a YouTube channel ?</strong> Discover our solutions by clicking here"
       },
       "form": {
-        "email_placeholder": "Enter your email",
+        "email_placeholder": "Enter your professional email",
         "button": "Join the waitlist",
         "waiting": "Securing your spot...",
         "success": "Success! You're on the waitlist.",
         "error": "Something went wrong. Please try again."
       },
       "problem": {
-        "title": "The mobile conversion killer",
-        "description": "Standard links of your YouTube videos sabotage your subscriber growth",
+        "title": "The Problem",
+        "description": "Standard links to promote your offers and contents sabotage your sales. In average, only 20% of clicks reach the destination on mobile.",
         "more": {
-          "1": "Links open in browsers <strong>where viewers are not logged into YouTube</strong> (in app or mobile browser)",
-          "2": "Complicated login steps frustrate potential subscribers",
-          "3": "Most viewers abandon before subscribing",
-          "4": "Result: Lost engagement and monetization opportunities"
+          "1": "Links open in browsers <strong>where visitors are not logged into your site</strong> (in app or mobile browser)",
+          "2": "Complicated login steps frustrate potential customers",
+          "3": "Most visitors abandon before buying",
+          "4": "Result: Lost sales and monetization opportunities"
         }
       },
       "solution": {
         "title": "The Solution",
-        "description": "<strong>PIMMS</strong> converts viewers into subscribers with direct links to your YouTube videos",
+        "description": "<logo>PIMMS</logo> allows to convert more visitors into customers with direct links to your site. Our links provides the best experience possible for buyers on mobile.",
         "more": {
-          "1": "pim.ms links open <strong>instantly your videos in the official YouTube app on viewers' phones</strong> (Apple store or Google Play)",
-          "2": "Viewers stay engaged because they're already logged in",
-          "3": "As a result, you get much more subscribers and engagement"
+          "1": "pim.ms links open <strong>instantly your site in the default browser on visitors' phones</strong> (Safari or Google Chrome)",
+          "2": "Visitors stay engaged because they're already logged in",
+          "3": "As a result, you get much more sales"
         }
       },
       "offer_details": {
-        "title": "Early access to <strong>PIMMS</strong>",
-        "description": "Convert more viewers with our app-linking technology - start with 3 free direct links today.",
+        "title": "Early access to <logo>PIMMS</logo>",
+        "description": "Stop losing sales on your website - start with 3 free direct links today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "Advanced link management interface",
@@ -43,25 +44,26 @@
         }
       },
       "cta": {
-        "button": "Join the waitlist"
+        "button": "Join the waitlist",
+        "show_more": "Learn more"
       }
     },
     "youtube": {
       "hero": {
-        "title": "Turn your <swap>LinkedIn</swap> posted links into <youtube>YouTube</youtube> subscriber magnets",
-        "description": "pim.ms links generated for your YouTube channel convert much more viewers into new subscribers. Smart links that converts on mobile where others fail.",
+        "title": "Boost new subscribers by posting direct links for your <youtube>YouTube</youtube> channel",
+        "description": "Smart links that convert on mobile where others have failed.",
         "social_media": "social"
       },
       "form": {
-        "email_placeholder": "Enter your email",
+        "email_placeholder": "Enter your professional email",
         "button": "Join the waitlist",
         "waiting": "Securing your spot...",
         "success": "Success! You're on the waitlist.",
         "error": "Something went wrong. Please try again."
       },
       "problem": {
-        "title": "The mobile conversion killer",
-        "description": "Standard links of your YouTube videos sabotage your subscriber growth",
+        "title": "The Problem",
+        "description": "Standard links of your YouTube videos sabotage your subscriber growth. In average, only 20% of clicks reach the destination on mobile.",
         "more": {
           "1": "Links open in browsers <strong>where viewers are not logged into YouTube</strong> (in app or mobile browser)",
           "2": "Complicated login steps frustrate potential subscribers",
@@ -71,7 +73,7 @@
       },
       "solution": {
         "title": "The Solution",
-        "description": "<strong>PIMMS</strong> converts viewers into subscribers with direct links to your YouTube videos",
+        "description": "<logo>PIMMS</logo> allows to convert more viewers into subscribers with direct links to your YouTube videos. Our links provides the best experience possible for viewers on mobile.",
         "more": {
           "1": "pim.ms links open <strong>instantly your videos in the official YouTube app on viewers' phones</strong> (Apple store or Google Play)",
           "2": "Viewers stay engaged because they're already logged in",
@@ -79,8 +81,8 @@
         }
       },
       "offer_details": {
-        "title": "Early access to <strong>PIMMS</strong>",
-        "description": "Convert more viewers with our app-linking technology - start with 3 free direct links today.",
+        "title": "Early access to <logo>PIMMS</logo>",
+        "description": "Stop losing subscribers on YouTube - start with 3 free direct links today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "Advanced link management interface",
@@ -89,7 +91,8 @@
         }
       },
       "cta": {
-        "button": "Join the waitlist"
+        "button": "Join the waitlist",
+        "show_more": "Learn more"
       }
     }
   }
