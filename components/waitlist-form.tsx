@@ -2,6 +2,7 @@
 
 import React, { useState, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
+import { trackEvent } from "../lib/tracking";
 
 export function WaitlistForm({
   tkey,
@@ -35,6 +36,13 @@ export function WaitlistForm({
         body: JSON.stringify({ email, locale, type }),
       });
 
+      trackEvent(
+        "click_cta",
+        {
+          funnel: type,
+        },
+        email
+      );
       setMessage(t("form.success"));
       setEmail("");
     } catch {
