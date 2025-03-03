@@ -25,7 +25,7 @@ export default function CtaLink({ tkey }: { tkey: string }) {
     <Button
       onClick={handleClickFocus}
       variant="link"
-      className="text-sm font-bold hidden md:block"
+      className="text-sm md:text-base font-bold hidden md:block"
     >
       {t("cta.button")}
     </Button>

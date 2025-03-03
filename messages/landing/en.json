@@ -3,11 +3,12 @@
     "home": {
       "nav": {
         "how_it_works": "How it works",
-        "solutions": "Solutions"
+        "solutions": "Solutions",
+        "pricing": "Pricing"
       },
       "hero": {
         "title": "Links that boost your conversions on <linkedin>LinkedIn</linkedin>",
-        "description": "Stop losing potential customers with traditional links. Direct links open your contents in the right mobile app, increasing conversion rates by a lot.",
+        "description": "Stop losing conversions with traditional links. Direct links open your contents in the right mobile app, increasing conversion rates by a lot.",
         "social_media": "social",
         "works_with": "For <symbols>social media</symbols> (and more)"
       },
@@ -34,7 +35,7 @@
       },
       "solution": {
         "title": "The Solution",
-        "heading": "Share direct links with pim.ms",
+        "heading": "Share pim.ms direct links today",
         "description": "<logo>PIMMS</logo> detects which app should open your link and sends users directly there, creating a seamless experience that increases conversion rates.",
         "more": {
           "title1": "Intelligent link routing",
@@ -45,14 +46,34 @@
           "description3": "Track user journeys and click rates to optimize your marketing campaigns."
         }
       },
-      "offer_details": {
+      "free_offer": {
         "title": "Early access to <logo>PIMMS</logo>",
-        "description": "Stop losing sales on your website - start with 3 free direct links today.",
+        "description": "Stop losing conversions - start with 3 free direct links today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "Advanced link management interface",
           "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
           "alt2": "Performance analytics dashboard"
+        }
+      },
+      "lifetime_offer": {
+        "title": "<logo>PIMMS</logo> Pro",
+        "price_lifetime": "one time payment",
+        "early_bird": "<price>40</price> early bird discount",
+        "cta": "Upgrade now",
+        "pay_once": "Pay once",
+        "yours_forever": "Yours forever",
+        "money_back": "30-day money-back guarantee",
+        "promo_code": "USE \"LASTCHANCE20\" FOR 20% OFF",
+        "features": {
+          "1": "Commercial and corporate use",
+          "2": "1000 new links per month (lifetime access)",
+          "3": "50K tracked clicks/mo",
+          "4": "1-year analytics retention",
+          "5": "Lifetime access to cloud features and analytics",
+          "6": "10 custom domains (in the roadmap)",
+          "7": "Up to 5 users (in the roadmap)",
+          "8": "More features coming soon!"
         }
       },
       "cta": {
@@ -63,11 +84,12 @@
     "youtube": {
       "nav": {
         "how_it_works": "How it works",
-        "solutions": "Solutions"
+        "solutions": "Solutions",
+        "pricing": "Pricing"
       },
       "hero": {
-        "title": "Boost new subscribers by posting direct links for your <youtube>YouTube</youtube> channel",
-        "description": "Short links that convert on mobile where others have failed.",
+        "title": "Links that boost your subs on <youtube>YouTube</youtube>",
+        "description": "Stop losing subscribers with traditional links. Direct links open your videos in the official YouTube app, increasing conversion rates by a lot.",
         "social_media": "social"
       },
       "form": {
@@ -93,25 +115,45 @@
       },
       "solution": {
         "title": "The Solution",
-        "heading": "Share direct links with pim.ms",
+        "heading": "Share pim.ms direct links today",
         "description": "<logo>PIMMS</logo> detects your operating system and opens your video in the official YouTube app downloaded from the Google Play Store or App Store.",
         "more": {
           "title1": "Intelligent link routing",
-          "description1": "Automatically detects the user's device and opens the link in the most appropriate mobile application.",
+          "description1": "Automatically detects the user's device and opens the link the official YouTube app.",
           "title2": "Seamless user experience",
-          "description2": "Viewers stay engaged since they use this official YouTube app daily and are already logged in. As a result, you get much more subscribers and engagement.",
+          "description2": "Viewers highly prefer the official YouTube app that they use daily. As a result, you get much more subscribers and engagement.",
           "title3": "Detailed analytics",
-          "description3": "Track your click rates easily with our dashboard."
+          "description3": "Track your link click rates easily with detailed analytics."
         }
       },
-      "offer_details": {
+      "free_offer": {
         "title": "Early access to <logo>PIMMS</logo>",
-        "description": "Stop losing subscribers on YouTube - start with 3 free direct links today.",
+        "description": "Stop losing subs on YouTube - start with 3 free direct links today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "Advanced link management interface",
           "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
           "alt2": "Performance analytics dashboard"
+        }
+      },
+      "lifetime_offer": {
+        "title": "<logo>PIMMS</logo> Pro",
+        "price_lifetime": "one time payment",
+        "early_bird": "<price>40</price> early bird discount",
+        "cta": "Upgrade now",
+        "pay_once": "Pay once",
+        "yours_forever": "Yours forever",
+        "money_back": "30-day money-back guarantee",
+        "promo_code": "USE \"LASTCHANCE20\" FOR 20% OFF",
+        "features": {
+          "1": "Perfect for YouTube creators and marketers",
+          "2": "1000 new links per month (lifetime access)",
+          "3": "50K tracked clicks/mo",
+          "4": "1-year analytics retention",
+          "5": "Lifetime access to cloud features and analytics",
+          "6": "10 custom domains (in the roadmap)",
+          "7": "Up to 5 users (in the roadmap)",
+          "8": "More features coming soon!"
         }
       },
       "cta": {

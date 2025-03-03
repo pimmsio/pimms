@@ -28,7 +28,7 @@ export function InviteYoutubeEmail({
       </Preview>
       <Tailwind>
         <Body className="mx-auto my-auto bg-white font-sans">
-          <Container className="mx-auto my-10 max-w-[500px] rounded border border-solid border-neutral-200 px-10 py-5">
+          <Container className="mx-auto my-10 max-w-[500px] border border-solid border-neutral-200 px-10 py-5">
             <Section className="my-8">
               <Img src={WORDMARK_BLACK} height="20" alt="pim.ms" />
             </Section>
@@ -51,7 +51,7 @@ export function InviteYoutubeEmail({
                 href="https://app.pimms.io/register"
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-2 bg-[#dc2e65] text-white font-semibold outline outline-[6px] transition hover:outline-[#F0A8BF] cursor-pointer no-underline rounded-none"
+                className="px-5 py-2 bg-[#dc2e65] text-white font-semibold outline outline-[6px] transition hover:outline-[#F0A8BF] cursor-pointer no-underline"
               >
                 Accéder au dashboard
               </a>

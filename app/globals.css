@@ -42,3 +42,7 @@ body {
   background-size: 84rem auto;
   background-color: hsl(var(--background));
 }
+
+.diag-strikethrough {
+  background: linear-gradient(to bottom left, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
+}

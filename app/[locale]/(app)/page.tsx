@@ -3,7 +3,8 @@ import VideoSlide from "@/components/VideoSlide";
 import Header from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Problem } from "@/components/problem";
-import { Offer } from "@/components/offer";
+import { FreeOffer } from "@/components/free-offer";
+import { LifetimeOffer } from "@/components/lifetime-offer";
 
 const lkey = "home";
 const tkey = `landing.${lkey}`;
@@ -16,7 +17,8 @@ export default function Home() {
       <WaitlistForm tkey={tkey} type="sales" />
       <VideoSlide />
       <Problem tkey={tkey} />
-      <Offer tkey={tkey} />
+      <FreeOffer tkey={tkey} />
+      <LifetimeOffer tkey={tkey} />
     </div>
   );
 }

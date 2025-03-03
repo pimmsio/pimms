@@ -4,14 +4,17 @@ import BouncingImages from "@/components/BouncingImages";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 
-export const Offer = ({ tkey }: { tkey: string }) => {
+export const FreeOffer = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(tkey);
 
   return (
-    <section className="w-full py-6 md:py-12 px-1 flex flex-col md:flex-row items-center mx-auto max-w-7xl gap-6 mt-8">
+    <section
+      id="free"
+      className="w-full max-w-5xl py-6 md:py-12 px-1 flex flex-col md:flex-row items-center mx-auto gap-6 mt-8 rounded-3xl"
+    >
       <div className="w-full md:w-1/2 text-center md:text-left">
         <h2 className="text-2xl md:text-3xl font-bold text-balance mb-4">
-          {t.rich("offer_details.title", {
+          {t.rich("free_offer.title", {
             logo: () => (
               <Image
                 src="/static/logo.svg"
@@ -24,14 +27,14 @@ export const Offer = ({ tkey }: { tkey: string }) => {
           })}
         </h2>
         <p className="text-lg md:text-xl leading-relaxed text-balance">
-          {t("offer_details.description")}
+          {t("free_offer.description")}
         </p>
-        <div className="flex mt-8 justify-center md:justify-start">
+        <div className="flex mt-8 mb-6 justify-center md:justify-start">
           <CtaButton tkey={tkey} show />
         </div>
       </div>
       <div className="flex flex-col w-full md:w-1/2">
-        <BouncingImages tkey={`${tkey}.offer_details`} />
+        <BouncingImages tkey={`${tkey}.free_offer`} />
       </div>
     </section>
   );

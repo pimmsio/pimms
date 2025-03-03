@@ -13,10 +13,10 @@ export const Problem = ({ tkey }: { tkey: string }) => {
     <>
       <section
         id="solutions"
-        className="bg-card w-full py-6 px-1 flex flex-col items-start mx-auto max-w-7xl gap-4 mt-8"
+        className="bg-card shadow-sm w-full py-6 px-1 flex flex-col items-start mx-auto max-w-5xl gap-4 mt-8 rounded-3xl"
       >
-        <div className="flex flex-col w-full p-4">
-          <span className="bg-[#FFEAF1] text-[#E0004B] text-md font-semibold me-2 px-2.5 py-0.5 w-fit">
+        <div className="flex flex-col w-full px-4 md:px-8 md:py-4">
+          <span className="bg-[#FFEAF1] text-[#E0004B] text-md font-semibold me-2 px-2.5 py-0.5 w-fit rounded-full">
             {t("problem.title")}
           </span>
           <h2 className="text-2xl font-bold mt-4">{t("problem.heading")}</h2>
@@ -26,7 +26,7 @@ export const Problem = ({ tkey }: { tkey: string }) => {
           {showMore ? (
             <ul className="list-none list-inside gap-6 flex flex-col mt-4">
               <li className="text-md md:text-lg flex-row flex gap-4">
-                <div className="p-3 bg-[#FFEAF1] text-[#E0004B] rounded-md w-fit h-fit mt-1">
+                <div className="p-2 md:p-3 bg-[#FFEAF1] text-[#E0004B] w-fit h-fit mt-1 rounded-full">
                   <UserX className="w-6 h-6" />
                 </div>
                 <div className="flex flex-col">
@@ -39,7 +39,7 @@ export const Problem = ({ tkey }: { tkey: string }) => {
                 </div>
               </li>
               <li className="text-md md:text-lg flex-row flex gap-4">
-                <div className="p-3 bg-[#FFEAF1] text-[#E0004B] rounded-md w-fit h-fit mt-1">
+                <div className="p-2 md:p-3 bg-[#FFEAF1] text-[#E0004B] w-fit h-fit mt-1 rounded-full">
                   <TrendingDown className="w-6 h-6" />
                 </div>
                 <div className="flex flex-col">
@@ -52,8 +52,8 @@ export const Problem = ({ tkey }: { tkey: string }) => {
                 </div>
               </li>
               <li className="text-md md:text-lg flex-row flex gap-4">
-                <div className="p-3 bg-[#FFEAF1] text-[#E0004B] rounded-md w-fit h-fit mt-1">
-                  <Split className="w-6 h-6" />
+                <div className="p-2 md:p-3 bg-[#FFEAF1] text-[#E0004B] w-fit h-fit mt-1 rounded-full">
+                  <Split className="w-5 h-5 md:w-6 md:h-6" />
                 </div>
                 <div className="flex flex-col">
                   <span className="text-slate-900 font-bold">
@@ -78,10 +78,10 @@ export const Problem = ({ tkey }: { tkey: string }) => {
 
       <section
         id="solutions"
-        className="bg-card w-full py-6 px-1 flex flex-col items-start mx-auto max-w-7xl gap-4 mt-8"
+        className="bg-card w-full py-6 px-1 flex flex-col items-start mx-auto max-w-5xl gap-4 mt-8 rounded-3xl"
       >
-        <div className="flex flex-col w-full p-4">
-          <span className="bg-[#E6FBF7] text-[#00A38D] text-md font-semibold me-2 px-2.5 py-0.5 w-fit">
+        <div className="flex flex-col w-full px-4 md:px-8 md:py-4">
+          <span className="bg-[#f1fdf8] text-[#4ade80] text-md font-semibold me-2 px-2.5 py-0.5 w-fit rounded-full">
             {t("solution.title")}
           </span>
           <h2 className="text-2xl font-bold mt-4">{t("solution.heading")}</h2>
@@ -100,7 +100,7 @@ export const Problem = ({ tkey }: { tkey: string }) => {
           </p>
           <ul className="list-disc list-inside gap-2 flex flex-col mt-4">
             <li className="text-md md:text-lg flex-row flex gap-4">
-              <div className="p-3 bg-[#E6FBF7] text-[#00A38D] rounded-md w-fit h-fit mt-1">
+              <div className="p-2 md:p-3 bg-[#f1fdf8] text-[#4ade80] w-fit h-fit mt-1 rounded-full">
                 <Check className="w-6 h-6" />
               </div>
               <div className="flex flex-col">
@@ -115,7 +115,7 @@ export const Problem = ({ tkey }: { tkey: string }) => {
           </ul>
           <ul className="list-disc list-inside gap-2 flex flex-col mt-4">
             <li className="text-md md:text-lg flex-row flex gap-4">
-              <div className="p-3 bg-[#E6FBF7] text-[#00A38D] rounded-md w-fit h-fit mt-1">
+              <div className="p-2 md:p-3 bg-[#f1fdf8] text-[#4ade80] w-fit h-fit mt-1 rounded-full">
                 <Check className="w-6 h-6" />
               </div>
               <div className="flex flex-col">
@@ -130,7 +130,7 @@ export const Problem = ({ tkey }: { tkey: string }) => {
           </ul>
           <ul className="list-disc list-inside gap-2 flex flex-col mt-4">
             <li className="text-md md:text-lg flex-row flex gap-4">
-              <div className="p-3 bg-[#E6FBF7] text-[#00A38D] rounded-md w-fit h-fit mt-1">
+              <div className="p-2 md:p-3 bg-[#f1fdf8] text-[#4ade80] w-fit h-fit mt-1 rounded-full">
                 <Check className="w-6 h-6" />
               </div>
               <div className="flex flex-col">

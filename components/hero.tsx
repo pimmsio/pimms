@@ -4,6 +4,7 @@ import TextTransition from "@/components/TextTransition";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
 import WorkWith from "./WorkWith";
+import { Timer } from "lucide-react";
 
 export const Hero = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(tkey);
@@ -25,11 +26,25 @@ export const Hero = ({ tkey }: { tkey: string }) => {
     return () => clearTimeout(intervalId);
   }, []);
 
+  const gotoPro = () => {
+    const proSection = document.getElementById("lifetime");
+    if (proSection) {
+      proSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <section
-      className="w-full my-12 md:my-20 text-center px-1 md:px-6"
+      className="w-full my-6 md:my-12 text-center px-1 md:px-6"
       id="waitlist"
     >
+      <div
+        className="cursor-pointer flex items-center gap-2 text-xs md:text-sm font-semibold p-2 bg-[#B3E4FF] text-[#08272E] rounded-xl z-10 mb-8 md:mb-16 w-fit mx-auto"
+        onClick={gotoPro}
+      >
+        <Timer className="w-4 h-4 min-w-4" />
+        {t("lifetime_offer.promo_code")}
+      </div>
       <div className="max-w-sm md:max-w-4xl mx-auto">
         <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-balance text-[#08272E]">
           {t.rich("hero.title", {

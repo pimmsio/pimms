@@ -12,7 +12,7 @@ export function Avatar({ initials, index }: AvatarProps) {
 
   return (
     <div
-      className={`w-10 h-10 rounded-full border border-white/20 ${colors[index]} flex items-center justify-center text-white font-semibold text-sm`}
+      className={`w-10 h-10 border border-white/20 ${colors[index]} flex items-center justify-center text-white font-semibold text-sm`}
     >
       {initials}
     </div>

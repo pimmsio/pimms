@@ -2,8 +2,9 @@
   "landing": {
     "home": {
       "nav": {
-        "how_it_works": "C'est quoi ?",
-        "solutions": "Solutions"
+        "how_it_works": "Comment ça marche ?",
+        "solutions": "Solutions",
+        "pricing": "Nos offres"
       },
       "hero": {
         "title": "Des liens qui boostent vos conversions sur <linkedin>Linkedin</linkedin>",
@@ -17,7 +18,7 @@
         "waiting": "Enregistrement en cours...",
         "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
-        "free": "<free>Offre gratuite</free> disponible, sans carte bancaire."
+        "free": "<free>Offre gratuite</free> disponible, sans carte bancaire"
       },
       "problem": {
         "title": "Le Problème",
@@ -45,7 +46,7 @@
           "description3": "Suivez les parcours utilisateurs et les taux de clics pour optimiser vos campagnes marketing."
         }
       },
-      "offer_details": {
+      "free_offer": {
         "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
         "description": "Arrêtez de perdre des conversions – On vous offre 3 liens directs pour démarrer, tout de suite.",
         "images": {
@@ -53,6 +54,26 @@
           "alt1": "PIMMS Dashboard showing a list of direct links",
           "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
           "alt2": "PIMMS Dashboard showing analytics of direct links"
+        }
+      },
+      "lifetime_offer": {
+        "title": "<logo>PIMMS</logo> Pro",
+        "price_lifetime": "achat unique",
+        "early_bird": "<price>40</price> remise early bird",
+        "cta": "Acheter maintenant",
+        "pay_once": "Paiement unique",
+        "yours_forever": "Accès à vie",
+        "money_back": "30-jours garantie satisfait ou remboursé",
+        "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
+        "features": {
+          "1": "Utilisation commerciale et professionnelle",
+          "2": "1000 nouveaux liens par mois (accès à vie)",
+          "3": "50K clics suivis/mo",
+          "4": "1 an de rétention des données de suivi",
+          "5": "Accès à vie aux fonctionnalités cloud et analytics",
+          "6": "10 domaines personnalisés (dans la roadmap)",
+          "7": "Jusqu'à 5 utilisateurs (dans la roadmap)",
+          "8": "Plus de fonctionnalités à venir !"
         }
       },
       "cta": {
@@ -63,7 +84,8 @@
     "youtube": {
       "nav": {
         "how_it_works": "Comment ça marche ?",
-        "solutions": "Solutions"
+        "solutions": "Solutions",
+        "pricing": "Nos offres"
       },
       "hero": {
         "title": "Des liens qui boostent vos abonnés sur <youtube>YouTube</youtube>",
@@ -76,7 +98,7 @@
         "waiting": "Enregistrement en cours...",
         "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
-        "free": "<free>Offre gratuite</free> disponible, sans carte bancaire."
+        "free": "<free>Offre gratuite</free> disponible, sans carte bancaire"
       },
       "problem": {
         "title": "Le Problème",
@@ -104,7 +126,7 @@
           "description3": "Suivez vos taux de clics facilement avec notre dashboard."
         }
       },
-      "offer_details": {
+      "free_offer": {
         "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
         "description": "Arrêtez de perdre des abonnés sur YouTube – On vous offre 3 liens directs pour démarrer.",
         "images": {
@@ -112,6 +134,26 @@
           "alt1": "PIMMS Dashboard showing a list of direct links",
           "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
           "alt2": "PIMMS Dashboard showing analytics of direct links"
+        }
+      },
+      "lifetime_offer": {
+        "title": "<logo>PIMMS</logo> Pro",
+        "price_lifetime": "achat unique",
+        "early_bird": "<price>40</price> remise early bird",
+        "cta": "Acheter maintenant",
+        "pay_once": "Paiement unique",
+        "yours_forever": "Accès à vie",
+        "money_back": "30-jours garantie satisfait ou remboursé",
+        "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
+        "features": {
+          "1": "Parfait pour les influencers YouTube et le marketing",
+          "2": "1000 nouveaux liens par mois (accès à vie)",
+          "3": "50K clics suivis/mo",
+          "4": "1 an de rétention des données de suivi",
+          "5": "Accès à vie aux fonctionnalités cloud et analytics",
+          "6": "10 domaines personnalisés (dans la roadmap)",
+          "7": "Jusqu'à 5 utilisateurs (dans la roadmap)",
+          "8": "Plus de fonctionnalités à venir !"
         }
       },
       "cta": {

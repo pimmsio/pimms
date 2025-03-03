@@ -3,8 +3,9 @@ import VideoSlide from "@/components/VideoSlide";
 import Header from "@/components/header";
 import { Hero } from "@/components/hero";
 import { Problem } from "@/components/problem";
-import { Offer } from "@/components/offer";
 import { generateLandingMetadata } from "@/lib/utils";
+import { FreeOffer } from "@/components/free-offer";
+import { LifetimeOffer } from "@/components/lifetime-offer";
 
 const lkey = "youtube";
 export async function generateMetadata({ params }: MetadataProps) {
@@ -17,10 +18,11 @@ export default function Youtube() {
     <div className="min-h-screen bg-background text-foreground w-11/12 mx-auto">
       <Header tkey={tkey} />
       <Hero tkey={tkey} />
-      <WaitlistForm tkey={tkey} type={lkey} />
+      <WaitlistForm tkey={tkey} type="sales" />
       <VideoSlide />
       <Problem tkey={tkey} />
-      <Offer tkey={tkey} />
+      <FreeOffer tkey={tkey} />
+      <LifetimeOffer tkey={tkey} />
     </div>
   );
 }

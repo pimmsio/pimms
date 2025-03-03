@@ -5,27 +5,27 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "cursor-pointer ring-[6px] ring-[#FFEAF1] transition duration-500 text-xl lg:text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
+          "cursor-pointer rounded-xl ring-[6px] ring-[#FFEAF1] transition duration-500 text-xl lg:text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
         noring:
-          "cursor-pointer transition duration-500 text-xl lg:text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
+          "cursor-pointer rounded-b-xl md:rounded-l-none md:rounded-r-xl transition duration-500 text-xl lg:text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "cursor-pointer rounded-xl ring-[6px] ring-[#B3E4FF] transition duration-500 text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-white text-[#08272E] items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
         default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "py-[0.62em] px-[1.1em]",
+        sm: "h-9 px-3",
+        lg: "py-[0.8em] px-[1.1em]",
         icon: "h-10 w-10",
       },
     },
@@ -67,7 +67,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         >
           <div className="absolute w-full h-full top-0 left-0 backdrop-saturate-[1.2]">
             <div
-              className={`highlight transition duration-300 absolute w-[100%] h-[100%] left-[-3%] top-[-3%] bg-white blur-[1em] rounded-full ${
+              className={`highlight transition duration-300 absolute w-[100%] h-[100%] left-[-3%] top-[-3%] bg-white blur-[1em] ${
                 isHovered ? "opacity-40" : "opacity-30"
               }`}
             ></div>
