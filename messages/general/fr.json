@@ -4,15 +4,20 @@
       "tagline": "Liens directs pim.ms"
     },
     "footer": {
+      "description": "PIMMS est une plateforme de liens directs spécialement conçue pour booster les conversions sur mobile.",
       "nav": {
         "privacy": "Politique de confidentialité",
         "terms": "Conditions d'utilisation",
         "report": "Signaler un abus",
         "imprint": "Mentions légales"
       },
+      "category": {
+        "help": "Aide",
+        "solutions": "Solutions"
+      },
       "solutions": {
-        "youtube": "Liens directs pour chaînes YouTube",
-        "site": "Liens directs pour pages de vente"
+        "youtube": "Plus d'abonnés sur YouTube",
+        "site": "Plus de conversions les sites web"
       },
       "copyright": "© 2025 PIMMS"
     }

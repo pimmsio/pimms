@@ -6,36 +6,43 @@
         "solutions": "Solutions"
       },
       "hero": {
-        "title": "Boost your conversions with direct links posted on <linkedin>LinkedIn</linkedin>",
-        "description": "Use pim.ms short links that convert on mobile where others have failed.",
+        "title": "Links that boost your conversions on <linkedin>LinkedIn</linkedin>",
+        "description": "Stop losing potential customers with traditional links. Direct links open your contents in the right mobile app, increasing conversion rates by a lot.",
         "social_media": "social",
-        "works_with": "Works with <symbols>social media</symbols> and much more"
+        "works_with": "For <symbols>social media</symbols> (and more)"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
         "button": "Join for free",
         "waiting": "Securing your spot...",
-        "success": "Success! You're on the waitlist.",
-        "error": "Something went wrong. Please try again."
+        "success": "Success! You've been invited to access the application by email.",
+        "error": "Something went wrong. Please try again.",
+        "free": "<free>Free plan</free> available, no credit card required."
       },
       "problem": {
         "title": "The Problem",
-        "description": "Standard links to promote your offers and contents sabotage your conversions. In average, only 20% of clicks reach the destination on mobile.",
+        "heading": "Why you're losing conversions",
+        "description": "Every time you share a link on LinkedIn that should open in a mobile app or the native browser, you're losing potential customers and engagement.",
         "more": {
-          "1": "Links open in browsers where visitors are usually not logged in to their accounts",
-          "2": "Complicated steps frustrate visitors",
-          "3": "Most of them abandon before subscribing or buying",
-          "4": "Result: Lost conversions and monetization opportunities"
+          "title1": "In app browser nightmares",
+          "description1": "No one wants to be trapped in a mini-browser integrated into an app (like LinkedIn or Instagram). Your visitors don't either.",
+          "title2": "High abandonment rates",
+          "description2": "Users are frustrated for many reasons, including social accounts disconnection, payment processors not working, etc. Most people abandon before subscribing or buying.",
+          "title3": "Poor user experience",
+          "description3": "Traditional links create friction in the user journey, damaging your brand reputation and reducing engagement rates."
         }
       },
       "solution": {
         "title": "The Solution",
-        "description": "<logo>PIMMS</logo> allows to convert more with direct links to your content. Our short links provides the best experience possible on mobile.",
+        "heading": "Share direct links with pim.ms",
+        "description": "<logo>PIMMS</logo> detects which app should open your link and sends users directly there, creating a seamless experience that increases conversion rates.",
         "more": {
-          "1": "<strong>pim.ms links open your content in the right application</strong>",
-          "2": "For example, videos open the official YouTube app",
-          "3": "Or websites open in the default browser such as Safari or Google Chrome",
-          "4": "Visitors stay engaged since they use those apps daily and are already logged in. As a result, you get much more conversions"
+          "title1": "Intelligent link routing",
+          "description1": "Automatically detects the user's device and opens the link in the most appropriate mobile application.",
+          "title2": "Seamless user experience",
+          "description2": "Visitors stay engaged since they use those apps daily and are already logged in. As a result, you get much more conversions",
+          "title3": "Detailed analytics",
+          "description3": "Track user journeys and click rates to optimize your marketing campaigns."
         }
       },
       "offer_details": {
@@ -54,6 +61,10 @@
       }
     },
     "youtube": {
+      "nav": {
+        "how_it_works": "How it works",
+        "solutions": "Solutions"
+      },
       "hero": {
         "title": "Boost new subscribers by posting direct links for your <youtube>YouTube</youtube> channel",
         "description": "Short links that convert on mobile where others have failed.",
@@ -63,26 +74,34 @@
         "email_placeholder": "Enter your professional email",
         "button": "Join for free",
         "waiting": "Securing your spot...",
-        "success": "Success! You're on the waitlist.",
-        "error": "Something went wrong. Please try again."
+        "success": "Success! You've been invited to access the application by email.",
+        "error": "Something went wrong. Please try again.",
+        "free": "<free>Free plan</free> available, no credit card required."
       },
       "problem": {
         "title": "The Problem",
-        "description": "Standard links of your YouTube videos sabotage your subscriber growth. In average, only 20% of clicks reach the destination on mobile.",
+        "heading": "Why you're losing subscribers",
+        "description": "Every time your YouTube links don't open in the official YouTube app, you're losing new subscribers.",
         "more": {
-          "1": "Links open in browsers <strong>where viewers are not logged into YouTube</strong> (in app or mobile browser)",
-          "2": "Complicated login steps frustrate potential subscribers",
-          "3": "Most viewers abandon before subscribing",
-          "4": "Result: Lost engagement and monetization opportunities"
+          "title1": "In app browser nightmares",
+          "description1": "No one wants to be trapped in a mini-browser integrated into an app (like LinkedIn or Instagram). Your visitors don't either.",
+          "title2": "High abandonment rates",
+          "description2": "Users are frustrated for many reasons, because they are not connected to YouTube on those mini-browsers. Most people abandon before subscribing, commenting or liking.",
+          "title3": "Poor user experience",
+          "description3": "Traditional links create friction in the user journey, damaging your online reputation and reducing engagement rates."
         }
       },
       "solution": {
         "title": "The Solution",
-        "description": "<logo>PIMMS</logo> allows to convert more viewers into subscribers with direct links to your YouTube videos. Our links provides the best experience possible for viewers on mobile.",
+        "heading": "Share direct links with pim.ms",
+        "description": "<logo>PIMMS</logo> detects your operating system and opens your video in the official YouTube app downloaded from the Google Play Store or App Store.",
         "more": {
-          "1": "pim.ms links open <strong>instantly your videos in the official YouTube app on viewers' phones</strong> (Apple store or Google Play)",
-          "2": "Viewers stay engaged because they're already logged in",
-          "3": "As a result, you get much more subscribers and engagement"
+          "title1": "Intelligent link routing",
+          "description1": "Automatically detects the user's device and opens the link in the most appropriate mobile application.",
+          "title2": "Seamless user experience",
+          "description2": "Viewers stay engaged since they use this official YouTube app daily and are already logged in. As a result, you get much more subscribers and engagement.",
+          "title3": "Detailed analytics",
+          "description3": "Track your click rates easily with our dashboard."
         }
       },
       "offer_details": {

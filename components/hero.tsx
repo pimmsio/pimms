@@ -3,6 +3,7 @@ import Image from "next/image";
 import TextTransition from "@/components/TextTransition";
 import { useTranslations } from "next-intl";
 import { useEffect, useState } from "react";
+import WorkWith from "./WorkWith";
 
 export const Hero = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(tkey);
@@ -30,7 +31,7 @@ export const Hero = ({ tkey }: { tkey: string }) => {
       id="waitlist"
     >
       <div className="max-w-sm md:max-w-4xl mx-auto">
-        <h1 className="text-2xl/relaxed md:text-4xl/relaxed font-extrabold tracking-tight text-balance">
+        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-balance text-[#08272E]">
           {t.rich("hero.title", {
             swap: () => (
               <TextTransition
@@ -54,19 +55,20 @@ export const Hero = ({ tkey }: { tkey: string }) => {
               <Image
                 src="/static/linkedin.svg"
                 alt="Linkedin"
-                className="w-32 md:w-40 inline-block mx-2 mb-2"
+                className="w-32 md:w-40 lg:w-56 inline-block mx-2 mb-2"
                 width={800}
                 height={195}
               />
             ),
           })}
         </h1>
-        <p className="text-lg md:text-xl mt-3 max-w-3xl mx-auto leading-relaxed text-balance">
+        <p className="text-lg md:text-xl mt-3 max-w-3xl mx-auto leading-relaxed text-balance text-slate-600">
           {t.rich("hero.description", {
             strong: (chunks) => <strong>{chunks}</strong>,
           })}
         </p>
       </div>
+      <WorkWith tkey={tkey} />
     </section>
   );
 };

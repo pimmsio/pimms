@@ -60,8 +60,8 @@ export function InviteYoutubeEmail({
             <Hr className="mx-0 mt-8mb-6 w-full border border-neutral-200" />
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
-              Je vais booster vos ventes grâce à un concept unique: les liens
-              directs{" "}
+              Je vais booster vos conversions grâce à un concept unique: les
+              liens directs{" "}
               <Link href="https://pimms.io" className="text-black no-underline">
                 pim.ms
               </Link>

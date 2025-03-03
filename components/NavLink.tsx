@@ -13,7 +13,7 @@ export default function NavLink({ id, text }: { id: string; text: string }) {
     <Button
       onClick={handleClickFocus}
       variant="link"
-      className="cursor-pointer hover:underline text-foreground font-semibold text-sm"
+      className="cursor-pointer text-sm font-medium text-slate-500 text-opacity-80 hover:text-slate-800 leading-none p-2.5 -m-2.5"
     >
       {text}
     </Button>

@@ -4,15 +4,20 @@
       "tagline": "Direct links pim.ms"
     },
     "footer": {
+      "description": "PIMMS is a platform that creates short links to improve your conversions on mobile.",
       "nav": {
         "privacy": "Privacy policy",
         "terms": "Terms of service",
         "report": "Report abuse",
         "imprint": "Imprint"
       },
+      "category": {
+        "help": "Help",
+        "solutions": "Solutions"
+      },
       "solutions": {
-        "youtube": "Direct links for YouTube channels",
-        "site": "Direct links for sales pages"
+        "youtube": "More subscribers on YouTube",
+        "site": "More conversions on any website"
       },
       "copyright": "© 2025 PIMMS"
     }

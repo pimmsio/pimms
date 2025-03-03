@@ -2,45 +2,52 @@
   "landing": {
     "home": {
       "nav": {
-        "how_it_works": "Comment ça marche ?",
+        "how_it_works": "C'est quoi ?",
         "solutions": "Solutions"
       },
       "hero": {
-        "title": "Boostez vos conversions grâce à des liens directs postés sur <linkedin>Linkedin</linkedin>",
-        "description": "Créez des liens courts pim.ms qui réussissent à convertir sur mobile, là où les autres ont échoué.",
+        "title": "Des liens qui boostent vos conversions sur <linkedin>Linkedin</linkedin>",
+        "description": "Stop aux liens classiques qui font perdre des conversions. Vos contenus s'ouvrent dans l'application mobile adaptée et convertissent enfin.",
         "social_media": "les réseaux",
-        "works_with": "Fonctionne avec <symbols>les réseaux sociaux</symbols> et bien plus encore"
+        "works_with": "Pour <symbols>les réseaux sociaux</symbols> et plus"
       },
       "form": {
         "email_placeholder": "Votre adresse email professionnelle",
         "button": "Démarrer gratuitement",
         "waiting": "Enregistrement en cours...",
-        "success": "Félicitations ! Vous êtes maintenant sur la liste d'attente.",
-        "error": "Oups ! Une erreur s'est produite. Merci de réessayer."
+        "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application.",
+        "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
+        "free": "<free>Offre gratuite</free> disponible, sans carte bancaire."
       },
       "problem": {
         "title": "Le Problème",
-        "description": "Les liens classiques pour promouvoir vos offres et contenus vous font perdre beaucoup de conversions. En moyenne sur mobile, seulement 20% des clics arrivent à destination.",
+        "heading": "Pourquoi vous perdez des conversions",
+        "description": "Chaque fois que vous partagez un lien sur LinkedIn qui doit ouvrir dans une application mobile ou le navigateur par défaut, vous perdez des clients potentiels et de l'engagement.",
         "more": {
-          "1": "Ces liens s'ouvrent dans les navigateurs <strong>où l'utilisateur n'est pas connecté à ses comptes</strong>",
-          "2": "Il doit alors passer par des étapes compliquées pour pouvoir interagir",
-          "3": "ce qui le décourage vite et il abandonne dans 80% des cas",
-          "4": "en conséquence, vous perdez des conversions et des opportunités de monétisation"
+          "title1": "Le cauchemar des navigateurs internes",
+          "description1": "Aucun utilisateur ne souhaite être piégé dans un mini-navigateur intégré dans une application (comme LinkedIn ou Instagram). Vos visiteurs ne le souhaitent pas non plus.",
+          "title2": "Taux d'abandon élevés",
+          "description2": "Les utilisateurs sont frustrés pour de nombreuses raisons, y compris les comptes réseaux déconnectés, les paiements qui fonctionnent mal ou pas, etc. La plupart des personnes abandonnent avant de s'abonner ou d'acheter.",
+          "title3": "Mauvaise expérience utilisateur",
+          "description3": "Les liens classiques créent des frictions dans le parcours utilisateur, se qui ternit votre réputation de marque et réduit votre taux de conversion."
         }
       },
       "solution": {
         "title": "La Solution",
-        "description": "<logo>PIMMS</logo> permet de convertir plus grâce aux liens directs vers vos contenus. Nos liens courts offrent la meilleure expérience possible sur mobile.",
+        "heading": "Partagez des liens directs pim.ms",
+        "description": "<logo>PIMMS</logo> détecte quelle application doit ouvrir votre lien et envoie les utilisateurs directement là-bas, créant une expérience fluide qui augmente les taux de conversion.",
         "more": {
-          "1": "<strong>Les liens pim.ms ouvrent vos contenus dans la bonne application</strong>",
-          "2": "Par exemple, les vidéos ouvrent l'application officielle YouTube téléchargée dans l'Apple Store ou le Google Play",
-          "3": "Ou encore, les pages web ouvrent le navigateur par défaut comme Safari ou Google Chrome",
-          "4": "Vos visiteurs sont plus engagés car ils utilisent ces applications tous les jours et sont déjà connectés. Et résultat, vous générez beaucoup plus de conversions"
+          "title1": "Liens courts optimisés sur mobile",
+          "description1": "Détecte automatiquement le smartphone de l'utilisateur et ouvre le lien dans l'application mobile la plus appropriée.",
+          "title2": "Expérience utilisateur fluide",
+          "description2": "Les visiteurs restent engagés car ils utilisent ces applications tous les jours et sont déjà connectés. Et résultat, vous générez beaucoup plus de conversions",
+          "title3": "Suivi détaillé",
+          "description3": "Suivez les parcours utilisateurs et les taux de clics pour optimiser vos campagnes marketing."
         }
       },
       "offer_details": {
-        "title": "Accès en avant première à <logo>PIMMS</logo>",
-        "description": "Arrêtez de perdre des ventes sur votre site internet – On vous offre 3 liens directs pour démarrer.",
+        "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
+        "description": "Arrêtez de perdre des conversions – On vous offre 3 liens directs pour démarrer, tout de suite.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "PIMMS Dashboard showing a list of direct links",
@@ -54,40 +61,51 @@
       }
     },
     "youtube": {
+      "nav": {
+        "how_it_works": "Comment ça marche ?",
+        "solutions": "Solutions"
+      },
       "hero": {
-        "title": "Boostez vos abonnés en postant des liens directs de vos chaines <youtube>YouTube</youtube>",
-        "description": "Nos liens réussissent à convertir sur mobile, là où les autres ont échoué.",
+        "title": "Des liens qui boostent vos abonnés sur <youtube>YouTube</youtube>",
+        "description": "Stop aux liens classiques qui font perdre des abonnés. Vos liens s'ouvrent dans l'application officielle YouTube et convertissent enfin.",
         "social_media": "les réseaux"
       },
       "form": {
         "email_placeholder": "Votre adresse email professionnelle",
         "button": "Démarrer gratuitement",
         "waiting": "Enregistrement en cours...",
-        "success": "Félicitations ! Vous êtes maintenant sur la liste d'attente.",
-        "error": "Oups ! Une erreur s'est produite. Merci de réessayer."
+        "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application",
+        "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
+        "free": "<free>Offre gratuite</free> disponible, sans carte bancaire."
       },
       "problem": {
         "title": "Le Problème",
-        "description": "Les liens classiques vers votre chaine YouTube vous font perdre beaucoup d'abonnés. En moyenne sur mobile, seulement 20% des clics arrivent à destination.",
+        "heading": "Pourquoi vous perdez des abonnés",
+        "description": "Chaque fois que vos vidéos ne s'ouvrent pas dans l'application officielle YouTube, vous perdez des nouveaux abonnés.",
         "more": {
-          "1": "Ces liens s'ouvrent dans les navigateurs <strong>où l'utilisateur n'est pas connecté à son compte utilisateur YouTube</strong>",
-          "2": "Il doit alors passer par des étapes compliquées pour pouvoir interagir avec votre chaine",
-          "3": "ce qui le décourage vite et il abandonne dans 80% des cas",
-          "4": "en conséquence, il ne va pas liker votre vidéo, s’abonner à votre chaine et encore moins acheter."
+          "title1": "Le cauchemar des navigateurs internes",
+          "description1": "Aucun utilisateur ne souhaite être piégé dans un mini-navigateur intégré dans une application (comme LinkedIn ou Instagram). Vos visiteurs ne le souhaitent pas non plus.",
+          "title2": "Taux d'abandon élevés",
+          "description2": "Les utilisateurs sont frustrés entre autres car ils ne sont pas connectés à YouTube sur ces mini-navigateurs. La plupart des personnes abandonnent avant de s'abonner, de commenter ou de liker.",
+          "title3": "Mauvaise expérience utilisateur",
+          "description3": "Les liens classiques créent des frictions dans le parcours utilisateur, mais surtout pour consulter vos vidéos, ce qui ternit votre réputation et réduit votre taux de conversion."
         }
       },
       "solution": {
         "title": "La Solution",
-        "description": "<logo>PIMMS</logo> permet de convertir plus de viewers en abonnés avec des liens directs vers votre chaine YouTube. Nos liens offrent l'expérience la plus optimale possible sur mobile.",
+        "heading": "Partagez des liens directs pim.ms",
+        "description": "<logo>PIMMS</logo> détecte votre système d'exploitation et ouvre votre vidéo dans l'application officielle YouTube téléchargée via le Play Store ou l'App Store.",
         "more": {
-          "1": "Les liens pim.ms générés pour votre chaine YouTube ouvrent <strong>directement dans l’application officielle YouTube téléchargée sur le téléphone des viewers</strong> (Apple store ou Google Play)",
-          "2": "Votre communauté n'a aucun effort supplémentaire à fournir pour interagir avec votre chaine",
-          "3": "Le résultat: vous proposez une expérience optimale et gagnez plus d'abonnés",
-          "4": "En plus, vous générez beaucoup plus de ventes"
+          "title1": "Liens courts optimisés sur mobile",
+          "description1": "Ouvre automatiquement votre lien YouTube dans l'application officielle YouTube officielle.",
+          "title2": "Expérience utilisateur fluide",
+          "description2": "Les viewers s'engagent car ils utilisent cette application officielle YouTube tous les jours et sont déjà connectés. Vous générez beaucoup plus d'abonnés et d'engagement.",
+          "title3": "Suivi détaillé",
+          "description3": "Suivez vos taux de clics facilement avec notre dashboard."
         }
       },
       "offer_details": {
-        "title": "Accès en avant première à <logo>PIMMS</logo>",
+        "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
         "description": "Arrêtez de perdre des abonnés sur YouTube – On vous offre 3 liens directs pour démarrer.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",

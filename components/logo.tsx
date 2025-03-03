@@ -1,23 +1,18 @@
-import { useLocale, useTranslations } from "next-intl";
+import { useLocale } from "next-intl";
 import Image from "next/image";
 
 export default function Logo() {
-  const t = useTranslations("general");
-
   const locale = useLocale();
-  const logoWidth = locale === "fr" ? "w-[147px]" : "w-[136px]";
+  const logoWidth = locale === "fr" ? "w-24" : "w-24";
   return (
-    <div className="flex items-start flex-col space-y-2 mx-auto md:mx-0">
+    <div className="flex items-start flex-col space-y-2 z-10">
       <Image
         src="/static/logo.svg"
         alt="pim.ms"
         className={logoWidth}
         width={1000}
         height={179}
-      />{" "}
-      <span className="font-bold text-sm tracking-wide">
-        {t("header.tagline")}
-      </span>
+      />
     </div>
   );
 }

@@ -48,7 +48,7 @@ const VideoSlide: React.FC<VideoSlideProps> = ({
   return (
     <section
       id="video"
-      className="w-full max-w-7xl my-12 md:my-20 md mx-auto relative overflow-hidden outline outline-[6px] outline-[#FFD9E4] flex justify-center items-center"
+      className="w-full max-w-7xl my-12 md:my-20 md mx-auto relative overflow-hidden outline outline-[6px] outline-[#F2F3F5] flex justify-center items-center"
     >
       <div className="w-full grid grid-cols-1 grid-rows-1 aspect-video mx-auto overflow-hidden">
         <iframe

@@ -1,5 +1,5 @@
 import { MetadataRoute } from "next";
-import { WEB_DOMAIN } from "./constants";
+import { WEB_URL } from "./constants";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/private/",
     },
-    sitemap: `${WEB_DOMAIN}/sitemap.xml`,
+    sitemap: `${WEB_URL}/sitemap.xml`,
   };
 }

@@ -4,6 +4,8 @@ import React, { useState, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { trackEvent } from "../lib/tracking";
 import { Button } from "./ui/button";
+import { APP_URL } from "../app/constants";
+import Link from "next/link";
 
 export function WaitlistForm({
   tkey,
@@ -46,6 +48,7 @@ export function WaitlistForm({
       );
       setMessage(t("form.success"));
       setEmail("");
+      window.location.href = `${APP_URL}/register?email=${email}`;
     } catch {
       setMessage(t("form.error"));
       // Focus the input if an error occurs
@@ -61,7 +64,7 @@ export function WaitlistForm({
         <div className="max-w-4xl w-full mx-auto flex flex-col gap-8">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col md:flex-row ring-[6px] ring-[#FFEAF1]"
+            className="flex flex-col md:flex-row ring-[8px] ring-[#FFEAF1]"
           >
             <div className="flex-1">
               <label htmlFor="waitlist-form-input" className="sr-only">
@@ -90,6 +93,15 @@ export function WaitlistForm({
               {isLoading ? t("form.waiting") : t("form.button")}
             </Button>
           </form>
+          <div className="text-sm text-slate-600">
+            {t.rich("form.free", {
+              free: (chunks) => (
+                <Link href="#free" className="underline text-[#08272E] inline">
+                  {chunks}
+                </Link>
+              ),
+            })}
+          </div>
           {message && <p>{message}</p>}
         </div>
       </div>

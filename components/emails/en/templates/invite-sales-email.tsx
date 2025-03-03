@@ -56,7 +56,7 @@ export function InviteSalesEmail({
             <Hr className="mx-0 mt-8mb-6 w-full border border-neutral-200" />
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
-              I’m going to help you boost your sales funnel with a unique
+              I’m going to help you boost your conversions with a unique
               concept:{" "}
               <Link href="https://pimms.io" className="text-black no-underline">
                 pim.ms

@@ -4,11 +4,15 @@ import Image from "next/image";
 export default function WorkWith({ tkey }: { tkey: string }) {
   const t = useTranslations(tkey);
 
+  if (tkey === "landing.youtube") {
+    return null;
+  }
+
   return (
-    <section className="w-fit text-center px-1 my-6 md:my-10 flex flex-col md:flex-row items-center gap-2 md:gap-4 mx-auto">
+    <section className="w-fit text-center text-sm text-slate-600 px-1 my-6 md:my-10 flex flex-row items-center gap-2 md:gap-4 mx-auto">
       {t.rich("hero.works_with", {
         symbols: () => (
-          <div className="flex justify-center items-center gap-4 opacity-80">
+          <div className="flex justify-center items-center gap-4 opacity-70">
             <Image
               src="https://cdn.brandfetch.io/idVfYwcuQz/theme/dark/idNobVnGbv.svg?c=1dxbfHSJFAPEGdCLU4o5B"
               alt="YouTube"
