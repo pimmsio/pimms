@@ -1,36 +1,41 @@
 {
   "landing": {
     "home": {
+      "nav": {
+        "how_it_works": "How it works",
+        "solutions": "Solutions"
+      },
       "hero": {
-        "title": "Boost your sales with direct links posted on <linkedin>LinkedIn</linkedin>",
-        "description": "Smart links that convert on mobile where others have failed.",
+        "title": "Boost your conversions with direct links posted on <linkedin>LinkedIn</linkedin>",
+        "description": "Use pim.ms short links that convert on mobile where others have failed.",
         "social_media": "social",
-        "cta_youtube": "<strong>You have a YouTube channel ?</strong> Discover our solutions by clicking here"
+        "works_with": "Works with <symbols>social media</symbols> and much more"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
-        "button": "Join the waitlist",
+        "button": "Join for free",
         "waiting": "Securing your spot...",
         "success": "Success! You're on the waitlist.",
         "error": "Something went wrong. Please try again."
       },
       "problem": {
         "title": "The Problem",
-        "description": "Standard links to promote your offers and contents sabotage your sales. In average, only 20% of clicks reach the destination on mobile.",
+        "description": "Standard links to promote your offers and contents sabotage your conversions. In average, only 20% of clicks reach the destination on mobile.",
         "more": {
-          "1": "Links open in browsers <strong>where visitors are not logged into your site</strong> (in app or mobile browser)",
-          "2": "Complicated login steps frustrate potential customers",
-          "3": "Most visitors abandon before buying",
-          "4": "Result: Lost sales and monetization opportunities"
+          "1": "Links open in browsers where visitors are usually not logged in to their accounts",
+          "2": "Complicated steps frustrate visitors",
+          "3": "Most of them abandon before subscribing or buying",
+          "4": "Result: Lost conversions and monetization opportunities"
         }
       },
       "solution": {
         "title": "The Solution",
-        "description": "<logo>PIMMS</logo> allows to convert more visitors into customers with direct links to your site. Our links provides the best experience possible for buyers on mobile.",
+        "description": "<logo>PIMMS</logo> allows to convert more with direct links to your content. Our short links provides the best experience possible on mobile.",
         "more": {
-          "1": "pim.ms links open <strong>instantly your site in the default browser on visitors' phones</strong> (Safari or Google Chrome)",
-          "2": "Visitors stay engaged because they're already logged in",
-          "3": "As a result, you get much more sales"
+          "1": "<strong>pim.ms links open your content in the right application</strong>",
+          "2": "For example, videos open the official YouTube app",
+          "3": "Or websites open in the default browser such as Safari or Google Chrome",
+          "4": "Visitors stay engaged since they use those apps daily and are already logged in. As a result, you get much more conversions"
         }
       },
       "offer_details": {
@@ -44,19 +49,19 @@
         }
       },
       "cta": {
-        "button": "Join the waitlist",
+        "button": "Join for free",
         "show_more": "Learn more"
       }
     },
     "youtube": {
       "hero": {
         "title": "Boost new subscribers by posting direct links for your <youtube>YouTube</youtube> channel",
-        "description": "Smart links that convert on mobile where others have failed.",
+        "description": "Short links that convert on mobile where others have failed.",
         "social_media": "social"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
-        "button": "Join the waitlist",
+        "button": "Join for free",
         "waiting": "Securing your spot...",
         "success": "Success! You're on the waitlist.",
         "error": "Something went wrong. Please try again."
@@ -91,7 +96,7 @@
         }
       },
       "cta": {
-        "button": "Join the waitlist",
+        "button": "Join for free",
         "show_more": "Learn more"
       }
     }

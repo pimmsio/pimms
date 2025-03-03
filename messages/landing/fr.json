@@ -1,36 +1,41 @@
 {
   "landing": {
     "home": {
+      "nav": {
+        "how_it_works": "Comment ça marche ?",
+        "solutions": "Solutions"
+      },
       "hero": {
-        "title": "Boostez vos ventes grâce à des liens directs postés sur <linkedin>Linkedin</linkedin>",
-        "description": "Nos liens réussissent à convertir sur mobile, là où les autres ont échoué.",
+        "title": "Boostez vos conversions grâce à des liens directs postés sur <linkedin>Linkedin</linkedin>",
+        "description": "Créez des liens courts pim.ms qui réussissent à convertir sur mobile, là où les autres ont échoué.",
         "social_media": "les réseaux",
-        "cta_youtube": "<strong>Vous avez une chaine YouTube ?</strong> Découvrez nos solutions en cliquant ici"
+        "works_with": "Fonctionne avec <symbols>les réseaux sociaux</symbols> et bien plus encore"
       },
       "form": {
         "email_placeholder": "Votre adresse email professionnelle",
-        "button": "Recevoir une invitation",
+        "button": "Démarrer gratuitement",
         "waiting": "Enregistrement en cours...",
         "success": "Félicitations ! Vous êtes maintenant sur la liste d'attente.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer."
       },
       "problem": {
         "title": "Le Problème",
-        "description": "Les liens classiques pour promouvoir vos offres et contenus vous font perdre beaucoup de ventes. En moyenne sur mobile, seulement 20% des clics arrivent à destination.",
+        "description": "Les liens classiques pour promouvoir vos offres et contenus vous font perdre beaucoup de conversions. En moyenne sur mobile, seulement 20% des clics arrivent à destination.",
         "more": {
-          "1": "Ces liens s'ouvrent dans les navigateurs <strong>où l'utilisateur ne peut pas acheter facilement</strong>",
-          "2": "Il doit alors passer par des étapes compliquées pour pouvoir interagir avec votre site internet, se connecter, selectionner sa carte bancaire, etc.",
+          "1": "Ces liens s'ouvrent dans les navigateurs <strong>où l'utilisateur n'est pas connecté à ses comptes</strong>",
+          "2": "Il doit alors passer par des étapes compliquées pour pouvoir interagir",
           "3": "ce qui le décourage vite et il abandonne dans 80% des cas",
-          "4": "en conséquence, il ne va pas s'inscrire et encore moins acheter."
+          "4": "en conséquence, vous perdez des conversions et des opportunités de monétisation"
         }
       },
       "solution": {
         "title": "La Solution",
-        "description": "<logo>PIMMS</logo> permet de convertir plus de visiteurs en acheteurs avec des liens directs vers votre site internet. Nos liens offrent l'expérience la plus optimale possible sur mobile.",
+        "description": "<logo>PIMMS</logo> permet de convertir plus grâce aux liens directs vers vos contenus. Nos liens courts offrent la meilleure expérience possible sur mobile.",
         "more": {
-          "1": "Les liens pim.ms générés pour votre site s'ouvrent <strong>directement dans le navigateur par défaut du téléphone des visiteurs</strong> (Safari ou Google Chrome)",
-          "2": "Vos visiteurs n'ont aucun effort supplémentaire à fournir pour pouvoir acheter car tous les services sont déjà configurés correctement (carte bancaire, compte utilisateur, Paypal, etc.)",
-          "3": "Le résultat: vous générez beaucoup plus de ventes"
+          "1": "<strong>Les liens pim.ms ouvrent vos contenus dans la bonne application</strong>",
+          "2": "Par exemple, les vidéos ouvrent l'application officielle YouTube téléchargée dans l'Apple Store ou le Google Play",
+          "3": "Ou encore, les pages web ouvrent le navigateur par défaut comme Safari ou Google Chrome",
+          "4": "Vos visiteurs sont plus engagés car ils utilisent ces applications tous les jours et sont déjà connectés. Et résultat, vous générez beaucoup plus de conversions"
         }
       },
       "offer_details": {
@@ -44,7 +49,7 @@
         }
       },
       "cta": {
-        "button": "Recevoir une invitation",
+        "button": "Démarrer gratuitement",
         "show_more": "En savoir plus"
       }
     },
@@ -56,7 +61,7 @@
       },
       "form": {
         "email_placeholder": "Votre adresse email professionnelle",
-        "button": "Recevoir une invitation",
+        "button": "Démarrer gratuitement",
         "waiting": "Enregistrement en cours...",
         "success": "Félicitations ! Vous êtes maintenant sur la liste d'attente.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer."
@@ -77,7 +82,8 @@
         "more": {
           "1": "Les liens pim.ms générés pour votre chaine YouTube ouvrent <strong>directement dans l’application officielle YouTube téléchargée sur le téléphone des viewers</strong> (Apple store ou Google Play)",
           "2": "Votre communauté n'a aucun effort supplémentaire à fournir pour interagir avec votre chaine",
-          "3": "Le résultat: vous proposez une expérience optimale et gagnez plus d'abonnés"
+          "3": "Le résultat: vous proposez une expérience optimale et gagnez plus d'abonnés",
+          "4": "En plus, vous générez beaucoup plus de ventes"
         }
       },
       "offer_details": {
@@ -91,7 +97,7 @@
         }
       },
       "cta": {
-        "button": "Recevoir une invitation",
+        "button": "Démarrer gratuitement",
         "show_more": "En savoir plus"
       }
     }

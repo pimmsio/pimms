@@ -3,6 +3,7 @@
 import React, { useState, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
 import { trackEvent } from "../lib/tracking";
+import { Button } from "./ui/button";
 
 export function WaitlistForm({
   tkey,
@@ -60,7 +61,7 @@ export function WaitlistForm({
         <div className="max-w-4xl w-full mx-auto flex flex-col gap-8">
           <form
             onSubmit={handleSubmit}
-            className="flex flex-col md:flex-row gap-8"
+            className="flex flex-col md:flex-row ring-[6px] ring-[#FFEAF1]"
           >
             <div className="flex-1">
               <label htmlFor="waitlist-form-input" className="sr-only">
@@ -76,16 +77,18 @@ export function WaitlistForm({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isLoading}
-                className="w-full px-4 py-3 rounded-lg ring-4 ring-white focus:ring-[#F0A8BF] focus:outline-none transition-all placeholder:text-sm placeholder:text-gray-500"
+                className="w-full px-4 py-[0.82em] md:py-[1.16em] rounded-lg focus:outline-none transition-all placeholder:text-sm placeholder:text-gray-500"
               />
             </div>
-            <button
+            <Button
               type="submit"
+              variant="noring"
+              size="lg"
               disabled={isLoading}
-              className="cursor-pointer block w-full md:w-auto px-5 py-2 bg-primary text-primary-foreground font-semibold rounded-md outline outline-4 transition hover:outline-[#F0A8BF]"
+              className="block w-full md:w-auto min-w-52"
             >
               {isLoading ? t("form.waiting") : t("form.button")}
-            </button>
+            </Button>
           </form>
           {message && <p>{message}</p>}
         </div>

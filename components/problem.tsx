@@ -9,7 +9,10 @@ export const Problem = ({ tkey }: { tkey: string }) => {
   const [showMore, setShowMore] = useState(false);
 
   return (
-    <section className="bg-card outline outline-4 outline-[#D4F0FE] w-full py-6 px-1 flex flex-col md:flex-row items-start mx-auto max-w-7xl gap-4 mt-8 text-center md:text-left">
+    <section
+      id="solutions"
+      className="bg-card outline outline-[6px] outline-[#D4F0FE] w-full py-6 px-1 flex flex-col md:flex-row items-start mx-auto max-w-7xl gap-4 mt-8 text-center md:text-left"
+    >
       <div className="flex flex-col w-full md:w-1/2 p-4">
         <h2 className="text-2xl md:text-3xl font-bold text-balance">
           {t("problem.title")}
@@ -18,7 +21,7 @@ export const Problem = ({ tkey }: { tkey: string }) => {
           {t("problem.description")}
         </p>
         {showMore ? (
-          <ul className="list-decimal list-inside gap-2 flex flex-col mt-4">
+          <ul className="list-disc list-inside gap-2 flex flex-col mt-4">
             <li className="text-balance text-md md:text-lg">
               {t.rich("problem.more.1", {
                 strong: (chunks) => <strong>{chunks}</strong>,
@@ -68,7 +71,7 @@ export const Problem = ({ tkey }: { tkey: string }) => {
           })}
         </p>
         {showMore ? (
-          <ul className="list-decimal list-inside gap-2 flex flex-col mt-4">
+          <ul className="list-disc list-inside gap-2 flex flex-col mt-4">
             <li className="text-balance text-md md:text-lg">
               {t.rich("solution.more.1", {
                 strong: (chunks) => <strong>{chunks}</strong>,
@@ -81,6 +84,11 @@ export const Problem = ({ tkey }: { tkey: string }) => {
             </li>
             <li className="text-balance text-md md:text-lg">
               {t.rich("solution.more.3", {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+            </li>
+            <li className="text-balance text-md md:text-lg">
+              {t.rich("solution.more.4", {
                 strong: (chunks) => <strong>{chunks}</strong>,
               })}
             </li>

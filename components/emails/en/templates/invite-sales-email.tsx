@@ -47,7 +47,7 @@ export function InviteSalesEmail({
                 href="https://app.pimms.io/register"
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-2 bg-[#dc2e65] text-white font-semibold outline outline-4 transition hover:outline-[#F0A8BF] cursor-pointer no-underline rounded-none"
+                className="px-5 py-2 bg-[#dc2e65] text-white font-semibold outline outline-[6px] transition hover:outline-[#F0A8BF] cursor-pointer no-underline rounded-none"
               >
                 Access the dashboard
               </a>

@@ -26,7 +26,7 @@ export const Offer = ({ tkey }: { tkey: string }) => {
         <p className="text-lg md:text-xl leading-relaxed text-balance">
           {t("offer_details.description")}
         </p>
-        <div className="mt-8 w-full">
+        <div className="flex mt-8 justify-center md:justify-start">
           <CtaButton tkey={tkey} show />
         </div>
       </div>

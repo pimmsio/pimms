@@ -46,7 +46,10 @@ const VideoSlide: React.FC<VideoSlideProps> = ({
       );
   };
   return (
-    <section className="w-full max-w-7xl my-12 md:my-20 md mx-auto relative overflow-hidden outline outline-4 outline-[#D4F0FE] flex justify-center items-center">
+    <section
+      id="video"
+      className="w-full max-w-7xl my-12 md:my-20 md mx-auto relative overflow-hidden outline outline-[6px] outline-[#FFD9E4] flex justify-center items-center"
+    >
       <div className="w-full grid grid-cols-1 grid-rows-1 aspect-video mx-auto overflow-hidden">
         <iframe
           ref={iframeRef}
@@ -80,7 +83,7 @@ const VideoSlide: React.FC<VideoSlideProps> = ({
           >
             <source src={coverVideoSrc} type="video/mp4" />
           </video>
-          <div className="absolute z-10 flex items-center justify-center w-20 h-20 bg-primary rounded-full shadow-lg transition-transform hover:scale-110 border-4 border-white hover:border-[#F0A8BF]">
+          <div className="absolute z-10 flex items-center justify-center w-20 h-20 bg-primary rounded-full shadow-lg transition-transform hover:scale-110 border-[6px] border-white hover:border-[#F0A8BF]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
