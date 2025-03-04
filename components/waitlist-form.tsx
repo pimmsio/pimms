@@ -58,13 +58,6 @@ export function WaitlistForm({
     }
   };
 
-  const gotoFree = () => {
-    const freeSection = document.getElementById("free");
-    if (freeSection) {
-      freeSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   const gotoPro = () => {
     const proSection = document.getElementById("lifetime");
     if (proSection) {
@@ -102,45 +95,29 @@ export function WaitlistForm({
               variant="noring"
               size="lg"
               disabled={isLoading}
-              className="block w-full md:w-auto min-w-52"
+              className="block w-full md:w-auto min-w-52 py-2"
             >
               {isLoading ? t("form.waiting") : t("form.button")}
+              <span className="inline text-sm">{t("form.button_free")}</span>
             </Button>
           </form>
           <div className="flex flex-col md:flex-row gap-2 md:gap-8 items-center justify-center">
-            <div className="text-sm text-slate-600 font-semibold">
-              {t.rich("form.free", {
-                free: (chunks) => (
+            <div className="flex text-sm text-slate-600 font-semibold items-center">
+              {t.rich("form.pro", {
+                pro: (chunks) => (
                   <Button
-                    onClick={gotoFree}
                     variant="link"
-                    className="underline text-[#08272E] inline px-0"
+                    className="text-sm w-fit hover:scale-105 text-[#08272E] font-semibold px-2"
+                    onClick={gotoPro}
                   >
+                    <span className="inline p-2 bg-[#FFD700] rounded-full">
+                      <Crown className="w-4 h-4" />
+                    </span>
                     {chunks}
                   </Button>
                 ),
               })}
             </div>
-            <Button
-              variant="secondary"
-              className="py-[0.8em] text-xl md:min-w-64 hover:scale-105 w-full md:w-fit"
-              size="lg"
-              onClick={gotoPro}
-            >
-              <span className="inline p-2 bg-[#FFD700] rounded-full">
-                <Crown className="w-6 h-6" />
-              </span>
-              <div className="text-4xl flex items-start leading-none font-bold">
-                <div className="inline-flex opacity-60 mr-2 text-2xl diag-strikethrough">
-                  <div className="text-sm mt-0.5">$</div>99
-                </div>
-                <div className="text-sm mt-0.5">$</div>
-                <div className="mr-0.5 text-4xl">59</div>
-                <div className="text-base self-end opacity-90 ml-1">
-                  {t("lifetime_offer.price_lifetime")}
-                </div>
-              </div>
-            </Button>
           </div>
           {message && <p>{message}</p>}
         </div>

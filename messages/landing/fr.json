@@ -7,30 +7,31 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Des liens qui boostent vos conversions sur <linkedin>Linkedin</linkedin>",
-        "description": "Stop aux liens classiques qui font perdre des conversions. Vos contenus s'ouvrent dans l'application mobile adaptée et convertissent enfin.",
+        "title": "Des liens courts qui boostent vos conversions sur <linkedin>Linkedin</linkedin>",
+        "description": "Stop aux liens classiques qui font perdre des conversions. Vos contenus s'ouvrent dans l'application mobile adaptée et convertissent enfin avec nos liens directs.",
         "social_media": "les réseaux",
         "works_with": "Pour <symbols>les réseaux sociaux</symbols> et plus"
       },
       "form": {
         "email_placeholder": "Votre adresse email professionnelle",
         "button": "Démarrer gratuitement",
+        "button_free": "10 liens offerts",
         "waiting": "Enregistrement en cours...",
         "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
-        "free": "<free>Offre gratuite</free> disponible, sans carte bancaire"
+        "pro": "<pro>Ou Offre PRO en achat unique</pro>"
       },
       "problem": {
         "title": "Le Problème",
         "heading": "Pourquoi vous perdez des conversions",
-        "description": "Chaque fois que vous partagez un lien sur LinkedIn qui doit ouvrir dans une application mobile ou le navigateur par défaut, vous perdez des clients potentiels et de l'engagement.",
+        "description": "Chaque fois que vous partagez un lien classique sur LinkedIn qui doit ouvrir dans une application mobile ou le navigateur par défaut, vous perdez des clients potentiels et de l'engagement.",
         "more": {
           "title1": "Le cauchemar des navigateurs internes",
           "description1": "Aucun utilisateur ne souhaite être piégé dans un mini-navigateur intégré dans une application (comme LinkedIn ou Instagram). Vos visiteurs ne le souhaitent pas non plus.",
           "title2": "Taux d'abandon élevés",
           "description2": "Les utilisateurs sont frustrés pour de nombreuses raisons, y compris les comptes réseaux déconnectés, les paiements qui fonctionnent mal ou pas, etc. La plupart des personnes abandonnent avant de s'abonner ou d'acheter.",
           "title3": "Mauvaise expérience utilisateur",
-          "description3": "Les liens classiques créent des frictions dans le parcours utilisateur, se qui ternit votre réputation de marque et réduit votre taux de conversion."
+          "description3": "Les liens classiques créent des frictions dans le parcours utilisateur, se qui ternit votre réputation et réduit votre taux de conversion."
         }
       },
       "solution": {
@@ -48,7 +49,7 @@
       },
       "free_offer": {
         "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
-        "description": "Arrêtez de perdre des conversions – On vous offre 3 liens directs pour démarrer, tout de suite.",
+        "description": "Arrêtez de perdre des conversions – On vous offre 10 liens directs pour démarrer, tout de suite.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "PIMMS Dashboard showing a list of direct links",
@@ -88,17 +89,18 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Des liens qui boostent vos abonnés sur <youtube>YouTube</youtube>",
-        "description": "Stop aux liens classiques qui font perdre des abonnés. Vos liens s'ouvrent dans l'application officielle YouTube et convertissent enfin.",
+        "title": "Des liens courts qui boostent vos abonnés sur <youtube>YouTube</youtube>",
+        "description": "Stop aux liens classiques qui font perdre des abonnés. Vos vidéos s'ouvrent dans l'application officielle YouTube et convertissent enfin avec nos liens directs.",
         "social_media": "les réseaux"
       },
       "form": {
         "email_placeholder": "Votre adresse email professionnelle",
         "button": "Démarrer gratuitement",
+        "button_free": "10 liens offerts",
         "waiting": "Enregistrement en cours...",
         "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
-        "free": "<free>Offre gratuite</free> disponible, sans carte bancaire"
+        "pro": "<pro>Ou Offre PRO en achat unique</pro>"
       },
       "problem": {
         "title": "Le Problème",
@@ -119,7 +121,7 @@
         "description": "<logo>PIMMS</logo> détecte votre système d'exploitation et ouvre votre vidéo dans l'application officielle YouTube téléchargée via le Play Store ou l'App Store.",
         "more": {
           "title1": "Liens courts optimisés sur mobile",
-          "description1": "Ouvre automatiquement votre lien YouTube dans l'application officielle YouTube officielle.",
+          "description1": "Nos liens directs ouvrent automatiquement vos vidéos YouTube dans l'application officielle YouTube.",
           "title2": "Expérience utilisateur fluide",
           "description2": "Les viewers s'engagent car ils utilisent cette application officielle YouTube tous les jours et sont déjà connectés. Vous générez beaucoup plus d'abonnés et d'engagement.",
           "title3": "Suivi détaillé",
@@ -128,7 +130,7 @@
       },
       "free_offer": {
         "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
-        "description": "Arrêtez de perdre des abonnés sur YouTube – On vous offre 3 liens directs pour démarrer.",
+        "description": "Arrêtez de perdre des abonnés sur YouTube – On vous offre 10 liens directs pour démarrer.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "PIMMS Dashboard showing a list of direct links",

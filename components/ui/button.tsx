@@ -72,7 +72,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               }`}
             ></div>
           </div>
-          <div className="relative leading-tight pb-[0.05em]">
+          <div className="relative flex flex-col leading-tight pb-[0.05em]">
             {props.children}
           </div>
         </Comp>

@@ -7,23 +7,24 @@
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Links that boost your conversions on <linkedin>LinkedIn</linkedin>",
-        "description": "Stop losing conversions with traditional links. Direct links open your contents in the right mobile app, increasing conversion rates by a lot.",
+        "title": "Deep links that boost your conversions on <linkedin>LinkedIn</linkedin>",
+        "description": "Stop losing conversions with traditional links. Deep links open your contents in the right mobile app, increasing conversion rates by a lot.",
         "social_media": "social",
         "works_with": "For <symbols>social media</symbols> (and more)"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
         "button": "Join for free",
+        "button_free": "10 links gifted",
         "waiting": "Securing your spot...",
         "success": "Success! You've been invited to access the application by email.",
         "error": "Something went wrong. Please try again.",
-        "free": "<free>Free plan</free> available, no credit card required."
+        "pro": "<pro>PRO plan available - one time payment</pro>"
       },
       "problem": {
         "title": "The Problem",
         "heading": "Why you're losing conversions",
-        "description": "Every time you share a link on LinkedIn that should open in a mobile app or the native browser, you're losing potential customers and engagement.",
+        "description": "Every time you share a traditional link on LinkedIn that should open in a mobile app or the native browser, you're losing potential customers and engagement.",
         "more": {
           "title1": "In app browser nightmares",
           "description1": "No one wants to be trapped in a mini-browser integrated into an app (like LinkedIn or Instagram). Your visitors don't either.",
@@ -35,11 +36,11 @@
       },
       "solution": {
         "title": "The Solution",
-        "heading": "Share pim.ms direct links today",
+        "heading": "Share pim.ms deep links today",
         "description": "<logo>PIMMS</logo> detects which app should open your link and sends users directly there, creating a seamless experience that increases conversion rates.",
         "more": {
-          "title1": "Intelligent link routing",
-          "description1": "Automatically detects the user's device and opens the link in the most appropriate mobile application.",
+          "title1": "Smart short link routing",
+          "description1": "Deep link automatically detect the user's device and opens the link in the most appropriate mobile application.",
           "title2": "Seamless user experience",
           "description2": "Visitors stay engaged since they use those apps daily and are already logged in. As a result, you get much more conversions",
           "title3": "Detailed analytics",
@@ -48,7 +49,7 @@
       },
       "free_offer": {
         "title": "Early access to <logo>PIMMS</logo>",
-        "description": "Stop losing conversions - start with 3 free direct links today.",
+        "description": "Stop losing conversions - start with 3 free deep links today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "Advanced link management interface",
@@ -88,17 +89,18 @@
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Links that boost your subs on <youtube>YouTube</youtube>",
-        "description": "Stop losing subscribers with traditional links. Direct links open your videos in the official YouTube app, increasing conversion rates by a lot.",
+        "title": "Deep links that boost your subs on <youtube>YouTube</youtube>",
+        "description": "Stop losing subscribers with traditional links. Deep links open your videos in the official YouTube app, increasing conversion rates by a lot.",
         "social_media": "social"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
         "button": "Join for free",
+        "button_free": "10 links gifted",
         "waiting": "Securing your spot...",
         "success": "Success! You've been invited to access the application by email.",
         "error": "Something went wrong. Please try again.",
-        "free": "<free>Free plan</free> available, no credit card required."
+        "pro": "<pro>PRO plan available - one time payment</pro>"
       },
       "problem": {
         "title": "The Problem",
@@ -115,7 +117,7 @@
       },
       "solution": {
         "title": "The Solution",
-        "heading": "Share pim.ms direct links today",
+        "heading": "Share pim.ms deep links today",
         "description": "<logo>PIMMS</logo> detects your operating system and opens your video in the official YouTube app downloaded from the Google Play Store or App Store.",
         "more": {
           "title1": "Intelligent link routing",
@@ -128,7 +130,7 @@
       },
       "free_offer": {
         "title": "Early access to <logo>PIMMS</logo>",
-        "description": "Stop losing subs on YouTube - start with 3 free direct links today.",
+        "description": "Stop losing subs on YouTube - start with 3 free deep links today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
           "alt1": "Advanced link management interface",

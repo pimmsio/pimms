@@ -48,9 +48,9 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
           </h2>
           <div className="text-4xl flex items-start leading-none font-bold">
             <div className="inline-flex opacity-60 mr-2 text-2xl diag-strikethrough">
-              <div className="text-sm mt-0.5">$</div>99
+              <div className="text-sm mt-0.5">€</div>99
             </div>
-            <div className="text-sm mt-0.5">$</div>
+            <div className="text-sm mt-0.5">€</div>
             <div className="mr-0.5 text-4xl">59</div>
             <div className="text-base self-end opacity-90 ml-1">
               {t("lifetime_offer.price_lifetime")}
@@ -58,7 +58,7 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
           </div>
           <div className="w-fit rounded-md inline-block text-xs bg-gray-100 text-slate-900 font-bold uppercase tracking-wide p-0.5 px-1.5 shadow mb-1">
             {t.rich("lifetime_offer.early_bird", {
-              price: () => <span className="text-sm">$40</span>,
+              price: () => <span className="text-sm">€40</span>,
             })}
           </div>
           <div className="flex my-8 md:mb-0 flex-col gap-4 items-start">
@@ -68,7 +68,7 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
               size="lg"
               onClick={() => {
                 window.location.href =
-                  "https://buy.stripe.com/3cs01Peam6uicWQ145";
+                  "https://buy.stripe.com/5kAeWJ8Q2f0O1e8dQS";
               }}
             >
               <span className="inline p-2 bg-[#FFD700] rounded-full">

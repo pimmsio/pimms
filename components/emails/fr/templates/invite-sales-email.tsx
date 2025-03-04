@@ -47,14 +47,14 @@ export function InviteYoutubeEmail({
             </Text>
 
             <Section className="my-8">
-              <a
+              <Link
+                className="px-5 py-3 bg-[#dc2e65] text-white font-semibold outline outline-[6px] transition outline-[#ffeaf1] cursor-pointer no-underline rounded-xl"
                 href="https://app.pimms.io/register"
                 target="_blank"
                 rel="noreferrer"
-                className="px-5 py-2 bg-[#dc2e65] text-white font-semibold outline outline-[6px] transition hover:outline-[#F0A8BF] cursor-pointer no-underline"
               >
                 Accéder au dashboard
-              </a>
+              </Link>
             </Section>
 
             <Hr className="mx-0 mt-8mb-6 w-full border border-neutral-200" />
