@@ -3,6 +3,9 @@ import Logo from "@/components/logo";
 import CtaLink from "./cta/CtaLink";
 import NavLink from "./NavLink";
 import { useTranslations } from "next-intl";
+import { Button } from "./ui/button";
+import Link from "next/link";
+import { APP_URL } from "../app/constants";
 
 export default function Header({ tkey }: { tkey: string }) {
   const t = useTranslations(tkey);
@@ -15,6 +18,14 @@ export default function Header({ tkey }: { tkey: string }) {
           <NavLink id="video" text={t("nav.how_it_works")} />
           <NavLink id="solutions" text={t("nav.solutions")} />
           <NavLink id="free" text={t("nav.pricing")} />
+          <Link href={`${APP_URL}/register`} target="_blank" rel="noreferrer">
+            <Button
+              variant="link"
+              className="px-0 cursor-pointer text-sm md:text-base font-medium text-slate-500 text-opacity-80 hover:text-slate-800 leading-none"
+            >
+              {t("nav.dashboard")}
+            </Button>
+          </Link>
           <CtaLink tkey={tkey} />
         </nav>
       </header>

@@ -2,8 +2,9 @@
   "landing": {
     "home": {
       "nav": {
-        "how_it_works": "Comment ça marche ?",
+        "how_it_works": "Intro",
         "solutions": "Solutions",
+        "dashboard": "Se connecter",
         "pricing": "Nos offres"
       },
       "hero": {
@@ -72,8 +73,8 @@
           "3": "50K clics suivis/mo",
           "4": "1 an de rétention des données de suivi",
           "5": "Accès à vie aux fonctionnalités cloud et analytics",
-          "6": "10 domaines personnalisés (dans la roadmap)",
-          "7": "Jusqu'à 5 utilisateurs (dans la roadmap)",
+          "6": "Jusqu'à 3 utilisateurs inclus",
+          "7": "3 domaines personnalisés (à venir)",
           "8": "Plus de fonctionnalités à venir !"
         }
       },
@@ -84,8 +85,9 @@
     },
     "youtube": {
       "nav": {
-        "how_it_works": "Comment ça marche ?",
+        "how_it_works": "Intro",
         "solutions": "Solutions",
+        "dashboard": "Se connecter",
         "pricing": "Nos offres"
       },
       "hero": {
@@ -153,8 +155,8 @@
           "3": "50K clics suivis/mo",
           "4": "1 an de rétention des données de suivi",
           "5": "Accès à vie aux fonctionnalités cloud et analytics",
-          "6": "10 domaines personnalisés (dans la roadmap)",
-          "7": "Jusqu'à 5 utilisateurs (dans la roadmap)",
+          "6": "Jusqu'à 3 utilisateurs inclus",
+          "7": "3 domaines personnalisés (à venir)",
           "8": "Plus de fonctionnalités à venir !"
         }
       },

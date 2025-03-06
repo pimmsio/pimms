@@ -4,6 +4,7 @@
       "nav": {
         "how_it_works": "How it works",
         "solutions": "Solutions",
+        "dashboard": "Dashboard",
         "pricing": "Pricing"
       },
       "hero": {
@@ -72,8 +73,8 @@
           "3": "50K tracked clicks/mo",
           "4": "1-year analytics retention",
           "5": "Lifetime access to cloud features and analytics",
-          "6": "10 custom domains (in the roadmap)",
-          "7": "Up to 5 users (in the roadmap)",
+          "6": "Up to 3 users included",
+          "7": "3 custom domains (in the roadmap)",
           "8": "More features coming soon!"
         }
       },
@@ -86,6 +87,7 @@
       "nav": {
         "how_it_works": "How it works",
         "solutions": "Solutions",
+        "dashboard": "Dashboard",
         "pricing": "Pricing"
       },
       "hero": {
@@ -153,8 +155,8 @@
           "3": "50K tracked clicks/mo",
           "4": "1-year analytics retention",
           "5": "Lifetime access to cloud features and analytics",
-          "6": "10 custom domains (in the roadmap)",
-          "7": "Up to 5 users (in the roadmap)",
+          "6": "Up to 3 users included",
+          "7": "3 custom domains (in the roadmap)",
           "8": "More features coming soon!"
         }
       },

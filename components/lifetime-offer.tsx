@@ -9,7 +9,6 @@ import {
   DollarSign,
   Link,
   MousePointerClick,
-  Timer,
   User2,
   WholeWord,
 } from "lucide-react";
@@ -24,10 +23,10 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
       className="relative rounded-3xl max-w-5xl mx-auto bg-[#80CFFF] ring-[8px] ring-[#B3E4FF] shadow-lg text-[#08272E] w-full p-8 md:p-12 flex flex-col gap-4 mt-8 mb-24 items-center"
     >
       <div className="highlight transition duration-300 absolute w-[100%] h-[100%] left-[-3%] top-[-3%] bg-white blur-[1em] opacity-20"></div>
-      <div className="flex items-center gap-2 text-sm font-semibold p-2 bg-[#B3E4FF] text-[#08272E] rounded-xl z-10 mb-6">
+      {/* <div className="flex items-center gap-2 text-sm font-semibold p-2 bg-[#B3E4FF] text-[#08272E] rounded-xl z-10 mb-6">
         <Timer className="w-4 h-4" />
         {t("lifetime_offer.promo_code")}
-      </div>
+      </div> */}
       <div className="flex flex-col md:flex-row items-start gap-4 z-10">
         <div className="w-full md:w-1/2 text-left gap-2 flex flex-col z-10">
           <h2 className="text-2xl md:text-3xl font-bold text-balance mb-4">
@@ -129,13 +128,13 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
             </li>
             <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
               <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                <WholeWord className="w-4 h-4" />
+                <User2 className="w-4 h-4" />
               </div>
               <div className="flex-1">{t("lifetime_offer.features.6")}</div>
             </li>
             <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
               <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                <User2 className="w-4 h-4" />
+                <WholeWord className="w-4 h-4" />
               </div>
               <div className="flex-1">{t("lifetime_offer.features.7")}</div>
             </li>
