@@ -48,13 +48,12 @@ export function WaitlistForm({
       );
       setMessage(t("form.success"));
       setEmail("");
-      window.location.href = `${APP_URL}/register?email=${email}`;
-    } catch {
+    } catch (error) {
+      console.error("Error joining waitlist:", error);
       setMessage(t("form.error"));
-      // Focus the input if an error occurs
-      emailInputRef.current?.focus();
     } finally {
       setIsLoading(false);
+      window.location.href = `${APP_URL}/register?email=${email}`;
     }
   };
 
