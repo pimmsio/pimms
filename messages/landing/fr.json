@@ -8,14 +8,14 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Des liens courts qui boostent vos conversions sur <linkedin>Linkedin</linkedin>",
-        "description": "Stop aux liens classiques qui font perdre des conversions. Vos contenus s'ouvrent dans l'application mobile adaptée et convertissent enfin avec nos liens directs.",
+        "title": "Partagez des deep links pour bien convertir sur <linkedin>Linkedin</linkedin>",
+        "description": "Arrêtez de perdre des prospects. Nos deep links ouvrent les applications mobiles adaptées à vos contenus, boostant l'engagement et votre croissance.",
         "social_media": "les réseaux",
         "works_with": "Pour <symbols>les réseaux sociaux</symbols> et plus"
       },
       "form": {
         "email_placeholder": "Votre adresse email professionnelle",
-        "button": "Démarrer gratuitement",
+        "button": "Démarrer maintenant",
         "button_free": "10 liens offerts",
         "waiting": "Enregistrement en cours...",
         "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application.",
@@ -52,9 +52,9 @@
         "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
         "description": "Arrêtez de perdre des conversions – On vous offre 10 liens directs pour démarrer, tout de suite.",
         "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "PIMMS Dashboard showing a list of direct links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
           "alt2": "PIMMS Dashboard showing analytics of direct links"
         }
       },
@@ -91,13 +91,13 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Des liens courts qui boostent vos abonnés sur <youtube>YouTube</youtube>",
-        "description": "Stop aux liens classiques qui font perdre des abonnés. Vos vidéos s'ouvrent dans l'application officielle YouTube et convertissent enfin avec nos liens directs.",
+        "title": "Boostez votre chaîne <youtube>YouTube</youtube> grâce aux deep links",
+        "description": "Arrêtez de perdre des abonnés. Les deep links ouvrent vos vidéos directement dans l’application officielle YouTube, ce qui booste votre nombre d’abonnés.",
         "social_media": "les réseaux"
       },
       "form": {
         "email_placeholder": "Votre adresse email professionnelle",
-        "button": "Démarrer gratuitement",
+        "button": "Démarrer maintenant",
         "button_free": "10 liens offerts",
         "waiting": "Enregistrement en cours...",
         "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application",
@@ -134,9 +134,9 @@
         "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
         "description": "Arrêtez de perdre des abonnés sur YouTube – On vous offre 10 liens directs pour démarrer.",
         "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "PIMMS Dashboard showing a list of direct links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
           "alt2": "PIMMS Dashboard showing analytics of direct links"
         }
       },

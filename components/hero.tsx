@@ -46,7 +46,7 @@ export const Hero = ({ tkey }: { tkey: string }) => {
               <Image
                 src="/static/youtube.svg"
                 alt="YouTube"
-                className="w-32 md:w-40 inline-block mx-2 mb-2"
+                className="w-36 md:w-44 lg:w-56 inline-block mx-2 mb-2"
                 width={800}
                 height={178}
               />
@@ -55,7 +55,7 @@ export const Hero = ({ tkey }: { tkey: string }) => {
               <Image
                 src="/static/linkedin.svg"
                 alt="Linkedin"
-                className="w-32 md:w-40 lg:w-56 inline-block mx-2 mb-2"
+                className="w-36 md:w-40 lg:w-56 inline-block mx-1 mb-[8px]"
                 width={800}
                 height={195}
               />

@@ -75,7 +75,7 @@ export default function BouncingImages({ tkey }: { tkey: string }) {
       <div
         className={`
           relative border-[6px] border-[#D4F0FE] mr-[-60px] rounded-2xl
-          transition-all duration-300 
+          transition-all duration-300 overflow-hidden
           ${frontImage === 0 ? "z-10" : "z-0"} 
           ${image1Transforms()}
         `}
@@ -85,13 +85,13 @@ export default function BouncingImages({ tkey }: { tkey: string }) {
           alt={t("images.alt1")}
           width={1200}
           height={1303}
-          className="object-cover rounded-2xl"
+          className="object-cover"
         />
       </div>
       <div
         className={`
           relative border-[6px] border-[#F0A8BF] rounded-2xl
-          transition-all duration-300 top-[60px]
+          transition-all duration-300 top-[60px] overflow-hidden
           ${frontImage === 1 ? "z-10" : "z-0"}
           ${image2Transforms()}
         `}
@@ -101,7 +101,7 @@ export default function BouncingImages({ tkey }: { tkey: string }) {
           alt={t("images.alt2")}
           width={1200}
           height={1303}
-          className="object-cover rounded-2xl"
+          className="object-cover"
         />
       </div>
     </div>

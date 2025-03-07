@@ -4,18 +4,18 @@
       "nav": {
         "how_it_works": "How it works",
         "solutions": "Solutions",
-        "dashboard": "Dashboard",
+        "dashboard": "Sign in",
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Deep links that boost your conversions on <linkedin>LinkedIn</linkedin>",
-        "description": "Stop losing conversions with traditional links. Deep links open your contents in the right mobile app, increasing conversion rates by a lot.",
+        "title": "Deep links you need to convert on <linkedin>LinkedIn</linkedin>",
+        "description": "Stop losing leads. Deep links open your prospecting content in the right mobile apps, driving more conversion and growth.",
         "social_media": "social",
         "works_with": "For <symbols>social media</symbols> (and more)"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
-        "button": "Join for free",
+        "button": "Join for free now",
         "button_free": "10 links gifted",
         "waiting": "Securing your spot...",
         "success": "Success! You've been invited to access the application by email.",
@@ -52,9 +52,9 @@
         "title": "Early access to <logo>PIMMS</logo>",
         "description": "Stop losing conversions - start with 3 free deep links today.",
         "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "Advanced link management interface",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
           "alt2": "Performance analytics dashboard"
         }
       },
@@ -87,17 +87,17 @@
       "nav": {
         "how_it_works": "How it works",
         "solutions": "Solutions",
-        "dashboard": "Dashboard",
+        "dashboard": "Sign in",
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Deep links that boost your subs on <youtube>YouTube</youtube>",
-        "description": "Stop losing subscribers with traditional links. Deep links open your videos in the official YouTube app, increasing conversion rates by a lot.",
+        "title": "Deep links you need to grow on <youtube>YouTube</youtube>",
+        "description": "Stop losing subscribers. Deep links open your videos in the official YouTube app, driving more subscribers and growth.",
         "social_media": "social"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
-        "button": "Join for free",
+        "button": "Join for free now",
         "button_free": "10 links gifted",
         "waiting": "Securing your spot...",
         "success": "Success! You've been invited to access the application by email.",
@@ -134,9 +134,9 @@
         "title": "Early access to <logo>PIMMS</logo>",
         "description": "Stop losing subs on YouTube - start with 3 free deep links today.",
         "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp",
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "Advanced link management interface",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
           "alt2": "Performance analytics dashboard"
         }
       },
