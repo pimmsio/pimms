@@ -1,20 +1,17 @@
 {
   "metadata": {
     "home": {
-      "title": "PIMMS | Deep links qui boostent vos conversions sur LinkedIn",
-      "description": "Arrêtez de perdre des prospects. Nos deep links ouvrent les applications mobiles adaptées à vos contenus, boostant l'engagement et votre croissance. Fonctionne pour tous les réseaux sociaux y compris Linkedin, Instagram, Facebook, Twitter, TikTok, etc.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=3",
-      "href": "/"
+      "title": "Les deep links à poster sans compter sur LinkedIn | PIMMS",
+      "description": "Nos deep links sont des liens optimisés pour ouvrir les apps mobiles les plus adaptées à vos contenus. Ils génèrent plus d'engagement et de conversion. Ils sont parfaitement conçus pour améliorer l'expérience utilisateur. Fonctionne pour tous les réseaux sociaux y compris Linkedin, Instagram, Facebook, Twitter, TikTok, etc.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
     },
     "youtube": {
-      "title": "PIMMS | Deep links qui boostent vos abonnés sur YouTube",
+      "title": "Les deep links qui boostent vos abonnés sur YouTube | PIMMS",
       "description": "Arrêtez de perdre des abonnés. Les deep links ouvrent vos vidéos directement dans l’application officielle YouTube, ce qui booste votre nombre d’abonnés. Fonctionne pour tous les réseaux sociaux y compris Linkedin, Instagram, Facebook, Twitter, TikTok, etc.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=3",
-      "href": "/solutions/youtube"
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
     },
     "abuse": {
-      "title": "Signaler un abus",
-      "href": "/signaler-un-abus"
+      "title": "Signaler un abus"
     }
   }
 }

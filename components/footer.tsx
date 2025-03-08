@@ -1,9 +1,13 @@
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Logo from "./logo";
 import Link from "next/link";
+import { getCanonicalLink } from "../lib/utils";
 
 export const Footer = () => {
+  const locale = useLocale();
+
   const t = useTranslations("general");
+
   return (
     <div className="mt-auto">
       <div className="py-10 mt-10 bg-white px-7">
@@ -21,7 +25,7 @@ export const Footer = () => {
             </div>
             <Link
               aria-current="page"
-              href="/"
+              href={getCanonicalLink(locale, "/")}
               className="router-link-active router-link-exact-active"
             >
               <div className="font-medium hover:text-slate-900 -my-1 py-1 hover:underline">
@@ -30,7 +34,7 @@ export const Footer = () => {
             </Link>
             <Link
               aria-current="page"
-              href="/solutions/youtube"
+              href={getCanonicalLink(locale, "/solutions/youtube")}
               className="router-link-active router-link-exact-active"
             >
               <div className="font-medium hover:text-slate-900 -my-1 py-1 hover:underline">

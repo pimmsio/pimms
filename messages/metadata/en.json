@@ -1,20 +1,17 @@
 {
   "metadata": {
     "home": {
-      "title": "PIMMS | Deep links to boost your conversions on LinkedIn",
-      "description": "Stop losing leads with traditional links. Deep links open your prospecting content in the right mobile apps, driving more conversion and growth. Works for LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=3",
-      "href": "/"
+      "title": "Deep links worth sharing on LinkedIn to boost your conversions | PIMMS",
+      "description": "Deep links open your online content in the appropriate mobile apps, driving more conversion and growth. They provide a seamless user experience. Works for LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
     },
     "youtube": {
-      "title": "PIMMS | Deep links to boost your subscribers on YouTube",
+      "title": "Deep links to boost your subscribers on YouTube | PIMMS",
       "description": "Stop losing subscribers with traditional links. Deep links open your videos in the official YouTube app, driving more subscribers and growth. Works for LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=3",
-      "href": "/solutions/youtube"
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
     },
     "abuse": {
-      "title": "Report abuse",
-      "href": "/report-abuse"
+      "title": "Report abuse"
     }
   }
 }

@@ -26,6 +26,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       });
     } else {
       Object.entries(localizedPaths).forEach(([locale, localizedPath]) => {
+        if (localizedPath === "/") {
+          return;
+        }
+
         urls.push({
           url: `https://${domain}${
             locale === "en" ? "" : "/" + locale

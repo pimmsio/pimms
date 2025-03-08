@@ -8,10 +8,10 @@
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Deep links you need to convert on <linkedin>LinkedIn</linkedin>",
-        "description": "Stop losing leads. Deep links open your prospecting content in the right mobile apps, driving more conversion and growth.",
+        "title": "Deep links worth sharing on <linkedin>LinkedIn</linkedin>",
+        "description": "Deep links open your online content in the appropriate mobile apps, driving more conversion and growth. They provide a seamless user experience.",
         "social_media": "social",
-        "works_with": "For <symbols>social media</symbols> (and more)"
+        "works_with": "Perfect for <symbols>social media</symbols>"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
@@ -74,8 +74,9 @@
           "4": "1-year analytics retention",
           "5": "Lifetime access to cloud features and analytics",
           "6": "Up to 3 users included",
-          "7": "3 custom domains (in the roadmap)",
-          "8": "More features coming soon!"
+          "7": "3 custom domains",
+          "8": "Custom UTM and UTM templates",
+          "9": "More features coming soon!"
         }
       },
       "cta": {
@@ -156,8 +157,9 @@
           "4": "1-year analytics retention",
           "5": "Lifetime access to cloud features and analytics",
           "6": "Up to 3 users included",
-          "7": "3 custom domains (in the roadmap)",
-          "8": "More features coming soon!"
+          "7": "3 custom domains",
+          "8": "Custom UTM and UTM templates",
+          "9": "More features coming soon!"
         }
       },
       "cta": {

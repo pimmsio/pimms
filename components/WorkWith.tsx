@@ -41,13 +41,13 @@ export default function WorkWith({ tkey }: { tkey: string }) {
               height={24}
               className="max-w-[24px] max-h-[24px]"
             />
-            <Image
+            {/* <Image
               src="https://cdn.brandfetch.io/id6Zq084G_/theme/dark/idw5tPGo_I.svg?c=1dxbfHSJFAPEGdCLU4o5B"
               alt="WhatsApp"
               width={24}
               height={24}
               className="max-w-[24px] max-h-[24px]"
-            />
+            /> */}
           </div>
         ),
       })}

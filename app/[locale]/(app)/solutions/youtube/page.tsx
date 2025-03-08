@@ -9,7 +9,11 @@ import { LifetimeOffer } from "@/components/lifetime-offer";
 
 const lkey = "youtube";
 export async function generateMetadata({ params }: MetadataProps) {
-  return generateLandingMetadata({ params, lkey });
+  return generateLandingMetadata({
+    params,
+    lkey,
+    pathname: "/solutions/youtube",
+  });
 }
 
 export default function Youtube() {

@@ -4,7 +4,7 @@
       "tagline": "Direct links pim.ms"
     },
     "footer": {
-      "description": "PIMMS is a platform that creates short links to improve your conversions on mobile.",
+      "description": "PIMMS is a platform that creates deep links to improve your conversions on mobile.",
       "nav": {
         "privacy": "Privacy policy",
         "terms": "Terms of service",
@@ -17,7 +17,7 @@
       },
       "solutions": {
         "youtube": "Deep links you need to grow on YouTube",
-        "site": "Deep links you need to convert on LinkedIn"
+        "site": "Deep links you need to share on LinkedIn"
       },
       "copyright": "© 2025 PIMMS"
     }

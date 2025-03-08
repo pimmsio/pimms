@@ -6,7 +6,7 @@ import { use } from "react";
 import { generateLandingMetadata } from "@/lib/utils";
 
 export async function generateMetadata({ params }: MetadataProps) {
-  return generateLandingMetadata({ params, lkey: "home" });
+  return generateLandingMetadata({ params, lkey: "home", pathname: "/" });
 }
 
 type Props = {
