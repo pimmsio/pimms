@@ -31,7 +31,7 @@ export function InviteYoutubeEmail({
             </Section>
 
             <Text className="text-sm font-semibold leading-6 text-neutral-600">
-              Alexandre vous invite à rejoindre la plateforme de liens directs{" "}
+              Alexandre vous invite à rejoindre la plateforme de deeplinks{" "}
               <Link href="https://pimms.io" className="text-black no-underline">
                 pim.ms
               </Link>
@@ -39,7 +39,7 @@ export function InviteYoutubeEmail({
             </Text>
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
-              Accès en avant-première – je vous offre 3 liens directs pour
+              Accès en avant-première – je vous offre 10 deeplinks pour
               démarrer.
             </Text>
 
@@ -58,7 +58,7 @@ export function InviteYoutubeEmail({
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
               Je vais vous faire gagner des abonnés sur votre chaîne YouTube
-              grâce à un concept unique: les liens directs{" "}
+              grâce à un concept unique: les deeplinks{" "}
               <Link href="https://pimms.io" className="text-black no-underline">
                 pim.ms
               </Link>

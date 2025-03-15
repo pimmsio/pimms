@@ -17,8 +17,8 @@ export default function Home() {
       <WaitlistForm tkey={tkey} type="sales" />
       <VideoSlide />
       <Problem tkey={tkey} />
-      <FreeOffer tkey={tkey} />
       <LifetimeOffer tkey={tkey} />
+      <FreeOffer tkey={tkey} />
     </div>
   );
 }

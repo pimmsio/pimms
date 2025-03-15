@@ -17,7 +17,7 @@ export default function Header({ tkey }: { tkey: string }) {
         <nav className="flex-row items-center flex z-10 gap-x-3 md:gap-x-6 overflow-hidden">
           <NavLink id="video" text={t("nav.how_it_works")} />
           <NavLink id="solutions" text={t("nav.solutions")} />
-          <NavLink id="free" text={t("nav.pricing")} />
+          <NavLink id="lifetime" text={t("nav.pricing")} />
           <Link href={`${APP_URL}/login`} target="_blank" rel="noreferrer">
             <Button
               variant="link"

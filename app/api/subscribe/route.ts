@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
     await sendEmail({
       email,
       replyTo: "pimms@docduo.com",
-      subject: "Invitation à rejoindre la plateforme de liens directs",
+      subject: "Invitation à rejoindre la plateforme de deeplinks",
       react:
         type === "youtube"
           ? InviteYoutubeEmailFR({

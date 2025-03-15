@@ -109,8 +109,8 @@ export function WaitlistForm({
                     className="text-sm w-fit hover:scale-105 text-[#08272E] font-semibold px-2"
                     onClick={gotoPro}
                   >
-                    <span className="inline p-2 bg-[#FFD700] rounded-full">
-                      <Crown className="w-4 h-4" />
+                    <span className="inline p-1.5 bg-[#FFD700] rounded-full">
+                      <Crown className="w-3 h-3" />
                     </span>
                     {chunks}
                   </Button>

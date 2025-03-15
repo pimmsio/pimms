@@ -8,49 +8,49 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Deep links à poster sans compter sur <linkedin>Linkedin</linkedin>",
-        "description": "Nos deep links sont des liens optimisés pour ouvrir les apps mobiles les plus adaptées à vos contenus. Ils génèrent plus d'engagement et de conversion. Parfaitement conçus pour améliorer l'expérience utilisateur.",
+        "title": "Convertis plus avec des deeplinks sur <LinkedIn>LinkedIn</LinkedIn>",
+        "description": "Les seuls liens courts qui ouvrent tes contenus directement dans les apps mobiles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi tes conversions.",
         "social_media": "les réseaux",
         "works_with": "Parfait pour <symbols>les réseaux sociaux</symbols>"
       },
       "form": {
-        "email_placeholder": "Votre adresse email professionnelle",
+        "email_placeholder": "Adresse email professionnelle",
         "button": "Démarrer maintenant",
         "button_free": "10 liens offerts",
         "waiting": "Enregistrement en cours...",
-        "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application.",
+        "success": "C’est fait ! Tu viens de recevoir ton invitation par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
-        "pro": "<pro>Ou Offre PRO en achat unique</pro>"
+        "pro": "<pro>Offre Pro illimitée disponible</pro>"
       },
       "problem": {
         "title": "Le Problème",
-        "heading": "Pourquoi vous perdez des conversions",
-        "description": "Chaque fois que vous partagez un lien classique sur LinkedIn qui doit ouvrir dans une application mobile ou le navigateur par défaut, vous perdez des clients potentiels et de l'engagement.",
+        "heading": "Tu perds des conversions",
+        "description": "Chaque fois que tes contenus s’ouvrent dans un navigateur intégré à un réseau social ou une app, tu perds des conversions car l'expérience utilisateur est mauvaise.",
         "more": {
           "title1": "Le cauchemar des navigateurs internes",
-          "description1": "Aucun utilisateur ne souhaite être piégé dans un mini-navigateur intégré dans une application (comme LinkedIn ou Instagram). Vos visiteurs ne le souhaitent pas non plus.",
-          "title2": "Taux d'abandon élevés",
-          "description2": "Les utilisateurs sont frustrés pour de nombreuses raisons, y compris les comptes réseaux déconnectés, les paiements qui fonctionnent mal ou pas, etc. La plupart des personnes abandonnent avant de s'abonner ou d'acheter.",
+          "description1": "Personne ne veut rester bloqué dans un mini-navigateur intégré à LinkedIn, Instagram, Twitch, etc. Tout le monde veut plutôt être redirigé vers les apps officielles.",
+          "title2": "Taux d'abandon élevé",
+          "description2": "Les utilisateurs abandonnent souvent avant d'acheter ou de s'abonner à cause des frictions inutiles (paiement raté, comptes sociaux déconnectés, etc.).",
           "title3": "Mauvaise expérience utilisateur",
-          "description3": "Les liens classiques créent des frictions dans le parcours utilisateur, se qui ternit votre réputation et réduit votre taux de conversion."
+          "description3": "Les liens classiques créent des frustrations inutiles dans le parcours utilisateur qui réduisent tes conversions."
         }
       },
       "solution": {
         "title": "La Solution",
-        "heading": "Partagez des liens directs pim.ms",
-        "description": "<logo>PIMMS</logo> détecte quelle application doit ouvrir votre lien et envoie les utilisateurs directement là-bas, créant une expérience fluide qui augmente les taux de conversion.",
+        "heading": "Partage des deeplinks pim.ms",
+        "description": "<logo>PIMMS</logo> ouvre directement tes contenus dans la bonne application mobile. Résultat, l'expérience est fluide et tes conversions augmentent.",
         "more": {
-          "title1": "Liens courts optimisés sur mobile",
-          "description1": "Détecte automatiquement le smartphone de l'utilisateur et ouvre le lien dans l'application mobile la plus appropriée.",
-          "title2": "Expérience utilisateur fluide",
-          "description2": "Les visiteurs restent engagés car ils utilisent ces applications tous les jours et sont déjà connectés. Et résultat, vous générez beaucoup plus de conversions",
-          "title3": "Suivi détaillé",
-          "description3": "Suivez les parcours utilisateurs et les taux de clics pour optimiser vos campagnes marketing."
+          "title1": "Liens courts 100% optimisés pour les mobiles",
+          "description1": "Détection automatique du smartphone pour ouvrir directement tes contenus dans les apps officielles adaptées.",
+          "title2": "Expérience fluide garantie",
+          "description2": "Tes utilisateurs profitent d'une expérience optimale, ils sont connectés à leur compte  car ils utilisent les applications officielles tous les jours. Et résultat, ça augmente ton taux de conversion.",
+          "title3": "Suivi précis des clics dans le temps",
+          "description3": "Analyse facilement les performances de tes deeplinks depuis un dashboard en temps réel tout au long de l'année."
         }
       },
       "free_offer": {
-        "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
-        "description": "Arrêtez de perdre des conversions – On vous offre 10 liens directs pour démarrer, tout de suite.",
+        "title": "Accès gratuit à <logo>PIMMS</logo>",
+        "description": "Ne perds plus jamais de conversions – on t'offre 10 deeplinks pour commencer dès maintenant.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "PIMMS Dashboard showing a list of direct links",
@@ -59,24 +59,21 @@
         }
       },
       "lifetime_offer": {
-        "title": "<logo>PIMMS</logo> Pro",
-        "price_lifetime": "achat unique",
-        "early_bird": "<price>40</price> remise early bird",
+        "title": "Ne perds plus aucune conversion",
+        "offer_name": "<logo>PIMMS</logo> Pro",
+        "early_bird": "<price>54</price> de réduction",
         "cta": "Acheter maintenant",
-        "pay_once": "Paiement unique",
-        "yours_forever": "Accès à vie",
+        "pay_once": "<check>check</check> Paiement unique <check>check</check> Accès à vie",
         "money_back": "30-jours garantie satisfait ou remboursé",
         "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
         "features": {
-          "1": "Utilisation commerciale et professionnelle",
-          "2": "1000 nouveaux liens par mois (accès à vie)",
-          "3": "50K clics suivis/mo",
-          "4": "1 an de rétention des données de suivi",
-          "5": "Accès à vie aux fonctionnalités cloud et analytics",
-          "6": "Jusqu'à 3 utilisateurs inclus",
-          "7": "3 domaines personnalisés",
-          "8": "UTM personnalisé et templates UTM",
-          "9": "Plus de fonctionnalités à venir !"
+          "1": "Tes conversions sont sécurisées",
+          "2": "Nouveaux deeplinks illimités",
+          "3": "50K clics analysés / mois",
+          "4": "Données de clics sur 1 an",
+          "5": "Travailler en équipe jusqu'à 3",
+          "6": "3 domaines personnalisés",
+          "7": "Templates UTM illimités"
         }
       },
       "cta": {
@@ -92,48 +89,48 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Boostez votre chaîne <youtube>YouTube</youtube> grâce aux deep links",
-        "description": "Arrêtez de perdre des abonnés. Les deep links ouvrent vos vidéos directement dans l’application officielle YouTube, ce qui booste votre nombre d’abonnés.",
+        "title": "Booste ta chaîne <youtube>YouTube</youtube> grâce aux deeplinks",
+        "description": "Les seuls liens courts qui ouvrent directement tes vidéos dans l'app officielle YouTube, augmentant ton nombre d'abonnés. Ils améliorent aussi l'engagement sur tes vidéos et l'expérience utilisateur.",
         "social_media": "les réseaux"
       },
       "form": {
-        "email_placeholder": "Votre adresse email professionnelle",
+        "email_placeholder": "Adresse email professionnelle",
         "button": "Démarrer maintenant",
         "button_free": "10 liens offerts",
         "waiting": "Enregistrement en cours...",
-        "success": "Félicitations ! Vous venez de recevoir une invitation par email pour accéder à l'application",
+        "success": "Bravo ! Ton invitation vient d'être envoyée par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
-        "pro": "<pro>Ou Offre PRO en achat unique</pro>"
+        "pro": "<pro>Offre Pro illimitée disponible</pro>"
       },
       "problem": {
         "title": "Le Problème",
-        "heading": "Pourquoi vous perdez des abonnés",
-        "description": "Chaque fois que vos vidéos ne s'ouvrent pas dans l'application officielle YouTube, vous perdez des nouveaux abonnés.",
+        "heading": "Tu perds des abonnés",
+        "description": "Quand tes vidéos ne s'ouvrent pas dans l’app officielle YouTube, tu perds des abonnés potentiels car l'expérience utilisateur est mauvaise.",
         "more": {
           "title1": "Le cauchemar des navigateurs internes",
-          "description1": "Aucun utilisateur ne souhaite être piégé dans un mini-navigateur intégré dans une application (comme LinkedIn ou Instagram). Vos visiteurs ne le souhaitent pas non plus.",
-          "title2": "Taux d'abandon élevés",
-          "description2": "Les utilisateurs sont frustrés entre autres car ils ne sont pas connectés à YouTube sur ces mini-navigateurs. La plupart des personnes abandonnent avant de s'abonner, de commenter ou de liker.",
+          "description1": "Personne ne veut rester bloqué dans un mini-navigateur intégré à un réseau social (comme LinkedIn, Instagram, Twitch, etc.) pour voir tes vidéos. Tout le monde veut plutôt être redirigé vers l'app officielle YouTube.",
+          "title2": "Frustration des utilisateurs",
+          "description2": "Sans connexion automatique à leur compte YouTube, les utilisateurs quittent ta chaîne sans s'abonner.",
           "title3": "Mauvaise expérience utilisateur",
-          "description3": "Les liens classiques créent des frictions dans le parcours utilisateur, mais surtout pour consulter vos vidéos, ce qui ternit votre réputation et réduit votre taux de conversion."
+          "description3": "Une mauvaise expérience utilisateur réduit drastiquement le nombre d'abonnés et l'engagement sur tes vidéos."
         }
       },
       "solution": {
         "title": "La Solution",
-        "heading": "Partagez des liens directs pim.ms",
-        "description": "<logo>PIMMS</logo> détecte votre système d'exploitation et ouvre votre vidéo dans l'application officielle YouTube téléchargée via le Play Store ou l'App Store.",
+        "heading": "Partage des deeplinks pim.ms",
+        "description": "<logo>PIMMS</logo> ouvre automatiquement tes vidéos dans l’application officielle YouTube, optimisant ton nombre d'abonnés et l'engagement sur tes vidéos.",
         "more": {
-          "title1": "Liens courts optimisés sur mobile",
-          "description1": "Nos liens directs ouvrent automatiquement vos vidéos YouTube dans l'application officielle YouTube.",
+          "title1": "Liens courts optimisés pour les mobiles",
+          "description1": "Ouverture directe de tes vidéos dans l’application officielle YouTube.",
           "title2": "Expérience utilisateur fluide",
-          "description2": "Les viewers s'engagent car ils utilisent cette application officielle YouTube tous les jours et sont déjà connectés. Vous générez beaucoup plus d'abonnés et d'engagement.",
-          "title3": "Suivi détaillé",
-          "description3": "Suivez vos taux de clics facilement avec notre dashboard."
+          "description2": "Tes visiteurs restent connectés, s’abonnent, likent et commentent beaucoup plus depuis l'application officielle YouTube car ils l'utilisent tous les jours.",
+          "title3": "Statistiques avancées",
+          "description3": "Analyse facilement la performance de tes deeplinks depuis un dashboard en temps réel tout au long de l'année."
         }
       },
       "free_offer": {
-        "title": "Accès gratuit à <logo>PIMMS</logo> aujourd'hui",
-        "description": "Arrêtez de perdre des abonnés sur YouTube – On vous offre 10 liens directs pour démarrer.",
+        "title": "Accès gratuit à <logo>PIMMS</logo>",
+        "description": "Dites stop aux abonnés perdus – Profite de 10 deeplinks offerts pour démarrer maintenant.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "PIMMS Dashboard showing a list of direct links",
@@ -142,24 +139,21 @@
         }
       },
       "lifetime_offer": {
-        "title": "<logo>PIMMS</logo> Pro",
-        "price_lifetime": "achat unique",
-        "early_bird": "<price>40</price> remise early bird",
+        "title": "Ne perds plus jamais d’abonnés",
+        "offer_name": "<logo>PIMMS</logo> Pro",
+        "early_bird": "<price>54</price> de réduction",
         "cta": "Acheter maintenant",
-        "pay_once": "Paiement unique",
-        "yours_forever": "Accès à vie",
+        "pay_once": "<check>check</check> Paiement unique <check>check</check> Accès à vie",
         "money_back": "30-jours garantie satisfait ou remboursé",
         "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
         "features": {
-          "1": "Parfait pour les influencers YouTube et le marketing",
-          "2": "1000 nouveaux liens par mois (accès à vie)",
-          "3": "50K clics suivis/mo",
-          "4": "1 an de rétention des données de suivi",
-          "5": "Accès à vie aux fonctionnalités cloud et analytics",
-          "6": "Jusqu'à 3 utilisateurs inclus",
-          "7": "3 domaines personnalisés",
-          "8": "UTM personnalisé et templates UTM",
-          "9": "Plus de fonctionnalités à venir !"
+          "1": "Tes abonnés sont sécurisés",
+          "2": "Nouveaux deeplinks illimités",
+          "3": "Analyse sur 50K clics / mois",
+          "4": "Données de clics sur 1 an",
+          "5": "Travailler en équipe jusqu'à 3",
+          "6": "3 domaines personnalisés",
+          "7": "Templates UTM illimités"
         }
       },
       "cta": {

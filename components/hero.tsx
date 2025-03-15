@@ -8,7 +8,7 @@ import WorkWith from "./WorkWith";
 export const Hero = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(tkey);
   const TEXTS = [
-    "Linkedin",
+    "LinkedIn",
     "Instagram",
     "Facebook",
     "TikTok",
@@ -31,7 +31,7 @@ export const Hero = ({ tkey }: { tkey: string }) => {
       id="waitlist"
     >
       <div className="max-w-sm md:max-w-4xl mx-auto">
-        <h1 className="text-3xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-balance text-[#08272E]">
+        <h1 className="text-4xl lg:text-6xl leading-normal lg:!leading-tight font-extrabold tracking-tight text-balance text-[#08272E]">
           {t.rich("hero.title", {
             swap: () => (
               <TextTransition
@@ -46,16 +46,16 @@ export const Hero = ({ tkey }: { tkey: string }) => {
               <Image
                 src="/static/youtube.svg"
                 alt="YouTube"
-                className="w-36 md:w-44 lg:w-56 inline-block mx-2 mb-2"
+                className="w-40 lg:w-60 inline-block mx-0.5 mb-2"
                 width={800}
                 height={178}
               />
             ),
-            linkedin: () => (
+            LinkedIn: () => (
               <Image
                 src="/static/linkedin.svg"
-                alt="Linkedin"
-                className="w-36 md:w-40 lg:w-56 inline-block mx-1 mb-[8px]"
+                alt="LinkedIn"
+                className="w-40 lg:w-60 inline-block mx-0.5 mb-[8px]"
                 width={800}
                 height={195}
               />

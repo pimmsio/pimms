@@ -4,7 +4,7 @@
       "tagline": "Liens directs pim.ms"
     },
     "footer": {
-      "description": "PIMMS est une plateforme de deep links spécialement conçue pour booster les conversions sur mobile.",
+      "description": "PIMMS est la plateforme de deeplink pour optimiser vos conversions sur mobile.",
       "nav": {
         "privacy": "Politique de confidentialité",
         "terms": "Conditions d'utilisation",
@@ -16,8 +16,8 @@
         "solutions": "Solutions"
       },
       "solutions": {
-        "youtube": "Deep links pour booster les chaines YouTube",
-        "site": "Deep links pour convertir plus sur LinkedIn"
+        "youtube": "Deeplink YouTube pour plus d'abonnés",
+        "site": "Deeplink LinkedIn pour convertir plus"
       },
       "copyright": "© 2025 PIMMS"
     }

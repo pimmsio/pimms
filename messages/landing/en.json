@@ -8,10 +8,10 @@
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Deep links worth sharing on <linkedin>LinkedIn</linkedin>",
-        "description": "Deep links open your online content in the appropriate mobile apps, driving more conversion and growth. They provide a seamless user experience.",
+        "title": "Grow on <LinkedIn>LinkedIn</LinkedIn> with deeplinks",
+        "description": "The only short links that opens your contents in the right mobile apps, driving more conversion and growth. They provide a seamless user experience.",
         "social_media": "social",
-        "works_with": "Perfect for <symbols>social media</symbols>"
+        "works_with": "Best for <symbols>social media</symbols>"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
@@ -20,37 +20,37 @@
         "waiting": "Securing your spot...",
         "success": "Success! You've been invited to access the application by email.",
         "error": "Something went wrong. Please try again.",
-        "pro": "<pro>PRO plan available - one time payment</pro>"
+        "pro": "<pro>Unlimited Pro plan available</pro>"
       },
       "problem": {
         "title": "The Problem",
-        "heading": "Why you're losing conversions",
-        "description": "Every time you share a traditional link on LinkedIn that should open in a mobile app or the native browser, you're losing potential customers and engagement.",
+        "heading": "You're losing conversions",
+        "description": "Every time your links open a mini-browser integrated into a social network or an app, you're losing conversions because the user experience is poor.",
         "more": {
           "title1": "In app browser nightmares",
-          "description1": "No one wants to be trapped in a mini-browser integrated into an app (like LinkedIn or Instagram). Your visitors don't either.",
+          "description1": "No one wants to be trapped in a mini-browser integrated into an app (like LinkedIn, Instagram, Twitch, ...). Your visitors don't either.",
           "title2": "High abandonment rates",
           "description2": "Users are frustrated for many reasons, including social accounts disconnection, payment processors not working, etc. Most people abandon before subscribing or buying.",
           "title3": "Poor user experience",
-          "description3": "Traditional links create friction in the user journey, damaging your brand reputation and reducing engagement rates."
+          "description3": "Traditional links create friction in the user journey, damaging your reputation and reducing engagement rates."
         }
       },
       "solution": {
         "title": "The Solution",
-        "heading": "Share pim.ms deep links today",
+        "heading": "Share pim.ms deeplinks today",
         "description": "<logo>PIMMS</logo> detects which app should open your link and sends users directly there, creating a seamless experience that increases conversion rates.",
         "more": {
           "title1": "Smart short link routing",
-          "description1": "Deep link automatically detect the user's device and opens the link in the most appropriate mobile application.",
+          "description1": "deeplink automatically detects the user's device and opens the link in the most appropriate mobile application.",
           "title2": "Seamless user experience",
           "description2": "Visitors stay engaged since they use those apps daily and are already logged in. As a result, you get much more conversions",
           "title3": "Detailed analytics",
-          "description3": "Track user journeys and click rates to optimize your marketing campaigns."
+          "description3": "Get easily the performance of your deeplinks from a real-time dashboard throughout the year."
         }
       },
       "free_offer": {
-        "title": "Early access to <logo>PIMMS</logo>",
-        "description": "Stop losing conversions - start with 3 free deep links today.",
+        "title": "Free access to <logo>PIMMS</logo>",
+        "description": "Never lose conversions again - start with 10 free deeplinks today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "Advanced link management interface",
@@ -59,24 +59,21 @@
         }
       },
       "lifetime_offer": {
-        "title": "<logo>PIMMS</logo> Pro",
-        "price_lifetime": "one time payment",
-        "early_bird": "<price>40</price> early bird discount",
+        "title": "Stop losing conversions",
+        "offer_name": "<logo>PIMMS</logo> Pro",
+        "early_bird": "<price>54</price> early bird discount",
         "cta": "Upgrade now",
-        "pay_once": "Pay once",
-        "yours_forever": "Yours forever",
+        "pay_once": "<check>check</check> Pay once <check>check</check> Lifetime access",
         "money_back": "30-day money-back guarantee",
         "promo_code": "USE \"LASTCHANCE20\" FOR 20% OFF",
         "features": {
-          "1": "Commercial and corporate use",
-          "2": "1000 new links per month (lifetime access)",
+          "1": "Your conversions are secured",
+          "2": "Unlimited new deeplinks",
           "3": "50K tracked clicks/mo",
           "4": "1-year analytics retention",
-          "5": "Lifetime access to cloud features and analytics",
-          "6": "Up to 3 users included",
-          "7": "3 custom domains",
-          "8": "Custom UTM and UTM templates",
-          "9": "More features coming soon!"
+          "5": "Team collaboration up to 3",
+          "6": "3 custom domains",
+          "7": "Unlimited UTM templates"
         }
       },
       "cta": {
@@ -92,8 +89,8 @@
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Deep links you need to grow on <youtube>YouTube</youtube>",
-        "description": "Stop losing subscribers. Deep links open your videos in the official YouTube app, driving more subscribers and growth.",
+        "title": "Grow on <youtube>YouTube</youtube> with deeplinks",
+        "description": "The only short links that opens your videos in the official YouTube app, driving more subscribers and growth to your channel.",
         "social_media": "social"
       },
       "form": {
@@ -103,37 +100,37 @@
         "waiting": "Securing your spot...",
         "success": "Success! You've been invited to access the application by email.",
         "error": "Something went wrong. Please try again.",
-        "pro": "<pro>PRO plan available - one time payment</pro>"
+        "pro": "<pro>Unlimited Pro plan available</pro>"
       },
       "problem": {
         "title": "The Problem",
-        "heading": "Why you're losing subscribers",
-        "description": "Every time your YouTube links don't open in the official YouTube app, you're losing new subscribers.",
+        "heading": "You're losing subscribers",
+        "description": "Every time your YouTube links don't open in the official YouTube app, you're losing new subscribers because the user experience is poor.",
         "more": {
           "title1": "In app browser nightmares",
-          "description1": "No one wants to be trapped in a mini-browser integrated into an app (like LinkedIn or Instagram). Your visitors don't either.",
+          "description1": "No one wants to be trapped in a mini-browser integrated into a social network or an app (like LinkedIn, Instagram, Twitch, ...). Your visitors don't either.",
           "title2": "High abandonment rates",
-          "description2": "Users are frustrated for many reasons, because they are not connected to YouTube on those mini-browsers. Most people abandon before subscribing, commenting or liking.",
+          "description2": "Without automatic connection to their YouTube account, users leave your channel without subscribing.",
           "title3": "Poor user experience",
           "description3": "Traditional links create friction in the user journey, damaging your online reputation and reducing engagement rates."
         }
       },
       "solution": {
         "title": "The Solution",
-        "heading": "Share pim.ms deep links today",
-        "description": "<logo>PIMMS</logo> detects your operating system and opens your video in the official YouTube app downloaded from the Google Play Store or App Store.",
+        "heading": "Share pim.ms deeplinks",
+        "description": "<logo>PIMMS</logo> opens your videos in the official YouTube app, creating a seamless experience that increases subscribers and engagement.",
         "more": {
-          "title1": "Intelligent link routing",
-          "description1": "Automatically detects the user's device and opens the link the official YouTube app.",
+          "title1": "Smart short link routing",
+          "description1": "deeplink automatically detects the user's device and opens the link in the official YouTube app.",
           "title2": "Seamless user experience",
           "description2": "Viewers highly prefer the official YouTube app that they use daily. As a result, you get much more subscribers and engagement.",
           "title3": "Detailed analytics",
-          "description3": "Track your link click rates easily with detailed analytics."
+          "description3": "Get easily the performance of your deeplinks from a real-time dashboard throughout the year."
         }
       },
       "free_offer": {
-        "title": "Early access to <logo>PIMMS</logo>",
-        "description": "Stop losing subs on YouTube - start with 3 free deep links today.",
+        "title": "Free access to <logo>PIMMS</logo>",
+        "description": "Stop losing subscribers on YouTube - start with 10 free deeplinks today.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "Advanced link management interface",
@@ -142,24 +139,21 @@
         }
       },
       "lifetime_offer": {
-        "title": "<logo>PIMMS</logo> Pro",
-        "price_lifetime": "one time payment",
-        "early_bird": "<price>40</price> early bird discount",
+        "title": "Never lose subscribers again",
+        "offer_name": "<logo>PIMMS</logo> Pro",
+        "early_bird": "<price>54</price> early bird discount",
         "cta": "Upgrade now",
-        "pay_once": "Pay once",
-        "yours_forever": "Yours forever",
+        "pay_once": "<check>check</check> Pay once <check>check</check> Lifetime access",
         "money_back": "30-day money-back guarantee",
         "promo_code": "USE \"LASTCHANCE20\" FOR 20% OFF",
         "features": {
-          "1": "Perfect for YouTube creators and marketers",
-          "2": "1000 new links per month (lifetime access)",
+          "1": "Your subscribers are secured",
+          "2": "Unlimited new deeplinks",
           "3": "50K tracked clicks/mo",
           "4": "1-year analytics retention",
-          "5": "Lifetime access to cloud features and analytics",
-          "6": "Up to 3 users included",
-          "7": "3 custom domains",
-          "8": "Custom UTM and UTM templates",
-          "9": "More features coming soon!"
+          "5": "Team collaboration up to 3",
+          "6": "3 custom domains",
+          "7": "Unlimited UTM templates"
         }
       },
       "cta": {
