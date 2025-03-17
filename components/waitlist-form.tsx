@@ -86,7 +86,7 @@ export function WaitlistForm({
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 disabled={isLoading}
-                className="w-full rounded-t-xl md:rounded-tr-none md:rounded-l-xl px-4 py-[1.04em] md:py-[1.43em] focus:outline-none transition-all placeholder:text-sm placeholder:text-gray-500"
+                className="w-full rounded-t-xl md:rounded-tr-none md:rounded-l-xl px-4 py-[1.04em] md:py-[1.43em] focus:outline-none transition-all placeholder:text-md placeholder:text-gray-500"
               />
             </div>
             <Button
@@ -101,12 +101,12 @@ export function WaitlistForm({
             </Button>
           </form>
           <div className="flex flex-col md:flex-row gap-2 md:gap-8 items-center justify-center">
-            <div className="flex text-sm text-slate-600 font-semibold items-center">
+            <div className="flex font-semibold items-center">
               {t.rich("form.pro", {
                 pro: (chunks) => (
                   <Button
                     variant="link"
-                    className="text-sm w-fit hover:scale-105 text-[#08272E] font-semibold px-2"
+                    className="text-md w-fit hover:scale-105 text-[#08272E] font-semibold px-2"
                     onClick={gotoPro}
                   >
                     <span className="inline p-1.5 bg-[#FFD700] rounded-full">

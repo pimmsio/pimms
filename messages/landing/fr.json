@@ -8,10 +8,17 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Convertis plus avec des deeplinks sur <LinkedIn>LinkedIn</LinkedIn>",
+        "title": "Convertis plus avec des deeplinks",
         "description": "Les seuls liens courts qui ouvrent tes contenus directement dans les apps mobiles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi tes conversions.",
+        "subtitle": "Les deeplinks redirigent tes contenus vers les apps mobiles officielles:",
+        "benefits": {
+          "1": "Sans perte de conversions",
+          "2": "Augmente l'engagement sur tes contenus",
+          "3": "Analyse ton trafic et les clics"
+        },
         "social_media": "les réseaux",
-        "works_with": "Parfait pour <symbols>les réseaux sociaux</symbols>"
+        "works_with": "Fonctionne avec <symbols>les réseaux sociaux</symbols> apps et 20+ autres",
+        "avatars": "Rejoins <counter>100+</counter> utilisateurs <linkedin>LinkedIn</linkedin>"
       },
       "form": {
         "email_placeholder": "Adresse email professionnelle",
@@ -20,32 +27,32 @@
         "waiting": "Enregistrement en cours...",
         "success": "C’est fait ! Tu viens de recevoir ton invitation par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
-        "pro": "<pro>Offre Pro illimitée disponible</pro>"
+        "pro": "<pro>Découvrir l'offre Pro illimitée</pro>"
       },
       "problem": {
         "title": "Le Problème",
-        "heading": "Tu perds des conversions",
-        "description": "Chaque fois que tes contenus s’ouvrent dans un navigateur intégré à un réseau social ou une app, tu perds des conversions car l'expérience utilisateur est mauvaise.",
+        "heading": "Sans <logo>PIMMS</logo>, tu perds des conversions",
+        "description": "Chaque fois que tes contenus s’ouvrent dans un navigateur intégré à une app, tu perds des conversions.",
         "more": {
           "title1": "Le cauchemar des navigateurs internes",
-          "description1": "Personne ne veut rester bloqué dans un mini-navigateur intégré à LinkedIn, Instagram, Twitch, etc. Tout le monde veut plutôt être redirigé vers les apps officielles.",
+          "description1": "Personne ne veut rester bloqué dans un mini-navigateur pour voir tes contenus. Tout le monde veut plutôt être redirigé vers les apps mobiles officielles.",
           "title2": "Taux d'abandon élevé",
-          "description2": "Les utilisateurs abandonnent souvent avant d'acheter ou de s'abonner à cause des frictions inutiles (paiement raté, comptes sociaux déconnectés, etc.).",
+          "description2": "Les utilisateurs abandonnent avant d'acheter ou de s'abonner à cause de frictions inutiles (paiement raté, comptes sociaux déconnectés, etc.).",
           "title3": "Mauvaise expérience utilisateur",
           "description3": "Les liens classiques créent des frustrations inutiles dans le parcours utilisateur qui réduisent tes conversions."
         }
       },
       "solution": {
         "title": "La Solution",
-        "heading": "Partage des deeplinks pim.ms",
-        "description": "<logo>PIMMS</logo> ouvre directement tes contenus dans la bonne application mobile. Résultat, l'expérience est fluide et tes conversions augmentent.",
+        "heading": "Partage des deeplinks pour convertir",
+        "description": "<logo>PIMMS</logo> ouvre directement tes contenus dans les apps mobiles officielles. L'expérience est fluide et tes conversions augmentent.",
         "more": {
-          "title1": "Liens courts 100% optimisés pour les mobiles",
-          "description1": "Détection automatique du smartphone pour ouvrir directement tes contenus dans les apps officielles adaptées.",
-          "title2": "Expérience fluide garantie",
-          "description2": "Tes utilisateurs profitent d'une expérience optimale, ils sont connectés à leur compte  car ils utilisent les applications officielles tous les jours. Et résultat, ça augmente ton taux de conversion.",
+          "title1": "Détection automatique du smartphone",
+          "description1": "Tes contenus s'affichent directement dans les apps officielles utilisées tous les jours par tes utilisateurs.",
+          "title2": "Expérience fluide sans perte d'utilisateurs",
+          "description2": "L'expérience augmente tes conversions et booste l'engagement et le temps passé sur tes contenus.",
           "title3": "Suivi précis des clics dans le temps",
-          "description3": "Analyse facilement les performances de tes deeplinks depuis un dashboard en temps réel tout au long de l'année."
+          "description3": "En temps réel et tout au long de l'année, tu peux suivre en détail les clics et les conversions sur tes contenus."
         }
       },
       "free_offer": {
@@ -59,12 +66,12 @@
         }
       },
       "lifetime_offer": {
-        "title": "Ne perds plus aucune conversion",
+        "title": "Gagne des tonnes de conversions, sans limites",
         "offer_name": "<logo>PIMMS</logo> Pro",
         "early_bird": "<price>54</price> de réduction",
         "cta": "Acheter maintenant",
         "pay_once": "<check>check</check> Paiement unique <check>check</check> Accès à vie",
-        "money_back": "30-jours garantie satisfait ou remboursé",
+        "money_back": "30 jours - garantie satisfait ou remboursé",
         "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
         "features": {
           "1": "Tes conversions sont sécurisées",
@@ -91,7 +98,14 @@
       "hero": {
         "title": "Booste ta chaîne <youtube>YouTube</youtube> grâce aux deeplinks",
         "description": "Les seuls liens courts qui ouvrent directement tes vidéos dans l'app officielle YouTube, augmentant ton nombre d'abonnés. Ils améliorent aussi l'engagement sur tes vidéos et l'expérience utilisateur.",
-        "social_media": "les réseaux"
+        "subtitle": "Les deeplinks ouvrent tes vidéos directement dans l'app officielle YouTube:",
+        "benefits": {
+          "1": "Augmente ton nombre d'abonnés",
+          "2": "Augmente l'engagement sur tes vidéos",
+          "3": "Analyse ton trafic et les clics"
+        },
+        "social_media": "les réseaux",
+        "avatars": "Rejoins <counter>100+</counter> utilisateurs"
       },
       "form": {
         "email_placeholder": "Adresse email professionnelle",
@@ -105,7 +119,7 @@
       "problem": {
         "title": "Le Problème",
         "heading": "Tu perds des abonnés",
-        "description": "Quand tes vidéos ne s'ouvrent pas dans l’app officielle YouTube, tu perds des abonnés potentiels car l'expérience utilisateur est mauvaise.",
+        "description": "Quand tes vidéos ne s'ouvrent pas dans l’app officielle YouTube, tu perds des abonnés potentiels, car l'expérience utilisateur est mauvaise.",
         "more": {
           "title1": "Le cauchemar des navigateurs internes",
           "description1": "Personne ne veut rester bloqué dans un mini-navigateur intégré à un réseau social (comme LinkedIn, Instagram, Twitch, etc.) pour voir tes vidéos. Tout le monde veut plutôt être redirigé vers l'app officielle YouTube.",
@@ -117,7 +131,7 @@
       },
       "solution": {
         "title": "La Solution",
-        "heading": "Partage des deeplinks pim.ms",
+        "heading": "Partage des deeplinks",
         "description": "<logo>PIMMS</logo> ouvre automatiquement tes vidéos dans l’application officielle YouTube, optimisant ton nombre d'abonnés et l'engagement sur tes vidéos.",
         "more": {
           "title1": "Liens courts optimisés pour les mobiles",
@@ -130,7 +144,7 @@
       },
       "free_offer": {
         "title": "Accès gratuit à <logo>PIMMS</logo>",
-        "description": "Dites stop aux abonnés perdus – Profite de 10 deeplinks offerts pour démarrer maintenant.",
+        "description": "Dis stop aux abonnés perdus – Profite de 10 deeplinks offerts pour démarrer.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "PIMMS Dashboard showing a list of direct links",
@@ -139,12 +153,12 @@
         }
       },
       "lifetime_offer": {
-        "title": "Ne perds plus jamais d’abonnés",
+        "title": "Gagne des tonnes d'abonnés, sans limites",
         "offer_name": "<logo>PIMMS</logo> Pro",
         "early_bird": "<price>54</price> de réduction",
         "cta": "Acheter maintenant",
         "pay_once": "<check>check</check> Paiement unique <check>check</check> Accès à vie",
-        "money_back": "30-jours garantie satisfait ou remboursé",
+        "money_back": "30 jours - garantie satisfait ou remboursé",
         "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
         "features": {
           "1": "Tes abonnés sont sécurisés",

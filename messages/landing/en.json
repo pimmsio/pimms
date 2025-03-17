@@ -8,10 +8,17 @@
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Grow on <LinkedIn>LinkedIn</LinkedIn> with deeplinks",
+        "title": "Grow with deeplinks",
         "description": "The only short links that opens your contents in the right mobile apps, driving more conversion and growth. They provide a seamless user experience.",
+        "subtitle": "Deeplinks redirect your contents to the official mobile apps instantly:",
+        "benefits": {
+          "1": "No conversion loss",
+          "2": "Increase content engagement",
+          "3": "Analyze your traffic and clicks"
+        },
         "social_media": "social",
-        "works_with": "Best for <symbols>social media</symbols>"
+        "works_with": "Best for <symbols>social media</symbols> apps and 20+ more",
+        "avatars": "Join <counter>100+</counter> creators <linkedin>LinkedIn</linkedin>"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
@@ -25,10 +32,10 @@
       "problem": {
         "title": "The Problem",
         "heading": "You're losing conversions",
-        "description": "Every time your links open a mini-browser integrated into a social network or an app, you're losing conversions because the user experience is poor.",
+        "description": "Every time your links open a mini-browser integrated into an app, you're losing conversions.",
         "more": {
           "title1": "In app browser nightmares",
-          "description1": "No one wants to be trapped in a mini-browser integrated into an app (like LinkedIn, Instagram, Twitch, ...). Your visitors don't either.",
+          "description1": "No one wants to be trapped in a mini-browser to interact with your contents. Your visitors don't either.",
           "title2": "High abandonment rates",
           "description2": "Users are frustrated for many reasons, including social accounts disconnection, payment processors not working, etc. Most people abandon before subscribing or buying.",
           "title3": "Poor user experience",
@@ -37,15 +44,15 @@
       },
       "solution": {
         "title": "The Solution",
-        "heading": "Share pim.ms deeplinks today",
-        "description": "<logo>PIMMS</logo> detects which app should open your link and sends users directly there, creating a seamless experience that increases conversion rates.",
+        "heading": "Share deeplinks to convert",
+        "description": "<logo>PIMMS</logo> opens your contents in the official mobile apps used by your users daily.",
         "more": {
           "title1": "Smart short link routing",
           "description1": "deeplink automatically detects the user's device and opens the link in the most appropriate mobile application.",
-          "title2": "Seamless user experience",
-          "description2": "Visitors stay engaged since they use those apps daily and are already logged in. As a result, you get much more conversions",
-          "title3": "Detailed analytics",
-          "description3": "Get easily the performance of your deeplinks from a real-time dashboard throughout the year."
+          "title2": "Seamless user experience without losing users",
+          "description2": "Visitors stay engaged and as a result, you get much more conversions, engagement and time spent on your contents.",
+          "title3": "Detailed analytics over time",
+          "description3": "In real-time and throughout the year, you can easily track the performance and the clicks on your deeplinks."
         }
       },
       "free_offer": {
@@ -59,7 +66,7 @@
         }
       },
       "lifetime_offer": {
-        "title": "Stop losing conversions",
+        "title": "Secure your conversions, without limits",
         "offer_name": "<logo>PIMMS</logo> Pro",
         "early_bird": "<price>54</price> early bird discount",
         "cta": "Upgrade now",
@@ -91,7 +98,14 @@
       "hero": {
         "title": "Grow on <youtube>YouTube</youtube> with deeplinks",
         "description": "The only short links that opens your videos in the official YouTube app, driving more subscribers and growth to your channel.",
-        "social_media": "social"
+        "subtitle": "Deeplinks open your videos directly in the official YouTube app:",
+        "benefits": {
+          "1": "Increase your subscribers",
+          "2": "Increase video engagement",
+          "3": "Analyze your traffic and clicks"
+        },
+        "social_media": "social",
+        "avatars": "Join <counter>100+</counter> creators"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
@@ -117,7 +131,7 @@
       },
       "solution": {
         "title": "The Solution",
-        "heading": "Share pim.ms deeplinks",
+        "heading": "Share deeplinks to grow",
         "description": "<logo>PIMMS</logo> opens your videos in the official YouTube app, creating a seamless experience that increases subscribers and engagement.",
         "more": {
           "title1": "Smart short link routing",
@@ -139,7 +153,7 @@
         }
       },
       "lifetime_offer": {
-        "title": "Never lose subscribers again",
+        "title": "Grow your subscribers, without limits",
         "offer_name": "<logo>PIMMS</logo> Pro",
         "early_bird": "<price>54</price> early bird discount",
         "cta": "Upgrade now",

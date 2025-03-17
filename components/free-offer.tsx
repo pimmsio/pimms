@@ -26,7 +26,7 @@ export const FreeOffer = ({ tkey }: { tkey: string }) => {
             ),
           })}
         </h2>
-        <p className="text-lg md:text-xl leading-relaxed text-balance">
+        <p className="text-md md:text-lg leading-relaxed text-balance text-[#5C5B61]">
           {t("free_offer.description")}
         </p>
         <div className="flex mt-8 mb-6 justify-center md:justify-start">

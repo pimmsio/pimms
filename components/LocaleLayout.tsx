@@ -1,18 +1,12 @@
-import { Geist, Geist_Mono } from "next/font/google";
 import Head from "next/head";
 import { GoogleTagManager } from "@next/third-parties/google";
 import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Inter } from "next/font/google";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 type Props = {
   children: React.ReactNode;
@@ -27,12 +21,12 @@ export default async function BaseLayout({ children, locale }: Props) {
       <Head>
         <meta name="apple-mobile-web-app-title" content="Pimms" />
       </Head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overscroll-none`}
-      >
+      <body className={`${inter.className} antialiased overscroll-none`}>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
       <GoogleTagManager
         gtmId={process.env.NEXT_PUBLIC_GTM_CONTAINER_ID as string}

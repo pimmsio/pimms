@@ -28,7 +28,7 @@ export const Footer = () => {
               href={getCanonicalLink(locale, "/")}
               className="router-link-active router-link-exact-active"
             >
-              <div className="font-medium hover:text-slate-900 -my-1 py-1 hover:underline">
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
                 {t("footer.solutions.site")}
               </div>
             </Link>
@@ -37,7 +37,7 @@ export const Footer = () => {
               href={getCanonicalLink(locale, "/solutions/youtube")}
               className="router-link-active router-link-exact-active"
             >
-              <div className="font-medium hover:text-slate-900 -my-1 py-1 hover:underline">
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
                 {t("footer.solutions.youtube")}
               </div>
             </Link>
@@ -45,17 +45,17 @@ export const Footer = () => {
           {/* <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
             <div className="font-semibold text-gray-900">Legal</div>
             <Link href="/terms-of-service" className="">
-              <div className="font-medium hover:text-slate-900 -my-1 py-1 hover:underline">
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
                 Terms of Service
               </div>
             </Link>
             <Link href="/refunds" className="">
-              <div className="font-medium hover:text-slate-900 -my-1 py-1 hover:underline">
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
                 Refund Policy
               </div>
             </Link>
             <Link href="/privacy-policy" className="">
-              <div className="font-medium hover:text-slate-900 -my-1 py-1 hover:underline">
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
                 Privacy Policy
               </div>
             </Link>
@@ -65,7 +65,7 @@ export const Footer = () => {
               {t("footer.category.help")}
             </div>
             <Link href="mailto:alexandre@pimms.io" rel="noopener noreferrer">
-              <div className="font-medium hover:text-slate-900 -my-1 py-1 hover:underline">
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
                 alexandre@pimms.io
               </div>
             </Link>

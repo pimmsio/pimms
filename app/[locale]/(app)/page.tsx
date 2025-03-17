@@ -5,6 +5,7 @@ import { Hero } from "@/components/hero";
 import { Problem } from "@/components/problem";
 import { FreeOffer } from "@/components/free-offer";
 import { LifetimeOffer } from "@/components/lifetime-offer";
+import WorkWith from "@/components/WorkWith";
 
 const lkey = "home";
 const tkey = `landing.${lkey}`;
@@ -17,6 +18,7 @@ export default function Home() {
       <WaitlistForm tkey={tkey} type="sales" />
       <VideoSlide />
       <Problem tkey={tkey} />
+      <WorkWith tkey={tkey} />
       <LifetimeOffer tkey={tkey} />
       <FreeOffer tkey={tkey} />
     </div>

@@ -32,7 +32,7 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
         {t("lifetime_offer.promo_code")}
       </div> */}
         <div className="flex flex-col md:flex-row items-start gap-2 md:gap-24 z-10">
-          <div className="w-full md:w-1/2 text-left gap-2 flex flex-col z-10">
+          <div className="w-full md:w-1/2 text-left gap-2 flex flex-col items-center md:items-start z-10">
             <div className="text-2xl md:text-3xl font-bold text-balance mb-4">
               {t.rich("lifetime_offer.offer_name", {
                 logo: () => (
@@ -53,7 +53,7 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
               <div className="mr-0.5 text-5xl">45</div>
               <div className="text-md mt-0.5">€</div>
             </div>
-            <div className="w-fit rounded-md inline-block text-xs bg-gray-100 text-slate-900 font-bold uppercase tracking-wide p-0.5 px-1.5 shadow mb-1">
+            <div className="w-fit rounded-md inline-block text-xs bg-[#80CFFF] text-[#08272E] font-semibold uppercase tracking-wide p-0.5 px-1.5 mb-1">
               {t.rich("lifetime_offer.early_bird", {
                 price: () => <span className="text-sm">€54</span>,
               })}
@@ -74,7 +74,7 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
                 {t("lifetime_offer.cta")}
               </Button>
               <ul className="list-none font-medium flex flex-wrap gap-2 md:justify-center">
-                <li className="text-md flex-row flex gap-1 items-center">
+                <li className="text-md flex-row flex gap-1 items-center font-semibold">
                   {t.rich("lifetime_offer.pay_once", {
                     check: () => (
                       <div className="p-1 bg-[#80CFFF] text-[#08272E] w-fit h-fit rounded-full">
