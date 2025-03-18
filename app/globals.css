@@ -1,48 +1,54 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer base {
-  :root {
-    /* 🎨 Couleurs principales (Extraites de ton design) */
-    --background: 199 90% 96%; /* Gris clair comme Ruben */
-    --foreground: 220 20% 15%; /* Presque noir */
-    --card: 0 0% 100%; /* Blanc */
-    --card-foreground: 220 20% 15%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
-
-    /* 🔥 Couleurs de la brand */
-    --primary: 341 71% 52%; /* Rose vif #DC2E65 */
-    --primary-foreground: 0 0% 100%; /* Texte blanc */
-    --secondary: 0 0% 96.1%;
-    --secondary-foreground: 0 0% 9%;
-    --border: 220 10% 90%; /* Bordures gris clair */
-    --ring: 336 72% 67%; /* Anneaux roses */
-  }
+@theme {
+  --color-background: hsl(199 90% 96%);
+  --color-foreground: hsl(220 20% 15%);
+  --color-card: hsl(0 0% 100%);
+  --color-card-foreground: hsl(220 20% 15%);
+  --color-popover: hsl(0 0% 100%);
+  --color-popover-foreground: hsl(220 20% 15%);
+  --color-primary: hsl(341 71% 52%);
+  --color-primary-foreground: hsl(0 0% 100%);
+  --color-secondary: hsl(0 0% 96.1%);
+  --color-secondary-foreground: hsl(0 0% 9%);
+  --color-muted: hsl(0 0% 96.1%);
+  --color-muted-foreground: hsl(0 0% 9%);
+  --color-accent: hsl(0 0% 96.1%);
+  --color-accent-foreground: hsl(0 0% 9%);
+  --color-destructive: hsl(0 84.2% 60.2%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-border: hsl(220 10% 90%);
+  --color-input: hsl(220 10% 90%);
+  --color-ring: hsl(336 72% 67%);
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+input {
+  background-color: hsl(0, 0%, 100%);
+}
+
+body {
+  background-color: hsl(199, 90%, 96%);
+  color: hsl(220, 20%, 15%);
 }
 
 .bg-pattern {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiPjxkZWZzPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iYSIgd2lkdGg9IjM2IiBoZWlnaHQ9IjM2IiB2aWV3Qm94PSIwIDAgMzYgMzYiPjxjaXJjbGUgY3g9IjE4IiBjeT0iMTgiIHI9IjE4IiBmaWxsPSIjZmZmIi8+PC9zdmc+PC9kZWZzPjxnIGRhdGEtbmFtZT0i4pqqIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxOTkuOTkyIDI5OS45OTIpc2NhbGUoNS41NTYpIj48cGF0aCBmaWxsPSJ0cmFuc3BhcmVudCIgZD0iTTAgMGgzNnYzNkgweiIvPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTk5Ljk5MiAtLjAwOClzY2FsZSg1LjU1NikiPjxwYXRoIGZpbGw9InRyYW5zcGFyZW50IiBkPSJNMCAwaDM2djM2SDB6Ii8+PHVzZSB4bGluazpocmVmPSIjYSIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtLjAwOCAyOTkuOTkyKXNjYWxlKDUuNTU2KSI+PHBhdGggZmlsbD0idHJhbnNwYXJlbnQiIGQ9Ik0wIDBoMzZ2MzZIMHoiLz48dXNlIHhsaW5rOmhyZWY9IiNhIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0uMDA4IC0uMDA4KXNjYWxlKDUuNTU2KSI+PHBhdGggZmlsbD0idHJhbnNwYXJlbnQiIGQ9Ik0wIDBoMzZ2MzZIMHoiLz48dXNlIHhsaW5rOmhyZWY9IiNhIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDAuMDA4IDI5OS45OTIpc2NhbGUoNS41NTYpIj48cGF0aCBmaWxsPSJ0cmFuc3BhcmVudCIgZD0iTTAgMGgzNnYzNkgweiIvPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwMC4wMDggLS4wMDgpc2NhbGUoNS41NTYpIj48cGF0aCBmaWxsPSJ0cmFuc3BhcmVudCIgZD0iTTAgMGgzNnYzNkgweiIvPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L2c+PC9nPjwvc3ZnPg==);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDIwMCAzMDAiPjxkZWZzPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiBpZD0iYSIgd2lkdGg9IjM2IiBoZWlnaHQ9IjM2IiB2aWV3Qm94PSIwIDAgMzYgMzYiPjxjaXJjbGUgY3g9IjE4IiBjeT0iMTgiIHI9IjE4IiBmaWxsPSIjZmZmIi8+PC9zdmc+PC9kZWZzPjxnIGRhdGEtbmFtZT0i4pqqIj48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxOTkuOTkyIDI5OS45OTIpc2NhbGUoNS41NTYpIj48cGF0aCBmaWxsPSJ0cmFuc3BhcmVudCIgZD0iTTAgMGgzNnYzNkgweiIvPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTk5Ljk5MiAtLjAwOClzY2FsZSg1LjU1NikiPjxwYXRoIGZpbGw9InRyYW5zcGFyZW50IiBkPSJNMCAwaDM2djM2SDB6Ii8+PHVzZSB4bGluazpocmVmPSIjYSIvPjwvZz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgtLjAwOCAyOTkuOTkyKXNjYWxlKDUuNTU2KSI+PHBhdGggZmlsbD0idHJhbnNwYXJlbnQiIGQ9Ik0wIDBoMzZ2MzZIMHoiLz48dXNlIHhsaW5rOmhyZWY9IiNhIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0uMDA4IC0uMDA4KXNjYWxlKDUuNTU2KSI+PHBhdGggZmlsbD0idHJhbnNwYXJlbnQiIGQ9Ik0wIDBoMzZ2MzZIMHoiLz48dXNlIHhsaW5rOmhyZWY9IiNhIi8+PC9nPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKC0yMDAuMDA4IDI5OS45OTIpc2NhbGUoNS41NTYpIj48cGF0aCBmaWxsPSJ0cmFuc3BhcmVudCIgZD0iTTAgMGgzNnYzNkgweiIvPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L2c+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoLTIwMC4wMDggLS4wMDgpc2NhbGUoNS41NTYpIj48cGF0aCBmaWxsPSJ0cmFuc3BhcmVudCIgZD0iTTAgMGgzNnYzNkgweiIvPjx1c2UgeGxpbms6aHJlZj0iI2EiLz48L2c+PC9nPjwvc3ZnPg==");
   background-position: 50% -12rem;
   background-repeat: repeat-y;
   background-size: 84rem auto;
-  background-color: hsl(var(--background));
+  background-color: hsl(199, 90%, 96%);
 }
 
 .diag-strikethrough {
-  background: linear-gradient(to bottom left, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
+  background: linear-gradient(
+    to bottom left,
+    transparent 47.75%,
+    currentColor 49.5%,
+    currentColor 50.5%,
+    transparent 52.25%
+  );
 }

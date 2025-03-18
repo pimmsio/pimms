@@ -13,7 +13,7 @@ export const Problem = ({ tkey }: { tkey: string }) => {
     <>
       <section
         id="solutions"
-        className="bg-card shadow-sm w-full py-6 px-1 flex flex-col items-start mx-auto max-w-5xl gap-4 mt-8 rounded-3xl"
+        className="bg-card w-full py-6 px-1 flex flex-col items-start mx-auto max-w-5xl gap-4 mt-8 rounded-3xl"
       >
         <div className="flex flex-col w-full px-4 md:px-8 md:py-4">
           <span className="bg-[#FFEAF1] text-[#E0004B] text-md font-semibold me-2 px-2.5 py-0.5 w-fit rounded-full">

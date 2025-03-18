@@ -23,7 +23,9 @@ export const getCanonicalLink = (locale: string, pathname: string) => {
 };
 
 const getFullLink = (path: string) => {
-  return `${WEB_URL}${path}`.replace(/\/$/, "");
+  return path === "/"
+    ? `${WEB_URL}${path}`
+    : `${WEB_URL}${path}`.replace(/\/$/, "");
 };
 
 export async function generateLandingMetadata({
