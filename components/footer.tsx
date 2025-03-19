@@ -42,24 +42,35 @@ export const Footer = () => {
               </div>
             </Link>
           </nav>
-          {/* <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
+          <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
             <div className="font-semibold text-gray-900">Legal</div>
-            <Link href="/terms-of-service" className="">
+            <Link href={getCanonicalLink(locale, "/legal/terms")} className="">
               <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
-                Terms of Service
+                {t("footer.nav.terms")}
               </div>
             </Link>
-            <Link href="/refunds" className="">
+            <Link
+              href={getCanonicalLink(locale, "/legal/imprint")}
+              className=""
+            >
               <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
-                Refund Policy
+                {t("footer.nav.imprint")}
               </div>
             </Link>
-            <Link href="/privacy-policy" className="">
+            <Link
+              href={getCanonicalLink(locale, "/legal/privacy")}
+              className=""
+            >
               <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
-                Privacy Policy
+                {t("footer.nav.privacy")}
               </div>
             </Link>
-          </nav> */}
+            <Link href={getCanonicalLink(locale, "/legal/abuse")} className="">
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+                {t("footer.nav.report")}
+              </div>
+            </Link>
+          </nav>
           <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
             <div className="font-semibold text-gray-900">
               {t("footer.category.help")}

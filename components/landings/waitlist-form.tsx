@@ -2,9 +2,9 @@
 
 import React, { useState, useRef } from "react";
 import { useLocale, useTranslations } from "next-intl";
-import { trackEvent } from "../lib/tracking";
-import { Button } from "./ui/button";
-import { APP_URL } from "../app/constants";
+import { trackEvent } from "../../lib/tracking";
+import { Button } from "../ui/button";
+import { APP_URL } from "../../app/constants";
 import { Crown } from "lucide-react";
 
 export function WaitlistForm({

@@ -9,10 +9,22 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/solutions/deep-links-youtube-channel",
     fr: "/solutions/deep-links-chaine-youtube",
   },
-  // "/abuse": {
-  //   en: "/report-abuse",
-  //   fr: "/signaler-un-abus",
-  // },
+  "/legal/terms": {
+    en: "/legal/terms",
+    fr: "/legal/conditions-dutilisation",
+  },
+  "/legal/privacy": {
+    en: "/legal/privacy",
+    fr: "/legal/politique-de-confidentialite",
+  },
+  "/legal/imprint": {
+    en: "/legal/imprint",
+    fr: "/legal/mentions-legales",
+  },
+  "/legal/abuse": {
+    en: "/legal/report-abuse",
+    fr: "/legal/signaler-un-abus",
+  },
 };
 
 export type AppPathnames = keyof typeof pathnames;

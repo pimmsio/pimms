@@ -1,11 +1,11 @@
 "use client";
 import Logo from "@/components/logo";
-import CtaLink from "./cta/CtaLink";
+import CtaLink from "../cta/CtaLink";
 import NavLink from "./NavLink";
 import { useTranslations } from "next-intl";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 import Link from "next/link";
-import { APP_URL } from "../app/constants";
+import { APP_URL } from "../../app/constants";
 
 export default function Header({ tkey }: { tkey: string }) {
   const t = useTranslations(tkey);

@@ -1,3 +1,3 @@
 type MetadataProps = {
-  params: Promise<{ locale: "en" | "fr" }>;
+  params: Promise<{ locale: "en" | "fr"; slug: string }>;
 };

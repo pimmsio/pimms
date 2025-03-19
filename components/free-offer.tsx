@@ -1,6 +1,6 @@
 "use client";
 import CtaButton from "@/components/cta/CtaButton";
-import BouncingImages from "@/components/BouncingImages";
+import BouncingImages from "@/components/landings/BouncingImages";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 

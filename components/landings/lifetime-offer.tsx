@@ -12,7 +12,7 @@ import {
   User2,
   WholeWord,
 } from "lucide-react";
-import { Button } from "./ui/button";
+import { Button } from "../ui/button";
 
 export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(tkey);

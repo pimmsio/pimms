@@ -1,11 +1,11 @@
-import { WaitlistForm } from "@/components/waitlist-form";
-import VideoSlide from "@/components/VideoSlide";
-import Header from "@/components/header";
-import { Hero } from "@/components/hero";
-import { Problem } from "@/components/problem";
+import { WaitlistForm } from "@/components/landings/waitlist-form";
+import VideoSlide from "@/components/landings/VideoSlide";
+import Header from "@/components/landings/header";
+import { Hero } from "@/components/landings/hero";
+import { Problem } from "@/components/landings/problem";
 import { FreeOffer } from "@/components/free-offer";
-import { LifetimeOffer } from "@/components/lifetime-offer";
-import WorkWith from "@/components/WorkWith";
+import { LifetimeOffer } from "@/components/landings/lifetime-offer";
+import WorkWith from "@/components/landings/WorkWith";
 
 const lkey = "home";
 const tkey = `landing.${lkey}`;

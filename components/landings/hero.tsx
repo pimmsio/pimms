@@ -26,7 +26,7 @@ export const Hero = ({ tkey }: { tkey: string }) => {
   }, []);
 
   return (
-    <section className="w-full mt-4 mb-12 md:my-16 px-1 md:px-6" id="waitlist">
+    <section className="w-full mt-4 mb-12 md:my-16 px-1 md:px-6" id="hero">
       <div className="max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl !leading-normal lg:!leading-tight font-extrabold !tracking-tighter text-balance text-[#08272E]">
           {t.rich("hero.title", {
