@@ -13,11 +13,15 @@
       },
       "category": {
         "help": "Aide",
-        "solutions": "Solutions"
+        "solutions": "Solutions",
+        "resources": "Ressources"
       },
       "solutions": {
         "youtube": "Deeplink YouTube pour plus d'abonnés",
         "site": "Deeplink LinkedIn pour convertir plus"
+      },
+      "resources": {
+        "blog": "Blog"
       },
       "copyright": "© 2025 PIMMS"
     }

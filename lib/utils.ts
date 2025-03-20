@@ -1,6 +1,6 @@
 import { clsx, type ClassValue } from "clsx";
 import { Metadata } from "next";
-import { Metadata as PagesMetadata } from "@/lib/mdx";
+import { PageMetadata } from "@/lib/mdx";
 import { twMerge } from "tailwind-merge";
 import { THUMBNAIL, WEB_URL } from "@/app/constants";
 import { getTranslations } from "next-intl/server";
@@ -62,7 +62,7 @@ export async function generatePagesMetadata({
 }: MetadataProps & {
   dir: string;
   slug: string;
-  metadata: PagesMetadata;
+  metadata: PageMetadata;
 }) {
   const locale = (await params).locale;
 
@@ -75,17 +75,17 @@ export async function generatePagesMetadata({
     publishedAt,
     image: metadataImage,
     title,
-    description,
+    summary,
   } = metadata;
   const image = metadataImage
     ? metadataImage
     : `${WEB_URL}/api/og?title=${encodeURIComponent(
         title
-      )}&description=${encodeURIComponent(description)}`;
+      )}&description=${encodeURIComponent(summary)}`;
 
   return constructMetadata({
     title,
-    description,
+    description: summary,
     image,
     alternates: {
       canonical: getFullLink(canonical),

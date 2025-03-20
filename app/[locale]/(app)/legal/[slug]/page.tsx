@@ -7,6 +7,10 @@ import { locales } from "@/i18n/config";
 import { useLocale } from "next-intl";
 import { generatePagesMetadata } from "@/lib/utils";
 import { TallyIframe } from "@/components/mdx/TallyIframe";
+import { H1 } from "@/components/base/h1";
+import { HeroSection } from "@/components/base/hero-section";
+import { Section } from "@/components/base/section";
+import { Paragraph } from "@/components/base/paragraph";
 
 export async function generateStaticParams() {
   const allParams = [];
@@ -59,15 +63,11 @@ export default function LegalPage({ params }: Props) {
 
   return (
     <>
-      <section className="w-full mt-4 mb-12 md:my-16 px-1 md:px-6">
-        <div className="max-w-sm sm:max-w-xl md:max-w-3xl lg:max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl !leading-normal lg:!leading-tight font-extrabold !tracking-tighter text-balance text-[#08272E]">
-            {post.metadata.title}
-          </h1>
-        </div>
-      </section>
+      <HeroSection>
+        <H1>{post.metadata.title}</H1>
+      </HeroSection>
 
-      <section className="w-full mt-4 mb-12 md:my-16 px-1 md:px-6">
+      <Section id="content">
         <article className="bg-card w-full py-6 px-1 flex flex-col items-start gap-4 mt-8 rounded-3xl">
           <div
             className={twMerge(
@@ -85,12 +85,12 @@ export default function LegalPage({ params }: Props) {
             <MDXRemote source={post.content} components={components} />
           </div>
         </article>
-        <div className="flex mt-2 mt-8">
-          <p className="text-md md:text-lg text-[#5C5B61] mx-auto">
-            Last updated at: {formatDate(post.metadata.updatedAt)}
-          </p>
-        </div>
-      </section>
+      </Section>
+      <Section className="mx-auto w-fit">
+        <Paragraph className="text-semibold">
+          Last updated at: {formatDate(post.metadata.updatedAt)}
+        </Paragraph>
+      </Section>
     </>
   );
 }

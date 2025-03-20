@@ -43,6 +43,20 @@ export const Footer = () => {
             </Link>
           </nav>
           <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
+            <div className="font-semibold text-gray-900">
+              {t("footer.category.resources")}
+            </div>
+            <Link
+              aria-current="page"
+              href={getCanonicalLink(locale, "/blog")}
+              className="router-link-active router-link-exact-active"
+            >
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+                {t("footer.resources.blog")}
+              </div>
+            </Link>
+          </nav>
+          <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
             <div className="font-semibold text-gray-900">Legal</div>
             <Link href={getCanonicalLink(locale, "/legal/terms")} className="">
               <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">

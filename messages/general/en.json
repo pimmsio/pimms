@@ -13,11 +13,15 @@
       },
       "category": {
         "help": "Help",
-        "solutions": "Solutions"
+        "solutions": "Solutions",
+        "resources": "Resources"
       },
       "solutions": {
         "youtube": "Deeplink you need to grow on YouTube",
         "site": "Deeplink you need to share on LinkedIn"
+      },
+      "resources": {
+        "blog": "Blog"
       },
       "copyright": "© 2025 PIMMS"
     }

@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { Section } from "@/components/base/section";
 
 export default function WorkWith({ tkey }: { tkey: string }) {
   const t = useTranslations(tkey);
@@ -9,7 +10,7 @@ export default function WorkWith({ tkey }: { tkey: string }) {
   }
 
   return (
-    <section className="w-fit text-center text-[#5C5B61] px-1 my-8 mx-auto">
+    <Section className="my-8 w-fit">
       <p className="text-md md:text-lg flex flex-col md:flex-row items-center gap-2 md:gap-4">
         {t.rich("hero.works_with", {
           symbols: () => (
@@ -53,6 +54,6 @@ export default function WorkWith({ tkey }: { tkey: string }) {
           ),
         })}
       </p>
-    </section>
+    </Section>
   );
 }

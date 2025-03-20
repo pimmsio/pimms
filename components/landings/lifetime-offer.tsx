@@ -12,25 +12,19 @@ import {
   User2,
   WholeWord,
 } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import { Section } from "@/components/base/section";
+import { H2 } from "../base/h2";
+import { List, ListItem } from "../base/list";
 
 export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(tkey);
 
   return (
-    <section
-      id="lifetime"
-      className="w-full max-w-5xl py-6 md:py-12 px-1 flex flex-col items-center mx-auto gap-6 mt-8"
-    >
-      <h2 className="text-2xl md:text-3xl text-center font-bold text-balance mb-4">
-        {t("lifetime_offer.title")}
-      </h2>
+    <Section id="lifetime" className="items-center gap-6 mt-8">
+      <H2 className="text-center mb-4">{t("lifetime_offer.title")}</H2>
       <div className="relative rounded-3xl bg-[#B3E4FF] ring-[8px] ring-[#80CFFF] shadow-lg text-[#08272E] w-full p-8 md:p-12 flex flex-col gap-4 items-center">
         <div className="highlight transition duration-300 absolute w-[100%] h-[100%] left-[-3%] top-[-3%] bg-white blur-[1em] opacity-20"></div>
-        {/* <div className="flex items-center gap-2 text-sm font-semibold p-2 bg-[#B3E4FF] text-[#08272E] rounded-xl z-10 mb-6">
-        <Timer className="w-4 h-4" />
-        {t("lifetime_offer.promo_code")}
-      </div> */}
         <div className="flex flex-col md:flex-row items-start gap-2 md:gap-24 z-10">
           <div className="w-full md:w-1/2 text-left gap-2 flex flex-col items-center md:items-start z-10">
             <div className="text-2xl md:text-3xl font-bold text-balance mb-4">
@@ -84,59 +78,47 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
                   })}
                 </li>
               </ul>
-              {/* <div className="text-sm font-semibold p-4 bg-[#B3E4FF] text-[#08272E] rounded-xl">
-              {t("lifetime_offer.money_back")}
-            </div> */}
             </div>
           </div>
           <div className="flex flex-col w-full md:w-1/2 z-10">
-            <ul className="list-none flex flex-col gap-6 font-medium">
-              <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
-                <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                  <DollarSign className="w-4 h-4" />
-                </div>
+            <List className="gap-6 font-medium">
+              <ListItem
+                icon={<DollarSign className="w-4 h-4" />}
+                variant="primary"
+              >
                 <div className="flex-1">{t("lifetime_offer.features.1")}</div>
-              </li>
-              <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
-                <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                  <Link className="w-4 h-4" />
-                </div>
+              </ListItem>
+              <ListItem icon={<Link className="w-4 h-4" />} variant="primary">
                 <div className="flex-1">{t("lifetime_offer.features.2")}</div>
-              </li>
-              <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
-                <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                  <MousePointerClick className="w-4 h-4" />
-                </div>
+              </ListItem>
+              <ListItem
+                icon={<MousePointerClick className="w-4 h-4" />}
+                variant="primary"
+              >
                 <div className="flex-1">{t("lifetime_offer.features.3")}</div>
-              </li>
-              <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
-                <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                  <Calendar className="w-4 h-4" />
-                </div>
+              </ListItem>
+              <ListItem
+                icon={<Calendar className="w-4 h-4" />}
+                variant="primary"
+              >
                 <div className="flex-1">{t("lifetime_offer.features.4")}</div>
-              </li>
-              <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
-                <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                  <Cloud className="w-4 h-4" />
-                </div>
+              </ListItem>
+              <ListItem icon={<Cloud className="w-4 h-4" />} variant="primary">
                 <div className="flex-1">{t("lifetime_offer.features.5")}</div>
-              </li>
-              <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
-                <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                  <User2 className="w-4 h-4" />
-                </div>
+              </ListItem>
+              <ListItem icon={<User2 className="w-4 h-4" />} variant="primary">
                 <div className="flex-1">{t("lifetime_offer.features.6")}</div>
-              </li>
-              <li className="flex items-start gap-2 text-base leading-snug text-[#08272E] fill-current">
-                <div className="p-1 bg-[#08272E] text-white w-fit h-fit rounded-full">
-                  <WholeWord className="w-4 h-4" />
-                </div>
+              </ListItem>
+              <ListItem
+                icon={<WholeWord className="w-4 h-4" />}
+                variant="primary"
+              >
                 <div className="flex-1">{t("lifetime_offer.features.7")}</div>
-              </li>
-            </ul>
+              </ListItem>
+            </List>
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

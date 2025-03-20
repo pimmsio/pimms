@@ -3,7 +3,7 @@ import VideoSlide from "@/components/landings/VideoSlide";
 import Header from "@/components/landings/header";
 import { Hero } from "@/components/landings/hero";
 import { Problem } from "@/components/landings/problem";
-import { FreeOffer } from "@/components/free-offer";
+import { FreeOffer } from "@/components/landings/free-offer";
 import { LifetimeOffer } from "@/components/landings/lifetime-offer";
 import WorkWith from "@/components/landings/WorkWith";
 

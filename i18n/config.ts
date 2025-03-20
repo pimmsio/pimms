@@ -25,6 +25,34 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/legal/report-abuse",
     fr: "/legal/signaler-un-abus",
   },
+  "/changelog": {
+    en: "/changelog",
+    fr: "/changelog",
+  },
+  "/blog": {
+    en: "/blog",
+    fr: "/blog",
+  },
+  "/blog/category/company": {
+    en: "/blog/category/company",
+    fr: "/blog/category/entreprise",
+  },
+  "/blog/category/education": {
+    en: "/blog/category/education",
+    fr: "/blog/category/education",
+  },
+  "/blog/author/alexandre": {
+    en: "/blog/author/alexandre",
+    fr: "/blog/auteur/alexandre",
+  },
+  "/blog/first-article": {
+    en: "/blog/what-is-pimms",
+    fr: "/blog/pourquoi-pimms",
+  },
+  "/blog/utm-guide": {
+    en: "/blog/utm-builder-guide",
+    fr: "/blog/guide-balise-et-template-utm",
+  },
 };
 
 export type AppPathnames = keyof typeof pathnames;

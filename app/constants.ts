@@ -41,3 +41,32 @@ export const COOKIE_DOMAIN = getRootDomain(WEB_URL);
 export const WORDMARK = "https://assets.pimms.io/wordmark.png";
 export const WORDMARK_BLACK = "https://assets.pimms.io/wordmark-black.png";
 export const THUMBNAIL = "https://assets.pimms.io/thumbnail.jpg?v=3";
+
+export const BLOG_CATEGORIES: {
+  title: string;
+  slug: "company" | "education";
+  description: string;
+}[] = [
+  {
+    title: "Company news",
+    slug: "company",
+    description: "Updates and announcements from PIMMS",
+  },
+  {
+    title: "Education",
+    slug: "education",
+    description: "Educational content about link management.",
+  },
+];
+
+export const AUTHORS: {
+  name: string;
+  image: string;
+  slug: string;
+}[] = [
+  {
+    name: "Alexandre Sarfati",
+    image: "https://assets.pimms.io/linkedin-profile-alex-pimms.jpg",
+    slug: "alexandre",
+  },
+];

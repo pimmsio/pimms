@@ -1,30 +1,85 @@
 import fs from "fs";
 import path from "path";
 
-export type Metadata = {
+export type PageMetadata = {
   title: string;
   publishedAt: string;
   updatedAt: string;
-  description: string;
+  summary: string;
   image: string;
+  categories: string[];
+  author?: string;
+  related?: string[];
+};
+
+type LoosePageMetadata = {
+  [K in keyof PageMetadata]: string | string[];
 };
 
 export const parseFrontmatter = (fileContent: string) => {
   const frontmatterRegex = /---\s*([\s\S]*?)\s*---/;
   const match = frontmatterRegex.exec(fileContent);
-  const frontMatterBlock = match![1];
+  if (!match) {
+    throw new Error("No frontmatter found");
+  }
+  const frontMatterBlock = match[1];
   const content = fileContent.replace(frontmatterRegex, "").trim();
-  const frontMatterLines = frontMatterBlock.trim().split("\n");
-  const metadata: Partial<Metadata> = {};
+  const frontMatterLines = frontMatterBlock.split("\n");
+
+  const metadata: Partial<LoosePageMetadata> = {};
+  let currentKey: keyof LoosePageMetadata | null = null;
 
   frontMatterLines.forEach((line) => {
-    const [key, ...valueArr] = line.split(": ");
-    let value = valueArr.join(": ").trim();
-    value = value.replace(/^['"](.*)['"]$/, "$1"); // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value;
+    // Gestion des éléments de liste
+    if (/^\s*-\s+/.test(line) && currentKey) {
+      const item = line.replace(/^\s*-\s+/, "").trim();
+      if (!Array.isArray(metadata[currentKey])) {
+        if (metadata[currentKey] !== undefined) {
+          // S'il y avait déjà une valeur (en string), on la transforme en tableau.
+          metadata[currentKey] = [metadata[currentKey] as string];
+        } else {
+          metadata[currentKey] = [];
+        }
+      }
+      (metadata[currentKey] as string[]).push(item);
+    } else {
+      // Traitement des lignes "clé: valeur"
+      const keyValMatch = line.match(/^([^:]+):\s*(.*)$/);
+      if (keyValMatch) {
+        currentKey = keyValMatch[1].trim() as keyof LoosePageMetadata;
+        let value = keyValMatch[2].trim();
+        // S'il n'y a pas de valeur, on présume une liste
+        if (value === "") {
+          metadata[currentKey] = [];
+        } else {
+          value = value.replace(/^['"](.*)['"]$/, "$1"); // Retire les guillemets si présents
+          metadata[currentKey] = value;
+        }
+      }
+    }
   });
 
-  return { metadata: metadata as Metadata, content };
+  // Normalisation pour coller au type PageMetadata
+  const normalized: PageMetadata = {
+    title: metadata.title as string,
+    publishedAt: metadata.publishedAt as string,
+    updatedAt: metadata.updatedAt as string,
+    summary: metadata.summary as string,
+    author: metadata.author as string,
+    image: metadata.image as string,
+    categories: Array.isArray(metadata.categories)
+      ? metadata.categories
+      : metadata.categories
+      ? [metadata.categories as string]
+      : [],
+    related: Array.isArray(metadata.related)
+      ? metadata.related
+      : metadata.related
+      ? [metadata.related as string]
+      : [],
+  };
+
+  return { metadata: normalized, content };
 };
 
 export const getMDXFiles = (dir: string) => {

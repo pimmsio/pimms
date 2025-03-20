@@ -4,7 +4,7 @@ import Header from "@/components/landings/header";
 import { Hero } from "@/components/landings/hero";
 import { Problem } from "@/components/landings/problem";
 import { generateLandingMetadata } from "@/lib/utils";
-import { FreeOffer } from "@/components/free-offer";
+import { FreeOffer } from "@/components/landings/free-offer";
 import { LifetimeOffer } from "@/components/landings/lifetime-offer";
 
 const lkey = "youtube";
