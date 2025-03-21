@@ -1,13 +1,19 @@
 "use client";
-import CtaButton from "@/components/cta/CtaButton";
 import BouncingImages from "@/components/landings/BouncingImages";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { Paragraph } from "@/components/base/paragraph";
 import { Section } from "@/components/base/section";
 import { H2 } from "@/components/base/h2";
+import CtaButtonBig from "../cta/CtaButtonBig";
 
-export const FreeOffer = ({ tkey }: { tkey: string }) => {
+export const FreeOffer = ({
+  tkey,
+  type,
+}: {
+  tkey: string;
+  type: "sales" | "youtube";
+}) => {
   const t = useTranslations(tkey);
 
   return (
@@ -28,7 +34,7 @@ export const FreeOffer = ({ tkey }: { tkey: string }) => {
         </H2>
         <Paragraph>{t("free_offer.description")}</Paragraph>
         <div className="flex mt-8 mb-6 justify-center md:justify-start">
-          <CtaButton tkey={tkey} show />
+          <CtaButtonBig tkey={tkey} type={type} className="py-4" />
         </div>
       </div>
       <div className="flex flex-col w-full md:w-1/2">
