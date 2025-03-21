@@ -39,7 +39,7 @@ export function WaitlistForm({
         body: JSON.stringify({ email, locale, type }),
       });
 
-      trackEvent(
+      await trackEvent(
         "click_cta",
         {
           funnel: type,

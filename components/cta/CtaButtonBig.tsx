@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { APP_URL } from "../../app/constants";
 import { trackEvent } from "@/lib/tracking";
 import { twMerge } from "tailwind-merge";
+import { useState } from "react";
+import { Loader2 } from "lucide-react";
 
 export default function CtaButtonBig({
   tkey,
@@ -19,11 +21,15 @@ export default function CtaButtonBig({
 }) {
   const t = useTranslations(tkey);
 
-  const handleClick = () => {
-    trackEvent("click_cta", {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleClick = async () => {
+    setIsLoading(true);
+    await trackEvent("click_cta", {
       funnel: type,
     });
 
+    setIsLoading(true);
     window.location.href = `${APP_URL}/register`;
   };
 
@@ -35,8 +41,12 @@ export default function CtaButtonBig({
         size="lg"
         onClick={handleClick}
         className={twMerge("block px-8", className)}
+        disabled={isLoading}
       >
-        {t("form.button")}
+        <span className="flex items-center gap-2">
+          {isLoading && <Loader2 size={32} className="animate-spin" />}
+          {t("form.button")}
+        </span>
         {showFree && (
           <span className="inline text-sm">{t("form.button_free")}</span>
         )}

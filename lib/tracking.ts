@@ -9,11 +9,36 @@ const userData = (email: string | undefined) => {
   };
 };
 
-export const trackEvent = (name: string, data: any, email?: string) => {
+const trackClickCTA = async (eventName: string) => {
+  try {
+    const response = await fetch("/api/lead", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        eventName,
+      }),
+    });
+
+    if (!response.ok) {
+      console.error("Failed to track lead:", response);
+      return;
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error("Error tracking lead:", error);
+  }
+};
+
+export const trackEvent = async (name: string, data: any, email?: string) => {
   // phEvent(name, email, data, {
   //   send_instantly: true,
   // });
+
   gtmEvent(name, email, data);
+  await trackClickCTA(name);
 };
 
 export const phEvent = (

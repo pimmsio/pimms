@@ -5,6 +5,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Inter } from "next/font/google";
+import { Analytics as PimmsAnalytics } from "@getpimms/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default async function BaseLayout({ children, locale }: Props) {
         </NextIntlClientProvider>
         <Analytics />
         <SpeedInsights />
+        <PimmsAnalytics />
       </body>
       <GoogleTagManager
         gtmId={process.env.NEXT_PUBLIC_GTM_CONTAINER_ID as string}
