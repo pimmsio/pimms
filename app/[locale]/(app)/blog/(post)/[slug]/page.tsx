@@ -64,6 +64,15 @@ const components = {
       <table className="w-full">{children}</table>
     </div>
   ),
+  img: ({ src, alt }: { src: string; alt: string }) => (
+    <Image
+      src={src}
+      alt={alt}
+      width={1200}
+      height={630}
+      className="rounded-xl border-[6px] border-[#F2F3F5]"
+    />
+  ),
 };
 
 export default function BlogPost({ params }: Props) {
@@ -71,11 +80,10 @@ export default function BlogPost({ params }: Props) {
   const locale = useLocale();
   const post = getPage(locale, "blog", slug);
 
-  const posts = getPages(locale, "blog");
   const relatedArticles =
     (post.metadata.related &&
-      post.metadata.related.map(
-        (slug: string) => posts.find((post) => post.slug === slug)!
+      post.metadata.related.map((slug: string) =>
+        getPage(locale, "blog", slug)
       )) ||
     [];
 
@@ -102,7 +110,7 @@ export default function BlogPost({ params }: Props) {
           <Paragraph>{formatDate(post.metadata.updatedAt)}</Paragraph>
         </div>
         <H1>{post.metadata.title}</H1>
-        <div className="px-4 text-center">
+        <div className="px-4 text-center mx-auto">
           <Paragraph>{post.metadata.summary}</Paragraph>
         </div>
       </HeroSection>
@@ -183,7 +191,7 @@ export default function BlogPost({ params }: Props) {
                     <Paragraph className="font-medium text-[#08272E] capitalize">
                       {author.name}
                     </Paragraph>
-                    <Paragraph size="sm">Content Marketer</Paragraph>
+                    <Paragraph size="sm">{author.role}</Paragraph>
                   </div>
                 </a>
               </div>

@@ -1,0 +1,139 @@
+---
+title: Introducing PIMMS conversion tracking
+summary: Know exactly what drives your leads. 
+publishedAt: 2025-03-23
+updatedAt: 2025-03-23
+image: https://assets.pimms.io/conversion-tracking-1.png
+author: alexandre
+categories:
+  - company
+related:
+  - first-article
+  - utm-guide
+---
+
+Marketing is tough — especially when you're left guessing what's working and what isn't. 
+
+You're creating engaging LinkedIn posts, sending personalized email campaigns, using WhatsApp messages, collaborating with influencers, and running targeted ads. 
+
+But can you confidently say what actually brings in valuable leads?
+
+PIMMS conversion tracking removes uncertainty. 
+
+Built specifically for startups, solopreneurs, indie hackers, and influencers, PIMMS gives you clear, automatic insights into exactly how your content converts clicks into meaningful actions.
+
+## Move from guesswork to absolute clarity
+
+Most analytics tools show only basic metrics like clicks or page views. But you don’t just want clicks—you want actionable leads. PIMMS tracks each click and clearly connects it to real conversions, such as:
+
+- Landing page signups or form submissions
+- Demo or consultation requests
+- Webinar or course registrations
+
+Imagine being able to answer clearly:
+
+- **Which LinkedIn posts or profile links generated the most leads?**
+- **Did your WhatsApp campaign actually produce quality signups?**
+- **Are email campaigns outperforming your social media efforts?**
+
+With PIMMS, these insights are immediate and automatic once set up.
+
+## Why PIMMS?
+
+Here's why marketers prefer PIMMS for comprehensive tracking:
+
+- **Real-time insights:** Instantly see how clicks turn into valuable leads.
+- **Easy setup:** Simple integrations that start tracking immediately.
+- **Channel-agnostic:** Automatically track LinkedIn (organic posts, ads, messages), email, WhatsApp, QR codes, and more.
+- **Custom conversion tracking:** Define and monitor critical conversion points such as signups, subscriptions, registrations, and more.
+
+## How PIMMS conversion tracking works
+
+PIMMS makes tracking straightforward with two simple events:
+
+- **Click event:** Someone clicks your PIMMS link — anywhere you share it.
+- **Conversion event (lead):** After clicking, a visitor completes an action like filling out a form, subscribing, or registering interest.
+
+This transparent journey mapping lets you optimize precisely what's working.
+
+## Quick and easy integration
+
+Adding PIMMS conversion to your site or landing page is straightforward:
+
+**Enable conversion tracking**
+
+- Navigate to your workspace’s Conversions settings page.
+- Toggle the Workspace-level Conversion Tracking switch to enable conversion tracking for the workspace.
+
+![Enable conversion tracking](https://assets.pimms.io/conversion-tracking-2.jpg)
+
+**React setup client side:**
+
+```jsx
+import { Analytics as PimmsAnalytics } from "@getpimms/analytics";
+
+<PimmsAnalytics
+  cookieOptions={{
+    domain: ".yourdomain.com",
+  }}
+/>
+```
+
+**Plain JavaScript client side:**
+
+```jsx
+<script
+  src="https://cdn.pimms.io/analytics/script.js"
+  defer
+  data-cookie-options='{"domain": ".yourdomain.com"}'
+></script>
+```
+
+## Server-side conversion tracking
+PIMMS requires that you send the events from your server:
+
+```typescript
+import { Pimms } from "pimms";
+
+const pimms = new Pimms({
+  token: "YOUR_TOKEN", // Obtain from your dashboard settings
+});
+
+async function recordConversion() {
+  const result = await pimms.track.lead({
+    eventName: "Sign up",
+    externalId: "user_123",
+    customerName: "Jane Doe",
+    customerEmail: "jane.doe@example.com",
+    customerAvatar: "https://example.com/avatar.jpg",
+    metadata: {
+      campaign: "Spring Promo",
+      source: "LinkedIn Organic",
+    },
+  });
+
+  // Clear pimms_id cookie after successful tracking to avoid duplicates
+  // Example in Express.js
+  res.clearCookie("pimms_id");
+
+  console.log(result);
+}
+```
+
+## Built precisely for your needs
+
+PIMMS conversion tracking empowers you to:
+
+- **Optimize referral and affiliate programs**: Accurately measure and reward top-performing referrals.
+- **Enhance sales pipelines**: Clearly track lead generation and optimize outreach.
+- **Improve landing pages and run precise A/B tests**: Understand exactly what converts and adjust your messaging.
+- **Amplify influencer campaigns**: Measure genuine impact beyond likes, tracking real signups and inquiries.
+- **Boost email marketing performance**: Identify which emails drive actual conversions, not just clicks.
+
+## Get started with PIMMS today
+
+Stop guessing. Start clearly understanding what's genuinely driving your leads.
+
+Ready to confidently optimize your marketing?
+
+[Sign up for PIMMS →](https://app.pimms.io/register)

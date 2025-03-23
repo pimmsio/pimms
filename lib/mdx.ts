@@ -93,7 +93,8 @@ export const getMDXFiles = (dir: string) => {
 
 export const readMDXFile = (filePath: string) => {
   const rawContent = fs.readFileSync(filePath, "utf-8");
-  return parseFrontmatter(rawContent);
+  const slug = path.basename(filePath, path.extname(filePath));
+  return { ...parseFrontmatter(rawContent), slug };
 };
 
 export const getMDXData = (dir: string) => {

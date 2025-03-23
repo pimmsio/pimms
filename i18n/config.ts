@@ -53,6 +53,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/blog/utm-builder-guide",
     fr: "/blog/guide-balise-et-template-utm",
   },
+  "/blog/introducing-conversion": {
+    en: "/blog/introducing-conversion-tracking",
+    fr: "/blog/lancement-suivi-des-conversions",
+  },
 };
 
 export type AppPathnames = keyof typeof pathnames;

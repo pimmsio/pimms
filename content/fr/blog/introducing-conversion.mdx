@@ -1,0 +1,138 @@
+---
+title: Découvrez le suivi de conversions avec PIMMS
+summary: Travailler vos conversions avec le suivi précis de vos conversions et leads
+publishedAt: 2025-03-23
+updatedAt: 2025-03-23
+image: https://assets.pimms.io/conversion-tracking-1.png
+author: alexandre
+categories:
+  - company
+related:
+  - first-article
+---
+
+Le marketing peut sembler complexe, surtout lorsque vous ne savez pas précisément ce qui fonctionne réellement.
+
+Vous publiez activement sur LinkedIn, envoyez des campagnes emailing personnalisées, communiquez via WhatsApp, collaborez avec des influenceurs, et lancez des campagnes publicitaires ciblées.
+
+Mais savez-vous exactement ce qui génère des leads qualifiés ?
+
+PIMMS met fin à cette incertitude en suivant précisément chaque interaction jusqu’à la conversion réelle.
+
+Conçu spécialement pour les équipes marketing de startups, les solopreneurs, les indie hackers et les influenceurs, PIMMS offre des insights automatiques pour transformer vos contenus en résultats concrets.
+
+## Remplacez les suppositions par des certitudes
+
+La plupart des outils d’analyse se limitent à compter des clics ou des vues. Pourtant, ce que vous souhaitez réellement, ce sont des leads qualifiés. PIMMS connecte chaque clic à des actions concrètes, telles que :
+
+- Inscriptions sur une landing page
+- Demandes de démonstration ou consultations
+- Inscriptions à des webinars ou formations
+
+Imaginez pouvoir répondre simplement à ces questions :
+
+- **Quels contenus LinkedIn génèrent le plus de leads ?**
+- **Votre campagne WhatsApp produit-elle des inscriptions qualifiées ?**
+- **Vos emails convertissent-ils mieux que vos publications sociales ?**
+
+Avec PIMMS, obtenez ces réponses instantanément dès que vous l'avez configuré.
+
+## Pourquoi choisir PIMMS ?
+
+Voici pourquoi les professionnels du marketing préfèrent utiliser PIMMS :
+
+- **Insights en temps réel :** suivez instantanément la transformation des clics en leads qualifiés.
+- **Facilité d’utilisation :** intégrations simples et rapides pour démarrer immédiatement.
+- **Compatible avec tous vos canaux :** LinkedIn (publications, publicités, messages privés), emailing, WhatsApp, QR codes, et bien plus encore.
+- **Suivi personnalisé des conversions :** définissez et surveillez précisément les actions importantes (inscriptions, abonnements, etc.).
+
+## Comment fonctionne le suivi des conversions PIMMS ?
+
+PIMMS simplifie le suivi en deux étapes claires :
+
+- **Événement « clic » :** un visiteur clique sur votre lien PIMMS — peu importe où vous le partagez.
+- **Événement « conversion » (lead) :** après avoir cliqué, la personne réalise une action que vous avez définie (formulaire rempli, inscription, prise de rendez-vous, etc.).
+
+Cette visibilité totale sur le parcours utilisateur vous permet d’optimiser efficacement vos stratégies.
+
+## Une intégration simple et rapide
+
+Ajouter PIMMS à votre site ou landing page est facile et rapide :
+
+**Activer le suivi des conversions**
+
+- Se rendre sur la page "Conversions" des settings de l'espace de travail.
+- Activer le suivi des conversions
+
+![Enable conversion tracking](https://assets.pimms.io/conversion-tracking-2.jpg)
+
+**Avec React :**
+
+```jsx
+import { Analytics as PimmsAnalytics } from "@getpimms/analytics";
+
+<PimmsAnalytics
+  cookieOptions={{
+    domain: ".votredomaine.com",
+  }}
+/>
+```
+
+**Avec JavaScript :**
+
+```jsx
+<script
+  src="https://cdn.pimms.io/analytics/script.js"
+  defer
+  data-cookie-options='{"domain": ".votredomaine.com"}'
+></script>
+```
+
+## Suivi côté serveur
+Pour un suivi précis, les évènements sont envoyés depuis votre serveur :
+
+```typescript
+import { Pimms } from "pimms";
+
+const pimms = new Pimms({
+  token: "VOTRE_TOKEN", // Obtenez-le depuis votre tableau de bord
+});
+
+async function enregistrerConversion() {
+  const resultat = await pimms.track.lead({
+    eventName: "Inscription",
+    externalId: "utilisateur_123",
+    customerName: "Jeanne Dupont",
+    customerEmail: "jeanne.dupont@exemple.com",
+    customerAvatar: "https://exemple.com/avatar.jpg",
+    metadata: {
+      campagne: "Promo printemps",
+      source: "LinkedIn Organique",
+    },
+  });
+
+  // Effacez le cookie pimms_id après le suivi pour éviter les doublons
+  // Exemple avec Express.js
+  res.clearCookie("pimms_id");
+
+  console.log(resultat);
+}
+```
+
+## Conçu spécialement pour vos enjeux marketing
+
+Le suivi de conversions PIMMS vous aide à :
+
+- **Optimiser les programmes d’affiliation et de parrainage :** mesurez précisément les performances de vos partenaires.
+- **Améliorer votre pipeline commercial :** identifiez clairement ce qui génère des leads et concentrez vos efforts.
+- **Tester vos landing pages (A/B testing) :** découvrez exactement ce qui convertit le mieux.
+- **Évaluer précisément vos campagnes d’influence :** mesurez l’impact réel de vos partenariats au-delà des interactions superficielles.
+- **Renforcer vos campagnes emailing :** détectez les emails générant de réelles conversions, pas uniquement des clics.
+
+## Lancez-vous dès maintenant avec PIMMS
+
+Arrêtez de deviner : mesurez clairement ce qui génère vos leads.
+
+Prêt à optimiser votre marketing efficacement ?
+
+[Inscrivez-vous gratuitement sur PIMMS →](https://app.pimms.io/register)

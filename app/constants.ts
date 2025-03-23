@@ -62,10 +62,12 @@ export const BLOG_CATEGORIES: {
 export const AUTHORS: {
   name: string;
   image: string;
+  role: string;
   slug: string;
 }[] = [
   {
     name: "Alexandre Sarfati",
+    role: "Founder",
     image: "https://assets.pimms.io/linkedin-profile-alex-pimms.jpg",
     slug: "alexandre",
   },
