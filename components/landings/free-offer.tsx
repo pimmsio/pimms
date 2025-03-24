@@ -5,7 +5,8 @@ import { useTranslations } from "next-intl";
 import { Paragraph } from "@/components/base/paragraph";
 import { Section } from "@/components/base/section";
 import { H2 } from "@/components/base/h2";
-import CtaButtonBig from "../cta/CtaButtonBig";
+import CtaButtonBig from "@/components/cta/CtaButtonBig";
+import { MoveRight } from "lucide-react";
 
 export const FreeOffer = ({
   tkey,
@@ -34,7 +35,13 @@ export const FreeOffer = ({
         </H2>
         <Paragraph>{t("free_offer.description")}</Paragraph>
         <div className="flex mt-8 mb-6 justify-center md:justify-start">
-          <CtaButtonBig tkey={tkey} type={type} className="py-4" />
+          <CtaButtonBig
+            type={type}
+            className="py-3"
+            value={t.rich("form.button_free", {
+              arrow: () => <MoveRight className="!size-6" strokeWidth={2} />,
+            })}
+          />
         </div>
       </div>
       <div className="flex flex-col w-full md:w-1/2">

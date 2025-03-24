@@ -11,9 +11,9 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "cursor-pointer rounded-xl ring-[6px] ring-[#FFEAF1] transition duration-500 text-xl lg:text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
+          "cursor-pointer rounded-xl ring-[6px] ring-[#FFEAF1] transition duration-500 text-xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
         noring:
-          "cursor-pointer rounded-b-xl md:rounded-l-none md:rounded-r-xl transition duration-500 text-xl lg:text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
+          "cursor-pointer rounded-b-xl md:rounded-l-none md:rounded-r-xl transition duration-500 text-xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
         destructive:
           "bg-destructive text-destructive-foreground hover:bg-destructive/90",
         outline:

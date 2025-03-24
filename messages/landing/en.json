@@ -8,26 +8,33 @@
         "pricing": "Pricing"
       },
       "hero": {
-        "title": "Grow with deeplinks",
-        "description": "The only short links that opens your contents in the right mobile apps, driving more conversion and growth. They provide a seamless user experience.",
-        "subtitle": "Deeplinks redirect your contents to the official mobile apps instantly:",
+        "title": "Grow faster with deep links and more <not>data</not>",
+        "additional_title": "not guesses",
+        "description": "Deeplinks that opens your contents in the right mobile apps, driving more conversion and growth. They provide a seamless user experience.",
+        "subtitle": "Actionable analytics tool for all your links to drive more conversions:",
         "benefits": {
-          "1": "No conversion loss",
-          "2": "Increase content engagement",
-          "3": "Analyze your traffic and clicks"
+          "1": "Analyze your traffic and conversions",
+          "2": "Find your best marketing channels",
+          "3": "Stop losing leads with deeplinks"
         },
         "social_media": "social",
-        "works_with": "Best for <symbols>social media</symbols> apps and 20+ more",
-        "avatars": "Join <counter>100+</counter> creators <linkedin>LinkedIn</linkedin>"
+        "works_with": "Best for <symbols>social media</symbols> apps and 100+ more",
+        "avatars": "Used by top <linkedin>LinkedIn</linkedin> creators and startups"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
-        "button": "Join for free now",
-        "button_free": "10 links gifted",
+        "button": "<fast>⚡</fast> Make data-driven decisions",
+        "button_free": "I want 10 free links <arrow>→</arrow>",
         "waiting": "Securing your spot...",
         "success": "Success! You've been invited to access the application by email.",
         "error": "Something went wrong. Please try again.",
         "pro": "<pro>Unlimited Pro plan available</pro>"
+      },
+      "main_testimonial": {
+        "text": "<strong>I was tired of my social media links opening in apps' internal browsers...</strong> Then I discovered PIMMS! It's the best way to boost conversions — all thanks to deep linking <love>❤️</love>",
+        "author_name": "Mathieu Dacheux",
+        "author_company": "feeedback.dev",
+        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
       },
       "problem": {
         "title": "The Problem",
@@ -70,7 +77,102 @@
         "offer_name": "<logo>PIMMS</logo> Pro",
         "early_bird": "<price>54</price> early bird discount",
         "cta": "Upgrade now",
-        "pay_once": "<check>check</check> Pay once <check>check</check> Lifetime access",
+        "pay_once": "<check>check</check> Pay once <check>check</check> No subscription",
+        "money_back": "30-day money-back guarantee",
+        "promo_code": "USE \"LASTCHANCE20\" FOR 20% OFF",
+        "features": {
+          "1": "Your conversions are secured",
+          "2": "Unlimited new deeplinks",
+          "3": "50K tracked clicks/mo",
+          "4": "1-year analytics retention",
+          "5": "Team collaboration up to 3",
+          "6": "3 custom domains",
+          "7": "Unlimited UTM templates"
+        }
+      },
+      "cta": {
+        "button": "Join for free",
+        "show_more": "Learn more"
+      }
+    },
+    "linkedin": {
+      "nav": {
+        "how_it_works": "How it works",
+        "solutions": "Solutions",
+        "dashboard": "Sign in",
+        "pricing": "Pricing"
+      },
+      "hero": {
+        "title": "Grow with <not>deeplinks</not>",
+        "additional_title": "100+ apps",
+        "description": "The only short links that opens your contents in the right mobile apps, driving more conversion and growth. They provide a seamless user experience.",
+        "subtitle": "Deeplinks redirect your contents to the official mobile apps instantly:",
+        "benefits": {
+          "1": "Stop losing conversions",
+          "2": "Increase content engagement",
+          "3": "Analyze your traffic and clicks"
+        },
+        "social_media": "social",
+        "works_with": "Best for <symbols>social media</symbols> apps and 100+ more",
+        "avatars": "Used by top <linkedin>LinkedIn</linkedin> creators and startups"
+      },
+      "form": {
+        "email_placeholder": "Enter your professional email",
+        "button": "<fast>⚡</fast> Join for free now",
+        "button_free": "I want 10 free links <arrow>→</arrow>",
+        "waiting": "Securing your spot...",
+        "success": "Success! You've been invited to access the application by email.",
+        "error": "Something went wrong. Please try again.",
+        "pro": "<pro>Unlimited Pro plan available</pro>"
+      },
+      "main_testimonial": {
+        "text": "<strong>I was tired of my social media links opening in apps' internal browsers...</strong> Then I discovered PIMMS! It's the best way to boost conversions — all thanks to deep linking <love>❤️</love>",
+        "author_name": "Mathieu Dacheux",
+        "author_company": "feeedback.dev",
+        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
+      },
+      "problem": {
+        "title": "The Problem",
+        "heading": "You're losing conversions",
+        "description": "Every time your links open a mini-browser integrated into an app, you're losing conversions.",
+        "more": {
+          "title1": "In app browser nightmares",
+          "description1": "No one wants to be trapped in a mini-browser to interact with your contents. Your visitors don't either.",
+          "title2": "High abandonment rates",
+          "description2": "Users are frustrated for many reasons, including social accounts disconnection, payment processors not working, etc. Most people abandon before subscribing or buying.",
+          "title3": "Poor user experience",
+          "description3": "Traditional links create friction in the user journey, damaging your reputation and reducing engagement rates."
+        }
+      },
+      "solution": {
+        "title": "The Solution",
+        "heading": "Share deeplinks to convert",
+        "description": "<logo>PIMMS</logo> opens your contents in the official mobile apps used by your users daily.",
+        "more": {
+          "title1": "Smart short link routing",
+          "description1": "deeplink automatically detects the user's device and opens the link in the most appropriate mobile application.",
+          "title2": "Seamless user experience without losing users",
+          "description2": "Visitors stay engaged and as a result, you get much more conversions, engagement and time spent on your contents.",
+          "title3": "Detailed analytics over time",
+          "description3": "In real-time and throughout the year, you can easily track the performance and the clicks on your deeplinks."
+        }
+      },
+      "free_offer": {
+        "title": "Free access to <logo>PIMMS</logo>",
+        "description": "Never lose conversions again - start with 10 free deeplinks today.",
+        "images": {
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
+          "alt1": "Advanced link management interface",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
+          "alt2": "Performance analytics dashboard"
+        }
+      },
+      "lifetime_offer": {
+        "title": "Secure your conversions, without limits",
+        "offer_name": "<logo>PIMMS</logo> Pro",
+        "early_bird": "<price>54</price> early bird discount",
+        "cta": "Upgrade now",
+        "pay_once": "<check>check</check> Pay once <check>check</check> No subscription",
         "money_back": "30-day money-back guarantee",
         "promo_code": "USE \"LASTCHANCE20\" FOR 20% OFF",
         "features": {
@@ -105,16 +207,22 @@
           "3": "Analyze your traffic and clicks"
         },
         "social_media": "social",
-        "avatars": "Join <counter>100+</counter> creators"
+        "avatars": "Used by top creators and channels"
       },
       "form": {
         "email_placeholder": "Enter your professional email",
-        "button": "Join for free now",
-        "button_free": "10 links gifted",
+        "button": "<fast>⚡</fast> Join for free now",
+        "button_free": "I want 10 free links <arrow>→</arrow>",
         "waiting": "Securing your spot...",
         "success": "Success! You've been invited to access the application by email.",
         "error": "Something went wrong. Please try again.",
         "pro": "<pro>Unlimited Pro plan available</pro>"
+      },
+      "main_testimonial": {
+        "text": "<strong>I was tired of my social media links opening in apps' internal browsers...</strong> Then I discovered PIMMS! It's the best way to boost conversions — all thanks to deep linking <love>❤️</love>",
+        "author_name": "Mathieu Dacheux",
+        "author_company": "feeedback.dev",
+        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
       },
       "problem": {
         "title": "The Problem",
@@ -157,7 +265,7 @@
         "offer_name": "<logo>PIMMS</logo> Pro",
         "early_bird": "<price>54</price> early bird discount",
         "cta": "Upgrade now",
-        "pay_once": "<check>check</check> Pay once <check>check</check> Lifetime access",
+        "pay_once": "<check>check</check> Pay once <check>check</check> No subscription",
         "money_back": "30-day money-back guarantee",
         "promo_code": "USE \"LASTCHANCE20\" FOR 20% OFF",
         "features": {

@@ -9,6 +9,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/solutions/deep-links-youtube-channel",
     fr: "/solutions/deep-links-chaine-youtube",
   },
+  "/solutions/linkedin": {
+    en: "/solutions/deep-links-grow-with-linkedin",
+    fr: "/solutions/deep-links-convertir-sur-linkedin",
+  },
   "/legal/terms": {
     en: "/legal/terms",
     fr: "/legal/conditions-dutilisation",

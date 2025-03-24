@@ -8,7 +8,103 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Convertis plus avec des deeplinks",
+        "title": "Booste ta croissance avec plus de <not>data</not>",
+        "additional_title": "pas le hasard",
+        "description": "Les deeplinks qui ouvrent tes contenus directement dans les apps mobiles officielles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi tes conversions.",
+        "subtitle": "Outil pour gérer tous tes liens avec des données exploitables sur les conversions:",
+        "benefits": {
+          "1": "Analyse ton trafic et tes conversions",
+          "2": "Identifie tes meilleurs canaux",
+          "3": "Gagne des leads avec les deeplinks"
+        },
+        "social_media": "les réseaux",
+        "works_with": "Fonctionne avec <symbols>les réseaux sociaux</symbols> apps et 20+ autres",
+        "avatars": "Top créateurs et startups <linkedin>LinkedIn</linkedin> l'utilisent"
+      },
+      "form": {
+        "email_placeholder": "Adresse email professionnelle",
+        "button": "<fast>⚡</fast> Je veux plus de data",
+        "button_free": "Je veux 10 liens gratuits <arrow>→</arrow>",
+        "waiting": "Enregistrement en cours...",
+        "success": "C’est fait ! Tu viens de recevoir ton invitation par email.",
+        "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
+        "pro": "<pro>Découvrir l'offre Pro illimitée</pro>"
+      },
+      "main_testimonial": {
+        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",
+        "author_name": "Mathieu Dacheux",
+        "author_company": "feeedback.dev",
+        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
+      },
+      "problem": {
+        "title": "Le Problème",
+        "heading": "Sans <logo>PIMMS</logo>, tu perds des conversions",
+        "description": "Chaque fois que tes contenus s’ouvrent dans un navigateur intégré à une app, tu perds des conversions.",
+        "more": {
+          "title1": "Le cauchemar des navigateurs internes",
+          "description1": "Personne ne veut rester bloqué dans un mini-navigateur pour voir tes contenus. Tout le monde veut plutôt être redirigé vers les apps mobiles officielles.",
+          "title2": "Taux d'abandon élevé",
+          "description2": "Les utilisateurs abandonnent avant d'acheter ou de s'abonner à cause de frictions inutiles (paiement raté, comptes sociaux déconnectés, etc.).",
+          "title3": "Mauvaise expérience utilisateur",
+          "description3": "Les liens classiques créent des frustrations inutiles dans le parcours utilisateur qui réduisent tes conversions."
+        }
+      },
+      "solution": {
+        "title": "La Solution",
+        "heading": "Partage des deeplinks pour convertir",
+        "description": "<logo>PIMMS</logo> ouvre directement tes contenus dans les apps mobiles officielles. L'expérience est fluide et tes conversions augmentent.",
+        "more": {
+          "title1": "Détection automatique du smartphone",
+          "description1": "Tes contenus s'affichent directement dans les apps officielles utilisées tous les jours par tes utilisateurs.",
+          "title2": "Expérience fluide sans perte d'utilisateurs",
+          "description2": "L'expérience augmente tes conversions et booste l'engagement et le temps passé pour chaque liens que tu partages.",
+          "title3": "Suivi précis des conversions dans le temps",
+          "description3": "En temps réel et tout au long de l'année, tu peux suivre en détail les clics et les conversions pour chaque liens que tu partages."
+        }
+      },
+      "free_offer": {
+        "title": "Accès gratuit à <logo>PIMMS</logo>",
+        "description": "Ne perds plus jamais de conversions – on t'offre 10 deeplinks pour commencer dès gratuitement.",
+        "images": {
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
+          "alt1": "PIMMS Dashboard showing a list of direct links",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
+          "alt2": "PIMMS Dashboard showing analytics of direct links"
+        }
+      },
+      "lifetime_offer": {
+        "title": "Gagne des tonnes de conversions, sans limites",
+        "offer_name": "<logo>PIMMS</logo> Pro",
+        "early_bird": "<price>54</price> de réduction",
+        "cta": "Je veux acheter",
+        "pay_once": "<check>check</check> Achat unique sans abonnement",
+        "money_back": "30 jours - garantie satisfait ou remboursé",
+        "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
+        "features": {
+          "1": "Tes conversions sont sécurisées",
+          "2": "Nouveaux deeplinks illimités",
+          "3": "50K clics analysés / mois",
+          "4": "Données de clics sur 1 an",
+          "5": "Travailler en équipe jusqu'à 3",
+          "6": "3 domaines personnalisés",
+          "7": "Templates UTM illimités"
+        }
+      },
+      "cta": {
+        "button": "Démarrer gratuitement",
+        "show_more": "En savoir plus"
+      }
+    },
+    "linkedin": {
+      "nav": {
+        "how_it_works": "Intro",
+        "solutions": "Solutions",
+        "dashboard": "Se connecter",
+        "pricing": "Nos offres"
+      },
+      "hero": {
+        "title": "Convertis plus avec des <not>deeplinks</not>",
+        "additional_title": "100+ apps",
         "description": "Les seuls liens courts qui ouvrent tes contenus directement dans les apps mobiles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi tes conversions.",
         "subtitle": "Les deeplinks redirigent tes contenus vers les apps mobiles officielles:",
         "benefits": {
@@ -18,16 +114,22 @@
         },
         "social_media": "les réseaux",
         "works_with": "Fonctionne avec <symbols>les réseaux sociaux</symbols> apps et 20+ autres",
-        "avatars": "Rejoins <counter>100+</counter> utilisateurs <linkedin>LinkedIn</linkedin>"
+        "avatars": "Top créateurs et startups <linkedin>LinkedIn</linkedin> l'utilisent"
       },
       "form": {
         "email_placeholder": "Adresse email professionnelle",
-        "button": "Démarrer maintenant",
-        "button_free": "10 liens offerts",
+        "button": "<fast>⚡</fast> Démarrer gratuitement",
+        "button_free": "Je veux 10 liens gratuits <arrow>→</arrow>",
         "waiting": "Enregistrement en cours...",
         "success": "C’est fait ! Tu viens de recevoir ton invitation par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
         "pro": "<pro>Découvrir l'offre Pro illimitée</pro>"
+      },
+      "main_testimonial": {
+        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",
+        "author_name": "Mathieu Dacheux",
+        "author_company": "feeedback.dev",
+        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
       },
       "problem": {
         "title": "Le Problème",
@@ -51,13 +153,13 @@
           "description1": "Tes contenus s'affichent directement dans les apps officielles utilisées tous les jours par tes utilisateurs.",
           "title2": "Expérience fluide sans perte d'utilisateurs",
           "description2": "L'expérience augmente tes conversions et booste l'engagement et le temps passé sur tes contenus.",
-          "title3": "Suivi précis des clics dans le temps",
+          "title3": "Suivi précis des conversions dans le temps",
           "description3": "En temps réel et tout au long de l'année, tu peux suivre en détail les clics et les conversions sur tes contenus."
         }
       },
       "free_offer": {
         "title": "Accès gratuit à <logo>PIMMS</logo>",
-        "description": "Ne perds plus jamais de conversions – on t'offre 10 deeplinks pour commencer dès maintenant.",
+        "description": "Ne perds plus jamais de conversions – on t'offre 10 deeplinks pour commencer dès gratuitement.",
         "images": {
           "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
           "alt1": "PIMMS Dashboard showing a list of direct links",
@@ -69,8 +171,8 @@
         "title": "Gagne des tonnes de conversions, sans limites",
         "offer_name": "<logo>PIMMS</logo> Pro",
         "early_bird": "<price>54</price> de réduction",
-        "cta": "Acheter maintenant",
-        "pay_once": "<check>check</check> Paiement unique <check>check</check> Accès à vie",
+        "cta": "Je veux acheter",
+        "pay_once": "<check>check</check> Achat unique sans abonnement",
         "money_back": "30 jours - garantie satisfait ou remboursé",
         "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
         "features": {
@@ -105,16 +207,22 @@
           "3": "Analyse ton trafic et les clics"
         },
         "social_media": "les réseaux",
-        "avatars": "Rejoins <counter>100+</counter> utilisateurs"
+        "avatars": "Top créateurs et chaines l'utilisent"
       },
       "form": {
         "email_placeholder": "Adresse email professionnelle",
-        "button": "Démarrer maintenant",
-        "button_free": "10 liens offerts",
+        "button": "<fast>⚡</fast> Démarrer gratuitement",
+        "button_free": "Je veux 10 liens gratuits <arrow>→</arrow>",
         "waiting": "Enregistrement en cours...",
         "success": "Bravo ! Ton invitation vient d'être envoyée par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
         "pro": "<pro>Offre Pro illimitée disponible</pro>"
+      },
+      "main_testimonial": {
+        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",
+        "author_name": "Mathieu Dacheux",
+        "author_company": "feeedback.dev",
+        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
       },
       "problem": {
         "title": "Le Problème",
@@ -156,8 +264,8 @@
         "title": "Gagne des tonnes d'abonnés, sans limites",
         "offer_name": "<logo>PIMMS</logo> Pro",
         "early_bird": "<price>54</price> de réduction",
-        "cta": "Acheter maintenant",
-        "pay_once": "<check>check</check> Paiement unique <check>check</check> Accès à vie",
+        "cta": "Je veux acheter",
+        "pay_once": "<check>check</check> Achat unique sans abonnement",
         "money_back": "30 jours - garantie satisfait ou remboursé",
         "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
         "features": {

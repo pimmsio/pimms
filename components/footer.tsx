@@ -25,7 +25,7 @@ export const Footer = () => {
             </div>
             <Link
               aria-current="page"
-              href={getCanonicalLink(locale, "/")}
+              href={getCanonicalLink(locale, "/solutions/linkedin")}
               className="router-link-active router-link-exact-active"
             >
               <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">

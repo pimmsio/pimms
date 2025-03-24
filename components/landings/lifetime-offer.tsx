@@ -5,11 +5,11 @@ import {
   Calendar,
   Check,
   Cloud,
-  Crown,
   DollarSign,
   Link,
   MousePointerClick,
   User2,
+  WalletCards,
   WholeWord,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -45,14 +45,14 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
                 99<div className="text-sm mt-0.5">€</div>
               </div>
               <div className="mr-0.5 text-5xl">45</div>
-              <div className="text-md mt-0.5">€</div>
+              <div className="text-sm mt-0.5">€ H.T.</div>
             </div>
             <div className="w-fit rounded-md inline-block text-xs bg-[#80CFFF] text-[#08272E] font-semibold uppercase tracking-wide p-0.5 px-1.5 mb-1">
               {t.rich("lifetime_offer.early_bird", {
                 price: () => <span className="text-sm">€54</span>,
               })}
             </div>
-            <div className="flex my-8 md:mb-0 flex-col gap-4 items-start">
+            <div className="flex my-8 md:mb-0 flex-col gap-4 items-center sm:items-start">
               <Button
                 variant="secondary"
                 className="py-[0.8em] text-xl md:min-w-64 w-fit hover:scale-105"
@@ -62,13 +62,11 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
                     "https://buy.stripe.com/00g15T7LY4ma2iceUX";
                 }}
               >
-                <span className="inline p-2 bg-[#FFD700] rounded-full">
-                  <Crown className="w-6 h-6" />
-                </span>
                 {t("lifetime_offer.cta")}
+                <WalletCards className="!size-6" strokeWidth={2} />
               </Button>
-              <ul className="list-none font-medium flex flex-wrap gap-2 md:justify-center">
-                <li className="text-md flex-row flex gap-1 items-center font-semibold">
+              <ul className="list-none font-medium flex flex-row flex-wrap gap-2 md:justify-center">
+                <li className="text-sm flex-row flex gap-1 items-center font-semibold">
                   {t.rich("lifetime_offer.pay_once", {
                     check: () => (
                       <div className="p-1 bg-[#80CFFF] text-[#08272E] w-fit h-fit rounded-full">

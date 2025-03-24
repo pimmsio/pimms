@@ -1,6 +1,5 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { APP_URL } from "../../app/constants";
 import { trackEvent } from "@/lib/tracking";
@@ -9,18 +8,14 @@ import { useState } from "react";
 import { Loader2 } from "lucide-react";
 
 export default function CtaButtonBig({
-  tkey,
   type,
-  showFree = false,
   className,
+  value,
 }: {
-  tkey: string;
   type: string;
-  showFree?: boolean;
   className?: string;
+  value?: string | React.ReactNode;
 }) {
-  const t = useTranslations(tkey);
-
   const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = async () => {
@@ -40,16 +35,13 @@ export default function CtaButtonBig({
         type="submit"
         size="lg"
         onClick={handleClick}
-        className={twMerge("block px-8", className)}
+        className={twMerge("block px-6 min-w-full sm:min-w-[21rem]", className)}
         disabled={isLoading}
       >
-        <span className="flex items-center gap-2">
+        <span className="flex items-center gap-2 justify-center w-full">
           {isLoading && <Loader2 size={32} className="animate-spin" />}
-          {t("form.button")}
+          {value}
         </span>
-        {showFree && (
-          <span className="inline text-sm">{t("form.button_free")}</span>
-        )}
       </Button>
     </div>
   );

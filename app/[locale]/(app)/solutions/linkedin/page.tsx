@@ -6,12 +6,12 @@ import { FreeOffer } from "@/components/landings/free-offer";
 import { LifetimeOffer } from "@/components/landings/lifetime-offer";
 import WorkWith from "@/components/landings/WorkWith";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
-import MainTestimonial from "@/components/landings/main-testimonial";
 import { useTranslations } from "next-intl";
 import { Zap } from "lucide-react";
 import { Avatars } from "@/components/landings/avatars";
+import MainTestimonial from "@/components/landings/main-testimonial";
 
-const lkey = "home";
+const lkey = "linkedin";
 const tkey = `landing.${lkey}`;
 
 export default function Home() {
