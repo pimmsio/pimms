@@ -8,7 +8,7 @@ interface VideoSlideProps {
 }
 
 const VideoSlide: React.FC<VideoSlideProps> = ({
-  vimeoSrc = "https://player.vimeo.com/video/1057782853?badge=0&playsinline=0",
+  vimeoSrc = "https://player.vimeo.com/video/1069369994?badge=0&playsinline=0",
   coverVideoSrc = "https://assets.pimms.io/pimms-intro-preview.mp4",
 }) => {
   const [coverVisible, setCoverVisible] = useState(true);
