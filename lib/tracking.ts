@@ -33,9 +33,9 @@ const trackClickCTA = async (eventName: string) => {
 };
 
 export const trackEvent = async (name: string, data: any, email?: string) => {
-  // phEvent(name, email, data, {
-  //   send_instantly: true,
-  // });
+  phEvent(name, email, data, {
+    send_instantly: true,
+  });
 
   gtmEvent(name, email, data);
   await trackClickCTA(name);
@@ -51,7 +51,7 @@ export const phEvent = (
     event,
     {
       ...data,
-      ...{ ...userData(email) },
+      ...(email ? { ...userData(email) } : {}),
     },
     { ...options }
   );

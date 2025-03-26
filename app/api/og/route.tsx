@@ -8,7 +8,7 @@ export async function GET(request: Request) {
 
   return new ImageResponse(
     (
-      <div tw="flex flex-col w-full h-full items-start justify-center bg-[#ecf8fe] text-[#1f242e] relative">
+      <div tw="flex flex-col w-full h-full items-start justify-center bg-[#f6f5eb] text-[#1f242e] relative">
         <div tw="absolute top-[50px] left-[50px] flex">
           <img
             src="https://assets.pimms.io/wordmark.png"

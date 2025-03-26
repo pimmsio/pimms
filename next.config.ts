@@ -33,6 +33,24 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  async rewrites() {
+    return [
+      // for pimms proxy
+      {
+        source: "/_proxy/pimms/track/click",
+        destination: "https://api.pimms.io/track/click",
+      },
+      // for posthog proxy
+      {
+        source: "/_proxy/posthog/ingest/static/:path*",
+        destination: "https://eu-assets.i.posthog.com/static/:path*",
+      },
+      {
+        source: "/_proxy/posthog/ingest/:path*",
+        destination: "https://eu.i.posthog.com/:path*",
+      },
+    ];
+  },
 };
 
 export default withNextIntl(withMDX(nextConfig));

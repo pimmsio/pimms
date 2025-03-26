@@ -24,7 +24,7 @@ export default function CtaButtonBig({
       funnel: type,
     });
 
-    setIsLoading(true);
+    setIsLoading(false);
     window.location.href = `${APP_URL}/register`;
   };
 

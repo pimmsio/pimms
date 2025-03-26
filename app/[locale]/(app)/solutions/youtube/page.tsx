@@ -24,7 +24,7 @@ export default function Youtube() {
   const tkey = `landing.${lkey}`;
   const t = useTranslations(tkey);
   return (
-    <div className="min-h-screen bg-background text-foreground w-11/12 mx-auto">
+    <div className="min-h-screen bg-background-secondary text-foreground w-11/12 mx-auto">
       <Header tkey={tkey} />
       <Hero tkey={tkey} />
       <CtaButtonBig
