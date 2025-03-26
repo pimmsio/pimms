@@ -8,13 +8,13 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Booste ta croissance avec plus de <not>data</not>",
+        "title": "Accélère. Exploite tes données <not>réelles</not>",
         "additional_title": "pas le hasard",
         "description": "Les deeplinks qui ouvrent tes contenus directement dans les apps mobiles officielles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi tes conversions.",
-        "subtitle": "Outil pour gérer tous tes liens avec des données exploitables sur les conversions:",
+        "subtitle": "Outil pour gérer tous tes liens avec des données concrètes sur les conversions:",
         "benefits": {
           "1": "Analyse ton trafic et tes conversions",
-          "2": "Identifie tes meilleurs canaux",
+          "2": "Identifie tes actions qui convertissent",
           "3": "Gagne des leads avec les deeplinks"
         },
         "social_media": "les réseaux",
@@ -29,6 +29,10 @@
         "success": "C’est fait ! Tu viens de recevoir ton invitation par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
         "pro": "<pro>Découvrir l'offre Pro illimitée</pro>"
+      },
+      "video": {
+        "src": "https://player.vimeo.com/video/1069569159?badge=0&playsinline=0",
+        "cover": "https://assets.pimms.io/video-pimms-intro-fr-preview.mp4?v=2"
       },
       "main_testimonial": {
         "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",
@@ -125,6 +129,10 @@
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
         "pro": "<pro>Découvrir l'offre Pro illimitée</pro>"
       },
+      "video": {
+        "src": "https://player.vimeo.com/video/1069569159?badge=0&playsinline=0",
+        "cover": "https://assets.pimms.io/video-pimms-intro-fr-preview.mp4?v=2"
+      },
       "main_testimonial": {
         "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",
         "author_name": "Mathieu Dacheux",
@@ -217,6 +225,10 @@
         "success": "Bravo ! Ton invitation vient d'être envoyée par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
         "pro": "<pro>Offre Pro illimitée disponible</pro>"
+      },
+      "video": {
+        "src": "https://player.vimeo.com/video/1069369994?badge=0&playsinline=0",
+        "cover": "https://assets.pimms.io/pimms-intro-preview.mp4"
       },
       "main_testimonial": {
         "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",

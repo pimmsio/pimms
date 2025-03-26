@@ -29,7 +29,7 @@ export default function Home() {
         })}
       />
       <Avatars tkey={tkey} />
-      <VideoSlide />
+      <VideoSlide tkey={tkey} />
       <MainTestimonial tkey={tkey} />
       <Problem tkey={tkey} />
       <WorkWith tkey={tkey} />

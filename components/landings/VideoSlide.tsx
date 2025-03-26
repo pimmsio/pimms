@@ -1,16 +1,10 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Player from "@vimeo/player";
+import { useTranslations } from "next-intl";
 
-interface VideoSlideProps {
-  vimeoSrc?: string;
-  coverVideoSrc?: string;
-}
-
-const VideoSlide: React.FC<VideoSlideProps> = ({
-  vimeoSrc = "https://player.vimeo.com/video/1069369994?badge=0&playsinline=0",
-  coverVideoSrc = "https://assets.pimms.io/pimms-intro-preview.mp4",
-}) => {
+const VideoSlide = ({ tkey }: { tkey: string }) => {
+  const t = useTranslations(tkey);
   const [coverVisible, setCoverVisible] = useState(true);
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
@@ -53,7 +47,7 @@ const VideoSlide: React.FC<VideoSlideProps> = ({
       <div className="w-full grid grid-cols-1 grid-rows-1 aspect-video mx-auto overflow-hidden">
         <iframe
           ref={iframeRef}
-          src={vimeoSrc}
+          src={t("video.src")}
           className={`row-start-1 col-start-1 w-full h-full transition-opacity duration-500 ${
             videoPlaying ? "opacity-100" : "opacity-0"
           }`}
@@ -67,7 +61,7 @@ const VideoSlide: React.FC<VideoSlideProps> = ({
           onPointerDown={handlePlay}
           className={`row-start-1 col-start-1 transition-opacity duration-500 ${
             coverVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-          } grid place-items-center relative`}
+          } grid place-items-end sm:place-items-center relative cursor-pointer`}
           style={{
             WebkitTouchCallout: "none",
             WebkitUserSelect: "none",
@@ -81,9 +75,9 @@ const VideoSlide: React.FC<VideoSlideProps> = ({
             playsInline
             className="w-full h-full object-cover z-0 pointer-events-none"
           >
-            <source src={coverVideoSrc} type="video/mp4" />
+            <source src={t("video.cover")} type="video/mp4" />
           </video>
-          <div className="absolute rounded-2xl z-10 flex items-center justify-center w-20 h-20 bg-primary shadow-lg transition-transform hover:scale-105 ring-[6px] ring-[#FFEAF1]">
+          <div className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto rounded-full z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-primary shadow-lg transition-transform hover:scale-105 ring-[6px] ring-[#FFEAF1]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"

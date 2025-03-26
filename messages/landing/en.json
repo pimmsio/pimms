@@ -36,6 +36,10 @@
         "author_company": "feeedback.dev",
         "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
       },
+      "video": {
+        "src": "https://player.vimeo.com/video/1069612678?badge=0&playsinline=0",
+        "cover": "https://assets.pimms.io/video-pimms-intro-en-preview.mp4?v=2"
+      },
       "problem": {
         "title": "The Problem",
         "heading": "You're losing conversions",
@@ -124,6 +128,10 @@
         "success": "Success! You've been invited to access the application by email.",
         "error": "Something went wrong. Please try again.",
         "pro": "<pro>Unlimited Pro plan available</pro>"
+      },
+      "video": {
+        "src": "https://player.vimeo.com/video/1069612678?badge=0&playsinline=0",
+        "cover": "https://assets.pimms.io/video-pimms-intro-en-preview.mp4?v=2"
       },
       "main_testimonial": {
         "text": "<strong>I was tired of my social media links opening in apps' internal browsers...</strong> Then I discovered PIMMS! It's the best way to boost conversions — all thanks to deep linking <love>❤️</love>",
@@ -217,6 +225,10 @@
         "success": "Success! You've been invited to access the application by email.",
         "error": "Something went wrong. Please try again.",
         "pro": "<pro>Unlimited Pro plan available</pro>"
+      },
+      "video": {
+        "src": "https://player.vimeo.com/video/1069612678?badge=0&playsinline=0",
+        "cover": "https://assets.pimms.io/video-pimms-intro-en-preview.mp4?v=2"
       },
       "main_testimonial": {
         "text": "<strong>I was tired of my social media links opening in apps' internal browsers...</strong> Then I discovered PIMMS! It's the best way to boost conversions — all thanks to deep linking <love>❤️</love>",

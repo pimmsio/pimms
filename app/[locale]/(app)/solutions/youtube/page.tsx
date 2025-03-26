@@ -35,7 +35,7 @@ export default function Youtube() {
         })}
       />
       <Avatars tkey={tkey} />
-      <VideoSlide />
+      <VideoSlide tkey={tkey} />
       <MainTestimonial tkey={tkey} />
       <Problem tkey={tkey} />
       <LifetimeOffer tkey={tkey} />

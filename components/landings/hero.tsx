@@ -25,7 +25,7 @@ export const Hero = ({ tkey }: { tkey: string }) => {
           not: (chunks) => (
             <span className="relative">
               {chunks}
-              <span className="absolute bottom-1 max-md:bottom-0 max-md:-translate-x-1/3 left-1/2 flex translate-y-full -rotate-3 flex-nowrap items-center gap-0.5 whitespace-nowrap text-lg font-semibold tracking-wide lg:text-xl">
+              <span className="absolute bottom-1 max-md:bottom-0 max-md:-translate-x-3/5 left-1/2 flex translate-y-full -rotate-3 flex-nowrap items-center gap-0.5 whitespace-nowrap text-lg font-semibold tracking-wide lg:text-xl">
                 {t("hero.additional_title")}
               </span>
             </span>
