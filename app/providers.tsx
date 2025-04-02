@@ -8,7 +8,7 @@ import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { PosthogPageview } from "@/components/posthog-pageview copy";
 
-if (typeof window !== "undefined") {
+if (typeof window !== "undefined" && !!process.env.NEXT_PUBLIC_POSTHOG_KEY) {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
     // api_host: "/_proxy/posthog/ingest",
     api_host: "https://eu.i.posthog.com",

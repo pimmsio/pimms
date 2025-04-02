@@ -58,8 +58,7 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
                 className="py-[0.8em] text-xl md:min-w-64 w-fit hover:scale-105"
                 size="lg"
                 onClick={() => {
-                  window.location.href =
-                    "https://buy.stripe.com/00g15T7LY4ma2iceUX";
+                  window.location.href = `/api/pay`;
                 }}
               >
                 {t("lifetime_offer.cta")}
