@@ -11,7 +11,7 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "cursor-pointer rounded-xl ring-[6px] ring-[#FFEAF1] transition duration-500 text-xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
+          "hover:scale-105 cursor-pointer rounded-2xl transition duration-500 text-xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
         noring:
           "cursor-pointer rounded-b-xl md:rounded-l-none md:rounded-r-xl transition duration-500 text-xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
         destructive:
@@ -19,7 +19,7 @@ const buttonVariants = cva(
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "cursor-pointer rounded-xl ring-[6px] ring-[#B3E4FF] transition duration-500 text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-white text-[#08272E] items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
+          "cursor-pointer rounded-lg ring-[6px] ring-[#3970ff] transition duration-500 text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-[#3970ff] text-white items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
       },
@@ -45,35 +45,15 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const [isHovered, setIsHovered] = React.useState(false);
-    const handleMouseEnter = () => {
-      setIsHovered(true);
-    };
-
-    const handleMouseLeave = () => {
-      setIsHovered(false);
-    };
-
     const Comp = asChild ? Slot : "button";
     if (variant === "default" || variant === "noring") {
       return (
         <Comp
           className={cn(buttonVariants({ variant, size, className }))}
           ref={ref}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          onTouchStart={handleMouseEnter}
-          onTouchEnd={handleMouseLeave}
           {...props}
         >
-          <div className="absolute w-full h-full top-0 left-0 backdrop-saturate-[1.2]">
-            <div
-              className={`highlight transition duration-300 absolute w-[100%] h-[100%] left-[-3%] top-[-3%] bg-white blur-[1em] ${
-                isHovered ? "opacity-40" : "opacity-30"
-              }`}
-            ></div>
-          </div>
-          <div className="relative flex flex-col leading-tight pb-[0.05em]">
+          <div className="relative flex flex-col leading-tight pt-[0.1em] pb-[0.15em]">
             {props.children}
           </div>
         </Comp>

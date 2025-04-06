@@ -2,6 +2,9 @@ import { useLocale, useTranslations } from "next-intl";
 import Logo from "./logo";
 import Link from "next/link";
 import { getCanonicalLink } from "../lib/utils";
+import { InstagramIcon } from "./icons/instagram-icon";
+import { LinkedInIcon } from "./icons/linkedin-icon";
+import { GithubIcon } from "./icons/github-icon";
 
 export const Footer = () => {
   const locale = useLocale();
@@ -11,12 +14,23 @@ export const Footer = () => {
   return (
     <div className="mt-auto">
       <div className="py-10 mt-10 bg-white px-7">
-        <div className="max-w-7xl text-sm mx-auto gap-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 6xl:flex flex-wrap">
+        <div className="max-w-7xl text-sm mx-auto gap-10 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 6xl:flex flex-wrap">
           <nav className="flex flex-col flex-wrap gap-4 max-w-xs mr-auto order-last md:order-first">
             <Logo />
             <div className="text-gray-500">{t("footer.description")}</div>
             <div className="opacity-60 text-xs font-semibold">
               {t("footer.copyright")}
+            </div>
+            <div className="flex gap-2">
+              <Link href="https://github.com/getpimms">
+                <GithubIcon className="w-6 h-6 opacity-80 hover:opacity-100" />
+              </Link>
+              <Link href="https://www.linkedin.com/company/getpimms">
+                <LinkedInIcon className="w-6 h-6 opacity-80 hover:opacity-100" />
+              </Link>
+              <Link href="https://www.instagram.com/getpimms">
+                <InstagramIcon className="w-6 h-6 opacity-80 hover:opacity-100" />
+              </Link>
             </div>
           </nav>
           <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
@@ -82,16 +96,6 @@ export const Footer = () => {
             <Link href={getCanonicalLink(locale, "/legal/abuse")} className="">
               <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
                 {t("footer.nav.report")}
-              </div>
-            </Link>
-          </nav>
-          <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
-            <div className="font-semibold text-gray-900">
-              {t("footer.category.help")}
-            </div>
-            <Link href="mailto:alexandre@pimms.io" rel="noopener noreferrer">
-              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
-                alexandre@pimms.io
               </div>
             </Link>
           </nav>

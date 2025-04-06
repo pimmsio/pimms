@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getCanonicalLink } from "../lib/utils";
+import { cn, getCanonicalLink } from "../lib/utils";
 import { useLocale } from "next-intl";
 
-export default function Logo() {
+export default function Logo({ className }: { className?: string }) {
   const locale = useLocale();
 
   return (
@@ -14,7 +14,7 @@ export default function Logo() {
       <Image
         src="/static/logo.svg"
         alt="pim.ms"
-        className="w-20 md:w-24"
+        className={cn("w-20 md:w-24", className)}
         width={1000}
         height={179}
       />

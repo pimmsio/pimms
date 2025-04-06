@@ -102,7 +102,7 @@ export default function BlogPost({ params }: Props) {
               key={category}
               href={getCanonicalLink(locale, `/blog/category/${category}`)}
             >
-              <Label className="text-sm text-left capitalize bg-white text-[#08272E] border-[3px] border-[#B3E4FF] px-2.5 py-1.5 cursor-pointer">
+              <Label className="text-sm text-left capitalize bg-white text-[#08272E] border-[3px] border-[#3970ff] px-2.5 py-1.5 cursor-pointer">
                 {category}
               </Label>
             </Link>

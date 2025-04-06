@@ -8,23 +8,30 @@
         "pricing": "Nos offres"
       },
       "hero": {
-        "title": "Accélère. Exploite tes données <not>réelles</not>",
-        "additional_title": "pas le hasard",
-        "description": "Les deeplinks qui ouvrent tes contenus directement dans les apps mobiles officielles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi tes conversions.",
-        "subtitle": "Outil pour gérer tous tes liens avec des données concrètes sur les conversions:",
+        "title": "Plus d'opportunités sauvées. Plus de <not>data</not>",
+        "additional_title": "Moins de hasard",
+        "description": "Les deeplinks qui ouvrent les contenus directement dans les apps mobiles officielles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi des conversions.",
+        "subtitle": "Outil de partage de liens qui détecte les campagnes et liens performants – pour booster ce qui marche vraiment.",
         "benefits": {
-          "1": "Analyse ton trafic et tes conversions",
-          "2": "Identifie tes actions qui convertissent",
-          "3": "Gagne des leads avec les deeplinks"
+          "1": "Centralise tous les liens partagés et repère vite les plus performants",
+          "2": "Sauve des conversions avec la redirection vers les apps mobiles",
+          "3": "Suis en temps réel clics, conversions et ventes pour accélérer les résultats"
         },
         "social_media": "les réseaux",
-        "works_with": "Fonctionne avec <symbols>les réseaux sociaux</symbols> apps et 20+ autres",
         "avatars": "Top créateurs et startups <linkedin>LinkedIn</linkedin> l'utilisent"
+      },
+      "the_need": {
+        "problem": "Le problème",
+        "solution": "La solution",
+        "fail": "Faire décoller ton business sans outil",
+        "success": "Faire décoller ton business avec PIMMS",
+        "post_fail": "🛠 121 jours, toujours zéro vente. En solo. Voici les 4 stratégies que j'ai testés — et pourquoi ça n'a pas marché.",
+        "post_success": "🚀 Mon solo business a atteint 100K€ en 121 jours. Voici les 4 stratégies qui ont fait la différence."
       },
       "form": {
         "email_placeholder": "Adresse email professionnelle",
-        "button": "<fast>⚡</fast> Je veux plus de data",
-        "button_free": "Je veux 10 liens gratuits <arrow>→</arrow>",
+        "button": "<fast>⚡</fast> Je veux plus de conversions",
+        "button_free": "Je crée mon compte gratuit <arrow>→</arrow>",
         "waiting": "Enregistrement en cours...",
         "success": "C’est fait ! Tu viens de recevoir ton invitation par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
@@ -32,13 +39,17 @@
       },
       "video": {
         "src": "https://player.vimeo.com/video/1069569159?badge=0&playsinline=0",
-        "cover": "https://assets.pimms.io/video-pimms-intro-fr-preview.mp4?v=2"
+        "cover": "https://assets.pimms.io/video-pimms-intro-fr-preview.mp4?v=3"
       },
       "main_testimonial": {
-        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",
+        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink",
         "author_name": "Mathieu Dacheux",
         "author_company": "feeedback.dev",
         "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
+      },
+      "deeplinks_explanation": {
+        "title": "Plus d'information sur la technologie deeplink",
+        "description": "Nos liens réussissent à convertir sur mobile, là ou les autres ont échoué"
       },
       "problem": {
         "title": "Le Problème",
@@ -55,43 +66,111 @@
       },
       "solution": {
         "title": "La Solution",
-        "heading": "Partage des deeplinks pour convertir",
-        "description": "<logo>PIMMS</logo> ouvre directement tes contenus dans les apps mobiles officielles. L'expérience est fluide et tes conversions augmentent.",
+        "heading": "Technologie deeplink pour convertir plus",
+        "description": "<logo>PIMMS</logo> ouvre directement les contenus dans les apps mobiles officielles. C'est la technologie deeplink. L'expérience est plus fluide et les conversions augmentent.",
         "more": {
           "title1": "Détection automatique du smartphone",
-          "description1": "Tes contenus s'affichent directement dans les apps officielles utilisées tous les jours par tes utilisateurs.",
+          "description1": "Les contenus s'affichent directement dans les apps officielles utilisées tous les jours par tes utilisateurs.",
           "title2": "Expérience fluide sans perte d'utilisateurs",
-          "description2": "L'expérience augmente tes conversions et booste l'engagement et le temps passé pour chaque liens que tu partages.",
-          "title3": "Suivi précis des conversions dans le temps",
-          "description3": "En temps réel et tout au long de l'année, tu peux suivre en détail les clics et les conversions pour chaque liens que tu partages."
+          "description2": "L'expérience augmente les conversions et booste l'engagement et le temps passé pour chaque lien partagé.",
+          "title3": "Des deeplinks pour toutes les apps natives",
+          "description3": "Fonctionne avec 100+ apps mobiles incluant les navigateurs Chrome et Safari pour les pages web."
+        }
+      },
+      "top_features": {
+        "title": "Analyse chaque clic, chaque conversion, chaque vente",
+        "description": "Suis en temps réel la performance de chaque lien des campagnes avec des données précises, lisibles et activables.",
+        "features": {
+          "title1": "Des données claires et actionnables",
+          "description1": "Visualise l’impact de chaque lien dans un dashboard temps réel, toute l’année.",
+          "title2": "Filtres avancés d’analyse",
+          "description2": "Affiche les performances par campagne UTM, source, pays, appareil, navigateur, canal… en quelques clics."
+        },
+        "analytics_features": {
+          "title1": "Données en temps réel",
+          "description1": "Chaque clic, conversion, vente s'affiche en live pour pouvoir réagir vite.",
+          "title2": "Filtres de dates",
+          "description2": "Analyse les campagnes par jour, semaine ou période donnée, et compare les résultats facilement.",
+          "title3": "Dashboards partagés",
+          "description3": "Collabore en équipe pour suivre les perfs et prendre les bonnes décisions ensemble."
+        }
+      },
+      "link_features": {
+        "title": "Sauve des clics: redirection auto vers les bonnes apps mobiles",
+        "description": "Nos liens réussissent à convertir sur mobile, là ou les autres ont échoué",
+        "features": {
+          "title1": "Domaines personnalisés",
+          "description1": "Crée des liens courts professionnels et uniques avec ton propre nom de domaine.",
+          "title2": "Aperçus de liens",
+          "description2": "Propose des aperçus de liens et modifie facilement l'image, le titre et la description."
+        }
+      },
+      "analytics_chart": {
+        "clicks": "Clics",
+        "leads": "Conversions",
+        "sales": "Ventes",
+        "saleAmount": "Recettes",
+        "currency": "EUR",
+        "locale": "fr-FR"
+      },
+      "filter_feature": {
+        "country": "Pays",
+        "city": "Ville",
+        "browser": "Navigateur",
+        "device": "Appareil",
+        "referral": "Referral",
+        "utm": {
+          "campaign": "Campagne",
+          "source": "Source",
+          "medium": "Medium",
+          "linkedin_launch": "linkedin_launch",
+          "newsletter_april": "newsletter_april",
+          "google_promo": "google_promo",
+          "calendly_partner": "calendly_partner",
+          "webinar_jean": "webinar_jean",
+          "fb_retargeting": "fb_retargeting"
+        },
+        "tag": {
+          "title": "Tag",
+          "launch": "Lancement",
+          "onboarding": "Onboarding",
+          "retargeting": "Retargeting",
+          "emailing": "Emailing",
+          "sales": "Ventes",
+          "demo": "Démo",
+          "paid_ads": "Pub meta",
+          "beta": "Beta"
         }
       },
       "free_offer": {
-        "title": "Accès gratuit à <logo>PIMMS</logo>",
-        "description": "Ne perds plus jamais de conversions – on t'offre 10 deeplinks pour commencer dès gratuitement.",
+        "title": "Accès à <logo>PIMMS</logo>",
+        "description": "10 liens par mois sont offerts.",
         "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
           "alt1": "PIMMS Dashboard showing a list of direct links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
           "alt2": "PIMMS Dashboard showing analytics of direct links"
         }
       },
       "lifetime_offer": {
-        "title": "Gagne des tonnes de conversions, sans limites",
-        "offer_name": "<logo>PIMMS</logo> Pro",
-        "early_bird": "<price>54</price> de réduction",
-        "cta": "Je veux acheter",
-        "pay_once": "<check>check</check> Achat unique sans abonnement",
-        "money_back": "30 jours - garantie satisfait ou remboursé",
-        "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
+        "title": "Crée des liens et analyse les interactions en illimité",
+        "subtitle": "L'indispensable en illimité",
+        "cta": "J'achète",
+        "free_trial": "Essai gratuit",
+        "pay_once": "Achat unique sans abonnement",
+        "one_year_pass": "Offre d'un an",
+        "lifetime_deal": "Achat unique",
+        "popular": "Populaire",
+        "tax": "H.T.",
         "features": {
-          "1": "Tes conversions sont sécurisées",
-          "2": "Nouveaux deeplinks illimités",
-          "3": "50K clics analysés / mois",
-          "4": "Données de clics sur 1 an",
-          "5": "Travailler en équipe jusqu'à 3",
-          "6": "3 domaines personnalisés",
-          "7": "Templates UTM illimités"
+          "title": "L'indispensable en illimité",
+          "1": "Conversions suivis",
+          "2": "Nouveaux liens illimités",
+          "3": "Clics analysés illimités",
+          "4": "Données conservées 1 an",
+          "5": "Travaille en équipe",
+          "6": "Domaine personnalisé",
+          "7": "UTM illimités, redirection dans les apps mobiles, QR codes..."
         }
       },
       "cta": {
@@ -109,7 +188,7 @@
       "hero": {
         "title": "Convertis plus avec des <not>deeplinks</not>",
         "additional_title": "100+ apps",
-        "description": "Les seuls liens courts qui ouvrent tes contenus directement dans les apps mobiles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi tes conversions.",
+        "description": "Les seuls liens courts qui ouvrent tes contenus directement dans les apps mobiles. En améliorant l'expérience utilisateur, les deeplinks augmentent aussi des conversions.",
         "subtitle": "Les deeplinks redirigent tes contenus vers les apps mobiles officielles:",
         "benefits": {
           "1": "Sans perte de conversions",
@@ -117,13 +196,20 @@
           "3": "Analyse ton trafic et les clics"
         },
         "social_media": "les réseaux",
-        "works_with": "Fonctionne avec <symbols>les réseaux sociaux</symbols> apps et 20+ autres",
         "avatars": "Top créateurs et startups <linkedin>LinkedIn</linkedin> l'utilisent"
+      },
+      "the_need": {
+        "problem": "Le problème",
+        "solution": "La solution",
+        "fail": "Faire décoller ton business sans outil",
+        "success": "Faire décoller ton business avec PIMMS",
+        "post_fail": "🛠 121 jours, toujours zéro vente. En solo. Voici les 4 stratégies que j'ai testés — et pourquoi ça n'a pas marché.",
+        "post_success": "🚀 Mon solo business a atteint 100K€ en 121 jours. Voici les 4 stratégies qui ont fait la différence."
       },
       "form": {
         "email_placeholder": "Adresse email professionnelle",
         "button": "<fast>⚡</fast> Démarrer gratuitement",
-        "button_free": "Je veux 10 liens gratuits <arrow>→</arrow>",
+        "button_free": "Je crée mon compte  <arrow>→</arrow>",
         "waiting": "Enregistrement en cours...",
         "success": "C’est fait ! Tu viens de recevoir ton invitation par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
@@ -131,13 +217,17 @@
       },
       "video": {
         "src": "https://player.vimeo.com/video/1069569159?badge=0&playsinline=0",
-        "cover": "https://assets.pimms.io/video-pimms-intro-fr-preview.mp4?v=2"
+        "cover": "https://assets.pimms.io/video-pimms-intro-fr-preview.mp4?v=3"
       },
       "main_testimonial": {
-        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",
+        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink",
         "author_name": "Mathieu Dacheux",
         "author_company": "feeedback.dev",
         "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
+      },
+      "deeplinks_explanation": {
+        "title": "Plus d'information sur la technologie deeplink",
+        "description": "Nos liens réussissent à convertir sur mobile, là ou les autres ont échoué"
       },
       "problem": {
         "title": "Le Problème",
@@ -154,43 +244,46 @@
       },
       "solution": {
         "title": "La Solution",
-        "heading": "Partage des deeplinks pour convertir",
-        "description": "<logo>PIMMS</logo> ouvre directement tes contenus dans les apps mobiles officielles. L'expérience est fluide et tes conversions augmentent.",
+        "heading": "Technologie deeplink pour convertir plus",
+        "description": "<logo>PIMMS</logo> ouvre directement tes contenus dans les apps mobiles officielles. C'est la technologie deeplink. L'expérience est fluide et tes conversions augmentent.",
         "more": {
           "title1": "Détection automatique du smartphone",
           "description1": "Tes contenus s'affichent directement dans les apps officielles utilisées tous les jours par tes utilisateurs.",
           "title2": "Expérience fluide sans perte d'utilisateurs",
           "description2": "L'expérience augmente tes conversions et booste l'engagement et le temps passé sur tes contenus.",
-          "title3": "Suivi précis des conversions dans le temps",
-          "description3": "En temps réel et tout au long de l'année, tu peux suivre en détail les clics et les conversions sur tes contenus."
+          "title3": "Des deeplinks pour toutes les apps",
+          "description3": "Fonctionne avec 100+ apps mobiles comme Instagram, YouTube, Amazon, etc."
         }
       },
       "free_offer": {
-        "title": "Accès gratuit à <logo>PIMMS</logo>",
-        "description": "Ne perds plus jamais de conversions – on t'offre 10 deeplinks pour commencer dès gratuitement.",
+        "title": "Accès à <logo>PIMMS</logo>",
+        "description": "agne des opportunités – on t'offre 10 liens pour commencer gratuitement.",
         "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
           "alt1": "PIMMS Dashboard showing a list of direct links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
           "alt2": "PIMMS Dashboard showing analytics of direct links"
         }
       },
       "lifetime_offer": {
-        "title": "Gagne des tonnes de conversions, sans limites",
-        "offer_name": "<logo>PIMMS</logo> Pro",
-        "early_bird": "<price>54</price> de réduction",
-        "cta": "Je veux acheter",
-        "pay_once": "<check>check</check> Achat unique sans abonnement",
-        "money_back": "30 jours - garantie satisfait ou remboursé",
-        "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
+        "title": "Crée des liens et analyse les interactions en illimité",
+        "subtitle": "L'indispensable en illimité",
+        "cta": "J'achète",
+        "pay_once": "Achat unique sans abonnement",
+        "free_trial": "Essai gratuit",
+        "one_year_pass": "Offre d'un an",
+        "lifetime_deal": "Achat unique",
+        "popular": "Populaire",
+        "tax": "H.T.",
         "features": {
-          "1": "Tes conversions sont sécurisées",
-          "2": "Nouveaux deeplinks illimités",
-          "3": "50K clics analysés / mois",
-          "4": "Données de clics sur 1 an",
-          "5": "Travailler en équipe jusqu'à 3",
-          "6": "3 domaines personnalisés",
-          "7": "Templates UTM illimités"
+          "title": "L'indispensable en illimité",
+          "1": "Conversions suivis",
+          "2": "Nouveaux liens illimités",
+          "3": "Clics analysés illimités",
+          "4": "Données conservées 1 an",
+          "5": "Travaille en équipe",
+          "6": "Domaine personnalisé",
+          "7": "UTM illimités, redirection dans les apps mobiles, QR codes..."
         }
       },
       "cta": {
@@ -220,7 +313,7 @@
       "form": {
         "email_placeholder": "Adresse email professionnelle",
         "button": "<fast>⚡</fast> Démarrer gratuitement",
-        "button_free": "Je veux 10 liens gratuits <arrow>→</arrow>",
+        "button_free": "Je crée mon compte  <arrow>→</arrow>",
         "waiting": "Enregistrement en cours...",
         "success": "Bravo ! Ton invitation vient d'être envoyée par email.",
         "error": "Oups ! Une erreur s'est produite. Merci de réessayer.",
@@ -231,10 +324,14 @@
         "cover": "https://assets.pimms.io/pimms-intro-preview.mp4"
       },
       "main_testimonial": {
-        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink <love>❤️</love>",
+        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink",
         "author_name": "Mathieu Dacheux",
         "author_company": "feeedback.dev",
         "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
+      },
+      "deeplinks_explanation": {
+        "title": "Plus d'information sur la technologie deeplink",
+        "description": "Nos liens réussissent à convertir sur mobile, là ou les autres ont échoué"
       },
       "problem": {
         "title": "Le Problème",
@@ -258,36 +355,39 @@
           "description1": "Ouverture directe de tes vidéos dans l’application officielle YouTube.",
           "title2": "Expérience utilisateur fluide",
           "description2": "Tes visiteurs restent connectés, s’abonnent, likent et commentent beaucoup plus depuis l'application officielle YouTube car ils l'utilisent tous les jours.",
-          "title3": "Statistiques avancées",
-          "description3": "Analyse facilement la performance de tes deeplinks depuis un dashboard en temps réel tout au long de l'année."
+          "title3": "Des deeplinks pour toutes les apps",
+          "description3": "Fonctionne avec 100+ apps mobiles comme Instagram, YouTube, Amazon, etc."
         }
       },
       "free_offer": {
-        "title": "Accès gratuit à <logo>PIMMS</logo>",
-        "description": "Dis stop aux abonnés perdus – Profite de 10 deeplinks offerts pour démarrer.",
+        "title": "Accès à <logo>PIMMS</logo>",
+        "description": "Gagne des abonnés – on t'offre 10 liens pour commencer gratuitement.",
         "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=5",
+          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
           "alt1": "PIMMS Dashboard showing a list of direct links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-3.webp?v=5",
+          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
           "alt2": "PIMMS Dashboard showing analytics of direct links"
         }
       },
       "lifetime_offer": {
-        "title": "Gagne des tonnes d'abonnés, sans limites",
-        "offer_name": "<logo>PIMMS</logo> Pro",
-        "early_bird": "<price>54</price> de réduction",
-        "cta": "Je veux acheter",
-        "pay_once": "<check>check</check> Achat unique sans abonnement",
-        "money_back": "30 jours - garantie satisfait ou remboursé",
-        "promo_code": "CODE PROMO \"LASTCHANCE20\" 20%",
+        "title": "Crée des liens et analyse les interactions en illimité",
+        "subtitle": "L'indispensable en illimité",
+        "cta": "J'achète",
+        "pay_once": "Achat unique sans abonnement",
+        "free_trial": "Essai gratuit",
+        "one_year_pass": "Offre d'un an",
+        "lifetime_deal": "Achat unique",
+        "popular": "Populaire",
+        "tax": "H.T.",
         "features": {
-          "1": "Tes abonnés sont sécurisés",
-          "2": "Nouveaux deeplinks illimités",
-          "3": "Analyse sur 50K clics / mois",
-          "4": "Données de clics sur 1 an",
-          "5": "Travailler en équipe jusqu'à 3",
-          "6": "3 domaines personnalisés",
-          "7": "Templates UTM illimités"
+          "title": "L'indispensable en illimité",
+          "1": "Plus d'abonnés",
+          "2": "Nouveaux liens illimités",
+          "3": "Clics analysés illimités",
+          "4": "Données conservées 1 an",
+          "5": "Travaille en équipe",
+          "6": "Domaine personnalisé",
+          "7": "UTM illimités, redirection dans les apps mobiles, QR codes..."
         }
       },
       "cta": {

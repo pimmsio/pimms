@@ -17,7 +17,7 @@ export const ListItem = ({
     <li className={twMerge("flex-row flex gap-2 items-center", className)}>
       <div
         className={twMerge(
-          "w-fit h-fit rounded-full",
+          "w-fit h-fit rounded-full bg-[#E7EEFF] text-[#3970ff]",
           size === "sm" && "p-1",
           size === "md" && "p-2 md:p-2.5",
           size === "lg" && "p-3 md:p-3.5",

@@ -7,7 +7,7 @@ export const Avatars = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(tkey);
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2">
+    <div className="flex flex-col items-center justify-center gap-2 my-8">
       <Paragraph className="text-center text-sm">
         {t.rich("hero.avatars", {
           counter: (chunks) => <span className="text-[#08272E]">{chunks}</span>,
@@ -48,7 +48,7 @@ export const Avatars = ({ tkey }: { tkey: string }) => {
           alt="Florent Thurin"
         />
         <Avatar
-          src="https://media.licdn.com/dms/image/v2/D4E03AQHq46e5Mj5A0A/profile-displayphoto-shrink_400_400/B4EZWwVwDTGYBI-/0/1742420248481?e=1747872000&v=beta&t=uYStLFGB312Jy3_4sJVlcgF5uhVwYwTL4xhtz6w85EM"
+          src="https://media.licdn.com/dms/image/v2/D4E03AQEkTZhl4s-kSg/profile-displayphoto-shrink_400_400/B4EZYRDd7PHgAg-/0/1744042844438?e=1749686400&v=beta&t=zLesZxWZNGeH55hjvn_vPnmZn1LW2m7U58OBXDiB1aE"
           alt="Alexandre Sarfati"
         />
         <Avatar

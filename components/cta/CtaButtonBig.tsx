@@ -11,10 +11,12 @@ export default function CtaButtonBig({
   type,
   className,
   value,
+  variant = "default",
 }: {
   type: string;
   className?: string;
   value?: string | React.ReactNode;
+  variant?: "default" | "secondary";
 }) {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -27,6 +29,29 @@ export default function CtaButtonBig({
     setIsLoading(false);
     window.location.href = `${APP_URL}/register`;
   };
+
+  if (variant === "secondary") {
+    return (
+      <div className="flex flex-col md:flex-row w-full">
+        <Button
+          variant="secondary"
+          type="submit"
+          size="lg"
+          onClick={handleClick}
+          className={twMerge(
+            "py-[0.25em] text-xl md:min-w-44 w-fit hover:scale-105",
+            className
+          )}
+          disabled={isLoading}
+        >
+          <span className="flex items-center gap-2 justify-center w-full">
+            {isLoading && <Loader2 size={32} className="animate-spin" />}
+            {value}
+          </span>
+        </Button>
+      </div>
+    );
+  }
 
   return (
     <div className="flex flex-col md:flex-row items-center justify-center">

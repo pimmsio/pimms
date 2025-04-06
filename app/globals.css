@@ -7,13 +7,13 @@ body {
 
 @theme {
   --color-background: hsl(199 90% 96%);
-  --color-background-secondary: hsl(55 38% 94%);
+  --color-background-secondary: hsl(0 0% 98%);
   --color-foreground: hsl(220 20% 15%);
   --color-card: hsl(0 0% 100%);
   --color-card-foreground: hsl(220 20% 15%);
   --color-popover: hsl(0 0% 100%);
   --color-popover-foreground: hsl(220 20% 15%);
-  --color-primary: hsl(341 71% 52%);
+  --color-primary: hsl(223 100% 61.2%);
   --color-primary-foreground: hsl(0 0% 100%);
   --color-secondary: hsl(0 0% 96.1%);
   --color-secondary-foreground: hsl(0 0% 9%);
@@ -33,7 +33,7 @@ input {
 }
 
 body {
-  background-color: hsl(55, 38%, 94%);
+  background-color: hsl(0 0% 98%);
   color: hsl(220, 20%, 15%);
 }
 
@@ -53,4 +53,17 @@ body {
     currentColor 50.5%,
     transparent 52.25%
   );
+}
+
+@keyframes scroll-loop {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-loop {
+  animation: scroll-loop 30s linear infinite;
 }

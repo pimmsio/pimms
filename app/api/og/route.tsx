@@ -19,11 +19,11 @@ export async function GET(request: Request) {
         </div>
         <div tw="absolute bottom-[-15px] right-[-105px] flex">
           <img
-            src="https://assets.pimms.io/dashboard-links-screenshot-2.jpg"
+            src="https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6"
             alt="PIMMS Logo"
             width={505}
             height={550}
-            tw="rounded-2xl border-[6px] border-[#D4F0FE]"
+            tw="rounded-2xl border-[6px] border-[#E7EEFF]"
           />
         </div>
         <div tw="flex flex-col w-full px-16 w-[800px]">

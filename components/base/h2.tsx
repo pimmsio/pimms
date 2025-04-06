@@ -8,7 +8,12 @@ export const H2 = ({
   className?: string;
 }) => {
   return (
-    <h2 className={twMerge("text-2xl font-bold text-balance", className)}>
+    <h2
+      className={twMerge(
+        "text-2xl md:text-3xl font-extrabold text-balance",
+        className
+      )}
+    >
       {children}
     </h2>
   );

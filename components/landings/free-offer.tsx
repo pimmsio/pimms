@@ -2,11 +2,11 @@
 import BouncingImages from "@/components/landings/BouncingImages";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Paragraph } from "@/components/base/paragraph";
 import { Section } from "@/components/base/section";
 import { H2 } from "@/components/base/h2";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
 import { MoveRight } from "lucide-react";
+import { Paragraph } from "../base/paragraph";
 
 export const FreeOffer = ({
   tkey,
@@ -20,7 +20,7 @@ export const FreeOffer = ({
   return (
     <Section id="free" className="md:flex-row items-center mt-8">
       <div className="w-full md:w-1/2 text-center md:text-left">
-        <H2 className="mb-4">
+        <H2 className="my-10">
           {t.rich("free_offer.title", {
             logo: () => (
               <Image
@@ -34,10 +34,11 @@ export const FreeOffer = ({
           })}
         </H2>
         <Paragraph>{t("free_offer.description")}</Paragraph>
-        <div className="flex mt-8 mb-6 justify-center md:justify-start">
+        <div className="flex my-12 w-full">
           <CtaButtonBig
             type={type}
-            className="py-3"
+            variant="secondary"
+            className="w-full sm:w-10/12 lg:w-9/12 mx-auto md:mx-0"
             value={t.rich("form.button_free", {
               arrow: () => <MoveRight className="!size-6" strokeWidth={2} />,
             })}

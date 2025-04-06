@@ -24,7 +24,7 @@ export default function BlogLayoutHero() {
             {data?.description || "Latest news and updates from PIMMS"}
           </Paragraph>
         </div>
-        <nav className="mt-6 hidden w-fit mx-auto items-center space-x-2 rounded-full border-[6px] border-[#D4F0FE] bg-white p-2 md:flex">
+        <nav className="mt-6 hidden w-fit mx-auto items-center space-x-2 rounded-full border-[6px] border-[#E7EEFF] bg-white p-2 md:flex">
           <CategoryLink title="Overview" href="/blog" active={!slug} />
           {BLOG_CATEGORIES.map((category) => (
             <CategoryLink

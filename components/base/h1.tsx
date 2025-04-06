@@ -10,11 +10,11 @@ export const H1 = ({
   return (
     <div
       className={twMerge(
-        "max-w-sm sm:max-w-lg lg:max-w-3xl mx-auto text-center",
+        "max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-5xl mx-auto text-center",
         className
       )}
     >
-      <h1 className="text-4xl lg:text-6xl !leading-12 lg:!leading-16 font-black !tracking-tight text-balance text-[#08272E]">
+      <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl !leading-12 sm:!leading-14 lg:!leading-16 font-extrabold !tracking-tight text-balance text-[#08272E]">
         {children}
       </h1>
     </div>

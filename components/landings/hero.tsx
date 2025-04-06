@@ -6,6 +6,7 @@ import { H1 } from "@/components/base/h1";
 import { HeroSection } from "@/components/base/hero-section";
 import { Paragraph } from "@/components/base/paragraph";
 import { List, ListItem } from "@/components/base/list";
+import { H1Subtitle } from "../base/h1-subtitle";
 export const Hero = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(tkey);
 
@@ -25,7 +26,7 @@ export const Hero = ({ tkey }: { tkey: string }) => {
           not: (chunks) => (
             <span className="relative">
               {chunks}
-              <span className="absolute bottom-1 max-md:bottom-0 max-md:-translate-x-3/5 left-1/2 flex translate-y-full -rotate-3 flex-nowrap items-center gap-0.5 whitespace-nowrap text-lg font-semibold tracking-wide lg:text-xl">
+              <span className="absolute bottom-0 max-md:-translate-x-3/5 left-1/3 flex translate-y-full -rotate-3 flex-nowrap items-center gap-0.5 whitespace-nowrap text-lg font-semibold tracking-wide lg:text-xl">
                 {t("hero.additional_title")}
               </span>
             </span>
@@ -33,23 +34,22 @@ export const Hero = ({ tkey }: { tkey: string }) => {
         })}
       </H1>
 
-      <div className="max-w-sm md:max-w-md flex flex-col items-start justify-left mx-auto px-1">
-        <Paragraph className="mt-14 text-[#08272E] font-semibold sm:text-pretty">
-          {t("hero.subtitle")}
-        </Paragraph>
+      <H1Subtitle>{t("hero.subtitle")}</H1Subtitle>
+
+      <div className="max-w-sm sm:max-w-md md:max-w-lg flex flex-col items-start justify-left mx-auto px-1 my-4">
         <List className="mt-4 gap-1">
           <ListItem icon={<Check className="w-6 h-6" />}>
-            <Paragraph className="font-medium">
+            <Paragraph className="font-medium md:text-pretty">
               {t("hero.benefits.1")}
             </Paragraph>
           </ListItem>
           <ListItem icon={<Check className="w-6 h-6" />}>
-            <Paragraph className="font-medium">
+            <Paragraph className="font-medium md:text-pretty">
               {t("hero.benefits.2")}
             </Paragraph>
           </ListItem>
           <ListItem icon={<Check className="w-6 h-6" />}>
-            <Paragraph className="font-medium">
+            <Paragraph className="font-medium md:text-pretty">
               {t("hero.benefits.3")}
             </Paragraph>
           </ListItem>

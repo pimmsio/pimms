@@ -10,7 +10,7 @@ export const HeroSection = ({
   return (
     <section
       className={twMerge(
-        "w-full mt-4 mb-12 md:my-16 px-1 md:px-6 max-w-4xl mx-auto",
+        "w-full mt-4 mb-12 md:my-16 px-1 md:px-6 mx-auto",
         className
       )}
       id="hero"

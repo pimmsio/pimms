@@ -42,7 +42,7 @@ const VideoSlide = ({ tkey }: { tkey: string }) => {
   return (
     <section
       id="video"
-      className="w-full max-w-7xl my-12 md:my-20 md mx-auto relative overflow-hidden outline-[6px] outline-[#F2F3F5] flex justify-center items-center rounded-3xl"
+      className="w-full max-w-7xl my-12 md:my-20 md mx-auto relative overflow-hidden outline-[6px] outline-[#3970ff] flex justify-center items-center rounded-3xl"
     >
       <div className="w-full grid grid-cols-1 grid-rows-1 aspect-video mx-auto overflow-hidden">
         <iframe
@@ -77,7 +77,7 @@ const VideoSlide = ({ tkey }: { tkey: string }) => {
           >
             <source src={t("video.cover")} type="video/mp4" />
           </video>
-          <div className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto rounded-full z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-primary shadow-lg transition-transform hover:scale-105 ring-[6px] ring-[#FFEAF1]">
+          <div className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto rounded-full z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-primary shadow-lg transition-transform hover:scale-105 ring-[6px] ring-[#E7EEFF]">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"

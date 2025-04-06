@@ -74,7 +74,7 @@ export default function BouncingImages({ tkey }: { tkey: string }) {
     <div className="relative flex items-start w-full mb-24">
       <div
         className={`
-          relative border-[6px] border-[#D4F0FE] mr-[-60px] rounded-2xl
+          relative border-[6px] border-[#E7EEFF] mr-[-60px] rounded-2xl
           transition-all duration-300 overflow-hidden
           ${frontImage === 0 ? "z-10" : "z-0"} 
           ${image1Transforms()}
@@ -90,7 +90,7 @@ export default function BouncingImages({ tkey }: { tkey: string }) {
       </div>
       <div
         className={`
-          relative border-[6px] border-[#F0A8BF] rounded-2xl
+          relative border-[6px] border-[#E7EEFF] rounded-2xl
           transition-all duration-300 top-[60px] overflow-hidden
           ${frontImage === 1 ? "z-10" : "z-0"}
           ${image2Transforms()}
