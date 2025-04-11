@@ -4,15 +4,15 @@ import { Button } from "../ui/button";
 import { APP_URL } from "../../app/constants";
 import Link from "next/link";
 
-export default function CtaLink({ tkey }: { tkey: string }) {
-  const t = useTranslations(tkey);
+export default function CtaLink({}: { tkey: string }) {
+  const tcommon = useTranslations("landing.common");
   return (
     <Link href={`${APP_URL}/register`}>
       <Button
         variant="link"
         className="text-sm md:text-base font-bold hidden md:block cursor-pointer"
       >
-        {t("cta.button")}
+        {tcommon("cta.link")}
       </Button>
     </Link>
   );

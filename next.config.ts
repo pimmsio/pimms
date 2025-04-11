@@ -31,6 +31,9 @@ const nextConfig: NextConfig = {
       {
         hostname: "assets.pimms.io",
       },
+      {
+        hostname: "www.google.com",
+      },
     ],
   },
   async rewrites() {

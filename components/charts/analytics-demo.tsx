@@ -12,13 +12,19 @@ type Tab = {
   label: string;
 };
 
-export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
-  const t = useTranslations(tkey);
+export const AnalyticsDemo = ({
+  tkey,
+  showConversions = true,
+}: {
+  tkey: string;
+  showConversions?: boolean;
+}) => {
+  const tcommon = useTranslations("landing.common");
   const RESOURCE_LABELS = {
-    clicks: t("analytics_chart.clicks"),
-    leads: t("analytics_chart.leads"),
-    sales: t("analytics_chart.sales"),
-    saleAmount: t("analytics_chart.saleAmount"),
+    clicks: tcommon("analytics_chart.clicks"),
+    leads: tcommon("analytics_chart.leads"),
+    sales: tcommon("analytics_chart.sales"),
+    saleAmount: tcommon("analytics_chart.saleAmount"),
   };
 
   const tabs = useMemo(
@@ -28,17 +34,20 @@ export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
           id: "clicks",
           label: "Clicks",
         },
-
-        {
-          id: "leads",
-          label: "Conversions",
-        },
-        {
-          id: "sales",
-          label: "Sales",
-        },
+        ...(showConversions
+          ? [
+              {
+                id: "leads",
+                label: "Conversions",
+              },
+              {
+                id: "sales",
+                label: "Sales",
+              },
+            ]
+          : []),
       ] as Tab[],
-    []
+    [showConversions]
   );
 
   const [selectedTab, setSelectedTab] = useState("clicks");
@@ -82,8 +91,10 @@ export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
   };
 
   return (
-    <div className="bg-card">
-      <div className="scrollbar-hide grid w-full grid-cols-3 divide-x divide-[#E7EEFF] overflow-y-hidden border-b-1 border-[#E7EEFF] rounded-t-2xl">
+    <div className="bg-card rounded-3xl border-[6px] border-neutral-100">
+      <div
+        className={`scrollbar-hide grid w-full grid-cols-3 divide-x divide-[#E7EEFF] overflow-y-hidden border-b-1 border-[#E7EEFF] rounded-t-2xl`}
+      >
         {tabs.map(({ id }) => {
           return (
             <div key={id} className="relative z-0">
@@ -111,7 +122,7 @@ export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
                       id === "sales"
                         ? {
                             style: "currency",
-                            currency: t("analytics_chart.currency"),
+                            currency: tcommon("analytics_chart.currency"),
                             trailingZeroDisplay: "stripIfInteger",
                           }
                         : {

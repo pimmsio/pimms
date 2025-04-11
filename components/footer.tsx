@@ -39,20 +39,20 @@ export const Footer = () => {
             </div>
             <Link
               aria-current="page"
-              href={getCanonicalLink(locale, "/solutions/linkedin")}
-              className="router-link-active router-link-exact-active"
-            >
-              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
-                {t("footer.solutions.site")}
-              </div>
-            </Link>
-            <Link
-              aria-current="page"
               href={getCanonicalLink(locale, "/solutions/youtube")}
               className="router-link-active router-link-exact-active"
             >
               <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
                 {t("footer.solutions.youtube")}
+              </div>
+            </Link>
+            <Link
+              aria-current="page"
+              href={getCanonicalLink(locale, "/solutions/amazon")}
+              className="router-link-active router-link-exact-active"
+            >
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+                {t("footer.solutions.amazon")}
               </div>
             </Link>
           </nav>

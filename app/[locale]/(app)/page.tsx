@@ -8,48 +8,57 @@ import { useTranslations } from "next-intl";
 import { Zap } from "lucide-react";
 import { Avatars } from "@/components/landings/avatars";
 import { TopFeatures } from "@/components/landings/top-features";
-import { LinkFeatures } from "@/components/landings/link-features";
-import MainTestimonial from "@/components/landings/main-testimonial";
-import { TheNeed } from "@/components/landings/the-need";
+import { Problem } from "@/components/landings/problem";
+import LogosCircle from "@/components/logos-circle";
+import FAQ from "@/components/faq";
 
 const lkey = "home";
 const tkey = `landing.${lkey}`;
+const fkey = `faq.${lkey}`;
 
 export default function Home() {
-  const t = useTranslations(tkey);
-
+  const tcommon = useTranslations("landing.common");
   return (
     <>
       <div className="min-h-screen bg-background-secondary text-foreground w-11/12 mx-auto">
         <Header tkey={tkey} />
+        <Avatars tkey={tkey} />
         <Hero tkey={tkey} />
         <CtaButtonBig
           type="sales"
           className="py-3 top-[-12px]"
-          value={t.rich("form.button", {
+          value={tcommon.rich("cta.main", {
             fast: () => <Zap size={32} fill="currentColor" />,
+            large: (chunks) => (
+              <span className="hidden md:block">{chunks}</span>
+            ),
           })}
         />
-        <Avatars tkey={tkey} />
+        <div className="text-xs text-muted-foreground text-center font-semibold">
+          {tcommon("cta.bottom")}
+        </div>
         <VideoSlide tkey={tkey} />
       </div>
 
       <div className="bg-zinc-100 w-full py-16">
-        <TheNeed tkey={tkey} />
-        <div className="w-11/12 mx-auto">
-          <LifetimeOffer tkey={tkey} />
-        </div>
+        <Problem tkey={tkey} showSecondSection />
+        {/* <TheNeed tkey={tkey} /> */}
       </div>
 
-      <div className="bg-background-secondary text-foreground w-11/12 mx-auto">
+      <div className="bg-background-secondary text-foreground mx-auto my-8">
         <TopFeatures tkey={tkey} />
       </div>
 
+      <div className="bg-zinc-100 w-full pt-16">
+        <LogosCircle tkey={tkey} />
+      </div>
       <div className="bg-zinc-100 w-full py-16">
-        <div className="w-11/12 mx-auto">
-          <MainTestimonial tkey={tkey} />
-          <LinkFeatures tkey={tkey} />
-        </div>
+        {/* <MainTestimonial tkey={tkey} /> */}
+        <LifetimeOffer tkey={tkey} />
+      </div>
+
+      <div className="bg-background-secondary text-foreground">
+        <FAQ fkey={fkey} defaultFaqs={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]} />
       </div>
 
       <div className="bg-background-secondary text-foreground w-11/12 mx-auto">

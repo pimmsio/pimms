@@ -12,8 +12,8 @@ const getFaviconUrl = (url: string) => {
   return `https://www.google.com/s2/favicons?sz=64&domain_url=${domain}`;
 };
 
-export const FilterFeature = ({ tkey }: { tkey: string }) => {
-  const t = useTranslations(tkey);
+export const FilterFeature = ({}: { tkey: string }) => {
+  const tcommon = useTranslations("landing.common");
 
   const utmLabel = (
     <Label className="text-xs text-left capitalize font-light bg-zinc-100 text-[#08272E] border-1 border-zinc-200 ml-[-4px] mr-[-4px] px-1 rounded-sm">
@@ -27,27 +27,27 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
         icon: (
           <img alt="France" src={getFlagUrl("FR")} className="rounded-md" />
         ),
-        label: t("filter_feature.country"),
+        label: tcommon("filter_feature.country"),
         value: "France",
       },
       {
         icon: <img alt="CH" src={getFlagUrl("CH")} className="rounded-md" />,
-        label: t("filter_feature.city"),
+        label: tcommon("filter_feature.city"),
         value: "Zurich",
       },
       {
         icon: <img alt="US" src={getFlagUrl("US")} className="rounded-md" />,
-        label: t("filter_feature.city"),
+        label: tcommon("filter_feature.city"),
         value: "New York",
       },
       {
         icon: <img alt="FR" src={getFlagUrl("FR")} className="rounded-md" />,
-        label: t("filter_feature.city"),
+        label: tcommon("filter_feature.city"),
         value: "Lyon",
       },
       {
         icon: <img alt="AU" src={getFlagUrl("AU")} className="rounded-md" />,
-        label: t("filter_feature.city"),
+        label: tcommon("filter_feature.city"),
         value: "Melbourne",
       },
     ],
@@ -61,7 +61,7 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="LinkedIn"
           />
         ),
-        label: t("filter_feature.referral"),
+        label: tcommon("filter_feature.referral"),
         value: "LinkedIn",
       },
       {
@@ -73,7 +73,7 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="Youtube"
           />
         ),
-        label: t("filter_feature.referral"),
+        label: tcommon("filter_feature.referral"),
         value: "Youtube",
       },
       {
@@ -85,7 +85,7 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="Tally"
           />
         ),
-        label: t("filter_feature.referral"),
+        label: tcommon("filter_feature.referral"),
         value: "Tally",
       },
       {
@@ -97,7 +97,7 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="Calendly"
           />
         ),
-        label: t("filter_feature.referral"),
+        label: tcommon("filter_feature.referral"),
         value: "Calendly",
       },
       {
@@ -109,77 +109,77 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="Lemlist"
           />
         ),
-        label: t("filter_feature.referral"),
+        label: tcommon("filter_feature.referral"),
         value: "Lemlist",
       },
     ],
     [
       {
         icon: utmLabel,
-        label: t("filter_feature.utm.campaign"),
-        value: t("filter_feature.utm.linkedin_launch"),
+        label: tcommon("filter_feature.utm.campaign"),
+        value: tcommon("filter_feature.utm.linkedin_launch"),
       },
       {
         icon: utmLabel,
-        label: t("filter_feature.utm.source"),
-        value: t("filter_feature.utm.newsletter_april"),
+        label: tcommon("filter_feature.utm.source"),
+        value: tcommon("filter_feature.utm.newsletter_april"),
       },
       {
         icon: utmLabel,
-        label: t("filter_feature.utm.medium"),
-        value: t("filter_feature.utm.google_promo"),
+        label: tcommon("filter_feature.utm.medium"),
+        value: tcommon("filter_feature.utm.google_promo"),
       },
       {
         icon: utmLabel,
-        label: t("filter_feature.utm.campaign"),
-        value: t("filter_feature.utm.calendly_partner"),
+        label: tcommon("filter_feature.utm.campaign"),
+        value: tcommon("filter_feature.utm.calendly_partner"),
       },
       {
         icon: utmLabel,
-        label: t("filter_feature.utm.medium"),
-        value: t("filter_feature.utm.webinar_jean"),
+        label: tcommon("filter_feature.utm.medium"),
+        value: tcommon("filter_feature.utm.webinar_jean"),
       },
     ],
     [
       {
         icon: <Tag size={12} />,
-        label: t("filter_feature.tag.title"),
-        value: t("filter_feature.tag.launch"),
+        label: tcommon("filter_feature.tag.title"),
+        value: tcommon("filter_feature.tag.launch"),
       },
       {
         icon: <Tag size={12} />,
-        label: t("filter_feature.tag.title"),
-        value: t("filter_feature.tag.onboarding"),
+        label: tcommon("filter_feature.tag.title"),
+        value: tcommon("filter_feature.tag.onboarding"),
       },
       {
         icon: <Tag size={12} />,
-        label: t("filter_feature.tag.title"),
-        value: t("filter_feature.tag.retargeting"),
+        label: tcommon("filter_feature.tag.title"),
+        value: tcommon("filter_feature.tag.retargeting"),
       },
       {
         icon: <Tag size={12} />,
-        label: t("filter_feature.tag.title"),
-        value: t("filter_feature.tag.emailing"),
+        label: tcommon("filter_feature.tag.title"),
+        value: tcommon("filter_feature.tag.emailing"),
       },
       {
         icon: <Tag size={12} />,
-        label: t("filter_feature.tag.title"),
-        value: t("filter_feature.tag.sales"),
+        label: tcommon("filter_feature.tag.title"),
+        value: tcommon("filter_feature.tag.sales"),
       },
       {
         icon: <Tag size={12} />,
-        label: t("filter_feature.tag.title"),
-        value: t("filter_feature.tag.demo"),
+        label: tcommon("filter_feature.tag.title"),
+        value: tcommon("filter_feature.tag.demo"),
       },
       {
         icon: <Tag size={12} />,
-        label: t("filter_feature.tag.title"),
-        value: t("filter_feature.tag.paid_ads"),
+        label: tcommon("filter_feature.tag.title"),
+        value: tcommon("filter_feature.tag.paid_ads"),
       },
       {
         icon: <Tag size={12} />,
-        label: t("filter_feature.tag.title"),
-        value: t("filter_feature.tag.beta"),
+        label: tcommon("filter_feature.tag.title"),
+        value: tcommon("filter_feature.tag.beta"),
       },
     ],
     [
@@ -192,7 +192,7 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="Arc"
           />
         ),
-        label: t("filter_feature.browser"),
+        label: tcommon("filter_feature.browser"),
         value: "Arc",
       },
       {
@@ -204,12 +204,12 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="Chrome"
           />
         ),
-        label: t("filter_feature.browser"),
+        label: tcommon("filter_feature.browser"),
         value: "Chrome",
       },
       {
         icon: <SmartphoneCharging size={18} />,
-        label: t("filter_feature.device"),
+        label: tcommon("filter_feature.device"),
         value: "Mobile",
       },
       {
@@ -221,12 +221,12 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="Safari"
           />
         ),
-        label: t("filter_feature.browser"),
+        label: tcommon("filter_feature.browser"),
         value: "Safari",
       },
       {
         icon: <Tablet size={18} />,
-        label: t("filter_feature.device"),
+        label: tcommon("filter_feature.device"),
         value: "Tablet",
       },
       {
@@ -238,12 +238,12 @@ export const FilterFeature = ({ tkey }: { tkey: string }) => {
             alt="Firefox"
           />
         ),
-        label: t("filter_feature.browser"),
+        label: tcommon("filter_feature.browser"),
         value: "Firefox",
       },
       {
         icon: <Laptop size={18} />,
-        label: t("filter_feature.device"),
+        label: tcommon("filter_feature.device"),
         value: "Desktop",
       },
     ],

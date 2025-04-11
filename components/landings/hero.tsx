@@ -1,13 +1,19 @@
 "use client";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
-import { Check } from "lucide-react";
 import { H1 } from "@/components/base/h1";
 import { HeroSection } from "@/components/base/hero-section";
-import { Paragraph } from "@/components/base/paragraph";
-import { List, ListItem } from "@/components/base/list";
 import { H1Subtitle } from "../base/h1-subtitle";
-export const Hero = ({ tkey }: { tkey: string }) => {
+import { Check } from "lucide-react";
+import { List, ListItem } from "../base/list";
+import { Paragraph } from "../base/paragraph";
+export const Hero = ({
+  tkey,
+  showBenefits = false,
+}: {
+  tkey: string;
+  showBenefits?: boolean;
+}) => {
   const t = useTranslations(tkey);
 
   return (
@@ -23,6 +29,15 @@ export const Hero = ({ tkey }: { tkey: string }) => {
               height={178}
             />
           ),
+          amazon: () => (
+            <Image
+              src="/static/amazon.svg"
+              alt="Amazon"
+              className="w-28 md:w-42 lg:w-52 inline-block mx-0.5 md:mx-1.5 mt-3 md:mt-6"
+              width={1000}
+              height={302}
+            />
+          ),
           not: (chunks) => (
             <span className="relative">
               {chunks}
@@ -31,30 +46,33 @@ export const Hero = ({ tkey }: { tkey: string }) => {
               </span>
             </span>
           ),
+          primary: (chunks) => <span className="text-[#3970ff]">{chunks}</span>,
         })}
       </H1>
 
       <H1Subtitle>{t("hero.subtitle")}</H1Subtitle>
 
-      <div className="max-w-sm sm:max-w-md md:max-w-lg flex flex-col items-start justify-left mx-auto px-1 my-4">
-        <List className="mt-4 gap-1">
-          <ListItem icon={<Check className="w-6 h-6" />}>
-            <Paragraph className="font-medium md:text-pretty">
-              {t("hero.benefits.1")}
-            </Paragraph>
-          </ListItem>
-          <ListItem icon={<Check className="w-6 h-6" />}>
-            <Paragraph className="font-medium md:text-pretty">
-              {t("hero.benefits.2")}
-            </Paragraph>
-          </ListItem>
-          <ListItem icon={<Check className="w-6 h-6" />}>
-            <Paragraph className="font-medium md:text-pretty">
-              {t("hero.benefits.3")}
-            </Paragraph>
-          </ListItem>
-        </List>
-      </div>
+      {showBenefits && (
+        <div className="max-w-sm sm:max-w-md md:max-w-lg flex flex-col items-start justify-left mx-auto px-1 my-4">
+          <List className="mt-4 gap-1">
+            <ListItem icon={<Check className="w-6 h-6" />}>
+              <Paragraph className="font-medium md:text-pretty">
+                {t("hero.benefits.1")}
+              </Paragraph>
+            </ListItem>
+            <ListItem icon={<Check className="w-6 h-6" />}>
+              <Paragraph className="font-medium md:text-pretty">
+                {t("hero.benefits.2")}
+              </Paragraph>
+            </ListItem>
+            <ListItem icon={<Check className="w-6 h-6" />}>
+              <Paragraph className="font-medium md:text-pretty">
+                {t("hero.benefits.3")}
+              </Paragraph>
+            </ListItem>
+          </List>
+        </div>
+      )}
     </HeroSection>
   );
 };

@@ -6,9 +6,9 @@ import { Button } from "@/components/ui/button";
 import { APP_URL } from "@/app/constants";
 import { getCanonicalLink } from "@/lib/utils";
 
-export default function Header({ tkey }: { tkey: string }) {
+export default function Header({}: { tkey?: string }) {
   const locale = useLocale();
-  const t = useTranslations(tkey);
+  const tcommon = useTranslations("common");
 
   return (
     <>
@@ -18,14 +18,14 @@ export default function Header({ tkey }: { tkey: string }) {
         <nav className="flex-row items-center flex z-10 gap-x-3 md:gap-x-6 overflow-hidden text-[#5C5B61]">
           <NavLink
             url={getCanonicalLink(locale, "/")}
-            text={t("nav.solutions")}
+            text={tcommon("nav.solutions")}
           />
           <Link href={`${APP_URL}/login`} target="_blank" rel="noreferrer">
             <Button
               variant="link"
               className="px-0 cursor-pointer text-sm md:text-base font-medium text-slate-500 text-opacity-80 hover:text-slate-800 leading-none"
             >
-              {t("nav.dashboard")}
+              {tcommon("nav.dashboard")}
             </Button>
           </Link>
         </nav>

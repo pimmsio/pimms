@@ -17,7 +17,6 @@ export type EventType = (typeof EVENT_TYPES)[number];
 export default function AnalyticsAreaChart({
   resource,
   demoData,
-  tkey,
 }: {
   resource: EventType;
   demoData: {
@@ -29,15 +28,15 @@ export default function AnalyticsAreaChart({
       saleAmount: number;
     };
   }[];
-  tkey: string;
+  tkey?: string;
 }) {
-  const t = useTranslations(tkey);
+  const tcommon = useTranslations("landing.common");
 
   const RESOURCE_LABELS = {
-    clicks: t("analytics_chart.clicks"),
-    leads: t("analytics_chart.leads"),
-    sales: t("analytics_chart.sales"),
-    saleAmount: t("analytics_chart.saleAmount"),
+    clicks: tcommon("analytics_chart.clicks"),
+    leads: tcommon("analytics_chart.leads"),
+    sales: tcommon("analytics_chart.sales"),
+    saleAmount: tcommon("analytics_chart.saleAmount"),
   };
 
   const chartData = demoData;
@@ -95,7 +94,7 @@ export default function AnalyticsAreaChart({
                   <p className="text-right font-medium text-neutral-900">
                     {resource === "sales" && saleUnit === "saleAmount"
                       ? currencyFormatter(d.values[resource], {
-                          currency: t("analytics_chart.currency"),
+                          currency: tcommon("analytics_chart.currency"),
                         })
                       : nFormatter(d.values[resource], { full: true })}
                   </p>
@@ -113,7 +112,7 @@ export default function AnalyticsAreaChart({
               start,
               end,
               dataAvailableFrom: createdAt,
-              locale: t("analytics_chart.locale"),
+              locale: tcommon("analytics_chart.locale"),
             })
           }
         />
@@ -123,7 +122,7 @@ export default function AnalyticsAreaChart({
             resource === "sales" && saleUnit === "saleAmount"
               ? (v) =>
                   currencyFormatter(v, {
-                    currency: t("analytics_chart.currency"),
+                    currency: tcommon("analytics_chart.currency"),
                   })
               : nFormatter
           }

@@ -7,6 +7,7 @@ import { H2 } from "@/components/base/h2";
 import { Label } from "@/components/base/label";
 import { useInterval } from "ahooks";
 import { useTranslations } from "next-intl";
+import Image from "next/image";
 
 export const TheNeed = ({ tkey }: { tkey: string }) => {
   const t = useTranslations(`${tkey}.the_need`);
@@ -32,7 +33,7 @@ export const TheNeed = ({ tkey }: { tkey: string }) => {
           {showSolution ? t("solution") : t("problem")}
         </Label>
 
-        <label className="inline-block cursor-pointer relative w-fit justify-between items-center group text-xl scale-80">
+        {/* <label className="inline-block cursor-pointer relative w-fit justify-between items-center group text-xl scale-80">
           <input
             type="checkbox"
             checked={showSolution}
@@ -40,11 +41,23 @@ export const TheNeed = ({ tkey }: { tkey: string }) => {
             className="absolute left-1/2 -translate-x-1/2 w-full h-full peer appearance-none rounded-md hidden"
           />
           <span className="w-16 h-10 flex items-center flex-shrink-0 p-1 bg-red-400 rounded-full duration-300 ease-in-out peer-checked:bg-[#3971ff] after:w-8 after:h-8 after:bg-white after:rounded-full after:shadow-md after:duration-300 peer-checked:after:translate-x-6 group-hover:after:translate-x-1"></span>
-        </label>
+        </label> */}
       </div>
 
       <H2 className="text-center [text-wrap:balance]">
-        {showSolution ? t("success") : t("fail")}
+        {showSolution
+          ? t.rich("success", {
+              logo: () => (
+                <Image
+                  src="/static/logo.svg"
+                  alt="pim.ms"
+                  width={1000}
+                  height={179}
+                  className="w-26 inline-block mb-[2px] ml-0.5"
+                />
+              ),
+            })
+          : t("fail")}
       </H2>
 
       <LinkedinPost

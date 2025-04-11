@@ -13,7 +13,7 @@ export const Section = ({
     <section
       id={id}
       className={twMerge(
-        "w-full py-6 px-1 flex flex-col items-start mx-auto max-w-5xl gap-2 rounded-3xl",
+        "w-11/12 py-6 px-1 flex flex-col items-start mx-auto max-w-5xl gap-2 rounded-3xl",
         className
       )}
     >

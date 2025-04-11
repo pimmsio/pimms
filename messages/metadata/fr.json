@@ -1,14 +1,19 @@
 {
   "metadata": {
     "home": {
-      "title": "Les deeplinks à poster sans compter sur LinkedIn | PIMMS",
-      "description": "Nos deeplinks sont des liens optimisés pour ouvrir les apps mobiles les plus adaptées à vos contenus. Ils génèrent plus d'engagement et de conversion. Ils sont parfaitement conçus pour améliorer l'expérience utilisateur. Fonctionne pour tous les réseaux sociaux y compris LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
+      "title": "L’outil qui centralise tous vos liens et maximise vos conversions | PIMMS",
+      "description": "Centralisez tous vos liens, redirigez vers les apps mobiles officielles (YouTube, Amazon, Instagram…) et suivez en temps réel clics, conversions et ventes. Offrez une expérience fluide et augmentez votre impact marketing.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=6"
     },
     "youtube": {
-      "title": "Les deeplinks qui boostent vos abonnés sur YouTube | PIMMS",
-      "description": "Arrêtez de perdre des abonnés. Les deeplinks ouvrent vos vidéos directement dans l’application officielle YouTube, ce qui booste votre nombre d’abonnés. Fonctionne pour tous les réseaux sociaux y compris LinkedIn, Instagram, Facebook, Twitter, TikTok, etc.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
+      "title": "Développez vos abonnés YouTube grâce aux deeplinks | PIMMS",
+      "description": "Offrez à vos spectateurs une ouverture directe de vos vidéos dans l’app YouTube officielle. Réduisez les frictions, augmentez l’engagement et suivez l’impact de chacun de vos liens sur vos abonnés.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=6"
+    },
+    "amazon": {
+      "title": "Boostez vos ventes Amazon grâce aux deeplinks | PIMMS",
+      "description": "Ouvrez directement vos produits et livres dans l’app Amazon officielle. Réduisez les frictions, augmentez vos ventes et vos évaluations, tout en suivant précisément les performances de vos liens.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=6"
     },
     "abuse": {
       "title": "Signaler un abus"

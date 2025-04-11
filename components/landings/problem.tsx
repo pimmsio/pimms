@@ -1,74 +1,123 @@
-"use client";
-import { Check } from "lucide-react";
+import { H2 } from "../base/h2";
+import { Paragraph } from "../base/paragraph";
 import { useTranslations } from "next-intl";
+import { Section } from "../base/section";
+import { CircleX, X } from "lucide-react";
 import Image from "next/image";
-import { Paragraph } from "@/components/base/paragraph";
-import { H2 } from "@/components/base/h2";
-import { List, ListItem } from "@/components/base/list";
-import { Section } from "@/components/base/section";
+import { List, ListItem } from "../base/list";
+import { Label } from "../base/label";
 
-export const Problem = ({ tkey }: { tkey: string }) => {
+export const Problem = ({
+  tkey,
+  showSecondSection = false,
+}: {
+  tkey: string;
+  showSecondSection?: boolean;
+}) => {
   const t = useTranslations(tkey);
 
   return (
-    <>
-      <H2 className="text-center mb-4">{t("deeplinks_explanation.title")}</H2>
-      <Paragraph className="text-center mb-4">
-        {t("deeplinks_explanation.description")}
-      </Paragraph>
-      <Section id="solutions" className="bg-card px-4 md:px-8 md:py-8 mt-8">
-        <Paragraph className="mt-4">
-          {t.rich("solution.description", {
+    <div className="my-12">
+      <Label className="mb-6 mx-auto w-fit bg-[#FFEAF1] text-[#E0004B] py-1.5 flex items-center justify-center gap-3 uppercase px-4 text-sm">
+        <CircleX className="w-4 h-4" />
+        {t("problem.title")}
+      </Label>
+      <div className="w-11/12 mx-auto">
+        <H2 className="mx-auto mb-4 text-center">
+          {t.rich("problem.heading", {
             logo: () => (
               <Image
                 src="/static/logo.svg"
                 alt="pim.ms"
-                className="w-16 inline-block mb-[2px] mr-0.5"
+                className="w-28 inline-block mb-[2px] mr-0.5"
                 width={1000}
                 height={179}
               />
             ),
+            strong: (chunks) => (
+              <span className="text-[#3970ff]">{chunks}</span>
+            ),
           })}
+        </H2>
+      </div>
+      <Section
+        id="probleme"
+        className="bg-card rounded-3xl border-[6px] border-neutral-100 px-4 md:px-8 mt-8"
+      >
+        <Paragraph className="text-center mx-auto">
+          {t("problem.description")}
         </Paragraph>
         <List className="gap-6 mt-4">
           <ListItemWrapper
-            title={t("solution.more.title1")}
-            description={t("solution.more.description1")}
-            icon={<Check className="w-6 h-6" />}
+            title={t.rich("problem.more.title1", {
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+            icon={<X className="w-6 h-6" />}
+            variant="alert"
           />
           <ListItemWrapper
-            title={t("solution.more.title2")}
-            description={t("solution.more.description2")}
-            icon={<Check className="w-6 h-6" />}
+            title={t.rich("problem.more.title2", {
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+            icon={<X className="w-6 h-6" />}
+            variant="alert"
           />
           <ListItemWrapper
-            title={t("solution.more.title3")}
-            description={t("solution.more.description3")}
-            icon={<Check className="w-6 h-6" />}
+            title={t.rich("problem.more.title3", {
+              strong: (chunks) => <strong>{chunks}</strong>,
+            })}
+            icon={<X className="w-6 h-6" />}
+            variant="alert"
           />
         </List>
       </Section>
-    </>
+
+      {showSecondSection && (
+        <Section className="bg-card rounded-3xl border-[6px] border-neutral-100 px-4 md:px-8 mt-8">
+          <Paragraph className="text-center mx-auto">
+            {t("problem.description2")}
+          </Paragraph>
+          <List className="gap-6 mt-4">
+            <ListItemWrapper
+              title={t.rich("problem.more2.title1", {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+              icon={<X className="w-6 h-6" />}
+              variant="alert"
+            />
+            <ListItemWrapper
+              title={t.rich("problem.more2.title2", {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+              icon={<X className="w-6 h-6" />}
+              variant="alert"
+            />
+            <ListItemWrapper
+              title={t.rich("problem.more2.title3", {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+              icon={<X className="w-6 h-6" />}
+              variant="alert"
+            />
+          </List>
+        </Section>
+      )}
+    </div>
   );
 };
 
 const ListItemWrapper = ({
   title,
-  description,
   icon,
   variant,
 }: {
-  title: string;
-  description: string | React.ReactNode;
+  title: string | React.ReactNode;
   icon?: React.ReactNode;
   variant?: "alert" | "success";
 }) => {
   return (
     <ListItem className="gap-4" icon={icon} variant={variant} size="lg">
-      <div className="flex flex-col">
-        <Paragraph className="text-[#08272E] font-bold">{title}</Paragraph>
-        <Paragraph className="md:text-md">{description}</Paragraph>
-      </div>
+      <Paragraph className="text-[#08272E] font-normal">{title}</Paragraph>
     </ListItem>
   );
 };
