@@ -42,7 +42,7 @@
       },
       "faq10": {
         "question": "How is PIMMS different from Google Analytics?",
-        "answer": "Google Analytics mostly tracks what happens on your website. PIMMS tracks everything: pages, apps, Tally forms, Calendly bookings, YouTube channels… You finally see what actually converts, even outside your site — without juggling multiple tools or setting up complex analytics."
+        "answer": "Google Analytics helps you analyze what happens on your website. It shows you where your visitors come from and what they do once they land. But it doesn’t track what happens outside your site — like a Tally form, a Calendly link, a YouTube video, or a link shared in a mobile app. And it often requires complex setup (goals, tags, GTM…). PIMMS, on the other hand, lets you track all your conversions — both on your site and beyond — using our SDK or simple 1-click integrations. You create a link, share it, and instantly see what it generated: clicks, conversions, revenue. No friction. No overkill."
       }
     },
     "youtube": {

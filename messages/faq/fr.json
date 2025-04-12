@@ -42,7 +42,7 @@
       },
       "faq10": {
         "question": "En quoi PIMMS est différent de Google Analytics ?",
-        "answer": "Google Analytics mesure ce qui se passe sur ton site. PIMMS, lui, mesure tout : pages, apps, formulaires Tally, agendas Calendly, vidéos YouTube… Tu vois enfin ce qui convertit, même en dehors de ton site. Sans te perdre dans mille outils."
+        "answer": "Google Analytics t’aide à analyser ce qui se passe sur ton site. Il te montre d’où viennent les visiteurs, et ce qu’ils font une fois arrivés. Mais il ne suit pas ce qu’il se passe en dehors : formulaire Tally, agenda Calendly, vidéo YouTube, ou lien partagé sur une app mobile. Et surtout, il demande souvent des configurations complexes (objectifs, balises, GTM…). PIMMS, lui, te permet de suivre toutes tes conversions : sur ton site ou en dehors, grâce à notre SDK ou nos intégrations en 1 clic. Tu crées un lien, tu le partages, et tu sais ce qu’il a généré : clics, conversions, ventes. Sans friction. Sans usine à gaz."
       }
     },
     "youtube": {

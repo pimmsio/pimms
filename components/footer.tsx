@@ -5,6 +5,7 @@ import { getCanonicalLink } from "../lib/utils";
 import { InstagramIcon } from "./icons/instagram-icon";
 import { LinkedInIcon } from "./icons/linkedin-icon";
 import { GithubIcon } from "./icons/github-icon";
+import { Paragraph } from "./base/paragraph";
 
 export const Footer = () => {
   const locale = useLocale();
@@ -22,13 +23,25 @@ export const Footer = () => {
               {t("footer.copyright")}
             </div>
             <div className="flex gap-2">
-              <Link href="https://github.com/getpimms">
+              <Link
+                href="https://github.com/getpimms/pim-ms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <GithubIcon className="w-6 h-6 opacity-80 hover:opacity-100" />
               </Link>
-              <Link href="https://www.linkedin.com/company/getpimms">
+              <Link
+                href="https://www.linkedin.com/company/getpimms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <LinkedInIcon className="w-6 h-6 opacity-80 hover:opacity-100" />
               </Link>
-              <Link href="https://www.instagram.com/getpimms">
+              <Link
+                href="https://www.instagram.com/getpimms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <InstagramIcon className="w-6 h-6 opacity-80 hover:opacity-100" />
               </Link>
             </div>
@@ -100,6 +113,17 @@ export const Footer = () => {
             </Link>
           </nav>
         </div>
+        <Paragraph className="mx-auto max-w-7xl text-xs!">
+          This project is based on open-source software licensed under the AGPL.{" "}
+          <Link
+            href="https://github.com/getpimms/pim-ms"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#08272E] hover:underline"
+          >
+            See the full source code on GitHub.
+          </Link>
+        </Paragraph>
       </div>
     </div>
   );

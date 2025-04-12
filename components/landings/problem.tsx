@@ -42,41 +42,51 @@ export const Problem = ({
       </div>
       <Section
         id="probleme"
-        className="bg-card rounded-3xl border-[6px] border-neutral-100 px-4 md:px-8 mt-8"
+        className="bg-card rounded-3xl border-[6px] border-neutral-100 px-4 md:px-8 mt-8 flex flex-col lg:flex-row gap-12 lg:gap-4 items-center"
       >
-        <Paragraph className="text-center mx-auto">
-          {t("problem.description")}
-        </Paragraph>
-        <List className="gap-6 mt-4">
-          <ListItemWrapper
-            title={t.rich("problem.more.title1", {
-              strong: (chunks) => <strong>{chunks}</strong>,
-            })}
-            icon={<X className="w-6 h-6" />}
-            variant="alert"
+        <div className="w-full lg:w-3/5">
+          <Paragraph>{t("problem.description")}</Paragraph>
+          <List className="gap-6 mt-4">
+            <ListItemWrapper
+              title={t.rich("problem.more.title1", {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+              icon={<X className="w-6 h-6" />}
+              variant="alert"
+            />
+            <ListItemWrapper
+              title={t.rich("problem.more.title2", {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+              icon={<X className="w-6 h-6" />}
+              variant="alert"
+            />
+            <ListItemWrapper
+              title={t.rich("problem.more.title3", {
+                strong: (chunks) => <strong>{chunks}</strong>,
+              })}
+              icon={<X className="w-6 h-6" />}
+              variant="alert"
+            />
+          </List>
+        </div>
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full lg:w-2/5 h-full object-cover z-0 pointer-events-none rounded-3xl border-[6px] border-neutral-100"
+        >
+          <source
+            src="https://assets.pimms.io/too-many-step-paypal.mp4"
+            type="video/mp4"
           />
-          <ListItemWrapper
-            title={t.rich("problem.more.title2", {
-              strong: (chunks) => <strong>{chunks}</strong>,
-            })}
-            icon={<X className="w-6 h-6" />}
-            variant="alert"
-          />
-          <ListItemWrapper
-            title={t.rich("problem.more.title3", {
-              strong: (chunks) => <strong>{chunks}</strong>,
-            })}
-            icon={<X className="w-6 h-6" />}
-            variant="alert"
-          />
-        </List>
+        </video>
       </Section>
 
       {showSecondSection && (
         <Section className="bg-card rounded-3xl border-[6px] border-neutral-100 px-4 md:px-8 mt-8">
-          <Paragraph className="text-center mx-auto">
-            {t("problem.description2")}
-          </Paragraph>
+          <Paragraph>{t("problem.description2")}</Paragraph>
           <List className="gap-6 mt-4">
             <ListItemWrapper
               title={t.rich("problem.more2.title1", {

@@ -1,4 +1,3 @@
-import VideoSlide from "@/components/landings/VideoSlide";
 import Header from "@/components/landings/header";
 import { Hero } from "@/components/landings/hero";
 import { FreeOffer } from "@/components/landings/free-offer";
@@ -11,6 +10,7 @@ import { TopFeatures } from "@/components/landings/top-features";
 import { Problem } from "@/components/landings/problem";
 import LogosCircle from "@/components/logos-circle";
 import FAQ from "@/components/faq";
+import ImageSlide from "@/components/landings/Image-slide";
 
 const lkey = "home";
 const tkey = `landing.${lkey}`;
@@ -20,7 +20,7 @@ export default function Home() {
   const tcommon = useTranslations("landing.common");
   return (
     <>
-      <div className="min-h-screen bg-background-secondary text-foreground w-11/12 mx-auto">
+      <div className="bg-background-secondary text-foreground w-11/12 mx-auto">
         <Header tkey={tkey} />
         <Avatars tkey={tkey} />
         <Hero tkey={tkey} />
@@ -37,7 +37,8 @@ export default function Home() {
         <div className="text-xs text-muted-foreground text-center font-semibold">
           {tcommon("cta.bottom")}
         </div>
-        <VideoSlide tkey={tkey} />
+        <ImageSlide />
+        {/* <VideoSlide tkey={tkey} /> */}
       </div>
 
       <div className="bg-zinc-100 w-full py-16">

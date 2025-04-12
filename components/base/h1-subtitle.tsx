@@ -15,7 +15,7 @@ export const H1Subtitle = ({
         className
       )}
     >
-      <Paragraph className="text-lg md:text-xl lg:text-2xl mt-18 mb-4 text-[#08272E] font-semibold sm:text-pretty">
+      <Paragraph className="text-lg md:text-xl lg:text-2xl mt-8 mb-12 md:mt-12 lg:mt-16 text-[#08272E] font-semibold sm:text-pretty">
         {children}
       </Paragraph>
     </div>

@@ -53,9 +53,9 @@
     },
     "home": {
       "hero": {
-        "title": "Plus <primary>d'opportunités</primary> sauvées. Plus de <not><primary>data</primary></not>",
+        "title": "Transforme chaque clic en <primary>conversion</primary>, puis en <primary>décision</primary>",
         "additional_title": "Moins de hasard",
-        "subtitle": "L'unique outil de partage de liens qui détecte les canaux, contenus et liens qui génèrent de vraies conversions.",
+        "subtitle": "Le seul outil qui détecte les liens qui génèrent de vraies conversions - là où les autres s'arrêtent aux clics.",
         "benefits": {
           "1": "Centralise tous les liens partagés et repère vite les plus performants",
           "2": "Sauve des conversions avec la redirection vers les apps mobiles",
@@ -109,13 +109,13 @@
         "description": "Chaque fois que tes contenus s’ouvrent dans un navigateur intégré sur mobile, l'expérience est cassée.",
         "more": {
           "title1": "<strong>Les liens s'ouvrent dans un mini navigateur intégré</strong>, pas dans les apps officielles",
-          "title2": "<strong>Les utilisateurs sont déconnectés</strong>: profil sociaux inaccessibles, paiements échoués...",
+          "title2": "<strong>Les utilisateurs sont déconnectés</strong>: profil sociaux inaccessibles, paiements en plus d'étapes...",
           "title3": "<strong>Résultat, ils abandonnent à cause de frictions inutiles</strong>."
         },
-        "description2": "Tu perds des conversions car tu n'as pas de tracking des conversions sur tes liens partagés.",
+        "description2": "Tu perds des conversions si tu n'as pas activé le tracking des conversions sur tes liens.",
         "more2": {
-          "title1": "La plupart des outils de liens <strong>suivent les clics, mais pas les conversions réelles</strong>",
-          "title2": "<strong>Tu ne sais pas ce qui marche vraiment</strong> : quel lien apporte des résultats (formulaires remplis, rendez-vous réservés, ventes…), quel canal, quelle campagne, quel post…",
+          "title1": "La plupart des outils de liens <strong>suivent les clics, mais pas les conversions</strong> (formulaires remplis, rendez-vous réservés, ventes…)",
+          "title2": "<strong>Tu ne sais pas ce qui marche vraiment</strong> : quel lien apporte des résultats, quel canal, quelle campagne, quel post…",
           "title3": "Résultat, sans optimiser ton travail, <strong>tu perds du temps et des conversions</strong>."
         }
       },
