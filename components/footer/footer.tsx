@@ -1,13 +1,23 @@
-import { useLocale, useTranslations } from "next-intl";
-import Logo from "./logo";
-import Link from "next/link";
-import { getCanonicalLink } from "../lib/utils";
-import { InstagramIcon } from "./icons/instagram-icon";
-import { LinkedInIcon } from "./icons/linkedin-icon";
-import { GithubIcon } from "./icons/github-icon";
-import { Paragraph } from "./base/paragraph";
+"use client";
 
-export const Footer = () => {
+import { useLocale, useTranslations } from "next-intl";
+import Logo from "../logo";
+import Link from "next/link";
+import { getCanonicalLink } from "../../lib/utils";
+import { InstagramIcon } from "../icons/instagram-icon";
+import { LinkedInIcon } from "../icons/linkedin-icon";
+import { GithubIcon } from "../icons/github-icon";
+import { Paragraph } from "../base/paragraph";
+import Image from "next/image";
+import { DubRef } from "./dub-ref";
+
+export const Footer = ({
+  showApps = true,
+  showRef = false,
+}: {
+  showApps?: boolean;
+  showRef?: boolean;
+}) => {
   const locale = useLocale();
 
   const t = useTranslations("general");
@@ -82,6 +92,27 @@ export const Footer = () => {
                 {t("footer.resources.blog")}
               </div>
             </Link>
+            <Link
+              aria-current="page"
+              href="https://pim.ms/api"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="router-link-active router-link-exact-active"
+            >
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+                {t("footer.resources.api")}
+              </div>
+            </Link>
+            <Link
+              aria-current="page"
+              href="https://pim.ms/sdk-ts"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+                {t("footer.resources.sdk-ts")}
+              </div>
+            </Link>
           </nav>
           <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
             <div className="font-semibold text-gray-900">Legal</div>
@@ -113,17 +144,55 @@ export const Footer = () => {
             </Link>
           </nav>
         </div>
-        <Paragraph className="mx-auto max-w-7xl text-xs!">
-          This project is based on open-source software licensed under the AGPL.{" "}
-          <Link
-            href="https://github.com/getpimms/pim-ms"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#08272E] hover:underline"
-          >
-            See the full source code on GitHub.
-          </Link>
-        </Paragraph>
+        <div className="flex flex-col gap-8 items-start mx-auto max-w-7xl mt-8">
+          {showRef && (
+            <Paragraph className="text-xs!">
+              The PIMMS team builds powerful, privacy-conscious marketing tools
+              — helping anyone grow online with smart links and QR codes. ‘QR
+              Code’ is a registered trademark of DENSO WAVE INCORPORATED. This
+              project is based on <DubRef /> open-source software licensed under
+              the AGPL.{" "}
+              <Link
+                href="https://github.com/getpimms/pim-ms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#08272E] hover:underline"
+              >
+                You can view or contribute to the source code on GitHub.
+              </Link>
+            </Paragraph>
+          )}
+          {showApps && (
+            <Paragraph className="text-xs! flex gap-6">
+              <Link
+                href="https://zapier.com/apps/pimms/integrations"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/static/zapier-apps.svg"
+                  alt="Zapier Apps"
+                  width={380}
+                  height={36}
+                  className="w-auto h-4.5"
+                />
+              </Link>
+              <Link
+                href="https://marketplace.stripe.com/apps/pimms"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Image
+                  src="/static/stripe-apps.svg"
+                  alt="Stripe Apps"
+                  width={380}
+                  height={36}
+                  className="w-auto h-4.5"
+                />
+              </Link>
+            </Paragraph>
+          )}
+        </div>
       </div>
     </div>
   );

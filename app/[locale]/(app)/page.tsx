@@ -11,6 +11,7 @@ import { Problem } from "@/components/landings/problem";
 import LogosCircle from "@/components/logos-circle";
 import FAQ from "@/components/faq";
 import ImageSlide from "@/components/landings/Image-slide";
+import Footer from "@/components/footer/footer";
 
 const lkey = "home";
 const tkey = `landing.${lkey}`;
@@ -65,6 +66,7 @@ export default function Home() {
       <div className="bg-background-secondary text-foreground w-11/12 mx-auto">
         <FreeOffer tkey={tkey} type="sales" />
       </div>
+      <Footer showRef={true} showApps={true} />
     </>
   );
 }

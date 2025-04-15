@@ -1,5 +1,4 @@
 import VideoSlide from "@/components/landings/VideoSlide";
-import Header from "@/components/landings/header";
 import { Hero } from "@/components/landings/hero";
 import { generateLandingMetadata } from "@/lib/utils";
 import { FreeOffer } from "@/components/landings/free-offer";
@@ -29,7 +28,6 @@ export default function Youtube() {
   return (
     <>
       <div className="min-h-screen bg-background-secondary text-foreground w-11/12 mx-auto">
-        <Header tkey={tkey} />
         <Avatars tkey={tkey} />
         <Hero tkey={tkey} showBenefits />
         <CtaButtonBig

@@ -21,7 +21,9 @@
         "amazon": "Vendeurs et commerçants Amazon"
       },
       "resources": {
-        "blog": "Blog"
+        "blog": "Blog",
+        "api": "Documentation API",
+        "sdk-ts": "SDK TypeScript"
       },
       "copyright": "© 2025 PIMMS"
     }

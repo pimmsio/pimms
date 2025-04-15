@@ -9,7 +9,7 @@
       },
       "cta": {
         "link": "Démarrer gratuitement",
-        "bottom": "Pas de CB requise • Sans engagement",
+        "bottom": "Pas de CB requise",
         "main": "<fast>⚡</fast> Démarre gratuitement<large> avec 10 liens offerts</large>",
         "main_short": "<fast>⚡</fast> Démarre gratuitement"
       },
@@ -175,23 +175,25 @@
       "lifetime_offer": {
         "title": "Prends une longueur d'avance",
         "subtitle": "Passe à la version Pro avant que le tarif de lancement ne disparaisse",
-        "description": "Profite de liens illimités avec suivi des clics et conversions, sans payer d'abonnement.",
-        "bottom": "* L’offre est disponible immédiatement, mais elle peut disparaître à tout moment.",
-        "cta": "J'achète",
-        "pay_once": "Paiement unique, offre limitée",
-        "free_pass": "10 liens gratuits",
+        "description": "Profite de liens en illimités avec tracking",
+        "bottom": "* L’offre est disponible immédiatement, mais il ne reste que quelques places.",
+        "cta": "Acheter",
+        "pay_once": "Paiement unique, sans abonnement",
         "lifetime_deal": "Achat unique",
         "popular": "Populaire",
         "tax": "H.T.",
+        "month": "mois",
+        "sub_pass": "Plus de 5000€ /mois de ventes trackées",
+        "try_free": "Essai gratuit",
+        "no_credit_card": "Pas de CB requise",
         "features": {
           "title": "L'indispensable en illimité",
-          "1": "Conversions suivies",
-          "2": "Nouveaux liens illimités",
-          "3": "Clics analysés illimités",
-          "4": "Données conservées 1 an",
-          "5": "Travaille en équipe",
-          "6": "Domaine personnalisé",
-          "7": "UTM illimités, redirection dans les apps mobiles, QR codes..."
+          "1": "Nouveaux liens et clics illimités",
+          "2": "Evènements de conversion illimités",
+          "3": "Jusqu'à 5000€/mo de ventes trackées",
+          "4": "Travaille en équipe",
+          "5": "Domaine personnalisé",
+          "6": "UTM illimités, redirections dans les apps, QR codes..."
         }
       },
       "logos_circle": {
@@ -298,10 +300,10 @@
       "lifetime_offer": {
         "title": "Prends une longueur d'avance",
         "subtitle": "Passe à la version Pro avant que le tarif de lancement ne disparaisse",
-        "description": "Profite de liens illimités avec suivi des clics et conversions, sans payer d'abonnement.",
+        "description": "Profite de liens illimités avec tracking illimités",
         "bottom": "* L’offre est disponible immédiatement, mais elle peut disparaître à tout moment.",
         "cta": "J'achète",
-        "pay_once": "Paiement unique, offre limitée",
+        "pay_once": "Paiement unique, sans abonnement",
         "free_pass": "10 liens gratuits",
         "lifetime_deal": "Achat unique",
         "popular": "Populaire",
@@ -418,7 +420,7 @@
         "description": "Bénéficie de liens illimités avec suivi des clics et achats, sans payer d'abonnement.",
         "bottom": "Cette offre exceptionnelle ne va pas durer.",
         "cta": "J'achète",
-        "pay_once": "Paiement unique, offre limitée",
+        "pay_once": "Paiement unique, sans abonnement",
         "free_pass": "10 liens gratuits",
         "lifetime_deal": "Achat unique",
         "popular": "Populaire",

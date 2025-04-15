@@ -175,23 +175,26 @@
       "lifetime_offer": {
         "title": "Get ahead of your competitors",
         "subtitle": "Upgrade to Pro before the launch deal is gone",
-        "description": "Get unlimited links with tracking of clicks and conversions, without paying a subscription.",
-        "bottom": "* This offer is available immediately, but may be withdrawn at any time.",
+        "description": "Get unlimited links with tracking",
+        "bottom": "* This offer is available immediately, but few spots left.",
         "cta": "Buy now",
         "pay_once": "One-time payment, no subscription",
         "free_pass": "10 free links",
         "lifetime_deal": "Lifetime Deal",
         "popular": "Most popular",
         "tax": "Excl. VAT",
+        "month": "month",
+        "sub_pass": "More than 5000€ /month in tracked sales",
+        "try_free": "Try for free",
+        "no_credit_card": "No credit card required",
         "features": {
           "title": "Everything you need — unlimited",
-          "1": "Tracked conversions",
-          "2": "Unlimited new links",
-          "3": "Unlimited click analytics",
-          "4": "Data stored for 1 year",
-          "5": "Team collaboration",
-          "6": "Custom domain",
-          "7": "Unlimited UTMs, in-app redirections, QR codes, and more..."
+          "1": "Unlimited new links and clicks",
+          "2": "Unlimited conversion events",
+          "3": "Up to 5000€/mo in tracked sales",
+          "4": "Team collaboration",
+          "5": "Custom domain",
+          "6": "Unlimited UTMs, in-app redirections, QR codes..."
         }
       },
       "logos_circle": {

@@ -8,7 +8,7 @@ import { getCanonicalLink } from "@/lib/utils";
 
 export default function Header({}: { tkey?: string }) {
   const locale = useLocale();
-  const tcommon = useTranslations("common");
+  const tcommon = useTranslations("landing.common");
 
   return (
     <>

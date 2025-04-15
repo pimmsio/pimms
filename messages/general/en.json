@@ -21,7 +21,9 @@
         "amazon": "Amazon sellers and merchants"
       },
       "resources": {
-        "blog": "Blog"
+        "blog": "Blog",
+        "api": "API Documentation",
+        "sdk-ts": "TypeScript SDK"
       },
       "copyright": "© 2025 PIMMS"
     }

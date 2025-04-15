@@ -1,9 +1,9 @@
-import Header from "@/components/blog/header";
+import Header from "@/components/landings/header";
 import Footer from "@/components/footer/footer";
 
-const tkey = "blog";
+const tkey = "legal";
 
-export default function BlogLayout({
+export default function LegalLayout({
   children,
 }: {
   children: React.ReactNode;

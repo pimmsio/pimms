@@ -61,6 +61,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/blog/introducing-conversion-tracking",
     fr: "/blog/lancement-suivi-des-conversions",
   },
+  "/blog/start-with-zapier": {
+    en: "/blog/start-with-zapier",
+    fr: "/blog/demarrer-avec-zapier",
+  },
 };
 
 export type AppPathnames = keyof typeof pathnames;

@@ -1,0 +1,58 @@
+---
+title: Automate conversion tracking with Zapier
+summary: Connect Cal.com and Tally to PiMMs using Zapier and start tracking real conversions without code.
+publishedAt: 2025-04-15
+updatedAt: 2025-04-15
+image: https://assets.pimms.io/start-zapier.jpg
+author: alexandre
+categories:
+  - education
+---
+
+Want to know exactly which links, campaigns, or QR codes actually lead to conversions — like booked meetings or form signups?
+
+With the new **Zapier integration for PiMMs**, you can track conversions automatically from tools like **Cal.com** and **Tally** — no coding required.
+
+This guide shows how to set up the integration and start capturing real lead data effortlessly.
+
+## Why use Zapier with PiMMs?
+
+Zapier lets you connect over 6,000 apps — and now you can send conversion events from those apps straight into PiMMs.
+
+Use cases include:
+
+- Tracking meetings booked via Cal.com
+- Tracking form submissions from Tally
+- Automatically linking conversions to the original click source
+
+Once set up, PiMMs gives you real-time attribution data that tells you exactly what’s working.
+
+---
+
+## How It Works
+
+Every smart link generated in PiMMs includes a unique `clickId`. This ID is automatically passed through the URL when someone visits your form or booking page.
+
+When they convert — book a meeting, submit a form, etc. — you pass that `clickId` into PiMMs via Zapier.
+
+This lets PiMMs attribute the conversion back to the original campaign, post, or QR code.
+
+---
+
+## ⚙️ Quick Setup Summary
+
+| Integration | Where to capture Click ID | Zapier Trigger | Zapier Action |
+|-------------|----------------------------|----------------|----------------|
+| **Cal.com** | Add a Booking Question field (short text) and enable "Disable input if prefilled" | New Booking in Cal.com | Send conversion to PiMMs with clickId and eventName (e.g. "Meeting booked") |
+| **Tally.so** | Add a Hidden Field named `pimms_id` to capture click ID from URL | New Form Submission in Tally | Send conversion to PiMMs with clickId and eventName (e.g. "Form submitted") |
+
+---
+
+## Ready to start?
+
+- Set up your Zaps in minutes
+- Automatically track and attribute conversions
+- Stop guessing what drives results
+
+[Try PiMMs + Zapier now →](https://pim.ms/zapier)
+
