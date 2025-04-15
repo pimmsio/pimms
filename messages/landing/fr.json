@@ -55,7 +55,7 @@
       "hero": {
         "title": "Transforme chaque clic en <primary>conversion</primary>, puis en <primary>décision</primary>",
         "additional_title": "Moins de hasard",
-        "subtitle": "Le seul outil qui détecte les liens qui génèrent de vraies conversions - là où les autres s'arrêtent aux clics.",
+        "subtitle": "Le seul outil capable d’identifier les liens qui génèrent de vraies conversions — là où les autres s’arrêtent aux clics.",
         "benefits": {
           "1": "Centralise tous les liens partagés et repère vite les plus performants",
           "2": "Sauve des conversions avec la redirection vers les apps mobiles",
@@ -134,7 +134,7 @@
       },
       "top_features": {
         "title": "La Solution",
-        "heading": "Avec PIMMS, tu convertis plus et tu sais exactement <strong>pourquoi</strong>",
+        "heading": "Avec <logo>PIMMS</logo>, tu convertis plus et tu sais exactement <strong>pourquoi</strong>",
         "description": "Tes liens s'ouvrent directement dans les apps mobiles officielles. Tu réduis les frictions et tu suis la performance de chaque lien, chaque canal. Tu analyses les clics, les conversions, et les ventes.",
         "features": {
           "title1": "Offre une expérience fluide, et sans friction",
@@ -176,7 +176,7 @@
         "title": "Prends une longueur d'avance",
         "subtitle": "Passe à la version Pro avant que le tarif de lancement ne disparaisse",
         "description": "Profite de liens illimités avec suivi des clics et conversions, sans payer d'abonnement.",
-        "bottom": "Il est très probable que cette offre se termine rapidement.",
+        "bottom": "* L’offre est disponible immédiatement, mais elle peut disparaître à tout moment.",
         "cta": "J'achète",
         "pay_once": "Paiement unique, offre limitée",
         "free_pass": "10 liens gratuits",
@@ -257,7 +257,7 @@
       },
       "top_features": {
         "title": "La Solution",
-        "heading": "Avec PIMMS, tu obtiens plus d'abonnés et tu sais <strong>pourquoi</strong>",
+        "heading": "Avec <logo>PIMMS</logo>, tu obtiens plus d'abonnés et tu sais <strong>pourquoi</strong>",
         "description": "Tes liens s'ouvrent directement dans l'app officielle YouTube. Tu réduis les frictions et tu suis la performance de chaque lien, chaque canal.",
         "features": {
           "title1": "Offre une expérience fluide, et sans friction",
@@ -299,7 +299,7 @@
         "title": "Prends une longueur d'avance",
         "subtitle": "Passe à la version Pro avant que le tarif de lancement ne disparaisse",
         "description": "Profite de liens illimités avec suivi des clics et conversions, sans payer d'abonnement.",
-        "bottom": "Il est très probable que cette offre se termine rapidement.",
+        "bottom": "* L’offre est disponible immédiatement, mais elle peut disparaître à tout moment.",
         "cta": "J'achète",
         "pay_once": "Paiement unique, offre limitée",
         "free_pass": "10 liens gratuits",
@@ -374,7 +374,7 @@
       },
       "top_features": {
         "title": "La Solution",
-        "heading": "Avec PIMMS, tu vends plus et tu sais <strong>pourquoi</strong>",
+        "heading": "Avec <logo>PIMMS</logo>, tu vends plus et tu sais <strong>pourquoi</strong>",
         "description": "Tes liens s'ouvrent directement dans l'app Amazon. Tu réduis les frictions et tu suis la performance de chaque lien, chaque canal.",
         "features": {
           "title1": "Offre une expérience d’achat fluide",

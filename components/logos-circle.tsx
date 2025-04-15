@@ -146,8 +146,8 @@ const LogosCircle: React.FC<{ tkey: string }> = ({ tkey }) => {
         ))}
       </motion.div>
 
-      <div className="text-center max-w-sm z-20">
-        <Paragraph>{t("logos_circle.title")}</Paragraph>
+      <div className="text-center max-w-sm z-20 px-4">
+        <Paragraph className="font-bold">{t("logos_circle.title")}</Paragraph>
         <H2>
           {t.rich("logos_circle.heading", {
             strong: (chunks) => (

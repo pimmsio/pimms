@@ -31,7 +31,7 @@ export default function CtaButton({
     <Button
       variant="default"
       onClick={handleClickFocus}
-      className={`min-w-52 transition-transform hover:scale-105 ${
+      className={`min-w-52 transition-transform hover:scale-105 tracking-tight ${
         show ? "block" : "hidden md:block"
       }`}
       size="lg"

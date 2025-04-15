@@ -23,7 +23,7 @@ export const TheNeed = ({ tkey }: { tkey: string }) => {
         <Label
           className={`text-center ${
             showSolution ? "bg-[#3971ff]" : "bg-red-400"
-          } text-white py-1.5 flex items-center justify-center gap-3 uppercase px-4 text-sm`}
+          } text-white py-1.5 flex items-center justify-center gap-2 uppercase px-4 text-sm`}
         >
           {showSolution ? (
             <CheckCircle className="w-4 h-4" />

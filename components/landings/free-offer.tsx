@@ -27,7 +27,7 @@ export const FreeOffer = ({
               <Image
                 src="/static/logo.svg"
                 alt="pim.ms"
-                className="w-32 inline-block mb-[6px] ml-1"
+                className="w-20 sm:w-24 inline-block mb-[2px] mx-0.5"
                 width={1000}
                 height={179}
               />

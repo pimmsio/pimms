@@ -12,7 +12,7 @@ export default function Header({ tkey }: { tkey: string }) {
     <>
       <header className="w-full relative flex flex-wrap items-center gap-y-1 gap-x-5 py-3.5 mt-2 px-6 max-w-7xl mx-auto justify-between">
         <Logo />
-        <nav className="flex-row items-center flex z-10 gap-x-3 md:gap-x-6 overflow-hidden text-[#5C5B61]">
+        <nav className="flex-row items-center flex z-10 gap-x-2 md:gap-x-6 overflow-hidden text-[#5C5B61]">
           <NavLink id="video" text={tcommon("nav.how_it_works")} />
           <NavLink id="lifetime" text={tcommon("nav.pricing")} />
           <Link href={`${APP_URL}/login`}>

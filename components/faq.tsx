@@ -34,7 +34,7 @@ export default function FAQ({
 
   return (
     <Section className="max-w-5xl mx-auto my-16">
-      <Label className="mb-6 mx-auto w-fit bg-[#3970ff] text-white py-1.5 flex items-center justify-center gap-3 uppercase px-4 text-sm">
+      <Label className="mb-6 mx-auto w-fit bg-[#3970ff] text-white py-1.5 flex items-center justify-center gap-2 uppercase px-4 text-sm">
         {t("title")}
       </Label>
       <H2 className="mx-auto my-4 text-center">{t("heading")}</H2>
@@ -52,7 +52,7 @@ export default function FAQ({
           >
             <AccordionItem
               value={key.toString()}
-              className="w-full bg-card rounded-3xl ring-[6px] ring-neutral-100"
+              className="w-full bg-card rounded-3xl ring-[6px] ring-neutral-100 tracking-tight"
             >
               <AccordionTrigger className="p-4 cursor-pointer">
                 <div className="text-left text-lg">{faq.question}</div>

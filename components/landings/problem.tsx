@@ -18,7 +18,7 @@ export const Problem = ({
 
   return (
     <div className="my-12">
-      <Label className="mb-6 mx-auto w-fit bg-[#FFEAF1] text-[#E0004B] py-1.5 flex items-center justify-center gap-3 uppercase px-4 text-sm">
+      <Label className="mb-6 mx-auto w-fit bg-[#FFEAF1] text-[#E0004B] py-1.5 flex items-center justify-center gap-2 uppercase px-4 text-sm">
         <CircleX className="w-4 h-4" />
         {t("problem.title")}
       </Label>
@@ -29,7 +29,7 @@ export const Problem = ({
               <Image
                 src="/static/logo.svg"
                 alt="pim.ms"
-                className="w-28 inline-block mb-[2px] mr-0.5"
+                className="w-20 sm:w-24 inline-block mb-[2px] mx-0.5"
                 width={1000}
                 height={179}
               />

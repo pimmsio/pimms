@@ -44,7 +44,7 @@ export default function CtaButtonBig({
           )}
           disabled={isLoading}
         >
-          <span className="flex items-center gap-2 justify-center w-full">
+          <span className="flex items-center gap-2 justify-center w-full tracking-tight">
             {isLoading && <Loader2 size={32} className="animate-spin" />}
             {value}
           </span>
@@ -63,7 +63,7 @@ export default function CtaButtonBig({
         className={twMerge("block px-6 min-w-full sm:min-w-[21rem]", className)}
         disabled={isLoading}
       >
-        <span className="flex items-center gap-2 justify-center w-full">
+        <span className="flex items-center gap-2 justify-center w-full tracking-tight">
           {isLoading && <Loader2 size={32} className="animate-spin" />}
           {value}
         </span>

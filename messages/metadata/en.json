@@ -1,19 +1,19 @@
 {
   "metadata": {
     "home": {
-      "title": "The tool that centralizes all your links and maximizes conversions | PIMMS",
-      "description": "Centralize all your links, redirect users to official mobile apps (YouTube, Amazon, Instagram…) and track clicks, conversions, and sales in real time. Provide a smooth user experience and amplify your marketing impact.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=6"
+      "title": "Link sharing tool for measuring conversions | PIMMS",
+      "description": "Tool that tracks your top performing links – so you can boost what really works.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "youtube": {
       "title": "Grow your YouTube subscribers with deeplinks | PIMMS",
       "description": "Send your viewers straight to the official YouTube app. Reduce friction, increase engagement, and track the impact of every link on your subscribers.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=6"
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "amazon": {
       "title": "Boost your Amazon sales with deeplinks | PIMMS",
       "description": "Open your products and books directly in the official Amazon app. Remove friction, increase sales and reviews, and track your link performance precisely.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=6"
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "abuse": {
       "title": "Report abuse"

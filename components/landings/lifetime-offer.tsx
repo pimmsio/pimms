@@ -67,7 +67,7 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
                 {t("lifetime_offer.popular")}
               </div>
               <div className="flex flex-col items-center justify-between gap-6 w-full">
-                <div className="text-lg font-bold">
+                <div className="text-lg font-bold tracking-tight">
                   {t("lifetime_offer.lifetime_deal")}
                 </div>
                 <div className="text-4xl flex items-start leading-none font-bold">

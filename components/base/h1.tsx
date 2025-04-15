@@ -14,7 +14,7 @@ export const H1 = ({
         className
       )}
     >
-      <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl !leading-12 sm:!leading-14 lg:!leading-16 font-extrabold !tracking-tight text-balance text-[#08272E]">
+      <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl !leading-10 sm:!leading-14 lg:!leading-16 font-black !tracking-tighter text-balance text-[#08272E]">
         {children}
       </h1>
     </div>

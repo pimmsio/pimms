@@ -14,7 +14,12 @@ export const ListItem = ({
   size?: "sm" | "md" | "lg";
 }) => {
   return (
-    <li className={twMerge("flex-row flex gap-2 items-center", className)}>
+    <li
+      className={twMerge(
+        "flex-row flex gap-2 items-center tracking-tight",
+        className
+      )}
+    >
       <div
         className={twMerge(
           "w-fit h-fit rounded-full bg-[#E7EEFF] text-[#3970ff]",

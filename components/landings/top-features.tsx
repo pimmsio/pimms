@@ -21,13 +21,22 @@ export const TopFeatures = ({
 
   return (
     <Section className="max-w-5xl mx-auto">
-      <Label className="mb-6 mx-auto w-fit bg-[#3970ff] text-white py-1.5 flex items-center justify-center gap-3 uppercase px-4 text-sm">
+      <Label className="mb-6 mx-auto w-fit bg-[#3970ff] text-white py-1.5 flex items-center justify-center gap-2 uppercase px-4 text-sm">
         <Check className="w-4 h-4" />
         {t("top_features.title")}
       </Label>
 
       <H2 className="mx-auto my-4 text-center">
         {t.rich("top_features.heading", {
+          logo: () => (
+            <Image
+              src="/static/logo.svg"
+              alt="pim.ms"
+              className="w-20 sm:w-24 inline-block mb-[2px] mx-0.5"
+              width={1000}
+              height={179}
+            />
+          ),
           strong: (chunks) => <span className="text-[#3970ff]">{chunks}</span>,
         })}
       </H2>
@@ -46,8 +55,8 @@ export const TopFeatures = ({
               height={179}
             />
           </div>
-          <div className="flex flex-col px-6 pb-6 w-full sm:w-1/2 justify-center">
-            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E]">
+          <div className="flex flex-col px-2 sm:px-6 pb-6 w-full sm:w-1/2 justify-center">
+            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E] tracking-tighter">
               {t("top_features.features.title1")}
             </h3>
             <Paragraph>{t("top_features.features.description1")}</Paragraph>
@@ -57,8 +66,8 @@ export const TopFeatures = ({
           <div className="w-full sm:w-1/2">
             <AnalyticsDemo tkey={tkey} showConversions={showConversions} />
           </div>
-          <div className="flex flex-col px-6 pb-6 w-full sm:w-1/2 justify-center">
-            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E]">
+          <div className="flex flex-col px-2 sm:px-6 pb-6 w-full sm:w-1/2 justify-center">
+            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E] tracking-tighter">
               {t("top_features.features.title2")}
             </h3>
             <Paragraph>{t("top_features.features.description2")}</Paragraph>
@@ -68,8 +77,8 @@ export const TopFeatures = ({
           <div className="w-full sm:w-1/2">
             <Referer />
           </div>
-          <div className="flex flex-col px-6 pb-6 w-full sm:w-1/2 justify-center">
-            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E]">
+          <div className="flex flex-col px-2 sm:px-6 pb-6 w-full sm:w-1/2 justify-center">
+            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E] tracking-tighter">
               {t("top_features.features.title3")}
             </h3>
             <Paragraph>{t("top_features.features.description3")}</Paragraph>
@@ -79,8 +88,8 @@ export const TopFeatures = ({
           <div className="w-full sm:w-1/2 bg-card rounded-3xl border-[6px] border-neutral-100">
             <FilterFeature tkey={tkey} />
           </div>
-          <div className="flex flex-col px-6 pb-6 w-full sm:w-1/2 justify-center">
-            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E]">
+          <div className="flex flex-col px-2 sm:px-6 pb-6 w-full sm:w-1/2 justify-center">
+            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E] tracking-tighter">
               {t("top_features.features.title4")}
             </h3>
             <Paragraph>{t("top_features.features.description4")}</Paragraph>
@@ -90,7 +99,7 @@ export const TopFeatures = ({
       <div className="bg-card rounded-3xl border-[6px] border-neutral-100 p-8 w-full mt-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 mx-auto max-w-3xl">
           <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold">
+            <span className="flex items-center gap-2 font-semibold tracking-tighter">
               <Zap size={24} />
               {t("top_features.analytics_features.title1")}
             </span>
@@ -99,7 +108,7 @@ export const TopFeatures = ({
             </p>
           </div>
           <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold">
+            <span className="flex items-center gap-2 font-semibold tracking-tighter">
               <Globe size={24} />
               {t("top_features.link_features.title1")}
             </span>
@@ -108,7 +117,7 @@ export const TopFeatures = ({
             </p>
           </div>
           <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold">
+            <span className="flex items-center gap-2 font-semibold tracking-tighter">
               <Share2 size={24} />
               {t("top_features.analytics_features.title3")}
             </span>
@@ -121,7 +130,7 @@ export const TopFeatures = ({
       {/* <div className="bg-card rounded-3xl border-[6px] border-neutral-100 p-8 w-full mt-8">
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 mx-auto max-w-2xl">
           <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold">
+            <span className="flex items-center gap-2 font-semibold tracking-tighter">
               <Globe size={24} />
               {t("link_features.features.title1")}
             </span>
@@ -130,7 +139,7 @@ export const TopFeatures = ({
             </p>
           </div>
           <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold">
+            <span className="flex items-center gap-2 font-semibold tracking-tighter">
               <ImagePlus size={24} />
               {t("link_features.features.title2")}
             </span>
