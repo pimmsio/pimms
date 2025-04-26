@@ -20,7 +20,9 @@ export default async function BaseLayout({ children, locale }: Props) {
       <Head>
         <meta name="apple-mobile-web-app-title" content="Pimms" />
       </Head>
-      <body className={`${inter.className} antialiased overscroll-none`}>
+      <body
+        className={`${inter.className} antialiased overscroll-none scroll-smooth`}
+      >
         <RootProviders>
           <NextIntlClientProvider messages={messages}>
             {children}

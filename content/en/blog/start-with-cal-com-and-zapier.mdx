@@ -1,0 +1,168 @@
+---
+title: Integrate Cal.com with PiMMs using Zapier
+summary: Automatically track your Cal.com bookings in PiMMs and gain instant insights into your conversions.
+publishedAt: 2025-04-26
+updatedAt: 2025-04-26
+image: https://assets.pimms.io/pimms-calcom-integration-zapier.webp
+author: alexandre
+categories:
+- education
+
+---
+
+This tutorial will guide you step-by-step to integrate **Cal.com** with **PiMMs** using **Zapier**. This integration is perfect for businesses relying on scheduled meetings to drive sales, providing automated tracking of conversions directly within your PiMMs dashboard.
+
+## Benefits of integrating Cal.com with PiMMs
+
+- **Automatic conversion tracking**: Instantly log meetings without manual input.
+- **Accurate marketing attribution**: See exactly which campaigns generate meetings.
+- **Enhanced analytics**: Use data quickly to optimize your sales processes.
+- **Save time**: Automate administrative tasks and focus on sales growth.
+- **Easy scaling**: Handle increasing volumes effortlessly.
+
+---
+
+## Step-by-step integration guide
+
+Follow each step carefully to ensure a successful integration:
+
+### 1\. Create a Zapier account
+
+- Visit [Zapier.com](https://zapier.com).
+- Click **Sign up**.
+
+![Zapier signup](https://assets.pimms.io/zapier-signup.webp?v=2)
+
+- Complete registration using Google or email/password.
+
+> Zapier provides 100 free conversions each month, sufficient to begin tracking immediately.
+
+### 2\. Configure the Cal.com booking form
+
+You must first set up the `pimms_id` on your Cal.com form:
+
+- Log in to your Cal.com account.
+- Open your booking page and select **Edit**.
+
+![Cal.com edit form](https://assets.pimms.io/cal-edit-form.webp)
+
+- Go to **Advanced → Booking questions**.
+
+![Cal.com add question](https://assets.pimms.io/cal-add-question.webp)
+
+- Click **Add a question** and fill in:
+  - **Type:** Short text
+  - **Identifier:** `pimms_id`
+  - **Label:** `pimms_id`
+  - **Required:** No
+  - Enable **Disable input if URL identifier is prefilled**
+  - Click **Add**
+
+![Cal.com question setup](https://assets.pimms.io/cal-fill-the-question-for-the-pimms_id.webp)
+
+- Hide the `pimms_id` field by toggling **Show on booking page** off.
+
+![Hide pimms_id](https://assets.pimms.io/cal-hide-field-in-form.webp)
+
+- Save your form changes.
+
+### 3\. Create a tracking link in PiMMs
+
+Before testing bookings, you need to create a tracking link within PiMMs:
+
+- Log into your PiMMs dashboard.
+- Create a new tracking link, pointing to your Cal.com booking URL.
+- Ensure that **conversion tracking** is enabled for this link.
+
+![PiMMs tracking link](https://assets.pimms.io/pimms-tracking-link.webp?v=2)
+
+### 4\. Create a dummy booking
+
+It's essential to test your setup using the tracking link created in PiMMs:
+
+- Click your PiMMs-generated short link to reach the Cal.com booking form.
+- Make a test booking using a dummy email.
+- Ensure the booking completes successfully.
+
+![Dummy booking](https://assets.pimms.io/cal-dummy-booking.webp)
+
+This ensures the `pimms_id` is captured correctly for Zapier integration.
+
+### 5\. Use the Zapier template
+
+Simplify integration by using a Zapier template:
+
+- Open the [Cal.com × PiMMs Zapier template](https://zapier.com/webintent/create-zap?template=255624056).
+- Click **Use this Zap**.
+
+### 6\. Set up the Zapier integration
+
+- Confirm the trigger is **Cal.com** and the event is **Booking Created**.
+- Connect your Cal.com account, then click **Continue**.
+
+![Connect Cal.com](https://assets.pimms.io/zapier-connect-cal.webp)
+
+- Choose your dummy booking for the test:
+  - Click **Find new records** to refresh the booking list.
+  - Select the dummy booking.
+  - Verify that `pimms_id` is listed.
+
+![Zapier find dummy record](https://assets.pimms.io/zapier-find-dummy-record.webp)
+
+- Check that the action app is set to **PiMMs** and the action is **Create Conversion**.
+
+![Zapier action selection to create conversion](https://assets.pimms.io/zapier-action-create-conversion.webp)
+
+- Select your PiMMs account and approve permissions on pimms dashboard.
+
+![Zapier approve permissions](https://assets.pimms.io/zapier-approve-permissions.webp)
+
+- Map the Cal.com `pimms_id` to PiMMs’ **Click ID** carefully.
+- Ensure the value is a random string not "pimms_id" or empty.
+
+![Zapier field mapping](https://assets.pimms.io/zapier-field-mapping.webp)
+
+- Do the same for the other input fields:
+  - **External ID** must be set to the **email**
+  - **Email** to the email of the person booking
+  - **Name** to the name of the person booking
+
+![Zapier field mapping other fields](https://assets.pimms.io/zapier-field-mapping-others.webp)
+
+- Finally, check that the values are correctly mapped. You can skip the test step. And publish the Zap.
+
+![Zapier check mapping](https://assets.pimms.io/zapier-check-mapping.webp)
+
+### 7\. Test your Zap
+
+- Make another dummy booking via your PiMMs-generated short link.
+- Check your PiMMs dashboard to ensure the booking is tracked as a conversion.
+
+![Zapier test your zap](https://assets.pimms.io/zapier-test-integration-calcom.webp)
+
+### ⚠️ Important notes
+
+- Duplicate bookings (same email) count as one conversion; PiMMs ignores repeat bookings by the same email.
+
+### Debugging integration errors
+
+If your Zap fails:
+
+- Book another test using a new dummy email.
+- In Zapier, navigate to **History**.
+- Identify failed runs and check the error message.
+
+Common issues include:
+
+- **Missing or incorrect `pimms_id`:** Verify the field matches exactly.
+- **`pimms_id` not found:** Indicates configuration errors; revisit steps 2-6.
+
+If problems persist, ensure your Cal.com form and Zapier setup match precisely as described above.
+
+---
+
+## 🎉 Integration complete!
+
+Your Cal.com bookings are now automatically tracked in PiMMs, providing real-time data to optimize your sales and marketing.
+
+Enjoy seamless conversion tracking and insightful analytics!

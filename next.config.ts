@@ -32,6 +32,9 @@ const nextConfig: NextConfig = {
         hostname: "assets.pimms.io",
       },
       {
+        hostname: "via.placeholder.com",
+      },
+      {
         hostname: "www.google.com",
       },
     ],
