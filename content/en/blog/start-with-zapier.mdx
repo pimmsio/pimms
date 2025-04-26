@@ -1,58 +1,67 @@
 ---
-title: Automate conversion tracking with Zapier
-summary: Connect Cal.com and Tally to PiMMs using Zapier and start tracking real conversions without code.
+title: Track real conversions automatically with Zapier and PiMMs
+summary: Connect Cal.com, Tally, and thousands of apps to PiMMs to automate your conversion tracking without a single line of code.
 publishedAt: 2025-04-15
-updatedAt: 2025-04-15
+updatedAt: 2025-04-27
 image: https://assets.pimms.io/start-zapier.jpg
 author: alexandre
 categories:
-  - education
----
-
-Want to know exactly which links, campaigns, or QR codes actually lead to conversions — like booked meetings or form signups?
-
-With the new **Zapier integration for PiMMs**, you can track conversions automatically from tools like **Cal.com** and **Tally** — no coding required.
-
-This guide shows how to set up the integration and start capturing real lead data effortlessly.
-
-## Why use Zapier with PiMMs?
-
-Zapier lets you connect over 6,000 apps — and now you can send conversion events from those apps straight into PiMMs.
-
-Use cases include:
-
-- Tracking meetings booked via Cal.com
-- Tracking form submissions from Tally
-- Automatically linking conversions to the original click source
-
-Once set up, PiMMs gives you real-time attribution data that tells you exactly what’s working.
+- education
 
 ---
 
-## How It Works
+In this guide, you'll learn how to automate real conversion tracking by connecting **Cal.com**, **Tally**, and thousands of other tools to **PiMMs** using **Zapier** — without writing any code.
 
-Every smart link generated in PiMMs includes a unique `clickId`. This ID is automatically passed through the URL when someone visits your form or booking page.
+With PiMMs, you can now track precisely which marketing efforts — email campaigns, LinkedIn posts, QR codes, or website links — are generating real results like meetings booked or forms submitted.
 
-When they convert — book a meeting, submit a form, etc. — you pass that `clickId` into PiMMs via Zapier.
+You have two simple steps:
 
-This lets PiMMs attribute the conversion back to the original campaign, post, or QR code.
+- Capture the PiMMs `clickId` on your form or booking page.
+- Send the conversion data automatically to PiMMs via Zapier.
+
+## Why integrate Zapier with PiMMs?
+
+- **Real-time attribution:** See instantly which campaigns drive meetings or signups.
+- **No coding required:** Set up in minutes through a simple Zapier automation.
+- **Works everywhere:** Connect over 6,000 apps, from Cal.com and Tally to custom landing pages.
 
 ---
 
-## ⚙️ Quick Setup Summary
+## How PiMMs conversion tracking works
+
+Every link you create with PiMMs contains a unique **Click ID** (`clickId`) in the URL.
+
+When someone clicks your link and books a meeting or submits a form, you pass that **clickId** into PiMMs through Zapier.
+
+This allows PiMMs to attribute every conversion back to the original campaign, post, ad, or QR code — so you know exactly what’s working.
+
+---
+
+## ⚙️ Quick setup summary
 
 | Integration | Where to capture Click ID | Zapier Trigger | Zapier Action |
-|-------------|----------------------------|----------------|----------------|
-| **Cal.com** | Add a Booking Question field (short text) and enable "Disable input if prefilled" | New Booking in Cal.com | Send conversion to PiMMs with clickId and eventName (e.g. "Meeting booked") |
-| **Tally.so** | Add a Hidden Field named `pimms_id` to capture click ID from URL | New Form Submission in Tally | Send conversion to PiMMs with clickId and eventName (e.g. "Form submitted") |
+|-------------|----------------------------|----------------|---------------|
+| **Cal.com** | Add a Booking Question field (Short text) with identifier `pimms_id` and enable "Disable input if prefilled" | New Booking in Cal.com | Send conversion to PiMMs (clickId + meeting details) |
+| **Tally.so** | Add a Hidden Field named `pimms_id` to capture the clickId from URL | New Form Submission in Tally | Send conversion to PiMMs (clickId + form details) |
+
+
+> ✅ Pro Tip: Always create a test booking or form submission through your PiMMs link first to ensure the `clickId` is captured correctly.
+
+---
+
+## Example use cases
+
+- Share a link on LinkedIn → Track who actually books a meeting.
+- Launch an email campaign → See which emails drive form submissions.
+- Run A/B tests → Identify the variant that drives more conversions.
+- Print a QR code → Know exactly how many meetings were booked from it.
 
 ---
 
 ## Ready to start?
 
-- Set up your Zaps in minutes
-- Automatically track and attribute conversions
-- Stop guessing what drives results
+- Set up your first Zaps in a few clicks
+- Track real conversions automatically
+- Finally understand what really drives your growth
 
-[Try PiMMs + Zapier now →](https://pim.ms/zapier)
-
+[Connect PiMMs + Zapier →](https://pim.ms/zapier)

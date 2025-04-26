@@ -54,6 +54,41 @@ export async function generateMetadata({ params }: MetadataProps) {
   });
 }
 
+function MdxLink({
+  href,
+  children,
+}: {
+  href?: string;
+  children: React.ReactNode;
+}) {
+  const locale = useLocale();
+
+  if (!href) {
+    return <span>{children}</span>;
+  }
+
+  const isInternalLink = href.startsWith("/");
+
+  if (isInternalLink) {
+    return (
+      <Link href={getCanonicalLink(locale, href)} className="underline">
+        {children}
+      </Link>
+    );
+  }
+
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="underline"
+    >
+      {children}
+    </a>
+  );
+}
+
 type Props = {
   params: Promise<{ slug: string }>;
 };
@@ -73,6 +108,7 @@ const components = {
       className="rounded-xl border-[6px] border-[#F2F3F5]"
     />
   ),
+  a: MdxLink,
 };
 
 export default function BlogPost({ params }: Props) {

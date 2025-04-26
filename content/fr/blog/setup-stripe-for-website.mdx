@@ -1,0 +1,120 @@
+---
+title: Suis les ventes Stripe grâce à des liens trackés
+summary: Connecte Stripe à PiMMs pour suivre simplement les ventes effectuées depuis tes campagnes emailing, LinkedIn, A/B testing et autres grâce à des liens personnalisés.
+publishedAt: 2025-04-27
+updatedAt: 2025-04-27
+image: https://assets.pimms.io/stripe-sales-tracking-with-pimms.webp
+author: alexandre
+categories:
+  - education
+related:
+  - introducing-conversion
+
+---
+
+Dans ce guide, tu vas découvrir comment suivre facilement les ventes Stripe réalisées depuis tes campagnes marketing (emailing, LinkedIn, posts, tests A/B...) directement dans ton tableau de bord PiMMs.
+
+En effet, PiMMs est présent dans le marketplace officielle de Stripe: [Voir la page](https://marketplace.stripe.com/apps/pimms)
+
+PiMMs est un outil qui te permet de générer des liens trackés personnalisés, grâce auxquels tu pourras identifier précisément les campagnes ou les contenus à l'origine de tes ventes sur Stripe.
+
+Deux façons d'utiliser PiMMs avec Stripe :
+
+- **Option A :** Partager directement des liens courts générés par PiMMs (idéal pour email, réseaux sociaux, etc.).
+- **Option B :** Intégrer directement les liens de paiement Stripe trackés sur ton site web.
+
+## Pourquoi utiliser PiMMs avec Stripe ?
+
+- **Suivi précis des ventes :** Associe clairement chaque vente Stripe à tes campagnes grâce à des liens uniques.
+- **Optimisation des campagnes :** Identifie facilement quelles actions marketing génèrent réellement des ventes.
+- **Simplicité et efficacité :** Aucun développement nécessaire, compatible avec tous types de sites.
+
+---
+
+## Comment connecter Stripe à PiMMs ?
+
+### 1\. Connecte Stripe avec PiMMs
+
+- Connecte-toi à ton [dashboard PiMMs](https://app.pimms.io).
+- Va dans **Intégrations → Stripe** et clique sur **Enable** (mode Test ou Production).
+- Autorise l'intégration en cliquant sur **Accept** dans Stripe.
+
+![Autoriser permissions Stripe](https://assets.pimms.io/stripe-accept-permissions.webp)
+
+- Vérifie dans Stripe :
+  - **Production :** [Paramètres Production](https://dashboard.stripe.com/settings/apps/pimms.io)
+  - **Test :** [Paramètres Test](https://dashboard.stripe.com/test/settings/apps/pimms.io)
+
+Si nécessaire :
+- Va dans **Paramètres → Équipe et sécurité → Applications**.
+- Choisis **Application PiMMs** et clique sur **Connect workspace**.
+
+![Connexion Stripe espace travail](https://assets.pimms.io/stripe-connect-workspace.webp)
+
+- Sélectionne ton espace de travail et autorise PiMMs.
+
+![Autorisation PiMMs Stripe](https://assets.pimms.io/stripe-authorize-permissions.webp)
+
+✅ **Stripe et PiMMs sont maintenant connectés.**
+
+![Connexion réussie](https://assets.pimms.io/stripe-connected.webp)
+
+### 2\. Crée ton lien de paiement Stripe
+
+- Dans ton dashboard Stripe, clique sur **Créer un lien de paiement**.
+
+![Création lien paiement Stripe](https://assets.pimms.io/stripe-create-payment-link.webp)
+
+- Copie l'URL du lien de paiement généré (ex : `https://buy.stripe.com/xyz`).
+
+### 3\. Choisis ta méthode pour tracker les ventes (A ou B)
+
+#### ✅ Option A : Liens courts PiMMs (recommandée)
+
+- Connecte-toi à PiMMs et crée un nouveau lien court.
+- Colle ton URL Stripe en ajoutant `?pimms_client_reference_id=1`.
+- Active le **suivi des conversions**.
+
+Exemple :
+```
+https://buy.stripe.com/xyz?pimms_client_reference_id=1
+```
+
+![Lien court PiMMs](https://assets.pimms.io/stripe-create-short-link.webp)
+
+- Diffuse ce lien dans tes emails, LinkedIn ou campagnes de tests A/B.
+
+#### ✅ Option B : Intégration sur ton site (Webflow, Wix, Framer, etc.)
+
+- Ajoute ces scripts dans l'HTML personnalisé de ton site :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.js"></script>
+<script defer src="https://assets.pimms.io/detect-stripe-v1.0.1.js"></script>
+```
+
+- Place le lien de paiement Stripe tracké (`?pimms_client_reference_id=1`) dans tes boutons d’achat.
+
+Exemple HTML :
+```html
+<a href="https://buy.stripe.com/xyz?pimms_client_reference_id=1">Acheter maintenant</a>
+```
+
+#### ✅ Option C : Intégration coté serveur (Next.js, Nuxt, etc.)
+
+Construit l'URL du lien de paiement en renseignant le client_reference_id de l'utilisateur.
+
+```js
+const pimmsId = "abc"; // Récupère le pimms_id depuis les cookies
+const paymentLink = `https://buy.stripe.com/xyz?client_reference_id=pimms_id_${pimmsId}`;
+// Ouvre le lien de paiement dans une nouvelle fenêtre par exemple
+window.open(paymentLink, "_blank");
+```
+
+Plus d'informations sur l'option C dans [l'article sur le suivi des conversions](/blog/introducing-conversion).
+
+### 🎉 Tes ventes Stripe sont maintenant suivies dans PiMMs !
+
+Chaque vente Stripe réalisée depuis tes liens trackés apparaîtra automatiquement dans PiMMs, t’offrant ainsi des analyses précises pour booster efficacement tes actions marketing.
+
+![Suivi des ventes avec PiMMs](https://assets.pimms.io/stripe-sales-tracking.webp?v=2)

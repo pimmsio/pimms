@@ -36,7 +36,7 @@ export default function BlogCard({
       />
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>
-          <H2>{title}</H2>
+          <H2 className="text-xl!">{title}</H2>
           <Paragraph className="mt-2 line-clamp-2">{summary}</Paragraph>
         </div>
         <div className="mt-4 flex items-center space-x-2">

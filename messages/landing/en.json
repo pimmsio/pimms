@@ -184,14 +184,14 @@
         "popular": "Most popular",
         "tax": "Excl. VAT",
         "month": "month",
-        "sub_pass": "More than 5000€ /month in tracked sales",
+        "sub_pass": "More than 20k€ /month in tracked sales",
         "try_free": "Try for free",
         "no_credit_card": "No credit card required",
         "features": {
           "title": "Everything you need — unlimited",
           "1": "Unlimited new links and clicks",
           "2": "Unlimited conversion events",
-          "3": "Up to 5000€/mo in tracked sales",
+          "3": "Up to 20k€/mo in tracked sales",
           "4": "Team collaboration",
           "5": "Custom domain",
           "6": "Unlimited UTMs, in-app redirections, QR codes..."
