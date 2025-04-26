@@ -69,6 +69,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/blog/start-with-cal-com-and-zapier",
     fr: "/blog/demarrer-avec-cal-com-et-zapier",
   },
+  "/blog/setup-stripe-for-website": {
+    en: "/blog/setup-stripe-payments-tracking-with-pimms-on-any-website",
+    fr: "/blog/configurer-stripe-tracking-paiements-avec-pimms-pour-site-web",
+  },
 };
 
 export type AppPathnames = keyof typeof pathnames;
