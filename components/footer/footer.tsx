@@ -113,6 +113,18 @@ export const Footer = ({
                 {t("footer.resources.sdk-ts")}
               </div>
             </Link>
+            <div className="font-semibold text-gray-900">
+              {t("footer.category.free_tools")}
+            </div>
+            <Link
+              aria-current="page"
+              href={getCanonicalLink(locale, "/tools/qr-code-generator")}
+              className="router-link-active router-link-exact-active"
+            >
+              <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+                {t("footer.free_tools.qr_code_generator")}
+              </div>
+            </Link>
           </nav>
           <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
             <div className="font-semibold text-gray-900">Legal</div>

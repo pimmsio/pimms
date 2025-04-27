@@ -14,7 +14,8 @@
       "category": {
         "help": "Aide",
         "solutions": "Solutions",
-        "resources": "Ressources"
+        "resources": "Ressources",
+        "free_tools": "Outils gratuits"
       },
       "solutions": {
         "youtube": "Créateurs de contenu YouTube",
@@ -24,6 +25,9 @@
         "blog": "Blog",
         "api": "Documentation API",
         "sdk-ts": "SDK TypeScript"
+      },
+      "free_tools": {
+        "qr_code_generator": "Générateur de QR code avec logo"
       },
       "copyright": "© 2025 PIMMS"
     }

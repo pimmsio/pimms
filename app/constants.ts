@@ -42,6 +42,9 @@ export const WORDMARK = "https://assets.pimms.io/wordmark.png";
 export const WORDMARK_BLACK = "https://assets.pimms.io/wordmark-black.png";
 export const THUMBNAIL = "https://assets.pimms.io/thumbnail.jpg?v=3";
 
+export const PUBLIC_FRAME_URL = `${process.env.STORAGE_BASE_URL}/frames/`;
+export const PUBLIC_FRAME_THUMBNAIL_URL = `${process.env.STORAGE_BASE_URL}/frames/thumbnails/`;
+
 export const BLOG_CATEGORIES: {
   title: string;
   slug: "company" | "education";

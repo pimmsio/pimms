@@ -13,6 +13,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/solutions/deep-links-amazon",
     fr: "/solutions/deep-links-amazon",
   },
+  "/tools/qr-code-generator": {
+    en: "/tools/qr-code-generator-with-logo",
+    fr: "/outils-gratuits/generateur-de-qr-code-avec-logo",
+  },
   "/legal/terms": {
     en: "/legal/terms",
     fr: "/legal/conditions-dutilisation",

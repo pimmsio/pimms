@@ -170,3 +170,34 @@ export function constructMetadata({
     alternates,
   };
 }
+
+export const isValidUrl = (url: string) => {
+  try {
+    new URL(url);
+    return true;
+  } catch (e) {
+    return false;
+  }
+};
+
+export const urlRegex =
+  /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+
+export const isValidUrlRegex = (url: string) => {
+  const regex = new RegExp(urlRegex);
+  return url.match(regex);
+};
+
+export const parseUrl = (url: string) => {
+  if (!url) {
+    return;
+  }
+
+  const isValidUrl = isValidUrlRegex(url);
+
+  if (!~url.indexOf("http") && isValidUrl) {
+    return "https://" + url;
+  }
+
+  return url;
+};
