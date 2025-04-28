@@ -1,3 +1,5 @@
+"use client";
+
 export default function TestPage() {
   return (
     <div className="flex flex-col gap-4">
@@ -255,58 +257,48 @@ export default function TestPage() {
       <div className="flex flex-row gap-4 mx-auto">
         <a
           className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="intent://www.vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke#Intent;scheme=https;package=com.vinted.android;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fwww.vinted.fr%2Fitems%2F5917523938-pullbear-gefutterte-cordjacke;end"
+          href="https://www.vinted.it/member/50118531-anna12821585"
         >
-          Test 1 (fail)
+          Test 1
         </a>
         <a
           className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="intent://vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke#Intent;scheme=https;package=com.vinted.android;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fwww.vinted.fr%2Fitems%2F5917523938-pullbear-gefutterte-cordjacke;end"
+          href="https://www.vinted.it/member/50118531-anna12821585"
+          target="_blank"
         >
-          Test 2 (fail)
+          Test 2
         </a>
-        <a
+        <button
           className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="fr.vinted://items/5917523938-pullbear-gefutterte-cordjacke"
+          onClick={() => {
+            window.location.href =
+              "https://www.vinted.it/member/50118531-anna12821585";
+          }}
         >
-          Test 3 (fail)
-        </a>
-        <a
+          Test 3
+        </button>
+        <button
           className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="vinted://items/5917523938-pullbear-gefutterte-cordjacke"
+          onClick={() => {
+            window.open(
+              "https://www.vinted.it/member/50118531-anna12821585",
+              "_blank"
+            );
+          }}
         >
-          Test 4 (fail)
-        </a>
-        <a
+          Test 4
+        </button>
+        <button
           className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="vinted://www.vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke"
+          onClick={() => {
+            setTimeout(() => {
+              window.location.href =
+                "https://www.vinted.it/member/50118531-anna12821585";
+            }, 1000);
+          }}
         >
-          Test 5 (fail)
-        </a>
-        <a
-          className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="vinted://vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke"
-        >
-          Test 6 (fail)
-        </a>
-        <a
-          className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="fr.vinted://items/5917523938-pullbear-gefutterte-cordjacke"
-        >
-          Test 7 (fail)
-        </a>
-        <a
-          className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="fr.vinted://www.vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke"
-        >
-          Test 8 (fail)
-        </a>
-        <a
-          className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="fr.vinted://vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke"
-        >
-          Test 9 (fail)
-        </a>
+          Test 5
+        </button>
       </div>
       <h1 className="mx-auto text-2xl font-bold">Kick (todo)</h1>
       <div className="flex flex-row gap-4 mx-auto">
