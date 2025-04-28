@@ -1,0 +1,124 @@
+---
+title: Track your iClosed deals easily with PiMMs using Zapier
+summary: Connect iClosed to PiMMs to automatically track your closed deals and gain powerful insights into your marketing and sales performance.
+publishedAt: 2025-04-28
+updatedAt: 2025-04-28
+image: https://assets.pimms.io/pimms-iclosed-integration-zapier.webp?v=2
+author: alexandre
+categories:
+- education
+related:
+- start-with-zapier
+- start-with-cal-com-and-zapier
+---
+
+In this step-by-step guide, you'll learn how to connect **iClosed** with **PiMMs** using **Zapier**. This integration lets you automatically track your closed deals and tie them back to your marketing efforts, giving you real insights into what's driving your revenue.
+
+**PiMMs** is the simplest way to create tracked links and understand exactly which campaigns, channels, or posts generate real closed deals.
+
+You have two easy steps:
+
+- Set up a tracked link with PiMMs.
+- Automate the conversion tracking through Zapier.
+
+---
+
+## Why integrate iClosed with PiMMs?
+
+- **Precise deal tracking:** Instantly log every closed deal from iClosed into PiMMs without any manual input.
+- **Clear marketing attribution:** Understand which campaigns or links actually generate closed deals.
+- **Smarter growth decisions:** Base your marketing optimizations on real closed deal data, not guesswork.
+
+---
+
+## How to connect iClosed with PiMMs
+
+### 1. Create your Zapier account (if needed)
+
+- Go to [Zapier.com](https://zapier.com) and click **Sign up**.
+
+![Zapier signup](https://assets.pimms.io/zapier-signup.webp)
+
+- Complete the setup using your email or Google account.
+
+> Zapier offers 100 free tasks per month, enough to get started easily.
+
+### 2. Create your tracked link in PiMMs
+
+- Go to your [PiMMs dashboard](https://app.pimms.io).
+- Create a new tracked link that points to your iClosed lead form or landing page.
+- Enable **Conversion tracking**.
+
+![PiMMs tracking link](https://assets.pimms.io/pimms-tracking-link-iclosed.webp)
+
+### 3. Submit a dummy deal to test
+
+- Click on your PiMMs short link.
+- Submit a dummy deal or lead using a fake email address.
+
+![Dummy submission](https://assets.pimms.io/iclosed-dummy-submission.webp)
+
+This is crucial so Zapier can detect the `pimms_id` correctly in the next steps.
+
+### 4. Use the Zapier template (in progress)
+
+Simplify everything by using our ready-made Zap template: (soon)
+
+### 5. Set up your Zap step-by-step
+
+- Set **iClosed** as the trigger, and event as **Deal Closed**.
+- Connect your iClosed account.
+
+![Connect iClosed](https://assets.pimms.io/zapier-connect-iclosed.webp)
+
+- Select your dummy deal when prompted for a test record.
+
+![Zapier find dummy record](https://assets.pimms.io/zapier-find-dummy-record-iclosed.webp)
+
+- Set **PiMMs** as the action app and select **Create Conversion**.
+
+- Authorize PiMMs if prompted.
+
+![Zapier approve permissions](https://assets.pimms.io/zapier-approve-permissions.webp)
+
+- Map the fields properly:
+  - **Click ID:** the `pimms_id` field (must be a random-looking string).
+  - **External ID:** the client's email address.
+  - **Email:** client's email.
+  - **Name:** client's name.
+
+![Zapier field mapping](https://assets.pimms.io/zapier-field-mapping-iclosed.webp)
+
+- Double-check your mappings.
+- Skip the test step if you want, and publish your Zap.
+
+![Zapier check mapping](https://assets.pimms.io/zapier-check-mapping-iclosed.webp)
+
+### 6. Final test to confirm everything works
+
+- Submit a new dummy deal using your PiMMs link.
+- Check your PiMMs dashboard to verify the deal was tracked as a conversion.
+
+![Zapier test your zap](https://assets.pimms.io/zapier-test-integration-iclosed.webp)
+
+### ⚡ Important notes
+
+- If someone submits multiple times using the same email, only the first closed deal is counted as a conversion.
+- Always make sure the `pimms_id` is correctly passed through your iClosed submission.
+
+### Troubleshooting tips
+
+If your Zap fails:
+
+- Check Zapier **Task History** to view detailed errors.
+- Common issues:
+  - **Missing or invalid `pimms_id`**
+  - **Incorrect field mapping**
+
+In case of errors, revisit your Zapier mapping.
+
+---
+
+## 🎉 You're ready!
+
+Your iClosed deals are now automatically tracked inside PiMMs. Gain valuable insights, optimize your marketing, and boost your conversions based on real data!

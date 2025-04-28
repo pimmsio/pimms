@@ -1,0 +1,126 @@
+---
+title: Suis facilement tes deals iClosed avec PiMMs grâce à Zapier
+summary: Connecte iClosed à PiMMs pour suivre automatiquement tes deals gagnés et obtenir des insights puissants sur ta performance marketing.
+publishedAt: 2025-04-28
+updatedAt: 2025-04-28
+image: https://assets.pimms.io/pimms-iclosed-integration-zapier.webp?v=2
+author: alexandre
+categories:
+- education
+related:
+- start-with-zapier
+- start-with-cal-com-and-zapier
+---
+
+Dans ce guide étape par étape, tu vas apprendre comment connecter **iClosed** à **PiMMs** en utilisant **Zapier**. Cette intégration te permet de suivre automatiquement tes deals fermés et de les associer à tes campagnes marketing, pour mieux comprendre ce qui génère vraiment des résultats.
+
+Avec PiMMs, tu peux créer facilement des liens trackés et identifier quelles actions marketing (emails, publicités, posts réseaux sociaux...) génèrent de vrais deals.
+
+Voici les deux grandes étapes :
+
+- Créer un lien tracké avec PiMMs.
+- Automatiser la remontée des conversions avec Zapier.
+
+---
+
+## Pourquoi connecter iClosed avec PiMMs ?
+
+- **Suivi précis des deals :** Chaque deal gagné est automatiquement enregistré dans PiMMs.
+- **Attribution marketing claire :** Identifie exactement quelles campagnes ou quels liens génèrent des deals.
+- **Décisions plus intelligentes :** Optimise ton marketing basé sur des données réelles.
+
+---
+
+## Comment connecter iClosed à PiMMs ?
+
+### 1\. Crée un compte Zapier (si besoin)
+
+- Va sur [Zapier.com](https://zapier.com) et clique sur **S'inscrire**.
+
+![Inscription Zapier](https://assets.pimms.io/zapier-signup.webp)
+
+- Finalise ton inscription avec Google ou ton adresse email.
+
+> Zapier offre 100 tâches gratuites par mois, parfait pour commencer.
+
+### 2\. Crée ton lien tracké dans PiMMs
+
+- Connecte-toi à ton [dashboard PiMMs](https://app.pimms.io).
+- Crée un nouveau lien pointant vers ton formulaire ou ta page iClosed.
+- Active le **Suivi des conversions**.
+
+![Lien tracké PiMMs](https://assets.pimms.io/pimms-tracking-link-iclosed.webp)
+
+### 3\. Envoie un deal test
+
+- Clique sur ton lien court PiMMs.
+- Soumets un deal test ou un formulaire avec une adresse email factice.
+
+![Soumission test](https://assets.pimms.io/iclosed-dummy-submission.webp)
+
+Ceci est indispensable pour que Zapier détecte correctement le `pimms_id`.
+
+### 4\. Utilise le modèle Zapier (bientôt)
+
+Simplifie-toi la vie avec notre modèle prêt à l'emploi : (disponible bientôt)
+
+### 5\. Configure ton Zap étape par étape
+
+- Définis **iClosed** comme déclencheur avec l'événement **Deal Closed**.
+- Connecte ton compte iClosed.
+
+![Connecter iClosed](https://assets.pimms.io/zapier-connect-iclosed.webp)
+
+- Choisis ton enregistrement test.
+
+![Sélectionner test iClosed](https://assets.pimms.io/zapier-find-dummy-record-iclosed.webp)
+
+- Ajoute **PiMMs** comme application d'action et choisis **Create Conversion**.
+
+- Autorise PiMMs si nécessaire.
+
+![Autoriser PiMMs Zapier](https://assets.pimms.io/zapier-approve-permissions.webp)
+
+- Mappe correctement les champs :
+  - **Click ID :** champ `pimms_id` (doit être un identifiant unique).
+  - **External ID :** adresse email du client.
+  - **Email :** email du client.
+  - **Nom :** nom du client.
+
+![Mapping champs iClosed](https://assets.pimms.io/zapier-field-mapping-iclosed.webp)
+
+- Vérifie bien toutes les correspondances.
+- Passe le test ou saute-le, puis publie ton Zap.
+
+![Vérification mapping](https://assets.pimms.io/zapier-check-mapping-iclosed.webp)
+
+### 6\. Fais un test final
+
+- Soumets un nouveau deal test via ton lien PiMMs.
+- Vérifie dans ton dashboard PiMMs que la conversion a bien été enregistrée.
+
+![Tester ton Zap](https://assets.pimms.io/zapier-test-integration-iclosed.webp)
+
+### ⚡ Notes importantes
+
+- Si un même email est utilisé plusieurs fois, seule la première conversion est prise en compte.
+- Vérifie toujours que le `pimms_id` est bien transmis via iClosed.
+
+### Aide au dépannage
+
+Si ton Zap rencontre une erreur :
+
+- Consulte l'**Historique des Tâches** sur Zapier.
+- Problèmes fréquents :
+  - **pimms_id manquant ou invalide**
+  - **Mappage incorrect des champs**
+
+Reviens à la configuration iClosed ou au mapping si besoin.
+
+---
+
+## 🎉 C'est terminé !
+
+Tes deals iClosed sont maintenant automatiquement trackés dans PiMMs.
+
+Analyse mieux tes campagnes, optimise ton marketing, et booste tes conversions grâce à des données réelles !
