@@ -2,7 +2,7 @@
 title: Track your Stripe sales easily with PiMMs using tracked links
 summary: Connect Stripe to PiMMs and effortlessly track sales generated from your email campaigns, LinkedIn posts, A/B testing, and more using custom tracked links.
 publishedAt: 2025-04-27
-updatedAt: 2025-04-27
+updatedAt: 2025-04-29
 image: https://assets.pimms.io/stripe-sales-tracking-with-pimms.webp
 author: alexandre
 categories:
@@ -67,51 +67,70 @@ If needed:
 
 - Copy the generated payment link URL (e.g., `https://buy.stripe.com/xyz`).
 
-### 3\. Choose your method for tracking sales (A or B)
+### 3. The best ways to share your Stripe payment link and track sales (A, B, or C)
 
-#### ✅ Option A: PiMMs short links (recommended)
+#### ✅ Option A: Share a PiMMs short link (recommended)
 
-- Log into PiMMs and create a new short link.
-- Paste your Stripe URL, adding `?pimms_client_reference_id=1` at the end.
+This is the easiest and most powerful method.
+
+- Go to [PiMMs](https://app.pimms.io) and create a short link.
+- Paste your Stripe payment link (e.g. `https://buy.stripe.com/xyz`).
 - Enable **Conversion tracking**.
+
+PiMMs will automatically add the right `client_reference_id` to every visit, so you don’t need to edit the link manually.
+
+**Why use this method?**
+- It works across all channels: email, LinkedIn, QR codes, paid ads.
+- You’ll know exactly which campaign, post, or message generated the sale.
 
 Example:
 ```
-https://buy.stripe.com/xyz?pimms_client_reference_id=1
+https://pim.ms/xyz
 ```
 
-![PiMMs short link](https://assets.pimms.io/stripe-create-short-link.webp)
+---
 
-- Share this link via email, LinkedIn, or your A/B testing campaigns.
+#### ✅ Option B: Embed Stripe on your website (no short link)
 
-#### ✅ Option B: Website integration (Webflow, Wix, Framer, etc.)
+If you embed your Stripe payment link inside your own website (e.g. Webflow, Wix, Framer), **don’t paste a PiMMs link into the HTML**.
 
-- Include these scripts in your site's custom HTML:
+**Why?**
+If you hardcode a PiMMs short link, PiMMs can’t differentiate between visitors. All purchases will appear to come from the same source.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.js"></script>
-<script defer src="https://assets.pimms.io/detect-stripe-v1.0.1.js"></script>
-```
+**Do this instead:**
+- Use your standard Stripe link in the button, but **append `?pimms_client_reference_id=1`** to the URL:
 
-- Embed the tracked Stripe payment link (`?pimms_client_reference_id=1`) into your purchase buttons.
-
-HTML example:
 ```html
 <a href="https://buy.stripe.com/xyz?pimms_client_reference_id=1">Buy now</a>
 ```
 
-#### ✅ Option C : Intégration coté serveur (Next.js, Nuxt, etc.)
+- Then, in your website’s global HTML, include the following scripts:
 
-Construit l'URL du lien de paiement en renseignant le client_reference_id de l'utilisateur.
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+These scripts detect which PiMMs link brought the visitor to your site and inject the correct tracking ID into your Stripe link.
+
+💡 **This preserves attribution across campaigns while keeping your own domain.**
+
+---
+
+#### ✅ Option C: Generate payment links dynamically (for developers)
+
+If you're using **Next.js**, **Nuxt**, or another modern web framework:
 
 ```js
-const pimmsId = "abc"; // Get the pimms_id from the cookies
+const pimmsId = getCookie("pimms_id");
 const paymentLink = `https://buy.stripe.com/xyz?client_reference_id=pimms_id_${pimmsId}`;
-// Open the payment link in a new window for example
 window.open(paymentLink, "_blank");
 ```
 
-More information about option C in [the article on conversion tracking](/blog/introducing-conversion).
+This method gives you full control: the PiMMs ID is dynamically appended before redirecting to Stripe.
+
+---
+
+Want a deeper dive? [Read our full article on conversion tracking →](/blog/introducing-conversion)
 
 ### 🎉 Your Stripe sales are now tracked in PiMMs!
 

@@ -6,7 +6,7 @@ import { use } from "react";
 import { locales } from "@/i18n/config";
 import { useLocale } from "next-intl";
 import { generatePagesMetadata, getCanonicalLink } from "@/lib/utils";
-import { H1 } from "@/components/base/h1";
+import { H1Blog } from "@/components/base/h1";
 import { HeroSection } from "@/components/base/hero-section";
 import { Section } from "@/components/base/section";
 import { Paragraph } from "@/components/base/paragraph";
@@ -145,13 +145,13 @@ export default function BlogPost({ params }: Props) {
           ))}
           <Paragraph>{formatDate(post.metadata.updatedAt)}</Paragraph>
         </div>
-        <H1>{post.metadata.title}</H1>
-        <div className="px-4 text-center mx-auto">
+        <H1Blog>{post.metadata.title}</H1Blog>
+        <div className="px-4 text-center mx-auto max-w-2xl">
           <Paragraph>{post.metadata.summary}</Paragraph>
         </div>
       </HeroSection>
 
-      <Section id="content" className="relative">
+      <Section id="content" className="w-full mx-0 sm:mx-auto relative">
         <div className="hidden absolute top-52 h-[calc(100%-13rem)] w-full rounded-2xl bg-gradient-to-b from-[white] md:block" />
         <div className="mx-auto w-full grid max-w-screen-lg grid-cols-4 gap-5 px-0 md:pt-10 xl:px-0">
           <article className="bg-card w-full flex flex-col items-start gap-4 md:mt-8 rounded-3xl relative col-span-4 sm:rounded-2xl sm:border-[6px] sm:border-[#F2F3F5] md:col-span-3">
@@ -173,11 +173,11 @@ export default function BlogPost({ params }: Props) {
                 // h4: text-lg font-medium mt-4
                 "prose prose-h4:text-lg prose-h4:font-medium prose-h4:mt-4",
                 // p: text-md md:text-lg leading-relaxed text-balance text-[#5C5B61]
-                "prose-p:text-md prose-p:leading-relaxed prose-p:text-balance prose-p:text-[#5C5B61] prose-p:my-2",
+                "prose-p:text-md prose-p:leading-relaxed sm:prose-p:text-balance prose-p:text-[#5C5B61] prose-p:my-2",
                 // ul: list-disc list-inside
                 "prose-ul:list-disc prose-ul:list-inside prose-ul:my-1 prose-ul:pl-1",
                 // li: text-md md:text-lg leading-relaxed text-balance text-[#5C5B61]
-                "prose-li:leading-relaxed prose-li:text-balance prose-li:text-[#5C5B61]",
+                "prose-li:leading-relaxed sm:prose-li:text-balance prose-li:text-[#5C5B61]",
                 // code: text-md md:text-lg leading-relaxed text-balance text-[#5C5B61]
                 "prose-code:text-sm prose-code:before:content-none prose-code:after:content-none prose-code:font-normal prose-code:font-mono prose-code:rounded-md prose-code:p-1",
                 // figure: p-0 m-0

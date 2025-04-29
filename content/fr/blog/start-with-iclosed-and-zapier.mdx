@@ -2,7 +2,7 @@
 title: Suis facilement tes deals iClosed avec PiMMs grâce à Zapier
 summary: Connecte iClosed à PiMMs pour suivre automatiquement tes deals gagnés et obtenir des insights puissants sur ta performance marketing.
 publishedAt: 2025-04-28
-updatedAt: 2025-04-28
+updatedAt: 2025-04-29
 image: https://assets.pimms.io/pimms-iclosed-integration-zapier.webp?v=2
 author: alexandre
 categories:
@@ -118,6 +118,64 @@ Si ton Zap rencontre une erreur :
 Reviens à la configuration iClosed ou au mapping si besoin.
 
 ---
+
+### 7. Les meilleures façons de partager ton lien iClosed et suivre les deals (A, B ou C)
+
+#### ✅ Option A : Partager un lien court PiMMs (recommandé)
+
+- Va sur [PiMMs](https://app.pimms.io) et crée un lien court pointant vers ton formulaire ou page iClosed.
+- Active **le suivi des conversions**.
+- Partage ton lien PiMMs dans tes emails, sur LinkedIn, via des QR codes ou dans tes campagnes marketing.
+
+Exemple :
+```
+https://pim.ms/ton-lien
+```
+
+💡 **Pourquoi cette méthode ?**
+- Elle fonctionne partout (emails, posts, pubs).
+- Elle permet d'attribuer précisément chaque deal au bon canal.
+
+---
+
+#### ✅ Option B : Partager ton propre site (sans mettre directement un lien PiMMs)
+
+Si ton formulaire iClosed est intégré dans ton propre site (Webflow, Wix, Framer, etc.), **ne colle pas un lien PiMMs en dur dans ton HTML**.
+
+**Pourquoi ?**
+Si tu intègres un lien PiMMs directement, tous les visiteurs seront considérés comme venant du même lien, ce qui fausse l'attribution des conversions.
+
+**À faire à la place :**
+- Utilise ton lien iClosed classique, en ajoutant `?pimms_id=1` à la fin de l'URL :
+
+```html
+<a href="https://app.iclosed.io/e/xyz?pimms_id=1">Remplir le formulaire</a>
+```
+
+- Ajoute ensuite ce script dans le `<head>` de ton site :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+Grâce à ces scripts, PiMMs détecte le `pimms_id` à l'arrivée sur ton site et l'injecte automatiquement dans le formulaire iClosed.
+
+---
+
+#### ✅ Option C : Générer dynamiquement les liens (pour développeurs)
+
+Si tu utilises **Next.js**, **Nuxt**, ou un autre framework moderne :
+
+```js
+const pimmsId = getCookie("pimms_id");
+const iclosedUrl = `https://app.iclosed.io/e/xyz?pimms_id=${pimmsId}`;
+```
+
+Utilise cette URL dans tes boutons, redirections ou composants dynamiques pour garantir une attribution parfaite.
+
+---
+
+ℹ️ Pour aller plus loin, consulte [notre guide sur le suivi des conversions](/blog/introducing-conversion).
 
 ## 🎉 C'est terminé !
 

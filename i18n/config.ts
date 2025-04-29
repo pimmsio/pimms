@@ -77,6 +77,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/blog/setup-stripe-payments-tracking-with-pimms-on-any-website",
     fr: "/blog/configurer-stripe-tracking-paiements-avec-pimms-pour-site-web",
   },
+  "/blog/no-code-guide-for-website": {
+    en: "/blog/complete-no-code-guide-to-track-conversions-and-sales-on-your-website",
+    fr: "/blog/guide-no-code-complet-pour-suivre-vos-conversions-et-ventes-sur-votre-site-web",
+  },
+  "/blog/embed-tracking-cal-com": {
+    en: "/blog/no-code-guide-to-embed-tracking-cal-com",
+    fr: "/blog/guide-no-code-pour-embed-tracking-cal-com",
+  },
 };
 
 export type AppPathnames = keyof typeof pathnames;

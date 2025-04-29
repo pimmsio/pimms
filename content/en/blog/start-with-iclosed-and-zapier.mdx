@@ -2,7 +2,7 @@
 title: Track your iClosed deals easily with PiMMs using Zapier
 summary: Connect iClosed to PiMMs to automatically track your closed deals and gain powerful insights into your marketing and sales performance.
 publishedAt: 2025-04-28
-updatedAt: 2025-04-28
+updatedAt: 2025-04-29
 image: https://assets.pimms.io/pimms-iclosed-integration-zapier.webp?v=2
 author: alexandre
 categories:
@@ -118,6 +118,66 @@ If your Zap fails:
 In case of errors, revisit your Zapier mapping.
 
 ---
+
+### 7. The best ways to share your iClosed link and track deals (A, B, or C)
+
+#### ✅ Option A: Share a PiMMs short link (recommended)
+
+- Go to [PiMMs](https://app.pimms.io) and create a short link pointing to your iClosed form or landing page.
+- Enable **conversion tracking**.
+- Share your PiMMs link through emails, LinkedIn posts, QR codes, or marketing campaigns.
+
+Example:
+```
+https://pim.ms/your-link
+```
+
+💡 **Why use this method?**
+- It works across all channels (email, posts, ads).
+- It precisely attributes each deal to the correct campaign.
+
+---
+
+#### ✅ Option B: Share your own website (without embedding a PiMMs link directly)
+
+If your iClosed form is embedded in your website (e.g., Webflow, Wix, Framer), **do not hardcode a PiMMs link inside your HTML**.
+
+**Why?**
+If you embed a PiMMs link directly, all visitors will appear as coming from the same source, which breaks accurate attribution.
+
+**Instead, do this:**
+- Use your standard iClosed link, and append `?pimms_id=1` to the URL:
+
+```html
+<a href="https://app.iclosed.io/e/xyz?pimms_id=1">Fill out the form</a>
+```
+
+- Then add these scripts in your website's `<head>` section:
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+These scripts automatically detect the visitor's `pimms_id` and inject it into the iClosed form link.
+
+---
+
+#### ✅ Option C: Generate dynamic links (for developers)
+
+If you're using **Next.js**, **Nuxt**, or another modern framework:
+
+```js
+const pimmsId = getCookie("pimms_id");
+const iclosedUrl = `https://app.iclosed.io/e/xyz?pimms_id=${pimmsId}`;
+```
+
+Use this URL in your buttons, redirects, or dynamic components to ensure perfect attribution.
+
+---
+
+ℹ️ For more details, check out [our guide on conversion tracking](/blog/introducing-conversion).
+
+
 
 ## 🎉 You're ready!
 

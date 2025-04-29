@@ -2,7 +2,7 @@
 title: Track your Cal.com bookings easily with PiMMs using Zapier
 summary: Connect Cal.com to PiMMs to automatically track your meetings and gain powerful insights into your marketing and sales performance.
 publishedAt: 2025-04-26
-updatedAt: 2025-04-27
+updatedAt: 2025-04-29
 image: https://assets.pimms.io/pimms-calcom-integration-zapier.webp?v=2
 author: alexandre
 categories:
@@ -150,6 +150,61 @@ If your Zap fails:
   - **Incorrect field mapping**
 
 In case of errors, revisit your Cal.com form setup and Zapier mapping.
+
+### 8. The best ways to share your Cal.com link and track conversions
+
+#### ✅ Option A: Share your PiMMs short link (recommended)
+
+- Go to [PiMMs](https://app.pimms.io) and create a short link pointing to your Cal.com booking URL.
+- Enable **Conversion tracking**.
+- Share your PiMMs link via email, LinkedIn, QR codes, or A/B tests.
+
+Example:
+```
+https://pim.ms/your-link
+```
+
+---
+
+#### ✅ Option B: Share your own website, not the PiMMs link directly
+
+If your Cal.com calendar is embedded on your website (e.g., Webflow, Wix, Framer), you should **not** paste a PiMMs short link directly into your HTML code.
+
+**Why?**  
+If you embed a PiMMs link inside your site, every visitor will be tracked as if they came from that exact link — even if they originally discovered your website through another campaign. This breaks PiMMs’ ability to attribute the visit correctly.
+
+**Instead, do this:**
+
+- Keep your usual Cal.com link in the HTML, but **append `?pimms_id=1`** at the end:
+
+```html
+<a href="https://cal.com/your-name/meeting?pimms_id=1">Book now</a>
+```
+
+- Then add these scripts to your site’s `<head>` section or global HTML settings:
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+💡 Now, when someone visits your site via a PiMMs short link, the scripts will detect the visitor’s `pimms_id` and inject it into your Cal.com link dynamically. This ensures every booking is properly attributed to the correct campaign.
+
+---
+
+#### ✅ Option C: Generate Cal links dynamically (for developers)
+
+If you're using frameworks like **Next.js**, **Nuxt**, or **Rails**, you can construct Cal.com URLs on the fly using the `pimms_id` from cookies or URL params:
+
+```js
+const pimmsId = getCookie("pimms_id");
+const calUrl = `https://cal.com/your-name/meeting?pimms_id=${pimmsId}`;
+```
+
+Use this URL in buttons, modals, redirects, or dynamic components.
+
+---
+
+ℹ️ For a deeper explanation of tracking logic, see [our article on conversion tracking](/blog/introducing-conversion).
 
 ---
 

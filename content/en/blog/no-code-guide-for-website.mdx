@@ -1,0 +1,106 @@
+---
+title: Complete guide to track your conversions and sales on your website with AI
+summary: Learn how to install PiMMs on your site to automatically track appointments, form submissions and Stripe sales — without writing a single line of code.
+publishedAt: 2025-04-29
+updatedAt: 2025-04-29
+image: https://assets.pimms.io/stripe-sales-tracking-with-pimms.webp
+author: alexandre
+categories:
+  - education
+related:
+  - introducing-conversion
+  - start-with-iclosed-and-zapier
+  - start-with-cal-com-and-zapier
+  - setup-stripe-for-website
+---
+
+In just a few minutes, you'll learn how to install tracking on your site using no-code or AI.
+
+You'll be able to track every appointment, submitted form or Stripe payment, even if you're using Webflow, Framer, Bold.new, Lovable.dev... or any other platform or site.
+
+Here’s what we’ll cover together:
+
+- How to install tracking on your site
+- How to create links that track your leads and sales
+- How to avoid tracking errors and wrong attribution
+
+Ready? Let's go.
+
+## Why you shouldn't put shortened links directly on your site
+
+If you put a pim.ms/abc short link directly on your site (in a button or form), all visitors will seem to come from the same source (the same short link).
+
+Result: attribution is wrong.
+
+The right method: use your original URLs with a simple parameter. I'll explain how in detail below.
+
+## Step 1: Add the tracking scripts to your site
+
+Add these two scripts to your site:
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+✅ Works for all sites, including:
+
+- Webflow
+- Wix
+- Framer
+- Squarespace
+- Bold.new
+- Lovable.dev
+- Bubble
+- Carrd
+- etc.
+
+Once added, PiMMs handles everything.
+
+## Step 2: Create your links with the right parameters
+
+Depending on your goal, here's how to create your links:
+
+### Appointments (Cal.com, Calendly, Lemcal)
+
+You need to add the `pimms_id=1` parameter at the end of your link:
+
+```html
+https://cal.com/your-name/meeting?pimms_id=1
+```
+
+### Forms or deals (Tally, iClosed, Typeform, Notion)
+
+You need to add the `pimms_id=1` parameter at the end of your link:
+
+```html
+https://app.iclosed.io/e/xyz?pimms_id=1
+```
+
+### Stripe payments
+
+For Stripe, add `pimms_client_reference_id=1` at the end of your link:
+
+```html
+https://buy.stripe.com/xyz?pimms_client_reference_id=1
+```
+
+## Ideal no-code configuration examples
+
+- **Framer**: Add a Calendly or Lemcal link with `?pimms_id=1`
+- **Webflow**: Add `?pimms_client_reference_id=1` to your Stripe links in buttons
+- **Bold.new**: Ask the AI to add PiMMs scripts in the custom code section
+- **Lovable.dev**: Simply use `?pimms_id=1` in your links — the platform automatically applies the logic
+
+## Need help?
+
+Find our step-by-step guides:
+
+- [PiMMs + Cal.com](/blog/start-with-cal-com-and-zapier)
+- [PiMMs + Stripe](/blog/setup-stripe-for-website)
+- [PiMMs + iClosed](/blog/start-with-iclosed-and-zapier)
+
+🌟 **It's ready!**
+
+Your site now tracks real conversions — not just clicks.
+
+From leads to Stripe payments, every action is now linked to the exact campaign that triggered it.

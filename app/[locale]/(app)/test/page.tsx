@@ -257,44 +257,63 @@ export default function TestPage() {
       <div className="flex flex-row gap-4 mx-auto">
         <a
           className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="https://www.vinted.it/member/50118531-anna12821585"
+          href="intent://www.vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke#Intent;scheme=https;package=com.vinted.android;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fwww.vinted.fr%2Fitems%2F5917523938-pullbear-gefutterte-cordjacke;end"
         >
-          Test 1
+          Test 1 (fail)
         </a>
         <a
           className="text-center text-blue-500 block p-3 bg-gray-100"
-          href="https://www.vinted.it/member/50118531-anna12821585"
-          target="_blank"
+          href="intent://vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke#Intent;scheme=https;package=com.vinted.android;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Fwww.vinted.fr%2Fitems%2F5917523938-pullbear-gefutterte-cordjacke;end"
         >
-          Test 2
+          Test 2 (fail)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="fr.vinted://items/5917523938-pullbear-gefutterte-cordjacke"
+        >
+          Test 3 (fail)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="vinted://items/5917523938-pullbear-gefutterte-cordjacke"
+        >
+          Test 4 (fail)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="vinted://www.vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke"
+        >
+          Test 5 (fail)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="vinted://vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke"
+        >
+          Test 6 (fail)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="fr.vinted://items/5917523938-pullbear-gefutterte-cordjacke"
+        >
+          Test 7 (fail)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="fr.vinted://www.vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke"
+        >
+          Test 8 (fail)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="fr.vinted://vinted.fr/items/5917523938-pullbear-gefutterte-cordjacke"
+        >
+          Test 9 (fail)
         </a>
         <button
           className="text-center text-blue-500 block p-3 bg-gray-100"
           onClick={() => {
             window.location.href =
-              "https://www.vinted.it/member/50118531-anna12821585";
-          }}
-        >
-          Test 3
-        </button>
-        <button
-          className="text-center text-blue-500 block p-3 bg-gray-100"
-          onClick={() => {
-            window.open(
-              "https://www.vinted.it/member/50118531-anna12821585",
-              "_blank"
-            );
-          }}
-        >
-          Test 4
-        </button>
-        <button
-          className="text-center text-blue-500 block p-3 bg-gray-100"
-          onClick={() => {
-            setTimeout(() => {
-              window.location.href =
-                "https://www.vinted.it/member/50118531-anna12821585";
-            }, 1000);
+              "https://www.vinted.it/items/6234496958-sac-louis-vuitton-noe-gm-cuir-epi";
           }}
         >
           Test 5
