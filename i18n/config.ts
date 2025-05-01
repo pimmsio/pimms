@@ -45,9 +45,17 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/blog/category/education",
     fr: "/blog/category/education",
   },
+  "/blog/category/digital-marketing": {
+    en: "/blog/category/digital-marketing",
+    fr: "/blog/category/marketing-digital",
+  },
   "/blog/author/alexandre": {
     en: "/blog/author/alexandre",
     fr: "/blog/auteur/alexandre",
+  },
+  "/blog/author/emma": {
+    en: "/blog/author/emma",
+    fr: "/blog/auteur/emma",
   },
   "/blog/first-article": {
     en: "/blog/what-is-pimms",
@@ -84,6 +92,18 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/blog/embed-tracking-cal-com": {
     en: "/blog/no-code-guide-to-embed-tracking-cal-com",
     fr: "/blog/guide-no-code-pour-embed-tracking-cal-com",
+  },
+  "/blog/how-to-track-link-performance-across-multiple-channels": {
+    en: "/blog/how-to-track-link-performance-across-multiple-channels",
+    fr: "/blog/comment-suivre-les-performances-des-liens-sur-plusieurs-canaux",
+  },
+  "/blog/deep-links-vs-universal-links-whats-the-difference": {
+    en: "/blog/deep-links-vs-universal-links-whats-the-difference",
+    fr: "/blog/deep-links-vs-universal-links-quelle-difference",
+  },
+  "/blog/7-ways-to-boost-mobile-app-conversion-rates-in-2025": {
+    en: "/blog/7-ways-to-boost-mobile-app-conversion-rates-in-2025",
+    fr: "/blog/7-facons-pour-ameliorer-les-taux-de-conversion-de-vos-applications-mobiles-en-2025",
   },
 };
 

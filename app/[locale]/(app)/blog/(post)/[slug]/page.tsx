@@ -21,7 +21,10 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import TableOfContents from "@/components/table-of-content";
-
+import remarkDirective from "remark-directive";
+import { remarkIframeDirective } from "@/lib/mdx/remarkIframeDirective";
+import { remarkFaqDirective } from "@/lib/mdx/remarkFaqDirective";
+import { Faq } from "@/components/mdx/Faq";
 export async function generateStaticParams() {
   const allParams = [];
 
@@ -109,6 +112,16 @@ const components = {
     />
   ),
   a: MdxLink,
+  Iframe: ({ src }: { src: string }) => {
+    return (
+      <div className="aspect-video w-full mb-6">
+        <iframe src={src} className="w-full h-full" allowFullScreen />
+      </div>
+    );
+  },
+  Faq: ({ question, answer }: { question: string; answer: string }) => (
+    <Faq question={question} answer={answer} />
+  ),
 };
 
 export default function BlogPost({ params }: Props) {
@@ -189,7 +202,12 @@ export default function BlogPost({ params }: Props) {
                 components={components}
                 options={{
                   mdxOptions: {
-                    remarkPlugins: [remarkGfm],
+                    remarkPlugins: [
+                      remarkGfm,
+                      remarkDirective,
+                      remarkIframeDirective,
+                      remarkFaqDirective,
+                    ],
                     rehypePlugins: [
                       rehypeSlug,
                       rehypeAutolinkHeadings,

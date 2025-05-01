@@ -70,13 +70,13 @@ export const parseFrontmatter = (fileContent: string) => {
     categories: Array.isArray(metadata.categories)
       ? metadata.categories
       : metadata.categories
-      ? [metadata.categories as string]
-      : [],
+        ? [metadata.categories as string]
+        : [],
     related: Array.isArray(metadata.related)
       ? metadata.related
       : metadata.related
-      ? [metadata.related as string]
-      : [],
+        ? [metadata.related as string]
+        : [],
   };
 
   return { metadata: normalized, content };
@@ -92,7 +92,18 @@ export const getMDXFiles = (dir: string) => {
 };
 
 export const readMDXFile = (filePath: string) => {
-  const rawContent = fs.readFileSync(filePath, "utf-8");
+  let rawContent = fs.readFileSync(filePath, "utf-8");
+
+  // Normalize ::: directives (e.g., ::: faq → :::@faq)
+  rawContent = rawContent.replace(/^:::\s?/gm, ":::");
+  // Transform :::@iframe <url> into :::iframe\n<url>\n:::
+  rawContent = rawContent.replace(
+    /^:::@iframe\s+(.+)$/gm,
+    (_match, url) => `:::iframe\n${url.trim()}\n`
+  );
+  // replace preview.pimms.io with app.pimms.io
+  rawContent = rawContent.replace(/preview\.pimms\.io/g, "app.pimms.io");
+
   const slug = path.basename(filePath, path.extname(filePath));
   return { ...parseFrontmatter(rawContent), slug };
 };

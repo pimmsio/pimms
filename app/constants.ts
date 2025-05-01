@@ -44,7 +44,7 @@ export const THUMBNAIL = "https://assets.pimms.io/thumbnail.jpg?v=3";
 
 export const BLOG_CATEGORIES: {
   title: string;
-  slug: "company" | "education";
+  slug: "company" | "education" | "digital-marketing";
   description: string;
 }[] = [
   {
@@ -56,6 +56,12 @@ export const BLOG_CATEGORIES: {
     title: "Education",
     slug: "education",
     description: "Educational content about link management.",
+  },
+  {
+    title: "Digital Marketing",
+    slug: "digital-marketing",
+    description:
+      "Digital marketing content about link management and tracking.",
   },
 ];
 
@@ -70,5 +76,11 @@ export const AUTHORS: {
     role: "Founder",
     image: "https://assets.pimms.io/linkedin-profile-alex-pimms.jpg",
     slug: "alexandre",
+  },
+  {
+    name: "Emma",
+    role: "Castro",
+    image: "https://assets.pimms.io/linkedin-profile-emma.jpg?v=3",
+    slug: "emma",
   },
 ];
