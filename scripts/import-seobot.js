@@ -25,7 +25,6 @@ const run = async () => {
 
   for (const preview of articles) {
     const full = await getArticle(preview.slug);
-    console.log(full);
     if (!full || !full.markdown || !full.published) continue;
 
     const frontmatter = `---

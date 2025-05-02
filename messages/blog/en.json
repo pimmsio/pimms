@@ -3,6 +3,10 @@
     "nav": {
       "dashboard": "Sign in",
       "solutions": "Solutions"
+    },
+    "cta": {
+      "headline": "Turn every click into conversion and decision",
+      "sub": "Optimize your links, track real conversions and sales, and uncover what drives results. Start using PIMMS to enhance your campaigns and grow your business."
     }
   }
 }

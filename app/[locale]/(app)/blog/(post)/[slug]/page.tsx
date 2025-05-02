@@ -25,6 +25,9 @@ import remarkDirective from "remark-directive";
 import { remarkIframeDirective } from "@/lib/mdx/remarkIframeDirective";
 import { remarkFaqDirective } from "@/lib/mdx/remarkFaqDirective";
 import { Faq } from "@/components/mdx/Faq";
+import { CallToAction } from "@/components/mdx/CallToAction";
+import { remarkCtaPlaceholder } from "@/lib/mdx/remarkCtaDirective";
+
 export async function generateStaticParams() {
   const allParams = [];
 
@@ -122,6 +125,7 @@ const components = {
   Faq: ({ question, answer }: { question: string; answer: string }) => (
     <Faq question={question} answer={answer} />
   ),
+  CallToAction,
 };
 
 export default function BlogPost({ params }: Props) {
@@ -164,7 +168,10 @@ export default function BlogPost({ params }: Props) {
         </div>
       </HeroSection>
 
-      <Section id="content" className="w-full mx-0 sm:mx-auto relative">
+      <Section
+        id="content"
+        className="w-full mx-0 sm:mx-auto relative overflow-x-hidden"
+      >
         <div className="hidden absolute top-52 h-[calc(100%-13rem)] w-full rounded-2xl bg-gradient-to-b from-[white] md:block" />
         <div className="mx-auto w-full grid max-w-screen-lg grid-cols-4 gap-5 px-0 md:pt-10 xl:px-0">
           <article className="bg-card w-full flex flex-col items-start gap-4 md:mt-8 rounded-3xl relative col-span-4 sm:rounded-2xl sm:border-[6px] sm:border-[#F2F3F5] md:col-span-3">
@@ -207,6 +214,7 @@ export default function BlogPost({ params }: Props) {
                       remarkDirective,
                       remarkIframeDirective,
                       remarkFaqDirective,
+                      remarkCtaPlaceholder,
                     ],
                     rehypePlugins: [
                       rehypeSlug,

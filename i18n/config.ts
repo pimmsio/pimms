@@ -105,6 +105,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/blog/7-ways-to-boost-mobile-app-conversion-rates-in-2025",
     fr: "/blog/7-facons-pour-ameliorer-les-taux-de-conversion-de-vos-applications-mobiles-en-2025",
   },
+  "/blog/how-to-track-email-campaign-revenue": {
+    en: "/blog/how-to-track-email-campaign-revenue",
+    fr: "/blog/comment-suivre-le-revenu-des-campagnes-email",
+  },
 };
 
 export type AppPathnames = keyof typeof pathnames;

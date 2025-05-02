@@ -51,12 +51,13 @@ export default function Home() {
         <TopFeatures tkey={tkey} />
       </div>
 
-      <div className="bg-zinc-100 w-full pt-16">
-        <LogosCircle tkey={tkey} />
-      </div>
       <div className="bg-zinc-100 w-full py-16">
         {/* <MainTestimonial tkey={tkey} /> */}
         <LifetimeOffer tkey={tkey} />
+      </div>
+
+      <div className="bg-zinc-100 w-full pb-16">
+        <LogosCircle />
       </div>
 
       <div className="bg-background-secondary text-foreground">

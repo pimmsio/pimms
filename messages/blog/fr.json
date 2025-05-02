@@ -3,6 +3,10 @@
     "nav": {
       "solutions": "Nos solutions",
       "dashboard": "Se connecter"
+    },
+    "cta": {
+      "headline": "Transforme chaque clic en conversion, puis en décision",
+      "sub": "Optimise tes liens, mesure tes conversions et tes ventes, et identifie ce qui génère réellement des résultats. Utilise PIMMS pour améliorer tes campagnes et développer ton activité."
     }
   }
 }

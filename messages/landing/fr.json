@@ -13,6 +13,12 @@
         "main": "<fast>⚡</fast> Démarre gratuitement<large> avec 10 liens offerts</large>",
         "main_short": "<fast>⚡</fast> Démarre gratuitement"
       },
+      "logos_circle": {
+        "title": "LE MIEUX ?",
+        "heading": "Ça fonctionne partout, et ça <strong>tracke tout</strong>",
+        "description": "Fonctionne avec +100 apps mobiles et intégrations.",
+        "more": "Fonctionne avec +100 apps mobiles et intégrations."
+      },
       "analytics_chart": {
         "clicks": "Clics",
         "leads": "Conversions",
@@ -195,12 +201,6 @@
           "5": "Domaine personnalisé",
           "6": "UTM illimités, redirections dans les apps, QR codes..."
         }
-      },
-      "logos_circle": {
-        "title": "LE MIEUX ?",
-        "heading": "Ça fonctionne partout, et ça <strong>tracke tout</strong>",
-        "description": "Fonctionne avec +100 apps mobiles et intégrations.",
-        "more": "Fonctionne avec +100 apps mobiles et intégrations."
       }
     },
     "youtube": {

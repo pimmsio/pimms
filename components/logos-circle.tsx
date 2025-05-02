@@ -49,8 +49,7 @@ const generateRingPositions = (count: number, radius: number) => {
   });
 };
 
-const LogosCircle: React.FC<{ tkey: string }> = ({ tkey }) => {
-  const t = useTranslations(tkey);
+const LogosCircle: React.FC = () => {
   const tcommon = useTranslations("landing.common");
 
   // Outer ring
@@ -147,15 +146,17 @@ const LogosCircle: React.FC<{ tkey: string }> = ({ tkey }) => {
       </motion.div>
 
       <div className="text-center max-w-sm z-20 px-4">
-        <Paragraph className="font-bold">{t("logos_circle.title")}</Paragraph>
+        <Paragraph className="font-bold">
+          {tcommon("logos_circle.title")}
+        </Paragraph>
         <H2>
-          {t.rich("logos_circle.heading", {
+          {tcommon.rich("logos_circle.heading", {
             strong: (chunks) => (
               <span className="text-[#3970ff]">{chunks}</span>
             ),
           })}
         </H2>
-        <Paragraph>{t("logos_circle.description")}</Paragraph>
+        <Paragraph>{tcommon("logos_circle.description")}</Paragraph>
         <div className="w-11/12 mx-auto">
           <CtaButtonBig
             type="sales"

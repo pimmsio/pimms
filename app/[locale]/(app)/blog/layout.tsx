@@ -1,5 +1,6 @@
 import Header from "@/components/blog/header";
 import Footer from "@/components/footer/footer";
+import LogosCircle from "@/components/logos-circle";
 
 const tkey = "blog";
 
@@ -14,7 +15,10 @@ export default function BlogLayout({
         <Header tkey={tkey} />
         {children}
       </div>
-      <Footer showRef={false} showApps={false} />
+      <div className="bg-zinc-100 w-full py-16">
+        <LogosCircle />
+      </div>
+      <Footer showRef={false} showApps={false} className="mt-0" />
     </>
   );
 }

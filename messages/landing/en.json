@@ -13,6 +13,12 @@
         "main": "<fast>⚡</fast> Start for free<large> with 10 links</large>",
         "main_short": "<fast>⚡</fast> Start for free"
       },
+      "logos_circle": {
+        "title": "THE BEST?",
+        "heading": "It works everywhere, and <strong>tracks everything</strong>",
+        "description": "Works with +100 mobile apps and integrations.",
+        "more": "Works with +100 mobile apps and integrations."
+      },
       "analytics_chart": {
         "clicks": "Clicks",
         "leads": "Conversions",
@@ -196,12 +202,6 @@
           "5": "Custom domain",
           "6": "Unlimited UTMs, in-app redirections, QR codes..."
         }
-      },
-      "logos_circle": {
-        "title": "THE BEST?",
-        "heading": "It works everywhere, and <strong>tracks everything</strong>",
-        "description": "Works with +100 mobile apps and integrations.",
-        "more": "Works with +100 mobile apps and integrations."
       }
     },
     "youtube": {
