@@ -70,7 +70,7 @@ export default function Youtube() {
       </div>
 
       <div className="bg-zinc-100 w-full py-16">
-        <LifetimeOffer tkey={tkey} />
+        <LifetimeOffer tkey={tkey} showBusinessPlan={false} />
       </div>
 
       <div className="bg-background-secondary text-foreground">

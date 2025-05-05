@@ -17,7 +17,13 @@ import { Paragraph } from "../base/paragraph";
 import { APP_URL } from "../../app/constants";
 import Link from "next/link";
 
-export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
+export const LifetimeOffer = ({
+  tkey,
+  showBusinessPlan = true,
+}: {
+  tkey: string;
+  showBusinessPlan?: boolean;
+}) => {
   const t = useTranslations(tkey);
 
   return (
@@ -92,36 +98,38 @@ export const LifetimeOffer = ({ tkey }: { tkey: string }) => {
               </div>
             </div>
           </div>
-          <div className="relative rounded-3xl text-[#08272E] w-full py-10 lg:px-10 lg:p-14 flex items-center justify-center bg-zinc-100 lg:bg-white">
-            <div className="flex flex-col items-center justify-between gap-6 w-full mt-[-15px]">
-              <div className="flex flex-col items-center justify-between gap-6 w-full">
-                <div className="text-lg font-normal tracking-tight text-center mx-4">
-                  {t("lifetime_offer.sub_pass")}
-                </div>
-                <div className="text-4xl flex items-start leading-none font-bold">
-                  <div className="mr-0.5 text-6xl">50</div>
-                  <div className="text-sm mt-0.5">
-                    € / {t("lifetime_offer.month")}
+          {showBusinessPlan && (
+            <div className="relative rounded-3xl text-[#08272E] w-full py-10 lg:px-10 lg:p-14 flex items-center justify-center bg-zinc-100 lg:bg-white">
+              <div className="flex flex-col items-center justify-between gap-6 w-full mt-[-15px]">
+                <div className="flex flex-col items-center justify-between gap-6 w-full">
+                  <div className="text-lg font-normal tracking-tight text-center mx-4">
+                    {t("lifetime_offer.sub_pass")}
                   </div>
-                </div>
-                <Link
-                  href={`${APP_URL}/register`}
-                  className="w-full flex justify-center"
-                >
-                  <Button
-                    variant="secondary"
-                    className="py-[0.25em] text-xl w-10/12  md:w-6/12 lg:w-11/12 hover:scale-105"
-                    size="lg"
+                  <div className="text-4xl flex items-start leading-none font-bold">
+                    <div className="mr-0.5 text-6xl">50</div>
+                    <div className="text-sm mt-0.5">
+                      € / {t("lifetime_offer.month")}
+                    </div>
+                  </div>
+                  <Link
+                    href={`${APP_URL}/register`}
+                    className="w-full flex justify-center"
                   >
-                    {t("lifetime_offer.try_free")}
-                  </Button>
-                </Link>
-                <div className="text-xs">
-                  {t("lifetime_offer.no_credit_card")}
+                    <Button
+                      variant="secondary"
+                      className="py-[0.25em] text-xl w-10/12  md:w-6/12 lg:w-11/12 hover:scale-105"
+                      size="lg"
+                    >
+                      {t("lifetime_offer.try_free")}
+                    </Button>
+                  </Link>
+                  <div className="text-xs">
+                    {t("lifetime_offer.no_credit_card")}
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          )}
         </div>
       </div>
       <Paragraph>{t("lifetime_offer.bottom")}</Paragraph>

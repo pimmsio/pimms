@@ -58,10 +58,9 @@ export const BLOG_CATEGORIES: {
     description: "Educational content about link management.",
   },
   {
-    title: "Digital Marketing",
+    title: "Blog",
     slug: "digital-marketing",
-    description:
-      "Digital marketing content about link management and tracking.",
+    description: "Official blog posts.",
   },
 ];
 

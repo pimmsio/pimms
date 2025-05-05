@@ -35,7 +35,7 @@ export default function BlogLayoutHero() {
             />
           ))}
           {/* <CategoryLink title="Customer Stories" href="/customers" /> */}
-          <CategoryLink title="Changelog" href="/changelog" />
+          {/* <CategoryLink title="Changelog" href="/changelog" /> */}
         </nav>
       </HeroSection>
       {/* <Popover

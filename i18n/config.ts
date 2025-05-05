@@ -109,6 +109,18 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/blog/how-to-track-email-campaign-revenue",
     fr: "/blog/comment-suivre-le-revenu-des-campagnes-email",
   },
+  "/blog/how-to-track-revenue-per-click": {
+    en: "/blog/how-to-track-revenue-per-click",
+    fr: "/blog/comment-suivre-le-revenu-par-clic",
+  },
+  "/blog/ab-testing-steps-for-funnel-optimization": {
+    en: "/blog/ab-testing-steps-for-funnel-optimization",
+    fr: "/blog/comment-optimiser-votre-funnel-avec-le-test-a-b",
+  },
+  "/blog/how-deep-links-improve-conversion-paths": {
+    en: "/blog/how-deep-links-improve-conversion-paths",
+    fr: "/blog/comment-les-deep-links-ameliorent-les-chemins-de-conversion",
+  },
 };
 
 export type AppPathnames = keyof typeof pathnames;

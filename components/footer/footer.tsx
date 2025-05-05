@@ -70,6 +70,15 @@ export const Footer = ({
               {t("footer.solutions.youtube")}
             </div>
           </Link>
+          <Link
+            aria-current="page"
+            href={getCanonicalLink(locale, "/solutions/amazon")}
+            className="router-link-active router-link-exact-active"
+          >
+            <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+              {t("footer.solutions.amazon")}
+            </div>
+          </Link>
         </nav>
         <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
           <div className="font-semibold text-gray-900">
@@ -77,7 +86,7 @@ export const Footer = ({
           </div>
           <Link
             aria-current="page"
-            href={getCanonicalLink(locale, "/blog")}
+            href={getCanonicalLink(locale, "/blog/category/digital-marketing")}
             className="router-link-active router-link-exact-active"
           >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
@@ -86,10 +95,18 @@ export const Footer = ({
           </Link>
           <Link
             aria-current="page"
+            href={getCanonicalLink(locale, "/blog/category/education")}
+            className="router-link-active router-link-exact-active"
+          >
+            <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+              {t("footer.resources.education")}
+            </div>
+          </Link>
+          <Link
+            aria-current="page"
             href="https://pim.ms/api"
             target="_blank"
             rel="noopener noreferrer"
-            className="router-link-active router-link-exact-active"
           >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
               {t("footer.resources.api")}

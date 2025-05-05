@@ -22,6 +22,7 @@
       },
       "resources": {
         "blog": "Blog",
+        "education": "Éducation",
         "api": "Documentation API",
         "sdk-ts": "SDK TypeScript"
       },
