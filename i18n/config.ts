@@ -41,9 +41,9 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/blog/category/company",
     fr: "/blog/category/entreprise",
   },
-  "/blog/category/education": {
-    en: "/blog/category/education",
-    fr: "/blog/category/education",
+  "/blog/category/guides": {
+    en: "/blog/category/guides-and-tutorials",
+    fr: "/blog/category/guides-et-tutoriels",
   },
   "/blog/category/digital-marketing": {
     en: "/blog/category/digital-marketing",
@@ -120,6 +120,23 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/blog/how-deep-links-improve-conversion-paths": {
     en: "/blog/how-deep-links-improve-conversion-paths",
     fr: "/blog/comment-les-deep-links-ameliorent-les-chemins-de-conversion",
+  },
+  "/blog/deep-linking-for-influencer-campaigns-basics": {
+    en: "/blog/deep-linking-for-influencer-campaigns-basics",
+    fr: "/blog/comment-les-deep-links-ameliorent-les-campagnes-influencer",
+  },
+  "/blog/how-to-track-systemeio-sales-and-leads": {
+    en: "/blog/how-to-track-systemeio-sales-and-leads",
+    fr: "/blog/comment-suivre-les-ventes-et-les-leads-de-systemeio",
+  },
+  "/blog/referrer-vs-utm-vs-fingerprinting-what-really-tells-you-where-a-click-came-from":
+    {
+      en: "/blog/referrer-vs-utm-vs-fingerprinting-where-clicks-really-come-from",
+      fr: "/blog/referrer-utm-fingerprinting-dou-viennent-les-clics",
+    },
+  "/blog/unlock-systemeio-attribution-with-pimms": {
+    en: "/blog/unlock-sales-lead-attribution-systemeio-pimms",
+    fr: "/blog/debloque-attribution-ventes-leads-systemeio-pimms",
   },
 };
 

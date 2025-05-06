@@ -27,6 +27,8 @@ import { remarkFaqDirective } from "@/lib/mdx/remarkFaqDirective";
 import { Faq } from "@/components/mdx/Faq";
 import { CallToAction } from "@/components/mdx/CallToAction";
 import { remarkCtaPlaceholder } from "@/lib/mdx/remarkCtaDirective";
+import { BlogStructuredData } from "@/components/mdx/BlogStructuredData";
+import { FaqStructuredData } from "@/components/mdx/FaqStructuredData";
 
 export async function generateStaticParams() {
   const allParams = [];
@@ -122,9 +124,13 @@ const components = {
       </div>
     );
   },
-  Faq: ({ question, answer }: { question: string; answer: string }) => (
-    <Faq question={question} answer={answer} />
-  ),
+  Faq: ({
+    question,
+    children,
+  }: {
+    question: string;
+    children: React.ReactNode;
+  }) => <Faq question={question}>{children}</Faq>,
   CallToAction,
 };
 
@@ -170,7 +176,7 @@ export default function BlogPost({ params }: Props) {
 
       <Section
         id="content"
-        className="w-full mx-0 sm:mx-auto relative overflow-x-hidden"
+        className="w-full mx-0 sm:mx-auto relative overflow-x-hidden sm:overflow-x-visible"
       >
         <div className="hidden absolute top-52 h-[calc(100%-13rem)] w-full rounded-2xl bg-gradient-to-b from-[white] md:block" />
         <div className="mx-auto w-full grid max-w-screen-lg grid-cols-4 gap-5 px-0 md:pt-10 xl:px-0">
@@ -231,40 +237,45 @@ export default function BlogPost({ params }: Props) {
               />
             </div>
           </article>
-          <div className="sticky col-span-4 md:col-span-1 w-fit mx-auto md:mx-0 md:mt-40 hidden flex-col sm:flex">
-            {author && (
-              <div className="flex flex-col gap-y-4 py-5">
-                <Paragraph>Written by</Paragraph>
-                <a
-                  className="group flex items-center space-x-3"
-                  href={getCanonicalLink(locale, `/blog/author/${author.slug}`)}
-                >
-                  <img
-                    alt={`${author.name} avatar`}
-                    loading="lazy"
-                    width="36"
-                    height="36"
-                    decoding="async"
-                    data-nimg="1"
-                    className="blur-0 rounded-full transition-all group-hover:brightness-90"
-                    src={author.image}
-                  />
-                  <div className="flex flex-col">
-                    <Paragraph className="font-medium text-[#08272E] capitalize">
-                      {author.name}
-                    </Paragraph>
-                    <Paragraph size="sm">{author.role}</Paragraph>
-                  </div>
-                </a>
-              </div>
-            )}
-            <hr className="w-full border-[3px] border-gray-100" />
-            <div className="sticky top-2 col-span-1 self-start pb-8 pt-4 mr-4">
-              <div className="max-h-[80vh] overflow-y-auto pb-8 pr-4">
-                <TableOfContents content={post.content} />
+          <aside className="col-span-4 md:col-span-1 hidden sm:block md:mx-0 md:mt-40">
+            <div className="sticky top-0 flex flex-col max-h-[calc(100vh - 6rem)] overflow-hidden">
+              {author && (
+                <div className="flex flex-col gap-y-4 py-5">
+                  <Paragraph>Written by</Paragraph>
+                  <a
+                    className="group flex items-center space-x-3"
+                    href={getCanonicalLink(
+                      locale,
+                      `/blog/author/${author.slug}`
+                    )}
+                  >
+                    <img
+                      alt={`${author.name} avatar`}
+                      loading="lazy"
+                      width="36"
+                      height="36"
+                      decoding="async"
+                      data-nimg="1"
+                      className="blur-0 rounded-full transition-all group-hover:brightness-90"
+                      src={author.image}
+                    />
+                    <div className="flex flex-col">
+                      <Paragraph className="font-medium text-[#08272E] capitalize">
+                        {author.name}
+                      </Paragraph>
+                      <Paragraph size="sm">{author.role}</Paragraph>
+                    </div>
+                  </a>
+                </div>
+              )}
+              <hr className="w-full border-[3px] border-gray-100" />
+              <div className="col-span-1 self-start pb-8 pt-4 mr-4">
+                <div className="max-h-[80vh] overflow-y-auto pb-8 pr-4">
+                  <TableOfContents content={post.content} />
+                </div>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
       </Section>
       <Section className="mx-auto w-fit">
@@ -309,6 +320,15 @@ export default function BlogPost({ params }: Props) {
           </div>
         )}
       </Section>
+      <BlogStructuredData
+        metadata={post.metadata}
+        url={getCanonicalLink(locale, `/blog/${slug}`)}
+        author={author}
+      />
+      <FaqStructuredData
+        url={getCanonicalLink(locale, `/blog/${slug}`)}
+        faqs={post.faqs}
+      />
     </>
   );
 }

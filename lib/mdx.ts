@@ -1,5 +1,10 @@
 import fs from "fs";
 import path from "path";
+import remarkDirective from "remark-directive";
+import remarkGfm from "remark-gfm";
+import remarkParse from "remark-parse";
+import { unified } from "unified";
+import { remarkFaqDirective } from "./mdx/remarkFaqDirective";
 
 export type PageMetadata = {
   title: string;
@@ -91,6 +96,25 @@ export const getMDXFiles = (dir: string) => {
   }
 };
 
+export type Faq = {
+  question: string;
+  answer: string;
+};
+
+export function extractFaqsFromMdxSync(content: string): Faq[] {
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkGfm)
+    .use(remarkDirective)
+    .use(remarkFaqDirective);
+
+  const file = { value: content, data: {} };
+  const tree = processor.parse(content);
+  processor.runSync(tree, file);
+
+  return (file.data as any).faqs || [];
+}
+
 export const readMDXFile = (filePath: string) => {
   let rawContent = fs.readFileSync(filePath, "utf-8");
 
@@ -132,13 +156,17 @@ export const getPage = (locale: string, dir: string, slug: string) => {
   );
   const enPath = path.join(process.cwd(), "content", "en", dir, `${slug}.mdx`);
 
-  // Fallback to English if file doesn't exist
-  if (!fs.existsSync(filePath)) {
-    console.log("Fallback to English", filePath);
-    return readMDXFile(enPath);
-  }
+  const pathToUse = fs.existsSync(filePath) ? filePath : enPath;
+  const { metadata, content } = readMDXFile(pathToUse);
 
-  return readMDXFile(filePath);
+  const faqs = extractFaqsFromMdxSync(content);
+
+  return {
+    metadata,
+    slug,
+    content,
+    faqs,
+  };
 };
 
 export const getPages = (locale: string, dir: string) => {

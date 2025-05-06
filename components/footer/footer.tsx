@@ -95,11 +95,11 @@ export const Footer = ({
           </Link>
           <Link
             aria-current="page"
-            href={getCanonicalLink(locale, "/blog/category/education")}
+            href={getCanonicalLink(locale, "/blog/category/guides")}
             className="router-link-active router-link-exact-active"
           >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
-              {t("footer.resources.education")}
+              {t("footer.resources.guides")}
             </div>
           </Link>
           <Link

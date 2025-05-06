@@ -1,14 +1,18 @@
-export const Faq = ({
+export function Faq({
   question,
   answer,
+  children,
 }: {
   question: string;
-  answer: string;
-}) => {
+  answer?: string;
+  children?: React.ReactNode;
+}) {
   return (
-    <div className="bg-white border border-neutral-200 shadow-sm rounded-2xl p-6 my-6">
-      <h3 className="text-lg font-semibold mb-3">{question}</h3>
-      <p className="text-sm text-neutral-700 whitespace-pre-line">{answer}</p>
+    <div className="mb-4">
+      <details className="group">
+        <summary className="cursor-pointer font-semibold">{question}</summary>
+        <div className="mt-2 text-gray-600">{children ?? <p>{answer}</p>}</div>
+      </details>
     </div>
   );
-};
+}

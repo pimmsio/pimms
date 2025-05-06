@@ -16,6 +16,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const getCanonicalLink = (locale: string, pathname: string) => {
+  console.log(pathname);
   if (pathname === "/") {
     return locale === "en" ? "/" : `/${locale}`;
   }

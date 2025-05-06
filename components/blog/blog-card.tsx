@@ -5,6 +5,8 @@ import Author from "./author";
 import { H2 } from "@/components/base/h2";
 import { Paragraph } from "@/components/base/paragraph";
 import { notFound } from "next/navigation";
+import { getCanonicalLink } from "../../lib/utils";
+import { useLocale } from "next-intl";
 
 export default function BlogCard({
   slug,
@@ -15,6 +17,8 @@ export default function BlogCard({
   metadata: PageMetadata;
   priority?: boolean;
 }) {
+  const locale = useLocale();
+
   if (!metadata || !slug) {
     return notFound();
   }
@@ -23,7 +27,7 @@ export default function BlogCard({
 
   return (
     <Link
-      href={`/blog/${slug}`}
+      href={getCanonicalLink(locale, `/blog/${slug}`)}
       className="flex flex-col rounded-2xl ring-[6px] ring-[#F2F3F5] rounded-b-2xl bg-white"
     >
       <Image

@@ -1,0 +1,196 @@
+---
+title: Complete guide to track your Systeme.io sales and leads with PiMMs
+summary: Learn how to connect PiMMs to Systeme.io and automatically track every lead and sale — even on multi-step funnels.
+publishedAt: 2025-05-06
+updatedAt: 2025-05-06
+image: https://assets.pimms.io/systemeio-integration-with-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - unlock-systemeio-attribution-with-pimms
+  - start-with-iclosed-and-zapier
+  - start-with-cal-com-and-zapier
+---
+
+Want to know *exactly* where your Systeme.io leads and sales come from — even if your funnel has multiple steps?
+
+With **PiMMs**, it takes just a few minutes. No code required.
+
+In this guide, you’ll learn:
+
+- How to install PiMMs tracking on your Systeme.io funnels  
+- How to structure your funnel links for end-to-end attribution  
+- How to set up a webhook to receive sales and leads automatically  
+
+Let’s dive in 👇
+
+---
+
+## 1. Add the PiMMs tracking script to your funnel
+
+1. Open your **Systeme.io dashboard**.  
+2. Navigate to your **funnel**.  
+3. Click the **Settings** tab at the top.  
+4. Scroll down to the **Tracking** section.
+
+![Paste PiMMs script in footer settings](https://assets.pimms.io/systemeio-footer-code-settings.webp)
+
+5. Paste the following code into the **Edit header code** field:
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+6. Click **Save**.
+
+![Paste PiMMs script in footer settings](https://assets.pimms.io/systemeio-tracking-code.webp)
+
+✅ PiMMs works out of the box with:
+
+- Funnels with multiple steps  
+- Order forms  
+
+---
+
+## 2. Add `pimms_id` to every funnel link
+
+To preserve tracking through your funnel, make sure every custom **button** or **link** that moves a visitor to the next step includes this parameter:
+
+```
+?pimms_id=1
+```
+
+To update your links:
+
+1. Go to the funnel step.  
+2. Click **Edit Page**.  
+3. Select the button or link.  
+4. Append `?pimms_id=1` at the end of the destination URL.  
+
+**Example:**
+
+```
+https://xyz.systeme.io/abc?pimms_id=1
+```
+
+✅ PiMMs will automatically carry the tracking forward — as long as the `pimms_id` is present on your links.
+
+---
+
+## 3. Find your Workspace ID
+
+1. Go to your [PiMMs dashboard](https://app.pimms.io/).  
+2. Click **Settings** → **Workspace ID**.  
+3. Copy your ID (e.g. `ws_abc123xyz`).  
+
+---
+
+## 4. Set up your Systeme.io webhook
+
+To send lead and sale events to PiMMs:
+
+1. In Systeme.io, go to **Settings** from the avatar menu.  
+2. Scroll down to **Webhooks** and click **Create**.  
+3. Name your webhook (e.g. `PiMMs Webhook`).  
+4. Fill in the Webhook URL:
+
+```
+https://app.pimms.io/api/systemeio/webhook?workspace_id=your-id
+```
+
+👉 Replace `your-id` with your **Workspace ID without the `ws_` prefix**.
+
+5. Use the same value for the **Webhook Secret**.
+
+**Example:**
+
+- Workspace ID: `ws_cm74uxwy50000xuid9p4zdy5d`  
+- URL: `https://app.pimms.io/api/systemeio/webhook?workspace_id=cm74uxwy50000xuid9p4zdy5d`  
+- Secret: `cm74uxwy50000xuid9p4zdy5d`  
+
+6. Select these events:  
+- ✅ `Opt-in`  
+- ✅ `New sale`  
+
+7. Click **Save**.
+
+![Systeme.io Webhook Settings](https://assets.pimms.io/systemeio-webhook-settings.webp)
+
+⚠️ Both the **URL** and **Secret** must include the same workspace ID (without `ws_`).
+
+---
+
+## 5. Create your PiMMs tracking link
+
+Before testing your funnel, you need to create a PiMMs short link to ensure conversion tracking is enabled:
+
+1. Go to [PiMMs](https://app.pimms.io).  
+2. Create a **new short link** pointing to the **first step** of your Systeme.io funnel.  
+3. Enable **Conversion tracking**.
+
+**Example:**
+
+```
+https://pim.ms/my-sales-funnel
+```
+
+Share this link everywhere — ads, email, social — and all conversions will be tracked automatically.
+
+![PiMMs short link](https://assets.pimms.io/systemeio-create-short-link.webp)
+
+---
+
+## 6. Test your funnel
+
+Let’s confirm your setup is working:
+
+1. Open your PiMMs link in **incognito mode**.  
+2. Click through the opt-in and sale steps.  
+3. Use a test email (e.g. `test+pimms@yourdomain.com`).  
+4. Complete an opt-in and a test sale.  
+
+Then go to your [PiMMs dashboard](https://app.pimms.io/) to verify:
+
+- ✅ A **lead** event was recorded  
+- ✅ A **sale** event was recorded  
+
+![PiMMs lead and sale recorded](https://assets.pimms.io/systemeio-dashboard-lead-sale.webp)
+
+---
+
+## 7. Troubleshooting tips
+
+If you don’t see your leads or sales in PiMMs:
+
+- Double-check that **`?pimms_id=1`** is present on all links in your funnel.  
+- Make sure the **tracking script** was added correctly under funnel settings.  
+- Ensure the **workspace ID** is correct and used both in the webhook URL and the secret.  
+- You can test again in **incognito** using a new email address.  
+- Visit the **Webhook log** in Systeme.io to confirm the webhook is firing.  
+- If you’re using automations or custom domains, make sure the full link keeps the `pimms_id`.
+
+---
+
+## 8. Best way to share your Systeme.io funnel
+
+Use your PiMMs short link to track every click and conversion across all your traffic sources:
+
+1. Go to [PiMMs](https://app.pimms.io).  
+2. Create a short link pointing to your Systeme.io funnel.  
+3. Enable **Conversion tracking**.  
+4. Share this link in your emails, posts, QR codes, or ads.
+
+**Example:**
+
+```
+https://pim.ms/my-sales-funnel
+```
+
+---
+
+## You're all set 🎉
+
+Every click, lead, and sale through your Systeme.io funnel is now tracked — with full attribution and analytics built in.
+
+👉 Ready to go? [Create your PiMMs account now](https://app.pimms.io/register)
