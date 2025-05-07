@@ -207,7 +207,7 @@ export default function TestPage() {
           Test 1 (iOS)
         </a>
       </div> */}
-      <h1 className="mx-auto text-2xl font-bold">Facebook (todo)</h1>
+      {/* <h1 className="mx-auto text-2xl font-bold">Facebook (todo)</h1>
       <div className="flex flex-row gap-4 mx-auto">
         <a
           className="text-center text-blue-500 block p-3 bg-gray-100"
@@ -318,8 +318,8 @@ export default function TestPage() {
         >
           Test 5
         </button>
-      </div>
-      <h1 className="mx-auto text-2xl font-bold">Kick (todo)</h1>
+      </div> */}
+      {/* <h1 className="mx-auto text-2xl font-bold">Kick (todo)</h1>
       <div className="flex flex-row gap-4 mx-auto">
         <a
           className="text-center text-blue-500 block p-3 bg-gray-100"
@@ -345,7 +345,7 @@ export default function TestPage() {
         >
           Test 4 (fail)
         </a>
-      </div>
+      </div> */}
       <h1 className="mx-auto text-2xl font-bold">X (todo)</h1>
       {/* https://twitter.com/bryan_johnson/status/1866832888605598099 */}
       {/* https://x.com/bryan_johnson/status/1866832888605598099 */}
@@ -413,6 +413,46 @@ export default function TestPage() {
           href="skool://3465"
         >
           Test 1
+        </a>
+      </div>
+      <h1 className="mx-auto text-2xl font-bold">Substack (todo)</h1>
+      {/* https://alexandresarfati.substack.com */}
+      <div className="flex flex-row gap-4 mx-auto">
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="intent://substack.com/@alexandresarfati#Intent;scheme=https;package=com.substack.app;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Falexandresarfati.substack.com;end"
+        >
+          Test 1 (Android works)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="intent://substack.com/@alexandresarfati/note/p-162316642#Intent;scheme=https;package=com.substack.app;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Falexandresarfati.substack.com;end"
+        >
+          Test 2 (Android works)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="intent://substack.com/home/post/p-162316642#Intent;scheme=https;package=com.substack.app;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Falexandresarfati.substack.com;end"
+        >
+          Test 3 (Android fails)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="intent://open.substack.com/pub/alexandresarfati/p/de-clic-a-cash-relie-contenus-bookings#Intent;scheme=https;package=com.substack.app;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Falexandresarfati.substack.com;end"
+        >
+          Test 4 (Android works)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="intent://https://alexandresarfati.substack.com/#Intent;scheme=https;package=com.substack.app;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Falexandresarfati.substack.com;end"
+        >
+          Test 5 (Android fails)
+        </a>
+        <a
+          className="text-center text-blue-500 block p-3 bg-gray-100"
+          href="intent://https://alexandresarfati.substack.com/p/de-clic-a-cash-relie-contenus-bookings/#Intent;scheme=https;package=com.substack.app;action=android.intent.action.VIEW;S.browser_fallback_url=https%3A%2F%2Falexandresarfati.substack.com;end"
+        >
+          Test 6 (Android fails)
         </a>
       </div>
     </div>

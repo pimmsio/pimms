@@ -4,6 +4,7 @@ import { getMessages } from "next-intl/server";
 import { NextIntlClientProvider } from "next-intl";
 import { Inter } from "next/font/google";
 import RootProviders from "../app/providers";
+import LinkedInInsight from "./linkedin-insight";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -32,6 +33,7 @@ export default async function BaseLayout({ children, locale }: Props) {
       <GoogleTagManager
         gtmId={process.env.NEXT_PUBLIC_GTM_CONTAINER_ID as string}
       />
+      <LinkedInInsight />
     </html>
   );
 }
