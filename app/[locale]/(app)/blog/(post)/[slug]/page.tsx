@@ -34,7 +34,7 @@ export async function generateStaticParams() {
   const allParams = [];
 
   for (const locale of locales) {
-    const pages = getPages(locale, "blog");
+    const pages = getPages(locale, ["blog", "guides", "tutorials"]);
     allParams.push(
       ...pages.map((page) => ({
         locale,
@@ -48,7 +48,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: MetadataProps) {
   const { slug, locale } = await params;
-  const post = getPage(locale, "blog", slug);
+  const post = getPage(locale, ["blog", "guides", "tutorials"], slug);
 
   if (!post) {
     return;
@@ -137,12 +137,12 @@ const components = {
 export default function BlogPost({ params }: Props) {
   const { slug } = use(params);
   const locale = useLocale();
-  const post = getPage(locale, "blog", slug);
+  const post = getPage(locale, ["blog", "guides", "tutorials"], slug);
 
   const relatedArticles =
     (post.metadata.related &&
       post.metadata.related.map((slug: string) =>
-        getPage(locale, "blog", slug)
+        getPage(locale, ["blog", "guides", "tutorials"], slug)
       )) ||
     [];
 
@@ -306,10 +306,10 @@ export default function BlogPost({ params }: Props) {
                       <p className="font-semibold text-gray-700 underline-offset-4 group-hover:underline">
                         {post.metadata.title}
                       </p>
-                      <p className="line-clamp-2 text-sm text-gray-500 underline-offset-2 group-hover:underline">
+                      <p className="line-clamp-2 text-sm text-gray-500 underline-offset-2">
                         {post.metadata.summary}
                       </p>
-                      <p className="text-xs text-gray-400 underline-offset-2 group-hover:underline">
+                      <p className="text-xs text-gray-400 underline-offset-2">
                         {formatDate(post.metadata.updatedAt)}
                       </p>
                     </div>

@@ -4,7 +4,7 @@ import { getPages } from "@/lib/mdx";
 
 export default function BlogPage() {
   const locale = useLocale();
-  const posts = getPages(locale, "blog");
+  const posts = getPages(locale, ["blog", "guides", "tutorials"]);
 
   const articles = posts.sort((a, b) =>
     b?.metadata.publishedAt.localeCompare(a?.metadata.publishedAt)

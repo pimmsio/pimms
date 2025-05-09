@@ -1,0 +1,113 @@
+---
+title: Guide étape par étape pour suivre les leads Webflow avec PiMMs
+summary: Apprends à connecter PiMMs à Webflow pour suivre chaque lead et chaque formulaire avec une attribution complète et précise.
+publishedAt: 2025-05-13
+updatedAt: 2025-05-13
+image: https://assets.pimms.io/webflow-integration-with-pimms.webp?v=2
+author: alexandre
+categories:
+  - guides
+related:
+  - unlock-systemeio-attribution-with-pimms
+  - no-code-guide-for-website
+---
+
+Tu veux savoir précisément d’où viennent tes leads Webflow ?
+
+Avec **PiMMs**, ça ne prend que quelques minutes — aucun code nécessaire.
+
+## 1. Installer les scripts PiMMs sur Webflow
+
+### Pour les plans Webflow payants
+
+1. Rends-toi dans les **paramètres de ton projet Webflow**
+2. Va dans l’onglet **Custom Code**
+3. Colle les deux scripts PiMMs ci-dessous dans la section **Head** :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>  
+<script defer src="https://cdn.pimms.io/analytics/script.inject-form.js"></script>
+```
+
+4. Clique sur **Save** puis republie ton site.
+
+📘 [Voir la documentation Webflow](https://help.webflow.com/hc/en-us/articles/33961357265299-Custom-code-in-head-and-body-tags#supported-code)
+
+👉 Avec cette méthode, les scripts sont automatiquement chargés sur toutes les pages.
+
+### 🆓 Pour le plan gratuit Webflow (alternative)
+
+Utilise l’application **CodeBlock** pour ajouter les deux scripts PiMMs sur chaque page contenant un formulaire.
+
+## 2. Rendre ton formulaire Webflow compatible avec PiMMs
+
+PiMMs détecte automatiquement tes champs. Voici simplement ce qu’il faut respecter :
+
+Ajoute un **champ Email obligatoire**
+- Le nom du champ (field Name dans Webflow) doit commencer par `email` (ex : `Email`, `email-pro`, etc.)
+
+Pour suivre les noms :
+- Un seul champ nommé `fullname` ou `name`, etc.
+- Ou deux champs séparés : `firstname` et `lastname`
+
+⚠️ PiMMs utilise le champ **Name** interne (dans Webflow), et non pas l’étiquette visible (Label) ou l’ID HTML.
+
+👉 Pour vérifier ce paramètre : clique sur ton champ → panneau **Settings** → champ **Name**.
+
+![Webflow form field Name](https://assets.pimms.io/webflow-form-field-name.webp)
+
+## 3. Récupérer ton Workspace ID
+
+1. Connecte-toi à ton [dashboard PiMMs](https://app.pimms.io)
+2. Clique sur **Settings → Workspace ID**
+3. Copie ton ID (ex : `ws_abc123xyz`)
+
+## 4. Ajouter le webhook Webflow
+
+1. Va dans les **paramètres de ton site Webflow**
+2. Ouvre **Apps & Integrations**
+3. Tout en bas, clique sur **Add Webhook**
+4. Remplis les informations suivantes :
+
+- **Trigger type** : `Form submission`
+- **API version** : `v2`
+- **Webhook URL** :  
+  `https://app.pimms.io/api/webflow/webhook?workspace_id=ton-id`  
+  (remplace `ton-id` par ton **Workspace ID**)
+
+Exemple :  
+- Workspace ID : `ws_abc123xyz`  
+- Webhook URL : `https://app.pimms.io/api/webflow/webhook?workspace_id=ws_abc123xyz`
+
+![Webflow webhook setup](https://assets.pimms.io/webflow-webhook-setup.webp)
+
+## 5. Créer ton lien de tracking PiMMs
+
+1. Connecte-toi à [PiMMs](https://app.pimms.io)
+2. Crée un nouveau lien court vers ta **page Webflow**
+3. Active le suivi des **Conversions**
+
+Par exemple :  
+`https://pim.ms/mon-formulaire`
+
+👉 Utilise toujours ce lien dans tes publicités, emails, posts, etc.
+
+## 6. Tester ton installation
+
+1. Ouvre ton lien PiMMs dans un **onglet de navigation privée**
+2. Remplis et valide le formulaire Webflow
+3. Vérifie ton [dashboard PiMMs](https://app.pimms.io)
+4. Tu dois voir apparaître ton nouveau lead avec une attribution complète
+
+## 7. Conseils en cas de problème
+
+- Vérifie que les **deux scripts PiMMs** sont correctement installés.
+- Vérifie que ton `workspace_id` dans l’URL du webhook est exact.
+- Effectue tes tests en **navigation privée** avec une nouvelle adresse email à chaque fois.
+- Assure-toi que la page Webflow est ouverte depuis ton lien PiMMs, et non directement : c’est nécessaire pour démarrer le tracking.
+
+## Tout est prêt 🎉
+
+Chaque lead Webflow capté via tes liens PiMMs sera désormais parfaitement tracké, avec attribution complète et statistiques précises.
+
+👉 [Crée ton premier lien PiMMs dès maintenant](https://app.pimms.io)

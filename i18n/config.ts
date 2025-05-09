@@ -14,11 +14,11 @@ export const pathnames: Record<string, Record<string, string>> = {
     fr: "/solutions/deep-links-amazon",
   },
   "/legal/terms": {
-    en: "/legal/terms",
-    fr: "/legal/conditions-dutilisation",
+    en: "/legal/terms-of-service",
+    fr: "/legal/conditions-generales-utilisation",
   },
   "/legal/privacy": {
-    en: "/legal/privacy",
+    en: "/legal/privacy-policy",
     fr: "/legal/politique-de-confidentialite",
   },
   "/legal/imprint": {
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/legal/abuse": {
     en: "/legal/report-abuse",
-    fr: "/legal/signaler-un-abus",
+    fr: "/legal/signaler-abus",
   },
   "/changelog": {
     en: "/changelog",
@@ -38,12 +38,8 @@ export const pathnames: Record<string, Record<string, string>> = {
     fr: "/blog",
   },
   "/blog/category/company": {
-    en: "/blog/category/company",
-    fr: "/blog/category/entreprise",
-  },
-  "/blog/category/guides": {
-    en: "/blog/category/guides-and-tutorials",
-    fr: "/blog/category/guides-et-tutoriels",
+    en: "/blog/category/company-news",
+    fr: "/blog/category/actualites-entreprise",
   },
   "/blog/category/digital-marketing": {
     en: "/blog/category/digital-marketing",
@@ -59,84 +55,116 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/blog/first-article": {
     en: "/blog/what-is-pimms",
-    fr: "/blog/pourquoi-pimms",
+    fr: "/blog/quest-ce-que-pimms",
   },
-  "/blog/utm-guide": {
-    en: "/blog/utm-builder-guide",
-    fr: "/blog/guide-balise-et-template-utm",
+  // Guides
+  "/blog/category/guides": {
+    en: "/guides",
+    fr: "/guides",
   },
-  "/blog/introducing-conversion": {
-    en: "/blog/introducing-conversion-tracking",
-    fr: "/blog/lancement-suivi-des-conversions",
-  },
-  "/blog/start-with-zapier": {
-    en: "/blog/start-with-zapier",
-    fr: "/blog/demarrer-avec-zapier",
-  },
-  "/blog/start-with-cal-com-and-zapier": {
-    en: "/blog/start-with-cal-com-and-zapier",
-    fr: "/blog/demarrer-avec-cal-com-et-zapier",
-  },
-  "/blog/start-with-iclosed-and-zapier": {
-    en: "/blog/start-with-iclosed-and-zapier",
-    fr: "/blog/demarrer-avec-iclosed-et-zapier",
-  },
-  "/blog/setup-stripe-for-website": {
-    en: "/blog/setup-stripe-payments-tracking-with-pimms-on-any-website",
-    fr: "/blog/configurer-stripe-tracking-paiements-avec-pimms-pour-site-web",
-  },
-  "/blog/no-code-guide-for-website": {
-    en: "/blog/complete-no-code-guide-to-track-conversions-and-sales-on-your-website",
-    fr: "/blog/guide-no-code-complet-pour-suivre-vos-conversions-et-ventes-sur-votre-site-web",
-  },
-  "/blog/embed-tracking-cal-com": {
-    en: "/blog/no-code-guide-to-embed-tracking-cal-com",
-    fr: "/blog/guide-no-code-pour-embed-tracking-cal-com",
-  },
-  "/blog/how-to-track-link-performance-across-multiple-channels": {
-    en: "/blog/how-to-track-link-performance-across-multiple-channels",
-    fr: "/blog/comment-suivre-les-performances-des-liens-sur-plusieurs-canaux",
-  },
-  "/blog/deep-links-vs-universal-links-whats-the-difference": {
-    en: "/blog/deep-links-vs-universal-links-whats-the-difference",
-    fr: "/blog/deep-links-vs-universal-links-quelle-difference",
-  },
-  "/blog/7-ways-to-boost-mobile-app-conversion-rates-in-2025": {
-    en: "/blog/7-ways-to-boost-mobile-app-conversion-rates-in-2025",
-    fr: "/blog/7-facons-pour-ameliorer-les-taux-de-conversion-de-vos-applications-mobiles-en-2025",
-  },
-  "/blog/how-to-track-email-campaign-revenue": {
-    en: "/blog/how-to-track-email-campaign-revenue",
-    fr: "/blog/comment-suivre-le-revenu-des-campagnes-email",
-  },
-  "/blog/how-to-track-revenue-per-click": {
-    en: "/blog/how-to-track-revenue-per-click",
-    fr: "/blog/comment-suivre-le-revenu-par-clic",
-  },
-  "/blog/ab-testing-steps-for-funnel-optimization": {
-    en: "/blog/ab-testing-steps-for-funnel-optimization",
-    fr: "/blog/comment-optimiser-votre-funnel-avec-le-test-a-b",
-  },
-  "/blog/how-deep-links-improve-conversion-paths": {
-    en: "/blog/how-deep-links-improve-conversion-paths",
-    fr: "/blog/comment-les-deep-links-ameliorent-les-chemins-de-conversion",
-  },
-  "/blog/deep-linking-for-influencer-campaigns-basics": {
-    en: "/blog/deep-linking-for-influencer-campaigns-basics",
-    fr: "/blog/comment-les-deep-links-ameliorent-les-campagnes-influencer",
+  "/blog/how-to-track-webflow-leads": {
+    en: "/guides/how-to-track-webflow-form-submissions",
+    fr: "/guides/comment-suivre-formulaires-lead-webflow",
   },
   "/blog/how-to-track-systemeio-sales-and-leads": {
-    en: "/blog/how-to-track-systemeio-sales-and-leads",
-    fr: "/blog/comment-suivre-les-ventes-et-les-leads-de-systemeio",
+    en: "/guides/how-to-track-systemeio-sales-and-leads",
+    fr: "/guides/comment-suivre-ventes-et-leads-systemeio",
+  },
+  "/blog/start-with-cal-com-and-zapier": {
+    en: "/guides/how-to-track-cal-com-bookings",
+    fr: "/guides/comment-suivre-reservations-cal-com",
+  },
+  "/blog/no-code-guide-for-website": {
+    en: "/guides/how-to-track-conversions-on-vibe-coding-ai-no-code-sites",
+    fr: "/guides/comment-suivre-conversions-sites-vibe-coding-no-code-ai",
+  },
+  // Tutorials
+  "/blog/category/tutorials": {
+    en: "/tutorials",
+    fr: "/tutoriels",
+  },
+  "/blog/start-with-zapier": {
+    en: "/tutorials/zapier-getting-started",
+    fr: "/tutoriels/demarrer-avec-zapier",
+  },
+  "/blog/utm-guide": {
+    en: "/tutorials/utm-builder-guide",
+    fr: "/tutoriels/guide-balises-utm",
+  },
+  // Blog posts
+  "/blog/introducing-conversion": {
+    en: "/blog/conversion-tracking-introduction",
+    fr: "/blog/introduction-suivi-conversion",
+  },
+  "/blog/start-with-iclosed-and-zapier": {
+    en: "/blog/setup-iclosed-zapier",
+    fr: "/blog/configurer-iclosed-zapier",
+  },
+  "/blog/setup-stripe-for-website": {
+    en: "/blog/stripe-payment-tracking-website",
+    fr: "/blog/suivi-paiements-stripe-site-web",
+  },
+  "/blog/how-to-track-link-performance-across-multiple-channels": {
+    en: "/blog/track-link-performance-multiple-channels",
+    fr: "/blog/suivre-performances-liens-canaux",
+  },
+  "/blog/deep-links-vs-universal-links-whats-the-difference": {
+    en: "/blog/deep-links-vs-universal-links",
+    fr: "/blog/deeplink-vs-universal-links",
+  },
+  "/blog/7-ways-to-boost-mobile-app-conversion-rates-in-2025": {
+    en: "/blog/boost-mobile-conversions-2025",
+    fr: "/blog/ameliorer-conversions-apps-2025",
+  },
+  "/blog/how-to-track-email-campaign-revenue": {
+    en: "/blog/track-email-campaign-revenue",
+    fr: "/blog/suivre-revenus-campagnes-email",
+  },
+  "/blog/how-to-track-revenue-per-click": {
+    en: "/blog/revenue-per-click-tracking",
+    fr: "/blog/suivre-revenu-par-clic",
+  },
+  "/blog/ab-testing-steps-for-funnel-optimization": {
+    en: "/blog/ab-test-funnel-optimization",
+    fr: "/blog/optimisation-funnel-test-ab",
+  },
+  "/blog/how-deep-links-improve-conversion-paths": {
+    en: "/blog/deep-links-conversion-paths",
+    fr: "/blog/deeplink-chemins-conversion",
+  },
+  "/blog/deep-linking-for-influencer-campaigns-basics": {
+    en: "/blog/deep-links-influencer-campaigns",
+    fr: "/blog/deeplink-campagnes-influence",
   },
   "/blog/referrer-vs-utm-vs-fingerprinting-what-really-tells-you-where-a-click-came-from":
     {
-      en: "/blog/referrer-vs-utm-vs-fingerprinting-where-clicks-really-come-from",
-      fr: "/blog/referrer-utm-fingerprinting-dou-viennent-les-clics",
+      en: "/blog/referrer-vs-utm-vs-fingerprinting",
+      fr: "/blog/origine-clic-referrer-utm-fingerprint",
     },
   "/blog/unlock-systemeio-attribution-with-pimms": {
-    en: "/blog/unlock-sales-lead-attribution-systemeio-pimms",
-    fr: "/blog/debloque-attribution-ventes-leads-systemeio-pimms",
+    en: "/blog/systemeio-attribution-pimms",
+    fr: "/blog/debloquer-attribution-systemeio-pimms",
+  },
+  "/blog/5-dynamic-link-personalization-tips-for-higher-conversions": {
+    en: "/blog/dynamic-link-personalization-tips",
+    fr: "/blog/liens-dynamiques-meilleures-conversions",
+  },
+  "/blog/from-first-click-to-conversion-understand-exactly-how-your-marketing-drives-revenue":
+    {
+      en: "/blog/track-marketing-roi-click-to-conversion",
+      fr: "/blog/roi-marketing-du-clic-a-la-conversion",
+    },
+  "/blog/utm-tracking-for-organic-social-media-posts": {
+    en: "/blog/utm-tracking-social-media",
+    fr: "/blog/suivi-utm-reseaux-sociaux",
+  },
+  "/blog/5-funnel-tracking-errors-that-skew-data": {
+    en: "/blog/funnel-tracking-errors",
+    fr: "/blog/erreurs-suivi-funnel",
+  },
+  "/blog/how-utm-parameters-impact-conversion-paths": {
+    en: "/blog/utm-impact-conversion-paths",
+    fr: "/blog/effet-parametres-utm-conversions",
   },
 };
 

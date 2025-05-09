@@ -1,0 +1,109 @@
+---
+title: Step-by-step guide to track your Webflow leads with PiMMs
+summary: Learn how to connect PiMMs to Webflow and track every form submission with precise, full-funnel attribution.
+publishedAt: 2025-05-13
+updatedAt: 2025-05-13
+image: https://assets.pimms.io/webflow-integration-with-pimms.webp?v=2
+author: alexandre
+categories:
+  - guides
+related:
+  - unlock-systemeio-attribution-with-pimms
+  - no-code-guide-for-website
+---
+
+Want to track exactly where your Webflow leads come from?
+
+With **PiMMs**, it only takes a few minutes — no code needed.
+
+## 1. Install the PiMMs tracking scripts
+
+### For paid Webflow plans
+
+1. Go to your **Webflow project settings**
+2. Open the **Custom Code** tab
+3. Paste the two PiMMs scripts in the **Head** section
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+<script defer src="https://cdn.pimms.io/analytics/script.inject-form.js"></script>
+```
+
+4. Click **Save** and re-publish your site
+
+📘 [View Webflow’s custom code docs](https://help.webflow.com/hc/en-us/articles/33961357265299-Custom-code-in-head-and-body-tags#supported-code)
+
+Tip: no need to add the scripts on every page with this method.
+
+### 🆓 On the free Webflow plan (alternative)
+
+Use the **CodeBlock** app to add both scripts on every page with a form.
+
+## 2. Build a PiMMs-compatible form
+
+PiMMs auto-detects your fields — just follow this:
+
+Add a **required email field**
+- The field name must start with `email` (like `Email`, `email 1`, `e-mail perso`, etc.)
+
+To track names:
+- Use one field named `fullname`, `name`, etc.
+- Or two fields: `firstname` and `lastname`
+
+We are using the field **Name** (in Webflow settings), not the label or ID.
+
+👉 Check it by selecting the field → Settings → **Name**.
+
+![Webflow form field Name](https://assets.pimms.io/webflow-form-field-name.webp)
+
+## 3. Get your Workspace ID
+
+1. Log in to your [PiMMs dashboard](https://app.pimms.io)
+2. Go to **Settings** → **Workspace ID**
+3. Copy your ID (e.g. `ws_abc123xyz`)
+
+## 4. Add the Webflow webhook
+
+1. Go to your Webflow **Site settings**
+2. Open **Apps & Integrations**
+3. Scroll down and click **Add Webhook**
+4. Set it up like this:
+
+- **Trigger type**: `Form submission`
+- **API version**: `v2`
+- **Webhook URL**:
+  `https://app.pimms.io/api/webflow/webhook?workspace_id=your-id`
+- Replace `your-id` with your **Workspace ID**
+
+![Webflow webhook setup](https://assets.pimms.io/webflow-webhook-setup.webp)
+
+## 5. Create your PiMMs tracking link
+
+1. Go to [PiMMs](https://app.pimms.io)
+2. Create a new short link pointing to your **Webflow page**
+3. Enable **Conversion tracking**
+
+**Example**:
+`https://pim.ms/my-lead-form`
+
+Use this link in your ads, socials, emails, etc.
+
+## 6. Test your setup
+
+1. Open your PiMMs link in an **incognito tab**
+2. Submit your Webflow form
+3. Check your [PiMMs dashboard](https://app.pimms.io)
+4. You should see a new lead with full attribution
+
+## 7. Troubleshooting tips
+
+- Make sure **both scripts** are loaded correctly
+- Check the `workspace_id` in the webhook URL is correct
+- Use **incognito mode** + a new email when testing
+- Make sure the webflow page was opened via your PiMMs link, not directly — that’s how tracking starts.
+
+## You're all set 🎉
+
+Every Webflow lead collected via your PiMMs links will now be tracked — with full attribution and analytics.
+
+👉 [Create your first PiMMs link](https://app.pimms.io)

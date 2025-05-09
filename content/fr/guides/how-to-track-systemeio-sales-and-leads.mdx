@@ -1,0 +1,133 @@
+---
+title: Guide étape par étape pour suivre les ventes et leads Systeme.io avec PiMMs
+summary: Apprends à connecter PiMMs à Systeme.io pour suivre automatiquement chaque lead et chaque vente — même dans des funnels à plusieurs étapes.
+publishedAt: 2025-05-06
+updatedAt: 2025-05-13
+image: https://assets.pimms.io/systemeio-integration-with-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - unlock-systemeio-attribution-with-pimms
+  - how-to-track-webflow-leads
+  - no-code-guide-for-website
+---
+
+Tu veux savoir exactement d’où viennent tes leads et ventes sur Systeme.io — même dans un funnel à plusieurs étapes ?
+
+Avec **PiMMs**, ça ne prend que quelques minutes — aucun code nécessaire.
+
+## 1. Installer le script de tracking PiMMs
+
+1. Va dans ton **dashboard Systeme.io**  
+2. Ouvre le **funnel** que tu veux tracker  
+3. Clique sur l’onglet **Paramètres** en haut  
+4. Descends jusqu’à la section **Code de suivi**
+
+![Paramètres Systeme.io — section tracking](https://assets.pimms.io/systemeio-footer-code-settings.webp)
+
+5. Colle ce script dans le champ **Code dans le header** :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+6. Clique sur **Sauvegarder**
+
+![Script PiMMs ajouté](https://assets.pimms.io/systemeio-tracking-code.webp)
+
+👉 Un seul script suffit pour Systeme.io — PiMMs détecte automatiquement les visites sur ton funnel.
+
+## 2. Récupérer ton Workspace ID
+
+1. Connecte-toi à ton [dashboard PiMMs](https://app.pimms.io)  
+2. Va dans **Settings → Workspace ID**  
+3. Copie ton ID (exemple : `ws_abc123xyz`)
+
+## 3. Ajouter le webhook Systeme.io
+
+1. Dans Systeme.io, clique sur ta photo → **Paramètres**  
+2. Descends jusqu’à la section **Webhooks**  
+3. Clique sur **Créer un webhook**  
+4. Configure-le ainsi :
+
+- **Nom** : PiMMs Webhook  
+- **URL du webhook** :  
+  ```
+  https://app.pimms.io/api/systemeio/webhook?workspace_id=ton-id
+  ```
+  *(remplace `ton-id` par ton Workspace ID)*  
+- **Secret** : ton Workspace ID  
+- **Événements à activer** :  
+  ✅ `Opt-in`  
+  ✅ `New sale`
+
+![Paramètres du webhook](https://assets.pimms.io/systemeio-webhook-settings.webp)
+
+⚠️ L’URL et le secret doivent **absolument contenir le même Workspace ID**.
+
+## 4. Ajouter `pimms_id=1` aux liens de ton funnel
+
+Pour que PiMMs puisse suivre l’origine d’un lead ou d’une vente, ajoute ce paramètre **uniquement sur les liens qui mènent à une page contenant un formulaire** :
+
+`?pimms_id=1`
+
+### Exemple
+
+```
+https://tonfunnel.systeme.io/etape-formulaire?pimms_id=1
+```
+
+Pour ajouter ce paramètre :
+
+1. Clique sur **Éditer la page**  
+2. Sélectionne le **bouton** ou le **lien** concerné  
+3. Ajoute `?pimms_id=1` à la fin de l’URL de redirection
+
+**Astuce** : n’ajoute `?pimms_id=1` **que sur les liens** qui mènent à une **page avec un formulaire** (newsletter, lead magnet, etc.).  
+C’est inutile — voire déconseillé — pour les pages sans formulaire.
+
+## 5. Créer ton lien de tracking PiMMs
+
+1. Connecte-toi à [PiMMs](https://app.pimms.io)  
+2. Crée un nouveau **lien court** vers la **première étape** de ton funnel Systeme.io  
+3. Active l’option **Conversion tracking**
+
+### Exemple de lien court
+
+```
+https://pim.ms/mon-funnel
+```
+
+👉 Utilise ce lien dans toutes tes sources de trafic : publicités, emails, posts...
+
+![Lien court dans PiMMs](https://assets.pimms.io/systemeio-create-short-link.webp)
+
+## 6. Tester ton installation
+
+1. Ouvre ton lien PiMMs dans un **onglet privé**  
+2. Suis toutes les étapes de ton funnel (opt-in + vente)  
+3. Utilise un email de test (ex : `test+pimms@tondomaine.com`)  
+4. Vérifie ton [dashboard PiMMs](https://app.pimms.io)
+
+Tu dois voir apparaître :
+
+- ✅ Un **lead**
+- ✅ Une **vente** (si applicable)
+
+![Dashboard PiMMs avec lead et vente](https://assets.pimms.io/systemeio-dashboard-lead-sale.webp)
+
+## 7. Conseils en cas de problème
+
+- Vérifie que `?pimms_id=1` est bien présent sur les bons liens
+- Assure-toi que le script PiMMs est bien sauvegardé dans les paramètres du funnel
+- Vérifie que le **Workspace ID** est correct et bien utilisé dans l’URL **et** le secret du webhook
+- Refais un test en **navigation privée** avec une nouvelle adresse email
+- Consulte les **logs des webhooks** dans Systeme.io pour voir s’ils sont bien déclenchés
+- Assure-toi que les visiteurs passent bien par ton lien PiMMs (et pas directement)
+
+## Tout est prêt 🎉
+
+Chaque lead et chaque vente collectés via ton funnel Systeme.io seront désormais suivis avec attribution complète et analytics intégrés.
+
+👉 [Crée ton premier lien PiMMs dès maintenant](https://app.pimms.io)

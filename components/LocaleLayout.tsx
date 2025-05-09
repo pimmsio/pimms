@@ -20,6 +20,7 @@ export default async function BaseLayout({ children, locale }: Props) {
     <html lang={locale}>
       <Head>
         <meta name="apple-mobile-web-app-title" content="Pimms" />
+        <LinkedInInsight />
       </Head>
       <body
         className={`${inter.className} antialiased overscroll-none scroll-smooth`}
@@ -33,7 +34,6 @@ export default async function BaseLayout({ children, locale }: Props) {
       <GoogleTagManager
         gtmId={process.env.NEXT_PUBLIC_GTM_CONTAINER_ID as string}
       />
-      <LinkedInInsight />
     </html>
   );
 }

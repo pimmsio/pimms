@@ -9,9 +9,12 @@ import { H1 } from "@/components/base/h1";
 import { HeroSection } from "@/components/base/hero-section";
 import { Paragraph } from "@/components/base/paragraph";
 import { BLOG_CATEGORIES } from "../../app/constants";
+import { getCanonicalLink } from "../../lib/utils";
+import { useLocale } from "next-intl";
 
 export default function BlogLayoutHero() {
   const { slug } = useParams() as { slug?: string };
+  const locale = useLocale();
 
   const data = BLOG_CATEGORIES.find((category) => category?.slug === slug);
 
@@ -30,7 +33,10 @@ export default function BlogLayoutHero() {
             <CategoryLink
               key={category?.slug}
               title={category?.title}
-              href={`/blog/category/${category?.slug}`}
+              href={getCanonicalLink(
+                locale,
+                `/blog/category/${category?.slug}`
+              )}
               active={category?.slug === slug}
             />
           ))}

@@ -16,7 +16,7 @@ export async function generateStaticParams() {
   const allParams = [];
 
   for (const locale of locales) {
-    const pages = getPages(locale, "legal");
+    const pages = getPages(locale, ["legal"]);
     allParams.push(
       ...pages.map((page) => ({
         locale,

@@ -1,0 +1,95 @@
+---
+title: Step-by-step guide to track sales and leads on vibe coding and no-code website builders
+summary: Set up PiMMs in minutes on Webflow, Framer, Bubble, and other AI or no-code tools — and track every form, calendar, or Stripe checkout with full attribution.
+publishedAt: 2025-04-29
+updatedAt: 2025-05-14
+image: https://assets.pimms.io/stripe-sales-tracking-with-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-webflow-leads
+  - start-with-cal-com-and-zapier
+  - start-with-iclosed-and-zapier
+  - setup-stripe-for-website
+---
+
+Want to track exactly where your sales and leads come from — on Framer, Webflow, Bubble or any no-code site?
+
+With **PiMMs**, you can track every form, booking or Stripe sale — no code needed.  
+This guide covers how to set up tracking on **supported tools only**:
+
+- Calendars like **Cal.com**, **Lemcal**, **Calendly**
+- Forms like **Tally**, **Typeform**, **iClosed**
+- Stripe checkouts
+
+## 1. Add PiMMs to your site
+
+1. Go to your site’s **custom code settings** or head section  
+2. Paste this script in the **Head**:
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+3. Save and publish
+
+✅ Works on builders like:
+- Webflow ([full guide](/blog/how-to-track-webflow-leads))
+- Framer
+- Bubble
+- Wix
+- Squarespace
+- Lovable.dev
+- Bold.new
+
+If your builder supports global code (like Webflow Project Settings), paste the script once and it loads on every page.  
+Otherwise, paste it manually on pages that include supported tools (form, booking, Stripe).
+
+## 2. Set up buttons or links that redirect to supported tools
+
+If your website includes buttons or links to tools like **Cal.com**, **Stripe**, **Tally**, or **Typeform**, you need to add a special PiMMs parameter to those links.
+
+That’s how PiMMs connects the visit on your site to the conversion on the external tool.
+
+### What to do
+
+Update the link URL with the correct parameter:
+
+- Use `?pimms_id=1` for calendars and forms (Cal.com, Lemcal, Calendly, Tally, Typeform, iClosed…)
+- Use `?pimms_client_reference_id=1` for Stripe payment links
+
+### Examples
+
+**Calendar booking button**  
+On your page:  
+Book a call → `https://cal.com/your-user/demo?pimms_id=1`
+
+**Typeform link**  
+Apply now → `https://yourform.typeform.com/to/xyz?pimms_id=1`
+
+**Stripe payment**  
+Buy now → `https://buy.stripe.com/test_abc123?pimms_client_reference_id=1`
+
+These parameters are required so PiMMs can match the visitor session on your website with the final conversion.
+
+Make sure the link is on a page that includes the PiMMs script.
+
+## Want to go further?
+
+We’ve written step-by-step guides for each supported tool — if you want to set up tracking with more precision:
+
+- [Track bookings with Cal.com](/blog/start-with-cal-com-and-zapier)
+- Track bookings with Calendly
+- [Track bookings with iClosed](/blog/start-with-iclosed-and-zapier)
+- [Track leads with Webflow](/blog/how-to-track-webflow-leads)
+- Track leads with Framer
+- Track leads with Wix
+- Track leads with Squarespace
+- Track leads with Lovable.dev
+- Track leads with Bold.new
+- Track leads with Tally
+- Track leads with Typeform
+- [Track payments with Stripe](/blog/setup-stripe-for-website)
+
+Each guide shows exactly how to connect the tool, test your setup, and view conversions in PiMMs.

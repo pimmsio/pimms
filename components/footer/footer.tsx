@@ -86,20 +86,20 @@ export const Footer = ({
           </div>
           <Link
             aria-current="page"
-            href={getCanonicalLink(locale, "/blog/category/digital-marketing")}
-            className="router-link-active router-link-exact-active"
-          >
-            <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
-              {t("footer.resources.blog")}
-            </div>
-          </Link>
-          <Link
-            aria-current="page"
             href={getCanonicalLink(locale, "/blog/category/guides")}
             className="router-link-active router-link-exact-active"
           >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
               {t("footer.resources.guides")}
+            </div>
+          </Link>
+          <Link
+            aria-current="page"
+            href={getCanonicalLink(locale, "/blog/category/tutorials")}
+            className="router-link-active router-link-exact-active"
+          >
+            <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+              {t("footer.resources.tutorials")}
             </div>
           </Link>
           <Link
@@ -120,6 +120,15 @@ export const Footer = ({
           >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
               {t("footer.resources.sdk-ts")}
+            </div>
+          </Link>
+          <Link
+            aria-current="page"
+            href={getCanonicalLink(locale, "/blog/category/digital-marketing")}
+            className="router-link-active router-link-exact-active"
+          >
+            <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
+              {t("footer.resources.blog")}
             </div>
           </Link>
         </nav>

@@ -22,6 +22,7 @@ function capitalizeFirst(input) {
 
 const run = async () => {
   const { articles } = await getArticles(0);
+  console.log(articles.length);
 
   for (const preview of articles) {
     const full = await getArticle(preview.slug);

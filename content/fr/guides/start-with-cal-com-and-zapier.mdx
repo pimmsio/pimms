@@ -1,0 +1,181 @@
+---
+title: Guide étape par étape pour suivre les réservations Cal.com avec PiMMs et Zapier
+summary: Apprends à connecter PiMMs à Cal.com via Zapier pour suivre chaque rendez-vous et savoir exactement quelles sources génèrent des réservations.
+publishedAt: 2025-04-26
+updatedAt: 2025-05-13
+image: https://assets.pimms.io/pimms-calcom-integration-zapier.webp?v=2
+author: alexandre
+categories:
+  - guides
+related:
+  - start-with-zapier
+  - start-with-iclosed-and-zapier
+  - no-code-guide-for-website
+---
+
+Tu veux savoir exactement d’où viennent tes réservations Cal.com ?
+
+Avec **PiMMs + Zapier**, ça ne prend que quelques minutes — aucun code nécessaire.
+
+## 1. Ajouter un nouveau champ dans ton formulaire
+
+1. Connecte-toi à ton **dashboard Cal.com**  
+2. Ouvre l’**événement** que tu veux suivre et clique sur **Edit**  
+3. Va dans **Advanced → Booking Questions**
+
+![Cal.com edit form](https://assets.pimms.io/cal-edit-form.webp)
+
+4. Clique sur **Add a question** et configure les champs suivants :  
+- Type : Short text  
+- Identifier : `pimms_id`  
+- Label : `pimms_id`  
+- Required : No  
+- Active : “Disable input if URL identifier is prefilled”  
+- Désactive : “Show on booking page”
+
+![Cal.com form setup](https://assets.pimms.io/cal-fill-the-question-for-the-pimms_id.webp)
+
+5. Enregistre le formulaire
+
+## 2. Créer ton lien de tracking PiMMs
+
+1. Va sur ton [dashboard PiMMs](https://app.pimms.io)  
+2. Crée un lien court vers ta page de réservation Cal.com  
+3. Active le **suivi des conversions**
+
+**Exemple** :  
+```
+https://pim.ms/ma-page-reservation
+```
+
+Astuce : 
+Utilise ce lien dans tes pubs, emails ou posts.
+
+![PiMMs tracking link](https://assets.pimms.io/pimms-tracking-link.webp?v=2)
+
+## 3. Réserver un rendez-vous test
+
+1. Ouvre ton lien PiMMs dans un nouvel onglet  
+2. Réserve un rendez-vous test avec une adresse email factice
+
+➡️ Cette étape est nécessaire pour que Zapier détecte les champs.
+
+![Dummy booking](https://assets.pimms.io/cal-dummy-booking.webp)
+
+## 4. Connecter Cal.com à PiMMs via Zapier
+
+1. Va sur [Zapier](https://zapier.com)  
+2. Ouvre le [template Cal.com × PiMMs](https://zapier.com/webintent/create-zap?template=255624056)  
+3. Clique sur **Use this Zap**
+
+### Configuration du déclencheur
+
+- App : **Cal.com**  
+- Événement : **Booking Created**  
+- Connecte ton compte Cal.com  
+- Sélectionne la réservation test de l’étape 3
+
+![Zapier trigger setup](https://assets.pimms.io/zapier-find-dummy-record.webp)
+
+### Configuration de l’action
+
+- App : **PiMMs**  
+- Événement : **Create Conversion**  
+- Connecte ton compte PiMMs
+
+![Zapier approve permissions](https://assets.pimms.io/zapier-approve-permissions.webp)
+
+Puis mappe les champs suivants :  
+- **Click ID** → `pimms_id`  
+- **Email** → Email du participant  
+- **External ID** → Email du participant  
+- **Name** → Nom du participant
+
+![Zapier field mapping](https://assets.pimms.io/zapier-field-mapping.webp)
+
+Publie ton Zap.
+
+## 5. Tester ton installation
+
+1. Ouvre à nouveau ton lien PiMMs dans un nouvel onglet  
+2. Réalise une nouvelle réservation test  
+3. Va dans ton [dashboard PiMMs](https://app.pimms.io)
+
+Tu devrais voir une **conversion** enregistrée automatiquement.
+
+![Successful test](https://assets.pimms.io/zapier-test-integration-calcom.webp)
+
+## 6. Conseils en cas de problème
+
+- Si une personne réserve plusieurs fois avec le même email, seule la première réservation compte comme conversion  
+- Vérifie que le champ `pimms_id` est bien présent dans ton formulaire Cal.com  
+- Vérifie que ton Zap est actif et bien publié  
+- Regarde l’**historique des tâches Zapier** en cas d’erreur
+
+## Comment partager ton calendrier Cal.com
+
+### Option A — Créer un lien court PiMMs
+
+À utiliser si tu partages ton lien Cal.com dans des emails, posts, pubs ou QR codes.
+
+1. Va sur [PiMMs](https://app.pimms.io)  
+2. Crée un lien court vers ta page Cal.com  
+3. Active le suivi des conversions  
+4. Partage ce lien où tu veux
+
+**Exemple** :  
+```
+https://pim.ms/ton-lien
+```
+
+
+### Option B — Utiliser Cal.com sur ton site
+
+Ajoute ce script dans le `<head>` de ton site (obligatoire dans tous les cas) :  
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+#### Cas 1 — Lien classique
+
+- Ajoute `?pimms_id=1` à la fin de ton lien Cal.com
+
+**Exemple** :  
+```
+https://cal.com/tonnom/meeting?pimms_id=1
+```
+
+#### Cas 2 — Calendrier intégré dans la page
+
+📘 [Voir comment intégrer Cal.com →](https://cal.com/help/embedding/adding-embed)
+
+**Pour les popups**  
+- Utilise l’attribut `data-cal-link`  
+- Ajoute `?pimms_id=1` à la fin du lien
+
+**Exemple** :  
+```html
+<button data-cal-link="tonnom/meeting?pimms_id=1">Réserver</button>
+```
+
+**Pour l’intégration inline (JavaScript)**  
+Ajoute ce script dans la page :  
+```html
+<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
+```
+
+Puis ajoute `?pimms_id=${window.pimms_id}` à ton lien Cal.com :
+
+Exemple :  
+```js
+Cal.ns["30min"]("inline", {
+  elementOrSelector: "...",
+  calLink: `alexandre/30min?pimms_id=${window.pimms_id}`
+});
+```
+
+## Tout est prêt 🎉
+
+Chaque rendez-vous Cal.com réservé via tes liens PiMMs est désormais suivi — avec attribution complète et analytics.
+
+👉 [Créer mon premier lien PiMMs](https://app.pimms.io)

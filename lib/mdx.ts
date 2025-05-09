@@ -146,19 +146,29 @@ export const getMDXData = (dir: string) => {
   });
 };
 
-export const getPage = (locale: string, dir: string, slug: string) => {
-  const filePath = path.join(
-    process.cwd(),
-    "content",
-    locale,
-    dir,
-    `${slug}.mdx`
-  );
-  const enPath = path.join(process.cwd(), "content", "en", dir, `${slug}.mdx`);
+export const getPage = (
+  locale: string,
+  dirs: string | string[],
+  slug: string
+) => {
+  const root = process.cwd();
+  const dirList = Array.isArray(dirs) ? dirs : [dirs];
 
-  const pathToUse = fs.existsSync(filePath) ? filePath : enPath;
+  // Build a prioritized list of paths to try (localized first, then fallback to "en")
+  const possiblePaths = dirList.flatMap((dir) => [
+    path.join(root, "content", locale, dir, `${slug}.mdx`),
+    path.join(root, "content", "en", dir, `${slug}.mdx`),
+  ]);
+
+  const pathToUse = possiblePaths.find(fs.existsSync);
+
+  if (!pathToUse) {
+    throw new Error(
+      `Page not found for slug "${slug}" in dirs [${dirList.join(", ")}]`
+    );
+  }
+
   const { metadata, content } = readMDXFile(pathToUse);
-
   const faqs = extractFaqsFromMdxSync(content);
 
   return {
@@ -169,18 +179,28 @@ export const getPage = (locale: string, dir: string, slug: string) => {
   };
 };
 
-export const getPages = (locale: string, dir: string) => {
-  // Use relative path from project root
-  const legalPath = path.join(process.cwd(), "content", locale, dir);
-  const enPath = path.join(process.cwd(), "content", "en", dir);
+export const getPages = (locale: string, dirs: string[]) => {
+  const root = process.cwd();
+  const results: any[] = [];
 
-  // Fallback to English if locale directory doesn't exist
-  if (!fs.existsSync(legalPath)) {
-    console.log("Fallback to English", legalPath);
-    return getMDXData(enPath);
+  for (const dir of dirs) {
+    const localizedPath = path.join(root, "content", locale, dir);
+    const fallbackPath = path.join(root, "content", "en", dir);
+
+    const actualPath = fs.existsSync(localizedPath)
+      ? localizedPath
+      : fallbackPath;
+
+    if (!fs.existsSync(actualPath)) {
+      console.warn("Directory does not exist in any locale:", dir);
+      continue;
+    }
+
+    const data = getMDXData(actualPath);
+    results.push(...data);
   }
 
-  return getMDXData(legalPath);
+  return results;
 };
 
 export const formatDate = (date: string, includeRelative = false) => {

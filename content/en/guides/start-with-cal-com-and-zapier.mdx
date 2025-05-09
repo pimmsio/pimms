@@ -1,0 +1,190 @@
+---
+title: Step-by-step guide to track your Cal.com bookings with PiMMs using Zapier
+summary: Learn how to connect PiMMs to Cal.com with Zapier to track every meeting and understand exactly which campaigns drive bookings.
+publishedAt: 2025-04-26
+updatedAt: 2025-05-13
+image: https://assets.pimms.io/pimms-calcom-integration-zapier.webp?v=2
+author: alexandre
+categories:
+  - guides
+related:
+  - start-with-zapier
+  - start-with-iclosed-and-zapier
+  - no-code-guide-for-website
+---
+
+Want to track exactly where your Cal.com bookings come from?
+
+With **PiMMs + Zapier**, it only takes a few minutes — no code needed.
+
+## 1. Create a new field in your form
+
+1. Log in to your **Cal.com dashboard**
+2. Open the **event** you want to track and click **Edit**
+3. Go to **Advanced → Booking Questions**
+
+![Cal.com edit form](https://assets.pimms.io/cal-edit-form.webp)
+
+4. Click **Add a question** and fill in the following:
+- Type: Short text
+- Identifier: `pimms_id`
+- Label: `pimms_id`
+- Required: No
+- Enable: “Disable input if URL identifier is prefilled”
+- Disable: “Show on booking page”
+
+![Cal.com form setup](https://assets.pimms.io/cal-fill-the-question-for-the-pimms_id.webp)
+
+5. Save the form
+
+## 2. Create your PiMMs tracking link
+
+1. Go to your [PiMMs dashboard](https://app.pimms.io)
+2. Create a short link pointing to your **Cal.com booking URL**
+3. Enable **Conversion tracking**
+
+**Example**:
+```
+https://pim.ms/my-booking-page
+```
+
+Tip: Use this link in your ads, emails, and social posts.
+
+![PiMMs tracking link](https://assets.pimms.io/pimms-tracking-link.webp?v=2)
+
+## 3. Book a test meeting
+
+1. Open your PiMMs link in a new tab
+2. Book a dummy meeting with a test email
+
+This step is needed for Zapier to detect the form fields.
+
+![Dummy booking](https://assets.pimms.io/cal-dummy-booking.webp)
+
+## 4. Connect Cal.com to PiMMs in Zapier
+
+1. Go to [Zapier](https://zapier.com)
+2. Open the [Cal.com × PiMMs Zap template](https://zapier.com/webintent/create-zap?template=255624056)
+3. Click **Use this Zap**
+
+### Trigger setup
+
+- Trigger app: **Cal.com**
+- Event: **Booking Created**
+- Connect your Cal.com account
+
+![Connect Cal.com](https://assets.pimms.io/zapier-connect-cal.webp)
+
+- Select your test booking from step 3
+
+![Zapier trigger setup](https://assets.pimms.io/zapier-find-dummy-record.webp)
+
+### Action setup
+
+- Action app: **PiMMs**
+- Event: **Create Conversion**
+
+![Zapier action create conversion](https://assets.pimms.io/zapier-action-create-conversion.webp)
+
+- Connect your PiMMs account
+
+![Zapier approve permissions](https://assets.pimms.io/zapier-approve-permissions.webp)
+
+Then map the fields:
+
+- **Click ID** → `pimms_id`
+- **Email** → attendee’s email
+- **External ID** → attendee’s email (again)
+- **Name** → attendee’s name
+
+![Zapier field mapping](https://assets.pimms.io/zapier-field-mapping.webp)
+
+Publish your Zap.
+
+## 5. Test your setup
+
+1. Open your PiMMs link in a new tab
+2. Book another test meeting
+3. Check your [PiMMs dashboard](https://app.pimms.io)
+
+You should see a new **conversion** tracked automatically.
+
+![Successful test](https://assets.pimms.io/zapier-test-integration-calcom.webp)
+
+## 6. Troubleshooting tips
+
+- If someone books multiple times using the same email, only the first meeting is counted as a conversion.
+- Make sure the `pimms_id` field is correctly added to the Cal.com form
+- Check that your Zap is published and active
+- Look at **Zapier Task History** if a step fails
+
+## Best ways to share your Cal.com booking form
+
+### Option A — Create a PiMMs short link
+
+Use this if you're sharing your Cal.com link via email, ads, QR codes, or social media.
+
+1. Go to [PiMMs](https://app.pimms.io)
+2. Create a short link pointing to your Cal.com booking page
+3. Enable conversion tracking
+4. Share the link wherever you want
+
+**Example**:
+```
+https://pim.ms/your-link
+```
+
+### Option B — Use Cal.com on your website
+
+Add this script in your site’s or page head (required for both cases):
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+#### Case 1 — Simple link
+
+- Add `?pimms_id=1` to the end of your Cal.com URL
+
+**Example**:
+```
+https://cal.com/yourname/meeting?pimms_id=1
+```
+
+#### Case 2 — Embedded calendar
+
+📘 [How to embed Cal.com →](https://cal.com/help/embedding/adding-embed)
+
+**For popup embeds**
+
+- Use the `data-cal-link` attribute
+- Add `?pimms_id=1` at the end of the link
+
+```html
+<button data-cal-link="yourname/meeting?pimms_id=1">Book now</button>
+```
+
+**For inline embeds**
+
+- Add this additional script to the page:
+
+```html
+<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
+```
+
+- Add `?pimms_id=${window.pimms_id}` to your calendar link
+
+Example:
+
+```js
+Cal.ns["30min"]("inline", {
+  elementOrSelector: "...",
+  calLink: `alexandre/30min?pimms_id=${window.pimms_id}`
+});
+```
+
+## You're all set 🎉
+
+Every Cal.com meeting booked via your PiMMs links will now be tracked — with full attribution and analytics.
+
+👉 [Create your first PiMMs link](https://app.pimms.io)

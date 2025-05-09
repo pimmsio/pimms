@@ -1,0 +1,95 @@
+---
+title: Guide pas à pas pour suivre les leads et ventes sur les sites no-code, IA et vibe coding
+summary: Configure PiMMs en quelques minutes sur Webflow, Framer, Bubble ou tout autre site IA ou no-code — et suis chaque formulaire, prise de rendez-vous ou paiement Stripe avec attribution complète.
+publishedAt: 2025-04-29
+updatedAt: 2025-05-14
+image: https://assets.pimms.io/stripe-sales-tracking-with-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-webflow-leads
+  - start-with-cal-com-and-zapier
+  - start-with-iclosed-and-zapier
+  - setup-stripe-for-website
+---
+
+Tu veux suivre précisément d’où viennent tes leads et tes ventes — sur un site créé avec Webflow, Framer, Bubble ou un builder no-code/IA ?
+
+Avec **PiMMs**, tu peux tracker chaque formulaire, prise de rendez-vous ou paiement Stripe — sans code, et avec attribution complète.  
+Ce guide te montre comment tout configurer en quelques minutes, uniquement pour les outils **supportés nativement** par PiMMs :
+
+- Calendriers : **Cal.com**, **Lemcal**, **Calendly**
+- Formulaires : **Tally**, **Typeform**, **iClosed**
+- Paiements : **Stripe**
+
+## 1. Ajouter PiMMs à ton site
+
+1. Va dans les **paramètres de code personnalisé** ou dans le `<head>` de ton site  
+2. Colle ce script dans la section **Head** :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+3. Enregistre et publie
+
+✅ Fonctionne avec :
+- Webflow ([guide complet](/blog/how-to-track-webflow-leads))
+- Framer
+- Bubble
+- Wix
+- Squarespace
+- Lovable.dev
+- Bold.new
+
+Si ton builder permet d’ajouter du code global (comme les paramètres de projet Webflow), tu peux coller le script une seule fois.  
+Sinon, ajoute-le sur chaque page qui contient un formulaire, une prise de rendez-vous ou un paiement Stripe.
+
+## 2. Configurer les boutons ou liens vers les outils supportés
+
+Si ton site contient des boutons ou des liens vers des outils comme **Cal.com**, **Stripe**, **Tally** ou **Typeform**, tu dois ajouter un paramètre PiMMs spécifique à l’URL.
+
+C’est ce qui permet à PiMMs de relier la visite sur ton site à la conversion sur l’outil externe.
+
+### Que faire
+
+Modifie l’URL avec le bon paramètre :
+
+- `?pimms_id=1` → pour les calendriers et les formulaires (Cal.com, Lemcal, Calendly, Tally, Typeform, iClosed…)
+- `?pimms_client_reference_id=1` → pour les liens de paiement Stripe
+
+### Exemples
+
+**Bouton de prise de rendez-vous**  
+Sur ta page :  
+Réserver un appel → `https://cal.com/ton-utilisateur/demo?pimms_id=1`
+
+**Lien vers un formulaire Typeform**  
+Postuler → `https://yourform.typeform.com/to/xyz?pimms_id=1`
+
+**Paiement Stripe**  
+Acheter → `https://buy.stripe.com/test_abc123?pimms_client_reference_id=1`
+
+Ces paramètres sont obligatoires pour que PiMMs puisse relier la session utilisateur sur ton site à la conversion.
+
+Assure-toi que le lien est bien placé sur une page contenant le script PiMMs.
+
+## Envie d’aller plus loin ?
+
+On a rédigé des guides détaillés pour chaque outil supporté — si tu veux configurer le tracking étape par étape :
+
+- [Suivre les réservations avec Cal.com](/blog/start-with-cal-com-and-zapier)
+- Suivre les réservations avec Calendly
+- [Suivre les leads avec iClosed](/blog/start-with-iclosed-and-zapier)
+- [Suivre les leads avec Webflow](/blog/how-to-track-webflow-leads)
+- Suivre les leads avec Framer
+- Suivre les leads avec Wix
+- Suivre les leads avec Squarespace
+- Suivre les leads avec Lovable.dev
+- Suivre les leads avec Bold.new
+- Suivre les leads avec Tally
+- Suivre les leads avec Typeform
+- [Suivre les paiements avec Stripe](/blog/setup-stripe-for-website)
+
+Chaque guide t’explique comment connecter l’outil, tester le setup et retrouver les conversions dans ton dashboard PiMMs.

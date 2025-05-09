@@ -22,7 +22,8 @@
       },
       "resources": {
         "blog": "Blog",
-        "guides": "Guides et tutoriels",
+        "guides": "Guides étape par étape",
+        "tutorials": "Tutoriels",
         "api": "Documentation API",
         "sdk-ts": "SDK TypeScript"
       },

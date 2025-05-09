@@ -44,7 +44,7 @@ export const THUMBNAIL = "https://assets.pimms.io/thumbnail.jpg?v=3";
 
 export const BLOG_CATEGORIES: {
   title: string;
-  slug: "company" | "guides" | "digital-marketing";
+  slug: "company" | "guides" | "tutorials" | "digital-marketing";
   description: string;
 }[] = [
   {
@@ -55,7 +55,12 @@ export const BLOG_CATEGORIES: {
   {
     title: "Guides",
     slug: "guides",
-    description: "Setup guides and tutorials.",
+    description: "Step-by-step guides to help you get started.",
+  },
+  {
+    title: "Tutorials",
+    slug: "tutorials",
+    description: "Tutorials to learn more.",
   },
   {
     title: "Blog",

@@ -2,7 +2,7 @@ import { getPages } from "@/lib/mdx";
 import { WEB_URL } from "../../constants";
 
 export async function GET() {
-  const allBlogs = await getPages("en", "legal");
+  const allBlogs = await getPages("en", ["legal"]);
 
   const itemsXml = allBlogs
     .sort((a, b) => {

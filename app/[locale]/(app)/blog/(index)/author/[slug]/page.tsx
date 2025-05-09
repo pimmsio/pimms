@@ -25,7 +25,7 @@ export default function BlogCategory({ params }: Props) {
     notFound();
   }
 
-  const posts = getPages(locale, "blog");
+  const posts = getPages(locale, ["blog", "guides", "tutorials"]);
 
   const articles = posts
     .filter((post) => post.metadata.author === data.slug)
