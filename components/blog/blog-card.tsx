@@ -2,8 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { formatDate, PageMetadata } from "@/lib/mdx";
 import Author from "./author";
-import { H2 } from "@/components/base/h2";
-import { Paragraph } from "@/components/base/paragraph";
 import { notFound } from "next/navigation";
 import { getCanonicalLink } from "../../lib/utils";
 import { useLocale } from "next-intl";
@@ -28,10 +26,10 @@ export default function BlogCard({
   return (
     <Link
       href={getCanonicalLink(locale, `/blog/${slug}`)}
-      className="flex flex-col rounded-2xl ring-[6px] ring-[#F2F3F5] rounded-b-2xl bg-white"
+      className="flex flex-col bg-white overflow-hidden"
     >
       <Image
-        className="aspect-[1200/630] rounded-t-2xl object-cover"
+        className="aspect-[1200/630] object-cover"
         src={image}
         width={1200}
         height={630}
@@ -40,12 +38,16 @@ export default function BlogCard({
       />
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>
-          <H2 className="text-xl!">{title}</H2>
-          <Paragraph className="mt-2 line-clamp-2">{summary}</Paragraph>
+          <h2 className="text-lg font-bold tracking-tight line-clamp-2">
+            {title}
+          </h2>
+          <p className="text-md text-[#5C5B61] tracking-tight line-clamp-1 mt-2">
+            {summary}
+          </p>
         </div>
         <div className="mt-4 flex items-center space-x-2">
           {author && <Author username={author} imageOnly />}
-          <time dateTime={publishedAt} className="text-sm">
+          <time dateTime={publishedAt} className="text-xs">
             {formatDate(publishedAt)}
           </time>
         </div>

@@ -78,6 +78,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/guides/how-to-track-conversions-on-vibe-coding-ai-no-code-sites",
     fr: "/guides/comment-suivre-conversions-sites-vibe-coding-no-code-ai",
   },
+  "/blog/setup-stripe-for-website": {
+    en: "/guides/how-to-track-stripe-sales",
+    fr: "/guides/comment-suivre-ventes-stripe",
+  },
+  "/blog/start-with-iclosed-and-zapier": {
+    en: "/guides/how-to-track-iclosed-bookings",
+    fr: "/guides/comment-suivre-reservations-iclosed",
+  },
   // Tutorials
   "/blog/category/tutorials": {
     en: "/tutorials",
@@ -95,14 +103,6 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/blog/introducing-conversion": {
     en: "/blog/conversion-tracking-introduction",
     fr: "/blog/introduction-suivi-conversion",
-  },
-  "/blog/start-with-iclosed-and-zapier": {
-    en: "/blog/setup-iclosed-zapier",
-    fr: "/blog/configurer-iclosed-zapier",
-  },
-  "/blog/setup-stripe-for-website": {
-    en: "/blog/stripe-payment-tracking-website",
-    fr: "/blog/suivi-paiements-stripe-site-web",
   },
   "/blog/how-to-track-link-performance-across-multiple-channels": {
     en: "/blog/track-link-performance-multiple-channels",

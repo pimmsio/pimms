@@ -24,8 +24,8 @@ export default async function Author({
     <Image
       src={author.image}
       alt={author.name}
-      width={36}
-      height={36}
+      width={24}
+      height={24}
       className="rounded-full transition-all group-hover:brightness-90"
     />
   ) : updatedAt ? (
@@ -33,8 +33,8 @@ export default async function Author({
       <Image
         src={author.image}
         alt={author.name}
-        width={36}
-        height={36}
+        width={24}
+        height={24}
         className="rounded-full"
       />
       <div className="flex flex-col">

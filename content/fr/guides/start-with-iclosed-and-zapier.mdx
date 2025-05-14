@@ -1,0 +1,126 @@
+---
+title: Guide étape par étape pour suivre vos réservations iClosed avec PiMMs via Zapier
+summary: Découvrez comment connecter PiMMs à iClosed via Zapier pour suivre automatiquement chaque rendez-vous réservé avec une attribution complète.
+publishedAt: 2025-04-28
+updatedAt: 2025-05-14
+image: https://assets.pimms.io/pimms-iclosed-integration-zapier.webp?v=3
+author: alexandre
+categories:
+  - guides
+related:
+  - start-with-cal-com-and-zapier
+  - how-to-track-webflow-leads
+---
+
+Tu veux savoir précisément d’où viennent les réservations faites via ton calendrier iClosed ?
+
+Avec **PiMMs + Zapier**, quelques minutes suffisent — sans coder.
+
+## 1. Crée ton lien de tracking PiMMs
+
+1. Connecte-toi à ton [dashboard PiMMs](https://app.pimms.io)  
+2. Crée un lien court pointant vers ta page de réservation iClosed  
+3. Active le **suivi de conversion**
+
+**Exemple** :  
+```
+https://pim.ms/ma-page-de-rdv
+```
+
+![PiMMs tracking link](https://assets.pimms.io/pimms-tracking-link-iclosed.webp)
+
+## 2. Réserve un rendez-vous test
+
+1. Ouvre ton lien PiMMs dans un nouvel onglet  
+2. Réserve un rendez-vous test avec un faux email (ex. `test+zapier@tondomaine.com`)
+
+![Dummy submission](https://assets.pimms.io/iclosed-dummy-submission.webp)
+
+Cette étape est nécessaire pour que Zapier détecte les champs du formulaire et l’ID de tracking.
+
+## 3. Connecte iClosed à PiMMs dans Zapier
+
+1. Va sur [Zapier](https://zapier.com)  
+2. Crée un nouveau Zap manuellement
+
+### Configuration du déclencheur (Trigger)
+
+- **Application** : iClosed  
+- **Événement** : Meeting Booked  
+- Connecte ton compte iClosed  
+- Choisis le rendez-vous test de l’étape 2
+
+![Zapier trigger setup](https://assets.pimms.io/zapier-find-dummy-record-iclosed.webp)
+
+### Configuration de l'action
+
+- **Application** : PiMMs  
+- **Événement** : Create Conversion  
+- Connecte ton compte PiMMs
+
+![Zapier approve permissions](https://assets.pimms.io/zapier-approve-permissions.webp)
+
+Ensuite, fais correspondre les champs :
+
+- **Click ID** → `pimms_id` (doit ressembler à une chaîne aléatoire)
+- **Email** → email du participant  
+- **External ID** → email du participant  
+- **Name** → nom du participant
+
+![Zapier field mapping](https://assets.pimms.io/zapier-field-mapping-iclosed.webp)
+
+Publie ton Zap.
+
+## 4. Teste ta configuration
+
+1. Ouvre ton lien PiMMs dans un nouvel onglet  
+2. Réserve un nouveau rendez-vous test  
+3. Va sur ton [dashboard PiMMs](https://app.pimms.io)
+
+Tu devrais voir une nouvelle **conversion** enregistrée automatiquement.
+
+![Zapier test your zap](https://assets.pimms.io/zapier-test-integration-iclosed.webp)
+
+## 5. Astuces en cas de problème
+
+- Si une personne réserve plusieurs fois avec le même email, seule la première réservation est comptabilisée.
+- Vérifie que le champ `pimms_id` est bien transmis via l’URL.
+- Assure-toi que ton Zap est bien **publié** et actif.
+- Consulte l’**historique des tâches Zapier** en cas d’erreur.
+
+## Meilleures façons de partager ton formulaire iClosed
+
+### Option A — Créer un lien court PiMMs
+
+À utiliser si tu partages ton lien iClosed par email, publicité, QR code ou réseaux sociaux.
+
+1. Va sur [PiMMs](https://app.pimms.io)  
+2. Crée un lien court vers ta page iClosed  
+3. Active le suivi de conversion  
+4. Partage ce lien où tu veux
+
+**Exemple** :  
+```
+https://pim.ms/ton-lien
+```
+
+### Option B — Utiliser iClosed sur ton site web
+
+Ajoute ce script dans la balise `<head>` de ta page :  
+
+``` html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+Ajoute ensuite `?pimms_id=1` à la fin de ton lien iClosed :
+
+**Exemple** :  
+```
+https://app.iclosed.io/e/xyz?pimms_id=1
+```
+
+## C’est tout bon 🎉
+
+Chaque réservation faite via tes liens PiMMs sera désormais suivie automatiquement — avec attribution complète et statistiques.
+
+👉 [Crée ton premier lien PiMMs](https://app.pimms.io)
