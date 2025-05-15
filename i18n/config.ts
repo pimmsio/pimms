@@ -86,6 +86,18 @@ export const pathnames: Record<string, Record<string, string>> = {
     en: "/guides/how-to-track-iclosed-bookings",
     fr: "/guides/comment-suivre-reservations-iclosed",
   },
+  "/blog/how-to-track-calendly": {
+    en: "/guides/how-to-track-calendly-bookings",
+    fr: "/guides/comment-suivre-reservations-calendly",
+  },
+  "/blog/how-to-track-framer": {
+    en: "/guides/how-to-track-framer-form-submissions",
+    fr: "/guides/comment-suivre-formulaires-framer",
+  },
+  "/blog/how-to-track-tally": {
+    en: "/guides/how-to-track-tally-form-submissions",
+    fr: "/guides/comment-suivre-formulaires-tally",
+  },
   // Tutorials
   "/blog/category/tutorials": {
     en: "/tutorials",
@@ -165,6 +177,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/blog/how-utm-parameters-impact-conversion-paths": {
     en: "/blog/utm-impact-conversion-paths",
     fr: "/blog/effet-parametres-utm-conversions",
+  },
+  "/blog/track-stripe-payments-with-utm-parameters": {
+    en: "/blog/track-stripe-payments-with-utm-parameters",
+    fr: "/blog/suivre-paiements-stripe-balises-utm",
   },
 };
 

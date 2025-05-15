@@ -29,6 +29,11 @@ import { CallToAction } from "@/components/mdx/CallToAction";
 import { remarkCtaPlaceholder } from "@/lib/mdx/remarkCtaDirective";
 import { BlogStructuredData } from "@/components/mdx/BlogStructuredData";
 import { FaqStructuredData } from "@/components/mdx/FaqStructuredData";
+import { InfoSection } from "@/components/mdx/InfoSection";
+import { LinkCards } from "@/components/mdx/LinkCards";
+import { LinkCard } from "@/components/mdx/LinkCards";
+import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
+import { Pre } from "@/components/mdx/Pre";
 
 export async function generateStaticParams() {
   const allParams = [];
@@ -132,6 +137,10 @@ const components = {
     children: React.ReactNode;
   }) => <Faq question={question}>{children}</Faq>,
   CallToAction,
+  InfoSection,
+  LinkCards,
+  LinkCard,
+  pre: Pre,
 };
 
 export default function BlogPost({ params }: Props) {
@@ -221,6 +230,7 @@ export default function BlogPost({ params }: Props) {
                       remarkIframeDirective,
                       remarkFaqDirective,
                       remarkCtaPlaceholder,
+                      remarkCustomDirectives,
                     ],
                     rehypePlugins: [
                       rehypeSlug,
@@ -229,6 +239,7 @@ export default function BlogPost({ params }: Props) {
                         rehypePrettyCode,
                         {
                           theme: "one-light",
+                          keepBackground: false,
                         },
                       ],
                     ],

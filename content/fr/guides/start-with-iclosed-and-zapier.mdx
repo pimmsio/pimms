@@ -3,12 +3,13 @@ title: Guide étape par étape pour suivre vos réservations iClosed avec PiMMs 
 summary: Découvrez comment connecter PiMMs à iClosed via Zapier pour suivre automatiquement chaque rendez-vous réservé avec une attribution complète.
 publishedAt: 2025-04-28
 updatedAt: 2025-05-14
-image: https://assets.pimms.io/pimms-iclosed-integration-zapier.webp?v=3
+image: https://assets.pimms.io/iclosed-guide-pimms.webp
 author: alexandre
 categories:
   - guides
 related:
   - start-with-cal-com-and-zapier
+  - how-to-track-calendly
   - how-to-track-webflow-leads
 ---
 
@@ -111,6 +112,13 @@ Ajoute ce script dans la balise `<head>` de ta page :
 ``` html
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
 ```
+
+:::info
+**Vérifie que tout fonctionne (Optionnel)**
+
+Ouvre ton site et écris `window._pimmsAnalytics` dans la console du navigateur.  
+Si tout est bien installé, des valeurs s’afficheront.
+:::
 
 Ajoute ensuite `?pimms_id=1` à la fin de ton lien iClosed :
 

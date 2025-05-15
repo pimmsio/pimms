@@ -78,6 +78,13 @@ Paste this into your site’s `<head>`:
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
 ```
 
+:::info
+**Check if it's working (Optional)**
+
+Open your website and type `window._pimmsAnalytics` in the browser console.  
+If everything is installed correctly, you should see some values.
+:::
+
 Add `?pimms_id=1` (or `?pimms_client_reference_id=1` for Stripe) to your internal links where a PiMMs redirect isn’t possible. This ensures the correct tracking ID is passed even when users aren’t clicking a PiMMs short link.
 
 **Examples:**

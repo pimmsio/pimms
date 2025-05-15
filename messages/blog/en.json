@@ -7,6 +7,28 @@
     "cta": {
       "headline": "Turn every click into conversion and decision",
       "sub": "Optimize your links, track real conversions and sales, and uncover what drives results. Start using PIMMS to enhance your campaigns and grow your business."
+    },
+    "category": {
+      "overview": {
+        "title": "Overview",
+        "description": "Latest articles from PIMMS"
+      },
+      "company": {
+        "title": "Company news",
+        "description": "Updates and announcements from PIMMS"
+      },
+      "guides": {
+        "title": "Guides",
+        "description": "Step-by-step guides to help you get started."
+      },
+      "tutorials": {
+        "title": "Tutorials",
+        "description": "Tutorials to learn more."
+      },
+      "digital-marketing": {
+        "title": "Blog",
+        "description": "Blog posts about digital marketing you should read."
+      }
     }
   }
 }

@@ -1,0 +1,147 @@
+---
+title: Step-by-step guide to track your Tally.so form submissions with PiMMs using Zapier
+summary: Learn how to connect PiMMs to Tally.so through Zapier and automatically track every form submission with full-funnel attribution.
+publishedAt: 2025-05-15
+updatedAt: 2025-05-15
+image: https://assets.pimms.io/tally-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - no-code-guide-for-website
+---
+
+Want to track exactly where your Tally.so form submissions come from?
+
+With **PiMMs + Zapier**, it only takes a few minutes — no code needed.
+
+## 1. Create a new hidden field in your form
+
+1. Log in to your **Tally.so dashboard**
+2. Open the **form** you want to track and click **Edit**
+3. Add a new **hidden field**
+
+![Tally form add hidden field](https://assets.pimms.io/tally-form-add-hidden-field.webp)
+
+4. Name it `pimms_id`
+
+![Tally form add field name](https://assets.pimms.io/tally-form-add-field-name.webp)
+
+5. Publish the form
+
+## 2. Create your PiMMs tracking link
+
+1. Go to your [PiMMs dashboard](https://app.pimms.io)
+2. Create a short link pointing to your **Tally form URL**
+3. Enable **Conversion tracking**
+
+**Example**:  
+```
+https://pim.ms/my-form
+```
+
+![PiMMs tracking link tally](https://assets.pimms.io/pimms-tracking-link-tally.webp)
+
+## 3. Submit a test form
+
+1. Open your PiMMs link in a new tab  
+2. Fill out your Tally form using a fake email (e.g. `test+zapier@yourdomain.com`)
+
+This lets Zapier detect your form fields and pick up the `pimms_id`.
+
+## 4. Connect Tally.so to PiMMs in Zapier
+
+1. Go to [Zapier](https://zapier.com)
+2. Create a new Zap manually
+
+### Trigger setup
+
+- **App**: Tally  
+- **Event**: New Submission  
+- Connect your Tally account  
+- Select your test submission record from step 3
+
+![Zapier Tally trigger](https://assets.pimms.io/zapier-tally-trigger.webp)
+
+- Verify that the `pimms_id` field is present in the submission
+
+![Zapier Tally trigger verify](https://assets.pimms.io/zapier-tally-trigger-verify.webp)
+
+### Action setup
+
+- **App**: PiMMs  
+- **Event**: Create Conversion  
+- Connect your PiMMs account
+
+Then map the fields:
+
+- **Click ID** → `pimms_id` (must be a random-looking string, auto-detected if passed via URL)
+- **Email** → form email field  
+- **External ID** → same as email  
+- **Name** → full name field if available
+
+![Zapier field mapping](https://assets.pimms.io/zapier-field-mapping-tally.webp)
+
+Publish your Zap.
+
+## 5. Test your setup
+
+1. Open your PiMMs short link again that redirects to your Tally form
+2. Fill and submit your form  
+3. Head to your [PiMMs dashboard](https://app.pimms.io)
+
+You should see a new **conversion** with full attribution.
+
+![Zapier test your zap](https://assets.pimms.io/zapier-test-tally-submission.webp)
+
+## 6. Troubleshooting tips
+
+- The `pimms_id` must be present in the URL when users open the form
+- Use **Zapier Task History** to debug issues
+- Only the **first submission** per email is tracked as a conversion
+- Check that your Zap is **published and turned on**
+
+## Best ways to share your Tally form
+
+### Option A — Share a PiMMs short link
+
+Perfect for socials, ads, QR codes, or newsletters.
+
+1. Go to [PiMMs](https://app.pimms.io)
+2. Create a short link for your form
+3. Enable **conversion tracking**
+4. Share it everywhere
+
+**Example**:  
+```
+https://pim.ms/feedback
+```
+
+### Option B — Embed your Tally form on your website
+
+Add this script to your site `<head>`:
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+:::info
+**Check if it's working (Optional)**
+
+Open your website and type `window._pimmsAnalytics` in the browser console.  
+If everything is installed correctly, you should see some values.
+:::
+
+Then make sure to **append the `pimms_id`** to the Tally form URL.
+
+**Example**:  
+```
+https://tally.so/r/nAbCdE?pimms_id=1
+```
+
+If you embed it using an iframe, make sure to use the full URL with `?pimms_id=...`
+
+## You're all set 🎉
+
+Every submission on your Tally form shared via a PiMMs link will now be tracked — with full attribution and analytics.
+
+👉 [Create your first PiMMs link](https://app.pimms.io)

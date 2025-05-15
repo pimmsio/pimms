@@ -1,0 +1,147 @@
+---
+title: Guide étape par étape pour suivre les soumissions Tally.so avec PiMMs via Zapier
+summary: Découvre comment connecter PiMMs à Tally.so grâce à Zapier et suivre automatiquement chaque soumission de formulaire avec une attribution complète.
+publishedAt: 2025-05-15
+updatedAt: 2025-05-15
+image: https://assets.pimms.io/tally-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - no-code-guide-for-website
+---
+
+Tu veux savoir exactement d’où viennent les soumissions de ton formulaire Tally.so ?
+
+Avec **PiMMs + Zapier**, quelques minutes suffisent — sans écrire une ligne de code.
+
+## 1. Ajoute un champ caché dans ton formulaire
+
+1. Connecte-toi à ton **dashboard Tally.so**
+2. Ouvre le **formulaire** à suivre et clique sur **Modifier**
+3. Ajoute un **champ caché**
+
+![Tally form add hidden field](https://assets.pimms.io/tally-form-add-hidden-field.webp)
+
+4. Nomme ce champ `pimms_id`
+
+![Tally form add field name](https://assets.pimms.io/tally-form-add-field-name.webp)
+
+5. Publie le formulaire
+
+## 2. Crée ton lien de tracking PiMMs
+
+1. Va sur ton [dashboard PiMMs](https://app.pimms.io)
+2. Crée un lien court qui pointe vers l’URL de ton formulaire Tally
+3. Active le **suivi des conversions**
+
+**Exemple** :  
+```
+https://pim.ms/my-form
+```
+
+![PiMMs tracking link tally](https://assets.pimms.io/pimms-tracking-link-tally.webp)
+
+## 3. Soumets un formulaire test
+
+1. Ouvre ton lien PiMMs dans un nouvel onglet  
+2. Remplis le formulaire avec une fausse adresse email (ex. `test+zapier@tondomaine.com`)
+
+Cela permet à Zapier de détecter les champs du formulaire, dont le `pimms_id`.
+
+## 4. Connecte Tally.so à PiMMs via Zapier
+
+1. Va sur [Zapier](https://zapier.com)
+2. Crée un nouveau Zap manuellement
+
+### Configuration du déclencheur
+
+- **App** : Tally  
+- **Événement** : Nouvelle soumission  
+- Connecte ton compte Tally  
+- Sélectionne l’enregistrement test envoyé à l’étape 3
+
+![Zapier Tally trigger](https://assets.pimms.io/zapier-tally-trigger.webp)
+
+- Vérifie que le champ `pimms_id` est bien présent
+
+![Zapier Tally trigger verify](https://assets.pimms.io/zapier-tally-trigger-verify.webp)
+
+### Configuration de l'action
+
+- **App** : PiMMs  
+- **Événement** : Créer une conversion  
+- Connecte ton compte PiMMs
+
+Puis associe les champs suivants :
+
+- **Click ID** → `pimms_id` (doit être une chaîne aléatoire détectée automatiquement depuis l’URL)
+- **Email** → champ email du formulaire  
+- **External ID** → même que l’email  
+- **Nom** → champ de nom complet si disponible
+
+![Zapier field mapping](https://assets.pimms.io/zapier-field-mapping-tally.webp)
+
+Publie ton Zap.
+
+## 5. Teste ton setup
+
+1. Ouvre à nouveau ton lien PiMMs qui redirige vers ton formulaire Tally
+2. Remplis et soumets le formulaire  
+3. Va sur ton [dashboard PiMMs](https://app.pimms.io)
+
+Tu devrais voir une nouvelle **conversion** avec attribution complète.
+
+![Zapier test your zap](https://assets.pimms.io/zapier-test-tally-submission.webp)
+
+## 6. Conseils de dépannage
+
+- Le champ `pimms_id` doit être présent dans l’URL quand les utilisateurs ouvrent le formulaire
+- Utilise **l’historique des tâches Zapier** pour déboguer
+- Seule **la première soumission** par adresse email est comptée comme conversion
+- Vérifie que ton Zap est bien **publié et activé**
+
+## Meilleures façons de partager ton formulaire Tally
+
+### Option A — Partager un lien court PiMMs
+
+Parfait pour les réseaux sociaux, les pubs, les QR codes ou les newsletters.
+
+1. Va sur [PiMMs](https://app.pimms.io)
+2. Crée un lien court vers ton formulaire
+3. Active le **suivi des conversions**
+4. Partage-le partout
+
+**Exemple** :  
+```
+https://pim.ms/feedback
+```
+
+### Option B — Intégrer ton formulaire sur ton site
+
+Ajoute ce script dans le `<head>` de ton site :
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+:::info
+**Vérifie que tout fonctionne (Optionnel)**
+
+Ouvre ton site et écris `window._pimmsAnalytics` dans la console du navigateur.  
+Si tout est bien installé, des valeurs s’afficheront.
+:::
+
+Assure-toi ensuite d’**ajouter le `pimms_id`** dans l’URL du formulaire Tally.
+
+**Exemple** :  
+```
+https://tally.so/r/nAbCdE?pimms_id=1
+```
+
+Si tu l’intègres via une iframe, utilise bien l’URL complète avec `?pimms_id=...`
+
+## Tout est prêt 🎉
+
+Chaque soumission de ton formulaire Tally partagé via un lien PiMMs sera désormais suivie — avec attribution complète et analytics.
+
+👉 [Crée ton premier lien PiMMs](https://app.pimms.io)

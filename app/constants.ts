@@ -42,31 +42,11 @@ export const WORDMARK = "https://assets.pimms.io/wordmark.png";
 export const WORDMARK_BLACK = "https://assets.pimms.io/wordmark-black.png";
 export const THUMBNAIL = "https://assets.pimms.io/thumbnail.jpg?v=3";
 
-export const BLOG_CATEGORIES: {
-  title: string;
-  slug: "company" | "guides" | "tutorials" | "digital-marketing";
-  description: string;
-}[] = [
-  {
-    title: "Company news",
-    slug: "company",
-    description: "Updates and announcements from PIMMS",
-  },
-  {
-    title: "Guides",
-    slug: "guides",
-    description: "Step-by-step guides to help you get started.",
-  },
-  {
-    title: "Tutorials",
-    slug: "tutorials",
-    description: "Tutorials to learn more.",
-  },
-  {
-    title: "Blog",
-    slug: "digital-marketing",
-    description: "Official blog posts.",
-  },
+export const BLOG_CATEGORIES = [
+  "company",
+  "guides",
+  "tutorials",
+  "digital-marketing",
 ];
 
 export const AUTHORS: {

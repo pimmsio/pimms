@@ -7,7 +7,7 @@ import { BLOG_CATEGORIES } from "../../../../../../constants";
 
 export async function generateStaticParams() {
   return BLOG_CATEGORIES.map((category) => ({
-    slug: category?.slug,
+    slug: category,
   }));
 }
 
@@ -19,7 +19,7 @@ export default function BlogCategory({ params }: Props) {
   const { slug } = use(params);
   const locale = useLocale();
 
-  const data = BLOG_CATEGORIES.find((category) => category?.slug === slug);
+  const data = BLOG_CATEGORIES.find((category) => category === slug);
 
   if (!data) {
     notFound();
@@ -28,7 +28,7 @@ export default function BlogCategory({ params }: Props) {
   const posts = getPages(locale, ["blog", "guides", "tutorials"]);
 
   const articles = posts
-    .filter((post) => post.metadata.categories?.includes(data.slug))
+    .filter((post) => post.metadata.categories?.includes(data))
     .sort((a, b) =>
       b?.metadata.publishedAt.localeCompare(a?.metadata.publishedAt)
     );

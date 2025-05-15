@@ -11,33 +11,32 @@ import { Paragraph } from "@/components/base/paragraph";
 import { BLOG_CATEGORIES } from "../../app/constants";
 import { getCanonicalLink } from "../../lib/utils";
 import { useLocale } from "next-intl";
+import { useTranslations } from "next-intl";
 
 export default function BlogLayoutHero() {
+  const t = useTranslations("blog");
   const { slug } = useParams() as { slug?: string };
   const locale = useLocale();
 
-  const data = BLOG_CATEGORIES.find((category) => category?.slug === slug);
+  const category = slug && BLOG_CATEGORIES.includes(slug) ? slug : "overview";
 
   return (
     <>
       <HeroSection>
-        <H1>{data?.title || "Blog"}</H1>
+        <H1>{t(`category.${category}.title`)}</H1>
         <div className="max-w-sm md:max-w-lg flex flex-col items-center justify-left mx-auto px-4">
           <Paragraph className="mt-4">
-            {data?.description || "Latest news and updates from PIMMS"}
+            {t(`category.${category}.description`)}
           </Paragraph>
         </div>
-        <nav className="mt-6 hidden w-fit mx-auto items-center space-x-2 rounded-full border-[6px] border-[#E7EEFF] bg-white p-2 md:flex">
+        <nav className="mt-6 hidden w-fit mx-auto items-center space-x-2 rounded-full border-[6px] border-neutral-100 bg-white p-2 md:flex">
           <CategoryLink title="Overview" href="/blog" active={!slug} />
           {BLOG_CATEGORIES.map((category) => (
             <CategoryLink
-              key={category?.slug}
-              title={category?.title}
-              href={getCanonicalLink(
-                locale,
-                `/blog/category/${category?.slug}`
-              )}
-              active={category?.slug === slug}
+              key={category}
+              title={t(`category.${category}.title`)}
+              href={getCanonicalLink(locale, `/blog/category/${category}`)}
+              active={category === slug}
             />
           ))}
           {/* <CategoryLink title="Customer Stories" href="/customers" /> */}
@@ -108,7 +107,7 @@ const CategoryLink = ({
         })}
         className="flex w-full items-center justify-between rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
       >
-        <p className="text-sm text-gray-600">{title}</p>
+        <p className={twMerge("text-sm", active && "font-bold")}>{title}</p>
         {active && <Check size={16} className="text-gray-600" />}
       </Link>
     );
@@ -118,7 +117,9 @@ const CategoryLink = ({
       <div
         className={twMerge(
           "rounded-full px-4 py-2 text-sm text-gray-600 transition-all",
-          active ? "text-white" : "hover:bg-gray-100 active:bg-gray-200"
+          active
+            ? "text-white font-bold"
+            : "hover:bg-gray-100 active:bg-gray-200"
         )}
       >
         {title}

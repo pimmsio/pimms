@@ -3,7 +3,7 @@ title: Guide étape par étape pour suivre les leads Webflow avec PiMMs
 summary: Apprends à connecter PiMMs à Webflow pour suivre chaque lead et chaque formulaire avec une attribution complète et précise.
 publishedAt: 2025-05-13
 updatedAt: 2025-05-13
-image: https://assets.pimms.io/webflow-integration-with-pimms.webp?v=3
+image: https://assets.pimms.io/webflow-guide-pimms.webp
 author: alexandre
 categories:
   - guides
@@ -15,6 +15,12 @@ related:
 Tu veux savoir précisément d’où viennent tes leads Webflow ?
 
 Avec **PiMMs**, ça ne prend que quelques minutes — aucun code nécessaire.
+
+<LinkCard
+  href="/blog/no-code-guide-for-website"
+  title="Tu souhaites tracker des outils externes ?"
+  description="Lis cet autre guide si ton site contient des liens vers des outils comme Cal.com, Tally, Stripe, etc."
+/>
 
 ## 1. Installer les scripts PiMMs sur Webflow
 
@@ -28,6 +34,13 @@ Avec **PiMMs**, ça ne prend que quelques minutes — aucun code nécessaire.
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>  
 <script defer src="https://cdn.pimms.io/analytics/script.inject-form.js"></script>
 ```
+
+:::info
+**Vérifie que tout fonctionne (Optionnel)**
+
+Ouvre ton site et écris `window._pimmsAnalytics` dans la console du navigateur.  
+Si tout est bien installé, des valeurs s’afficheront.
+:::
 
 4. Clique sur **Save** puis republie ton site.
 

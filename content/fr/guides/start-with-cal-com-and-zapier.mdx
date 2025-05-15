@@ -3,12 +3,13 @@ title: Guide étape par étape pour suivre les réservations Cal.com avec PiMMs 
 summary: Apprends à connecter PiMMs à Cal.com via Zapier pour suivre chaque rendez-vous et savoir exactement quelles sources génèrent des réservations.
 publishedAt: 2025-04-26
 updatedAt: 2025-05-13
-image: https://assets.pimms.io/pimms-calcom-integration-zapier.webp?v=3
+image: https://assets.pimms.io/calcom-guide-pimms.webp
 author: alexandre
 categories:
   - guides
 related:
   - start-with-iclosed-and-zapier
+  - how-to-track-calendly
   - no-code-guide-for-website
 ---
 
@@ -134,6 +135,13 @@ Ajoute ce script dans le `<head>` de ton site (obligatoire dans tous les cas) :
 ```html
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
 ```
+
+:::info
+**Vérifie que tout fonctionne (Optionnel)**
+
+Ouvre ton site et écris `window._pimmsAnalytics` dans la console du navigateur.  
+Si tout est bien installé, des valeurs s’afficheront.
+:::
 
 #### Cas 1 — Lien classique
 

@@ -1,0 +1,122 @@
+---
+title: Guide étape par étape pour suivre les soumissions de formulaires Framer avec PiMMs
+summary: Apprends à connecter PiMMs à ton site Framer et à suivre chaque soumission de formulaire avec une attribution complète — sans coder.
+publishedAt: 2025-05-14
+updatedAt: 2025-05-14
+image: https://assets.pimms.io/framer-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-webflow-leads
+  - no-code-guide-for-website
+---
+
+Tu veux savoir exactement d'où viennent tes leads Framer ?
+
+Avec **PiMMs**, il suffit de quelques minutes — sans aucune ligne de code.
+
+<LinkCard
+  href="/blog/no-code-guide-for-website"
+  title="Tu souhaites tracker des outils externes ?"
+  description="Lis cet autre guide si ton site contient des liens vers des outils comme Cal.com, Tally, Stripe, etc."
+/>
+
+## 1. Ajoute le script de tracking PiMMs
+
+1. Dans Framer, va dans les **paramètres du site** → **Custom Code**
+2. Colle le script suivant dans la section **Head** :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+<script defer src="https://cdn.pimms.io/analytics/script.inject-form.js"></script>
+```
+
+:::info
+**Vérifie que tout fonctionne (Optionnel)**
+
+Ouvre ton site et écris `window._pimmsAnalytics` dans la console du navigateur.  
+Si tout est bien installé, des valeurs s’afficheront.
+:::
+
+![Framer custom code](https://assets.pimms.io/framer-custom-code.webp)
+
+3. Publie ton site
+
+## 2. Crée un formulaire compatible PiMMs
+
+PiMMs détecte automatiquement tes champs — voici les règles à suivre :
+
+Ajoute un **champ email obligatoire**  
+- Le nom du champ doit commencer par `email` (ex : `Email`, `email 1`, `e-mail perso`, etc.)
+
+Pour suivre les noms :  
+- Utilise un seul champ nommé `fullname`, `name`, etc.  
+- Ou deux champs : `firstname` et `lastname`
+
+👉 Vérifie le nom du champ en sélectionnant l’input → **Name**.
+
+![Framer form field Name](https://assets.pimms.io/framer-form-field-name.webp)
+
+## 3. Récupère ton Workspace ID
+
+1. Connecte-toi à ton [dashboard PiMMs](https://app.pimms.io)
+2. Va dans **Settings** → **Workspace ID**
+3. Copie ton ID (ex : `ws_abc123xyz`)
+
+## 4. Ajoute le webhook Framer pour le formulaire
+
+📘 Pour créer un nouveau formulaire : [Guide des formulaires Framer](https://www.framer.com/features/forms/)
+
+1. Dans Framer, sélectionne ton formulaire
+2. Va dans **Form** → **Send to**
+3. Choisis **"Webhook"**
+4. Utilise l’URL suivante :
+
+```
+https://app.pimms.io/api/framer/webhook?workspace_id=your-id
+```
+
+Remplace `your-id` par ton **Workspace ID**
+
+**Exemple** :
+
+```
+https://app.pimms.io/api/framer/webhook?workspace_id=ws_abc123xyz
+```
+
+![Framer form webhook](https://assets.pimms.io/framer-form-webhook.webp?v=2)
+
+## 5. Crée ton lien de tracking PiMMs
+
+1. Va sur [PiMMs](https://app.pimms.io)
+2. Crée un lien court pointant vers ta **page Framer**
+3. Active le **Conversion tracking**
+
+**Exemple** :
+
+```
+https://pim.ms/mon-site-framer
+```
+
+Utilise ce lien dans tes publicités, emails, réseaux sociaux, etc.
+
+## 6. Teste ton installation
+
+1. Ouvre ton lien PiMMs dans un **onglet incognito**
+2. Soumets ton formulaire Framer
+3. Va dans ton [dashboard PiMMs](https://app.pimms.io)
+4. Tu devrais voir un nouveau lead avec attribution complète
+
+## 7. Conseils en cas de problème
+
+- Assure-toi que le **script** est bien dans le Head
+- Vérifie l’URL du **webhook** (et le `workspace_id`)
+- Utilise le **mode incognito** + un nouvel email pour tester
+- Commence toujours par cliquer sur ton **lien PiMMs** — c’est comme ça que l’attribution fonctionne
+
+## Et voilà 🎉
+
+Chaque lead Framer collecté via tes liens PiMMs sera maintenant suivi — avec attribution complète et analytique.
+
+👉 [Crée ton premier lien PiMMs](https://app.pimms.io)
