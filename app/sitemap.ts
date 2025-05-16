@@ -61,6 +61,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   };
 
   await addAllLocalizedUrls();
-  console.log("Adding all localized URLs", urls.length);
   return urls;
 }
