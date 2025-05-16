@@ -42,7 +42,7 @@ export default function TableOfContents({ content }: { content: string }) {
     <ul className="space-y-4">
       {headings.map(({ level, text, id }) => (
         <li
-          key={id}
+          key={id + level}
           className="transition-all"
           style={{ marginLeft: `calc(${level} * 0.4rem - 0.4rem)` }}
         >

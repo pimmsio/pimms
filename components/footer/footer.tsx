@@ -86,7 +86,7 @@ export const Footer = ({
           </div>
           <Link
             aria-current="page"
-            href={getCanonicalLink(locale, "/blog/category/guides")}
+            href={getCanonicalLink(locale, "/articles/category/guides")}
             className="router-link-active router-link-exact-active"
           >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
@@ -95,7 +95,7 @@ export const Footer = ({
           </Link>
           <Link
             aria-current="page"
-            href={getCanonicalLink(locale, "/blog/category/tutorials")}
+            href={getCanonicalLink(locale, "/articles/category/tutorials")}
             className="router-link-active router-link-exact-active"
           >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
@@ -124,7 +124,10 @@ export const Footer = ({
           </Link>
           <Link
             aria-current="page"
-            href={getCanonicalLink(locale, "/blog/category/digital-marketing")}
+            href={getCanonicalLink(
+              locale,
+              "/articles/category/digital-marketing"
+            )}
             className="router-link-active router-link-exact-active"
           >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
@@ -134,22 +137,28 @@ export const Footer = ({
         </nav>
         <nav className="flex flex-col flex-wrap gap-4 max-w-xs">
           <div className="font-semibold text-gray-900">Legal</div>
-          <Link href={getCanonicalLink(locale, "/legal/terms")} className="">
+          <Link href={getCanonicalLink(locale, "/articles/terms")} className="">
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
               {t("footer.nav.terms")}
             </div>
           </Link>
-          <Link href={getCanonicalLink(locale, "/legal/imprint")} className="">
+          <Link
+            href={getCanonicalLink(locale, "/articles/imprint")}
+            className=""
+          >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
               {t("footer.nav.imprint")}
             </div>
           </Link>
-          <Link href={getCanonicalLink(locale, "/legal/privacy")} className="">
+          <Link
+            href={getCanonicalLink(locale, "/articles/privacy")}
+            className=""
+          >
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
               {t("footer.nav.privacy")}
             </div>
           </Link>
-          <Link href={getCanonicalLink(locale, "/legal/abuse")} className="">
+          <Link href={getCanonicalLink(locale, "/articles/abuse")} className="">
             <div className="font-medium hover:text-[#08272E] -my-1 py-1 hover:underline">
               {t("footer.nav.report")}
             </div>

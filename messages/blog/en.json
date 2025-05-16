@@ -28,6 +28,10 @@
       "digital-marketing": {
         "title": "Blog",
         "description": "Blog posts about digital marketing you should read."
+      },
+      "legal": {
+        "title": "Legal",
+        "description": "Legal documents for PIMMS."
       }
     }
   }

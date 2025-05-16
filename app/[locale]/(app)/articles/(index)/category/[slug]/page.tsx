@@ -3,11 +3,12 @@ import { useLocale } from "next-intl";
 import { getPages } from "@/lib/mdx";
 import BlogCard from "@/components/blog/blog-card";
 import { use } from "react";
-import { AUTHORS } from "../../../../../../constants";
+import { BLOG_CATEGORIES } from "../../../../../../constants";
+import { articleFolders } from "@/i18n/config";
 
 export async function generateStaticParams() {
-  return AUTHORS.map((author) => ({
-    slug: author?.slug,
+  return BLOG_CATEGORIES.map((category) => ({
+    slug: category,
   }));
 }
 
@@ -19,16 +20,16 @@ export default function BlogCategory({ params }: Props) {
   const { slug } = use(params);
   const locale = useLocale();
 
-  const data = AUTHORS.find((author) => author?.slug === slug);
+  const data = BLOG_CATEGORIES.find((category) => category === slug);
 
   if (!data) {
     notFound();
   }
 
-  const posts = getPages(locale, ["blog", "guides", "tutorials"]);
+  const posts = getPages(locale, articleFolders);
 
   const articles = posts
-    .filter((post) => post.metadata.author === data.slug)
+    .filter((post) => post.metadata.categories?.includes(data))
     .sort((a, b) =>
       b?.metadata.publishedAt.localeCompare(a?.metadata.publishedAt)
     );

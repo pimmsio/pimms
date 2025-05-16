@@ -1,9 +1,9 @@
 import Header from "@/components/landings/header";
 import Footer from "@/components/footer/footer";
 
-const tkey = "legal";
+const tkey = "solutions";
 
-export default function LegalLayout({
+export default function SolutionsLayout({
   children,
 }: {
   children: React.ReactNode;

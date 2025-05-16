@@ -28,6 +28,10 @@
       "digital-marketing": {
         "title": "Le blog",
         "description": "Articles de blog sur le marketing à lire sans modération."
+      },
+      "legal": {
+        "title": "Mentions légales",
+        "description": "Mentions légales pour PIMMS."
       }
     }
   }

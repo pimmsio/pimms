@@ -34,12 +34,15 @@ import { LinkCards } from "@/components/mdx/LinkCards";
 import { LinkCard } from "@/components/mdx/LinkCards";
 import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { Pre } from "@/components/mdx/Pre";
+import { articleFolders } from "@/i18n/config";
+import { TallyIframe } from "@/components/mdx/TallyIframe";
+import LogosCircle from "@/components/logos-circle";
 
 export async function generateStaticParams() {
   const allParams = [];
 
   for (const locale of locales) {
-    const pages = getPages(locale, ["blog", "guides", "tutorials"]);
+    const pages = getPages(locale, articleFolders);
     allParams.push(
       ...pages.map((page) => ({
         locale,
@@ -53,7 +56,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: MetadataProps) {
   const { slug, locale } = await params;
-  const post = getPage(locale, ["blog", "guides", "tutorials"], slug);
+  const post = getPage(locale, articleFolders, slug);
 
   if (!post) {
     return;
@@ -61,7 +64,7 @@ export async function generateMetadata({ params }: MetadataProps) {
 
   return generatePagesMetadata({
     params,
-    dir: "blog",
+    dir: "articles",
     slug,
     metadata: post.metadata,
   });
@@ -141,17 +144,18 @@ const components = {
   LinkCards,
   LinkCard,
   pre: Pre,
+  Tally: TallyIframe,
 };
 
 export default function BlogPost({ params }: Props) {
   const { slug } = use(params);
   const locale = useLocale();
-  const post = getPage(locale, ["blog", "guides", "tutorials"], slug);
+  const post = getPage(locale, articleFolders, slug);
 
   const relatedArticles =
     (post.metadata.related &&
       post.metadata.related.map((slug: string) =>
-        getPage(locale, ["blog", "guides", "tutorials"], slug)
+        getPage(locale, articleFolders, slug)
       )) ||
     [];
 
@@ -168,7 +172,7 @@ export default function BlogPost({ params }: Props) {
           {post.metadata.categories.map((category: string) => (
             <Link
               key={category}
-              href={getCanonicalLink(locale, `/blog/category/${category}`)}
+              href={getCanonicalLink(locale, `/articles/category/${category}`)}
             >
               <Label className="text-sm text-left capitalize bg-white text-[#08272E] border-[3px] border-[#3970ff] px-2.5 py-1.5 cursor-pointer">
                 {category}
@@ -190,14 +194,16 @@ export default function BlogPost({ params }: Props) {
         <div className="hidden absolute top-52 h-[calc(100%-13rem)] w-full rounded-2xl bg-gradient-to-b from-[white] md:block" />
         <div className="mx-auto w-full grid max-w-screen-lg grid-cols-4 gap-5 px-0 md:pt-10 xl:px-0">
           <article className="bg-card w-full flex flex-col items-start gap-4 md:mt-8 rounded-3xl relative col-span-4 sm:rounded-2xl sm:border-[6px] sm:border-[#F2F3F5] md:col-span-3">
-            <Image
-              className="aspect-[1200/630] rounded-t-xl object-cover"
-              src={post.metadata.image}
-              alt={post.metadata.title}
-              width={1200}
-              height={630}
-              priority
-            />
+            {post.metadata.image && (
+              <Image
+                className="aspect-[1200/630] rounded-t-xl object-cover"
+                src={post.metadata.image}
+                alt={post.metadata.title}
+                width={1200}
+                height={630}
+                priority
+              />
+            )}
             <div
               className={twMerge(
                 "flex flex-col w-full px-4 md:px-8 py-4 max-w-4xl mx-auto",
@@ -257,7 +263,7 @@ export default function BlogPost({ params }: Props) {
                     className="group flex items-center space-x-3"
                     href={getCanonicalLink(
                       locale,
-                      `/blog/author/${author.slug}`
+                      `/articles/author/${author.slug}`
                     )}
                   >
                     <img
@@ -302,7 +308,7 @@ export default function BlogPost({ params }: Props) {
               {relatedArticles.map((post) => (
                 <li key={post.slug}>
                   <Link
-                    href={`/blog/${post.slug}`}
+                    href={getCanonicalLink(locale, `/articles/${post.slug}`)}
                     className="group flex flex-col items-center gap-4 sm:flex-row bg-card border-[6px] border-[#F2F3F5] rounded-2xl p-3"
                   >
                     <Image
@@ -333,13 +339,18 @@ export default function BlogPost({ params }: Props) {
       </Section>
       <BlogStructuredData
         metadata={post.metadata}
-        url={getCanonicalLink(locale, `/blog/${slug}`)}
+        url={getCanonicalLink(locale, `/articles/${slug}`)}
         author={author}
       />
       <FaqStructuredData
-        url={getCanonicalLink(locale, `/blog/${slug}`)}
+        url={getCanonicalLink(locale, `/articles/${slug}`)}
         faqs={post.faqs}
       />
+      {!post.metadata.categories.includes("legal") && (
+        <div className="bg-zinc-100 w-full py-16">
+          <LogosCircle />
+        </div>
+      )}
     </>
   );
 }

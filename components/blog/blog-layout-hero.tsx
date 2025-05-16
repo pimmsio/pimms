@@ -18,7 +18,11 @@ export default function BlogLayoutHero() {
   const { slug } = useParams() as { slug?: string };
   const locale = useLocale();
 
-  const category = slug && BLOG_CATEGORIES.includes(slug) ? slug : "overview";
+  const allCategories = BLOG_CATEGORIES.filter(
+    (category) => category !== "legal"
+  );
+
+  const category = slug && allCategories.includes(slug) ? slug : "overview";
 
   return (
     <>
@@ -30,12 +34,12 @@ export default function BlogLayoutHero() {
           </Paragraph>
         </div>
         <nav className="mt-6 hidden w-fit mx-auto items-center space-x-2 rounded-full border-[6px] border-neutral-100 bg-white p-2 md:flex">
-          <CategoryLink title="Overview" href="/blog" active={!slug} />
-          {BLOG_CATEGORIES.map((category) => (
+          <CategoryLink title="Overview" href="/articles" active={!slug} />
+          {allCategories.map((category) => (
             <CategoryLink
               key={category}
               title={t(`category.${category}.title`)}
-              href={getCanonicalLink(locale, `/blog/category/${category}`)}
+              href={getCanonicalLink(locale, `/articles/category/${category}`)}
               active={category === slug}
             />
           ))}
@@ -53,11 +57,11 @@ export default function BlogLayoutHero() {
               mobile
               setOpenPopover={setOpenPopover}
             />
-            {BLOG_CATEGORIES.map((category) => (
+            {allCategories.map((category) => (
               <CategoryLink
                 key={category?.slug}
                 title={category?.title}
-                href={`/blog/category/${category?.slug}`}
+                href={`/articles/category/${category?.slug}`}
                 active={category?.slug === slug}
                 mobile
                 setOpenPopover={setOpenPopover}

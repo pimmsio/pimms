@@ -11,6 +11,7 @@ export type PageMetadata = {
   publishedAt: string;
   updatedAt: string;
   summary: string;
+  slug: string;
   image: string;
   categories: string[];
   author?: string;
@@ -69,6 +70,7 @@ export const parseFrontmatter = (fileContent: string) => {
     title: metadata.title as string,
     publishedAt: metadata.publishedAt as string,
     updatedAt: metadata.updatedAt as string,
+    slug: metadata.slug as string,
     summary: metadata.summary as string,
     author: metadata.author as string,
     image: metadata.image as string,

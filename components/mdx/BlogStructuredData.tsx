@@ -35,7 +35,7 @@ export const BlogStructuredData = ({
       "@type": "Person",
       name: author?.name ?? "Unknown",
       ...(author?.slug && {
-        url: getCanonicalLink(locale, `/blog/author/${author.slug}`),
+        url: getCanonicalLink(locale, `/articles/author/${author.slug}`),
       }),
     },
     mainEntityOfPage: {

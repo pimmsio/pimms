@@ -1,6 +1,6 @@
 import { defineRouting } from "next-intl/routing";
 import { createNavigation } from "next-intl/navigation";
-import { pathnames } from "./config";
+import { pathnames } from "@/i18n/pathnames";
 
 export const routing = defineRouting({
   locales: ["en", "fr"],

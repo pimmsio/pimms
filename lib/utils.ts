@@ -8,7 +8,7 @@ import {
   AlternateLinkDescriptor,
   Languages,
 } from "next/dist/lib/metadata/types/alternative-urls-types";
-import { pathnames } from "@/i18n/config";
+import { pathnames } from "@/i18n/pathnames";
 import { OpenGraphType } from "next/dist/lib/metadata/types/opengraph-types";
 
 export function cn(...inputs: ClassValue[]) {
@@ -21,6 +21,15 @@ export const getCanonicalLink = (locale: string, pathname: string) => {
   }
 
   const langPath = pathnames[pathname];
+
+  if (!langPath) {
+    console.log(pathname);
+  }
+
+  if (!langPath[locale]) {
+    return langPath["en"];
+  }
+
   return locale === "en" ? langPath[locale] : `/${locale}${langPath[locale]}`;
 };
 

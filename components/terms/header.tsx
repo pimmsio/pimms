@@ -17,15 +17,15 @@ export default function Header({ tkey }: { tkey: string }) {
         <Logo />
         <nav className="flex flex-row flex-wrap w-full items-center z-10 gap-x-3 md:gap-x-6 overflow-hidden text-[#5C5B61]">
           <NavLink
-            url={getCanonicalLink(locale, "/legal/terms")}
+            url={getCanonicalLink(locale, "/articles/terms")}
             text={t("nav.terms")}
           />
           <NavLink
-            url={getCanonicalLink(locale, "/legal/privacy")}
+            url={getCanonicalLink(locale, "/articles/privacy")}
             text={t("nav.privacy")}
           />
           <NavLink
-            url={getCanonicalLink(locale, "/legal/imprint")}
+            url={getCanonicalLink(locale, "/articles/imprint")}
             text={t("nav.imprint")}
           />
           <Link href={`${APP_URL}/login`} target="_blank" rel="noreferrer">

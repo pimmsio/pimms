@@ -25,17 +25,19 @@ export default function BlogCard({
 
   return (
     <Link
-      href={getCanonicalLink(locale, `/blog/${slug}`)}
+      href={getCanonicalLink(locale, `/articles/${slug}`)}
       className="flex flex-col bg-white overflow-hidden"
     >
-      <Image
-        className="aspect-[1200/630] object-cover"
-        src={image}
-        width={1200}
-        height={630}
-        alt={title}
-        priority={priority}
-      />
+      {image && (
+        <Image
+          className="aspect-[1200/630] object-cover"
+          src={image}
+          width={1200}
+          height={630}
+          alt={title}
+          priority={priority}
+        />
+      )}
       <div className="flex flex-1 flex-col justify-between p-6">
         <div>
           <h2 className="text-lg font-bold tracking-tight line-clamp-2">
