@@ -2,17 +2,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-05-16T21:46:01.598Z"
+    "lastmod": "2025-05-16T22:03:51.777Z"
   },
   "/solutions/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-05-16T21:46:01.599Z"
+    "lastmod": "2025-05-16T22:03:51.778Z"
   },
   "/solutions/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-05-16T21:46:01.599Z"
+    "lastmod": "2025-05-16T22:03:51.778Z"
   },
   "/articles": {
     "en": "/articles",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-05-13T00:00:00.000Z"
+    "lastmod": "2025-05-16T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -42,7 +42,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-05-13T00:00:00.000Z"
+    "lastmod": "2025-05-16T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -95,6 +95,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-05-03T00:00:00.000Z",
     "fr": "/blog/comment-les-deep-links-ameliorent-les-parcours-de-conversion"
   },
+  "/articles/how-to-analyze-referral-sources-by-utm-tags": {
+    "en": "/blog/how-to-analyze-referral-sources-by-utm-tags",
+    "lastmod": "2025-05-15T00:00:00.000Z"
+  },
+  "/articles/how-to-build-roi-dashboards-for-marketing-campaigns": {
+    "en": "/blog/how-to-build-roi-dashboards-for-marketing-campaigns",
+    "lastmod": "2025-05-15T00:00:00.000Z"
+  },
   "/articles/how-to-track-email-campaign-revenue": {
     "en": "/blog/how-to-track-email-campaign-revenue",
     "lastmod": "2025-05-02T00:00:00.000Z",
@@ -127,6 +135,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/track-stripe-payments-with-utm-parameters": {
     "en": "/blog/track-stripe-payments-with-utm-parameters",
     "lastmod": "2025-05-13T00:00:00.000Z"
+  },
+  "/articles/ultimate-guide-to-cross-channel-automation-with-make": {
+    "en": "/blog/ultimate-guide-to-cross-channel-automation-with-make",
+    "lastmod": "2025-05-16T00:00:00.000Z"
   },
   "/articles/unlock-systemeio-attribution-with-pimms": {
     "en": "/blog/unlock-systemeio-attribution-with-pimms",
