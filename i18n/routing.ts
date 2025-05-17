@@ -5,8 +5,9 @@ import { pathnames } from "@/i18n/pathnames";
 export const routing = defineRouting({
   locales: ["en", "fr"],
   defaultLocale: "en",
-  localeDetection: true,
+  localeDetection: false,
   localePrefix: "as-needed",
+  alternateLinks: true,
   pathnames,
 });
 

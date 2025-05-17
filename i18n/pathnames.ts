@@ -2,17 +2,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-05-16T22:03:51.777Z"
+    "lastmod": "2025-05-17T09:22:50.885Z"
   },
   "/solutions/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-05-16T22:03:51.778Z"
+    "lastmod": "2025-05-17T09:22:50.885Z"
   },
   "/solutions/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-05-16T22:03:51.778Z"
+    "lastmod": "2025-05-17T09:22:50.885Z"
   },
   "/articles": {
     "en": "/articles",
@@ -202,7 +202,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/utm-guide": {
     "en": "/tutorials/mastering-utm-tracking-with-deep-linking",
     "lastmod": "2025-04-29T00:00:00.000Z",
-    "fr": "/tutoriels/maîtriser-le-tracking-utm-et-le-deep-linking"
+    "fr": "/tutoriels/maitriser-le-tracking-utm-et-le-deep-linking"
   },
   "/articles/abuse": {
     "en": "/legal/report-abuse",

@@ -5,6 +5,7 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
+import redirects from "./redirect";
 const withNextIntl = createNextIntlPlugin();
 
 const withMDX = createMDX({
@@ -41,6 +42,9 @@ const nextConfig: NextConfig = {
         hostname: "www.google.com",
       },
     ],
+  },
+  async redirects() {
+    return redirects;
   },
   async rewrites() {
     return [

@@ -57,7 +57,9 @@ export async function generateLandingMetadata({
       canonical: getFullLink(canonical),
       languages: {
         en: getFullLink(langPath["en"]),
-        fr: getFullLink(`/fr${langPath["fr"]}`),
+        ...(langPath["fr"] && {
+          fr: getFullLink(`/fr${langPath["fr"]}`),
+        }),
       },
     },
   });
@@ -100,7 +102,9 @@ export async function generatePagesMetadata({
       canonical: getFullLink(canonical),
       languages: {
         en: getFullLink(langPath["en"]),
-        fr: getFullLink(`/fr${langPath["fr"]}`),
+        ...(langPath["fr"] && {
+          fr: getFullLink(`/fr${langPath["fr"]}`),
+        }),
       },
     },
     publishedTime: publishedAt,
