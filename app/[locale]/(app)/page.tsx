@@ -12,10 +12,15 @@ import LogosCircle from "@/components/logos-circle";
 import FAQ from "@/components/faq";
 import ImageSlide from "@/components/landings/Image-slide";
 import Footer from "@/components/footer/footer";
+import { generateLandingMetadata } from "@/lib/utils";
 
 const lkey = "home";
 const tkey = `landing.${lkey}`;
 const fkey = `faq.${lkey}`;
+
+export async function generateMetadata({ params }: MetadataProps) {
+  return generateLandingMetadata({ params, lkey: "home", pathname: "/" });
+}
 
 export default function Home() {
   const tcommon = useTranslations("landing.common");

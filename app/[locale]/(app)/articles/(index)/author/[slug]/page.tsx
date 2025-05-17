@@ -5,6 +5,12 @@ import BlogCard from "@/components/blog/blog-card";
 import { use } from "react";
 import { AUTHORS } from "../../../../../../constants";
 import { articleFolders } from "@/i18n/config";
+import { generateAuthorMetadata } from "@/lib/utils";
+
+export async function generateMetadata({ params }: MetadataProps) {
+  const { slug } = await params;
+  return generateAuthorMetadata({ params, slug });
+}
 
 export async function generateStaticParams() {
   return AUTHORS.map((author) => ({

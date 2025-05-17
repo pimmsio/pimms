@@ -5,6 +5,12 @@ import BlogCard from "@/components/blog/blog-card";
 import { use } from "react";
 import { BLOG_CATEGORIES } from "../../../../../../constants";
 import { articleFolders } from "@/i18n/config";
+import { generateCategoryMetadata } from "@/lib/utils";
+
+export async function generateMetadata({ params }: MetadataProps) {
+  const { slug } = await params;
+  return generateCategoryMetadata({ params, slug });
+}
 
 export async function generateStaticParams() {
   return BLOG_CATEGORIES.map((category) => ({

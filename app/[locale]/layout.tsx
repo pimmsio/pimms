@@ -3,11 +3,6 @@ import { notFound } from "next/navigation";
 import BaseLayout from "@/components/LocaleLayout";
 import "../globals.css";
 import { use } from "react";
-import { generateLandingMetadata } from "@/lib/utils";
-
-export async function generateMetadata({ params }: MetadataProps) {
-  return generateLandingMetadata({ params, lkey: "home", pathname: "/" });
-}
 
 type Props = {
   children: React.ReactNode;

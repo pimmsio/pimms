@@ -117,7 +117,7 @@ import { Analytics as PimmsAnalytics } from "@getpimms/analytics";
 />
 ```
 
-### Backend (server-side) conversion
+### Backend (server-side) conversion tracking
 
 ```ts
 import { Pimms } from "pimms";
@@ -133,6 +133,26 @@ await pimms.track.lead({
     campaign: "Launch Week",
     source: "LinkedIn Post",
   },
+});
+
+res.clearCookie("pimms_id");
+```
+
+Or use Zapier with tools like **Cal.com**, **Tally.so**, or **iClosed** to send conversions instantly.
+
+### Backend (server-side) sales tracking
+
+```ts
+import { Pimms } from "pimms";
+
+const pimms = new Pimms({ token: "YOUR_TOKEN" });
+
+await pimms.track.sale({
+  amount: 100,
+  currency: "USD",
+  eventName: "Purchase",
+  externalId: user.id,
+  paymentProcessor: "stripe",
 });
 
 res.clearCookie("pimms_id");

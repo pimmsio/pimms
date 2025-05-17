@@ -2,7 +2,7 @@ import { clsx, type ClassValue } from "clsx";
 import { Metadata } from "next";
 import { PageMetadata } from "@/lib/mdx";
 import { twMerge } from "tailwind-merge";
-import { THUMBNAIL, WEB_URL } from "@/app/constants";
+import { AUTHORS, BLOG_CATEGORIES, THUMBNAIL, WEB_URL } from "@/app/constants";
 import { getTranslations } from "next-intl/server";
 import {
   AlternateLinkDescriptor,
@@ -33,7 +33,7 @@ export const getCanonicalLink = (locale: string, pathname: string) => {
   return locale === "en" ? langPath[locale] : `/${locale}${langPath[locale]}`;
 };
 
-const getFullLink = (path: string) => {
+export const getFullLink = (path: string) => {
   return `${WEB_URL}${path}`.replace(/\/$/, "");
 };
 
@@ -53,6 +53,74 @@ export async function generateLandingMetadata({
     title: t(`${lkey}.title`),
     description: t(`${lkey}.description`),
     image: t(`${lkey}.image`),
+    alternates: {
+      canonical: getFullLink(canonical),
+      languages: {
+        en: getFullLink(langPath["en"]),
+        ...(langPath["fr"] && {
+          fr: getFullLink(`/fr${langPath["fr"]}`),
+        }),
+      },
+    },
+  });
+}
+
+export async function generateAuthorMetadata({
+  params,
+  slug,
+}: MetadataProps & {
+  slug: string;
+}) {
+  const locale = (await params).locale;
+
+  const author = AUTHORS.find((author) => author.slug === slug);
+
+  if (!author) {
+    return;
+  }
+
+  const pathname = `/articles/author/${slug}`;
+  const langPath = pathnames[pathname];
+  const canonical = getCanonicalLink(locale, pathname);
+
+  return constructMetadata({
+    title: author.name,
+    description: author.role,
+    image: author.image,
+    alternates: {
+      canonical: getFullLink(canonical),
+      languages: {
+        en: getFullLink(langPath["en"]),
+        ...(langPath["fr"] && {
+          fr: getFullLink(`/fr${langPath["fr"]}`),
+        }),
+      },
+    },
+  });
+}
+
+export async function generateCategoryMetadata({
+  params,
+  slug,
+}: MetadataProps & {
+  slug: string;
+}) {
+  const locale = (await params).locale;
+
+  const category = BLOG_CATEGORIES.find((category) => category === slug);
+
+  if (!category) {
+    return;
+  }
+
+  const pathname = `/articles/category/${slug}`;
+  const langPath = pathnames[pathname];
+  const canonical = getCanonicalLink(locale, pathname);
+
+  return constructMetadata({
+    title: category,
+    description: category,
+    image: category,
     alternates: {
       canonical: getFullLink(canonical),
       languages: {

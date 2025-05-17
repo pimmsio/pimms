@@ -139,6 +139,24 @@ await pimms.track.lead({
 res.clearCookie("pimms_id");
 ```
 
+### Backend (server-side) sales tracking
+
+```ts
+import { Pimms } from "pimms";
+
+const pimms = new Pimms({ token: "YOUR_TOKEN" });
+
+await pimms.track.sale({
+  amount: 100,
+  currency: "USD",
+  eventName: "Purchase",
+  externalId: user.id,
+  paymentProcessor: "stripe",
+});
+
+res.clearCookie("pimms_id");
+```
+
 Ou utilise Zapier avec des outils comme **Cal.com**, **Tally.so**, ou **iClosed** pour envoyer les conversions automatiquement.
 
 ---

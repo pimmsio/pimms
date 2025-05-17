@@ -36,7 +36,6 @@ import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { Pre } from "@/components/mdx/Pre";
 import { articleFolders } from "@/i18n/config";
 import { TallyIframe } from "@/components/mdx/TallyIframe";
-import LogosCircle from "@/components/logos-circle";
 
 export async function generateStaticParams() {
   const allParams = [];
@@ -346,11 +345,6 @@ export default function BlogPost({ params }: Props) {
         url={getCanonicalLink(locale, `/articles/${slug}`)}
         faqs={post.faqs}
       />
-      {!post.metadata.categories.includes("legal") && (
-        <div className="bg-zinc-100 w-full py-16">
-          <LogosCircle />
-        </div>
-      )}
     </>
   );
 }
