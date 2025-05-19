@@ -24,11 +24,7 @@ export default function RootProviders({ children }: { children: ReactNode }) {
     <PostHogProvider client={posthog}>
       <PosthogPageview />
       {children}
-      <PimmsAnalytics
-        cookieOptions={{
-          domain: ".pimms.io",
-        }}
-      />
+      <PimmsAnalytics />
       <Analytics />
       <SpeedInsights />
     </PostHogProvider>

@@ -31,12 +31,14 @@ const redirects = [
   },
   {
     source: "/blog/introducing-conversion-tracking",
-    destination: "/blog/introducing-pimms-conversion-tracking",
+    destination:
+      "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
     permanent: true,
   },
   {
     source: "/blog/conversion-tracking-introduction",
-    destination: "/blog/introducing-pimms-conversion-tracking",
+    destination:
+      "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
     permanent: true,
   },
   {
@@ -650,7 +652,8 @@ const redirects = [
   },
   {
     source: "/blog/introduction-suivi-conversion",
-    destination: "/blog/introducing-pimms-conversion-tracking",
+    destination:
+      "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
     permanent: true,
   },
   {
@@ -710,7 +713,7 @@ const redirects = [
   },
   {
     source: "/fr/blog/conversion-tracking-introduction",
-    destination: "/fr/blog/introduction-au-suivi-des-conversions-avec-pimms",
+    destination: "/fr/guides/guide-developpeur-tracking-conversions",
     permanent: true,
   },
   {
@@ -753,7 +756,18 @@ const redirects = [
   },
   {
     source: "/fr/blog/introducing-conversion",
-    destination: "/fr/blog/introduction-au-suivi-des-conversions-avec-pimms",
+    destination: "/fr/guides/guide-developpeur-tracking-conversions",
+    permanent: true,
+  },
+  {
+    source: "/blog/introducing-pimms-conversion-tracking",
+    destination:
+      "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
+    permanent: true,
+  },
+  {
+    source: "/fr/blog/introduction-au-suivi-des-conversions-avec-pimms",
+    destination: "/fr/guides/guide-developpeur-tracking-conversions",
     permanent: true,
   },
   {

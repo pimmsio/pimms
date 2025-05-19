@@ -2,32 +2,32 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-05-17T10:19:00.367Z"
+    "lastmod": "2025-05-19T22:58:28.391Z"
   },
   "/solutions/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-05-17T10:19:00.368Z"
+    "lastmod": "2025-05-19T22:58:28.391Z"
   },
   "/solutions/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-05-17T10:19:00.368Z"
+    "lastmod": "2025-05-19T22:58:28.391Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2025-05-16T00:00:00.000Z"
+    "lastmod": "2025-05-20T00:00:00.000Z"
   },
   "/articles/category/company": {
     "en": "/blog/company-news",
     "fr": "/blog/actualites-entreprise",
-    "lastmod": "2025-04-29T00:00:00.000Z"
+    "lastmod": "2025-03-19T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-05-16T00:00:00.000Z"
+    "lastmod": "2025-05-19T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -37,17 +37,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2025-05-16T00:00:00.000Z"
+    "lastmod": "2025-05-20T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-05-16T00:00:00.000Z"
+    "lastmod": "2025-05-19T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
     "fr": "/guides",
-    "lastmod": "2025-05-16T00:00:00.000Z"
+    "lastmod": "2025-05-20T00:00:00.000Z"
   },
   "/articles/category/tutorials": {
     "en": "/tutorials",
@@ -122,15 +122,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/how-utm-parameters-impact-conversion-paths",
     "lastmod": "2025-05-13T00:00:00.000Z"
   },
-  "/articles/introducing-conversion": {
-    "en": "/blog/introducing-pimms-conversion-tracking",
-    "lastmod": "2025-04-29T00:00:00.000Z",
-    "fr": "/blog/introduction-au-suivi-des-conversions-avec-pimms"
-  },
   "/articles/referrer-vs-utm-vs-fingerprinting-what-really-tells-you-where-a-click-came-from": {
     "en": "/blog/referrer-vs-utm-vs-fingerprinting-where-a-click-came-from",
     "lastmod": "2025-05-06T00:00:00.000Z",
     "fr": "/blog/referrer-vs-utm-vs-fingerprinting-ou-vient-un-clic"
+  },
+  "/articles/top-5-tools-for-funnel-behavior-tracking": {
+    "en": "/blog/top-5-tools-for-funnel-behavior-tracking",
+    "lastmod": "2025-05-19T00:00:00.000Z"
   },
   "/articles/track-stripe-payments-with-utm-parameters": {
     "en": "/blog/track-stripe-payments-with-utm-parameters",
@@ -149,6 +148,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/utm-tracking-for-organic-social-media-posts",
     "lastmod": "2025-05-09T00:00:00.000Z"
   },
+  "/articles/utm-tracking-for-social-media-campaigns-in-make": {
+    "en": "/blog/utm-tracking-for-social-media-campaigns-in-make",
+    "lastmod": "2025-05-18T00:00:00.000Z"
+  },
   "/articles/how-to-track-calendly": {
     "en": "/guides/how-to-track-calendly-bookings-marketing-attribution",
     "lastmod": "2025-05-14T00:00:00.000Z",
@@ -158,6 +161,11 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/guides/how-to-track-framer-form-submissions-marketing-attribution",
     "lastmod": "2025-05-14T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-framer-attribution-marketing"
+  },
+  "/articles/how-to-track-sales-with-stripe-checkout": {
+    "en": "/guides/track-stripe-checkout-conversions-with-pimms",
+    "lastmod": "2025-05-20T00:00:00.000Z",
+    "fr": "/guides/suivre-conversions-stripe-checkout-avec-pimms"
   },
   "/articles/how-to-track-systemeio-sales-and-leads": {
     "en": "/guides/how-to-track-systemeio-sales-and-leads-marketing-attribution",
@@ -173,6 +181,11 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/guides/how-to-track-webflow-form-submissions-marketing-attribution",
     "lastmod": "2025-05-13T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-lead-webflow-attribution-marketing"
+  },
+  "/articles/introducing-conversion": {
+    "en": "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
+    "lastmod": "2025-05-19T00:00:00.000Z",
+    "fr": "/guides/guide-developpeur-tracking-conversions"
   },
   "/articles/no-code-guide-for-website": {
     "en": "/guides/how-to-track-conversions-on-vibe-coding-ai-no-code-sites",

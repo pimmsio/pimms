@@ -1,6 +1,8 @@
 // components/mdx/LinkCards.tsx
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import { getCanonicalLink } from "@/lib/utils";
+import { useLocale } from "next-intl";
 
 export function LinkCards({ children }: { children: React.ReactNode }) {
   return (
@@ -17,9 +19,11 @@ export function LinkCard({
   title: string;
   description: string;
 }) {
+  const locale = useLocale();
+
   return (
     <Link
-      href={href}
+      href={getCanonicalLink(locale, href)}
       className="relative flex flex-col gap-1 border-[2px] border-[#F2F3F5] rounded-xl hover:bg-[#FAFAFA] transition-all p-4 cursor-pointer no-underline mt-4"
     >
       <ExternalLink

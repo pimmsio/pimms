@@ -10,6 +10,7 @@ categories:
   - guides
 related:
   - no-code-guide-for-website
+  - how-to-track-sales-with-stripe-checkout
 ---
 
 Tu veux savoir exactement quels liens ont généré des ventes sur Stripe ?
@@ -111,12 +112,18 @@ Voici comment faire :
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
 ```
 
+Pour les développeurs : alternativement, utilise le [SDK javascript et le tracking serveur](/articles/introducing-conversion)
+
 :::info
 **Vérifie que tout fonctionne (Optionnel)**
 
 Ouvre ton site et écris `window._pimmsAnalytics` dans la console du navigateur.  
 Si tout est bien installé, des valeurs s’afficheront.
 :::
+
+### ✅ Option C: Déclencher le paiement Stripe depuis ton site (Avec Stripe Checkout)
+
+Pour cette option, veuillez consulter ce guide spécifique : [Guide pour suivre les ventes avec Stripe Checkout](/articles/how-to-track-sales-with-stripe-checkout).
 
 Une fois ce setup en place — c’est bon ✅
 

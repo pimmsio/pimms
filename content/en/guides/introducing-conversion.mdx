@@ -1,0 +1,192 @@
+---
+title: Step-by-step guide for developers to set conversion tracking
+summary: Learn how to track leads, bookings, and sales using PiMMs smart links, frontend scripts, and API — full visibility, zero guesswork.
+publishedAt: 2025-05-19
+updatedAt: 2025-05-19
+slug: step-by-step-guide-for-developers-to-set-conversion-tracking
+image: https://assets.pimms.io/javascript-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - no-code-guide-for-website
+  - setup-stripe-for-website
+---
+
+Want to know exactly what drives your conversions — from the first click to the final payment?
+
+With **PiMMs**, you can track every meaningful step:
+
+- **Click** — when someone clicks a PiMMs link or scans a QR code  
+- **Lead (Conversion)** — when they fill out a form or book a meeting  
+- **Sale** — when they pay (e.g. Stripe checkout)
+
+Every PiMMs link generates a unique `pimms_id` that travels through the entire funnel. You just need to:
+
+1. Install the PiMMs script or SDK to assign the `pimms_id`  
+2. Enable conversion tracking on your links  
+3. Send the conversion event to PiMMs (via API, Zapier, or npm)
+
+## 1. Set up client-side tracking (required)
+
+To start tracking attribution, you need to capture visitors' `pimms_id` as soon as they land on your site.
+
+### Option A — Via HTML script tag (any site)
+
+Paste this inside your `<head>`:
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+### Option B — Via SDK (React / Next.js / Node.js)
+
+```js
+// Install the package (e.g. npm install @getpimms/analytics)
+import { Analytics as PimmsAnalytics } from "@getpimms/analytics"
+
+<PimmsAnalytics />
+```
+
+More information about the client-side tracking options in the [PiMMs Analytics Repository](https://github.com/getpimms/analytics)
+
+:::info
+**Check if it's working (Optional)**
+
+Open your website and type `window._pimmsAnalytics` in the browser console.  
+If everything is installed correctly, you should see some values.
+:::
+
+### Enable conversion tracking on your links
+
+Once the tracking script is in place, you need to ensure that each link is tagged for conversion tracking.
+
+#### Option 1 — Enable for the whole workspace
+
+1. Go to your **Workspace settings** → **Analytics**  
+2. Toggle on **Workspace-level Conversion Tracking**
+
+#### Option 2 — Enable per link
+
+1. Open the **Link Builder**  
+2. Toggle the **Conversion Tracking** switch  
+
+✅ A/B test links always have tracking enabled by default.
+
+## 2. Send conversion events to PiMMs (Zapier, API, or SDK)
+
+When a user converts — submits a form, books a meeting, or makes a payment — you need to report that event to PiMMs.
+
+### ➤ Track a lead
+
+There are 3 ways to do it:
+
+- **Zapier** or **Make.com** — best for tools like [Cal.com](/articles/start-with-cal-com-and-zapier), [Tally](/articles/no-code-guide-for-website), [iClosed](/articles/start-with-iclosed-and-zapier), Notion, etc.  
+- **Supported native integrations** — including:
+  - [Systeme.io](/articles/how-to-track-systemeio-sales-and-leads)
+  - [Webflow](/articles/how-to-track-webflow-leads)
+  - Calendly (guide coming soon)
+- **API or SDK** — for custom-built websites, apps, or checkouts
+
+```js
+import { Pimms } from "pimms"
+
+const pimms = new Pimms({ token: "YOUR_TOKEN" })
+
+await pimms.track.lead({
+  clickId: "pimms_id", // Get the pimms_id from the pimms_id cookie
+  eventName: "Signup",
+  customerId: "user_456", // The internal ID for this customer or email
+  customerEmail: "samantha@example.com",
+  customerName: "Samantha Li",
+  customerAvatar: "https://example.com/avatar.png"
+})
+```
+
+Notes: 
+- To create a token, go to your PiMMs dashboard → **Settings** → **API Keys**
+- The token is private — don't share it
+- `pimms_id` is a unique identifier that follows the user throughout the funnel. You can retrieve the `pimms_id` from the `pimms_id` cookie stored in the browser.
+
+More information on the [PiMMs SDK](https://github.com/getpimms/pimms-ts)
+
+More information on the [PiMMs API](https://pim.ms/api)
+
+| Property         | Description                                                                 | Required |
+|------------------|-----------------------------------------------------------------------------|----------|
+| `clickId`        | The unique `pimms_id` that this lead is attributed to (cookie)              | Yes      |
+| `eventName`      | The name of the event. Example: "Signup"                                    | Yes      |
+| `customerId`     | Internal ID for this customer or email                                      | Yes      |
+| `customerEmail`  | Email address of the customer (optional)                                    | No       |
+| `customerName`   | Name of the customer (optional)                                             | No       |
+| `customerAvatar` | Avatar URL for this user (optional)                                         | No       |
+
+### ➤ Track a sale
+
+There are two approaches to track sales:
+
+- For **Stripe Payment Links**, **Shopify**, and **Systeme.io**, you don’t need to write any code.  
+- For **custom checkouts**, use the SDK or API to report the sale manually.
+
+#### Special case: Stripe, Shopify, Systeme.io
+
+PiMMs already handles attribution for these platforms — you just need to pass the correct ID.
+
+- **Stripe Payment Links**
+
+👉 [Set up Stripe Payment Links conversion tracking](/articles/setup-stripe-for-website)
+
+- **Stripe Checkout**
+
+👉 [Set up Stripe Checkout conversion tracking](/articles/how-to-track-sales-with-stripe-checkout)
+
+- **Systeme.io**
+
+👉 [Set up Systeme.io conversion tracking](/articles/how-to-track-systemeio-sales-and-leads)
+
+- **Shopify** → *(guide coming soon)*
+
+
+Use the SDK only if you manage your own checkout or backend event reporting.
+
+#### Example: SDK usage for custom checkouts
+
+```js
+await pimms.track.sale({
+  customerId: "user_456", // The internal ID for this customer or email used to create the lead (see part 2)
+  amount: 1999,
+  currency: "eur",
+  paymentProcessor: "stripe",
+  eventName: "Premium Upgrade",
+  invoiceId: "inv_001",
+  metadata: {
+    campaign: "April Launch",
+    source: "Instagram Story"
+  }
+})
+```
+
+| Property           | Description                                                                 | Required |
+|--------------------|-----------------------------------------------------------------------------|----------|
+| `customerId`       | Internal ID for this customer or email used to create the lead              | Yes      |
+| `amount`           | Sale amount in **cents** (e.g. 1999 = €19.99)                               | Yes      |
+| `paymentProcessor` | Payment processor name (e.g. "stripe")                                      | Yes      |
+| `eventName`        | Event label (defaults to "Purchase")                                        | No       |
+| `invoiceId`        | Your internal invoice ID (optional)                                         | No       |
+| `currency`         | Currency code (defaults to "usd")                                           | No       |
+| `metadata`         | Optional object for campaign info, origin, etc.                             | No       |
+
+## 3. Advanced setup (optional)
+
+Need more flexibility? Here’s what’s possible:
+
+- **Cross-domain tracking** *(coming soon)*  
+- **Reverse-proxy support** *(coming soon)*  
+- **Use `?via=` query param** (coming soon)
+- **Restrict tracking to your domain** (coming soon)
+
+## You're all set 🎉
+
+You now have everything you need to track what really converts — with full attribution and real-time analytics.
+
+👉 [Create your first PiMMs link](https://app.pimms.io)

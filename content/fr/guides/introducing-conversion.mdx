@@ -1,0 +1,191 @@
+---
+title: Guide étape par étape pour les développeurs – configurer le tracking des conversions
+summary: Apprends à suivre les leads, prises de rendez-vous et ventes avec les liens intelligents PiMMs, des scripts frontend et l’API — visibilité complète, zéro approximations.
+publishedAt: 2025-05-19
+updatedAt: 2025-05-19
+slug: guide-developpeur-tracking-conversions
+image: https://assets.pimms.io/javascript-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - no-code-guide-for-website
+  - setup-stripe-for-website
+---
+
+Tu veux savoir exactement ce qui génère des conversions — du premier clic jusqu'au paiement final ?
+
+Avec **PiMMs**, tu peux suivre chaque étape importante :
+
+- **Clic** — lorsqu’un utilisateur clique sur un lien PiMMs ou scanne un QR code  
+- **Lead (Conversion)** — lorsqu’il remplit un formulaire ou réserve un créneau  
+- **Vente** — lorsqu’il paie (par exemple via Stripe)
+
+Chaque lien PiMMs génère un identifiant unique `pimms_id` qui suit l’utilisateur tout au long du tunnel. Tu dois simplement :
+
+1. Installer le script ou SDK PiMMs pour capter le `pimms_id`  
+2. Activer le suivi des conversions sur tes liens  
+3. Envoyer les événements de conversion à PiMMs (via API, Zapier ou npm)
+
+## 1. Configure le tracking côté client (obligatoire)
+
+Pour activer l’attribution, il faut capter le `pimms_id` dès que l’utilisateur arrive sur ton site.
+
+### Option A — Avec une balise HTML (tous sites)
+
+Colle ce code dans le `<head>` de ton site :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+### Option B — Avec le SDK (React / Next.js / Node.js)
+
+```js
+// Install the package (e.g. npm install @getpimms/analytics)
+import { Analytics as PimmsAnalytics } from "@getpimms/analytics"
+
+<PimmsAnalytics />
+```
+
+Plus d'informations sur les options de tracking côté client dans le [PiMMs Analytics Repository](https://github.com/getpimms/analytics)
+
+:::info
+**Vérifie que tout fonctionne (optionnel)**
+
+Ouvre ton site et tape `window._pimmsAnalytics` dans la console du navigateur.  
+Si tout est bien en place, tu verras des valeurs s’afficher.
+:::
+
+### Active le tracking des conversions sur tes liens
+
+Une fois le script installé, tu dois activer le suivi pour chaque lien.
+
+#### Option 1 — À l’échelle du workspace
+
+1. Va dans les **Paramètres du workspace** → **Analytics**  
+2. Active **Tracking des conversions au niveau du workspace**
+
+#### Option 2 — Lien par lien
+
+1. Ouvre le **Link Builder**  
+2. Active le toggle  **Conversion Tracking**  
+
+✅ Les tests A/B ont toujours le suivi activé par défaut.
+
+## 2. Envoie les événements de conversion à PiMMs (Zapier, API ou SDK)
+
+Quand un utilisateur convertit — formulaire, rendez-vous, paiement — tu dois envoyer l’événement à PiMMs.
+
+### ➤ Suivre un lead
+
+3 options s’offrent à toi :
+
+- **Zapier** ou **Make.com** — idéal pour les outils comme [Cal.com](/articles/start-with-cal-com-and-zapier), [Tally](/articles/no-code-guide-for-website), [iClosed](/articles/start-with-iclosed-and-zapier), Notion, etc.  
+- **Intégrations natives prises en charge**, comme :
+  - [Systeme.io](/articles/how-to-track-systemeio-sales-and-leads)
+  - [Webflow](/articles/how-to-track-webflow-leads)
+  - Calendly (guide bientôt disponible)
+- **API ou SDK** — pour les sites, apps ou tunnels personnalisés
+
+```js
+import { Pimms } from "pimms"
+
+const pimms = new Pimms({ token: "YOUR_TOKEN" })
+
+await pimms.track.lead({
+  clickId: "pimms_id", // Récupère le pimms_id depuis le cookie pimms_id
+  eventName: "Signup",
+  customerId: "user_456", // L'identifiant de l'utilisateur ou l'email
+  customerEmail: "samantha@example.com",
+  customerName: "Samantha Li",
+  customerAvatar: "https://example.com/avatar.png"
+})
+```
+
+Notes: 
+- Pour créer un token, sur ton dashboard PiMMs, va dans les **Settings** → **API Keys**
+- Le token est privé — ne le partage pas
+- `pimms_id` est un identifiant unique qui suit l’utilisateur tout au long du tunnel. Tu peux récupérer le `pimms_id` depuis le cookie `pimms_id` enregistré dans le navigateur.
+
+Plus d'informations sur le [PiMMs SDK](https://github.com/getpimms/pimms-ts)
+
+Plus d'informations sur l'API dans la [Documentation API](https://pim.ms/api)
+
+| Propriété         | Description                                                               | Obligatoire |
+|------------------|---------------------------------------------------------------------------|-------------|
+| `clickId`        | L’identifiant unique `pimms_id` de l’utilisateur (cookie)                 | Oui         |
+| `eventName`      | Nom de l’événement. Exemple : "Signup"                                    | Oui         |
+| `customerId`     | Ton identifiant interne pour l’utilisateur ou email                       | Oui         |
+| `customerEmail`  | Adresse email de l’utilisateur (optionnel)                                | Non         |
+| `customerName`   | Nom de l’utilisateur (optionnel)                                          | Non         |
+| `customerAvatar` | URL de l’avatar (optionnel)                                               | Non         |
+
+### ➤ Suivre une vente
+
+Deux manières de suivre les ventes :
+
+- Pour **Stripe Payment Links**, **Shopify**, et **Systeme.io**, **pas besoin de code**.  
+- Pour les **checkouts personnalisés**, utilise le SDK ou l’API.
+
+#### Cas particulier : Stripe, Shopify, Systeme.io
+
+PiMMs gère déjà l’attribution pour ces plateformes — il suffit de transmettre le bon identifiant.
+
+- **Stripe Payment Links**
+
+👉 [Configurer le suivi Stripe Payment Links](/articles/setup-stripe-for-website)
+
+- **Stripe Checkout**
+
+👉 [Configurer le suivi Stripe Checkout](/articles/how-to-track-sales-with-stripe-checkout)
+
+- **Systeme.io**
+
+👉 [Configurer le suivi Systeme.io](/articles/how-to-track-systemeio-sales-and-leads)
+
+- **Shopify** → *(guide bientôt disponible)*
+
+Utilise le SDK uniquement si tu gères ton propre tunnel de vente ou des événements backend.
+
+#### Exemple : Utilisation du SDK pour un tunnel personnalisé
+
+```js
+await pimms.track.sale({
+  customerId: "user_456", // L'identifiant de l'utilisateur ou l'email utilisé pour créer le lead (partie 2)
+  amount: 1999,
+  currency: "eur",
+  paymentProcessor: "stripe",
+  eventName: "Premium Upgrade",
+  invoiceId: "inv_001",
+  metadata: {
+    campaign: "April Launch",
+    source: "Instagram Story"
+  }
+})
+```
+
+| Propriété          | Description                                                            | Obligatoire |
+|--------------------|------------------------------------------------------------------------|-------------|
+| `customerId`       | Identifiant client (interne) ou email utilisé pour créer le lead       | Oui         |
+| `amount`           | Montant en **centimes** (ex : 1999 = 19,99 €)                          | Oui         |
+| `paymentProcessor` | Nom du processeur de paiement (ex : "stripe")                          | Oui         |
+| `eventName`        | Libellé de l’événement (par défaut : "Purchase")                       | Non         |
+| `invoiceId`        | ID de la facture (optionnel)                                           | Non         |
+| `currency`         | Devise (par défaut : "usd")                                            | Non         |
+| `metadata`         | Objet facultatif pour infos de campagne, source, etc.                  | Non         |
+
+## 3. Configuration avancée (optionnel)
+
+Tu veux aller plus loin ? Voici ce qui est possible :
+
+- **Suivi cross-domain** *(bientôt dispo)*  
+- **Support des reverse-proxy** *(bientôt dispo)*  
+- **Paramètre `?via=`** *(bientôt dispo)*  
+- **Limiter le tracking à ton domaine** *(bientôt dispo)*
+
+## C’est bon, tout est prêt 🎉
+
+Tu as maintenant tout ce qu’il faut pour suivre ce qui convertit vraiment — avec attribution complète et analytics en temps réel.
+
+👉 [Crée ton premier lien PiMMs](https://app.pimms.io)

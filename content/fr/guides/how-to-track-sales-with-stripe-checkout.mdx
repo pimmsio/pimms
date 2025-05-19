@@ -1,0 +1,167 @@
+---
+title: Guide pas à pas des devs pour suivre les conversions Stripe Checkout
+summary: Apprends à attribuer tes paiements Stripe Checkout avec PiMMs — connecte chaque vente à son clic d’origine avec seulement quelques lignes de code.
+publishedAt: 2025-05-20
+updatedAt: 2025-05-20
+slug: suivre-conversions-stripe-checkout-avec-pimms
+image: https://assets.pimms.io/stripe-checkout-guide-pimms.webp?v=2
+author: alexandre
+categories:
+  - guides
+related:
+  - setup-stripe-for-website
+  - introducing-conversion
+---
+
+Tu veux savoir exactement quel clic a généré une vente Stripe Checkout ?
+
+Ce guide t’explique comment suivre les **événements de vente** avec **Stripe Checkout**, en utilisant **PiMMs** — la méthode recommandée pour les développeurs.
+
+👉 Avant de commencer, assure-toi de bien comprendre le fonctionnement de l’attribution dans PiMMs :  
+📘 [Comment PiMMs suit les clics, les leads et les ventes](/articles/introducing-conversion)
+
+## Ce que tu vas accomplir
+
+À la fin de ce guide, tu seras capable de :
+
+- Suivre automatiquement chaque vente réalisée via Stripe Checkout  
+- L’attribuer au bon lien PiMMs (clic source)  
+- Lier cette conversion à un utilisateur ou client dans ton app  
+
+PiMMs s’occupe de la complexité technique — tu n’as qu’à transmettre les bons identifiants au bon moment.
+
+## 1. Prérequis
+
+Avant d’attaquer le code, vérifie que tu as bien fait les étapes suivantes :
+
+- **Le tracking côté client est activé**
+
+Voir [Installer le script ou SDK PiMMs sur ton site](/articles/introducing-conversion)
+
+- **Tes liens ont le suivi de conversion activé**
+
+Soit globalement dans les **paramètres de l’espace de travail**, soit lien par lien via le **Link Builder**.
+
+- **L’intégration officielle PiMMs x Stripe est installée**
+
+Suis les étapes dans le [guide Stripe](/articles/setup-stripe-for-website)
+
+## 2. Utilise les sessions Checkout pour suivre les ventes
+
+Si tu utilises `stripe.checkout.sessions.create`, il te suffit de transmettre le bon identifiant utilisateur au moment de créer la session.
+
+Ça permet à PiMMs de relier l’achat au clic d’origine et à l’utilisateur dans ta base.
+
+Utilise l'identifiant que tu as utilisé pour créer la conversion.
+
+Exemple :
+
+```js
+import { stripe } from "@/lib/stripe"
+
+const user = {
+  id: "user_123",
+  email: "user@example.com"
+}
+
+const pimms_id = req.cookies["pimms_id"]
+
+const session = await stripe.checkout.sessions.create({
+  customer_email: user.email,
+  client_reference_id: "project_123",
+  metadata: {
+    // ton identifiant utilisateur interne (celui utilisé pour créer la conversion)
+    pimmsCustomerId: user.id 
+  }
+})
+```
+
+Et c’est tout.
+
+## 3. Utiliser les objets Stripe Customer (flux alternatif)
+
+Si tu **n’utilises pas Stripe Checkout**, tu peux quand même faire l’attribution en stockant les données dans l’objet **Customer** de Stripe.
+
+### Option A — Lors de la création du client
+
+Transmets les valeurs `pimmsCustomerId` et `pimmsClickId` dans les métadonnées :
+
+```js
+import { stripe } from "@/lib/stripe"
+
+const user = {
+  id: "user_123",
+  email: "user@example.com",
+  teamId: "team_xxxxxxxxx"
+}
+
+const pimms_id = req.headers.get("pimms_id")
+
+await stripe.customers.create({
+  email: user.email,
+  name: user.name,
+  metadata: {
+    // ton identifiant utilisateur interne (celui utilisé pour créer la conversion)
+    pimmsCustomerId: user.id,
+    // récupère le pimms_id depuis le cookie (conseillé) ou window.pimms_id
+    pimmsClickId: pimms_id
+  }
+})
+```
+
+### Option B — Mise à jour d’un client existant
+
+Même logique, mais avec `.update` :
+
+```js
+import { stripe } from "@/lib/stripe"
+
+const user = {
+  id: "user_123",
+  email: "user@example.com",
+  teamId: "team_xxxxxxxxx"
+}
+
+const pimms_id = req.headers.get("pimms_id")
+
+await stripe.customers.update(user.id, {
+  metadata: {
+    // ton identifiant utilisateur interne (celui utilisé pour créer la conversion)
+    pimmsCustomerId: user.id,
+    // récupère le pimms_id depuis le cookie (conseillé) ou window.pimms_id
+    pimmsClickId: pimms_id
+  }
+})
+```
+
+✅ Cela permet à PiMMs de rattacher les paiements futurs (factures, renouvellements...) au clic d’origine.
+
+## 4. Ce que PiMMs suit automatiquement
+
+Une fois l’intégration en place, PiMMs écoute automatiquement les événements Stripe suivants :
+
+- `checkout.session.completed` — événement principal de conversion  
+- `invoice.paid` — pour les abonnements  
+- `customer.created`, `customer.updated` — pour la correspondance ID  
+- `charge.refunded` — pour gérer les remboursements  
+
+Tu n’as **pas besoin de gérer les webhooks** : PiMMs s’en occupe.
+
+## Gestion des devises (bientôt disponible)
+
+La prise en charge multi-devises arrive bientôt.
+
+Pour l’instant, PiMMs convertit automatiquement tous les montants en USD avec un taux de change en temps réel. Le paramétrage de la devise au niveau de l’espace de travail sera ajouté prochainement.
+
+## Et si j’utilise les Stripe Payment Links ?
+
+Si tu utilises les Payment Links à la place de Stripe Checkout, suis plutôt ce guide :  
+👉 [Suivre les ventes avec Stripe Payment Links](/articles/setup-stripe-for-website)
+
+## C’est terminé 🎉
+
+Stripe Checkout est maintenant entièrement connecté à ton système d’attribution PiMMs.
+
+Chaque vente est reliée au bon lien, à la bonne campagne, au bon utilisateur — sans aucun effort manuel.
+
+👉 [Suis ta première vente](https://app.pimms.io)

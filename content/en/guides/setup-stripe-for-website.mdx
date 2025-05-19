@@ -10,6 +10,7 @@ categories:
   - guides
 related:
   - no-code-guide-for-website
+  - how-to-track-sales-with-stripe-checkout
 ---
 
 Want to know exactly which links generated your Stripe sales?
@@ -85,7 +86,7 @@ When someone clicks this link and completes the payment, PiMMs will automaticall
 
 ---
 
-### ✅ Option B: Trigger the Stripe payment from your website
+### ✅ Option B: Trigger the Stripe payment from your website (Using Stripe Payment Links)
 
 Use this when the Stripe payment link is **triggered by a button click on your website**.
 
@@ -111,12 +112,18 @@ To do that:
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
 ```
 
+For developers: alternatively, use the [PiMMs SDK and Server-side tracking](/articles/introducing-conversion)
+
 :::info
 **Check if it's working (Optional)**
 
 Open your website and type `window._pimmsAnalytics` in the browser console.  
 If everything is installed correctly, you should see some values.
 :::
+
+### ✅ Option C: Trigger the Stripe payment from your website (Using Stripe Checkout)
+
+For this option, please refer to this specific [guide](/articles/how-to-track-sales-with-stripe-checkout).
 
 Once this setup is done — you’re all set ✅
 
