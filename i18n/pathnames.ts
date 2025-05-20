@@ -2,17 +2,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-05-19T22:58:28.391Z"
+    "lastmod": "2025-05-21T14:57:55.813Z"
   },
   "/solutions/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-05-19T22:58:28.391Z"
+    "lastmod": "2025-05-21T14:57:55.814Z"
   },
   "/solutions/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-05-19T22:58:28.391Z"
+    "lastmod": "2025-05-21T14:57:55.814Z"
   },
   "/articles": {
     "en": "/articles",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-05-19T00:00:00.000Z"
+    "lastmod": "2025-05-20T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -42,7 +42,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-05-19T00:00:00.000Z"
+    "lastmod": "2025-05-20T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -71,6 +71,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/ab-testing-steps-for-funnel-optimization",
     "lastmod": "2025-05-05T00:00:00.000Z",
     "fr": "/blog/ab-testing-pour-optimiser-son-tunnel-de-conversion"
+  },
+  "/articles/bitly-vs-pimms-what-founders-really-need-beyond-click-tracking": {
+    "en": "/blog/bitly-vs-pimms-what-founders-really-need-beyond-click-tracking",
+    "lastmod": "2025-05-20T00:00:00.000Z"
   },
   "/articles/deep-linking-for-influencer-campaigns-basics": {
     "en": "/blog/deep-linking-for-influencer-campaigns-basics",
@@ -131,6 +135,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/top-5-tools-for-funnel-behavior-tracking",
     "lastmod": "2025-05-19T00:00:00.000Z"
   },
+  "/articles/top-7-attribution-tools-for-startups-no-code-and-dev-friendly": {
+    "en": "/blog/top-7-attribution-tools-for-startups-no-code-and-dev-friendly",
+    "lastmod": "2025-05-20T00:00:00.000Z"
+  },
+  "/articles/track-conversions-from-webflow-tally-or-typeform-in-under-3-minutes": {
+    "en": "/blog/track-conversions-from-webflow-tally-or-typeform-in-under-3-minutes",
+    "lastmod": "2025-05-20T00:00:00.000Z"
+  },
   "/articles/track-stripe-payments-with-utm-parameters": {
     "en": "/blog/track-stripe-payments-with-utm-parameters",
     "lastmod": "2025-05-13T00:00:00.000Z"
@@ -151,6 +163,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/utm-tracking-for-social-media-campaigns-in-make": {
     "en": "/blog/utm-tracking-for-social-media-campaigns-in-make",
     "lastmod": "2025-05-18T00:00:00.000Z"
+  },
+  "/articles/vibe-coding-meets-analytics-how-to-instrument-your-ai-generated-app-with-no-effort": {
+    "en": "/blog/vibe-coding-meets-analytics-how-to-instrument-your-ai-generated-app-with-no-effort",
+    "lastmod": "2025-05-20T00:00:00.000Z"
   },
   "/articles/how-to-track-calendly": {
     "en": "/guides/how-to-track-calendly-bookings-marketing-attribution",

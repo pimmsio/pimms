@@ -14,11 +14,15 @@
       "category": {
         "help": "Help",
         "solutions": "Solutions",
-        "resources": "Resources"
+        "resources": "Resources",
+        "alternatives": "Alternatives"
       },
       "solutions": {
         "youtube": "YouTube content creators",
         "amazon": "Amazon sellers and merchants"
+      },
+      "alternatives": {
+        "bitly": "Bitly Alternatives"
       },
       "resources": {
         "blog": "Blog",

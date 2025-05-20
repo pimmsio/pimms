@@ -392,6 +392,11 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/blog/suivre-revenus-campagnes-email",
+    destination: "/fr/blog/comment-suivre-les-revenus-des-campagnes-emailing",
+    permanent: true,
+  },
+  {
     source: "/blog/quest-ce-que-pimms",
     destination: "/blog/what-is-pimms",
     permanent: true,
@@ -430,6 +435,11 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/blog/suivre-revenu-par-clic",
+    destination: "/fr/blog/comment-suivre-le-revenu-par-clic",
+    permanent: true,
+  },
+  {
     source: "/blog/auteur/emma",
     destination: "/articles/author/emma",
     permanent: true,
@@ -438,6 +448,11 @@ const redirects = [
     source: "/blog/origine-clic-referrer-utm-fingerprint",
     destination:
       "/blog/referrer-vs-utm-vs-fingerprinting-where-a-click-came-from",
+    permanent: true,
+  },
+  {
+    source: "/fr/blog/origine-clic-referrer-utm-fingerprint",
+    destination: "/fr/blog/referrer-vs-utm-vs-fingerprinting-ou-vient-un-clic",
     permanent: true,
   },
   {
@@ -454,7 +469,7 @@ const redirects = [
 
   // new redirects missing
   {
-    source: "/blog/quest-ce-que-pimms",
+    source: "/fr/blog/quest-ce-que-pimms",
     destination: "/fr/blog/what-is-pimms",
     permanent: true,
   },
@@ -471,7 +486,7 @@ const redirects = [
     permanent: true,
   },
   {
-    source: "/legal/politique-de-confidentialite",
+    source: "/fr/legal/politique-de-confidentialite",
     destination: "/fr/legal/privacy-policy",
     permanent: true,
   },
@@ -482,7 +497,14 @@ const redirects = [
     permanent: true,
   },
   {
-    source: "/blog/suivre-paiements-stripe-balises-utm",
+    source: "/fr/blog/suivre-paiements-stripe-balises-utm",
+    destination:
+      "/fr/guides/comment-suivre-ventes-stripe-attribution-marketing",
+    permanent: true,
+  },
+  {
+    source:
+      "/fr/blog/configurer-stripe-tracking-paiements-avec-pimms-pour-site-web",
     destination:
       "/fr/guides/comment-suivre-ventes-stripe-attribution-marketing",
     permanent: true,
@@ -494,13 +516,19 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/guides/comment-suivre-formulaires-lead-webflow",
+    destination:
+      "/fr/guides/comment-suivre-formulaires-lead-webflow-attribution-marketing",
+    permanent: true,
+  },
+  {
     source: "/fr/guides/how-to-track-webflow-form-submissions",
     destination:
       "/fr/guides/comment-suivre-formulaires-lead-webflow-attribution-marketing",
     permanent: true,
   },
   {
-    source: "/blog/ameliorer-conversions-apps-2025",
+    source: "/fr/blog/ameliorer-conversions-apps-2025",
     destination:
       "/fr/blog/7-moyens-pour-booster-les-conversions-des-apps-mobiles-en-2025",
     permanent: true,
@@ -528,12 +556,17 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/blog/category/actualites-entreprise",
+    destination: "/fr/blog/actualites-entreprise",
+    permanent: true,
+  },
+  {
     source: "/legal/mentions-legales",
     destination: "/fr/legal/imprint",
     permanent: true,
   },
   {
-    source: "/blog/deeplink-campagnes-influence",
+    source: "/fr/blog/deeplink-campagnes-influence",
     destination: "/fr/blog/les-bases-du-marketing-influence-avec-deep-linking",
     permanent: true,
   },
@@ -546,6 +579,12 @@ const redirects = [
   { source: "/fr/tutorials", destination: "/fr/tutoriels", permanent: true },
   {
     source: "/guides/comment-suivre-ventes-stripe",
+    destination:
+      "/fr/guides/comment-suivre-ventes-stripe-attribution-marketing",
+    permanent: true,
+  },
+  {
+    source: "/fr/guides/comment-suivre-ventes-stripe",
     destination:
       "/fr/guides/comment-suivre-ventes-stripe-attribution-marketing",
     permanent: true,
@@ -564,7 +603,7 @@ const redirects = [
   },
   {
     source: "/blog/category/marketing-digital",
-    destination: "/fr/blog/marketing",
+    destination: "/blog/marketing",
     permanent: true,
   },
   {
@@ -580,12 +619,24 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/blog/suivre-performances-liens-canaux",
+    destination:
+      "/fr/blog/comment-suivre-la-performance-des-liens-sur-plusieurs-canaux",
+    permanent: true,
+  },
+  {
     source: "/blog/auteur/emma",
     destination: "/fr/articles/auteur/emma",
     permanent: true,
   },
   {
     source: "/blog/deeplink-vs-universal-links",
+    destination:
+      "/fr/blog/deep-links-vs-universal-links-quelle-est-la-difference",
+    permanent: true,
+  },
+  {
+    source: "/fr/blog/deeplink-vs-universal-links",
     destination:
       "/fr/blog/deep-links-vs-universal-links-quelle-est-la-difference",
     permanent: true,
@@ -608,13 +659,19 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/guides/comment-suivre-reservations-cal-com",
+    destination:
+      "/fr/guides/comment-suivre-reservations-cal-com-attribution-marketing",
+    permanent: true,
+  },
+  {
     source: "/blog/optimisation-funnel-test-ab",
     destination: "/fr/blog/ab-testing-pour-optimiser-son-tunnel-de-conversion",
     permanent: true,
   },
   {
-    source: "/blog/5-funnel-tracking-errors-that-skew-data",
-    destination: "/blog/5-funnel-tracking-errors-that-skew-data",
+    source: "/fr/blog/optimisation-funnel-test-ab",
+    destination: "/fr/blog/ab-testing-pour-optimiser-son-tunnel-de-conversion",
     permanent: true,
   },
   {
@@ -623,7 +680,19 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/blog/debloquer-attribution-systemeio-pimms",
+    destination:
+      "/fr/guides/comment-suivre-ventes-et-leads-systemeio-attribution-marketing",
+    permanent: true,
+  },
+  {
     source: "/blog/deeplink-chemins-conversion",
+    destination:
+      "/fr/blog/comment-les-deep-links-ameliorent-les-parcours-de-conversion",
+    permanent: true,
+  },
+  {
+    source: "/fr/blog/deeplink-chemins-conversion",
     destination:
       "/fr/blog/comment-les-deep-links-ameliorent-les-parcours-de-conversion",
     permanent: true,
@@ -634,7 +703,22 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/blog/effet-parametres-utm-conversions",
+    destination: "/blog/how-utm-parameters-impact-conversion-paths",
+    permanent: true,
+  },
+  {
     source: "/blog/erreurs-suivi-funnel",
+    destination: "/blog/5-funnel-tracking-errors-that-skew-data",
+    permanent: true,
+  },
+  {
+    source: "/fr/blog/erreurs-suivi-funnel",
+    destination: "/blog/5-funnel-tracking-errors-that-skew-data",
+    permanent: true,
+  },
+  {
+    source: "/fr/blog/funnel-tracking-errors",
     destination: "/blog/5-funnel-tracking-errors-that-skew-data",
     permanent: true,
   },
@@ -646,18 +730,25 @@ const redirects = [
     permanent: true,
   },
   {
-    source: "/blog/how-utm-parameters-impact-conversion-paths",
-    destination: "/blog/how-utm-parameters-impact-conversion-paths",
-    permanent: true,
-  },
-  {
     source: "/blog/introduction-suivi-conversion",
     destination:
       "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
     permanent: true,
   },
   {
+    source: "/fr/blog/introduction-suivi-conversion",
+    destination:
+      "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
+    permanent: true,
+  },
+  {
     source: "/blog/liens-dynamiques-meilleures-conversions",
+    destination:
+      "/blog/dynamic-link-personalization-tips-for-higher-conversions",
+    permanent: true,
+  },
+  {
+    source: "/fr/blog/liens-dynamiques-meilleures-conversions",
     destination:
       "/blog/dynamic-link-personalization-tips-for-higher-conversions",
     permanent: true,
@@ -771,6 +862,11 @@ const redirects = [
     permanent: true,
   },
   {
+    source: "/fr/blog/lancement-suivi-des-conversions",
+    destination: "/fr/guides/guide-developpeur-tracking-conversions",
+    permanent: true,
+  },
+  {
     source: "/fr/blog/referrer-vs-utm-vs-fingerprinting",
     destination: "/fr/blog/referrer-vs-utm-vs-fingerprinting-ou-vient-un-clic",
     permanent: true,
@@ -866,6 +962,16 @@ const redirects = [
   },
   {
     source: "/tutoriels/guide-balises-utm",
+    destination: "/fr/tutoriels/maitriser-le-tracking-utm-et-le-deep-linking",
+    permanent: true,
+  },
+  {
+    source: "/fr/tutoriels/guide-balises-utm",
+    destination: "/fr/tutoriels/maitriser-le-tracking-utm-et-le-deep-linking",
+    permanent: true,
+  },
+  {
+    source: "/fr/tutoriels/ma%C3%AEtriser-le-tracking-utm-et-le-deep-linking",
     destination: "/fr/tutoriels/maitriser-le-tracking-utm-et-le-deep-linking",
     permanent: true,
   },
