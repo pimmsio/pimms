@@ -36,6 +36,7 @@ import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { Pre } from "@/components/mdx/Pre";
 import { articleFolders } from "@/i18n/config";
 import { TallyIframe } from "@/components/mdx/TallyIframe";
+import { BreadcrumbStructuredData } from "@/components/mdx/BreadcrumbStructuredData";
 
 export async function generateStaticParams() {
   const allParams = [];
@@ -336,7 +337,13 @@ export default function BlogPost({ params }: Props) {
           </div>
         )}
       </Section>
+      <BreadcrumbStructuredData
+        slug={slug}
+        category={post.metadata.categories[0]}
+        metadata={post.metadata}
+      />
       <BlogStructuredData
+        type={post.dir}
         metadata={post.metadata}
         url={getCanonicalLink(locale, `/articles/${slug}`)}
         author={author}

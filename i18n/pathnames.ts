@@ -2,32 +2,32 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-05-21T14:57:55.813Z"
+    "lastmod": "2025-05-21T21:03:43.186Z"
   },
   "/solutions/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-05-21T14:57:55.814Z"
+    "lastmod": "2025-05-21T21:03:43.186Z"
   },
   "/solutions/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-05-21T14:57:55.814Z"
+    "lastmod": "2025-05-21T21:03:43.186Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2025-05-20T00:00:00.000Z"
+    "lastmod": "2025-05-22T00:00:00.000Z"
   },
   "/articles/category/company": {
     "en": "/blog/company-news",
     "fr": "/blog/actualites-entreprise",
-    "lastmod": "2025-03-19T00:00:00.000Z"
+    "lastmod": "2025-05-21T21:03:43.186Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-05-20T00:00:00.000Z"
+    "lastmod": "2025-05-22T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -42,7 +42,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-05-20T00:00:00.000Z"
+    "lastmod": "2025-05-22T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -99,6 +99,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-05-03T00:00:00.000Z",
     "fr": "/blog/comment-les-deep-links-ameliorent-les-parcours-de-conversion"
   },
+  "/articles/how-to-add-analytics-to-vibe-coded-app": {
+    "en": "/blog/how-to-add-analytics-to-vibe-coded-app",
+    "lastmod": "2025-05-22T00:00:00.000Z"
+  },
   "/articles/how-to-analyze-referral-sources-by-utm-tags": {
     "en": "/blog/how-to-analyze-referral-sources-by-utm-tags",
     "lastmod": "2025-05-15T00:00:00.000Z"
@@ -121,6 +125,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/how-to-track-revenue-per-click",
     "lastmod": "2025-05-04T00:00:00.000Z",
     "fr": "/blog/comment-suivre-le-revenu-par-clic"
+  },
+  "/articles/how-to-track-stripe-sales-and-subscriptions-with-utm-links-without-writing-code": {
+    "en": "/blog/how-to-track-stripe-sales-and-subscriptions-with-utm-links-without-writing-code",
+    "lastmod": "2025-05-21T00:00:00.000Z"
   },
   "/articles/how-utm-parameters-impact-conversion-paths": {
     "en": "/blog/how-utm-parameters-impact-conversion-paths",
@@ -151,6 +159,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/ultimate-guide-to-cross-channel-automation-with-make",
     "lastmod": "2025-05-16T00:00:00.000Z"
   },
+  "/articles/ultimate-guide-to-no-code-deep-linking": {
+    "en": "/blog/ultimate-guide-to-no-code-deep-linking",
+    "lastmod": "2025-05-22T00:00:00.000Z"
+  },
   "/articles/unlock-systemeio-attribution-with-pimms": {
     "en": "/blog/unlock-systemeio-attribution-with-pimms",
     "lastmod": "2025-05-07T00:00:00.000Z",
@@ -163,6 +175,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/utm-tracking-for-social-media-campaigns-in-make": {
     "en": "/blog/utm-tracking-for-social-media-campaigns-in-make",
     "lastmod": "2025-05-18T00:00:00.000Z"
+  },
+  "/articles/utm-tracking-for-social-media-segments": {
+    "en": "/blog/utm-tracking-for-social-media-segments",
+    "lastmod": "2025-05-21T00:00:00.000Z"
   },
   "/articles/vibe-coding-meets-analytics-how-to-instrument-your-ai-generated-app-with-no-effort": {
     "en": "/blog/vibe-coding-meets-analytics-how-to-instrument-your-ai-generated-app-with-no-effort",

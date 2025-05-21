@@ -17,6 +17,50 @@
     },
     "abuse": {
       "title": "Report abuse"
+    },
+    "articles": {
+      "overview": {
+        "title": "PIMMS | Overview of our blog and articles",
+        "description": "Latest articles, guides, tutorials and more from PIMMS",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "company": {
+        "title": "PIMMS | Company news",
+        "description": "Updates and announcements from PIMMS",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "guides": {
+        "title": "PIMMS | Step-by-step guides to help you get started",
+        "description": "Step-by-step guides to help you get started with PIMMS such as how to create a deeplink or how to use the API and track your links.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "tutorials": {
+        "title": "PIMMS | Tutorials to learn more",
+        "description": "Tutorials to learn more about PIMMS such as how to create a deeplink or how to use the API and track your links.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "digital-marketing": {
+        "title": "PIMMS | Blog posts about digital marketing you should read",
+        "description": "Blog posts about digital marketing you should read.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "legal": {
+        "title": "PIMMS | Legal documents",
+        "description": "Legal documents for PIMMS such as our terms of service and privacy policy.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      }
+    },
+    "authors": {
+      "emma": {
+        "title": "PIMMS | Emma author and writer of the blog posts",
+        "description": "Emma is a digital marketing expert that writes about the latest trends in digital marketing, link attribution, deeplinks and more.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "alexandre": {
+        "title": "PIMMS | Founder Alexandre Sarfati",
+        "description": "Alexandre Sarfati is the founder of PIMMS and the author of articles and guides about link attribution, deeplinks and more.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      }
     }
   }
 }

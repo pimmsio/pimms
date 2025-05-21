@@ -17,6 +17,50 @@
     },
     "abuse": {
       "title": "Signaler un abus"
+    },
+    "articles": {
+      "overview": {
+        "title": "PIMMS | Vue d'ensemble de notre blog et articles",
+        "description": "Derniers articles, guides, tutoriels et plus encore de PIMMS",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "company": {
+        "title": "PIMMS | Actualités et annonces de PIMMS",
+        "description": "Actualités et annonces de PIMMS",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "guides": {
+        "title": "PIMMS | Guides pour vous aider à commencer",
+        "description": "Guides pour vous aider à commencer avec PIMMS, tels que comment créer un deeplink ou comment utiliser l'API et suivre vos liens.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "tutorials": {
+        "title": "PIMMS | Tutoriels pour en savoir plus",
+        "description": "Tutoriels pour en savoir plus sur PIMMS, tels que comment créer un deeplink ou comment utiliser l'API et suivre vos liens.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "digital-marketing": {
+        "title": "PIMMS | Articles de blog sur le marketing numérique à lire",
+        "description": "Articles de blog sur le marketing numérique à lire.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "legal": {
+        "title": "PIMMS | Documents légaux",
+        "description": "Documents légaux pour PIMMS, tels que notre politique de confidentialité et nos conditions d'utilisation.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      }
+    },
+    "authors": {
+      "emma": {
+        "title": "PIMMS | Emma auteur et écrivaine du blog",
+        "description": "Emma est une experte en marketing numérique qui écrit sur les dernières tendances en marketing numérique, attribution de liens, deeplinks et plus encore.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "alexandre": {
+        "title": "PIMMS | Fondateur Alexandre Sarfati",
+        "description": "Alexandre Sarfati est le fondateur de PIMMS et l'auteur d'articles et de guides sur l'attribution de liens, les deeplinks et plus encore.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      }
     }
   }
 }

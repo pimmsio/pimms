@@ -34,7 +34,11 @@ export default function BlogLayoutHero() {
           </Paragraph>
         </div>
         <nav className="mt-6 hidden w-fit mx-auto items-center space-x-2 rounded-full border-[6px] border-neutral-100 bg-white p-2 md:flex">
-          <CategoryLink title="Overview" href="/articles" active={!slug} />
+          <CategoryLink
+            title={t("category.overview.title")}
+            href={getCanonicalLink(locale, "/articles")}
+            active={!slug}
+          />
           {allCategories.map((category) => (
             <CategoryLink
               key={category}

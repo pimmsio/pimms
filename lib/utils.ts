@@ -72,21 +72,26 @@ export async function generateAuthorMetadata({
   slug: string;
 }) {
   const locale = (await params).locale;
-
+  const t = await getTranslations({ locale, namespace: "metadata" });
   const author = AUTHORS.find((author) => author.slug === slug);
 
   if (!author) {
     return;
   }
 
+  const title = t(`authors.${slug}.title`);
+  const summary = t(`authors.${slug}.description`);
+  const metadataImage = t(`authors.${slug}.image`);
+
   const pathname = `/articles/author/${slug}`;
   const langPath = pathnames[pathname];
   const canonical = getCanonicalLink(locale, pathname);
 
   return constructMetadata({
-    title: author.name,
-    description: author.role,
-    image: author.image,
+    title,
+    description: summary,
+    image: metadataImage,
+    author: author.name,
     alternates: {
       canonical: getFullLink(canonical),
       languages: {
@@ -106,6 +111,7 @@ export async function generateCategoryMetadata({
   slug: string;
 }) {
   const locale = (await params).locale;
+  const t = await getTranslations({ locale, namespace: "metadata" });
 
   const category = BLOG_CATEGORIES.find((category) => category === slug);
 
@@ -113,14 +119,18 @@ export async function generateCategoryMetadata({
     return;
   }
 
+  const title = t(`articles.${slug}.title`);
+  const summary = t(`articles.${slug}.description`);
+  const metadataImage = t(`articles.${slug}.image`);
+
   const pathname = `/articles/category/${slug}`;
   const langPath = pathnames[pathname];
   const canonical = getCanonicalLink(locale, pathname);
 
   return constructMetadata({
-    title: category,
-    description: category,
-    image: category,
+    title,
+    description: summary,
+    image: metadataImage,
     alternates: {
       canonical: getFullLink(canonical),
       languages: {
@@ -155,17 +165,26 @@ export async function generatePagesMetadata({
     image: metadataImage,
     title,
     summary,
+    author,
   } = metadata;
+
+  const authorName = author
+    ? AUTHORS.find((a) => a.slug === author)?.name
+    : undefined;
+
   const image = metadataImage
     ? metadataImage
     : `${WEB_URL}/api/og?title=${encodeURIComponent(
         title
       )}&description=${encodeURIComponent(summary)}`;
 
+  console.log(pathname, langPath, canonical, image);
+
   return constructMetadata({
     title,
     description: summary,
     image,
+    author: authorName,
     alternates: {
       canonical: getFullLink(canonical),
       languages: {
@@ -194,6 +213,7 @@ export function constructMetadata({
   publishedTime,
   modifiedTime,
   type,
+  author,
 }: {
   title: string;
   description: string;
@@ -214,6 +234,7 @@ export function constructMetadata({
   publishedTime?: string;
   modifiedTime?: string;
   type?: OpenGraphType;
+  author?: string;
 }): Metadata {
   return {
     title,
@@ -227,19 +248,16 @@ export function constructMetadata({
           url: image,
         },
       ],
-      ...(publishedTime && {
-        publishedTime,
-      }),
-      ...(modifiedTime && {
-        modifiedTime,
-      }),
+      ...(publishedTime && { publishedTime }),
+      ...(modifiedTime && { modifiedTime }),
+      ...(author && { authors: [author] }), // ✅ Ajouté ici
     },
     twitter: {
       card: "summary_large_image",
       title,
       description,
       images: [image],
-      // creator: "@",
+      // creator: "@handle" si tu veux l'ajouter aussi
     },
     icons,
     ...(noIndex && {
@@ -249,5 +267,6 @@ export function constructMetadata({
       },
     }),
     alternates,
+    ...(author && { other: { author } }), // ✅ Balise classique <meta name="author">
   };
 }

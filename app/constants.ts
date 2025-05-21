@@ -43,7 +43,7 @@ export const WORDMARK_BLACK = "https://assets.pimms.io/wordmark-black.png";
 export const THUMBNAIL = "https://assets.pimms.io/thumbnail.jpg?v=3";
 
 export const BLOG_CATEGORIES = [
-  "company",
+  // "company",
   "guides",
   "tutorials",
   "digital-marketing",

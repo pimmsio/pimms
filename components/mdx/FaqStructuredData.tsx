@@ -3,8 +3,6 @@ import striptags from "striptags";
 import removeMarkdown from "remove-markdown";
 import { useLocale } from "next-intl";
 
-const MAX_LENGTH = 750;
-
 export function FaqStructuredData({
   faqs,
   url,
@@ -17,14 +15,10 @@ export function FaqStructuredData({
   if (!faqs || faqs.length === 0) return null;
 
   const cleanText = (text: string): string => {
-    const cleaned = removeMarkdown(striptags(text))
+    return removeMarkdown(striptags(text))
       .replace(/[\r\n]+/g, " ")
       .replace(/\s+/g, " ")
       .trim();
-
-    return cleaned.length > MAX_LENGTH
-      ? cleaned.slice(0, MAX_LENGTH - 1) + "…"
-      : cleaned;
   };
 
   const jsonLd = {

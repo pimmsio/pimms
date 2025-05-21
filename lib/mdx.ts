@@ -172,12 +172,15 @@ export const getPage = (
 
   const { metadata, content } = readMDXFile(pathToUse);
   const faqs = extractFaqsFromMdxSync(content);
+  // extract dir from pathToUse
+  const dir = pathToUse.split("/").slice(-2, -1)[0];
 
   return {
     metadata,
     slug,
     content,
     faqs,
+    dir,
   };
 };
 

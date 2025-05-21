@@ -3,14 +3,23 @@ import { PageMetadata } from "../../lib/mdx";
 import { getCanonicalLink } from "../../lib/utils";
 import { useLocale } from "next-intl";
 
+const typeMap = {
+  blog: "BlogPosting",
+  guides: "TechArticle",
+  tutorials: "Article",
+  legal: "Article",
+};
+
 export const BlogStructuredData = ({
   metadata,
   url,
   author,
+  type = "blog",
 }: {
   metadata: PageMetadata;
   url: string;
   author?: { name: string; image: string; slug?: string };
+  type?: string;
 }) => {
   const locale = useLocale();
 
@@ -24,7 +33,7 @@ export const BlogStructuredData = ({
 
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "BlogPosting",
+    "@type": typeMap[type as keyof typeof typeMap] || "Article",
     headline: metadata.title,
     description: metadata.summary,
     image: metadata.image,
