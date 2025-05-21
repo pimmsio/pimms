@@ -15,6 +15,14 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
+export const getCanonicalLinkWithDomain = (
+  locale: string,
+  pathname: string,
+  domain: string
+) => {
+  return `${domain}${getCanonicalLink(locale, pathname)}`;
+};
+
 export const getCanonicalLink = (locale: string, pathname: string) => {
   if (pathname === "/") {
     return locale === "en" ? "/" : `/${locale}`;

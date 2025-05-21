@@ -1,7 +1,9 @@
 import Script from "next/script";
-import { getCanonicalLink } from "@/lib/utils";
+import { getCanonicalLinkWithDomain } from "@/lib/utils";
 import { PageMetadata } from "@/lib/mdx";
 import { useLocale, useTranslations } from "next-intl";
+
+const DOMAIN = process.env.NEXT_PUBLIC_WEB_DOMAIN as string;
 
 export const BreadcrumbStructuredData = ({
   metadata,
@@ -21,10 +23,19 @@ export const BreadcrumbStructuredData = ({
     article: `/articles/${slug}`,
   };
 
+  const domainWithHttps = `https://${DOMAIN}`;
   const urlPartsPathnames = {
-    root: getCanonicalLink(locale, urlParts.root),
-    category: getCanonicalLink(locale, urlParts.category),
-    article: getCanonicalLink(locale, urlParts.article),
+    root: getCanonicalLinkWithDomain(locale, urlParts.root, domainWithHttps),
+    category: getCanonicalLinkWithDomain(
+      locale,
+      urlParts.category,
+      domainWithHttps
+    ),
+    article: getCanonicalLinkWithDomain(
+      locale,
+      urlParts.article,
+      domainWithHttps
+    ),
   };
 
   const jsonLd = {

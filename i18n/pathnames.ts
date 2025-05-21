@@ -2,17 +2,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-05-21T21:03:43.186Z"
+    "lastmod": "2025-05-21T23:08:01.112Z"
   },
   "/solutions/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-05-21T21:03:43.186Z"
+    "lastmod": "2025-05-21T23:08:01.112Z"
   },
   "/solutions/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-05-21T21:03:43.186Z"
+    "lastmod": "2025-05-21T23:08:01.112Z"
   },
   "/articles": {
     "en": "/articles",
@@ -22,7 +22,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/company": {
     "en": "/blog/company-news",
     "fr": "/blog/actualites-entreprise",
-    "lastmod": "2025-05-21T21:03:43.186Z"
+    "lastmod": "2025-05-21T23:08:01.112Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
