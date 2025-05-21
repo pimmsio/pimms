@@ -15,10 +15,6 @@ export const basePathnames = {
     en: "/articles",
     fr: "/articles",
   },
-  "/articles/category/company": {
-    en: "/blog/company-news",
-    fr: "/blog/actualites-entreprise",
-  },
   "/articles/category/digital-marketing": {
     en: "/blog/marketing",
     fr: "/blog/marketing",

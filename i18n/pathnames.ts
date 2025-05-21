@@ -2,27 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-05-21T23:08:01.112Z"
+    "lastmod": "2025-05-22T08:03:11.517Z"
   },
   "/solutions/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-05-21T23:08:01.112Z"
+    "lastmod": "2025-05-22T08:03:11.518Z"
   },
   "/solutions/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-05-21T23:08:01.112Z"
+    "lastmod": "2025-05-22T08:03:11.518Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
     "lastmod": "2025-05-22T00:00:00.000Z"
-  },
-  "/articles/category/company": {
-    "en": "/blog/company-news",
-    "fr": "/blog/actualites-entreprise",
-    "lastmod": "2025-05-21T23:08:01.112Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
