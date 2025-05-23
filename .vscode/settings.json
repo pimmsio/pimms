@@ -14,7 +14,8 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "files.associations": {
-    "ostream": "cpp"
+    "ostream": "cpp",
+    "*.json": "json"
   },
   // The number of spaces a tab is equal to. This setting is overridden
   // based on the file contents when `editor.detectIndentation` is true.
@@ -28,5 +29,5 @@
   "editor.detectIndentation": false,
   "i18n-ally.localesPaths": [
     "messages"
-  ]
+  ],
 }

@@ -31,8 +31,15 @@ Avec **PiMMs**, ça ne prend que quelques minutes — aucun code nécessaire.
 2. Va dans l’onglet **Custom Code**
 3. Colle les deux scripts PiMMs ci-dessous dans la section **Head** :
 
+Important: Injecte le script suivant dans tous les pages de ton site.
+
 ```html
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>  
+```
+
+En plus, injecte le script suivant dans toutes les pages où tu as un formulaire.
+
+```html
 <script defer src="https://cdn.pimms.io/analytics/script.inject-form.js"></script>
 ```
 
