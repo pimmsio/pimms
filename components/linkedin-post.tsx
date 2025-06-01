@@ -10,7 +10,7 @@ export const LinkedinPost = ({
   name,
   profile,
   time,
-  showSolution,
+  showSolution
 }: {
   className?: string;
   title: string;
@@ -72,9 +72,7 @@ export const LinkedinPost = ({
       <div className="flex mr-[8px] w-full">
         <div className="text-[14px] font-normal px-[16px] w-full">
           <div className="relative">
-            <p className="text-[14px] whitespace-pre-line overflow-hidden leading-[20px] break-words">
-              {title}
-            </p>
+            <p className="text-[14px] whitespace-pre-line overflow-hidden leading-[20px] break-words">{title}</p>
           </div>
         </div>
       </div>
@@ -90,10 +88,7 @@ export const LinkedinPost = ({
               data-supported-dps="16x16"
             >
               <g>
-                <path
-                  d="M8 0a8 8 0 018 8 8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8z"
-                  fill="none"
-                ></path>
+                <path d="M8 0a8 8 0 018 8 8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8z" fill="none"></path>
                 <circle cx="8" cy="8" r="7" fill="#378fe9"></circle>
                 <path
                   d="M11.93 7.25h-.55c-.05 0-.15-.19-.4-.46-.37-.4-.78-.91-1.07-1.19a7.13 7.13 0 01-1.73-2.24c-.24-.51-.26-.74-.75-.74a.78.78 0 00-.67.81c0 .14.07.63.1.8a7.54 7.54 0 001 2.2H4.12a.88.88 0 00-.65.28.84.84 0 00-.23.66.91.91 0 00.93.85h.16a.82.82 0 00-.55.24.77.77 0 00-.21.54.81.81 0 00.74.8.8.8 0 00.33 1.42.76.76 0 00-.09.55.87.87 0 00.85.63h2.29a3.8 3.8 0 00.89-.11l1.42-.4h1.9c1.02-.04 1.29-4.64.03-4.64z"
@@ -122,10 +117,7 @@ export const LinkedinPost = ({
                   data-supported-dps="16x16"
                 >
                   <g>
-                    <path
-                      d="M8 0a8 8 0 018 8 8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8z"
-                      fill="none"
-                    ></path>
+                    <path d="M8 0a8 8 0 018 8 8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8z" fill="none"></path>
                     <circle cx="8" cy="8" r="7" fill="#f5bb5c"></circle>
                     <path
                       d="M8.82 13.4h-1.6a.54.54 0 01-.54-.54v-1.33h2.68v1.33a.54.54 0 01-.54.54z"
@@ -188,22 +180,13 @@ export const LinkedinPost = ({
                     </mask>
                   </defs>
                   <g>
-                    <path
-                      d="M8 0a8 8 0 018 8 8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8z"
-                      fill="none"
-                    ></path>
+                    <path d="M8 0a8 8 0 018 8 8 8 0 01-8 8 8 8 0 01-8-8 8 8 0 018-8z" fill="none"></path>
                     <g>
-                      <path
-                        d="M8 1a7 7 0 017 7 7 7 0 01-7 7 7 7 0 01-7-7 7 7 0 017-7z"
-                        fill="#d8d8d8"
-                      ></path>
+                      <path d="M8 1a7 7 0 017 7 7 7 0 01-7 7 7 7 0 01-7-7 7 7 0 017-7z" fill="#d8d8d8"></path>
                     </g>
                     <g mask="url(#reactions-praise-consumption-small-a)">
                       <circle cx="8" cy="8" r="7" fill="#6dae4f"></circle>
-                      <path
-                        d="M8 1a7 7 0 11-7 7 7 7 0 017-7zm0-1a8 8 0 105.66 2.34A8 8 0 008 0z"
-                        fill="#fff"
-                      ></path>
+                      <path d="M8 1a7 7 0 11-7 7 7 7 0 017-7zm0-1a8 8 0 105.66 2.34A8 8 0 008 0z" fill="#fff"></path>
                       <path
                         d="M12.13 9.22a9.19 9.19 0 00-.36-2.32A4.29 4.29 0 0110.44 5c-.16-.53-.27-.72-.74-.73a.74.74 0 00-.65.8c0 .24 0 .49.06.72a11.5 11.5 0 00.58 1.92l-4.5-3.38a.75.75 0 00-1.11.07.73.73 0 00.27 1L6.6 7.1l.59.56L3.62 5a.71.71 0 00-.75-.16.69.69 0 00-.46.61.71.71 0 00.36.67L5 7.77l1.35 1-2.9-2.19a.79.79 0 00-.57-.21.8.8 0 00-.54.28c-.31.4-.06.81.26 1.06L4.85 9.4l1.15.85-2.27-1.7a.74.74 0 00-1.09 0 .76.76 0 00.24 1.09l4.1 3c.6.45 2.07.84 2.72.27"
                         fill="none"
@@ -277,18 +260,18 @@ export const LinkedinPost = ({
               </div>
             </>
           )}
-          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-blue-600 cursor-pointer">
+          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-[#3970ff] cursor-pointer">
             {likes}
           </div>
         </div>
         <div className="flex flex-row">
-          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-blue-600 cursor-pointer">
+          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-[#3970ff] cursor-pointer">
             {comments} comments
           </div>
-          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-blue-600 cursor-pointer">
+          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-[#3970ff] cursor-pointer">
             ·
           </div>
-          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-blue-600 cursor-pointer">
+          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-[#3970ff] cursor-pointer">
             {shares} shares
           </div>
         </div>

@@ -1,95 +1,68 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Check } from "lucide-react";
+import { BookOpen, Users, TrendingUp } from "lucide-react";
 import Link from "next/link";
-import { useParams } from "next/navigation";
 import { twMerge } from "tailwind-merge";
-import { H1 } from "@/components/base/h1";
-import { HeroSection } from "@/components/base/hero-section";
-import { Paragraph } from "@/components/base/paragraph";
 import { BLOG_CATEGORIES } from "../../app/constants";
 import { getCanonicalLink } from "../../lib/utils";
 import { useLocale } from "next-intl";
 import { useTranslations } from "next-intl";
+import { Section } from "../base/section";
+import { H2 } from "../base/h2";
+import { Paragraph } from "../base/paragraph";
 
-export default function BlogLayoutHero() {
+export default function BlogLayoutHero({ slug }: { slug?: string }) {
   const t = useTranslations("blog");
-  const { slug } = useParams() as { slug?: string };
   const locale = useLocale();
 
-  const allCategories = BLOG_CATEGORIES.filter(
-    (category) => category !== "legal"
-  );
-
+  const allCategories = BLOG_CATEGORIES.filter((category) => category !== "legal");
   const category = slug && allCategories.includes(slug) ? slug : "overview";
 
+  // Category icon mapping
+  const getCategoryIcon = (categorySlug: string) => {
+    switch (categorySlug) {
+      case "guides":
+        return <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
+      case "tutorials":
+        return <Users className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
+      case "digital-marketing":
+        return <TrendingUp className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
+      default:
+        return <BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />;
+    }
+  };
+
+  console.log(category, slug);
   return (
-    <>
-      <HeroSection>
-        <H1>{t(`category.${category}.title`)}</H1>
-        <div className="max-w-sm md:max-w-lg flex flex-col items-center justify-left mx-auto px-4">
-          <Paragraph className="mt-4">
-            {t(`category.${category}.description`)}
-          </Paragraph>
-        </div>
-        <nav className="mt-6 hidden w-fit mx-auto items-center space-x-2 rounded-full border-[6px] border-neutral-100 bg-white p-2 md:flex">
-          <CategoryLink
-            title={t("category.overview.title")}
-            href={getCanonicalLink(locale, "/articles")}
-            active={!slug}
-          />
-          {allCategories.map((category) => (
+    <Section className="py-10 sm:py-14 md:py-18 lg:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50/50 to-white">
+      <div className="text-center mb-10 sm:mb-12">
+        <H2 className="text-3xl sm:text-4xl md:text-5xl mb-4 font-bold">{t(`category.${category}.title`)}</H2>
+        <Paragraph className="text-base sm:text-lg px-4 max-w-2xl mx-auto text-[#5C5B61]">
+          {t(`category.${category}.description`)}
+        </Paragraph>
+      </div>
+
+      {/* Category navigation */}
+      <nav className="flex justify-center mb-10 sm:mb-12 px-4">
+        <div className="inline-flex items-center bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm p-1.5 sm:p-2 overflow-x-auto max-w-full">
+          <div className="flex gap-1 sm:gap-1.5">
             <CategoryLink
-              key={category}
-              title={t(`category.${category}.title`)}
-              href={getCanonicalLink(locale, `/articles/category/${category}`)}
-              active={category === slug}
-            />
-          ))}
-          {/* <CategoryLink title="Customer Stories" href="/customers" /> */}
-          {/* <CategoryLink title="Changelog" href="/changelog" /> */}
-        </nav>
-      </HeroSection>
-      {/* <Popover
-        content={
-          <div className="w-full p-4">
-            <CategoryLink
-              title="Overview"
-              href="/blog"
+              title={t("category.overview.title")}
+              href={getCanonicalLink(locale, "/articles")}
               active={!slug}
-              mobile
-              setOpenPopover={setOpenPopover}
+              icon={<BookOpen className="w-3.5 h-3.5 sm:w-4 sm:h-4" />}
             />
             {allCategories.map((category) => (
               <CategoryLink
-                key={category?.slug}
-                title={category?.title}
-                href={`/articles/category/${category?.slug}`}
-                active={category?.slug === slug}
-                mobile
-                setOpenPopover={setOpenPopover}
+                key={category}
+                title={t(`category.${category}.title`)}
+                href={getCanonicalLink(locale, `/articles/category/${category}`)}
+                active={category === slug}
+                icon={getCategoryIcon(category)}
               />
             ))}
-            <CategoryLink title="Customer Stories" href="/customers" mobile />
-            <CategoryLink title="Product updates" href="/changelog" mobile />
           </div>
-        }
-        openPopover={openPopover}
-        setOpenPopover={setOpenPopover}
-        mobileOnly
-      >
-        <button
-          onClick={() => {
-            setOpenPopover(!openPopover);
-          }}
-          className="flex w-full items-center space-x-2 border-t border-gray-200 px-2.5 py-4 text-sm"
-        >
-          <List size={16} />
-          <p>Categories</p>
-        </button>
-      </Popover> */}
-    </>
+        </div>
+      </nav>
+    </Section>
   );
 }
 
@@ -97,48 +70,24 @@ const CategoryLink = ({
   title,
   href,
   active,
-  mobile,
-  setOpenPopover,
+  icon
 }: {
   title: string;
   href: string;
   active?: boolean;
-  mobile?: boolean;
-  setOpenPopover?: (open: boolean) => void;
+  icon?: React.ReactNode;
 }) => {
-  if (mobile) {
-    return (
-      <Link
-        href={href}
-        {...(setOpenPopover && {
-          onClick: () => setOpenPopover(false),
-        })}
-        className="flex w-full items-center justify-between rounded-md p-2 transition-colors hover:bg-gray-100 active:bg-gray-200"
-      >
-        <p className={twMerge("text-sm", active && "font-bold")}>{title}</p>
-        {active && <Check size={16} className="text-gray-600" />}
-      </Link>
-    );
-  }
   return (
-    <Link href={href} className="relative z-10">
+    <Link href={href}>
       <div
         className={twMerge(
-          "rounded-full px-4 py-2 text-sm text-gray-600 transition-all",
-          active
-            ? "text-white font-bold"
-            : "hover:bg-gray-100 active:bg-gray-200"
+          "rounded-lg sm:rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap",
+          active ? "bg-[#3970ff] text-white shadow-sm" : "text-[#5C5B61] hover:bg-gray-50 hover:text-[#08272E]"
         )}
       >
-        {title}
+        {icon}
+        <span>{title}</span>
       </div>
-      {active && (
-        <motion.div
-          layoutId="indicator"
-          className="absolute left-0 top-0 h-full w-full rounded-full bg-gradient-to-tr from-gray-800 via-gray-700 to-gray-800"
-          style={{ zIndex: -1 }}
-        />
-      )}
     </Link>
   );
 };

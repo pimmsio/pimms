@@ -6,23 +6,24 @@ import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
 import redirects from "./redirect";
+import { remarkAtSyntax } from "./lib/mdx/remark-at-syntax";
 const withNextIntl = createNextIntlPlugin();
 
 const withMDX = createMDX({
   extension: /\.mdx?$/,
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkAtSyntax],
     rehypePlugins: [
       rehypeSlug,
       [rehypeAutolinkHeadings, { behavior: "wrap" }],
       [
         rehypePrettyCode,
         {
-          theme: "one-light",
-        },
-      ],
-    ],
-  },
+          theme: "one-light"
+        }
+      ]
+    ]
+  }
 });
 
 const nextConfig: NextConfig = {
@@ -30,18 +31,18 @@ const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: "assets.pimms.io",
+        hostname: "assets.pimms.io"
       },
       {
-        hostname: "assets.seobotai.com",
+        hostname: "assets.seobotai.com"
       },
       {
-        hostname: "via.placeholder.com",
+        hostname: "via.placeholder.com"
       },
       {
-        hostname: "www.google.com",
-      },
-    ],
+        hostname: "www.google.com"
+      }
+    ]
   },
   async redirects() {
     return redirects;
@@ -51,19 +52,19 @@ const nextConfig: NextConfig = {
       // for pimms proxy
       {
         source: "/_proxy/pimms/track/click",
-        destination: "https://api.pimms.io/track/click",
+        destination: "https://api.pimms.io/track/click"
       },
       // for posthog proxy
       {
         source: "/_proxy/posthog/ingest/static/:path*",
-        destination: "https://eu-assets.i.posthog.com/static/:path*",
+        destination: "https://eu-assets.i.posthog.com/static/:path*"
       },
       {
         source: "/_proxy/posthog/ingest/:path*",
-        destination: "https://eu.i.posthog.com/:path*",
-      },
+        destination: "https://eu.i.posthog.com/:path*"
+      }
     ];
-  },
+  }
 };
 
 export default withNextIntl(withMDX(nextConfig));

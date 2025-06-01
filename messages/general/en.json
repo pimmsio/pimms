@@ -15,7 +15,8 @@
         "help": "Help",
         "solutions": "Solutions",
         "resources": "Resources",
-        "alternatives": "Alternatives"
+        "alternatives": "Alternatives",
+        "freetools": "Free tools"
       },
       "solutions": {
         "youtube": "YouTube content creators",
@@ -23,6 +24,9 @@
       },
       "alternatives": {
         "bitly": "Bitly Alternatives"
+      },
+      "freetools": {
+        "site-checker": "PIMMS Site Checker (tag)"
       },
       "resources": {
         "blog": "Blog",

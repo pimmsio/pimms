@@ -6,34 +6,29 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3970ff] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
-        default:
-          "hover:scale-105 cursor-pointer rounded-2xl transition duration-500 text-xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
-        noring:
-          "cursor-pointer rounded-b-xl md:rounded-l-none md:rounded-r-xl transition duration-500 text-xl group/primary relative inline-flex gap-[0.45em] font-bold bg-primary text-primary-foreground items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
-        destructive:
-          "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        outline:
-          "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
+        default: "bg-[#3970ff] text-white rounded-full hover:bg-[#3970ff]/90 shadow-sm hover:shadow-md",
+        destructive: "bg-red-600 text-white rounded-full hover:bg-red-700 shadow-sm",
+        outline: "border-2 border-[#3970ff] bg-white text-[#3970ff] rounded-full hover:bg-[#3970ff]/5",
         secondary:
-          "cursor-pointer rounded-lg ring-[6px] ring-[#3970ff] transition duration-500 text-2xl group/primary relative inline-flex gap-[0.45em] font-bold bg-[#3970ff] text-white items-center justify-center overflow-hidden shadow-primary-200/50 fill-current shadow-primary-200/50",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
+          "bg-white text-[#3970ff] rounded-full border border-gray-200 hover:border-[#3970ff]/30 hover:bg-gray-50",
+        ghost: "hover:bg-gray-100 rounded-full",
+        link: "text-[#3970ff] underline-offset-4 hover:underline"
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 px-3",
-        lg: "py-[0.8em] px-[1.1em]",
-        icon: "h-10 w-10",
-      },
+        default: "h-11 px-6 text-sm",
+        sm: "h-9 px-4 text-xs",
+        lg: "h-12 px-8 text-base",
+        xl: "h-14 px-10 text-lg"
+      }
     },
     defaultVariants: {
       variant: "default",
-      size: "default",
-    },
+      size: "default"
+    }
   }
 );
 
@@ -46,27 +41,7 @@ export interface ButtonProps
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     const Comp = asChild ? Slot : "button";
-    if (variant === "default" || variant === "noring") {
-      return (
-        <Comp
-          className={cn(buttonVariants({ variant, size, className }))}
-          ref={ref}
-          {...props}
-        >
-          <div className="relative flex flex-col leading-tight pt-[0.1em] pb-[0.15em]">
-            {props.children}
-          </div>
-        </Comp>
-      );
-    }
-
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
+    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />;
   }
 );
 Button.displayName = "Button";

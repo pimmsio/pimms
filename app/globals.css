@@ -1,8 +1,68 @@
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
+/* Base styles */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Inter, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #fafafa;
+  color: #08272E;
+}
+
+/* Scrollbar hide utility */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Custom list styles for ordered lists only */
+.prose-list-ol {
+  counter-reset: list-counter;
+  list-style: none;
+}
+
+.prose-list-ol > li {
+  position: relative;
+  padding-left: 1.75rem;
+  counter-increment: list-counter;
+}
+
+.prose-list-ol > li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1.25rem;
+  height: 1.25rem;
+  background-color: #3970ff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+}
+
+@media (min-width: 640px) {
+  .prose-list-ol > li {
+    padding-left: 2.5rem;
+  }
+  
+  .prose-list-ol > li::before {
+    width: 1.75rem;
+    height: 1.75rem;
+    font-size: 0.875rem;
+  }
 }
 
 @theme {

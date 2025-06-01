@@ -1,15 +1,20 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
 import Player from "@vimeo/player";
-import { useTranslations } from "next-intl";
+import { Section } from "@/components/base/section";
 
-const VideoSlide = ({ tkey }: { tkey: string }) => {
-  const t = useTranslations(tkey);
+interface VideoSlideProps {
+  src: string;
+  cover: string;
+}
+
+const VideoSlide = ({ src, cover }: VideoSlideProps) => {
   const [coverVisible, setCoverVisible] = useState(true);
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const playerRef = useRef<Player | null>(null);
+
   useEffect(() => {
     if (iframeRef.current) {
       playerRef.current = new Player(iframeRef.current);
@@ -30,69 +35,60 @@ const VideoSlide = ({ tkey }: { tkey: string }) => {
       }
     };
   }, []);
+
   const handlePlay = (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!coverVisible || !playerReady) return;
-    playerRef.current
-      ?.play()
-      .catch((err) =>
-        console.error("Erreur lors du lancement de la vidéo :", err)
-      );
+    playerRef.current?.play().catch((err) => console.error("Erreur lors du lancement de la vidéo :", err));
   };
+
   return (
-    <section
-      id="video"
-      className="w-full max-w-7xl my-12 md:my-20 md mx-auto relative overflow-hidden outline-[6px] outline-[#3970ff] flex justify-center items-center rounded-3xl"
-    >
-      <div className="w-full grid grid-cols-1 grid-rows-1 aspect-video mx-auto overflow-hidden">
-        <iframe
-          ref={iframeRef}
-          src={t("video.src")}
-          className={`row-start-1 col-start-1 w-full h-full transition-opacity duration-500 ${
-            videoPlaying ? "opacity-100" : "opacity-0"
-          }`}
-          frameBorder="0"
-          allowFullScreen
-          allow="autoplay; encrypted-media; fullscreen"
-        ></iframe>
-        <button
-          onClick={handlePlay}
-          onTouchEnd={handlePlay}
-          onPointerDown={handlePlay}
-          className={`row-start-1 col-start-1 transition-opacity duration-500 ${
-            coverVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-          } grid place-items-end sm:place-items-center relative cursor-pointer`}
-          style={{
-            WebkitTouchCallout: "none",
-            WebkitUserSelect: "none",
-            userSelect: "none",
-          }}
-        >
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-cover z-0 pointer-events-none"
+    <Section id="video">
+      <div className="relative overflow-hidden border-2 border-[#3970ff] rounded-2xl">
+        <div className="w-full grid grid-cols-1 grid-rows-1 aspect-video overflow-hidden">
+          <iframe
+            ref={iframeRef}
+            src={src}
+            className={`row-start-1 col-start-1 w-full h-full transition-opacity duration-500 ${
+              videoPlaying ? "opacity-100" : "opacity-0"
+            }`}
+            frameBorder="0"
+            allowFullScreen
+            allow="autoplay; encrypted-media; fullscreen"
+          ></iframe>
+          <button
+            onClick={handlePlay}
+            onTouchEnd={handlePlay}
+            onPointerDown={handlePlay}
+            className={`row-start-1 col-start-1 transition-opacity duration-500 ${
+              coverVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+            } grid place-items-end sm:place-items-center relative cursor-pointer`}
+            style={{
+              WebkitTouchCallout: "none",
+              WebkitUserSelect: "none",
+              userSelect: "none"
+            }}
           >
-            <source src={t("video.cover")} type="video/mp4" />
-          </video>
-          <div className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto rounded-full z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-primary shadow-lg transition-transform hover:scale-105 ring-[6px] ring-[#E7EEFF]">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
-              fill="currentColor"
-              stroke="currentColor"
-              viewBox="0 0 16 16"
-              className="text-white"
-            >
-              <path d="M6.271 4.055c-.45-.275-.771-.079-.771.438v7.015c0 .516.321.713.771.438l5.394-3.503c.449-.276.449-.6 0-.877l-5.394-3.511z" />
-            </svg>
-          </div>
-        </button>
+            <video autoPlay loop muted playsInline className="w-full h-full object-cover z-0 pointer-events-none">
+              <source src={cover} type="video/mp4" />
+            </video>
+            <div className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto rounded-full z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-[#3970ff] ring-4 ring-[#E7EEFF]">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
+                fill="currentColor"
+                stroke="currentColor"
+                viewBox="0 0 16 16"
+                className="text-white"
+              >
+                <path d="M6.271 4.055c-.45-.275-.771-.079-.771.438v7.015c0 .516.321.713.771.438l5.394-3.503c.449-.276.449-.6 0-.877l-5.394-3.511z" />
+              </svg>
+            </div>
+          </button>
+        </div>
       </div>
-    </section>
+    </Section>
   );
 };
 

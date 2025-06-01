@@ -2,34 +2,66 @@
   "blog": {
     "nav": {
       "dashboard": "Sign in",
-      "solutions": "Solutions"
+      "solutions": "Solutions",
+      "articles": "Articles"
     },
     "cta": {
       "headline": "Turn every click into conversion and decision",
-      "sub": "Optimize your links, track real conversions and sales, and uncover what drives results. Start using PIMMS to enhance your campaigns and grow your business."
+      "sub": "Optimize your links, track real conversions and sales, and uncover what drives results. Start using PIMMS to enhance your campaigns and grow your business.",
+      "readyToStart": {
+        "title": "Ready to start?",
+        "description": "Join thousands of marketers using PIMMS to track their campaigns.",
+        "startFreeTrial": "Start Free Trial",
+        "learnMore": "Learn More"
+      }
+    },
+    "newsletter": {
+      "title": "Stay ahead with expert insights",
+      "description": "Get the latest articles on digital marketing, attribution, and growth strategies delivered to your inbox weekly.",
+      "placeholder": "Enter your email",
+      "subscribe": "Subscribe",
+      "subscribing": "Subscribing...",
+      "successMessage": "Successfully subscribed! Check your email for confirmation.",
+      "errorMessage": "Failed to subscribe. Please try again.",
+      "noSpam": "No spam, unsubscribe at any time."
+    },
+    "post": {
+      "writtenBy": "Written by",
+      "tableOfContents": "Table of contents",
+      "continueReading": "Continue Reading",
+      "exploreMore": "Explore more insights and strategies",
+      "breadcrumb": {
+        "articles": "Articles"
+      }
     },
     "category": {
       "overview": {
+        "label": "Articles",
         "title": "All articles",
         "description": "Latest articles from PIMMS"
       },
       "company": {
+        "label": "Company",
         "title": "Company news",
         "description": "Updates and announcements from PIMMS"
       },
       "guides": {
+        "label": "Guides",
         "title": "Guides",
         "description": "Step-by-step guides to help you get started."
       },
       "tutorials": {
+        "label": "Tutorials",
         "title": "Tutorials",
         "description": "Tutorials to learn more."
       },
       "digital-marketing": {
+        "label": "Digital Marketing",
         "title": "Blog",
         "description": "Blog posts about digital marketing you should read."
       },
       "legal": {
+        "label": "Legal",
         "title": "Legal",
         "description": "Legal documents for PIMMS."
       }

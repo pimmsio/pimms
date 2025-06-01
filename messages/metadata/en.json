@@ -5,6 +5,11 @@
       "description": "Tool that tracks your top performing links – so you can boost what really works.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
+    "site-checker": {
+      "title": "Scan PIMMS script tool checker  | Verify your tracking installation",
+      "description": "Free tool to check if your website has the PiMMs analytics script properly installed for conversion tracking.",
+      "image": "https://assets.pimms.io/tracking-website-checker.webp"
+    },
     "youtube": {
       "title": "Grow your YouTube subscribers with deeplinks | PIMMS",
       "description": "Send your viewers straight to the official YouTube app. Reduce friction, increase engagement, and track the impact of every link on your subscribers.",

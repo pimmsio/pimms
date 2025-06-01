@@ -2,13 +2,13 @@ import { RectClipPath } from "@visx/clip-path";
 import { LinearGradient } from "@visx/gradient";
 import { Group } from "@visx/group";
 import { BarRounded } from "@visx/shape";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "@/lib/framer-motion";
 import { useId } from "react";
 import { useChartContext } from "./chart-context";
 import { cn } from "../../lib/utils";
 
 export function Bars({
-  seriesStyles,
+  seriesStyles
 }: {
   seriesStyles?: {
     id: string;
@@ -18,20 +18,9 @@ export function Bars({
   }[];
 }) {
   const clipPathId = useId();
-  const {
-    data,
-    series,
-    margin,
-    xScale,
-    yScale,
-    width,
-    height,
-    startDate,
-    endDate,
-  } = useChartContext();
+  const { data, series, margin, xScale, yScale, width, height, startDate, endDate } = useChartContext();
 
-  if (!("bandwidth" in xScale))
-    throw new Error("Bars require a band scale (type=bar)");
+  if (!("bandwidth" in xScale)) throw new Error("Bars require a band scale (type=bar)");
 
   return (
     <Group left={margin.left} top={margin.top}>
@@ -53,10 +42,7 @@ export function Bars({
               >
                 {/* Bar gradient */}
                 <LinearGradient
-                  className={cn(
-                    s.colorClassName ?? "text-[#08272E]",
-                    styles?.gradientClassName
-                  )}
+                  className={cn(s.colorClassName ?? "text-[#08272E]", styles?.gradientClassName)}
                   id={`${s.id}-background`}
                   fromOffset="0%"
                   from="currentColor"
@@ -70,11 +56,7 @@ export function Bars({
                 />
 
                 {/* Bars */}
-                <motion.g
-                  initial={{ y: 100 }}
-                  animate={{ y: 0 }}
-                  transition={{ duration: 0.15, ease: "easeOut" }}
-                >
+                <motion.g initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 0.15, ease: "easeOut" }}>
                   {data.map((d) => {
                     const barWidth = xScale.bandwidth();
                     const x = xScale(d.date) ?? 0;
@@ -89,10 +71,7 @@ export function Bars({
                         height={barHeight}
                         radius={1000}
                         top
-                        className={cn(
-                          s.colorClassName ?? "text-blue-700",
-                          styles?.barClassName
-                        )}
+                        className={cn(s.colorClassName ?? "text-blue-700", styles?.barClassName)}
                         fill={styles?.barFill ?? `url(#${s.id}-background)`}
                       />
                     ) : null;

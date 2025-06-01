@@ -1,0 +1,239 @@
+---
+title: Comment suivre les ventes et abonnements Stripe avec des liens utm (sans écrire de code)
+summary: Apprends à suivre tes ventes et abonnements Stripe à l’aide de liens utm sans écrire une seule ligne de code, pour une attribution précise de tes revenus.
+publishedAt: 2025-05-21
+updatedAt: 2025-05-23
+slug: comment-suivre-les-ventes-stripe-avec-des-liens-utm-sans-ecrire-de-code
+image: https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/pimms.io/682b6c814fa53d42207bccae-1747701285780.jpg
+author: emma
+categories:
+  - digital-marketing
+related:
+  - how-to-track-email-campaign-revenue
+  - from-first-click-to-conversion-understand-exactly-how-your-marketing-drives-revenue
+  - track-stripe-payments-with-utm-parameters
+  - how-to-analyze-referral-sources-by-utm-tags
+---
+
+**Tu veux savoir exactement quelles actions marketing génèrent des ventes sur [Stripe](https://stripe.com/) ?** Le suivi UTM permet de lier facilement les transactions Stripe à des campagnes précises – sans écrire de code. Voici comment faire :
+
+- **C’est quoi un lien UTM ?** Ce sont des balises ajoutées à une URL (ex. `?utm_source=facebook`) qui indiquent d’où vient ton trafic et comment il convertit.
+- **Pourquoi les utiliser avec Stripe ?** Pour attribuer tes revenus aux pubs, e-mails ou autres canaux, directement dans Stripe.
+- **Comment les configurer ?** Utilise les Payment Links de Stripe, ajoute des paramètres UTM, et collecte les données automatiquement avec des outils comme [Zapier](https://zapier.com/) ou [Make](https://www.make.com/en).
+- **Des outils pour simplifier ?** Des plateformes comme [PIMMS](https://pimms.io/) [capturent automatiquement les données UTM](/articles/utm-guide) et offrent des analytics en temps réel pour améliorer tes campagnes.
+
+**Exemple d’URL avec UTM :**
+
+```
+https://buy.stripe.com/test?utm_source=google&utm_medium=cpc&utm_campaign=summer_sale
+```
+
+## Transmission des données avec les Payment Links
+
+::: @iframe https://www.youtube.com/embed/uI9gJakNLQ8
+:::
+
+## Paramètres UTM : les éléments clés pour l’attribution des ventes
+
+Les paramètres UTM sont essentiels pour suivre les revenus Stripe. Ils révèlent l’origine de tes clients via cinq éléments principaux [\[2\]](https://www.spinutech.com/digital-marketing/analytics/conversion/what-are-utm-codes-utm-tracking-explained).
+
+### Structure de base des paramètres UTM
+
+Ces cinq paramètres UTM offrent des insights détaillés sur tes sources de trafic :
+
+| Paramètre        | Rôle                                      | Exemple                        |
+| ---------------- | ------------------------------------------ | ------------------------------ |
+| **utm_source**   | Source du trafic                          | google, facebook, newsletter   |
+| **utm_medium**   | Canal marketing                           | cpc, email, social             |
+| **utm_campaign** | Nom de la campagne                        | summer-sale-2025               |
+| **utm_content**  | Différenciation entre liens similaires    | orange-cta, header-link        |
+| **utm_term**     | Mot-clé spécifique (search)              | camping-gear                   |
+
+> "Le code UTM ou ‘Urchin Tracking Module’ est une chaîne ajoutée à la fin d'une URL pour suivre l’origine du trafic vers ton site. Elle détaille la source, le canal, la campagne, voire même le mot-clé." – John Abbasi, Peel [\[4\]](https://www.peelinsights.com/post/what-is-a-utm-tracking-code)
+
+Une fois cette structure en place, il faut intégrer les données UTM dans Stripe pour une attribution précise.
+
+### Connexion des données UTM aux transactions [Stripe](https://stripe.com/)
+
+![Stripe](https://assets.seobotai.com/pimms.io/682b6c814fa53d42207bccae/bd96116015edf6c6fa9e8dbfe6e54dc1.jpg)
+
+Pour assurer un suivi efficace :
+
+- Utilise uniquement des caractères alphanumériques, tirets ou underscores dans les codes UTM [\[1\]](https://docs.stripe.com/payment-links/url-parameters).
+- Garde-les sous 150 caractères [\[1\]](https://docs.stripe.com/payment-links/url-parameters).
+- Configure Stripe pour rediriger après le paiement [\[1\]](https://docs.stripe.com/payment-links/url-parameters).
+
+Bien intégrés, les paramètres UTM boostent ton [tracking de campagnes](/articles/introducing-conversion). En février 2023, un client d’[Attributer](https://attributer.io/) est passé de 60 % à 95 % de précision d’attribution grâce aux données UTM dans Stripe [\[3\]](https://mailchimp.com/resources/utm-links).
+
+Autre exemple :
+
+```
+www.yoursite.com/pricing?utm_source=facebook&utm_medium=paid-social&utm_campaign=spring2025&utm_content=video-ad
+```
+
+⚠️ Utilise toujours des lettres **minuscules** dans les UTM [\[4\]](https://www.peelinsights.com/post/what-is-a-utm-tracking-code).
+
+## Guide no-code pour configurer le suivi UTM dans Stripe
+
+Voici comment configurer le tracking UTM dans Stripe **sans coder**.
+
+### Ajouter des balises UTM aux Payment Links Stripe
+
+Tu peux configurer cela directement depuis le tableau de bord Stripe :
+
+- **Accède aux paramètres de ton Payment Link** : Connecte-toi à Stripe et sélectionne un lien. Clique sur la flèche à côté de "Copier", puis sur "Paramètres URL" [\[1\]](https://docs.stripe.com/payment-links/url-parameters).
+- **Ajoute les paramètres UTM** : Ajoute-les à ton lien :
+
+```
+https://buy.stripe.com/test_eVa5nPg1j1wmfXq5kr?utm_medium=earned_email&utm_source=marketo&utm_campaign=campaign_a
+```
+
+Pense à automatiser ce processus pour garder une cohérence sur toutes tes campagnes.
+
+### Automatiser le suivi UTM avec [Zapier](https://zapier.com/) et [Make](https://www.make.com/en)
+
+![Zapier](https://assets.seobotai.com/pimms.io/682b6c814fa53d42207bccae/17c1a8b06dbdeb853898ddf955aeea3f.jpg)
+
+[LightSpeed VT](https://lightspeedvt.com/) illustre comment automatiser la collecte des données UTM. Ils utilisent Zapier/Make pour envoyer les infos Stripe vers leurs outils marketing [\[6\]](https://support.lightspeedvt.com/docs/capturing-data-with-the-stripe-widget).
+
+Ça marche avec :
+
+- les CRM
+- les outils d’e-mailing (ex : Mailchimp)
+- le tracking des campagnes Facebook
+- les plateformes d’automatisation marketing
+
+Inclue le paramètre `client_reference_id` dans ta config Stripe pour fiabiliser l’attribution.
+
+### Maintenir les données UTM tout au long du funnel
+
+| **Étape**       | **Action**                             | **Pourquoi**                                    |
+| --------------- | -------------------------------------- | ----------------------------------------------- |
+| Premier clic    | Stocker UTM en cookie 1st-party        | Attribution préservée même en navigation        |
+| Checkout        | Exclure le domaine de paiement du referer | Évite les coupures de session                  |
+| Confirmation    | Utiliser `stripe_session_id`           | Permet le tracking des conversions             |
+
+Mieux encore, combine tracking 1st-party et serveur. En nov. 2023, [Able CDP](https://www.ablecdp.com/) montre comment préserver la donnée UTM cross-device [\[7\]](https://www.ablecdp.com/blog/stripe-payment-links-tracking-a-comprehensive-guide).
+
+###### sbb-itb-6c6e739
+
+## [PIMMS](https://pimms.io/) : intégration avancée UTM + Stripe
+
+![PIMMS](https://assets.seobotai.com/pimms.io/682b6c814fa53d42207bccae/3894d0847391c6f45cb96ad5842b1908.jpg)
+
+PIMMS simplifie le suivi des ventes Stripe via des liens profonds qui capturent les UTM automatiquement.
+
+### Suivi des ventes en temps réel dans PIMMS
+
+Avec PIMMS, tu visualises en temps réel les ventes Stripe liées à leurs UTM. Tout est capté automatiquement depuis tes liens de paiement.
+
+| Élément de transaction | Tracking disponible               | Impact business                            |
+| ---------------------- | --------------------------------- | ------------------------------------------ |
+| Payment Links          | Capture UTM automatique          | Relie ventes et campagnes                  |
+| Achats uniques         | Tracking conversion en direct    | Mesure instantanée du ROI                  |
+| Abonnements            | Attribution sur le long terme    | Évalue la valeur des campagnes dans le temps |
+| Paramètres personnalisés | Tracking supplémentaire          | Affine le ciblage de ton audience          |
+
+### Exploiter les données PIMMS pour performer
+
+PIMMS te permet d’analyser les ventes Stripe via UTM et de :
+
+- **Suivre les canaux les plus rentables** [\[8\]](https://www.nimbata.com/tips/4-ways-marketers-can-use-utm-params)
+- **Mesurer l’impact des campagnes** [\[5\]](https://attributer.io/blog/get-utm-parameters-into-stripe)
+- **Optimiser ta stratégie de contenu**
+
+En février 2025, [Dub](https://dub.co/) a lancé un suivi no-code pour les Payment Links avec `?dub_client_reference_id=1` [\[1\]](https://docs.stripe.com/payment-links/url-parameters).
+
+Pour profiter de la puissance de PIMMS :
+
+- Connecte Stripe dans ton dashboard PIMMS
+- Utilise un domaine custom pour tes liens
+- Active la capture automatique des UTM
+- Partage les dashboards avec ton équipe
+- Utilise les filtres avancés : sources, devices, pays, etc.
+
+## Guide de maintenance du tracking UTM
+
+Une fois en place, tu dois maintenir la qualité de tes données.
+
+### Vérifications régulières de qualité des liens UTM
+
+| **Problème courant**     | **Impact**                                | **Solution recommandée**                      |
+| ------------------------ | ----------------------------------------- | --------------------------------------------- |
+| Majuscules dans les UTM  | Données fragmentées                       | Toujours en minuscules                        |
+| Noms incohérents         | Campagnes mal regroupées                  | Créer une nomenclature claire et documentée   |
+| Fautes de frappe         | Données orphelines                        | Audit régulier de tes liens                   |
+| Espaces encodés          | Erreurs de tracking                       | Utiliser `%20` ou des tirets                  |
+
+Une fois standardisé, vérifie la cohérence dans PIMMS pour fiabiliser ton attribution.
+
+### Vérification des données avec PIMMS
+
+PIMMS t’aide à garder un suivi fiable et à détecter les erreurs :
+
+- **Cohérence des données** : les filtres montrent si tous les UTM sont bien capturés
+- **Attribution des revenus** : compare les ventes Stripe avec les UTM dans PIMMS
+- **Validation des paramètres** :
+- Corrige les incohérences
+- Capture aussi le trafic organique [\[5\]](https://attributer.io/blog/get-utm-parameters-into-stripe)
+- Utilise du tracking serveur pour éviter les pertes [\[7\]](https://www.ablecdp.com/blog/stripe-payment-links-tracking-a-comprehensive-guide)
+
+## Conclusion : un suivi des ventes efficace avec les liens UTM
+
+Pour bien attribuer tes revenus, il te faut un tracking clair de l’origine. Et les consommateurs attendent des expériences personnalisées.
+
+### Les bénéfices de PIMMS pour ton business
+
+| **Fonctionnalité**       | **Impact business**                                           |
+| ------------------------ | ------------------------------------------------------------- |
+| Analytics temps réel     | Vision immédiate des performances et du ROI                  |
+| Attribution automatique  | Lien direct entre campagnes et revenus Stripe                |
+| Dashboards personnalisés | Reporting simplifié, partageable avec l’équipe               |
+| Filtres avancés          | Analyse fine des canaux, devices, géos, etc.                 |
+
+> "Le tracking UTM simplifie l’analyse de ce qui amène les visiteurs sur ton site, pour te concentrer sur ce qui convertit vraiment." [\[9\]](https://www.husamjandal.com/utm-tracking-what-and-why)
+
+### Une success story : [DIRECTV](https://www.directv.com/)
+
+DIRECTV a augmenté ses résultats grâce au tracking UTM. Ils ont pu identifier les campagnes rentables, ajuster leurs budgets et personnaliser le contenu pour un meilleur taux de conversion.
+
+### Maximiser le tracking UTM avec PIMMS
+
+- **Standardise les noms UTM** sur tous tes canaux
+- **Active les deep links** pour réduire les frictions
+- **Surveille les performances** avec les analytics PIMMS
+- **Passe au plan Pro** pour un suivi illimité
+
+## FAQs
+
+::: faq
+
+### Comment m'assurer que mes paramètres UTM sont bien suivis dans Stripe ?
+
+- **Ajoute-les dans tes URLs** : Ajoute bien les paramètres UTM dans tes Payment Links
+- **Sauvegarde-les dans les metadata** : Utilise les metadata Stripe pour les stocker
+- **Teste avant lancement** : Vérifie que les UTM remontent bien
+- **Analyse les performances** : Utilise des outils analytics pour vérifier l'exactitude
+
+:::
+
+::: faq
+
+### Quels sont les avantages de PIMMS par rapport à une gestion manuelle ?
+
+- **Zéro erreur humaine** : plus de fautes ou d’incohérences dans les paramètres
+- **Gain de temps** : tout est automatisé
+- **Interface claire** : meilleure lisibilité pour analyser tes campagnes
+
+:::
+
+::: faq
+
+### En quoi l’automatisation avec Zapier améliore les insights marketing ?
+
+- **Collecte fiable des données** : plus d’erreurs manuelles
+- **Push auto vers Google Sheets ou autres outils**
+- **Vue immédiate sur les campagnes qui convertissent**
+- **Tu gagnes du temps et tu pilotes avec des données fiables**
+
+:::

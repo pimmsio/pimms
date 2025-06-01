@@ -1,13 +1,13 @@
 "use client";
 
 import NumberFlow, { NumberFlowGroup } from "@number-flow/react";
-import { motion } from "framer-motion";
+import { motion } from "@/lib/framer-motion";
 import { ReactNode, useMemo } from "react";
 import { cn } from "../../lib/utils";
 
 export default function BarList({
   data,
-  maxValue,
+  maxValue
 }: {
   data: {
     icon: ReactNode;
@@ -19,15 +19,12 @@ export default function BarList({
   maxValue: number;
 }) {
   // Calculate total sum for percentage calculations
-  const totalSum = useMemo(
-    () => data.reduce((sum, item) => sum + item.value, 0),
-    [data]
-  );
+  const totalSum = useMemo(() => data.reduce((sum, item) => sum + item.value, 0), [data]);
 
   const itemProps = data.map((d) => ({
     ...d,
     maxValue,
-    totalSum,
+    totalSum
   }));
 
   const bars = (
@@ -47,7 +44,7 @@ export function LineItem({
   icon,
   title,
   value,
-  totalSum,
+  totalSum
 }: {
   icon: ReactNode;
   title: string;
@@ -58,9 +55,7 @@ export function LineItem({
     return (
       <div className="z-10 flex items-center space-x-4 overflow-hidden px-3">
         {icon}
-        <div className="truncate text-sm text-neutral-800 font-medium">
-          {title}
-        </div>
+        <div className="truncate text-sm text-neutral-800 font-medium">{title}</div>
       </div>
     );
   }, [icon, title]);
@@ -76,7 +71,7 @@ export function LineItem({
           style={{
             width: `${percentage}%`,
             position: "absolute",
-            inset: 0,
+            inset: 0
           }}
           className="h-full origin-left rounded-md bg-[#e7eeff]"
           transition={{ ease: "easeOut", duration: 0.3 }}
@@ -89,14 +84,12 @@ export function LineItem({
         <div className="z-10 flex items-center mx-2">
           <NumberFlow
             value={percentage}
-            className={cn(
-              "z-10 text-sm text-neutral-600 transition-transform duration-300"
-            )}
+            className={cn("z-10 text-sm text-neutral-600 transition-transform duration-300")}
             style={{
-              transform: `translateX(var(--tw-translate-x, 0)) translateZ(0)`,
+              transform: `translateX(var(--tw-translate-x, 0)) translateZ(0)`
             }}
             format={{
-              notation: "compact",
+              notation: "compact"
             }}
           />
           %

@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@getpimms/analytics':
-        specifier: ^0.0.30
-        version: 0.0.30
+        specifier: 1.1.3
+        version: 1.1.3
       '@mdx-js/loader':
         specifier: ^3.1.0
         version: 3.1.0(acorn@8.14.1)(webpack@5.98.0)
@@ -709,8 +709,8 @@ packages:
   '@formatjs/intl-localematcher@0.6.1':
     resolution: {integrity: sha512-ePEgLgVCqi2BBFnTMWPfIghu6FkbZnnBVhO2sSxvLfrdFw7wCHAHiDoM2h4NRgjbaY7+B7HgOLZGkK187pZTZg==}
 
-  '@getpimms/analytics@0.0.30':
-    resolution: {integrity: sha512-9/KGz0MBZpJ3+GaWM7fNQsRTfFW4aS7vM/ABSQlNIIOurC00/TdUK2lUV5heOChxV/tIYpIT8Mvp+ie+q91uDQ==}
+  '@getpimms/analytics@1.1.3':
+    resolution: {integrity: sha512-8AIvx71j1BcNqlaNNJrVfF0RD/YyGnVYxcUPBUZhtinA0SotcCjxRo1N1U1UoLZGDY+HWA3+EcfO0BfdVEp/MA==}
 
   '@humanfs/core@0.19.1':
     resolution: {integrity: sha512-5DyQ4+1JEUzejeK1JGICcideyfUbGixgS9jNgex5nqkW+cY7WZhxBigmieN5Qnw9ZosSNVC9KQKyb+GUaGyKUA==}
@@ -5032,7 +5032,7 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@getpimms/analytics@0.0.30':
+  '@getpimms/analytics@1.1.3':
     dependencies:
       server-only: 0.0.1
 

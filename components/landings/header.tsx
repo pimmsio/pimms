@@ -6,26 +6,24 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import { APP_URL } from "../../app/constants";
 
-export default function Header({ tkey }: { tkey: string }) {
-  const tcommon = useTranslations("landing.common");
+export default function Header() {
+  const tcommon = useTranslations("landing");
   return (
-    <>
-      <header className="w-full relative flex flex-wrap items-center gap-y-1 gap-x-5 py-3.5 mt-2 px-6 max-w-7xl mx-auto justify-between">
-        <Logo />
-        <nav className="flex-row items-center flex z-10 gap-x-2 md:gap-x-6 overflow-hidden text-[#5C5B61]">
-          <NavLink id="video" text={tcommon("nav.how_it_works")} />
-          <NavLink id="lifetime" text={tcommon("nav.pricing")} />
+    <header className="w-full bg-white border-b border-gray-100">
+      <div className="max-w-5xl mx-auto h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex-shrink-0 mr-4">
+          <Logo />
+        </div>
+        <nav className="flex items-center md:gap-x-6">
+          <NavLink id="pricing" text={tcommon("nav.pricing")} />
           <Link href={`${APP_URL}/login`}>
-            <Button
-              variant="link"
-              className="px-0 cursor-pointer text-sm md:text-base font-medium text-slate-500 text-opacity-80 hover:text-slate-800 leading-none"
-            >
+            <Button variant="link" className="text-sm font-medium text-gray-600 hover:text-gray-900">
               {tcommon("nav.dashboard")}
             </Button>
           </Link>
-          <CtaLink tkey={tkey} />
+          <CtaLink />
         </nav>
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

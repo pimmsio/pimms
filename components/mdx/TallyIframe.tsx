@@ -1,8 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
+import { ExternalLink, FileText } from "lucide-react";
 
-export const TallyIframe = () => {
+export default function TallyIframe() {
   useEffect(() => {
     const script = document.createElement("script");
     script.innerHTML = `
@@ -12,12 +13,33 @@ export const TallyIframe = () => {
   }, []);
 
   return (
-    <iframe
-      data-tally-src="https://tally.so/embed/3jo7Wx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-      loading="lazy"
-      width="100%"
-      height="659"
-      title="Report Abuse"
-    ></iframe>
+    <div className="my-4 sm:my-6 md:my-8 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 bg-white">
+      {/* Header */}
+      <div className="bg-[#3970ff]/5 border-b border-gray-200 px-6 py-4">
+        <div className="flex items-center gap-3">
+          <div className="w-10 h-10 bg-[#3970ff]/10 rounded-full flex items-center justify-center">
+            <FileText className="w-5 h-5 text-[#3970ff]" />
+          </div>
+          <div>
+            <h3 className="font-semibold text-gray-900 text-base">Interactive Form</h3>
+            <p className="text-sm text-gray-600 flex items-center gap-1">
+              <span>Powered by Tally</span>
+              <ExternalLink className="w-3 h-3" />
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Iframe container */}
+      <div className="aspect-video w-full bg-gray-50">
+        <iframe
+          data-tally-src="https://tally.so/embed/3jo7Wx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="659"
+          title="Report Abuse"
+        ></iframe>
+      </div>
+    </div>
   );
-};
+}

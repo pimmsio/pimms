@@ -1,43 +1,40 @@
 import { twMerge } from "tailwind-merge";
 
-export const H1 = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+export const H1 = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
-    <div
+    <h1
       className={twMerge(
-        "max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-5xl mx-auto text-center",
+        "text-4xl md:text-5xl lg:text-6xl !leading-10 sm:!leading-14 lg:!leading-16 font-extrabold !tracking-tighter text-balance text-[#08272E]",
         className
       )}
     >
-      <h1 className="text-[32px] sm:text-4xl md:text-5xl lg:text-6xl !leading-10 sm:!leading-14 lg:!leading-16 font-black !tracking-tighter text-balance text-[#08272E]">
-        {children}
-      </h1>
-    </div>
+      {children}
+    </h1>
   );
 };
 
-export const H1Blog = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+export const H1Blog = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
-    <div
+    <h1
       className={twMerge(
-        "max-w-sm sm:max-w-lg md:max-w-2xl lg:max-w-5xl mx-auto text-center",
+        "text-3xl md:text-4xl font-extrabold !leading-10 sm:!leading-14 lg:!leading-16 !tracking-tighter text-balance text-[#08272E] text-center",
         className
       )}
     >
-      <h1 className="text-[26px] sm:text-3xl md:text-4xl !leading-10 sm:!leading-14 lg:!leading-16 font-black !tracking-tighter text-balance text-[#08272E]">
-        {children}
-      </h1>
-    </div>
+      {children}
+    </h1>
+  );
+};
+
+export const H1Subtitle = ({ children, className }: { children: React.ReactNode; className?: string }) => {
+  return (
+    <p
+      className={twMerge(
+        "text-lg md:text-xl text-[#5C5B61] font-medium leading-relaxed text-balance text-center",
+        className
+      )}
+    >
+      {children}
+    </p>
   );
 };

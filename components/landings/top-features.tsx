@@ -7,148 +7,120 @@ import { FilterFeature } from "./filter-feature";
 import Referer from "../charts/referer";
 import Image from "next/image";
 import { Label } from "../base/label";
-import { Check, Globe, Share2, Zap } from "lucide-react";
+import { Globe, Share2, Zap } from "lucide-react";
 
-export const TopFeatures = ({
-  tkey,
-  showConversions = true,
-}: {
-  tkey: string;
-  showConversions?: boolean;
-}) => {
+export const TopFeatures = ({ tkey, showConversions = true }: { tkey: string; showConversions?: boolean }) => {
   const t = useTranslations(tkey);
   const locale = useLocale();
 
   return (
-    <Section className="max-w-5xl mx-auto">
-      <Label className="mb-6 mx-auto w-fit bg-[#3970ff] text-white py-1.5 flex items-center justify-center gap-2 uppercase px-4 text-sm">
-        <Check className="w-4 h-4" />
-        {t("top_features.title")}
-      </Label>
+    <Section id="top-features">
+      <div className="text-center mb-12">
+        <Label className="mb-6">{t("top_features.title")}</Label>
+        <H2 className="mb-4">
+          {t.rich("top_features.heading", {
+            logo: () => (
+              <Image
+                src="/static/logo.svg"
+                alt="PIMMS"
+                className="w-20 lg:w-24 inline-block align-baseline mx-2"
+                width={1000}
+                height={179}
+              />
+            ),
+            strong: (chunks) => <span className="text-[#3970ff]">{chunks}</span>
+          })}
+        </H2>
+        <Paragraph className="text-lg text-[#5C5B61] max-w-3xl mx-auto">{t("top_features.description")}</Paragraph>
+      </div>
 
-      <H2 className="mx-auto my-4 text-center">
-        {t.rich("top_features.heading", {
-          logo: () => (
-            <Image
-              src="/static/logo.svg"
-              alt="pim.ms"
-              className="w-20 sm:w-24 inline-block mb-[2px] mx-0.5"
-              width={1000}
-              height={179}
-            />
-          ),
-          strong: (chunks) => <span className="text-[#3970ff]">{chunks}</span>,
-        })}
-      </H2>
-      <Paragraph className="text-center mb-12 mx-auto">
-        {t("top_features.description")}
-      </Paragraph>
+      <div className="space-y-20">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-7 order-2 lg:order-1">
+            <div className="rounded-2xl overflow-hidden border border-gray-200">
+              <Image
+                src={`/static/deeplink-${locale}.svg`}
+                alt="Deep Analytics"
+                className="w-full"
+                width={1000}
+                height={179}
+              />
+            </div>
+          </div>
+          <div className="lg:col-span-5 order-1 lg:order-2 space-y-4">
+            <h3 className="text-2xl font-bold text-[#08272E]">{t("top_features.features.title1")}</h3>
+            <Paragraph className="text-[#5C5B61]">{t("top_features.features.description1")}</Paragraph>
+          </div>
+        </div>
 
-      <div className="flex flex-col gap-12 mx-auto w-full max-w-screen-lg">
-        <div className="justify-between gap-6 w-full overflow-hidden flex flex-col sm:flex-row">
-          <div className="w-full sm:w-1/2">
-            <Image
-              src={`/static/deeplink-${locale}.svg`}
-              alt="pim.ms"
-              className={"w-full border-[6px] border-neutral-100 rounded-3xl"}
-              width={1000}
-              height={179}
-            />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-5 space-y-4">
+            <h3 className="text-2xl font-bold text-[#08272E]">{t("top_features.features.title2")}</h3>
+            <Paragraph className="text-[#5C5B61]">{t("top_features.features.description2")}</Paragraph>
           </div>
-          <div className="flex flex-col px-2 sm:px-6 pb-6 w-full sm:w-1/2 justify-center">
-            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E] tracking-tighter">
-              {t("top_features.features.title1")}
-            </h3>
-            <Paragraph>{t("top_features.features.description1")}</Paragraph>
+          <div className="lg:col-span-7">
+            <div className="rounded-2xl overflow-hidden border border-gray-200">
+              <AnalyticsDemo tkey={tkey} showConversions={showConversions} />
+            </div>
           </div>
         </div>
-        <div className="justify-between gap-6 w-full overflow-hidden flex flex-col sm:flex-row-reverse">
-          <div className="w-full sm:w-1/2">
-            <AnalyticsDemo tkey={tkey} showConversions={showConversions} />
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-7 order-2 lg:order-1">
+            <div className="rounded-2xl overflow-hidden border border-gray-200">
+              <Referer />
+            </div>
           </div>
-          <div className="flex flex-col px-2 sm:px-6 pb-6 w-full sm:w-1/2 justify-center">
-            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E] tracking-tighter">
-              {t("top_features.features.title2")}
-            </h3>
-            <Paragraph>{t("top_features.features.description2")}</Paragraph>
-          </div>
-        </div>
-        <div className="justify-between gap-6 w-full overflow-hidden flex flex-col sm:flex-row">
-          <div className="w-full sm:w-1/2">
-            <Referer />
-          </div>
-          <div className="flex flex-col px-2 sm:px-6 pb-6 w-full sm:w-1/2 justify-center">
-            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E] tracking-tighter">
-              {t("top_features.features.title3")}
-            </h3>
-            <Paragraph>{t("top_features.features.description3")}</Paragraph>
+          <div className="lg:col-span-5 order-1 lg:order-2 space-y-4">
+            <h3 className="text-2xl font-bold text-[#08272E]">{t("top_features.features.title3")}</h3>
+            <Paragraph className="text-[#5C5B61]">{t("top_features.features.description3")}</Paragraph>
           </div>
         </div>
-        <div className="justify-between gap-6 w-full overflow-hidden flex flex-col sm:flex-row-reverse">
-          <div className="w-full sm:w-1/2 bg-card rounded-3xl border-[6px] border-neutral-100">
-            <FilterFeature tkey={tkey} />
+
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="lg:col-span-5 space-y-4">
+            <h3 className="text-2xl font-bold text-[#08272E]">{t("top_features.features.title4")}</h3>
+            <Paragraph className="text-[#5C5B61]">{t("top_features.features.description4")}</Paragraph>
           </div>
-          <div className="flex flex-col px-2 sm:px-6 pb-6 w-full sm:w-1/2 justify-center">
-            <h3 className="text-lg sm:text-xl mb-2 font-semibold text-[#08272E] tracking-tighter">
-              {t("top_features.features.title4")}
-            </h3>
-            <Paragraph>{t("top_features.features.description4")}</Paragraph>
+          <div className="lg:col-span-7">
+            <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
+              <FilterFeature tkey={tkey} />
+            </div>
           </div>
         </div>
       </div>
-      <div className="bg-card rounded-3xl border-[6px] border-neutral-100 p-8 w-full mt-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 mx-auto max-w-3xl">
-          <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold tracking-tighter">
-              <Zap size={24} />
-              {t("top_features.analytics_features.title1")}
-            </span>
-            <p className="max-w-xs text-balance text-sm text-neutral-500 sm:max-w-none">
-              {t("top_features.analytics_features.description1")}
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold tracking-tighter">
-              <Globe size={24} />
-              {t("top_features.link_features.title1")}
-            </span>
-            <p className="max-w-xs text-balance text-sm text-neutral-500 sm:max-w-none">
-              {t("top_features.link_features.description1")}
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold tracking-tighter">
-              <Share2 size={24} />
-              {t("top_features.analytics_features.title3")}
-            </span>
-            <p className="max-w-xs text-balance text-sm text-neutral-500 sm:max-w-none">
-              {t("top_features.analytics_features.description3")}
-            </p>
+
+      <div className="mt-20">
+        <div className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#3970ff]/10 rounded-2xl mb-6">
+                <Zap size={28} className="text-[#3970ff]" />
+              </div>
+              <h4 className="font-semibold text-lg text-[#08272E] mb-3">
+                {t("top_features.analytics_features.title1")}
+              </h4>
+              <p className="text-[#5C5B61]">{t("top_features.analytics_features.description1")}</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#3970ff]/10 rounded-2xl mb-6">
+                <Globe size={28} className="text-[#3970ff]" />
+              </div>
+              <h4 className="font-semibold text-lg text-[#08272E] mb-3">{t("top_features.link_features.title1")}</h4>
+              <p className="text-[#5C5B61]">{t("top_features.link_features.description1")}</p>
+            </div>
+            <div className="text-center">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-[#3970ff]/10 rounded-2xl mb-6">
+                <Share2 size={28} className="text-[#3970ff]" />
+              </div>
+              <h4 className="font-semibold text-lg text-[#08272E] mb-3">
+                {t("top_features.analytics_features.title3")}
+              </h4>
+              <p className="text-[#5C5B61]">{t("top_features.analytics_features.description3")}</p>
+            </div>
           </div>
         </div>
       </div>
-      {/* <div className="bg-card rounded-3xl border-[6px] border-neutral-100 p-8 w-full mt-8">
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 mx-auto max-w-2xl">
-          <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold tracking-tighter">
-              <Globe size={24} />
-              {t("link_features.features.title1")}
-            </span>
-            <p className="max-w-xs text-balance text-sm text-neutral-500 sm:max-w-none">
-              {t("link_features.features.description1")}
-            </p>
-          </div>
-          <div className="flex flex-col items-center gap-2 text-center sm:items-start sm:text-left">
-            <span className="flex items-center gap-2 font-semibold tracking-tighter">
-              <ImagePlus size={24} />
-              {t("link_features.features.title2")}
-            </span>
-            <p className="max-w-xs text-balance text-sm text-neutral-500 sm:max-w-none">
-              {t("link_features.features.description2")}
-            </p>
-          </div>
-        </div>
-      </div> */}
     </Section>
   );
 };

@@ -1,11 +1,9 @@
-"use client";
 import { Laptop, Tag, Tablet, SmartphoneCharging } from "lucide-react";
 import { useTranslations } from "next-intl";
 import React from "react";
 import { Label } from "../base/label";
 
-const getFlagUrl = (country: string) =>
-  `https://flag.vercel.app/m/${country}.svg`;
+const getFlagUrl = (country: string) => `https://flag.vercel.app/m/${country}.svg`;
 
 const getFaviconUrl = (url: string) => {
   const domain = new URL(url).hostname;
@@ -13,7 +11,7 @@ const getFaviconUrl = (url: string) => {
 };
 
 export const FilterFeature = ({}: { tkey: string }) => {
-  const tcommon = useTranslations("landing.common");
+  const tcommon = useTranslations("landing");
 
   const utmLabel = (
     <Label className="text-xs text-left capitalize font-light bg-zinc-100 text-[#08272E] border-1 border-zinc-200 ml-[-4px] mr-[-4px] px-1 rounded-sm">
@@ -24,32 +22,30 @@ export const FilterFeature = ({}: { tkey: string }) => {
   const ROWS = [
     [
       {
-        icon: (
-          <img alt="France" src={getFlagUrl("FR")} className="rounded-md" />
-        ),
+        icon: <img alt="France" src={getFlagUrl("FR")} className="rounded-md" />,
         label: tcommon("filter_feature.country"),
-        value: "France",
+        value: "France"
       },
       {
         icon: <img alt="CH" src={getFlagUrl("CH")} className="rounded-md" />,
         label: tcommon("filter_feature.city"),
-        value: "Zurich",
+        value: "Zurich"
       },
       {
         icon: <img alt="US" src={getFlagUrl("US")} className="rounded-md" />,
         label: tcommon("filter_feature.city"),
-        value: "New York",
+        value: "New York"
       },
       {
         icon: <img alt="FR" src={getFlagUrl("FR")} className="rounded-md" />,
         label: tcommon("filter_feature.city"),
-        value: "Lyon",
+        value: "Lyon"
       },
       {
         icon: <img alt="AU" src={getFlagUrl("AU")} className="rounded-md" />,
         label: tcommon("filter_feature.city"),
-        value: "Melbourne",
-      },
+        value: "Melbourne"
+      }
     ],
     [
       {
@@ -62,7 +58,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.referral"),
-        value: "LinkedIn",
+        value: "LinkedIn"
       },
       {
         icon: (
@@ -74,7 +70,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.referral"),
-        value: "Youtube",
+        value: "Youtube"
       },
       {
         icon: (
@@ -86,7 +82,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.referral"),
-        value: "Tally",
+        value: "Tally"
       },
       {
         icon: (
@@ -98,7 +94,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.referral"),
-        value: "Calendly",
+        value: "Calendly"
       },
       {
         icon: (
@@ -110,77 +106,77 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.referral"),
-        value: "Lemlist",
-      },
+        value: "Lemlist"
+      }
     ],
     [
       {
         icon: utmLabel,
         label: tcommon("filter_feature.utm.campaign"),
-        value: tcommon("filter_feature.utm.linkedin_launch"),
+        value: tcommon("filter_feature.utm.linkedin_launch")
       },
       {
         icon: utmLabel,
         label: tcommon("filter_feature.utm.source"),
-        value: tcommon("filter_feature.utm.newsletter_april"),
+        value: tcommon("filter_feature.utm.newsletter_april")
       },
       {
         icon: utmLabel,
         label: tcommon("filter_feature.utm.medium"),
-        value: tcommon("filter_feature.utm.google_promo"),
+        value: tcommon("filter_feature.utm.google_promo")
       },
       {
         icon: utmLabel,
         label: tcommon("filter_feature.utm.campaign"),
-        value: tcommon("filter_feature.utm.calendly_partner"),
+        value: tcommon("filter_feature.utm.calendly_partner")
       },
       {
         icon: utmLabel,
         label: tcommon("filter_feature.utm.medium"),
-        value: tcommon("filter_feature.utm.webinar_jean"),
-      },
+        value: tcommon("filter_feature.utm.webinar_jean")
+      }
     ],
     [
       {
         icon: <Tag size={12} />,
         label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.launch"),
+        value: tcommon("filter_feature.tag.launch")
       },
       {
         icon: <Tag size={12} />,
         label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.onboarding"),
+        value: tcommon("filter_feature.tag.onboarding")
       },
       {
         icon: <Tag size={12} />,
         label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.retargeting"),
+        value: tcommon("filter_feature.tag.retargeting")
       },
       {
         icon: <Tag size={12} />,
         label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.emailing"),
+        value: tcommon("filter_feature.tag.emailing")
       },
       {
         icon: <Tag size={12} />,
         label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.sales"),
+        value: tcommon("filter_feature.tag.sales")
       },
       {
         icon: <Tag size={12} />,
         label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.demo"),
+        value: tcommon("filter_feature.tag.demo")
       },
       {
         icon: <Tag size={12} />,
         label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.paid_ads"),
+        value: tcommon("filter_feature.tag.paid_ads")
       },
       {
         icon: <Tag size={12} />,
         label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.beta"),
-      },
+        value: tcommon("filter_feature.tag.beta")
+      }
     ],
     [
       {
@@ -193,7 +189,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.browser"),
-        value: "Arc",
+        value: "Arc"
       },
       {
         icon: (
@@ -205,12 +201,12 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.browser"),
-        value: "Chrome",
+        value: "Chrome"
       },
       {
         icon: <SmartphoneCharging size={18} />,
         label: tcommon("filter_feature.device"),
-        value: "Mobile",
+        value: "Mobile"
       },
       {
         icon: (
@@ -222,12 +218,12 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.browser"),
-        value: "Safari",
+        value: "Safari"
       },
       {
         icon: <Tablet size={18} />,
         label: tcommon("filter_feature.device"),
-        value: "Tablet",
+        value: "Tablet"
       },
       {
         icon: (
@@ -239,14 +235,14 @@ export const FilterFeature = ({}: { tkey: string }) => {
           />
         ),
         label: tcommon("filter_feature.browser"),
-        value: "Firefox",
+        value: "Firefox"
       },
       {
         icon: <Laptop size={18} />,
         label: tcommon("filter_feature.device"),
-        value: "Desktop",
-      },
-    ],
+        value: "Desktop"
+      }
+    ]
   ];
 
   return (
@@ -254,11 +250,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
       <div className="relative [mask-image:linear-gradient(to right, transparent, black 10%, black 90%, transparent)] overflow-hidden w-full">
         <div className="flex flex-col gap-4 py-4">
           {ROWS.map((blocks, rowIndex) => (
-            <InfiniteRow
-              key={rowIndex}
-              blocks={blocks}
-              speed={getSpeed(rowIndex, blocks.length)}
-            />
+            <InfiniteRow key={rowIndex} blocks={blocks} speed={getSpeed(rowIndex, blocks.length)} />
           ))}
         </div>
       </div>
@@ -274,7 +266,7 @@ const getSpeed = (i: number, length: number) => {
 
 const InfiniteRow = ({
   blocks,
-  speed,
+  speed
 }: {
   blocks: { icon: React.ReactNode; label: string; value: string }[];
   speed: string;
@@ -282,10 +274,7 @@ const InfiniteRow = ({
   const duplicated = [...blocks, ...blocks];
   return (
     <div className="overflow-hidden w-full">
-      <div
-        className="flex w-max whitespace-nowrap animate-scroll-loop"
-        style={{ animationDuration: speed }}
-      >
+      <div className="flex w-max whitespace-nowrap animate-scroll-loop" style={{ animationDuration: speed }}>
         {duplicated.map((block, idx) => (
           <div key={idx} className="flex gap-4 px-4 min-w-max items-center">
             <FilterBlock {...block} />
@@ -296,15 +285,7 @@ const InfiniteRow = ({
   );
 };
 
-const FilterBlock = ({
-  icon,
-  label,
-  value,
-}: {
-  icon: React.ReactNode;
-  label: string;
-  value: string;
-}) => (
+const FilterBlock = ({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) => (
   <div className="flex h-9 rounded-md border-[2px] border-neutral-200 text-sm leading-none text-neutral-800 [&>*]:h-full">
     <div className="flex items-center gap-2 px-2 text-neutral-500">
       <span className="shrink-0">{icon}</span>

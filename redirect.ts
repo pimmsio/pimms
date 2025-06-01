@@ -21,6 +21,11 @@ const redirects = [
     permanent: true
   },
   {
+    source: "/blog/systemeio-attribution-pimms",
+    destination: "/guides/how-to-track-systemeio-sales-and-leads-marketing-attribution",
+    permanent: true
+  },
+  {
     source: "/guides/how-to-track-systemeio-sales-and-leads",
     destination: "/guides/how-to-track-systemeio-sales-and-leads-marketing-attribution",
     permanent: true

@@ -1,18 +1,9 @@
 import { twMerge } from "tailwind-merge";
 
-export const HeroSection = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+export const HeroSection = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <section
-      className={twMerge(
-        "w-full mt-8 mb-14 md:my-16 px-1 md:px-6 mx-auto",
-        className
-      )}
+      className={twMerge("w-full max-w-5xl mx-auto px-4 md:px-6 mt-12 mb-8 sm:mt-24 sm:mb-16", className)}
       id="hero"
     >
       {children}

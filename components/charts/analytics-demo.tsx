@@ -12,19 +12,13 @@ type Tab = {
   label: string;
 };
 
-export const AnalyticsDemo = ({
-  tkey,
-  showConversions = true,
-}: {
-  tkey: string;
-  showConversions?: boolean;
-}) => {
-  const tcommon = useTranslations("landing.common");
+export const AnalyticsDemo = ({ tkey, showConversions = true }: { tkey: string; showConversions?: boolean }) => {
+  const tcommon = useTranslations("landing");
   const RESOURCE_LABELS = {
     clicks: tcommon("analytics_chart.clicks"),
     leads: tcommon("analytics_chart.leads"),
     sales: tcommon("analytics_chart.sales"),
-    saleAmount: tcommon("analytics_chart.saleAmount"),
+    saleAmount: tcommon("analytics_chart.saleAmount")
   };
 
   const tabs = useMemo(
@@ -32,20 +26,20 @@ export const AnalyticsDemo = ({
       [
         {
           id: "clicks",
-          label: "Clicks",
+          label: "Clicks"
         },
         ...(showConversions
           ? [
               {
                 id: "leads",
-                label: "Conversions",
+                label: "Conversions"
               },
               {
                 id: "sales",
-                label: "Sales",
-              },
+                label: "Sales"
+              }
             ]
-          : []),
+          : [])
       ] as Tab[],
     [showConversions]
   );
@@ -56,19 +50,11 @@ export const AnalyticsDemo = ({
   // generate different data for each tab
   // and compute total events for each tab
   const demoData = useMemo(() => {
-    const dataClicks = [
-      180, 230, 320, 305, 330, 290, 340, 310, 380, 360, 270, 360, 280, 270, 350,
-      370, 350, 340, 300,
-    ];
+    const dataClicks = [180, 230, 320, 305, 330, 290, 340, 310, 380, 360, 270, 360, 280, 270, 350, 370, 350, 340, 300];
 
-    const dataLeads = [
-      34, 34, 51, 34, 43, 41, 63, 38, 56, 71, 41, 58, 31, 49, 56, 57, 46, 44,
-      42,
-    ];
+    const dataLeads = [34, 34, 51, 34, 43, 41, 63, 38, 56, 71, 41, 58, 31, 49, 56, 57, 46, 44, 42];
 
-    const dataSales = [
-      11, 12, 15, 11, 13, 13, 21, 14, 12, 25, 10, 13, 9, 10, 21, 18, 15, 8, 13,
-    ];
+    const dataSales = [11, 12, 15, 11, 13, 13, 21, 14, 12, 25, 10, 13, 9, 10, 21, 18, 15, 8, 13];
 
     return dataClicks
       .reverse()
@@ -78,8 +64,8 @@ export const AnalyticsDemo = ({
           clicks: value,
           leads: dataLeads[index],
           sales: dataSales[index],
-          saleAmount: dataSales[index] * 19,
-        },
+          saleAmount: dataSales[index] * 19
+        }
       }))
       .reverse();
   }, []);
@@ -87,11 +73,11 @@ export const AnalyticsDemo = ({
   const totalEvents = {
     clicks: demoData.reduce((acc, curr) => acc + curr.values.clicks, 0),
     leads: demoData.reduce((acc, curr) => acc + curr.values.leads, 0),
-    sales: demoData.reduce((acc, curr) => acc + curr.values.sales, 0),
+    sales: demoData.reduce((acc, curr) => acc + curr.values.sales, 0)
   };
 
   return (
-    <div className="bg-card rounded-3xl border-[6px] border-neutral-100">
+    <div className="bg-card">
       <div
         className={`scrollbar-hide grid w-full grid-cols-3 divide-x divide-[#E7EEFF] overflow-y-hidden border-b-1 border-[#E7EEFF] rounded-t-2xl`}
       >
@@ -112,22 +98,17 @@ export const AnalyticsDemo = ({
                 </div>
                 <div className="mt-1 flex h-8 items-center">
                   <NumberFlow
-                    value={
-                      id === "sales" && tab.id === "sales"
-                        ? totalEvents.sales
-                        : totalEvents[id]
-                    }
+                    value={id === "sales" && tab.id === "sales" ? totalEvents.sales : totalEvents[id]}
                     className={cn("text-xl font-medium sm:text-xl")}
                     format={
                       id === "sales"
                         ? {
                             style: "currency",
                             currency: tcommon("analytics_chart.currency"),
-                            trailingZeroDisplay: "stripIfInteger",
+                            trailingZeroDisplay: "stripIfInteger"
                           }
                         : {
-                            notation:
-                              totalEvents[id] > 999999 ? "compact" : "standard",
+                            notation: totalEvents[id] > 999999 ? "compact" : "standard"
                           }
                     }
                   />

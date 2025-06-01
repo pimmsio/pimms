@@ -1,35 +1,40 @@
-import Logo from "@/components/logo";
-import NavLink from "@/components/NavLink";
-import { useLocale, useTranslations } from "next-intl";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
-import { APP_URL } from "@/app/constants";
-import { getCanonicalLink } from "@/lib/utils";
+import { useLocale } from "next-intl";
+import { getCanonicalLink } from "../../lib/utils";
+import Logo from "../logo";
+import { APP_URL } from "../../app/constants";
 
-export default function Header({}: { tkey?: string }) {
+export default function BlogHeader() {
+  const t = useTranslations("blog.nav");
   const locale = useLocale();
-  const tcommon = useTranslations("landing.common");
 
   return (
-    <>
-      <header className="w-full relative flex flex-wrap items-center gap-y-1 gap-x-5 py-3.5 mt-2 px-6 max-w-7xl mx-auto justify-between">
-        <div className="hidden md:block absolute w-full h-[135%] scale-y-150 left-0 top-0 -translate-y-1/2 bg-pattern blur-[25px] pointer-events-none"></div>
-        <Logo />
-        <nav className="flex-row items-center flex z-10 gap-x-2 md:gap-x-6 overflow-hidden text-[#5C5B61]">
-          <NavLink
-            url={getCanonicalLink(locale, "/")}
-            text={tcommon("nav.solutions")}
-          />
-          <Link href={`${APP_URL}/login`} target="_blank" rel="noreferrer">
+    <header className="w-full bg-white border-b border-gray-100">
+      <div className="max-w-5xl mx-auto h-12 sm:h-14 md:h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex-shrink-0 mr-4">
+          <Logo />
+        </div>
+        <nav className="flex items-center gap-3 sm:gap-4 md:gap-6">
+          <Link href={getCanonicalLink(locale, "/articles")}>
             <Button
               variant="link"
-              className="px-0 cursor-pointer text-sm md:text-base font-medium text-slate-500 text-opacity-80 hover:text-slate-800 leading-none"
+              className="text-xs sm:text-sm font-medium text-gray-600 hover:text-gray-900 px-2 sm:px-3"
             >
-              {tcommon("nav.dashboard")}
+              {t("articles")}
+            </Button>
+          </Link>
+          <Link href={`${APP_URL}/login`}>
+            <Button
+              variant="link"
+              className="text-xs sm:text-sm font-medium text-gray-600 hover:text-gray-900 px-2 sm:px-3"
+            >
+              {t("dashboard")}
             </Button>
           </Link>
         </nav>
-      </header>
-    </>
+      </div>
+    </header>
   );
 }

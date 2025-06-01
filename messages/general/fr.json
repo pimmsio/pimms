@@ -4,7 +4,7 @@
       "tagline": "Liens directs pim.ms"
     },
     "footer": {
-      "description": "PIMMS est la plateforme de deeplink pour optimiser vos conversions sur mobile.",
+      "description": "PIMMS est la plateforme de deeplink pour optimiser tes conversions sur mobile.",
       "nav": {
         "privacy": "Politique de confidentialité",
         "terms": "Conditions d'utilisation",
@@ -15,7 +15,8 @@
         "help": "Aide",
         "solutions": "Solutions",
         "resources": "Ressources",
-        "alternatives": "Alternatives"
+        "alternatives": "Alternatives",
+        "freetools": "Outils gratuits"
       },
       "solutions": {
         "youtube": "Créateurs de contenu YouTube",
@@ -23,6 +24,9 @@
       },
       "alternatives": {
         "bitly": "Alternatives à Bitly"
+      },
+      "freetools": {
+        "site-checker": "Scan Site PIMMS (tag)"
       },
       "resources": {
         "blog": "Blog",

@@ -1,441 +1,137 @@
 {
   "landing": {
-    "common": {
-      "nav": {
-        "how_it_works": "Intro",
-        "solutions": "Solutions",
-        "dashboard": "Se connecter",
-        "pricing": "Nos offres"
+    "nav": {
+      "how_it_works": "Intro",
+      "solutions": "Solutions",
+      "dashboard": "Se connecter",
+      "pricing": "Nos offres"
+    },
+    "cta": {
+      "link": "Démarrer gratuitement",
+      "bottom": "Pas de CB requise • Toujours gratuit",
+      "main": "<fast>⚡</fast> Démarre gratuitement<large> avec 10 liens offerts</large>",
+      "main_short": "<fast>⚡</fast> Démarre gratuitement"
+    },
+    "logos_circle": {
+      "title": "LE MIEUX ?",
+      "heading": "Ça fonctionne partout, et ça <strong>tracke tout</strong>",
+      "description": "Fonctionne avec +100 apps mobiles et intégrations.",
+      "more": "Fonctionne avec +100 apps mobiles et intégrations."
+    },
+    "analytics_chart": {
+      "clicks": "Clics",
+      "leads": "Conversions",
+      "sales": "Ventes",
+      "saleAmount": "Recettes",
+      "currency": "EUR",
+      "locale": "fr-FR"
+    },
+    "filter_feature": {
+      "country": "Pays",
+      "city": "Ville",
+      "browser": "Navigateur",
+      "device": "Appareil",
+      "referral": "Referral",
+      "utm": {
+        "campaign": "Campagne",
+        "source": "Source",
+        "medium": "Medium",
+        "linkedin_launch": "linkedin_launch",
+        "newsletter_april": "newsletter_april",
+        "google_promo": "google_promo",
+        "calendly_partner": "calendly_partner",
+        "webinar_jean": "webinar_jean",
+        "fb_retargeting": "fb_retargeting"
       },
-      "cta": {
-        "link": "Démarrer gratuitement",
-        "bottom": "Pas de CB requise",
-        "main": "<fast>⚡</fast> Démarre gratuitement<large> avec 10 liens offerts</large>",
-        "main_short": "<fast>⚡</fast> Démarre gratuitement"
-      },
-      "logos_circle": {
-        "title": "LE MIEUX ?",
-        "heading": "Ça fonctionne partout, et ça <strong>tracke tout</strong>",
-        "description": "Fonctionne avec +100 apps mobiles et intégrations.",
-        "more": "Fonctionne avec +100 apps mobiles et intégrations."
-      },
-      "analytics_chart": {
-        "clicks": "Clics",
-        "leads": "Conversions",
+      "tag": {
+        "title": "Tag",
+        "launch": "Lancement",
+        "onboarding": "Onboarding",
+        "retargeting": "Retargeting",
+        "emailing": "Emailing",
         "sales": "Ventes",
-        "saleAmount": "Recettes",
-        "currency": "EUR",
-        "locale": "fr-FR"
-      },
-      "filter_feature": {
-        "country": "Pays",
-        "city": "Ville",
-        "browser": "Navigateur",
-        "device": "Appareil",
-        "referral": "Referral",
-        "utm": {
-          "campaign": "Campagne",
-          "source": "Source",
-          "medium": "Medium",
-          "linkedin_launch": "linkedin_launch",
-          "newsletter_april": "newsletter_april",
-          "google_promo": "google_promo",
-          "calendly_partner": "calendly_partner",
-          "webinar_jean": "webinar_jean",
-          "fb_retargeting": "fb_retargeting"
+        "demo": "Démo",
+        "paid_ads": "Pub meta",
+        "beta": "Beta"
+      }
+    },
+    "hero": {
+      "avatars": {
+        "title": "Approuvé par les infopreneurs et startups",
+        "avatar1": {
+          "name": "Mathieu Visière",
+          "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
         },
-        "tag": {
-          "title": "Tag",
-          "launch": "Lancement",
-          "onboarding": "Onboarding",
-          "retargeting": "Retargeting",
-          "emailing": "Emailing",
-          "sales": "Ventes",
-          "demo": "Démo",
-          "paid_ads": "Pub meta",
-          "beta": "Beta"
+        "avatar2": {
+          "name": "Mathieu Dacheux",
+          "image": "https://assets.pimms.io/mathieu-dacheux.jpeg"
+        },
+        "avatar3": {
+          "name": "Ronan Jaffré",
+          "image": "https://assets.pimms.io/ronan-jaffre.jpeg"
+        },
+        "avatar4": {
+          "name": "Mathieu Bernard",
+          "image": "https://assets.pimms.io/mathieu-bernard.jpeg"
+        },
+        "avatar5": {
+          "name": "Jean Castets",
+          "image": "https://assets.pimms.io/jean-castets.jpeg"
         }
       }
     },
-    "home": {
-      "hero": {
-        "title": "Transforme chaque clic en <primary>conversion</primary>, puis en <primary>décision</primary>",
-        "additional_title": "Moins de hasard",
-        "subtitle": "Le seul outil capable d’identifier les liens qui génèrent de vraies conversions — là où les autres s’arrêtent aux clics.",
-        "benefits": {
-          "1": "Centralise tous les liens partagés et repère vite les plus performants",
-          "2": "Sauve des conversions avec la redirection vers les apps mobiles",
-          "3": "Suis en temps réel clics, conversions et ventes pour accélérer les résultats"
-        },
-        "avatars": {
-          "title": "Approuvé et utilisé par les créateurs et startups",
-          "avatar1": {
-            "name": "Mathieu Visière",
-            "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
-          },
-          "avatar2": {
-            "name": "Mathieu Dacheux",
-            "image": "https://assets.pimms.io/mathieu-dacheux.jpeg"
-          },
-          "avatar3": {
-            "name": "Ronan Jaffré",
-            "image": "https://assets.pimms.io/ronan-jaffre.jpeg"
-          },
-          "avatar4": {
-            "name": "Mathieu Bernard",
-            "image": "https://assets.pimms.io/mathieu-bernard.jpeg"
-          },
-          "avatar5": {
-            "name": "Jean Castets",
-            "image": "https://assets.pimms.io/jean-castets.jpeg"
-          }
-        }
-      },
-      "the_need": {
-        "problem": "Le problème",
-        "solution": "La solution",
-        "fail": "Ton business sans outil",
-        "success": "Ton business avec <logo>PIMMS</logo>",
-        "post_fail": "🛠 121 jours, toujours zéro vente. En solo. Voici les 4 stratégies que j'ai testées — et pourquoi ça n'a pas marché.",
-        "post_success": "🚀 Mon solo business a atteint 100K€ en 121 jours. Voici les 4 stratégies qui ont fait la différence."
-      },
-      "main_testimonial": {
-        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink",
-        "author_name": "Mathieu Dacheux",
-        "author_company": "feeedback.dev",
-        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
-      },
-      "video": {
-        "src": "https://player.vimeo.com/video/1069569159?badge=0&playsinline=0",
-        "cover": "https://assets.pimms.io/video-pimms-intro-fr-preview.mp4?v=3"
-      },
-      "problem": {
-        "title": "Le Problème",
-        "heading": "Sans <logo>PIMMS</logo>, tu perds des <strong>conversions</strong>",
-        "description": "Chaque fois que tes contenus s’ouvrent dans un navigateur intégré sur mobile, l'expérience est cassée.",
-        "more": {
-          "title1": "<strong>Les liens s'ouvrent dans un mini navigateur intégré</strong>, pas dans les apps officielles",
-          "title2": "<strong>Les utilisateurs sont déconnectés</strong>: profil sociaux inaccessibles, paiements en plus d'étapes...",
-          "title3": "<strong>Résultat, ils abandonnent à cause de frictions inutiles</strong>."
-        },
-        "description2": "Tu perds des conversions si tu n'as pas activé le tracking des conversions sur tes liens.",
-        "more2": {
-          "title1": "La plupart des outils de liens <strong>suivent les clics, mais pas les conversions</strong> (formulaires remplis, rendez-vous réservés, ventes…)",
-          "title2": "<strong>Tu ne sais pas ce qui marche vraiment</strong> : quel lien apporte des résultats, quel canal, quelle campagne, quel post…",
-          "title3": "Résultat, sans optimiser ton travail, <strong>tu perds du temps et des conversions</strong>."
-        }
-      },
-      "solution": {
-        "title": "La Solution",
-        "heading": "Technologie deeplink pour convertir plus",
-        "description": "<logo>PIMMS</logo> ouvre directement les contenus dans les apps mobiles officielles. C'est la technologie deeplink. L'expérience est plus fluide et les conversions augmentent.",
-        "more": {
-          "title1": "Détection automatique du smartphone",
-          "description1": "Les contenus s'affichent directement dans les apps officielles utilisées tous les jours par tes utilisateurs.",
-          "title2": "Expérience fluide sans perte d'utilisateurs",
-          "description2": "L'expérience augmente les conversions et booste l'engagement et le temps passé pour chaque lien partagé.",
-          "title3": "Des deeplinks pour toutes les apps natives",
-          "description3": "Fonctionne avec 100+ apps mobiles incluant les navigateurs Chrome et Safari pour les pages web."
-        }
-      },
-      "top_features": {
-        "title": "La Solution",
-        "heading": "Avec <logo>PIMMS</logo>, tu convertis plus et tu sais exactement <strong>pourquoi</strong>",
-        "description": "Tes liens s'ouvrent directement dans les apps mobiles officielles. Tu réduis les frictions et tu suis la performance de chaque lien, chaque canal. Tu analyses les clics, les conversions, et les ventes.",
-        "features": {
-          "title1": "Offre une expérience fluide, et sans friction",
-          "description1": "Tes liens s'ouvrent directement dans les apps mobiles officielles comme Youtube, Instagram, ou encore Safari et Chrome. C'est moins de frictions, plus d'engagement. Fini les pertes d'utilisateurs.",
-          "title2": "Découvre enfin ce qui génère des conversions",
-          "description2": "Visualise l’impact de chaque lien dans un dashboard, et relie chaque contenu, chaque action à un résultat concret (achat, inscription, etc.)",
-          "title3": "Prends de meilleures décisions, plus vite",
-          "description3": "Grace aux données claires et en temps réel, tu sais exactement quoi ajuster, accélérer ou stopper pour maximiser tes conversions.",
-          "title4": "Améliore ce qui convertit, coupe le reste",
-          "description4": "Arrête d'agir à l'aveugle et mise sur ce qui fait grandir ton activité. Utilise les filtres détaillés par campagne UTM, source, pays, appareil, navigateur, canal..."
-        },
-        "analytics_features": {
-          "title1": "Données en temps réel",
-          "description1": "Chaque clic, conversion, vente s'affiche en live pour pouvoir réagir vite.",
-          "title2": "Filtres de dates",
-          "description2": "Analyse les campagnes par jour, semaine ou période donnée, et compare les résultats facilement.",
-          "title3": "Dashboards partagés",
-          "description3": "Collabore en équipe pour suivre les perfs et prendre les bonnes décisions ensemble."
-        },
-        "link_features": {
-          "title1": "Domaines personnalisés",
-          "description1": "Crée des liens courts professionnels et uniques avec ton propre nom de domaine.",
-          "title2": "Aperçus de liens",
-          "description2": "Propose des aperçus de liens et modifie facilement l'image, le titre et la description."
-        }
-      },
-      "free_offer": {
-        "title": "Accès à <logo>PIMMS</logo>",
-        "description": "Teste PIMMS gratuitement et découvre comment rediriger mieux vers tes contenus, convertir plus et suivre enfin ce qui marche vraiment.",
-        "bottom": "Pas de CB requise • Juste plus de conversions",
-        "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
-          "alt1": "PIMMS Dashboard showing a list of direct links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
-          "alt2": "PIMMS Dashboard showing analytics of direct links"
-        }
-      },
-      "lifetime_offer": {
-        "title": "Prends une longueur d'avance",
-        "subtitle": "Passe à la version Pro avant que le tarif de lancement ne disparaisse",
-        "description": "Profite de liens en illimités avec tracking",
-        "bottom": "* L’offre est disponible immédiatement, mais il ne reste que quelques places.",
-        "cta": "Acheter",
-        "pay_once": "Paiement unique, sans abonnement",
-        "lifetime_deal": "Achat unique",
-        "popular": "Populaire",
-        "tax": "H.T.",
-        "month": "mois",
-        "sub_pass": "Plus de 20k€ /mois de ventes trackées",
-        "try_free": "Essai gratuit",
-        "no_credit_card": "Pas de CB requise",
-        "features": {
-          "title": "L'indispensable en illimité",
-          "1": "Nouveaux liens et clics illimités",
-          "2": "Evènements de conversion illimités",
-          "3": "Jusqu'à 20k€/mo de ventes trackées",
-          "4": "Travaille en équipe",
-          "5": "Domaine personnalisé",
-          "6": "UTM illimités, redirections dans les apps, QR codes..."
-        }
+    "free_offer": {
+      "images": {
+        "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
+        "alt1": "PIMMS Dashboard showing a list of direct links",
+        "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
+        "alt2": "PIMMS Dashboard showing analytics of direct links"
       }
     },
-    "youtube": {
-      "hero": {
-        "title": "Booste ta chaîne <youtube>YouTube</youtube> grâce aux deeplinks",
-        "description": "Les seuls liens courts qui ouvrent directement tes vidéos dans l'app officielle YouTube, augmentant ton nombre d'abonnés. Ils améliorent aussi l'engagement sur tes vidéos et l'expérience utilisateur.",
-        "subtitle": "Les deeplinks ouvrent tes vidéos directement dans l'app officielle YouTube:",
-        "benefits": {
-          "1": "Augmente ton nombre d'abonnés",
-          "2": "Augmente l'engagement sur tes vidéos",
-          "3": "Analyse ton trafic et les clics"
-        },
-        "avatars": {
-          "title": "Top créateurs et chaines l'utilisent",
-          "avatar1": {
-            "name": "Mathieu Visière",
-            "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
-          },
-          "avatar2": {
-            "name": "Florent Thurin",
-            "image": "https://assets.pimms.io/florent-thurin.jpeg"
-          },
-          "avatar3": {
-            "name": "Gabriel Jarrosson",
-            "image": "https://assets.pimms.io/gabriel-jarrosson.jpeg"
-          },
-          "avatar4": {
-            "name": "Mathieu Dos Santos",
-            "image": "https://assets.pimms.io/mathieu-dos-santos.jpeg"
-          },
-          "avatar5": {
-            "name": "Jean Castets",
-            "image": "https://assets.pimms.io/jean-castets.jpeg"
-          }
-        }
-      },
-      "main_testimonial": {
-        "text": "<strong>J'en avais assez que mes liens sur les réseaux ouvrent le navigateur interne des apps...</strong> Puis j'ai découvert PIMMS! C'est le meilleur moyen d'améliorer sa conversion. Tout cela grâce au deeplink",
-        "author_name": "Mathieu Dacheux",
-        "author_company": "feeedback.dev",
-        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
-      },
-      "video": {
-        "src": "https://player.vimeo.com/video/1069369994?badge=0&playsinline=0",
-        "cover": "https://assets.pimms.io/pimms-intro-preview.mp4"
-      },
-      "problem": {
-        "title": "Le Problème",
-        "heading": "Sans <logo>PIMMS</logo>, tu perds des <strong>abonnés</strong>",
-        "description": "Quand tes vidéos ne s'ouvrent pas dans l’app officielle YouTube, l'expérience est cassée.",
-        "more": {
-          "title1": "<strong>Les liens s'ouvrent dans un mini navigateur intégré</strong>, pas dans l'app officielle YouTube",
-          "title2": "<strong>Les utilisateurs sont déconnectés</strong>: ils ne peuvent pas liker, commenter, s'abonner...",
-          "title3": "<strong>Résultat, ils abandonnent à cause de frictions inutiles</strong>."
-        }
-      },
-      "top_features": {
-        "title": "La Solution",
-        "heading": "Avec <logo>PIMMS</logo>, tu obtiens plus d'abonnés et tu sais <strong>pourquoi</strong>",
-        "description": "Tes liens s'ouvrent directement dans l'app officielle YouTube. Tu réduis les frictions et tu suis la performance de chaque lien, chaque canal.",
-        "features": {
-          "title1": "Offre une expérience fluide, et sans friction",
-          "description1": "Tes liens s'ouvrent directement dans l'app officielle YouTube. C'est moins de frictions, plus d'engagement. Fini les pertes d'utilisateurs.",
-          "title2": "Découvre enfin ce qui génère des clics",
-          "description2": "Visualise l’impact de chaque lien dans un dashboard, et relie chaque contenu, chaque action au bon canal de communication, à la bonne campagne",
-          "title3": "Prends de meilleures décisions, plus vite",
-          "description3": "Grace aux données claires et en temps réel, tu sais exactement quoi ajuster, accélérer ou stopper pour maximiser ton nombre d'abonnés.",
-          "title4": "Améliore ce qui convertit, coupe le reste",
-          "description4": "Arrête d'agir à l'aveugle et mise sur ce qui fait grandir ta chaine. Utilise les filtres détaillés par campagne UTM, source, pays, appareil, navigateur, canal..."
-        },
-        "analytics_features": {
-          "title1": "Données en temps réel",
-          "description1": "Chaque clic, conversion, vente s'affiche en live pour pouvoir réagir vite.",
-          "title2": "Filtres de dates",
-          "description2": "Analyse les campagnes par jour, semaine ou période donnée, et compare les résultats facilement.",
-          "title3": "Dashboards partagés",
-          "description3": "Collabore en équipe pour suivre les perfs et prendre les bonnes décisions ensemble."
-        },
-        "link_features": {
-          "title1": "Domaines personnalisés",
-          "description1": "Crée des liens courts professionnels et uniques avec ton propre nom de domaine.",
-          "title2": "Aperçus de liens",
-          "description2": "Propose des aperçus de liens et modifie facilement l'image, le titre et la description."
-        }
-      },
-      "free_offer": {
-        "title": "Accès à <logo>PIMMS</logo>",
-        "description": "Gagne des abonnés – on t'offre 10 liens pour commencer gratuitement.",
-        "bottom": "Pas de CB requise • Juste plus d'abonnés",
-        "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
-          "alt1": "PIMMS Dashboard showing a list of direct links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
-          "alt2": "PIMMS Dashboard showing analytics of direct links"
-        }
-      },
-      "lifetime_offer": {
-        "title": "Prends une longueur d'avance",
-        "subtitle": "Passe à la version Pro avant que le tarif de lancement ne disparaisse",
-        "description": "Profite de liens illimités avec tracking illimités",
-        "bottom": "* L’offre est disponible immédiatement, mais elle peut disparaître à tout moment.",
-        "cta": "J'achète",
-        "pay_once": "Paiement unique, sans abonnement",
-        "free_pass": "10 liens gratuits",
-        "lifetime_deal": "Achat unique",
-        "popular": "Populaire",
-        "tax": "H.T.",
-        "features": {
-          "title": "L'indispensable en illimité",
-          "1": "Plus d'abonnés",
-          "2": "Nouveaux liens illimités",
-          "3": "Clics analysés illimités",
-          "4": "Données conservées 1 an",
-          "5": "Travaille en équipe",
-          "6": "Domaine personnalisé",
-          "7": "UTM illimités, redirection dans les apps mobiles, QR codes..."
-        }
-      }
-    },
-    "amazon": {
-      "hero": {
-        "title": "Développe tes ventes sur <amazon>Amazon</amazon> grâce aux deeplinks",
-        "description": "Les seuls liens courts qui ouvrent directement tes produits ou tes livres dans l'app officielle Amazon. Augmente tes évaluations et tes ventes tout en offrant une meilleure expérience à tes clients.",
-        "subtitle": "Les deeplinks redirigent instantanément tes prospects dans l'app Amazon officielle:",
-        "benefits": {
-          "1": "Stimule tes ventes et tes évaluations",
-          "2": "Fidélise tes clients et améliore leur expérience",
-          "3": "Analyse ton trafic et tes clics en temps réel"
-        },
-        "avatars": {
-          "title": "De nombreux vendeurs et auteurs à succès s'en servent déjà",
-          "avatar1": {
-            "name": "Mathieu Visière",
-            "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
-          },
-          "avatar2": {
-            "name": "Mathieu Dacheux",
-            "image": "https://assets.pimms.io/mathieu-dacheux.jpeg"
-          },
-          "avatar3": {
-            "name": "Ronan Jaffré",
-            "image": "https://assets.pimms.io/ronan-jaffre.jpeg"
-          },
-          "avatar4": {
-            "name": "Mathieu Bernard",
-            "image": "https://assets.pimms.io/mathieu-bernard.jpeg"
-          },
-          "avatar5": {
-            "name": "Jean Castets",
-            "image": "https://assets.pimms.io/jean-castets.jpeg"
-          }
-        }
-      },
-      "main_testimonial": {
-        "text": "<strong>Je perdais des ventes quand les liens ouvraient mes produits dans un navigateur tiers...</strong> Puis j’ai découvert PIMMS! C’est le meilleur moyen d’augmenter le taux de conversion en redirigeant directement dans l’app Amazon.",
-        "author_name": "Marie Dupont",
-        "author_company": "Auto-entrepreneuse & Auteure Amazon KDP",
-        "author_avatar": "https://via.placeholder.com/100"
-      },
-      "video": {
-        "src": "https://player.vimeo.com/video/1069369994?badge=0&playsinline=0",
-        "cover": "https://assets.pimms.io/pimms-intro-preview.mp4"
-      },
-      "problem": {
-        "title": "Le Problème",
-        "heading": "Sans <logo>PIMMS</logo>, tu perds des <strong>acheteurs</strong>",
-        "description": "Quand tes produits Amazon ne s'ouvrent pas dans l’app officielle, l'expérience client est brisée.",
-        "more": {
-          "title1": "<strong>Les liens s'ouvrent dans un mini navigateur intégré</strong>, au lieu de l'app officielle Amazon",
-          "title2": "<strong>Les utilisateurs ne sont pas connectés</strong>: ils ne peuvent pas acheter, noter ou laisser un avis facilement",
-          "title3": "<strong>Résultat, ils abandonnent à cause de frictions inutiles</strong>."
-        }
-      },
-      "top_features": {
-        "title": "La Solution",
-        "heading": "Avec <logo>PIMMS</logo>, tu vends plus et tu sais <strong>pourquoi</strong>",
-        "description": "Tes liens s'ouvrent directement dans l'app Amazon. Tu réduis les frictions et tu suis la performance de chaque lien, chaque canal.",
-        "features": {
-          "title1": "Offre une expérience d’achat fluide",
-          "description1": "Tes liens ouvrent tes produits directement dans l'app Amazon. Moins de clics perdus, plus de notes et de ventes.",
-          "title2": "Découvre enfin ce qui génère des commandes",
-          "description2": "Visualise l’impact de chaque lien dans un dashboard, et relie chaque promotion ou campagne au bon canal.",
-          "title3": "Prends de meilleures décisions, plus rapidement",
-          "description3": "Grâce à des données claires et en temps réel, identifie les produits qui marchent le mieux et optimise ta stratégie de vente.",
-          "title4": "Double ta croissance en misant sur ce qui fonctionne",
-          "description4": "Arrête d’avancer à l’aveugle et concentre tes efforts sur ce qui convertit. Analyse par campagne UTM, source, pays, appareil, canal..."
-        },
-        "analytics_features": {
-          "title1": "Données en temps réel",
-          "description1": "Chaque clic, ajout au panier ou achat apparaît instantanément, pour réagir vite.",
-          "title2": "Filtres de dates",
-          "description2": "Analyse chaque campagne par jour, semaine ou période et compare les résultats facilement.",
-          "title3": "Dashboards collaboratifs",
-          "description3": "Travaille en équipe pour suivre les performances et prendre ensemble les meilleures décisions."
-        },
-        "link_features": {
-          "title1": "Domaines personnalisés",
-          "description1": "Crée des liens courts professionnels et uniques avec ton propre nom de domaine.",
-          "title2": "Aperçus de liens",
-          "description2": "Modifie l’image, le titre et la description de tes liens pour rendre tes produits plus attractifs."
-        }
-      },
-      "free_offer": {
-        "title": "Accès à <logo>PIMMS</logo>",
-        "description": "Augmente tes ventes Amazon – 10 liens gratuits pour commencer sans risque.",
-        "bottom": "Aucune CB requise • Juste plus de ventes",
-        "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
-          "alt1": "Dashboard PIMMS montrant une liste de liens directs Amazon",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
-          "alt2": "Dashboard PIMMS montrant l'analyse de liens directs Amazon"
-        }
-      },
-      "lifetime_offer": {
-        "title": "Prends une longueur d'avance",
-        "subtitle": "Profite de la version Pro avant que l'offre de lancement ne disparaisse",
-        "description": "Bénéficie de liens illimités avec suivi des clics et achats, sans payer d'abonnement.",
-        "bottom": "Cette offre exceptionnelle ne va pas durer.",
-        "cta": "J'achète",
-        "pay_once": "Paiement unique, sans abonnement",
-        "free_pass": "10 liens gratuits",
-        "lifetime_deal": "Achat unique",
-        "popular": "Populaire",
-        "tax": "H.T.",
-        "features": {
-          "title": "Tout ce dont tu as besoin, en illimité",
-          "1": "Plus de ventes Amazon",
-          "2": "Nouveaux liens illimités",
-          "3": "Clics et commandes illimités",
-          "4": "Données conservées 1 an",
-          "5": "Collaboration en équipe",
-          "6": "Domaine personnalisé",
-          "7": "UTM illimités, redirection dans l’app Amazon, QR codes..."
-        }
-      }
+    "lifetime_offer": {
+      "cta": "Débloquer mon accès à vie",
+      "pay_once": "Paiement unique, sans abonnement",
+      "lifetime_deal": "Accès à vie",
+      "popular": "Populaire",
+      "tax": "H.T.",
+      "year": "an",
+      "try_free": "Essai gratuit",
+      "billed_annually": "Facturé annuellement",
+      "free_pass": "Commence gratuitement",
+      "business_title": "Pour les entreprises en croissance",
+      "business_subtitle": "Besoin de plus de puissance ? Découvre notre plan Business.",
+      "everything_in_starter": "Tout du plan Starter, plus :",
+      "everything_in_pro": "Tout du plan Pro, plus :",
+      "premium_services": "Services premium :",
+      "start_free_cta": "Démarrer gratuitement",
+      "get_started": "Démarrer gratuitement",
+      "plan_starter": "PIMMS Starter",
+      "plan_pro": "PIMMS Pro",
+      "plan_business": "PIMMS Business",
+      "feature_10_deeplinks": "10 deeplinks",
+      "feature_mobile_redirect": "Redirection mobile (apps)",
+      "feature_qr_utm": "QR codes + liens UTM",
+      "feature_click_tracking": "Suivi des clics",
+      "feature_data_30_days": "Données conservées 30 jours",
+      "feature_1_domain": "1 domaine personnalisé",
+      "feature_limited_conversion": "Suivi des conversions limité",
+      "feature_integrations_basic": "Intégrations : Webflow, Framer, Cal.com, YouTube, et plus",
+      "feature_unlimited_deeplinks": "Deeplinks illimités",
+      "feature_unlimited_clicks": "Suivi des clics illimité",
+      "feature_conversion_sales": "Suivi de conversions et ventes",
+      "feature_data_1_year": "Données conservées 1 an",
+      "feature_5_team": "Jusqu'à 5 collaborateurs",
+      "feature_10_domains": "10 domaines personnalisés",
+      "feature_api": "API Access",
+      "feature_integrations_pro": "Intégrations Stripe, Systeme.io, Shopify, YouTube",
+      "feature_sales_10k": "Suivi des ventes +10k€/mois",
+      "feature_unlimited_conversion": "Suivi de conversions illimité",
+      "feature_advanced_ab": "A/B Testing avancé (smart-routing, rapport complet de conversion)",
+      "feature_10_team": "10 collaborateurs",
+      "feature_100_domains": "100 domaines",
+      "feature_data_3_years": "Données conservées 3 ans",
+      "feature_priority_support": "Support prioritaire",
+      "feature_webhooks": "Webhooks"
     }
   }
 }

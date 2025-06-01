@@ -2,11 +2,37 @@
   "blog": {
     "nav": {
       "solutions": "Nos solutions",
-      "dashboard": "Se connecter"
+      "dashboard": "Se connecter",
+      "articles": "Articles"
     },
     "cta": {
       "headline": "Transforme chaque clic en conversion, puis en décision",
-      "sub": "Optimise tes liens, mesure tes conversions et tes ventes, et identifie ce qui génère réellement des résultats. Utilise PIMMS pour améliorer tes campagnes et développer ton activité."
+      "sub": "Optimise tes liens, mesure tes conversions et tes ventes, et identifie ce qui génère réellement des résultats. Utilise PIMMS pour améliorer tes campagnes et développer ton activité.",
+      "readyToStart": {
+        "title": "Prêt à commencer ?",
+        "description": "Rejoins des milliers de marketeurs qui utilisent PIMMS pour suivre leurs campagnes.",
+        "startFreeTrial": "Commencer gratuitement",
+        "learnMore": "En savoir plus"
+      }
+    },
+    "newsletter": {
+      "title": "Reste à la pointe avec des insights d'experts",
+      "description": "Reçois les derniers articles sur le marketing digital, l'attribution et les stratégies de croissance chaque semaine.",
+      "placeholder": "Entre ton email",
+      "subscribe": "S'abonner",
+      "subscribing": "Inscription...",
+      "successMessage": "Inscription réussie ! Vérifie ton email pour confirmer.",
+      "errorMessage": "Échec de l'inscription. Réessaie, s'il te plaît.",
+      "noSpam": "Pas de spam, désabonnement à tout moment."
+    },
+    "post": {
+      "writtenBy": "Écrit par",
+      "tableOfContents": "Table des matières",
+      "continueReading": "Continuer la lecture",
+      "exploreMore": "Explorez plus d'insights et de stratégies",
+      "breadcrumb": {
+        "articles": "Articles"
+      }
     },
     "category": {
       "overview": {

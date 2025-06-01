@@ -1,55 +1,59 @@
-"use client";
 import BouncingImages from "@/components/landings/BouncingImages";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
 import { Section } from "@/components/base/section";
 import { H2 } from "@/components/base/h2";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
 import { Zap } from "lucide-react";
 import { Paragraph } from "../base/paragraph";
+import { ReactNode } from "react";
+import { parseChildren } from "@/lib/mdx/parseChildren";
+import { H2 as MDXH2, Text, SmallText } from "@/components/mdx/content";
 
-export const FreeOffer = ({
-  tkey,
-  type,
-}: {
-  tkey: string;
-  type: "sales" | "youtube";
-}) => {
-  const tcommon = useTranslations("landing.common");
-  const t = useTranslations(tkey);
+interface FreeOfferProps {
+  type?: "sales" | "youtube";
+  children?: ReactNode;
+}
+
+type OfferContent = {
+  title: ReactNode;
+  description: ReactNode;
+  bottom: ReactNode;
+};
+
+export const FreeOffer = ({ type = "sales", children }: FreeOfferProps) => {
+  // Parse children using the utility
+  const parsed = parseChildren<OfferContent>(children, {
+    title: { component: MDXH2, key: "title" },
+    description: { component: Text, key: "description" },
+    bottom: { component: SmallText, key: "bottom" }
+  });
 
   return (
-    <Section id="free" className="md:flex-row items-center mt-8">
-      <div className="w-full md:w-1/2 text-center md:text-left">
-        <H2 className="my-10">
-          {t.rich("free_offer.title", {
-            logo: () => (
-              <Image
-                src="/static/logo.svg"
-                alt="pim.ms"
-                className="w-20 sm:w-24 inline-block mb-[2px] mx-0.5"
-                width={1000}
-                height={179}
-              />
-            ),
-          })}
-        </H2>
-        <Paragraph>{t("free_offer.description")}</Paragraph>
-        <div className="flex my-12 w-full flex-col gap-4">
-          <CtaButtonBig
-            type={type}
-            variant="secondary"
-            className="w-full sm:w-10/12 lg:w-9/12 mx-auto md:mx-0"
-            value={tcommon.rich("cta.main", {
-              fast: () => <Zap size={32} fill="currentColor" />,
-              large: (chunks) => <span className="hidden">{chunks}</span>,
-            })}
-          />
-          <div className="text-xs font-semibold">{t("free_offer.bottom")}</div>
+    <Section id="free">
+      <div className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 flex flex-col lg:flex-row items-center gap-8">
+        <div className="flex-1 space-y-6 text-center lg:text-left">
+          {parsed.title && <H2 className="text-left">{parsed.title}</H2>}
+          {parsed.description && <Paragraph className="text-lg">{parsed.description}</Paragraph>}
+          <div className="pt-2">
+            <CtaButtonBig
+              type={type}
+              size="lg"
+              value={
+                <>
+                  <Zap size={32} fill="currentColor" /> Start for free
+                  <span className="hidden md:block"> with 10 links</span>
+                </>
+              }
+            />
+            {parsed.bottom && (
+              <div className="flex items-center justify-center lg:justify-start gap-2 mt-4">
+                <span className="text-sm text-[#5C5B61]">{parsed.bottom}</span>
+              </div>
+            )}
+          </div>
         </div>
-      </div>
-      <div className="flex flex-col w-full md:w-1/2">
-        <BouncingImages tkey={`${tkey}.free_offer`} />
+        <div className="flex-1 flex items-center justify-center">
+          <BouncingImages />
+        </div>
       </div>
     </Section>
   );

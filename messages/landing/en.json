@@ -1,442 +1,137 @@
 {
   "landing": {
-    "common": {
-      "nav": {
-        "how_it_works": "How it works",
-        "solutions": "Solutions",
-        "dashboard": "Sign in",
-        "pricing": "Pricing"
+    "nav": {
+      "how_it_works": "How it works",
+      "solutions": "Solutions",
+      "dashboard": "Sign in",
+      "pricing": "Pricing"
+    },
+    "cta": {
+      "link": "Start for free",
+      "bottom": "No credit card required • No subscription",
+      "main": "<fast>⚡</fast> Start for free<large> with 10 links</large>",
+      "main_short": "<fast>⚡</fast> Start for free"
+    },
+    "logos_circle": {
+      "title": "THE BEST?",
+      "heading": "It works everywhere, and <strong>tracks everything</strong>",
+      "description": "Works with +100 mobile apps and integrations.",
+      "more": "Works with +100 mobile apps and integrations."
+    },
+    "analytics_chart": {
+      "clicks": "Clicks",
+      "leads": "Conversions",
+      "sales": "Sales",
+      "saleAmount": "Revenue",
+      "currency": "EUR",
+      "locale": "en-US"
+    },
+    "filter_feature": {
+      "country": "Country",
+      "city": "City",
+      "browser": "Browser",
+      "device": "Device",
+      "referral": "Referral",
+      "utm": {
+        "campaign": "Campaign",
+        "source": "Source",
+        "medium": "Medium",
+        "linkedin_launch": "linkedin_launch",
+        "newsletter_april": "newsletter_april",
+        "google_promo": "google_promo",
+        "calendly_partner": "calendly_partner",
+        "webinar_jean": "webinar_jean",
+        "fb_retargeting": "fb_retargeting"
       },
-      "cta": {
-        "link": "Start for free",
-        "bottom": "No credit card required • No subscription",
-        "main": "<fast>⚡</fast> Start for free<large> with 10 links</large>",
-        "main_short": "<fast>⚡</fast> Start for free"
-      },
-      "logos_circle": {
-        "title": "THE BEST?",
-        "heading": "It works everywhere, and <strong>tracks everything</strong>",
-        "description": "Works with +100 mobile apps and integrations.",
-        "more": "Works with +100 mobile apps and integrations."
-      },
-      "analytics_chart": {
-        "clicks": "Clicks",
-        "leads": "Conversions",
+      "tag": {
+        "title": "Tag",
+        "launch": "Launch",
+        "onboarding": "Onboarding",
+        "retargeting": "Retargeting",
+        "emailing": "Emailing",
         "sales": "Sales",
-        "saleAmount": "Revenue",
-        "currency": "EUR",
-        "locale": "en-US"
-      },
-      "filter_feature": {
-        "country": "Country",
-        "city": "City",
-        "browser": "Browser",
-        "device": "Device",
-        "referral": "Referral",
-        "utm": {
-          "campaign": "Campaign",
-          "source": "Source",
-          "medium": "Medium",
-          "linkedin_launch": "linkedin_launch",
-          "newsletter_april": "newsletter_april",
-          "google_promo": "google_promo",
-          "calendly_partner": "calendly_partner",
-          "webinar_jean": "webinar_jean",
-          "fb_retargeting": "fb_retargeting"
+        "demo": "Demo",
+        "paid_ads": "Meta Ads",
+        "beta": "Beta"
+      }
+    },
+    "hero": {
+      "avatars": {
+        "title": "Trusted and adopted by creators and startups",
+        "avatar1": {
+          "name": "Mathieu Visière",
+          "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
         },
-        "tag": {
-          "title": "Tag",
-          "launch": "Launch",
-          "onboarding": "Onboarding",
-          "retargeting": "Retargeting",
-          "emailing": "Emailing",
-          "sales": "Sales",
-          "demo": "Demo",
-          "paid_ads": "Meta Ads",
-          "beta": "Beta"
+        "avatar2": {
+          "name": "Mathieu Dacheux",
+          "image": "https://assets.pimms.io/mathieu-dacheux.jpeg"
+        },
+        "avatar3": {
+          "name": "Ronan Jaffré",
+          "image": "https://assets.pimms.io/ronan-jaffre.jpeg"
+        },
+        "avatar4": {
+          "name": "Mathieu Bernard",
+          "image": "https://assets.pimms.io/mathieu-bernard.jpeg"
+        },
+        "avatar5": {
+          "name": "Jean Castets",
+          "image": "https://assets.pimms.io/jean-castets.jpeg"
         }
       }
     },
-    "home": {
-      "hero": {
-        "title": "Turn every click into <primary>conversion</primary> and <primary>decision</primary>",
-        "additional_title": "Not guesses",
-        "subtitle": "Link-sharing tool that identifies your top-performing campaigns and links – so you can boost what really works.",
-        "benefits": {
-          "1": "Centralize all shared links and quickly identify the top performers",
-          "2": "More conversions by redirecting users directly to mobile apps",
-          "3": "Track clicks, conversions, and sales in real-time and speed up results"
-        },
-        "avatars": {
-          "title": "Trusted and adopted by creators and startups",
-          "avatar1": {
-            "name": "Mathieu Visière",
-            "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
-          },
-          "avatar2": {
-            "name": "Mathieu Dacheux",
-            "image": "https://assets.pimms.io/mathieu-dacheux.jpeg"
-          },
-          "avatar3": {
-            "name": "Ronan Jaffré",
-            "image": "https://assets.pimms.io/ronan-jaffre.jpeg"
-          },
-          "avatar4": {
-            "name": "Mathieu Bernard",
-            "image": "https://assets.pimms.io/mathieu-bernard.jpeg"
-          },
-          "avatar5": {
-            "name": "Jean Castets",
-            "image": "https://assets.pimms.io/jean-castets.jpeg"
-          }
-        }
-      },
-      "the_need": {
-        "problem": "The problem",
-        "solution": "The solution",
-        "fail": "Your business without tools",
-        "success": "Your business with PIMMS",
-        "post_fail": "🛠 121 days, no sales yet. Solo setup, minimal ads. Here are 4 channels I tried — and what didn't work.",
-        "post_success": "🚀 My solo business hit 100K€ in 121 days — minimal ads, steady 30% growth. Here are the 4 channels driving success."
-      },
-      "main_testimonial": {
-        "text": "<strong>I was tired of my social media links opening in apps' internal browsers...</strong> Then I discovered PIMMS! It's the best way to boost conversions — all thanks to deep linking",
-        "author_name": "Mathieu Dacheux",
-        "author_company": "feeedback.dev",
-        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
-      },
-      "video": {
-        "src": "https://player.vimeo.com/video/1069612678?badge=0&playsinline=0",
-        "cover": "https://assets.pimms.io/video-pimms-intro-en-preview.mp4?v=3"
-      },
-      "problem": {
-        "title": "The Problem",
-        "heading": "Without <logo>PIMMS</logo>, you're losing <strong>conversions</strong>",
-        "description": "Every time your content opens in an in-app mobile browser, the experience breaks.",
-        "more": {
-          "title1": "<strong>Links open in a tiny in-app browser</strong>, not in official apps",
-          "title2": "<strong>Users get disconnected</strong>: no access to social profiles, payments in more steps...",
-          "title3": "<strong>The result? They drop off due to unnecessary friction</strong>."
-        },
-        "description2": "You’re also losing conversions because you don’t track what happens after your links are clicked.",
-        "more2": {
-          "title1": "Most link tools <strong>track clicks, but not real conversions</strong>",
-          "title2": "<strong>You don’t know what’s really working</strong>: which link is driving results (forms, appointments, sales…), which channel, which campaign, which post…",
-          "title3": "The result? Without optimization, <strong>you waste time and miss out on conversions</strong>."
-        }
-      },
-      "solution": {
-        "title": "The Solution",
-        "heading": "Share deeplinks to convert",
-        "description": "<logo>PIMMS</logo> opens your contents in the official mobile apps used by your users daily.",
-        "more": {
-          "title1": "Smart short link routing",
-          "description1": "deeplink automatically detects the user's device and opens the link in the most appropriate mobile application.",
-          "title2": "Seamless user experience without losing users",
-          "description2": "Visitors stay engaged and as a result, you get much more conversions, engagement and time spent on your contents.",
-          "title3": "Deeplinks for all apps",
-          "description3": "Best for 100+ apps such as Instagram, YouTube, Amazon, etc."
-        }
-      },
-      "top_features": {
-        "title": "The Solution",
-        "heading": "With PIMMS, you convert more and <strong>know why</strong>",
-        "description": "Your links open directly in official mobile apps. Reduce friction and track the performance of every link and channel. Analyze clicks, conversions, and sales.",
-        "features": {
-          "title1": "Provide a smooth, frictionless experience",
-          "description1": "Your links open seamlessly in official mobile apps like YouTube, Instagram, Safari, and Chrome. Less friction, more engagement, zero user loss.",
-          "title2": "Finally uncover what's driving conversions",
-          "description2": "Visualize each link's impact within a dashboard, connecting every piece of content and action directly to tangible results (sales, sign-ups, etc.).",
-          "title3": "Make better decisions, faster",
-          "description3": "With clear, real-time data, you know exactly what to tweak, accelerate, or pause to maximize conversions.",
-          "title4": "Boost what's converting, cut out the rest",
-          "description4": "Stop guessing and focus on what's driving growth. Leverage detailed filtering by UTM campaigns, sources, countries, devices, browsers, and channels."
-        },
-        "analytics_features": {
-          "title1": "Real-time data",
-          "description1": "Every click, conversion, and sale is shown live, enabling quick action.",
-          "title2": "Date filters",
-          "description2": "Analyze campaigns by day, week, or custom date ranges, and compare results effortlessly.",
-          "title3": "Shared dashboards",
-          "description3": "Collaborate with your team to track performance and make informed decisions together."
-        },
-        "link_features": {
-          "title1": "Custom domains",
-          "description1": "Create short, professional, and unique links using your own domain name.",
-          "title2": "Link previews",
-          "description2": "Offer customizable link previews by easily editing the image, title, and description."
-        }
-      },
-      "free_offer": {
-        "title": "Get access to <logo>PIMMS</logo>",
-        "description": "Try PIMMS for free and discover how to drive better traffic to your content, boost conversions, and finally track what really works.",
-        "bottom": "No credit card needed • Just more conversions",
-        "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
-          "alt1": "PIMMS Dashboard showing a list of direct links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
-          "alt2": "PIMMS Dashboard showing analytics of direct links"
-        }
-      },
-      "lifetime_offer": {
-        "title": "Get ahead of your competitors",
-        "subtitle": "Upgrade to Pro before the launch deal is gone",
-        "description": "Get unlimited links with tracking",
-        "bottom": "* This offer is available immediately, but few spots left.",
-        "cta": "Buy now",
-        "pay_once": "One-time payment, no subscription",
-        "free_pass": "10 free links",
-        "lifetime_deal": "Lifetime Deal",
-        "popular": "Most popular",
-        "tax": "Excl. VAT",
-        "month": "month",
-        "sub_pass": "More than 20k€ /month in tracked sales",
-        "try_free": "Try for free",
-        "no_credit_card": "No credit card required",
-        "features": {
-          "title": "Everything you need — unlimited",
-          "1": "Unlimited new links and clicks",
-          "2": "Unlimited conversion events",
-          "3": "Up to 20k€/mo in tracked sales",
-          "4": "Team collaboration",
-          "5": "Custom domain",
-          "6": "Unlimited UTMs, in-app redirections, QR codes..."
-        }
+    "free_offer": {
+      "images": {
+        "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
+        "alt1": "PIMMS Dashboard showing a list of direct links",
+        "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
+        "alt2": "PIMMS Dashboard showing analytics of direct links"
       }
     },
-    "youtube": {
-      "hero": {
-        "title": "Grow on <youtube>YouTube</youtube> with deeplinks",
-        "description": "The only short links that opens your videos in the official YouTube app, driving more subscribers and growth to your channel.",
-        "subtitle": "Deeplinks open your videos directly in the official YouTube app:",
-        "benefits": {
-          "1": "Increase your subscribers",
-          "2": "Increase video engagement",
-          "3": "Analyze your traffic and clicks"
-        },
-        "avatars": {
-          "title": "Used by top creators and channels",
-          "avatar1": {
-            "name": "Mathieu Visière",
-            "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
-          },
-          "avatar2": {
-            "name": "Florent Thurin",
-            "image": "https://assets.pimms.io/florent-thurin.jpeg"
-          },
-          "avatar3": {
-            "name": "Gabriel Jarrosson",
-            "image": "https://assets.pimms.io/gabriel-jarrosson.jpeg"
-          },
-          "avatar4": {
-            "name": "Mathieu Dos Santos",
-            "image": "https://assets.pimms.io/mathieu-dos-santos.jpeg"
-          },
-          "avatar5": {
-            "name": "Jean Castets",
-            "image": "https://assets.pimms.io/jean-castets.jpeg"
-          }
-        }
-      },
-      "main_testimonial": {
-        "text": "<strong>I was tired of my social media links opening in apps' internal browsers...</strong> Then I discovered PIMMS! It's the best way to boost conversions — all thanks to deep linking",
-        "author_name": "Mathieu Dacheux",
-        "author_company": "feeedback.dev",
-        "author_avatar": "https://media.licdn.com/dms/image/v2/D4D03AQFSuyeSk_Drcg/profile-displayphoto-shrink_100_100/B4DZVaytAkHIAY-/0/1740984996251?e=1747872000&v=beta&t=Ar2FcVzxmN4xR-fbKxcoBFCRtw45nwSyMdFsVDYad98"
-      },
-      "video": {
-        "src": "https://player.vimeo.com/video/1069612678?badge=0&playsinline=0",
-        "cover": "https://assets.pimms.io/video-pimms-intro-en-preview.mp4?v=3"
-      },
-      "problem": {
-        "title": "The Problem",
-        "heading": "Without <logo>PIMMS</logo>, you're losing <strong>subscribers</strong>",
-        "description": "Every time your YouTube links don't open in the official YouTube app, the experience breaks.",
-        "more": {
-          "title1": "<strong>Your YouTube links open in a tiny in-app browser</strong>, not in official YouTube app",
-          "title2": "<strong>Users get disconnected</strong>: no access to their YouTube account, they cannot like, comment, subscribe...",
-          "title3": "<strong>The result? They drop off due to unnecessary friction</strong>."
-        }
-      },
-      "top_features": {
-        "title": "The Solution",
-        "heading": "With PIMMS, you get more subscribers and <strong>know why</strong>",
-        "description": "Your links open directly in official YouTube app. Reduce friction and track the performance of every link and channel.",
-        "features": {
-          "title1": "Provide a smooth, frictionless experience",
-          "description1": "Your links open seamlessly in the official YouTube app. Less friction, more engagement, zero user loss.",
-          "title2": "Finally uncover what's driving clicks",
-          "description2": "Visualize each link's impact within a dashboard, connecting every piece of content and action to the right channel and campaign.",
-          "title3": "Make better decisions, faster",
-          "description3": "With clear, real-time data, you know exactly what to tweak, accelerate, or pause to maximize new subscribers.",
-          "title4": "Boost what's converting, cut out the rest",
-          "description4": "Stop guessing and focus on what's driving growth. Leverage detailed filtering by UTM campaigns, sources, countries, devices, browsers, and channels."
-        },
-        "analytics_features": {
-          "title1": "Real-time data",
-          "description1": "Every click, conversion, and sale is shown live, enabling quick action.",
-          "title2": "Date filters",
-          "description2": "Analyze campaigns by day, week, or custom date ranges, and compare results effortlessly.",
-          "title3": "Shared dashboards",
-          "description3": "Collaborate with your team to track performance and make informed decisions together."
-        },
-        "link_features": {
-          "title1": "Custom domains",
-          "description1": "Create short, professional, and unique links using your own domain name.",
-          "title2": "Link previews",
-          "description2": "Offer customizable link previews by easily editing the image, title, and description."
-        }
-      },
-      "free_offer": {
-        "title": "Free access to <logo>PIMMS</logo>",
-        "description": "Stop losing subscribers on YouTube - start with 10 free deeplinks today.",
-        "bottom": "No credit card required • Just more subscribers",
-        "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
-          "alt1": "Advanced link management interface",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
-          "alt2": "Performance analytics dashboard"
-        }
-      },
-      "lifetime_offer": {
-        "title": "Grow your YouTube channel",
-        "subtitle": "Upgrade to Pro before the launch deal is gone",
-        "description": "Get unlimited links with tracking of clicks without paying a subscription.",
-        "bottom": "* This offer is available immediately, but may be withdrawn at any time.",
-        "cta": "Buy now",
-        "pay_once": "One-time payment, no subscription",
-        "free_pass": "10 free links",
-        "lifetime_deal": "Lifetime Deal",
-        "popular": "Most popular",
-        "tax": "Excl. VAT",
-        "features": {
-          "title": "Everything you need — unlimited",
-          "1": "More subcribers",
-          "2": "Unlimited new links",
-          "3": "Unlimited click analytics",
-          "4": "Data stored for 1 year",
-          "5": "Team collaboration",
-          "6": "Custom domain",
-          "7": "Unlimited UTMs, in-app redirections, QR codes, and more..."
-        }
-      }
-    },
-    "amazon": {
-      "hero": {
-        "title": "Grow your sales on <amazon>Amazon</amazon> with deeplinks",
-        "description": "The only short links that open your products or books directly in the official Amazon app, boosting your ratings and sales while offering a smoother shopping experience.",
-        "subtitle": "Deeplinks instantly redirect your prospects to the official Amazon app:",
-        "benefits": {
-          "1": "Drive more sales and reviews",
-          "2": "Retain customers and enhance their experience",
-          "3": "Analyze your traffic and clicks in real time"
-        },
-        "avatars": {
-          "title": "Trusted by top sellers and authors",
-          "avatar1": {
-            "name": "Mathieu Visière",
-            "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
-          },
-          "avatar2": {
-            "name": "Mathieu Dacheux",
-            "image": "https://assets.pimms.io/mathieu-dacheux.jpeg"
-          },
-          "avatar3": {
-            "name": "Ronan Jaffré",
-            "image": "https://assets.pimms.io/ronan-jaffre.jpeg"
-          },
-          "avatar4": {
-            "name": "Mathieu Bernard",
-            "image": "https://assets.pimms.io/mathieu-bernard.jpeg"
-          },
-          "avatar5": {
-            "name": "Jean Castets",
-            "image": "https://assets.pimms.io/jean-castets.jpeg"
-          }
-        }
-      },
-      "main_testimonial": {
-        "text": "<strong>I was losing sales when my Amazon links opened in a third-party in-app browser...</strong> Then I found PIMMS! It’s the best way to boost conversions by sending people directly to the Amazon app.",
-        "author_name": "Marie Dupont",
-        "author_company": "Entrepreneur & Amazon KDP Author",
-        "author_avatar": "https://via.placeholder.com/100"
-      },
-      "video": {
-        "src": "https://player.vimeo.com/video/1069369994?badge=0&playsinline=0",
-        "cover": "https://assets.pimms.io/pimms-intro-preview.mp4"
-      },
-      "problem": {
-        "title": "The Problem",
-        "heading": "Without <logo>PIMMS</logo>, you're losing <strong>potential buyers</strong>",
-        "description": "When your Amazon products don’t open in the official Amazon app, the customer journey breaks.",
-        "more": {
-          "title1": "<strong>Links open inside a tiny in-app browser</strong> instead of the official Amazon app",
-          "title2": "<strong>Users aren’t signed in</strong>: they can’t easily buy, rate, or review",
-          "title3": "<strong>The result?</strong> They give up due to unnecessary friction."
-        }
-      },
-      "top_features": {
-        "title": "The Solution",
-        "heading": "With PIMMS, you sell more and <strong>know why</strong>",
-        "description": "Your links open directly in the Amazon app. Reduce friction and track the performance of every link and campaign.",
-        "features": {
-          "title1": "Seamless purchasing experience",
-          "description1": "Your links take shoppers directly to the official Amazon app. Fewer lost clicks, more reviews and sales.",
-          "title2": "Finally see what drives orders",
-          "description2": "View each link’s impact in a dashboard, mapping each promotion or campaign to the right channel.",
-          "title3": "Make better decisions faster",
-          "description3": "With clear, real-time data, pinpoint your best-performing products and optimize your sales strategy.",
-          "title4": "Accelerate your growth by focusing on what works",
-          "description4": "Stop guessing and double down on what converts. Analyze by UTM campaigns, source, country, device, and channel."
-        },
-        "analytics_features": {
-          "title1": "Real-time data",
-          "description1": "Every click, add-to-cart, and purchase appears instantly, enabling quick responses.",
-          "title2": "Date filters",
-          "description2": "Analyze performance by day, week, or any date range, making comparisons effortless.",
-          "title3": "Collaborative dashboards",
-          "description3": "Work with your team to track performance and make the right decisions together."
-        },
-        "link_features": {
-          "title1": "Custom domains",
-          "description1": "Create professional, unique short links using your own domain name.",
-          "title2": "Link previews",
-          "description2": "Customize the image, title, and description of your links to make products more appealing."
-        }
-      },
-      "free_offer": {
-        "title": "Free access to <logo>PIMMS</logo>",
-        "description": "Boost your Amazon sales — get started with 10 free links, risk-free.",
-        "bottom": "No credit card required • More sales, guaranteed",
-        "images": {
-          "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
-          "alt1": "PIMMS dashboard showing a list of direct Amazon links",
-          "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
-          "alt2": "PIMMS dashboard showing analytics of direct Amazon links"
-        }
-      },
-      "lifetime_offer": {
-        "title": "Gain an edge on Amazon",
-        "subtitle": "Upgrade to Pro before the launch deal disappears",
-        "description": "Enjoy unlimited links with click and purchase tracking, without a monthly fee.",
-        "bottom": "This special offer won’t last long.",
-        "cta": "Buy now",
-        "pay_once": "One-time payment, limited offer",
-        "free_pass": "10 free links",
-        "lifetime_deal": "Lifetime Deal",
-        "popular": "Most popular",
-        "tax": "Excl. VAT",
-        "features": {
-          "title": "Everything you need — unlimited",
-          "1": "More Amazon sales",
-          "2": "Unlimited new links",
-          "3": "Unlimited click tracking",
-          "4": "Data stored for 1 year",
-          "5": "Team collaboration",
-          "6": "Custom domain",
-          "7": "Unlimited UTMs, in-app Amazon redirects, QR codes…"
-        }
-      }
+    "lifetime_offer": {
+      "cta": "Unlock lifetime access",
+      "pay_once": "One-time payment, no subscription",
+      "free_pass": "Start for free",
+      "lifetime_deal": "Lifetime access",
+      "popular": "Most popular",
+      "tax": "Excl. VAT",
+      "year": "year",
+      "try_free": "Try for free",
+      "billed_annually": "Billed annually",
+      "business_title": "For growing businesses",
+      "business_subtitle": "Need more power? Discover our Business plan.",
+      "everything_in_starter": "Everything in Starter, plus:",
+      "everything_in_pro": "Everything in Pro, plus:",
+      "premium_services": "Premium services:",
+      "get_started": "Get started for free",
+      "plan_starter": "PIMMS Starter",
+      "plan_pro": "PIMMS Pro",
+      "plan_business": "PIMMS Business",
+      "feature_10_deeplinks": "10 deeplinks",
+      "feature_mobile_redirect": "Mobile redirection (apps)",
+      "feature_qr_utm": "QR codes + UTM links",
+      "feature_click_tracking": "Click tracking",
+      "feature_data_30_days": "Data stored for 30 days",
+      "feature_1_domain": "1 custom domain",
+      "feature_limited_conversion": "Limited conversion tracking",
+      "feature_integrations_basic": "Integrations: Webflow, Framer, Cal.com and more",
+      "feature_unlimited_deeplinks": "Unlimited deeplinks",
+      "feature_unlimited_clicks": "Unlimited click tracking",
+      "feature_conversion_sales": "Conversion & sales tracking",
+      "feature_data_1_year": "Data stored for 1 year",
+      "feature_5_team": "Up to 5 team members",
+      "feature_10_domains": "10 custom domains",
+      "feature_api": "API Access",
+      "feature_integrations_pro": "Stripe, Shopify integrations",
+      "feature_sales_10k": "Sales tracking +€10k/month",
+      "feature_unlimited_conversion": "Unlimited conversion tracking",
+      "feature_advanced_ab": "Advanced A/B Testing",
+      "feature_10_team": "10 team members",
+      "feature_100_domains": "100 domains",
+      "feature_data_3_years": "3-year data retention",
+      "feature_priority_support": "Priority support",
+      "feature_webhooks": "Webhooks",
+      "start_free_cta": "Start for free"
     }
   }
 }

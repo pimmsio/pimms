@@ -1,37 +1,45 @@
 // components/mdx/LinkCards.tsx
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
 import { getCanonicalLink } from "@/lib/utils";
 import { useLocale } from "next-intl";
+import { ArrowRight } from "lucide-react";
 
 export function LinkCards({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">{children}</div>
-  );
+  return <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">{children}</div>;
 }
 
 export function LinkCard({
   href,
   title,
   description,
+  external = false
 }: {
   href: string;
   title: string;
   description: string;
+  external?: boolean;
 }) {
   const locale = useLocale();
 
+  const linkProps = external
+    ? {
+        target: "_blank",
+        rel: "noopener noreferrer"
+      }
+    : {};
+
   return (
     <Link
-      href={getCanonicalLink(locale, href)}
-      className="relative flex flex-col gap-1 border-[2px] border-[#F2F3F5] rounded-xl hover:bg-[#FAFAFA] transition-all p-4 cursor-pointer no-underline mt-4"
+      href={external ? href : getCanonicalLink(locale, href)}
+      {...linkProps}
+      className="group block border border-gray-200 bg-white rounded-lg hover:border-[#3970ff] transition-colors p-6 no-underline"
     >
-      <ExternalLink
-        className="absolute top-4 right-4 text-gray-400 group-hover:text-gray-600 w-4 h-4"
-        strokeWidth={1.5}
-      />
-      <span className="text-md font-semibold text-[#08272E]">{title}</span>
-      <span className="text-sm text-[#5C5B61]">{description}</span>
+      <h3 className="text-lg font-semibold text-[#08272E] group-hover:text-[#3970ff] transition-colors mb-2 flex items-center justify-between">
+        {title}
+        <ArrowRight className="w-4 h-4 text-gray-400 group-hover:text-[#3970ff] transition-colors" />
+      </h3>
+
+      <p className="text-sm text-[#5C5B61] leading-relaxed">{description}</p>
     </Link>
   );
 }

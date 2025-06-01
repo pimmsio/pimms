@@ -2,7 +2,7 @@
 title: Glossary: utms, tracking, attribution, conversions, deep links  -  essential terms explained
 summary: Master key digital marketing concepts like utms, tracking, attribution, conversions, and deep links to enhance your campaign performance.
 publishedAt: 2025-05-23
-updatedAt: 2025-05-23
+updatedAt: 2025-05-27
 slug: glossary-utms-tracking-attribution-conversions-deep-links
 image: https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/pimms.io/682cee8b4fa53d42207e05b2-1747777043528.jpg
 author: emma
@@ -12,6 +12,7 @@ related:
   - how-to-track-link-performance-across-multiple-channels
   - from-first-click-to-conversion-understand-exactly-how-your-marketing-drives-revenue
   - how-utm-parameters-impact-conversion-paths
+  - how-to-analyze-referral-sources-by-utm-tags
 ---
 
 **Want to improve your marketing results? Start by mastering these tools: UTMs, tracking, attribution, conversions, and deep links.** They help you track campaigns, understand customer behavior, and boost ROI. Here’s a quick breakdown:
@@ -59,9 +60,20 @@ _"UTM parameters are case sensitive. 'Facebook' and 'facebook' will appear in yo
 
 Here are some common UTM mistakes and how to address them:
 
-- **Duplicate Parameters:** If a URL contains duplicate parameters, such as `example.com/?utm_source=facebook&utm_medium=social&utm_source=instagram`, only the last source (instagram) will be recorded in GA4 [\[6\]](https://www.optimizesmart.com/ga4-utm-parameters-not-working-here-is-how-to-fix-it).
+- **Duplicate Parameters:** If a URL contains duplicate parameters, such as 
+
+```
+example.com/?utm_source=facebook&utm_medium=social&utm_source=instagram
+```
+
+only the last source (instagram) will be recorded in GA4 [\[6\]](https://www.optimizesmart.com/ga4-utm-parameters-not-working-here-is-how-to-fix-it).
+
 - **Formatting Issues:** Missing ampersands between parameters can disrupt tracking. The correct format is:  
-  `example.com/?utm_source=google&utm_medium=cpc&utm_campaign=spring_sale` [\[6\]](https://www.optimizesmart.com/ga4-utm-parameters-not-working-here-is-how-to-fix-it).
+
+```
+example.com/?utm_source=google&utm_medium=cpc&utm_campaign=spring_sale
+```
+
 - **Internal Link Tracking:** Avoid using UTMs for internal navigation, as this can break session tracking and distort your data [\[5\]](https://impact.com/commerce-content/6-mistakes-publishers-make-with-utm-tracking).
 
 Platforms like [PIMMS](https://pimms.io/) offer real-time analytics and tools to catch these errors, ensuring consistent UTM formatting and naming. By addressing these common pitfalls, marketers can maintain accurate tracking and make better-informed decisions.

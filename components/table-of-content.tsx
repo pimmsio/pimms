@@ -38,14 +38,14 @@ export default function TableOfContents({ content }: { content: string }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [headings]);
 
+  if (headings.length === 0) {
+    return <p className="text-sm text-[#5C5B61]">No headings found</p>;
+  }
+
   return (
-    <ul className="space-y-4">
-      {headings.map(({ level, text, id }) => (
-        <li
-          key={id + level}
-          className="transition-all"
-          style={{ marginLeft: `calc(${level} * 0.4rem - 0.4rem)` }}
-        >
+    <nav className="space-y-0.5 sm:space-y-1 max-w-full">
+      {headings.map(({ level, text, id }, index) => (
+        <div key={id + index} className={`${level === 3 ? "pl-2 sm:pl-3" : ""}`}>
           <a
             href={`#${id}`}
             onClick={(e) => {
@@ -56,40 +56,55 @@ export default function TableOfContents({ content }: { content: string }) {
                 const offsetPosition = rect.top + window.scrollY - 120;
                 window.scrollTo({
                   top: offsetPosition,
-                  behavior: "smooth",
+                  behavior: "smooth"
                 });
                 window.history.replaceState(null, "", `#${id}`);
                 setTimeout(() => setActiveId(id), 500);
               }
             }}
-            className={`block text-sm ${
-              activeId === id
-                ? "text-[#08272E] font-semibold"
-                : "text-[#5C5B61]"
-            } hover:text-[#08272E]`}
+            className={`block text-xs sm:text-sm py-0.5 sm:py-1 pr-2 transition-colors duration-150 truncate ${
+              activeId === id ? "text-[#3970ff] font-medium" : "text-[#5C5B61] hover:text-[#08272E]"
+            }`}
+            title={text}
           >
             {text}
           </a>
-        </li>
+        </div>
       ))}
-    </ul>
+    </nav>
   );
 }
+
+// Helper function to recursively extract text from any node
+const extractTextFromNode = (node: any): string => {
+  if (!node) return "";
+
+  // If it's a text node, return its value
+  if (node.type === "text" && node.value) {
+    return node.value;
+  }
+
+  // If it has children, recursively extract text from all children
+  if (node.children && Array.isArray(node.children)) {
+    return node.children.map(extractTextFromNode).join("");
+  }
+
+  // For other node types (like links), try to extract text from their children
+  return "";
+};
 
 const extractHeadings = (mdxContent: string) => {
   const tree = unified().use(remarkParse).use(remarkMdx).parse(mdxContent);
   const headings: { level: number; text: string; id: string }[] = [];
 
   function visitNode(node: any) {
-    if (node.type === "heading" && node.children) {
-      const text = node.children
-        .map((child: any) => child.value || "")
-        .join("");
-
-      // Use GitHub's slug generator to match actual content IDs
-      const id = slug(text);
-
-      headings.push({ level: node.depth, text, id });
+    if (node.type === "heading" && node.children && node.depth >= 2 && node.depth <= 3) {
+      // Use the helper function to extract all text content from the heading
+      const text = extractTextFromNode(node);
+      if (text.trim()) {
+        const id = slug(text);
+        headings.push({ level: node.depth, text, id });
+      }
     }
     if (node.children) {
       node.children.forEach(visitNode);

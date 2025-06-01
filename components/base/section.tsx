@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 export const Section = ({
   id,
   children,
-  className,
+  className
 }: {
   id?: string;
   children: React.ReactNode;
@@ -12,10 +12,7 @@ export const Section = ({
   return (
     <section
       id={id}
-      className={twMerge(
-        "w-11/12 py-6 px-1 flex flex-col items-start mx-auto max-w-5xl gap-2 rounded-3xl",
-        className
-      )}
+      className={twMerge("w-full max-w-5xl mx-auto px-4 sm:px-5 md:px-6 py-8 sm:py-12 md:py-16", className)}
     >
       {children}
     </section>

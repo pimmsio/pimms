@@ -1,14 +1,7 @@
-"use client";
 import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 
-export default function CtaButton({
-  tkey,
-  show = false,
-}: {
-  tkey: string;
-  show?: boolean;
-}) {
+export default function CtaButton({ tkey, show = false }: { tkey: string; show?: boolean }) {
   const t = useTranslations(tkey);
 
   const triggerFocus = () => {
@@ -31,9 +24,7 @@ export default function CtaButton({
     <Button
       variant="default"
       onClick={handleClickFocus}
-      className={`min-w-52 transition-transform hover:scale-105 tracking-tight ${
-        show ? "block" : "hidden md:block"
-      }`}
+      className={`min-w-52 transition-transform hover:scale-105 tracking-tight ${show ? "block" : "hidden md:block"}`}
       size="lg"
     >
       {t("cta.button")}

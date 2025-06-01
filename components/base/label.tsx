@@ -1,20 +1,14 @@
 import { twMerge } from "tailwind-merge";
 
-export const Label = ({
-  children,
-  className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
+export const Label = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
-    <label
+    <span
       className={twMerge(
-        "text-md font-semibold px-2.5 py-0.5 w-fit rounded-full tracking-tight",
+        "inline-flex items-center text-xs font-semibold uppercase tracking-wider rounded-full bg-gray-100 text-[#08272E] px-4 py-1.5",
         className
       )}
     >
       {children}
-    </label>
+    </span>
   );
 };

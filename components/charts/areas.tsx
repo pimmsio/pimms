@@ -1,22 +1,20 @@
 import { Group } from "@visx/group";
 import { Area, AreaClosed } from "@visx/shape";
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence, motion } from "@/lib/framer-motion";
 import { useMemo } from "react";
 import { useChartContext } from "./chart-context";
 import { cn } from "../../lib/utils";
 
 export function Areas() {
-  const { data, series, margin, xScale, yScale, startDate, endDate } =
-    useChartContext();
+  const { data, series, margin, xScale, yScale, startDate, endDate } = useChartContext();
 
-  if (!("ticks" in xScale))
-    throw new Error("Areas require a time scale (type=area)");
+  if (!("ticks" in xScale)) throw new Error("Areas require a time scale (type=area)");
 
   // Data with all values set to zero to animate from
   const zeroedData = useMemo(() => {
     return data.map((d) => ({
       ...d,
-      values: Object.fromEntries(Object.keys(d.values).map((key) => [key, 0])),
+      values: Object.fromEntries(Object.keys(d.values).map((key) => [key, 0]))
     })) as typeof data;
   }, [data]);
 
@@ -51,11 +49,7 @@ export function Areas() {
                   }}
                 </AreaClosed>
 
-                <Area
-                  data={data}
-                  x={(d) => xScale(d.date)}
-                  y={(d) => yScale(s.valueAccessor(d) ?? 0)}
-                >
+                <Area data={data} x={(d) => xScale(d.date)} y={(d) => yScale(s.valueAccessor(d) ?? 0)}>
                   {({ path }) => (
                     <motion.path
                       initial={{ d: path(zeroedData) || "" }}

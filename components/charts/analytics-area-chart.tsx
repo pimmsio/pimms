@@ -1,5 +1,3 @@
-"use client";
-
 import { Fragment } from "react";
 import { Areas } from "./areas";
 import { nFormatter } from "./nformatter";
@@ -16,7 +14,7 @@ export type EventType = (typeof EVENT_TYPES)[number];
 
 export default function AnalyticsAreaChart({
   resource,
-  demoData,
+  demoData
 }: {
   resource: EventType;
   demoData: {
@@ -30,13 +28,13 @@ export default function AnalyticsAreaChart({
   }[];
   tkey?: string;
 }) {
-  const tcommon = useTranslations("landing.common");
+  const tcommon = useTranslations("landing");
 
   const RESOURCE_LABELS = {
     clicks: tcommon("analytics_chart.clicks"),
     leads: tcommon("analytics_chart.leads"),
     sales: tcommon("analytics_chart.sales"),
-    saleAmount: tcommon("analytics_chart.saleAmount"),
+    saleAmount: tcommon("analytics_chart.saleAmount")
   };
 
   const chartData = demoData;
@@ -52,18 +50,18 @@ export default function AnalyticsAreaChart({
     {
       id: "clicks",
       valueAccessor: (d: any) => d.values.clicks,
-      isActive: resource === "clicks",
+      isActive: resource === "clicks"
     },
     {
       id: "leads",
       valueAccessor: (d: any) => d.values.leads,
-      isActive: resource === "leads",
+      isActive: resource === "leads"
     },
     {
       id: "sales",
       valueAccessor: (d: any) => d.values[saleUnit],
-      isActive: resource === "sales",
-    },
+      isActive: resource === "sales"
+    }
   ];
 
   return (
@@ -81,20 +79,18 @@ export default function AnalyticsAreaChart({
                   interval: "day",
                   start,
                   end,
-                  dataAvailableFrom: createdAt,
+                  dataAvailableFrom: createdAt
                 })}
               </p>
               <div className="grid grid-cols-2 gap-x-6 gap-y-2 px-1 py-1 text-xs">
                 <Fragment key={resource}>
                   <div className="flex items-center gap-2">
-                    <p className="capitalize text-neutral-600">
-                      {RESOURCE_LABELS[resource]}
-                    </p>
+                    <p className="capitalize text-neutral-600">{RESOURCE_LABELS[resource]}</p>
                   </div>
                   <p className="text-right font-medium text-neutral-900">
                     {resource === "sales" && saleUnit === "saleAmount"
                       ? currencyFormatter(d.values[resource], {
-                          currency: tcommon("analytics_chart.currency"),
+                          currency: tcommon("analytics_chart.currency")
                         })
                       : nFormatter(d.values[resource], { full: true })}
                   </p>
@@ -112,7 +108,7 @@ export default function AnalyticsAreaChart({
               start,
               end,
               dataAvailableFrom: createdAt,
-              locale: tcommon("analytics_chart.locale"),
+              locale: tcommon("analytics_chart.locale")
             })
           }
         />
@@ -122,7 +118,7 @@ export default function AnalyticsAreaChart({
             resource === "sales" && saleUnit === "saleAmount"
               ? (v) =>
                   currencyFormatter(v, {
-                    currency: tcommon("analytics_chart.currency"),
+                    currency: tcommon("analytics_chart.currency")
                   })
               : nFormatter
           }
