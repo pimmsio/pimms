@@ -2,37 +2,37 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-06-01T10:52:30.935Z"
+    "lastmod": "2025-06-12T18:30:25.520Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-06-01T10:52:30.935Z"
+    "lastmod": "2025-06-12T18:30:25.520Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-06-01T10:52:30.935Z"
+    "lastmod": "2025-06-12T18:30:25.520Z"
   },
   "/landings/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-06-01T10:52:30.935Z"
+    "lastmod": "2025-06-12T18:30:25.520Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-06-01T10:52:30.935Z"
+    "lastmod": "2025-06-12T18:30:25.520Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2025-05-31T00:00:00.000Z"
+    "lastmod": "2025-06-18T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-05-31T00:00:00.000Z"
+    "lastmod": "2025-06-18T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -47,7 +47,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-05-31T00:00:00.000Z"
+    "lastmod": "2025-06-18T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -74,15 +74,31 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-05-02T00:00:00.000Z",
     "fr": "/blog/7-moyens-pour-booster-les-conversions-des-apps-mobiles-en-2025"
   },
+  "/articles/ab-testing-for-startups-with-low-traffic-strategies-that-work": {
+    "en": "/blog/ab-testing-for-startups-with-low-traffic-strategies-that-work",
+    "lastmod": "2025-06-11T00:00:00.000Z"
+  },
   "/articles/ab-testing-steps-for-funnel-optimization": {
     "en": "/blog/ab-testing-steps-for-funnel-optimization",
     "lastmod": "2025-05-05T00:00:00.000Z",
     "fr": "/blog/ab-testing-pour-optimiser-son-tunnel-de-conversion"
   },
+  "/articles/affiliate-revenue-tracking-with-utm-parameters": {
+    "en": "/blog/affiliate-revenue-tracking-with-utm-parameters",
+    "lastmod": "2025-06-08T00:00:00.000Z"
+  },
   "/articles/bitly-vs-pimms-what-founders-really-need-beyond-click-tracking": {
     "en": "/blog/bitly-vs-pimms-what-founders-really-need-beyond-click-tracking",
     "lastmod": "2025-05-23T00:00:00.000Z",
     "fr": "/blog/bitly-vs-pimms-ce-qu-une-startup-a-vraiment-besoin-au-dela-du-suivi-des-clics"
+  },
+  "/articles/branded-short-links-vs-generic-does-it-impact-your-conversion-rate": {
+    "en": "/blog/branded-short-links-vs-generic-does-it-impact-your-conversion-rate",
+    "lastmod": "2025-06-11T00:00:00.000Z"
+  },
+  "/articles/can-you-test-more-than-one-change-at-a-time-and-other-ab-testing-faqs": {
+    "en": "/blog/can-you-test-more-than-one-change-at-a-time-and-other-ab-testing-faqs",
+    "lastmod": "2025-06-12T00:00:00.000Z"
   },
   "/articles/deep-linking-for-influencer-campaigns-basics": {
     "en": "/blog/deep-linking-for-influencer-campaigns-basics",
@@ -108,6 +124,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-05-27T00:00:00.000Z",
     "fr": "/blog/glossaire-utms-tracking-attribution-conversions-deep-links"
   },
+  "/articles/gradual-rollouts-how-to-ab-test-with-90-10-traffic-splits-to-mitigate-risk": {
+    "en": "/blog/gradual-rollouts-how-to-ab-test-with-90-10-traffic-splits-to-mitigate-risk",
+    "lastmod": "2025-06-12T00:00:00.000Z"
+  },
+  "/articles/how-a-solo-founder-tracks-stripe-sales-from-twitter-linkedin-and-product-hunt": {
+    "en": "/blog/how-a-solo-founder-tracks-stripe-sales-from-twitter-linkedin-and-product-hunt",
+    "lastmod": "2025-06-01T00:00:00.000Z"
+  },
   "/articles/how-deep-links-improve-conversion-paths": {
     "en": "/blog/how-deep-links-improve-conversion-paths",
     "lastmod": "2025-05-03T00:00:00.000Z",
@@ -118,6 +142,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-05-31T00:00:00.000Z",
     "fr": "/blog/comment-ajouter-des-analytics-a-une-app-ia-ou-construite-par-prompt"
   },
+  "/articles/how-do-i-track-conversions-across-multiple-marketing-channels": {
+    "en": "/blog/how-do-i-track-conversions-across-multiple-marketing-channels",
+    "lastmod": "2025-06-13T00:00:00.000Z"
+  },
   "/articles/how-to-add-analytics-to-vibe-coded-app": {
     "en": "/blog/how-to-add-analytics-to-vibe-coded-app",
     "lastmod": "2025-05-23T00:00:00.000Z",
@@ -127,6 +155,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/how-to-analyze-referral-sources-by-utm-tags",
     "lastmod": "2025-05-23T00:00:00.000Z",
     "fr": "/blog/comment-analyser-les-sources-de-trafic-avec-des-balises-utm"
+  },
+  "/articles/how-to-build-lead-nurturing-workflows-in-make": {
+    "en": "/blog/how-to-build-lead-nurturing-workflows-in-make",
+    "lastmod": "2025-06-09T00:00:00.000Z"
   },
   "/articles/how-to-build-roi-dashboards-for-marketing-campaigns": {
     "en": "/blog/how-to-build-roi-dashboards-for-marketing-campaigns",
@@ -163,10 +195,26 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-05-31T00:00:00.000Z",
     "fr": "/blog/est-ce-que-bitly-est-adapte-au-suivi-des-conversions"
   },
+  "/articles/minimum-viable-analytics-the-ideal-tracking-stack-for-your-mvp": {
+    "en": "/blog/minimum-viable-analytics-the-ideal-tracking-stack-for-your-mvp",
+    "lastmod": "2025-06-08T00:00:00.000Z"
+  },
+  "/articles/no-code-analytics-guide-for-saas": {
+    "en": "/blog/no-code-analytics-guide-for-saas",
+    "lastmod": "2025-06-14T00:00:00.000Z"
+  },
+  "/articles/prompt-first-development-how-to-set-up-attribution-with-one-prompt": {
+    "en": "/blog/prompt-first-development-how-to-set-up-attribution-with-one-prompt",
+    "lastmod": "2025-06-08T00:00:00.000Z"
+  },
   "/articles/referrer-vs-utm-vs-fingerprinting-what-really-tells-you-where-a-click-came-from": {
     "en": "/blog/referrer-vs-utm-vs-fingerprinting-where-a-click-came-from",
     "lastmod": "2025-05-06T00:00:00.000Z",
     "fr": "/blog/referrer-vs-utm-vs-fingerprinting-ou-vient-un-clic"
+  },
+  "/articles/the-complete-guide-to-marketing-attribution-for-saas-founders": {
+    "en": "/blog/the-complete-guide-to-marketing-attribution-for-saas-founders",
+    "lastmod": "2025-06-08T00:00:00.000Z"
   },
   "/articles/top-5-tools-for-funnel-behavior-tracking": {
     "en": "/blog/top-5-tools-for-funnel-behavior-tracking",
@@ -219,6 +267,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/what-are-the-best-marketing-attribution-tools-for-startups",
     "lastmod": "2025-05-27T00:00:00.000Z"
   },
+  "/articles/what-is-marketing-attribution-a-beginners-guide": {
+    "en": "/blog/what-is-marketing-attribution-a-beginners-guide",
+    "lastmod": "2025-06-15T00:00:00.000Z"
+  },
   "/articles/what-tools-should-i-use-to-track-users-and-conversions-in-my-mvp": {
     "en": "/blog/what-tools-should-i-use-to-track-users-and-conversions-in-my-mvp",
     "lastmod": "2025-05-27T00:00:00.000Z"
@@ -227,9 +279,21 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/whats-the-best-way-to-track-stripe-sales-and-subscriptions",
     "lastmod": "2025-05-26T00:00:00.000Z"
   },
+  "/articles/whats-the-difference-between-a-short-link-and-a-smart-link": {
+    "en": "/blog/whats-the-difference-between-a-short-link-and-a-smart-link",
+    "lastmod": "2025-06-16T00:00:00.000Z"
+  },
   "/articles/whats-the-easiest-way-to-set-up-link-tracking-with-attribution": {
     "en": "/blog/whats-the-easiest-way-to-set-up-link-tracking-with-attribution",
     "lastmod": "2025-05-27T00:00:00.000Z"
+  },
+  "/articles/which-ai-tools-can-help-you-launch-a-saas": {
+    "en": "/blog/which-ai-tools-can-help-you-launch-a-saas",
+    "lastmod": "2025-06-17T00:00:00.000Z"
+  },
+  "/articles/why-link-in-bio-is-becoming-a-mini-sales-funnel": {
+    "en": "/blog/why-link-in-bio-is-becoming-a-mini-sales-funnel",
+    "lastmod": "2025-06-18T00:00:00.000Z"
   },
   "/articles/how-to-track-calendly": {
     "en": "/guides/how-to-track-calendly-bookings-marketing-attribution",

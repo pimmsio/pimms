@@ -11,7 +11,7 @@ const execAsync = promisify(exec);
 const seoBot = new BlogClient("07b92388-bb93-4df7-a7c6-10bdbc785ce1");
 
 const getArticle = async (slug) => seoBot.getArticle(slug);
-const getArticles = async (page) => seoBot.getArticles(page, 50);
+const getArticles = async (page) => seoBot.getArticles(page, 100);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

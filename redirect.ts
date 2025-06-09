@@ -204,6 +204,11 @@ const redirects = [
     permanent: true
   },
   {
+    source: "/fr/legal/signaler-abus",
+    destination: "/legal/report-abuse",
+    permanent: true
+  },
+  {
     source: "/legal/privacy",
     destination: "/legal/privacy-policy",
     permanent: true
@@ -615,6 +620,11 @@ const redirects = [
     permanent: true
   },
   {
+    source: "/blog/ab-test-funnel-optimization",
+    destination: "/fr/blog/ab-testing-pour-optimiser-son-tunnel-de-conversion",
+    permanent: true
+  },
+  {
     source: "/fr/blog/optimisation-funnel-test-ab",
     destination: "/fr/blog/ab-testing-pour-optimiser-son-tunnel-de-conversion",
     permanent: true
@@ -880,7 +890,17 @@ const redirects = [
     permanent: true
   },
   {
+    source: "/fr/blog/demarrer-avec-zapier",
+    destination: "/fr/tutoriels/comment-tracker-les-conversions-avec-zapier-attribution-marketing",
+    permanent: true
+  },
+  {
     source: "/tutoriels/guide-balises-utm",
+    destination: "/fr/tutoriels/maitriser-le-tracking-utm-et-le-deep-linking",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/guide-balise-et-template-utm",
     destination: "/fr/tutoriels/maitriser-le-tracking-utm-et-le-deep-linking",
     permanent: true
   },
