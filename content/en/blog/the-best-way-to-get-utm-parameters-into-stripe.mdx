@@ -1,0 +1,241 @@
+---
+title: The best way to get utm parameters into stripe
+summary: Learn how to seamlessly integrate utm parameters with stripe to track marketing performance and revenue generation effectively.
+publishedAt: 2025-06-28
+updatedAt: 2025-06-28
+slug: the-best-way-to-get-utm-parameters-into-stripe
+image: https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/pimms.io/684fdba85559d477e759a811-1750074948140.jpg
+author: emma
+categories:
+  - digital-marketing
+related:
+  - from-first-click-to-conversion-understand-exactly-how-your-marketing-drives-revenue
+  - track-stripe-payments-with-utm-parameters
+  - whats-the-best-way-to-track-stripe-sales-and-subscriptions
+  - how-to-track-stripe-sales-and-subscriptions-with-utm-links-without-writing-code
+---
+
+UTM parameters are small tags added to URLs that help you understand where your traffic comes from. By connecting these to [Stripe](https://stripe.com/), you can track which campaigns lead to actual revenue. This means you’ll know if your Facebook ad or email campaign is driving paying customers.
+
+### Key Takeaways:
+
+- **What are UTM parameters?** Tags like `utm_source` or `utm_campaign` that track traffic sources.
+- **Why connect to Stripe?** To link marketing data with revenue and see which campaigns bring in the most valuable customers.
+- **How does it work?** Use Stripe’s metadata system to automatically capture and store UTM data from payment links or Checkout Sessions.
+- **Automation tools:** Platforms like [PIMMS](https://pimms.io/) and [Zapier](https://zapier.com/) streamline UTM tracking and data syncing.
+
+### Quick Setup:
+
+1.  Add UTM parameters to your [Stripe Payment Links](/articles/setup-stripe-for-website).
+2.  Save UTM data in Stripe’s metadata fields.
+3.  Use webhooks to send this data to your CRM or analytics tools.
+
+By [automating UTM tracking](/articles/utm-guide), you’ll spend less time managing data and more time scaling what works.
+
+## Passing data with Payment Links
+
+::: @iframe https://www.youtube.com/embed/uI9gJakNLQ8
+:::
+
+## How UTM Parameters Work with [Stripe](https://stripe.com/)
+
+![Stripe](https://assets.seobotai.com/pimms.io/684fdba85559d477e759a811/ea44217cb66b4fd3f6c010546b50a93c.jpg)
+
+Stripe makes it easy to capture and store marketing data using its **metadata system**. This system allows you to save additional information on Stripe objects, such as charges, customers, and payment intents, using key-value pairs. You can store up to 50 key-value pairs, where keys can be up to 40 characters long and values up to 500 characters [\[2\]](https://docs.stripe.com/metadata).
+
+When a customer clicks on a payment link containing UTM parameters, Stripe automatically extracts and saves that data as metadata. For instance, if someone clicks on a link like:
+
+`https://buy.stripe.com/your-link?utm_source=facebook&utm_campaign=summer_sale`
+
+Stripe ensures that the UTM data is captured and stored.
+
+> "Use metadata to store your important data on Stripe objects with these common examples." - Stripe Documentation [\[6\]](https://docs.stripe.com/metadata/use-cases)
+
+This functionality applies to both Payment Links and Checkout Sessions. When configured properly, UTM parameters flow seamlessly into your Stripe records with every transaction, preserving the marketing context tied to each sale. For example, businesses can use Payment Links to track affiliate IDs, which are then inherited by the Checkout Session for accurate sales attribution [\[6\]](https://docs.stripe.com/metadata/use-cases).
+
+Stripe's **Search API** adds even more flexibility, allowing you to query and filter transactions based on metadata. However, while metadata is perfect for tracking marketing data like UTM parameters, it’s not designed for storing sensitive information such as bank account or card details \[5\].
+
+### What You Need to Set Up UTM Data Collection
+
+To ensure UTM parameters are captured and processed correctly, your payment links must be configured to accept them. Typically, this involves setting the confirmation behavior to "redirect", so UTM codes are appended to the redirect URL after payment completion [\[3\]](https://docs.stripe.com/payment-links/url-parameters). It's also important to use alphanumeric characters, dashes, or underscores for your UTM codes and keep them under 150 characters [\[3\]](https://docs.stripe.com/payment-links/url-parameters).
+
+**Parameter Breakdown:**
+
+| Parameter    | Description                                                                |
+| ------------ | -------------------------------------------------------------------------- |
+| utm_source   | Identifies the traffic source (e.g., website, social media, search engine) |
+| utm_medium   | Specifies the marketing medium used (e.g., email, CPC)                     |
+| utm_campaign | Refers to the marketing campaign tied to the payment link                  |
+| utm_content  | Differentiates the content that led the visitor to the link                |
+| utm_term     | Tracks search terms or keywords used in paid search campaigns              |
+
+**Technical Setup:**
+
+To capture UTM parameters, ensure they are passed from the visitor's session into Stripe. You can also use the `client_reference_id` URL parameter to attach a unique identifier to the Checkout Session, simplifying internal tracking and reconciliation [\[3\]](https://docs.stripe.com/payment-links/url-parameters).
+
+**Webhook Configuration:**
+
+Set up webhooks to automatically send UTM data to other systems once a payment is completed. For example, [Lightspeed VT](https://lightspeedvt.com/) has successfully used this method to transfer checkout data into CRMs or marketing automation platforms like [Mailchimp](https://mailchimp.com/). This approach is particularly useful for retargeting customers who abandon their carts [\[4\]](https://support.lightspeedvt.com/docs/capturing-data-with-the-stripe-widget).
+
+## Step-by-Step Guide: Adding UTM Parameters to Stripe
+
+If you're looking to integrate and automate UTM tracking in Stripe, there's a clear process to follow. Capturing and storing marketing data in Stripe involves three main steps: configuring payment links, saving data properly, and setting up automated data transfers.
+
+### Adding UTM Parameters to Stripe Payment Links
+
+The first step is making sure your Stripe Payment Links can capture UTM parameters from your marketing campaigns. This ensures that when customers click on a link, the UTM data flows into your Stripe checkout process seamlessly.
+
+- **Direct URL Parameter Method**: Add UTM parameters directly to your Stripe Payment Link. For instance: `https://devws.lightspeedvt.com/stripe/stripeform_snippet_test_v2.html?get_user=0&utm_content=textlink&utm_source=facebook` [\[4\]](https://support.lightspeedvt.com/docs/capturing-data-with-the-stripe-widget). This straightforward method ensures UTM data is passed into the checkout process.
+- **Event Platform Integration**: If you're using Stripe for event ticketing, enable metadata in your event homepage settings. This allows URLs like `https://ti.to/{account}/{event}?utm_source=blog` to pass the `utm_source` automatically. You can also use the widget's `save-metadata-parameters` attribute to capture custom parameters alongside existing metadata sent to Stripe.
+- **JavaScript Cookie Method**: Use a script on your website to store UTM parameters in browser cookies. This is particularly helpful for customers who don't complete their purchase immediately but return later, as it preserves the UTM data across sessions.
+- **Hidden Form Fields**: Capture UTM parameters when the page loads and include them as hidden inputs in your checkout form. This ensures the UTM data is passed along during checkout, ready for storage in Stripe.
+
+### Saving UTM Data in Stripe Metadata or Custom Fields
+
+Once UTM data reaches Stripe, you'll need to store it properly for analysis and reporting. Stripe's metadata system offers a flexible way to store this information.
+
+- **Metadata Configuration**: Save each UTM parameter in its own metadata field with clear labels like `utm_source`, `utm_medium`, `utm_campaign`, `utm_content`, and `utm_term`.
+- **Object-Level Storage**: Depending on your tracking needs, UTM parameters can be attached to different Stripe objects. For long-term attribution, store them in customer objects. For transaction-specific tracking, use charge or payment intent objects.
+- **Subscription Tracking**: If your business relies on subscriptions, storing UTM data in subscription metadata allows you to track which campaigns drive high-value, long-term customers.
+- **Data Validation**: Make sure your UTM parameters meet Stripe's metadata field constraints and are formatted correctly to avoid errors.
+
+### Setting Up Webhooks for UTM Data Transfer
+
+Webhooks are essential for transferring UTM data from Stripe to other platforms like CRMs, analytics tools, or marketing software. This ensures your attribution data flows smoothly across your entire marketing stack.
+
+- **Webhook Endpoint Creation**: Set up a webhook endpoint to receive POST requests from Stripe. Use the Developers Dashboard or Workbench to configure the endpoint URL and specify the events you want to track, such as `checkout.session.completed`, `customer.created`, and `charge.succeeded`.
+- **Event-Specific Configuration**: Tailor your webhook to capture specific events like `checkout.session.completed` or `charge.succeeded`, using session identifiers or other relevant details.
+- **Security Measures**: Verify that incoming webhook requests are genuinely from Stripe. Test your webhook handler locally with the Stripe CLI before deploying it live.
+- **Response Optimization**: Ensure your webhook responds quickly with a 2xx status code to prevent retries. Process UTM data efficiently and handle errors to maintain consistent data flow.
+- **CRM and Analytics Integration**: Use webhooks to push UTM data into your CRM or analytics platforms. This creates a complete view of the customer journey, linking marketing efforts directly to revenue, and eliminates the need for manual data entry.
+
+###### sbb-itb-6c6e739
+
+## Automating UTM Tracking with [PIMMS](https://pimms.io/) and Workflow Tools
+
+![PIMMS](https://assets.seobotai.com/pimms.io/684fdba85559d477e759a811/1d71cf7954c9458b58e41c6d0cd6f6d4.jpg)
+
+Once you've set up UTM tracking manually, automating the process takes things to the next level. Manual tracking can be a headache, especially when you're juggling multiple campaigns across various platforms. That’s where PIMMS steps in, combining smart link management with automated workflows to seamlessly connect your marketing efforts to Stripe revenue tracking.
+
+### How PIMMS Enhances UTM Tracking
+
+We’ve already touched on how important UTM tracking is for attributing revenue. PIMMS takes this further by automating the process. Instead of manually adding UTM parameters to every link, PIMMS creates branded short links that automatically include your tracking parameters while keeping your links clean and professional.
+
+With PIMMS, you get detailed analytics that track clicks, conversions, and sales across all your channels. When someone clicks a PIMMS link, the system captures essential data - like device type, location, and traffic source - and sends it directly to Stripe using integrated webhooks. This means you don’t have to manually sift through data to figure out which campaigns are delivering results.
+
+The platform also offers advanced filtering, so you can break down performance by UTM parameters, traffic sources, devices, countries, or campaigns. Plus, it supports custom domains, ensuring your links reflect your brand while maintaining accurate attribution.
+
+| Feature                               | Benefit                                                                     |
+| ------------------------------------- | --------------------------------------------------------------------------- |
+| **Dynamic Updates & UTM Integration** | Update URLs without reprinting and monitor campaign performance seamlessly. |
+| **Multi-platform Support**            | Use across various marketing channels for consistent tracking.              |
+
+### Using Workflow Automation Tools with PIMMS
+
+Beyond automating UTM tracking, integrating PIMMS with workflow automation tools can supercharge your process. PIMMS works with popular platforms like **Zapier, Make, and [n8n](https://n8n.io/)**, allowing you to set up advanced workflows that streamline UTM data management.
+
+- **Zapier Integration**: With Zapier, you can connect PIMMS to thousands of apps, automating tasks without needing to write a single line of code. For example, you can create a Zap that updates customer records and adds UTM data to Stripe metadata fields. Pre-made templates make setup quick and easy, cutting down setup time from hours to just minutes.
+- **Make and n8n Workflows**: These tools allow you to capture UTM data, enrich customer profiles, and update Stripe records in real time. They’re perfect for handling more complex attribution needs, offering powerful automation options.
+- **Data Sync**: Automated workflows ensure your Stripe data is always up-to-date. When a customer makes a purchase, these tools instantly update your analytics dashboards, CRM, and reporting systems with accurate UTM data. This real-time sync helps you adjust campaigns and budgets faster.
+
+By combining PIMMS with workflow automation tools, you create a **closed-loop attribution system**. This means you can follow a customer’s journey from the moment they click an ad to the final purchase, with all UTM data automatically flowing into Stripe. With this level of insight, you can calculate your return on ad spend (ROAS) and pinpoint which marketing channels deserve more investment.
+
+| Tracking Level  | Metrics Captured               | What You Can Analyze           |
+| --------------- | ------------------------------ | ------------------------------ |
+| **Click Data**  | Source, Device, Location       | Identify traffic patterns.     |
+| **Lead Events** | Form submissions, Sign-ups     | Understand conversion funnels. |
+| **Sales Data**  | Revenue, Order value, Products | Measure campaign-specific ROI. |
+
+## Troubleshooting and Best Practices
+
+Building on the automated setup mentioned earlier, this section focuses on addressing common challenges and offering practical advice for maintaining accurate UTM tracking in Stripe. Even with automation, issues can arise that skew attribution data, emphasizing the importance of a solid setup and continuous monitoring.
+
+### Common UTM Tracking Problems and Solutions
+
+**UTM Parameters Getting Stripped Away**  
+Sometimes, UTM parameters are removed during URL redirects, such as 301 or 302 redirects. If the final destination URL isn't used, your tracking tags may not make it to Stripe. To avoid this, always use the final destination URL in your tracking links. If redirects are unavoidable, configure your server to retain UTM parameters throughout the process.
+
+**Missing or Inconsistent Parameter Formatting**  
+UTM parameters are case-sensitive, so inconsistent formatting - like using "Facebook" in one instance and "facebook" in another - can lead to misattribution of data. Stick to a strict, lowercase naming convention for all campaigns to maintain consistency.
+
+**Real-World Example of Tagging Errors**  
+A LinkedIn paid campaign for Webex was mistakenly tagged with the UTM medium as "organic social" instead of "paid social." This mix-up caused Google Analytics to classify paid traffic as organic, skewing campaign performance data. Double-checking every parameter before launching campaigns is critical to avoid such errors.
+
+**Syntax Errors and Typos**  
+Even a small typo or misplaced character can disrupt your tracking. Using a UTM builder can help ensure URLs are formatted correctly and free of errors.
+
+**Internal Link Tagging**  
+Adding UTM parameters to internal links can inflate campaign metrics and obscure the true performance of external efforts. Reserve UTM tagging exclusively for external marketing campaigns.
+
+**[Google Ads](https://ads.google.com/intl/en_us/home/) Auto-Tagging Conflicts**  
+Combining manual UTM parameters with Google Ads auto-tagging can lead to lost attribution. Stick to one method to keep your data clean and accurate.
+
+### Best Practices for Accurate Attribution
+
+Following these practices can help you maintain reliable revenue attribution in Stripe and avoid common pitfalls.
+
+**Test Everything Before Launch**  
+Always test your tagged URLs in a browser to ensure that all parameters remain intact through redirects.
+
+**Create a UTM Governance Framework**  
+Establish clear guidelines for naming conventions, parameter structures, and approval processes. A documented framework ensures everyone on your team follows the same standards, reducing errors and inconsistencies.
+
+> "UTM parameters play a crucial role in digital measurement strategies by helping with collecting valuable attribution data points about a user visit and activity on your website."
+>
+> - Jude Nwachukwu Onyejekwe, DumbData [\[7\]](https://dumbdata.co/post/costly-utm-tracking-mistakes-that-can-ruin-your-data)
+
+**Implement Data Validation Checks**  
+Set up automated alerts to monitor UTM data for missing parameters or unusual activity. These checks can help you catch issues early, preventing them from affecting your analytics.
+
+**Conduct Regular Data Audits**  
+Make it a habit to review your UTM data in Stripe. Regular audits can uncover inconsistencies or duplicate sources, ensuring your attribution data stays accurate and actionable.
+
+**Ensure Privacy Compliance**  
+When working with UTM data, always adhere to privacy regulations like GDPR and CCPA. Be transparent about your data collection practices and provide users with options to manage their information.
+
+### Manual vs. Automated UTM Tracking Comparison
+
+Manual tracking often leads to errors. Automated tracking, on the other hand, is more consistent, scalable, and reliable, making it the better choice for accurate attribution [\[1\]](https://attributer.io/blog/get-utm-parameters-into-stripe).
+
+## Conclusion
+
+Connecting UTM tracking with Stripe takes your marketing analytics to the next level by linking campaign data directly to revenue. By embedding UTM parameters into Stripe, you gain a clearer picture of which marketing channels and campaigns are bringing in actual dollars - not just clicks.
+
+Automating UTM tracking is a game-changer for accuracy and scalability. While manual processes are prone to errors, automation ensures your data remains consistent and keeps up effortlessly as your marketing efforts expand.
+
+> "UTM parameters provide extremely valuable insights into your traffic. You can uncover a goldmine of behavioral data to help boost your sales and refine your overall marketing strategy."
+>
+> - Neil Patel, Co-Founder of NP Digital & Owner of Ubersuggest [\[8\]](https://neilpatel.com/blog/the-ultimate-guide-to-using-utm-parameters)
+
+Tools like PIMMS simplify this process by combining [automated UTM tracking](/articles/utm-guide) with smart link management. With its real-time analytics and advanced filtering capabilities, you can instantly evaluate campaign performance without the usual headaches.
+
+Investing in UTM tracking yields powerful insights for smarter marketing. It allows you to break down revenue by channel, pinpoint your most effective campaigns, and make informed decisions about where to allocate your budget. Whether you go the manual route or opt for automation tools like PIMMS, linking UTM parameters to Stripe reveals the revenue insights you need to refine your strategy and fuel measurable growth.
+
+## FAQs
+
+::: faq
+
+### How do I make sure UTM parameters are preserved during redirects when using Stripe?
+
+When working with Stripe and URL redirects, it's crucial to ensure that UTM parameters stay intact. To do this, make sure the UTM parameters are added to the target URL before the redirect happens. Configure your server to preserve query string parameters during redirects, or use redirect methods like **302 redirects** that naturally retain these parameters when set up correctly.
+
+Be cautious of redirect types or server setups that might strip query parameters, as this can result in lost attribution data. To avoid issues, test your redirects thoroughly before launching any campaigns to confirm that UTM parameters are being passed along as intended.
+:::
+
+::: faq
+
+### What are the advantages of using PIMMS to automate UTM tracking instead of doing it manually?
+
+Automating UTM tracking with **PIMMS** brings a host of benefits compared to doing it manually. For starters, it significantly cuts down on human errors, ensuring your data is more precise. Plus, it provides real-time insights into how your campaigns are performing, enabling quicker and smarter decision-making.
+
+By automating the process, UTM parameters are created consistently and smoothly integrated into your workflow. This not only saves you time but also frees you up to concentrate on refining your marketing strategies. It also enhances ROI tracking and makes attribution more accurate. In contrast, manual tracking can be tedious and prone to mistakes, making automation the smarter, more efficient option.
+:::
+
+::: faq
+
+### How can I use Stripe's metadata to track the performance of my marketing campaigns?
+
+Stripe offers a handy metadata feature that lets you attach up to 50 **key-value pairs** to objects like payments, customers, or charges. This means you can store extra details - like UTM parameters or tracking IDs - right within Stripe.
+
+For example, by including UTM data as metadata when creating or updating Stripe objects, you can easily retrieve this information later using the Stripe API or webhooks. This makes it possible to tie transactions directly to specific marketing campaigns, giving you valuable insights into performance. It’s a straightforward way to align your revenue data with your marketing efforts and refine your strategies moving forward.
+:::

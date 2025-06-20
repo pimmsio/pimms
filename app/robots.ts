@@ -1,13 +1,13 @@
 import { MetadataRoute } from "next";
-import { WEB_URL } from "./constants";
+import { WEB_URL } from "./constants"; // e.g. https://pimms.io
 
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: {
       userAgent: "*",
       allow: "/",
-      disallow: "/private/",
+      disallow: ["/private/", "/api/", "/_next/static/"]
     },
-    sitemap: `${WEB_URL}/sitemap.xml`,
+    sitemap: `${WEB_URL}/sitemap.xml`
   };
 }

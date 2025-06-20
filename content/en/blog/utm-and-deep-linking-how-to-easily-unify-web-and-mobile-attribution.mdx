@@ -1,0 +1,290 @@
+---
+title: Utm and deep linking: how to easily unify web and mobile attribution
+summary: Learn how to unify web and mobile attribution using utm parameters and deep linking for comprehensive insights into customer journeys.
+publishedAt: 2025-06-30
+updatedAt: 2025-06-30
+slug: utm-and-deep-linking-how-to-easily-unify-web-and-mobile-attribution
+image: https://assets.seobotai.com/cdn-cgi/image/quality=75,w=1536,h=1024/pimms.io/685178665559d477e75bfaaf-1750172446053.jpg
+author: emma
+categories:
+  - digital-marketing
+related:
+  - whats-the-easiest-way-to-set-up-link-tracking-with-attribution
+  - utm-tracking-for-social-media-segments
+  - glossary-utms-tracking-attribution-conversions-deep-links-essential-terms-explained
+  - what-is-marketing-attribution-a-beginners-guide
+---
+
+**Struggling to track customers across web and mobile?** UTM parameters and deep linking can help unify your attribution data, giving you the full picture of your customer journey. Here’s what you need to know:
+
+- **UTM Parameters**: Add small codes to URLs to track where your web traffic comes from (e.g., Facebook ads, emails, or Google campaigns). They’re easy to set up but can’t track users switching to mobile apps.
+- **Deep Linking**: Sends users directly to specific in-app content (like a product page) instead of a generic homepage. It also tracks app installs and in-app actions, but it doesn’t capture web touchpoints.
+- **Unified Attribution**: Combines UTM and deep linking to track users seamlessly across web and mobile, avoiding blind spots and giving you better insights into what drives conversions.
+
+### Quick Comparison
+
+| **Factor**              | **UTM Only**                | **Deep Linking Only**       | **Unified Attribution**         |
+| ----------------------- | --------------------------- | --------------------------- | ------------------------------- |
+| Tracks web traffic      | ✅                          | ❌                          | ✅                              |
+| Tracks in-app actions   | ❌                          | ✅                          | ✅                              |
+| Cross-device visibility | ❌                          | ❌                          | ✅                              |
+| Setup complexity        | Simple URL parameters       | Requires developer setup    | Automated smart link generation |
+| Revenue tracking        | Manual integration required | Limited to in-app purchases | Automatic sync with platforms   |
+
+**Bottom Line**: Start by combining UTM and deep linking for a complete view of your campaigns. Tools like [PIMMS](https://pimms.io/) make it easy to track users across platforms, optimize campaigns, and connect marketing efforts to actual revenue. Don’t leave gaps in your data - unify your tracking today.
+
+## How to use [Firebase](https://firebase.google.com/) and [GA4](https://support.google.com/analytics/answer/10089681?hl=en) for app tracking
+
+![Firebase](https://assets.seobotai.com/pimms.io/685178665559d477e75bfaaf/b8e0ce95326d5524cf3613665f5b3f95.jpg)
+
+::: @iframe https://www.youtube.com/embed/2fG_FZA-zx0
+:::
+
+## UTM Tracking and Deep Linking Basics
+
+To understand unified attribution, it's essential to dive into two key tracking tools: **UTM parameters** and **deep linking**. These technologies work together to connect the dots in cross-platform tracking.
+
+### What Are UTM Parameters?
+
+UTM, short for _Urchin Tracking Module_, refers to the small text codes added to the end of a URL. These codes act like digital tags, providing analytics platforms with details about where website traffic is coming from and which campaigns are driving it.
+
+> "UTM parameters are an essential part of tracking attribution - and the more you understand how they work, the better you'll be able to set them up for accuracy." - Chloe Schneider, Head of Content @ Ortto
+
+When someone clicks on a link with UTM parameters, your analytics tool captures the data and ties it to their activity on your site. This allows you to identify which channels and campaigns are driving traffic and conversions with precision.
+
+For instance, instead of lumping all social media traffic together, UTMs let you see if visitors came from a Facebook ad, a LinkedIn post, or a tweet. They also help distinguish referral traffic from direct visits, making it easier to evaluate partnerships or backlinks. This level of detail is invaluable for understanding performance and allocating your marketing budget effectively.
+
+Next, let’s look at how deep linking complements UTM tracking by focusing on mobile experiences.
+
+### What Is Deep Linking?
+
+Deep linking is all about enhancing the mobile app experience. Instead of directing users to a generic homepage, deep links guide them straight to specific in-app content, whether it’s a product page, feature, or any other targeted area. This is achieved using custom URL schemes.
+
+The impact is clear: users are _2.5x more likely to complete a purchase_ when sent directly to relevant content via deep links [\[1\]](https://www.appsflyer.com/glossary/deep-linking).
+
+There are two main types of deep linking:
+
+- **Direct deep linking**: Works when users already have the app installed, taking them directly to the desired content.
+- **Deferred deep linking**: Handles cases where the app isn’t installed. It first redirects users to the app store to download the app and then takes them to the intended content after installation.
+
+From an attribution standpoint, deep links go beyond simply tracking app opens. They also capture which campaign, email, or ad brought the user there, along with their subsequent actions inside the app. This makes deep linking a crucial tool for understanding mobile-driven conversions.
+
+### Common Attribution Problems
+
+Despite their strengths, UTM parameters and deep linking each have limitations, especially when web and mobile data are treated separately.
+
+One of the biggest challenges is connecting web and mobile attribution data. Traditional analytics often keep these two areas isolated, creating gaps in understanding the full customer journey.
+
+For example, UTM parameters are excellent for tracking web traffic but can’t follow a user’s activity once they switch to a mobile app. On the other hand, deep linking focuses on the mobile app experience but doesn’t capture the web-based touchpoints that may have influenced the user’s decision.
+
+This disconnect can lead to fragmented reports and missed insights. Imagine a customer who discovers your brand through a Google ad, visits your website to learn more, and then completes their purchase in your mobile app. Without linking these systems, you might mistakenly attribute the conversion to the wrong channel.
+
+[AppsFlyer](https://www.appsflyer.com/) found that _23% of users interact with multiple touchpoints_, emphasizing how common these cross-platform journeys are. Businesses that bridge these gaps gain a clearer picture of what drives conversions and can make smarter marketing decisions.
+
+Here’s a quick comparison of how UTM parameters and deep linking contribute to attribution:
+
+| Feature            | UTM Parameters                                                 | Deep Linking                                             |
+| ------------------ | -------------------------------------------------------------- | -------------------------------------------------------- |
+| **Purpose**        | Track campaign performance on web platforms                    | Direct users to specific in-app content                  |
+| **Scope**          | Web analytics                                                  | Mobile app user experience                               |
+| **Implementation** | Appended to URLs                                               | Requires a deep linking platform or SDK                  |
+| **Benefits**       | Measures campaign effectiveness and identifies traffic sources | Enhances engagement by guiding users to targeted content |
+
+## How to Set Up UTM Parameters for Better Attribution
+
+Getting your UTM parameters right is the backbone of accurate [campaign tracking](/articles/introducing-conversion). A single mistake - like inconsistent naming - can scatter your data and make reporting a headache.
+
+### UTM Naming Rules That Work
+
+One common pitfall with UTM parameters is inconsistent naming. For instance, using "Facebook" in one campaign and "facebook" in another will confuse your analytics tool, treating them as separate sources and creating messy data.
+
+Here are some guidelines to keep your UTM naming clean and effective:
+
+- **Stick to lowercase letters.** UTM codes are case-sensitive. Using lowercase consistently avoids issues where "Facebook" and "facebook" are treated as different sources.
+- **Avoid spaces.** Spaces in URLs can cause tracking errors. Use dashes or underscores instead. For example, write "black-friday" or "black_friday" and stay consistent across campaigns.
+- **Be concise but clear.** Long UTM parameters can make links look clunky, especially on social platforms. Use abbreviations your team understands, like "bf2025" for a Black Friday campaign or "promo-email" for a promotional email series.
+- **Document your naming rules.** Keep a master spreadsheet that outlines how to structure UTM parameters for different campaigns, including examples for email, social media, and paid ads.
+
+A consistent naming system makes comparing campaigns a breeze. For example, during a Black Friday push, you can use the same campaign name (e.g., "bf2025") across channels but vary the source (e.g., "email", "facebook", "google") and medium (e.g., "newsletter", "social", "cpc").
+
+### Adding UTMs to All Marketing Channels
+
+Every campaign needs UTM tagging. Surprisingly, about 30% of companies miss tagging in over 30% of their campaigns [\[4\]](https://www.brafton.com/blog/analytics/utm-best-practices), leaving gaps in their attribution data. To get a full view of your marketing performance, tag every trackable channel.
+
+- **Email campaigns**: Email traffic often gets misclassified as direct traffic, hiding its true impact. Add UTM parameters to all email links, whether they're in call-to-action buttons or secondary links.
+
+  For email campaigns, use parameters like:
+
+  - **Source:** newsletter, welcome-series, or promotional
+  - **Medium:** email
+  - **Campaign:** specific names like "product-launch" or "holiday-sale"
+
+- **Social media posts**: UTMs help differentiate between organic and paid traffic on platforms like Facebook or Instagram.
+- **Digital ads**: Platforms like Google Ads and LinkedIn require UTM tracking to evaluate performance accurately.
+- **Affiliate and partnership links**: Add UTMs to track which partners are driving traffic and conversions.
+- **Offline campaigns**: Even print ads, radio spots, or event materials can include UTM parameters by using shortened URLs to measure their digital impact.
+
+### Managing UTM Parameters at Scale
+
+As your campaigns grow, manually creating UTM links can get overwhelming and prone to errors. Automating and systematizing the process not only saves time but also ensures accuracy. Businesses using custom links report nearly a 34% increase in click-through rates [\[3\]](https://www.adroll.com/blog/utm-best-practices-the-ultimate-list).
+
+- **Use a UTM builder.** These tools automate the process and enforce naming conventions, reducing typos and inconsistencies.
+- **Maintain a master tracking spreadsheet.** Log every UTM link you create, including its campaign, channel, URL, creation date, and owner.
+- **Double-check links before launch.** Have someone review the UTMs to ensure they follow your guidelines and that the links work properly. Mistakes can’t be fixed once the campaign is live.
+- **Regularly review reports.** Look for unusual spikes in direct traffic or missing data, as these could signal UTM issues that need fixing.
+- **Use link shorteners.** Shortened URLs are cleaner and more user-friendly, especially for social media or offline materials where long links might get cut off.
+
+Setting up UTMs the right way is a key part of a broader tracking strategy that ties together web and mobile data. Up next: how to integrate deep linking for seamless cross-platform tracking.
+
+## How to Set Up Deep Linking for Cross-Platform Tracking
+
+Deep linking goes beyond basic UTM tracking by creating a direct bridge between your web campaigns and mobile app experiences. Instead of sending users to your app's homepage, deep linking can take them straight to a specific product page or feature within your app. For instance, if someone clicks a link in your email campaign, they’ll land exactly where you want them - saving time and making their journey smoother.
+
+### Technical Setup for Deep Linking
+
+Getting deep linking to work requires setting up a proper URL structure, configuring your app (using intent filters for Android or an AASA file for iOS), and ensuring fallback options are in place.
+
+- **URL Schemes**: These are the backbone of deep linking. You can use custom URL schemes (e.g., `myapp://product/123`) or universal links (e.g., `https://www.mywebsite.com/product/123`). Universal links are often the better choice since they work across platforms and avoid triggering security warnings.
+- **Setting Up for Android**:
+
+  - Configure intent filters in your app's `AndroidManifest.xml` file. Use `autoVerify=true`, include a `VIEW` action, and add the `BROWSABLE` and `DEFAULT` categories.
+  - Specify the correct HTTP/HTTPS schemes and host attributes.
+  - Host an `assetlinks.json` file on your domain, making sure it’s publicly accessible over HTTPS and has the correct `Content-Type` (`application/json`).
+
+- **Configuring for iOS**:
+
+  - Create an Apple App Site Association (AASA) file to map your web URLs to in-app content.
+  - Ensure the App ID in the AASA file matches the one in the Apple Developer portal.
+  - The AASA file must also be accessible over HTTPS with the proper headers.
+
+To confirm everything is working, you can test Android intent filters with commands like `adb shell am start` or `adb shell pm verify-app-links --re-verify`. For iOS, tools like [Branch](https://www.branch.io/)'s AASA Validator can help you spot potential issues.
+
+### Fixing Mobile Attribution Issues
+
+Tracking mobile users isn’t always straightforward. When someone clicks a link and gets routed through an app store, traditional UTM parameters often get lost. This creates attribution gaps, making it harder to connect app installs back to the campaigns that drove them.
+
+- **Deferred Deep Linking**: This method keeps campaign data intact, even if users need to download the app first. Once installed, users are taken directly to the intended in-app content.
+- **Contextual Deep Links**: These links carry extra details, such as the specific ad creative clicked or the user's original entry point. This way, you can track not only where users came from but also the exact content they’re engaging with.
+
+For example, in workforce scheduling apps, deep links can send employees straight to a shift swap approval screen, cutting down transaction time by up to **75%** compared to traditional notifications that require multiple steps [\[5\]](https://www.myshyft.com/blog/deep-linking-in-messages).
+
+By addressing these attribution challenges, deep linking helps you create a more integrated and accurate cross-platform tracking system.
+
+### Improving User Experience with Deep Linking
+
+Deep linking doesn’t just simplify tracking - it also improves the user experience. When users are directed to the exact content they’re looking for, they’re more likely to take action, which leads to better conversion data.
+
+- Messages with deep links often achieve **3-4x higher engagement rates**.
+- In workforce scheduling scenarios, employees respond to requests up to **60% faster** compared to generic notifications [\[5\]](https://www.myshyft.com/blog/deep-linking-in-messages).
+
+The secret is reducing unnecessary steps. Deep links should bypass interstitial pages, prompts, or login screens, allowing users to complete their tasks quickly and efficiently. Adding seamless authentication checks ensures that only authorized users access sensitive content without disrupting the flow.
+
+###### sbb-itb-6c6e739
+
+## Using [PIMMS](https://pimms.io/) for Unified Web and Mobile Attribution
+
+![PIMMS](https://assets.seobotai.com/pimms.io/685178665559d477e75bfaaf/5e0d1f98c86e809e83a56ff43417f965.jpg)
+
+PIMMS brings UTM tracking and deep linking together into one integrated system, working seamlessly across web and mobile platforms. This creates a single, reliable source for your attribution data, setting the stage for the features outlined below.
+
+### How PIMMS Combines UTM and Deep Linking
+
+PIMMS transforms your marketing links into [smart deep links](https://pimms.io/solutions/deep-links-amazon) that retain UTM data while directing users - whether they’re on the web or in an app - without breaking the attribution chain. When someone clicks a link, PIMMS determines whether to open a mobile app or redirect to a website based on the user’s device and installed apps.
+
+With **smart app detection**, PIMMS identifies if a user has specific apps installed - like YouTube, [Amazon](https://www.amazon.com/), or [Vinted](https://www.vinted.com/?srsltid=AfmBOooFdu90ALwZDyt6Bh_CcvPsNQw_npU3Iy3DRsX5M7s_4QlydJ7R) - and opens links directly in those apps, skipping over mobile browsers. This eliminates unnecessary steps, providing a smoother experience while preserving attribution data.
+
+PIMMS also generates QR codes that carry the same UTM parameters and deep linking capabilities. These codes can track the impact of print ads, product packaging, or in-store displays on online conversions.
+
+### Key PIMMS Features for Attribution
+
+PIMMS offers a suite of tools to give you better control and visibility over your campaigns:
+
+- **Real-time dashboard**: Track clicks, conversions, and sales as they happen, so you don’t have to wait for delayed reports.
+- **Advanced filtering**: Dive into your data by UTM parameters, traffic sources, devices, countries, or campaigns. This lets you pinpoint what’s driving results - whether it’s a Facebook ad, a Google campaign, or mobile versus desktop users.
+- **Revenue integration**: Sync with platforms like [Shopify](https://www.shopify.com/) and [Stripe](https://stripe.com/) to automatically connect sales back to the original marketing touchpoints. This removes the guesswork around which campaigns are generating revenue.
+- **Built-in A/B testing**: Easily test different destination pages or app experiences to see what converts better, all while keeping accurate attribution for both variations.
+- **Shared dashboards**: Allow your entire team - from marketers to developers to executives - to access the same attribution data. This ensures everyone is aligned on performance metrics and strategies without needing separate accounts or tools.
+
+### Improving Campaigns with PIMMS Data
+
+PIMMS doesn’t just track your data - it helps you act on it. By consolidating attribution data, the platform provides actionable insights to fine-tune your campaigns.
+
+With **cross-platform user journey analysis**, you can see how users interact with your brand across different channels. For example, you might find that social media ads drive more app downloads, while email campaigns lead to website purchases.
+
+The platform’s **unlimited conversion event tracking** lets you monitor more than just clicks and installs. You can track sign-ups, purchases, subscription renewals, or any other actions that matter to your business, all tied back to the original marketing source.
+
+This unified view of user behavior allows for more precise **campaign optimization**. Instead of treating web and mobile campaigns as separate entities, you can make decisions based on data that shows the combined impact of all your marketing efforts. This helps you identify underperforming campaigns and shift resources to channels that deliver stronger results - quickly, thanks to PIMMS’ real-time data updates.
+
+## Attribution Methods Compared: UTM vs Deep Linking vs Unified
+
+When it comes to tracking user behavior, no single method provides the full picture. Let’s take a closer look at how **UTM tracking**, **deep linking**, and **unified attribution** stack up against each other. Each has its strengths and weaknesses, and understanding these can help you make smarter decisions about how to measure your campaign’s success.
+
+**UTM tracking** is a tried-and-true method for web-based campaigns. It uses URL parameters to track traffic sources, making it relatively easy to set up. However, its simplicity comes with limitations. It struggles to follow users who switch between devices or move from a website to a mobile app. Plus, since UTM parameters rely on manual input, inconsistencies can creep in, especially when multiple teams are involved [\[6\]](https://www.shopify.com/blog/marketing-attribution).
+
+**Deep linking**, on the other hand, shines in mobile attribution. It can send users directly to specific content within an app, creating a smooth in-app experience. But deep linking has its blind spots too - it doesn’t track how users initially discover your brand on the web. This leaves a gap in understanding the full customer journey.
+
+**Unified attribution** bridges these gaps by combining the strengths of UTM tracking and deep linking. It tracks users across their entire journey, from the first touchpoint to final conversion. This is especially important given that 23% of app users interact with multiple channels before completing an action [\[2\]](https://appagent.com/blog/the-principles-of-mobile-ad-attribution-analytics-and-tracking). Without a unified approach, those interactions can go unnoticed, leading to incomplete data and potentially flawed decision-making. As privacy laws evolve (think Apple’s App Tracking Transparency) and user journeys grow more complex, unified tracking has become increasingly vital [\[2\]](https://appagent.com/blog/the-principles-of-mobile-ad-attribution-analytics-and-tracking).
+
+### Attribution Strategy Comparison Table
+
+| **Factor**                | **UTM Only**                | **Deep Linking Only**               | **Unified (PIMMS)**                 |
+| ------------------------- | --------------------------- | ----------------------------------- | ----------------------------------- |
+| **Cross-device accuracy** | Limited to web sessions     | App-focused, misses web touchpoints | Tracks the complete user journey    |
+| **Setup complexity**      | Simple URL parameters       | Requires developer setup            | Automated smart link generation     |
+| **Campaign insights**     | Web traffic sources only    | App engagement metrics              | Full funnel visibility              |
+| **User experience**       | Standard web redirects      | Seamless app opening                | Optimized for both web and mobile   |
+| **Attribution windows**   | Cookie-dependent            | App install focused                 | Flexible, cross-platform windows    |
+| **Revenue tracking**      | Manual integration required | Limited to in-app purchases         | Automatic sync with Shopify, Stripe |
+| **Team collaboration**    | Spreadsheet management      | Requires developer setup            | Shared real-time dashboards         |
+| **Data reliability**      | Can be manipulated          | Secure but incomplete               | Protected and comprehensive         |
+
+By integrating UTM and deep linking, unified attribution eliminates the blind spots that come with using these methods individually. For instance, UTM-only tracking misses out on the growing mobile audience, while deep linking alone fails to account for how users first encounter your brand through web channels.
+
+A standout example of unified attribution is **PIMMS**, which seamlessly preserves UTM data as users transition from web to mobile apps. Imagine a user clicks on an Instagram ad, visits your website, downloads your app, and makes a purchase. With PIMMS, you can follow this entire journey without losing critical data along the way.
+
+Here’s why this matters: Mobile advertising is projected to hit $247.68 billion by 2026, with mobile making up a staggering 96.5% of all US native display ad spending [\[7\]](https://www.appsflyer.com/glossary/mobile-attribution). In this landscape, unified attribution isn’t just a nice-to-have - it’s a necessity for building more effective, data-driven marketing strategies.
+
+## Conclusion: Get Started with Unified Attribution
+
+Unified attribution bridges the gaps between web and mobile tracking, addressing the challenges of fragmented systems. Moving from disjointed tracking methods to a unified approach isn’t just a technical tweak - it’s a game-changer for understanding the complete customer journey. Relying solely on UTM parameters or deep linking often leaves blind spots in your data.
+
+With **PIMMS**, UTM data is automatically preserved as users transition from web to mobile apps. This means you can stop guessing whether that Instagram ad actually led to an in-app purchase. The result? Clear, measurable improvements across your campaigns.
+
+You’ll finally know which campaigns drive real revenue - not just clicks or app installs. Say goodbye to juggling spreadsheets; shared dashboards make collaboration seamless. Most importantly, you’ll have reliable, comprehensive data to guide your decisions.
+
+To get started, begin by identifying your **highest-value campaigns** - the ones generating significant revenue or conversions. Replace your current tracking links with **PIMMS smart links**, and the platform will take care of preserving attribution data across platforms.
+
+Next, **connect your revenue sources** - like Shopify or Stripe - to tie actual sales data to your marketing efforts. This step transforms your attribution from vanity metrics into actionable insights, helping you pinpoint which channels deserve more investment and which need adjustments.
+
+For teams ready to scale, the **Business Plan ($50/month)** offers unlimited tracked sales and priority support to expand your unified attribution strategy. For those seeking unlimited links and full tracking without ongoing fees, the **Pro Plan (one-time $45 payment)** is a great fit.
+
+Start with your key campaigns, integrate revenue data, and let unified attribution turn fragmented metrics into insights that drive meaningful growth for your business.
+
+## FAQs
+
+::: faq
+
+### How do UTM parameters and deep linking work together to track user journeys across web and mobile platforms?
+
+UTM parameters and deep linking work hand in hand to give marketers a **clear picture of user journeys** across both web and mobile platforms. UTM parameters are snippets added to URLs that help track details like traffic source, medium, and campaign, revealing exactly where users are coming from. On the other hand, deep linking ensures users land on specific in-app content, creating a **smooth, uninterrupted experience** across devices.
+
+Together, these tools provide the ability to monitor the entire customer journey - from the initial click on a campaign link to interactions within the app. This integrated approach enhances **cross-platform tracking**, enabling marketers to make smarter decisions and fine-tune their strategies for improved outcomes.
+:::
+
+::: faq
+
+### What challenges do businesses face with deep linking, and how can they ensure accurate tracking?
+
+Setting up deep linking can be a bit of a puzzle. Challenges like **device compatibility**, differences in whether the app is already installed, and routing errors that send users to the wrong pages can make the process frustrating. These issues often stem from the variety of platforms and operating systems out there.
+
+To get it right, businesses should use **dynamic or deferred deep links**. These links adjust to different devices and ensure that user context is preserved - even if the app hasn’t been installed yet. On top of that, testing is crucial. Running thorough checks across a range of devices and platforms can help catch and fix routing problems before they disrupt the user experience.
+:::
+
+::: faq
+
+### Why is it important to unify web and mobile attribution, and how does it enhance marketing performance compared to using just UTM parameters or deep linking?
+
+Unifying web and mobile attribution is essential for businesses aiming to get a full understanding of their customers' journeys across devices and platforms. This unified view allows for more precise tracking of user interactions, giving marketers the insights they need to see how their campaigns contribute to conversions and revenue.
+
+Tools like **UTM parameters** and **deep linking** are helpful on their own, but their impact is limited when used separately. By integrating them into a single system, businesses can achieve seamless user tracking across both web and mobile. This integration highlights the most influential touchpoints, enabling data-driven decisions that lead to smarter campaign adjustments, higher ROI, and more effective marketing strategies overall.
+:::
