@@ -228,17 +228,21 @@ export const TwoColumns = ({
   ratio = "1-1"
 }: {
   children: ReactNode;
-  ratio?: "1-1" | "1-2" | "2-1" | "5-7" | "7-5";
+  ratio?: "1-1" | "1-2" | "2-1" | "1-1-1" | "5-7" | "7-5";
 }) => {
   const ratioClasses = {
-    "1-1": "lg:grid-cols-2", // 1:1 ratio
-    "1-2": "lg:grid-cols-3", // 1:2 ratio
-    "2-1": "lg:grid-cols-3", // 2:1 ratio
+    "1-1": "lg:grid-cols-2", // 1:1 ratio (2 columns)
+    "1-2": "lg:grid-cols-3", // 1:2 ratio (2 columns with different spans)
+    "2-1": "lg:grid-cols-3", // 2:1 ratio (2 columns with different spans)
+    "1-1-1": "md:grid-cols-2 lg:grid-cols-3", // 1:1:1 ratio (3 equal columns, responsive)
     "5-7": "lg:grid-cols-12", // 5:7 ratio
     "7-5": "lg:grid-cols-12" // 7:5 ratio
   };
 
-  return <div className={`grid grid-cols-1 ${ratioClasses[ratio]} gap-8 lg:gap-12 items-center`}>{children}</div>;
+  const gapClasses = ratio === "1-1-1" ? "gap-4 md:gap-6 lg:gap-8" : "gap-8 lg:gap-12";
+  const alignClasses = ratio === "1-1-1" ? "items-stretch" : "items-center";
+
+  return <div className={`grid grid-cols-1 ${ratioClasses[ratio]} ${gapClasses} ${alignClasses}`}>{children}</div>;
 };
 
 export const Column = ({

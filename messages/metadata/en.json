@@ -20,6 +20,11 @@
       "description": "Open your products and books directly in the official Amazon app. Remove friction, increase sales and reviews, and track your link performance precisely.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
+    "ab-testing": {
+      "title": "A/B test your links and campaigns to maximize conversions | PIMMS",
+      "description": "Stop guessing what works. A/B test your links, track real conversions, and make data-driven decisions that actually boost your results.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
     "abuse": {
       "title": "Report abuse"
     },

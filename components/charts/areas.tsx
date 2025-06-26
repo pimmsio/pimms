@@ -43,7 +43,8 @@ export function Areas() {
                         initial={{ d: path(zeroedData) || "", opacity: 0 }}
                         animate={{ d: path(data) || "", opacity: 1 }}
                         className={cn(s.colorClassName ?? "text-[#3970ff]")}
-                        fill="#E7EEFF"
+                        fill={(s as any).fillColor ?? "#E7EEFF"}
+                        fillOpacity={(s as any).fillOpacity ?? 0.3}
                       />
                     );
                   }}
@@ -55,9 +56,9 @@ export function Areas() {
                       initial={{ d: path(zeroedData) || "" }}
                       animate={{ d: path(data) || "" }}
                       className={cn(s.colorClassName ?? "text-[#3970ff]")}
-                      stroke="#3970ff"
-                      strokeOpacity={1}
-                      strokeWidth={3}
+                      stroke={(s as any).strokeColor ?? "#3970ff"}
+                      strokeOpacity={(s as any).strokeOpacity ?? 1}
+                      strokeWidth={(s as any).strokeWidth ?? 3}
                       fill="transparent"
                     />
                   )}

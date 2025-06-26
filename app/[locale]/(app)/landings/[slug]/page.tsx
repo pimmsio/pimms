@@ -36,7 +36,14 @@ import { Problem } from "@/components/landings/problem";
 import Header from "@/components/landings/header";
 import ImageSlide from "@/components/landings/Image-slide";
 import VideoSlide from "@/components/landings/VideoSlide";
-import { LifetimeOfferFree, LifetimeOfferPro, LifetimeOfferBusiness } from "@/components/landings/lifetime-offer-split";
+import {
+  LifetimeOfferFree,
+  LifetimeOfferPro,
+  LifetimeOfferGrowth,
+  LifetimeOfferBusiness,
+  LifetimeOfferScale,
+  LifetimeOfferBusinessLifetime
+} from "@/components/landings/lifetime-offer-split";
 import Footer from "@/components/footer/footer";
 import LogosCircle from "@/components/logos-circle";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
@@ -78,6 +85,7 @@ import {
 import { AnalyticsDemo } from "@/components/charts/analytics-demo";
 import Referer from "@/components/charts/referer";
 import { FilterFeature } from "@/components/landings/filter-feature";
+import { ABTestingDemo } from "@/components/landings/ab-testing-demo";
 import Image from "next/image";
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
@@ -112,7 +120,10 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       Problem,
       LifetimeOfferFree: () => <LifetimeOfferFree tkey="landing" />,
       LifetimeOfferPro: () => <LifetimeOfferPro tkey="landing" />,
+      LifetimeOfferGrowth: () => <LifetimeOfferGrowth tkey="landing" />,
       LifetimeOfferBusiness: () => <LifetimeOfferBusiness tkey="landing" />,
+      LifetimeOfferScale: () => <LifetimeOfferScale tkey="landing" />,
+      LifetimeOfferBusinessLifetime: () => <LifetimeOfferBusinessLifetime tkey="landing" />,
       BouncingImages: () => <BouncingImages tkey="landing" />,
       LogosCircle,
       ImageSlide,
@@ -191,19 +202,28 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       TallyIframe,
 
       // Chart components
-      AnalyticsDemo: () => (
+      AnalyticsDemo: ({ showConversions, showABTesting }: { showConversions?: boolean; showABTesting?: boolean }) => (
         <div className="rounded-2xl overflow-hidden border border-gray-200">
-          <AnalyticsDemo tkey="landing" showConversions={slug === "home"} />
+          <AnalyticsDemo
+            tkey="landing"
+            showConversions={showConversions !== false}
+            showABTesting={showABTesting || false}
+          />
         </div>
       ),
-      Referer: () => (
+      Referer: ({ showABTesting }: { showABTesting?: boolean }) => (
         <div className="rounded-2xl overflow-hidden border border-gray-200">
-          <Referer />
+          <Referer showABTesting={showABTesting} />
         </div>
       ),
       FilterFeature: () => (
         <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
           <FilterFeature tkey="landing" />
+        </div>
+      ),
+      ABTestingDemo: () => (
+        <div className="py-8">
+          <ABTestingDemo />
         </div>
       ),
       DeeplinkDemo: () => {
