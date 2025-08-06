@@ -6,7 +6,7 @@ import { EmailTemplate } from "../components/email-template";
 import { redis } from "@/lib/redis";
 
 const schema = z.object({
-  email: z.string().email("Invalid email address"),
+  email: z.string().email("Invalid email address")
 });
 
 export async function joinWaitlist(prevState: any, formData: FormData) {
@@ -21,7 +21,7 @@ export async function joinWaitlist(prevState: any, formData: FormData) {
     const result = schema.safeParse({ email });
 
     if (!result.success) {
-      return { success: false, message: result.error.errors[0].message };
+      return { success: false, message: result.error.message };
     }
 
     // Store email in Upstash Redis
@@ -32,14 +32,14 @@ export async function joinWaitlist(prevState: any, formData: FormData) {
       from: "Acme <onboarding@resend.dev>",
       to: email.toString(),
       subject: "Welcome to Our Waitlist!",
-      html: EmailTemplate({ email: email.toString() }),
+      html: EmailTemplate({ email: email.toString() })
     });
 
     if (error) {
       console.error("Error sending email:", error);
       return {
         success: false,
-        message: "Failed to join waitlist. Please try again.",
+        message: "Failed to join waitlist. Please try again."
       };
     }
 
@@ -47,15 +47,14 @@ export async function joinWaitlist(prevState: any, formData: FormData) {
 
     return {
       success: true,
-      message:
-        "You have been added to the waitlist! Check your email for confirmation.",
-      count,
+      message: "You have been added to the waitlist! Check your email for confirmation.",
+      count
     };
   } catch (error) {
     console.error("Error:", error);
     return {
       success: false,
-      message: "An unexpected error occurred. Please try again.",
+      message: "An unexpected error occurred. Please try again."
     };
   }
 }

@@ -234,7 +234,7 @@ export const TwoColumns = ({
     "1-1": "lg:grid-cols-2", // 1:1 ratio (2 columns)
     "1-2": "lg:grid-cols-3", // 1:2 ratio (2 columns with different spans)
     "2-1": "lg:grid-cols-3", // 2:1 ratio (2 columns with different spans)
-    "1-1-1": "md:grid-cols-2 lg:grid-cols-3", // 1:1:1 ratio (3 equal columns, responsive)
+    "1-1-1": "md:grid-cols-1 lg:grid-cols-3", // 1:1:1 ratio (3 equal columns, responsive)
     "5-7": "lg:grid-cols-12", // 5:7 ratio
     "7-5": "lg:grid-cols-12" // 7:5 ratio
   };

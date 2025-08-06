@@ -8,7 +8,6 @@ import { subDays } from "date-fns";
 import { formatDateTooltip } from "./format-date-tooltip";
 import { currencyFormatter } from "./currency-formatter";
 import { useTranslations } from "next-intl";
-import { cn } from "../../lib/utils";
 
 export const EVENT_TYPES = ["clicks", "leads", "sales"] as const;
 export type EventType = (typeof EVENT_TYPES)[number];

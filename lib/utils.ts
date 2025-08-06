@@ -33,7 +33,7 @@ export const getCanonicalLink = (locale: string, pathname: string) => {
     }
 
     return locale === "en" ? langPath[locale] : `/${locale}${langPath[locale]}`;
-  } catch (error) {
+  } catch {
     console.error("Failed to get canonical link", pathname, locale);
     return "";
   }

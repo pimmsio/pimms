@@ -39,10 +39,8 @@ import VideoSlide from "@/components/landings/VideoSlide";
 import {
   LifetimeOfferFree,
   LifetimeOfferPro,
-  LifetimeOfferGrowth,
-  LifetimeOfferBusiness,
-  LifetimeOfferScale,
-  LifetimeOfferBusinessLifetime
+  LifetimeOfferProPlus,
+  LifetimeOfferScale
 } from "@/components/landings/lifetime-offer-split";
 import Footer from "@/components/footer/footer";
 import LogosCircle from "@/components/logos-circle";
@@ -120,10 +118,8 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       Problem,
       LifetimeOfferFree: () => <LifetimeOfferFree tkey="landing" />,
       LifetimeOfferPro: () => <LifetimeOfferPro tkey="landing" />,
-      LifetimeOfferGrowth: () => <LifetimeOfferGrowth tkey="landing" />,
-      LifetimeOfferBusiness: () => <LifetimeOfferBusiness tkey="landing" />,
+      LifetimeOfferProPlus: () => <LifetimeOfferProPlus tkey="landing" />,
       LifetimeOfferScale: () => <LifetimeOfferScale tkey="landing" />,
-      LifetimeOfferBusinessLifetime: () => <LifetimeOfferBusinessLifetime tkey="landing" />,
       BouncingImages: () => <BouncingImages tkey="landing" />,
       LogosCircle,
       ImageSlide,

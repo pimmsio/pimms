@@ -1,12 +1,7 @@
 import { writeFileSync } from "fs";
 import path from "path";
 import { getPages } from "@/lib/mdx";
-import {
-  articleFolders,
-  ArticleFolders,
-  locales,
-  translationFolders,
-} from "@/i18n/config";
+import { articleFolders, ArticleFolders, locales, translationFolders } from "@/i18n/config";
 import { basePathnames } from "@/i18n/basePathnames";
 
 async function generatePathnames() {
@@ -22,9 +17,8 @@ async function generatePathnames() {
     result[sharedKey] = {};
 
     for (const locale of locales) {
-      result[sharedKey][locale] =
-        basePathnames[sharedKey as keyof typeof basePathnames][locale] ||
-        sharedKey;
+      const baseEntry = basePathnames[sharedKey as keyof typeof basePathnames];
+      result[sharedKey][locale] = (baseEntry as Record<string, string>)?.[locale] || sharedKey;
     }
 
     // Default lastmod (can be overwritten later)
@@ -53,9 +47,7 @@ async function generatePathnames() {
         : new Date().toISOString();
 
       // Track latest article date
-      const updatedAt = page.metadata.updatedAt
-        ? new Date(page.metadata.updatedAt)
-        : new Date();
+      const updatedAt = page.metadata.updatedAt ? new Date(page.metadata.updatedAt) : new Date();
       if (updatedAt > latestArticleDate) {
         latestArticleDate = updatedAt;
       }

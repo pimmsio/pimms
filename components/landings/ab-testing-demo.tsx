@@ -1,4 +1,4 @@
-import { X, Plus } from "lucide-react";
+import { X } from "lucide-react";
 import React from "react";
 
 export const ABTestingDemo = () => {
