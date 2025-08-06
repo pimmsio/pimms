@@ -5,7 +5,7 @@ import { Hero } from "@/components/landings/hero";
 import { Centered, Fast, CtaBottomText } from "@/components/mdx/content";
 import ImageSlide from "@/components/landings/Image-slide";
 import CtaButton from "@/components/cta/CtaButton";
-import { HideOnMobile } from "@/components/mdx/content";
+import { HideOnMobile, HideOnDesktop } from "@/components/mdx/content";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -26,6 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     CtaButton,
     CtaBottomText,
     ImageSlide,
-    HideOnMobile
+    HideOnMobile,
+    HideOnDesktop
   };
 }

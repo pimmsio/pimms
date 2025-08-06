@@ -15,6 +15,9 @@ export const basePathnames = {
     en: "/solutions/deep-links-amazon",
     fr: "/solutions/deep-links-amazon"
   },
+  "/landings/ab-testing": {
+    en: "/solutions/ab-testing"
+  },
   "/freetools/site-checker": {
     en: "/freetools/pimms-tracking-site-checker-install",
     fr: "/freetools/pimms-tracking-site-checker-installation"

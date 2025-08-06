@@ -8,10 +8,7 @@ export const dynamic = "force-dynamic";
 export async function GET() {
   const DOMAIN = process.env.NEXT_PUBLIC_WEB_DOMAIN as string;
   const GOOGLE_CLIENT_EMAIL = process.env.GOOGLE_CLIENT_EMAIL as string;
-  const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(
-    /\\n/g,
-    "\n"
-  );
+  const GOOGLE_PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
 
   if (!DOMAIN || !GOOGLE_CLIENT_EMAIL || !GOOGLE_PRIVATE_KEY) {
     throw new Error("Missing required environment variables.");
@@ -19,13 +16,11 @@ export async function GET() {
 
   console.log(GOOGLE_CLIENT_EMAIL);
 
-  const auth = new google.auth.JWT(
-    GOOGLE_CLIENT_EMAIL,
-    undefined,
-    GOOGLE_PRIVATE_KEY,
-    ["https://www.googleapis.com/auth/indexing"],
-    undefined
-  );
+  const auth = new google.auth.JWT({
+    email: GOOGLE_CLIENT_EMAIL,
+    key: GOOGLE_PRIVATE_KEY,
+    scopes: ["https://www.googleapis.com/auth/indexing"]
+  });
 
   await auth.authorize();
 
@@ -47,11 +42,7 @@ export async function GET() {
     for (const [lang, langPath] of Object.entries(pathname)) {
       if (typeof langPath !== "string" || !langPath.startsWith("/")) continue;
 
-      const url =
-        `${domainWithHttps}${lang !== "en" ? `/${lang}` : ""}${langPath}`.replace(
-          /\/$/,
-          ""
-        );
+      const url = `${domainWithHttps}${lang !== "en" ? `/${lang}` : ""}${langPath}`.replace(/\/$/, "");
 
       urlsToSubmit.add(url);
     }
@@ -69,8 +60,8 @@ export async function GET() {
       await indexing.urlNotifications.publish({
         requestBody: {
           type: "URL_UPDATED",
-          url,
-        },
+          url
+        }
       });
       console.log(`Submitted: ${url}`);
       await delay(300);

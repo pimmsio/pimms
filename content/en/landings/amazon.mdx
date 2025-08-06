@@ -74,7 +74,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
         <Text>View each link's impact in a dashboard, mapping each promotion or campaign to the right channel.</Text>
       </Column>
       <Column span={7} order="visual">
-        <AnalyticsDemo />
+        <AnalyticsDemo showConversions={false} />
       </Column>
     </TwoColumns>
   </Section>
@@ -131,14 +131,21 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   </Centered>
   
   <Section>
-    <TwoColumns ratio="1-1">
+    <TwoColumns ratio="1-1-1">
       <Column span={1}>
         <LifetimeOfferFree />
+      </Column>
+      <Column span={1}>
+        <LifetimeOfferStarter />
       </Column>
       <Column span={1}>
         <LifetimeOfferPro />
       </Column>
     </TwoColumns>
+  </Section>
+
+  <Section>
+    <LifetimeOfferScale />
   </Section>
 </Slide>
 

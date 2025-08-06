@@ -7,13 +7,13 @@ const ImageSlide = () => {
   const locale = useLocale();
 
   return (
-    <Section id="video">
+    <Section id="video" className="max-w-7xl md:px-0 md:py-4">
       <div className="bg-white rounded-2xl border border-gray-200 overflow-hidden">
         <Image
-          src={`https://assets.pimms.io/landing-growth-insights-${locale}.webp?v=3`}
+          src={`https://assets.pimms.io/landing-growth-insights-${locale}.webp?v=4`}
           alt="PIMMS Growth Insights Dashboard"
-          width={1000}
-          height={1000}
+          width={1400}
+          height={1050}
           className="w-full h-full object-cover"
           priority
         />

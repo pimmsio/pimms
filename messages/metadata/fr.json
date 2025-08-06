@@ -20,6 +20,11 @@
       "description": "Ouvre directement tes produits et livres dans l'app Amazon officielle. Réduis les frictions, augmente tes ventes et tes évaluations, tout en suivant précisément les performances de tes liens.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
+    "ab-testing": {
+      "title": "A/B testing des liens courts pour maximiser les conversions | PIMMS",
+      "description": "Arrête de deviner ce qui marche. L'A/B testing des liens courts vous permet de tester les liens, suivre les conversions réelles et prendre des décisions basées sur des données qui augmentent effectivement vos résultats.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
     "abuse": {
       "title": "Signaler un abus"
     },

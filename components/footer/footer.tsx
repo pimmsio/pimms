@@ -88,6 +88,14 @@ export const Footer = ({
                       Amazon
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href={getCanonicalLink(locale, "/landings/ab-testing")}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      A/B Testing
+                    </Link>
+                  </li>
                 </ul>
 
                 <h6 className="text-[#08272E] font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">

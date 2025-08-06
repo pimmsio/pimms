@@ -21,17 +21,22 @@ export const getCanonicalLink = (locale: string, pathname: string) => {
     return locale === "en" ? "/" : `/${locale}`;
   }
 
-  const langPath = pathnames[pathname];
+  try {
+    const langPath = pathnames[pathname];
 
-  if (!langPath) {
-    console.log(pathname);
+    if (!langPath) {
+      console.log(pathname);
+    }
+
+    if (!langPath[locale]) {
+      return langPath["en"];
+    }
+
+    return locale === "en" ? langPath[locale] : `/${locale}${langPath[locale]}`;
+  } catch {
+    console.error("Failed to get canonical link", pathname, locale);
+    return "";
   }
-
-  if (!langPath[locale]) {
-    return langPath["en"];
-  }
-
-  return locale === "en" ? langPath[locale] : `/${locale}${langPath[locale]}`;
 };
 
 export const getFullLink = (path: string) => {
