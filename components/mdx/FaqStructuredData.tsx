@@ -2,17 +2,14 @@ import slugify from "slugify";
 import striptags from "striptags";
 import removeMarkdown from "remove-markdown";
 import { useLocale } from "next-intl";
+import { WEB_URL } from "@/app/constants";
 
-export function FaqStructuredData({
-  faqs,
-  url,
-}: {
-  faqs: { question: string; answer: string }[];
-  url: string;
-}) {
+export function FaqStructuredData({ faqs, path }: { faqs: { question: string; answer: string }[]; path: string }) {
   const locale = useLocale();
 
   if (!faqs || faqs.length === 0) return null;
+
+  const url = `${WEB_URL}${path}`;
 
   const cleanText = (text: string): string => {
     return removeMarkdown(striptags(text))
@@ -31,15 +28,10 @@ export function FaqStructuredData({
       name: cleanText(question),
       acceptedAnswer: {
         "@type": "Answer",
-        text: cleanText(answer),
-      },
-    })),
+        text: cleanText(answer)
+      }
+    }))
   };
 
-  return (
-    <script
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
-  );
+  return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />;
 }

@@ -416,10 +416,10 @@ export default function BlogPost({ params }: Props) {
       <BlogStructuredData
         type={post.dir}
         metadata={post.metadata}
-        url={getCanonicalLink(locale, `/articles/${slug}`)}
+        path={getCanonicalLink(locale, `/articles/${slug}`)}
         author={author}
       />
-      <FaqStructuredData url={getCanonicalLink(locale, `/articles/${slug}`)} faqs={post.faqs} />
+      <FaqStructuredData path={getCanonicalLink(locale, `/articles/${slug}`)} faqs={post.faqs} />
     </>
   );
 }

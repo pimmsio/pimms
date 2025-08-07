@@ -1,35 +1,33 @@
-import Script from "next/script";
 import { PageMetadata } from "../../lib/mdx";
-import { getCanonicalLink } from "../../lib/utils";
+import { getCanonicalLinkWithDomain } from "../../lib/utils";
 import { useLocale } from "next-intl";
+import { WEB_URL } from "@/app/constants";
 
 const typeMap = {
   blog: "BlogPosting",
   guides: "TechArticle",
   tutorials: "Article",
-  legal: "Article",
+  legal: "Article"
 };
 
 export const BlogStructuredData = ({
   metadata,
-  url,
+  path,
   author,
-  type = "blog",
+  type = "blog"
 }: {
   metadata: PageMetadata;
-  url: string;
+  path: string;
   author?: { name: string; image: string; slug?: string };
   type?: string;
 }) => {
   const locale = useLocale();
 
-  const datePublished = metadata.publishedAt.includes("T")
-    ? metadata.publishedAt
-    : `${metadata.publishedAt}T00:00:00Z`;
+  const url = `${WEB_URL}${path}`;
 
-  const dateModified = metadata.updatedAt.includes("T")
-    ? metadata.updatedAt
-    : `${metadata.updatedAt}T00:00:00Z`;
+  const datePublished = metadata.publishedAt.includes("T") ? metadata.publishedAt : `${metadata.publishedAt}T00:00:00Z`;
+
+  const dateModified = metadata.updatedAt.includes("T") ? metadata.updatedAt : `${metadata.updatedAt}T00:00:00Z`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -44,20 +42,16 @@ export const BlogStructuredData = ({
       "@type": "Person",
       name: author?.name ?? "Unknown",
       ...(author?.slug && {
-        url: getCanonicalLink(locale, `/articles/author/${author.slug}`),
-      }),
+        url: getCanonicalLinkWithDomain(locale, `/articles/author/${author.slug}`, WEB_URL)
+      })
     },
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": url,
-    },
+      "@id": url
+    }
   };
 
   return (
-    <Script
-      id="blog-jsonld"
-      type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-    />
+    <script id="blog-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
   );
 };
