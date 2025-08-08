@@ -2,32 +2,32 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-08-07T22:10:29.898Z"
+    "lastmod": "2025-08-08T08:58:49.583Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-08-07T22:10:29.899Z"
+    "lastmod": "2025-08-08T08:58:49.584Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-08-07T22:10:29.899Z"
+    "lastmod": "2025-08-08T08:58:49.584Z"
   },
   "/landings/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-08-07T22:10:29.899Z"
+    "lastmod": "2025-08-08T08:58:49.584Z"
   },
   "/landings/ab-testing": {
     "en": "/solutions/ab-testing",
     "fr": "/landings/ab-testing",
-    "lastmod": "2025-08-07T22:10:29.899Z"
+    "lastmod": "2025-08-08T08:58:49.584Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-08-07T22:10:29.899Z"
+    "lastmod": "2025-08-08T08:58:49.584Z"
   },
   "/articles": {
     "en": "/articles",

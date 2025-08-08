@@ -12,7 +12,7 @@ import { remarkFaqDirective } from "@/lib/mdx/remarkFaqDirective";
 import { remarkCtaPlaceholder } from "@/lib/mdx/remarkCtaDirective";
 import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { remarkAtSyntax } from "@/lib/mdx/remark-at-syntax";
-import { generateLandingMetadata } from "@/lib/utils";
+import { generateLandingMetadata, getCanonicalLink } from "@/lib/utils";
 import { landingFolders } from "@/i18n/config";
 import { Zap } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -28,6 +28,7 @@ import { InfoSection } from "@/components/mdx/InfoSection";
 import { LinkCards, LinkCard } from "@/components/mdx/LinkCards";
 import { Quote } from "@/components/mdx/Quote";
 import { Steps, Step, StepCompleted } from "@/components/mdx/Steps";
+import { FaqStructuredData } from "@/components/mdx/FaqStructuredData";
 
 // Import landing components
 import { Hero } from "@/components/landings/hero";
@@ -246,35 +247,42 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       }
     };
 
+    const pathname = slug === "home" ? "/" : `/landings/${slug}`;
+    const path = getCanonicalLink(locale, pathname);
+
     return (
-      <MDXRemote
-        source={page.content}
-        components={components}
-        options={{
-          mdxOptions: {
-            remarkPlugins: [
-              remarkGfm,
-              remarkDirective,
-              remarkAtSyntax,
-              remarkIframeDirective,
-              remarkFaqDirective,
-              remarkCtaPlaceholder,
-              remarkCustomDirectives
-            ],
-            rehypePlugins: [
-              rehypeSlug,
-              rehypeAutolinkHeadings,
-              [
-                rehypePrettyCode,
-                {
-                  theme: "github-light",
-                  keepBackground: false
-                }
+      <>
+        <MDXRemote
+          source={page.content}
+          components={components}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [
+                remarkGfm,
+                remarkDirective,
+                remarkAtSyntax,
+                remarkIframeDirective,
+                remarkFaqDirective,
+                remarkCtaPlaceholder,
+                remarkCustomDirectives
+              ],
+              rehypePlugins: [
+                rehypeSlug,
+                rehypeAutolinkHeadings,
+                [
+                  rehypePrettyCode,
+                  {
+                    theme: "github-light",
+                    keepBackground: false
+                  }
+                ]
               ]
-            ]
-          }
-        }}
-      />
+            }
+          }}
+        />
+
+        <FaqStructuredData path={path} faqs={page.faqs} />
+      </>
     );
   } catch {
     notFound();
