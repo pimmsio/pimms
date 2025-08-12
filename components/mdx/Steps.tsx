@@ -14,12 +14,16 @@ interface StepProps {
 export function Step({ children, number }: StepProps) {
   return (
     <div className="flex gap-3 sm:gap-4">
-      {number && (
+      {number != null ? (
         <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 bg-[#3970ff] text-white rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold">
           {number}
         </div>
+      ) : (
+        <div className="flex-shrink-0 w-6 h-6 sm:w-8 sm:h-8 border border-gray-300 text-gray-500 rounded-full flex items-center justify-center text-xs sm:text-sm font-semibold">
+          •
+        </div>
       )}
-      <div className="flex-1 text-sm sm:text-base text-[#5C5B61]">{children}</div>
+      <div className="flex-1 text-sm sm:text-base text-[#5C5B61] leading-relaxed">{children}</div>
     </div>
   );
 }
@@ -32,7 +36,7 @@ export function StepCompleted({ children }: { children: React.ReactNode }) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
         </svg>
       </div>
-      <div className="flex-1 text-sm sm:text-base text-[#5C5B61] line-through">{children}</div>
+      <div className="flex-1 text-sm sm:text-base text-[#5C5B61] leading-relaxed line-through">{children}</div>
     </div>
   );
 }

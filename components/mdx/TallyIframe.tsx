@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { ExternalLink, FileText } from "lucide-react";
 
-export default function TallyIframe() {
+export default function TallyIframe({ src = "https://tally.so/embed/3jo7Wx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1", title = "Report Abuse" }: { src?: string; title?: string }) {
   useEffect(() => {
     const script = document.createElement("script");
     script.innerHTML = `
@@ -33,11 +33,11 @@ export default function TallyIframe() {
       {/* Iframe container */}
       <div className="aspect-video w-full bg-gray-50">
         <iframe
-          data-tally-src="https://tally.so/embed/3jo7Wx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          data-tally-src={src}
           loading="lazy"
           width="100%"
           height="659"
-          title="Report Abuse"
+          title={title}
         ></iframe>
       </div>
     </div>

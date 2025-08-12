@@ -5,10 +5,11 @@ import { useState } from "react";
 
 interface PreActionsProps {
   language: string;
+  filename?: string;
   codeId: string;
 }
 
-export function PreActions({ language, codeId }: PreActionsProps) {
+export function PreActions({ language, filename, codeId }: PreActionsProps) {
   const [copied, setCopied] = useState(false);
 
   const handleCopy = async () => {
@@ -53,7 +54,12 @@ export function PreActions({ language, codeId }: PreActionsProps) {
 
   return (
     <div className="pre-actions flex items-center justify-between bg-gray-50 border-b border-gray-200 px-4 py-2">
-      <span className="text-sm font-medium text-gray-700">{getLanguageLabel()}</span>
+      <div className="flex items-center gap-2">
+        <span className="text-sm font-medium text-gray-700">{getLanguageLabel()}</span>
+        {filename && (
+          <span className="text-xs text-gray-500 border border-gray-200 bg-white px-2 py-0.5 rounded">{filename}</span>
+        )}
+      </div>
 
       <button
         onClick={handleCopy}

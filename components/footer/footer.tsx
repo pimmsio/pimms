@@ -32,7 +32,7 @@ export const Footer = ({
               <p className="text-[#5C5B61] leading-relaxed max-w-sm">{t("footer.description")}</p>
               <div className="flex gap-3">
                 <Link
-                  href="https://github.com/getpimms/pim-ms"
+                  href="https://github.com/pimmsio/getpimms"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
@@ -235,7 +235,7 @@ export const Footer = ({
                     smart links and QR codes. &apos;QR Code&apos; is a registered trademark of DENSO WAVE INCORPORATED.
                     This project is based on <DubRef /> open-source software licensed under the AGPL.{" "}
                     <Link
-                      href="https://github.com/getpimms/pim-ms"
+                      href="https://github.com/pimmsio/getpimms"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[#3970ff] hover:underline"

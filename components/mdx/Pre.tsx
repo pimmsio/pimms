@@ -8,20 +8,33 @@ export function Pre({ children }: { children: ReactNode }) {
   // Extract language from children if possible
   const getLanguageFromChildren = () => {
     if (typeof children === "object" && children !== null && "props" in children) {
-      const props = children.props as any;
+      const props = (children as any).props as any;
       const className = props?.className || "";
       const match = className.match(/language-(\w+)/);
-      return match ? match[1] : "code";
+      // rehype-pretty-code also adds data-language on <code>
+      const dataLanguage = props?.["data-language"] || props?.["dataLanguage"];
+      return (dataLanguage as string) || (match ? match[1] : "code");
     }
     return "code";
   };
 
+  const getFilenameFromChildren = () => {
+    if (typeof children === "object" && children !== null && "props" in children) {
+      const props = (children as any).props as any;
+      // Support common meta keys produced by rehype-pretty-code
+      // via code fence meta: ```ts filename=app.ts
+      return props?.["data-filename"] || props?.["dataFilename"] || props?.filename || props?.meta || "";
+    }
+    return "";
+  };
+
   const language = getLanguageFromChildren();
+  const filename = String(getFilenameFromChildren() || "");
 
   return (
-    <div className="relative my-6 border border-gray-200 rounded-lg overflow-hidden bg-white">
+    <div className="pre-block relative my-6 border border-gray-200 rounded-lg overflow-hidden bg-white">
       {/* Header with language label and copy button */}
-      <PreActions language={language} codeId={id} />
+      <PreActions language={language} filename={filename} codeId={id} />
 
       {/* Code content - server rendered for SEO */}
       <div className="overflow-x-auto">

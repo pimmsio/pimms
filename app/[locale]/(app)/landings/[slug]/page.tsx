@@ -2,10 +2,13 @@ import { Metadata } from "next";
 import { useTranslations } from "next-intl";
 import { getPage } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
+import React from "react";
+import { twMerge } from "tailwind-merge";
 import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
+import { rehypeOlStartCounter } from "@/lib/mdx/rehypeOlStartCounter";
 import remarkDirective from "remark-directive";
 import { remarkIframeDirective } from "@/lib/mdx/remarkIframeDirective";
 import { remarkFaqDirective } from "@/lib/mdx/remarkFaqDirective";
@@ -23,7 +26,9 @@ import { Pre } from "@/components/mdx/Pre";
 import TallyIframe from "@/components/mdx/TallyIframe";
 import { Slide } from "@/components/mdx/LandingSection";
 import { CallToAction } from "@/components/mdx/CallToAction";
+import { Callout } from "@/components/mdx/Callout";
 import { Faq } from "@/components/mdx/Faq";
+import { Figure } from "@/components/mdx/Figure";
 import { InfoSection } from "@/components/mdx/InfoSection";
 import { LinkCards, LinkCard } from "@/components/mdx/LinkCards";
 import { Quote } from "@/components/mdx/Quote";
@@ -195,10 +200,12 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
 
       // MDX components
       CallToAction,
+      Callout,
       Faq,
       InfoSection,
       LinkCards,
       LinkCard,
+      Figure,
       Quote,
       Steps,
       Step,
@@ -206,6 +213,32 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       code: Highlight,
       pre: Pre,
       TallyIframe,
+      // Ordered list mapping to respect start numbering when lists are split
+      ol: ({ children, className, style, start, ...rest }: React.OlHTMLAttributes<HTMLOListElement>) => {
+        const styleObj: React.CSSProperties = typeof style === "object" && style !== null ? style : {};
+        let startNum = typeof start === "number" ? start : start ? Number(start) : undefined;
+        if (!startNum) {
+          const maybeDataStart = (rest as any)["data-start"] as any;
+          if (maybeDataStart) {
+            const n = Number(maybeDataStart);
+            if (!Number.isNaN(n)) startNum = n;
+          }
+        }
+        const computedStyle: React.CSSProperties = {
+          ...styleObj,
+          ...(startNum && startNum > 1 ? { counterReset: `list-counter ${startNum - 1}` } : {})
+        };
+        return (
+          <ol
+            {...rest}
+            start={startNum}
+            style={computedStyle}
+            className={twMerge("prose-list-ol my-5 sm:my-6 space-y-2.5 text-gray-600 text-base pl-1", className)}
+          >
+            {children}
+          </ol>
+        );
+      },
 
       // Chart components
       AnalyticsDemo: ({ showConversions, showABTesting }: { showConversions?: boolean; showABTesting?: boolean }) => (
@@ -269,6 +302,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
               rehypePlugins: [
                 rehypeSlug,
                 rehypeAutolinkHeadings,
+                rehypeOlStartCounter,
                 [
                   rehypePrettyCode,
                   {

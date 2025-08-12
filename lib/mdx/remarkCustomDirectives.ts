@@ -27,10 +27,17 @@ export function remarkCustomDirectives() {
   return (tree: any) => {
     visit(tree, (node) => {
       if (node.type === "containerDirective") {
+        // ::: info ... ::: → <InfoSection />
         if (node.name === "info") {
           node.type = "mdxJsxFlowElement";
           node.name = "InfoSection";
           node.attributes = [];
+        }
+        // ::: callout type="tip|warn|note" title="..."  → <Callout />
+        if (node.name === "callout") {
+          node.type = "mdxJsxFlowElement";
+          node.name = "Callout";
+          node.attributes = extractAttributes(node);
         }
         if (node.name === "linkcards") {
           node.type = "mdxJsxFlowElement";

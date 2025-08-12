@@ -55,35 +55,6 @@ For developers: alternatively, use the [PiMMs SDK and Server-side tracking](/art
 If your builder supports global code (like Webflow Project Settings), paste the script once and it loads on every page.  
 Otherwise, paste it manually on pages that include supported tools (form, booking, Stripe).
 
-## 2. Set up buttons or links that redirect to supported tools
-
-If your website includes buttons or links to tools like **Cal.com**, **Stripe**, **Tally**, or **Typeform**, you need to add a special PiMMs parameter to those links.
-
-That’s how PiMMs connects the visit on your site to the conversion on the external tool.
-
-### What to do
-
-Update the link URL with the correct parameter:
-
-- Use `?pimms_id=1` for calendars and forms (Cal.com, Lemcal, Calendly, Tally, Typeform, iClosed…)
-- Use `?pimms_client_reference_id=1` for Stripe payment links
-
-### Examples
-
-**Calendar booking button**  
-On your page:  
-Book a call → `https://cal.com/your-user/demo?pimms_id=1`
-
-**Typeform link**  
-Apply now → `https://yourform.typeform.com/to/xyz?pimms_id=1`
-
-**Stripe payment**  
-Buy now → `https://buy.stripe.com/test_abc123?pimms_client_reference_id=1`
-
-These parameters are required so PiMMs can match the visitor session on your website with the final conversion.
-
-Make sure the link is on a page that includes the PiMMs script.
-
 ## Want to go further?
 
 We’ve written step-by-step guides for each supported tool — if you want to set up tracking with more precision:

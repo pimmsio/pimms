@@ -33,12 +33,7 @@ related:
 **Quick Setup Overview:**
 
 1.  Sign up for PIMMS and add its tracking script to your website.
-2.  Configure platform-specific settings:
-
-    - Webflow: Use `?pimms_id=1` for form links.
-    - Tally: Integrate with Google Analytics.
-    - Typeform: Enable UTM tracking and use a custom listener tag.
-
+2.  Configure platform-specific settings.
 3.  Monitor real-time data on submissions, traffic sources, and user behavior in the [PIMMS dashboard](https://app.pimms.io/).
 
 ## Track Conversions with [Google Tag Manager](https://marketingplatform.google.com/about/tag-manager/) – GTM Tutorial Lesson 5
@@ -85,8 +80,6 @@ Here’s a quick guide to configuring PIMMS for popular form platforms:
   Enable Google Analytics integration in the settings menu. Note: Avoid using Google Tag Manager directly within Tally [\[3\]](https://tally.so/help/tracking-tally-form-conversions-with-google-tag-manager).
 - **Typeform**:  
   Install Google Tag Manager on your main website and set up a dedicated "Typeform submit listener" tag [\[4\]](https://conversiontracking.io/blog/typeform-google-ads-conversion-tracking-guide).
-- **Webflow**:  
-  Add the `?pimms_id=1` parameter to your form links for proper tracking [\[2\]](https://pimms.io/guides/how-to-track-conversions-on-vibe-coding-ai-no-code-sites).
 
 Once everything is set up, you can monitor conversions in real time and gain insights into user behavior and form completion rates through the PIMMS dashboard.
 
@@ -103,8 +96,6 @@ Start by adding the [PIMMS tracking script](https://pimms.io/blog) to the `<head
 ```html
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
 ```
-
-Next, update your form links by appending the PIMMS parameter. For example, your link might look like this: `https://yourwebflow.com/form?pimms_id=1`. This ensures precise attribution for your form submissions.
 
 To confirm everything is working, open your browser's console and type:
 

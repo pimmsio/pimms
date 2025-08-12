@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  font-family: Inter, sans-serif;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #fafafa;
@@ -52,6 +52,68 @@ body {
   font-size: 0.7rem;
   font-weight: 600;
 }
+
+/* Typography and prose harmonization */
+.prose { line-height: 1.75; font-size: 1rem; }
+.prose p { font-size: 1rem; }
+.prose h2 { font-size: 1.5rem; }
+.prose h3 { font-size: 1.25rem; }
+.prose h4 { font-size: 1.125rem; }
+
+@media (min-width: 640px) {
+  .prose { font-size: 1.0625rem; }
+  .prose p { font-size: 1.0625rem; }
+  .prose h2 { font-size: 1.875rem; }
+  .prose h3 { font-size: 1.5rem; }
+  .prose h4 { font-size: 1.25rem; }
+}
+
+.prose h2,
+.prose h3 {
+  letter-spacing: -0.01em;
+}
+
+/* Reduce spacing before/after code blocks inside lists */
+.prose li > .pre-block { margin-top: 0.5rem; margin-bottom: 0.75rem; }
+.prose ol > li .pre-block,
+.prose ul > li .pre-block { margin-left: 0.25rem; }
+
+/* Normalize table spacing */
+.prose table { font-size: 0.95rem; }
+.prose thead th { padding: 0.5rem 0.75rem; }
+.prose tbody td { padding: 0.5rem 0.75rem; }
+
+/* Task list checkboxes and nested list styling inside prose content */
+.prose :where(input[type="checkbox"]) {
+  appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 1.5px solid #d1d5db; /* gray-300 */
+  border-radius: 0.25rem;
+  display: inline-grid;
+  place-content: center;
+  margin-right: 0.5rem;
+}
+
+.prose :where(input[type="checkbox"]:checked) {
+  background-color: #3970ff;
+  border-color: #3970ff;
+}
+
+.prose :where(input[type="checkbox"]:checked)::after {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  transform: rotate(45deg);
+  border-right: 2px solid white;
+  border-bottom: 2px solid white;
+  margin-top: -1px;
+}
+
+.prose ul ul { list-style-type: circle; }
+.prose ul ul ul { list-style-type: square; }
+.prose ol ol { list-style-type: lower-alpha; }
+.prose ol ol ol { list-style-type: lower-roman; }
 
 @media (min-width: 640px) {
   .prose-list-ol > li {

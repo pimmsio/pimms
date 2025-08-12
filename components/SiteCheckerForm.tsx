@@ -1,10 +1,9 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CheckCircle, XCircle, Clock, AlertCircle, Copy, Check } from "lucide-react";
-import { useSearchParams, useRouter } from "next/navigation";
+import { CheckCircle, XCircle, Clock, AlertCircle } from "lucide-react";
 import { getCanonicalLink } from "../lib/utils";
 import { useLocale } from "next-intl";
 import { H2 } from "./base/h2";
@@ -21,22 +20,9 @@ interface ScriptCheckResult {
 
 export default function SiteCheckerForm() {
   const locale = useLocale();
-  const searchParams = useSearchParams();
-  const router = useRouter();
-  const urlParam = searchParams.get("url");
-
-  const [url, setUrl] = useState(urlParam || "");
+  const [url, setUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const [result, setResult] = useState<ScriptCheckResult | null>(null);
-  const [copied, setCopied] = useState(false);
-
-  // Auto-check if URL is provided in params
-  useEffect(() => {
-    if (urlParam && urlParam !== url) {
-      setUrl(urlParam);
-      checkScript(urlParam);
-    }
-  }, [urlParam, url]);
 
   const checkScript = async (targetUrl: string) => {
     if (!targetUrl) return;
@@ -97,23 +83,7 @@ export default function SiteCheckerForm() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Update URL with the search parameter
-    const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.set("url", url);
-    router.push(currentUrl.pathname + currentUrl.search, { scroll: false });
-
     checkScript(url);
-  };
-
-  const copyLinkToResults = () => {
-    const currentUrl = new URL(window.location.href);
-    currentUrl.searchParams.set("url", url);
-
-    navigator.clipboard.writeText(currentUrl.toString()).then(() => {
-      setCopied(true);
-      setTimeout(() => setCopied(false), 2000);
-    });
   };
 
   return (
@@ -155,29 +125,6 @@ export default function SiteCheckerForm() {
                 </>
               )}
             </Button>
-
-            {result && url && (
-              <Button
-                type="button"
-                variant="outline"
-                onClick={copyLinkToResults}
-                className="sm:flex-none h-12 text-base md:text-lg rounded-full sm:min-w-[140px]"
-                size="lg"
-              >
-                {copied ? (
-                  <>
-                    <Check className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                    Copied!
-                  </>
-                ) : (
-                  <>
-                    <Copy className="w-4 h-4 md:w-5 md:h-5 mr-2" />
-                    <span className="hidden sm:inline">Share results</span>
-                    <span className="sm:hidden">Share</span>
-                  </>
-                )}
-              </Button>
-            )}
           </div>
         </form>
       </div>

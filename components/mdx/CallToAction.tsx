@@ -7,7 +7,7 @@ export function CallToAction() {
   const t = useTranslations("blog.cta");
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-[#3970ff] to-[#2850d0] rounded-lg sm:rounded-xl md:rounded-2xl p-6 sm:p-8 md:p-12 my-6 sm:my-8 text-center shadow-lg">
+    <div className="not-prose relative overflow-hidden bg-gradient-to-br from-[#3970ff] to-[#2850d0] rounded-lg sm:rounded-xl md:rounded-2xl p-6 sm:p-8 md:p-12 my-6 sm:my-8 text-center shadow-lg">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute -top-4 -right-4 w-24 h-24 sm:w-32 sm:h-32 bg-white rounded-full blur-3xl" />
@@ -21,11 +21,11 @@ export function CallToAction() {
           </div>
         </div>
 
-        <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-2 sm:mb-3 text-white!">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-2 sm:mb-3 text-white!">
           {t("readyToStart.title")}
         </h3>
 
-        <p className="text-sm sm:text-base md:text-lg mb-6 sm:mb-8 max-w-2xl mx-auto text-white/90! leading-relaxed px-4 sm:px-0">
+        <p className="text-sm sm:text-base md:text-[1.0625rem] mb-6 sm:mb-8 max-w-2xl mx-auto text-white/90! leading-relaxed px-4 sm:px-0">
           {t("readyToStart.description")}
         </p>
 

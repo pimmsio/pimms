@@ -15,6 +15,7 @@ import remarkGfm from "remark-gfm";
 import rehypeSlug from "rehype-slug";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypePrettyCode from "rehype-pretty-code";
+import { rehypeOlStartCounter } from "@/lib/mdx/rehypeOlStartCounter";
 import TableOfContents from "@/components/table-of-content";
 import remarkDirective from "remark-directive";
 import { remarkIframeDirective } from "@/lib/mdx/remarkIframeDirective";
@@ -30,8 +31,10 @@ import { LinkCard } from "@/components/mdx/LinkCards";
 import { Quote } from "@/components/mdx/Quote";
 import { Steps, Step, StepCompleted } from "@/components/mdx/Steps";
 import { Highlight } from "@/components/mdx/Highlight";
+import { Callout } from "@/components/mdx/Callout";
 import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { Pre } from "@/components/mdx/Pre";
+import { Figure } from "@/components/mdx/Figure";
 import { articleFolders } from "@/i18n/config";
 import TallyIframe from "@/components/mdx/TallyIframe";
 import { BreadcrumbStructuredData } from "@/components/mdx/BreadcrumbStructuredData";
@@ -168,9 +171,45 @@ const components = {
       {children}
     </ul>
   ),
-  ol: ({ children }: { children: React.ReactNode }) => (
-    <ol className="prose-list-ol my-5 sm:my-6 space-y-2.5 text-gray-600 text-base pl-1">{children}</ol>
-  ),
+  ol: ({ children, className, style, start, ...rest }: React.OlHTMLAttributes<HTMLOListElement>) => {
+    const styleObj: React.CSSProperties = typeof style === "object" && style !== null ? style : {};
+    // Derive start value from multiple possible sources
+    let startNum = typeof start === "number" ? start : start ? Number(start) : undefined;
+    if (!startNum) {
+      // Try data-start
+      const maybeDataStart = (rest as any)["data-start"] as any;
+      if (maybeDataStart) {
+        const n = Number(maybeDataStart);
+        if (!Number.isNaN(n)) startNum = n;
+      }
+    }
+    if (!startNum) {
+      // Inspect first child <li value="N"> if present
+      const childArray = React.Children.toArray(children);
+      const first = childArray.find((c) => React.isValidElement(c)) as any;
+      const liValue = first?.props?.value;
+      if (typeof liValue === "number") startNum = liValue;
+      else if (typeof liValue === "string") {
+        const n = Number(liValue);
+        if (!Number.isNaN(n)) startNum = n;
+      }
+    }
+    const computedStyle: React.CSSProperties = {
+      ...styleObj,
+      ...(startNum && startNum > 1 ? { counterReset: `list-counter ${startNum - 1}` } : {})
+    };
+
+    return (
+      <ol
+        {...rest}
+        start={startNum}
+        style={computedStyle}
+        className={twMerge("prose-list-ol my-5 sm:my-6 space-y-2.5 text-gray-600 text-base pl-1", className)}
+      >
+        {children}
+      </ol>
+    );
+  },
   li: ({ children }: { children: React.ReactNode }) => <li className="leading-relaxed pl-1">{children}</li>,
   p: ({ children }: { children: React.ReactNode }) => (
     <p className="my-4 sm:my-5 text-base leading-relaxed text-gray-600">{children}</p>
@@ -191,7 +230,9 @@ const components = {
   Step,
   StepCompleted,
   Highlight,
+  Callout,
   pre: Pre,
+  Figure,
   Tally: TallyIframe
 };
 
@@ -283,16 +324,28 @@ export default function BlogPost({ params }: Props) {
               <div
                 className={twMerge(
                   "prose prose-base lg:prose-lg max-w-none",
-                  "prose-h2:text-xl sm:prose-h2:text-2xl md:prose-h2:text-3xl prose-h2:font-bold prose-h2:mt-8 sm:prose-h2:mt-10 prose-h2:mb-4 sm:prose-h2:mb-5 prose-h2:text-[#08272E]",
-                  "prose-h3:text-lg sm:prose-h3:text-xl md:prose-h3:text-2xl prose-h3:font-semibold prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4 prose-h3:text-[#08272E]",
+                  // Headings
+                  "prose-headings:font-bold",
+                  "prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:leading-tight prose-h2:mt-8 sm:prose-h2:mt-10 prose-h2:mb-3 sm:prose-h2:mb-4 prose-h2:text-[#08272E]",
+                  "prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:leading-snug prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4 prose-h3:text-[#08272E]",
+                  "prose-h4:text-lg sm:prose-h4:text-xl prose-h4:leading-snug prose-h4:mt-5 sm:prose-h4:mt-6 prose-h4:mb-2.5 sm:prose-h4:mb-3 prose-h4:text-[#08272E] prose-h4:font-semibold",
+                  // Paragraphs
                   "prose-p:text-[#5C5B61] prose-p:leading-relaxed prose-p:mb-4 sm:prose-p:mb-5",
+                  // Lists
                   "prose-ul:my-5 sm:prose-ul:my-6 prose-ol:my-5 sm:prose-ol:my-6",
-                  "prose-li:text-[#5C5B61] prose-li:mb-2",
+                  "prose-li:text-[#5C5B61] prose-li:mb-2 prose-li:leading-relaxed",
+                  // Inline code
                   "prose-code:text-sm prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none prose-code:bg-transparent prose-code:text-gray-800",
+                  // Blockquote
                   "prose-blockquote:border-l-4 prose-blockquote:border-[#3970ff] prose-blockquote:bg-gradient-to-r prose-blockquote:from-[#3970ff]/5 prose-blockquote:to-transparent prose-blockquote:p-4 sm:prose-blockquote:p-5 prose-blockquote:my-6 sm:prose-blockquote:my-8 prose-blockquote:italic prose-blockquote:rounded-r-xl",
+                  // Links
                   "prose-a:text-[#3970ff] prose-a:no-underline hover:prose-a:underline prose-a:font-medium",
+                  // Strong
                   "prose-strong:font-semibold prose-strong:text-[#08272E]",
-                  "prose-hr:my-8 sm:prose-hr:my-10 prose-hr:border-gray-200"
+                  // HR
+                  "prose-hr:my-8 sm:prose-hr:my-10 prose-hr:border-gray-200",
+                  // Tighten default margins for first/last child in article
+                  "[&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
                 )}
               >
                 <MDXRemote
@@ -311,6 +364,7 @@ export default function BlogPost({ params }: Props) {
                       rehypePlugins: [
                         rehypeSlug,
                         rehypeAutolinkHeadings,
+                        rehypeOlStartCounter,
                         [
                           rehypePrettyCode,
                           {

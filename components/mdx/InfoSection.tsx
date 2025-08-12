@@ -32,7 +32,7 @@ export function InfoSection({ type = "info", title, children }: InfoSectionProps
   const style = styles[type];
 
   return (
-    <div className={`${style.bg} ${style.border} border rounded-lg sm:rounded-xl p-3 sm:p-4 my-4 sm:my-6`}>
+    <div className={`${style.bg} ${style.border} border rounded-lg sm:rounded-xl p-4 sm:p-5 my-6 sm:my-8`}>
       {title && (
         <h4 className={`${style.titleColor} font-semibold text-sm sm:text-base mb-2 flex items-center gap-2`}>
           <span className="text-base sm:text-lg">{style.icon}</span>
