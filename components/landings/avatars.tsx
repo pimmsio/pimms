@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
+import { BlurFade } from "@/components/magicui/blur-fade";
 
 interface AvatarsProps {
   children?: ReactNode;
@@ -35,7 +36,12 @@ export const Avatars = ({ children }: AvatarsProps) => {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center gap-2 mt-10">
+    <BlurFade
+      direction="up"
+      delay={0.2}
+      inView={false}
+      className="flex flex-col items-center justify-center gap-2 mt-10"
+    >
       <li className="flex items-center gap-2 pt-2">
         <AvatarsLaurier direction="left" />
         <div className="flex flex-col items-center justify-center select-none cursor-default">
@@ -54,7 +60,7 @@ export const Avatars = ({ children }: AvatarsProps) => {
         <AvatarsLaurier direction="right" />
       </li>
       {children && <div className="text-sm text-[#5C5B61] font-medium">{children}</div>}
-    </div>
+    </BlurFade>
   );
 };
 

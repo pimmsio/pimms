@@ -14,12 +14,12 @@
     },
     "logos_circle": {
       "title": "LE PLUS ?",
-      "heading": "Ça fonctionne partout, et ça <strong>suit tout</strong>",
-      "description": "Compatible avec plus de 100 apps et intégrations."
+      "heading": "Ça marche partout, et ça <strong>track tout</strong>",
+      "description": "100+ intégrations."
     },
     "analytics_chart": {
       "clicks": "Clics",
-      "leads": "Conversions",
+      "leads": "Leads",
       "sales": "Ventes",
       "saleAmount": "Chiffre d'affaires",
       "currency": "EUR",
@@ -30,7 +30,7 @@
       "city": "Ville",
       "browser": "Navigateur",
       "device": "Appareil",
-      "referral": "Référent",
+      "referral": "Referer",
       "utm": {
         "campaign": "Campagne",
         "source": "Source",
@@ -56,7 +56,7 @@
     },
     "hero": {
       "avatars": {
-        "title": "Utilisé par les créateurs et startups",
+        "title": "Les top créateurs recommandent",
         "avatar1": {
           "name": "Mathieu Visière",
           "image": "https://assets.pimms.io/mathieu-visiere.jpeg"

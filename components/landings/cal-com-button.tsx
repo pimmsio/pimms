@@ -21,7 +21,7 @@ export default function CalComButton({ children }: { children: React.ReactNode }
     <Button
       size="lg"
       className="w-full md:w-auto md:px-12 bg-[#FF6B35] hover:bg-[#e55a2b] text-white"
-      data-cal-link="alexandre-sarfati-pidjvv/30-minutes-with-alexandre-pimms?pimms_id=1"
+      data-cal-link="alexandre-sarfati/30-minutes-demo?pimms_id=1"
     >
       {children}
     </Button>

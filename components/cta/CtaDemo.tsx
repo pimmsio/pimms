@@ -21,7 +21,7 @@ export default function CtaDemo({ children }: { children?: string | React.ReactN
     <Button
       variant="secondary"
       className="w-full sm:w-fit mx-auto my-3 sm:min-w-[380px]"
-      data-cal-link="alexandre-sarfati-pidjvv/30-minutes-with-alexandre-pimms?pimms_id=1"
+      data-cal-link="alexandre-sarfati/30-minutes-demo?pimms_id=1"
     >
       {children}
     </Button>

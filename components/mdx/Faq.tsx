@@ -12,7 +12,6 @@ export function Faq({ question, answer, children }: { question: string; answer?:
         </summary>
         <div className="px-3 sm:px-4 md:px-5 pb-3 sm:pb-4 md:pb-5">
           <div className="text-sm sm:text-base text-[#5C5B61] leading-relaxed">{children ?? <p>{answer}</p>}</div>
-          <div className="mt-3 text-xs text-gray-400">Press Enter to toggle</div>
         </div>
       </details>
     </div>

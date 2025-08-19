@@ -34,6 +34,8 @@ import { LinkCards, LinkCard } from "@/components/mdx/LinkCards";
 import { Quote } from "@/components/mdx/Quote";
 import { Steps, Step, StepCompleted } from "@/components/mdx/Steps";
 import { FaqStructuredData } from "@/components/mdx/FaqStructuredData";
+import { AnimatedCentered } from "@/components/mdx/AnimatedCentered";
+import { BlurFade } from "@/components/magicui/blur-fade";
 
 // Import landing components
 import { Hero } from "@/components/landings/hero";
@@ -50,6 +52,7 @@ import {
 } from "@/components/landings/lifetime-offer-split";
 import Footer from "@/components/footer/footer";
 import LogosCircle from "@/components/logos-circle";
+import { DeeplinkDemo as DeeplinkDemoComponent } from "@/components/landings/deeplink-demo";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
 import BouncingImages from "@/components/landings/BouncingImages";
 
@@ -91,7 +94,7 @@ import { AnalyticsDemo } from "@/components/charts/analytics-demo";
 import Referer from "@/components/charts/referer";
 import { FilterFeature } from "@/components/landings/filter-feature";
 import { ABTestingDemo } from "@/components/landings/ab-testing-demo";
-import Image from "next/image";
+
 import CtaDemo from "@/components/cta/CtaDemo";
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
@@ -165,6 +168,10 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       HideOnDesktop,
       Fast,
       CtaBottomText,
+
+      // Animated components
+      AnimatedCentered,
+      BlurFade,
       WithoutPimms,
       Video,
       Centered,
@@ -242,41 +249,17 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
 
       // Chart components
       AnalyticsDemo: ({ showConversions, showABTesting }: { showConversions?: boolean; showABTesting?: boolean }) => (
-        <div className="rounded-2xl overflow-hidden border border-gray-200">
-          <AnalyticsDemo
-            tkey="landing"
-            showConversions={showConversions !== false}
-            showABTesting={showABTesting || false}
-          />
-        </div>
+        <AnalyticsDemo
+          tkey="landing"
+          showConversions={showConversions !== false}
+          showABTesting={showABTesting || false}
+        />
       ),
-      Referer: ({ showABTesting }: { showABTesting?: boolean }) => (
-        <div className="rounded-2xl overflow-hidden border border-gray-200">
-          <Referer showABTesting={showABTesting} />
-        </div>
-      ),
-      FilterFeature: () => (
-        <div className="rounded-2xl overflow-hidden border border-gray-200 bg-white">
-          <FilterFeature tkey="landing" />
-        </div>
-      ),
-      ABTestingDemo: () => (
-        <div className="py-8">
-          <ABTestingDemo />
-        </div>
-      ),
+      Referer: ({ showABTesting }: { showABTesting?: boolean }) => <Referer showABTesting={showABTesting} />,
+      FilterFeature: () => <FilterFeature tkey="landing" />,
+      ABTestingDemo: () => <ABTestingDemo />,
       DeeplinkDemo: () => {
-        return (
-          <div className="rounded-2xl overflow-hidden border border-gray-200">
-            <Image
-              src={`/static/deeplink-${locale}.svg`}
-              alt="Deep Analytics"
-              className="w-full"
-              width={1000}
-              height={179}
-            />
-          </div>
-        );
+        return <DeeplinkDemoComponent />;
       }
     };
 

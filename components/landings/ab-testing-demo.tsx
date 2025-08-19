@@ -5,7 +5,7 @@ export const ABTestingDemo = () => {
   return (
     <div className="relative max-w-2xl mx-auto">
       {/* Modal/Card Container */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-6 md:p-8 relative">
+      <div className="p-6 md:p-8 relative">
         {/* Testing URLs Section */}
         <div className="mb-8">
           <div className="flex items-center gap-2 mb-4">

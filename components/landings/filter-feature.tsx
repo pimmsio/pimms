@@ -1,5 +1,4 @@
-import { Laptop, Tag, Tablet, SmartphoneCharging } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { Laptop, Tag, Tablet, SmartphoneCharging, Instagram, Calendar } from "lucide-react";
 import React from "react";
 import { Label } from "../base/label";
 
@@ -11,42 +10,46 @@ const getFaviconUrl = (url: string) => {
 };
 
 export const FilterFeature = ({}: { tkey: string }) => {
-  const tcommon = useTranslations("landing");
-
   const utmLabel = (
-    <Label className="text-xs text-left capitalize font-light bg-zinc-100 text-[#08272E] border-1 border-zinc-200 ml-[-4px] mr-[-4px] px-1 rounded-sm">
+    <Label className="text-xs font-medium bg-blue-50 text-[#3970ff] border border-blue-200 px-2 py-0.5 rounded">
       UTM
     </Label>
   );
 
+
+
+  const tagLabel = <Tag size={12} className="text-[#3970ff]" />;
+
   const ROWS = [
+    // Première rangée : Géolocalisation
     [
       {
         icon: <img alt="France" src={getFlagUrl("FR")} className="rounded-md" />,
-        label: tcommon("filter_feature.country"),
+        label: "Pays",
         value: "France"
       },
       {
         icon: <img alt="CH" src={getFlagUrl("CH")} className="rounded-md" />,
-        label: tcommon("filter_feature.city"),
+        label: "Ville",
         value: "Zurich"
       },
       {
         icon: <img alt="US" src={getFlagUrl("US")} className="rounded-md" />,
-        label: tcommon("filter_feature.city"),
+        label: "Ville",
         value: "New York"
       },
       {
         icon: <img alt="FR" src={getFlagUrl("FR")} className="rounded-md" />,
-        label: tcommon("filter_feature.city"),
+        label: "Ville",
         value: "Lyon"
       },
       {
         icon: <img alt="AU" src={getFlagUrl("AU")} className="rounded-md" />,
-        label: tcommon("filter_feature.city"),
+        label: "Ville",
         value: "Melbourne"
       }
     ],
+    // Deuxième rangée : Sources de trafic spécifiques
     [
       {
         icon: (
@@ -57,8 +60,15 @@ export const FilterFeature = ({}: { tkey: string }) => {
             alt="LinkedIn"
           />
         ),
-        label: tcommon("filter_feature.referral"),
-        value: "LinkedIn"
+        label: "Campagne",
+        value: "Post LinkedIn du 12",
+        highlight: true
+      },
+      {
+        icon: <Instagram size={16} className="text-pink-500" />,
+        label: "Lien",
+        value: "Profil Instagram",
+        highlight: true
       },
       {
         icon: (
@@ -69,8 +79,15 @@ export const FilterFeature = ({}: { tkey: string }) => {
             alt="Youtube"
           />
         ),
-        label: tcommon("filter_feature.referral"),
-        value: "Youtube"
+        label: "Campagne",
+        value: "Vidéo YouTube du 8",
+        highlight: true
+      },
+      {
+        icon: <Calendar size={16} className="text-blue-500" />,
+        label: "Event",
+        value: "Webinar du 15",
+        highlight: true
       },
       {
         icon: (
@@ -81,20 +98,97 @@ export const FilterFeature = ({}: { tkey: string }) => {
             alt="Tally"
           />
         ),
-        label: tcommon("filter_feature.referral"),
-        value: "Tally"
+        label: "Formulaire",
+        value: "Landing A/B test"
+      }
+    ],
+    // Troisième rangée : UTM parameters
+    [
+      {
+        icon: utmLabel,
+        label: "Campagne",
+        value: "linkedin_launch",
+        highlight: true
       },
+      {
+        icon: utmLabel,
+        label: "Source",
+        value: "newsletter_april"
+      },
+      {
+        icon: utmLabel,
+        label: "Medium",
+        value: "google_promo"
+      },
+      {
+        icon: utmLabel,
+        label: "Campagne",
+        value: "calendly_partner",
+        highlight: true
+      },
+      {
+        icon: utmLabel,
+        label: "Medium",
+        value: "webinar_jean"
+      }
+    ],
+    // Quatrième rangée : Tags
+    [
+      {
+        icon: tagLabel,
+        label: "Tag",
+        value: "Lancement"
+      },
+      {
+        icon: tagLabel,
+        label: "Tag",
+        value: "Onboarding"
+      },
+      {
+        icon: tagLabel,
+        label: "Tag",
+        value: "Retargeting"
+      },
+      {
+        icon: tagLabel,
+        label: "Tag",
+        value: "Emailing"
+      },
+      {
+        icon: tagLabel,
+        label: "Tag",
+        value: "Ventes"
+      },
+      {
+        icon: tagLabel,
+        label: "Tag",
+        value: "Démo"
+      },
+      {
+        icon: tagLabel,
+        label: "Tag",
+        value: "Publicités Meta"
+      },
+      {
+        icon: tagLabel,
+        label: "Tag",
+        value: "Beta"
+      }
+    ],
+    // Cinquième rangée : Outils marketing et automatisation
+    [
       {
         icon: (
           <img
             style={{ width: 16, height: 16 }}
             className="rounded-md"
-            src={getFaviconUrl("https://calendly.com")}
-            alt="Calendly"
+            src={getFaviconUrl("https://brevo.com")}
+            alt="Brevo"
           />
         ),
-        label: tcommon("filter_feature.referral"),
-        value: "Calendly"
+        label: "Campagne",
+        value: "Emailing Brevo #47",
+        highlight: true
       },
       {
         icon: (
@@ -105,79 +199,61 @@ export const FilterFeature = ({}: { tkey: string }) => {
             alt="Lemlist"
           />
         ),
-        label: tcommon("filter_feature.referral"),
-        value: "Lemlist"
+        label: "Séquence",
+        value: "Lemlist Cold Outreach",
+        highlight: true
+      },
+      {
+        icon: (
+          <img
+            style={{ width: 16, height: 16 }}
+            className="rounded-md"
+            src={getFaviconUrl("https://make.com")}
+            alt="Make"
+          />
+        ),
+        label: "Automation",
+        value: "Make.com Lead Flow"
+      },
+      {
+        icon: (
+          <img
+            style={{ width: 16, height: 16 }}
+            className="rounded-md"
+            src={getFaviconUrl("https://zapier.com")}
+            alt="Zapier"
+          />
+        ),
+        label: "Workflow",
+        value: "Zapier CRM Sync"
+      },
+      {
+        icon: (
+          <img
+            style={{ width: 16, height: 16 }}
+            className="rounded-md"
+            src={getFaviconUrl("https://typeform.com")}
+            alt="Typeform"
+          />
+        ),
+        label: "Formulaire",
+        value: "Typeform Qualification",
+        highlight: true
+      },
+      {
+        icon: (
+          <img
+            style={{ width: 16, height: 16 }}
+            className="rounded-md"
+            src={getFaviconUrl("https://hubspot.com")}
+            alt="HubSpot"
+          />
+        ),
+        label: "Pipeline",
+        value: "HubSpot Demo Call"
       }
     ],
-    [
-      {
-        icon: utmLabel,
-        label: tcommon("filter_feature.utm.campaign"),
-        value: tcommon("filter_feature.utm.linkedin_launch")
-      },
-      {
-        icon: utmLabel,
-        label: tcommon("filter_feature.utm.source"),
-        value: tcommon("filter_feature.utm.newsletter_april")
-      },
-      {
-        icon: utmLabel,
-        label: tcommon("filter_feature.utm.medium"),
-        value: tcommon("filter_feature.utm.google_promo")
-      },
-      {
-        icon: utmLabel,
-        label: tcommon("filter_feature.utm.campaign"),
-        value: tcommon("filter_feature.utm.calendly_partner")
-      },
-      {
-        icon: utmLabel,
-        label: tcommon("filter_feature.utm.medium"),
-        value: tcommon("filter_feature.utm.webinar_jean")
-      }
-    ],
-    [
-      {
-        icon: <Tag size={12} />,
-        label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.launch")
-      },
-      {
-        icon: <Tag size={12} />,
-        label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.onboarding")
-      },
-      {
-        icon: <Tag size={12} />,
-        label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.retargeting")
-      },
-      {
-        icon: <Tag size={12} />,
-        label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.emailing")
-      },
-      {
-        icon: <Tag size={12} />,
-        label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.sales")
-      },
-      {
-        icon: <Tag size={12} />,
-        label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.demo")
-      },
-      {
-        icon: <Tag size={12} />,
-        label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.paid_ads")
-      },
-      {
-        icon: <Tag size={12} />,
-        label: tcommon("filter_feature.tag.title"),
-        value: tcommon("filter_feature.tag.beta")
-      }
-    ],
+    // Sixième rangée : Navigateurs et appareils
     [
       {
         icon: (
@@ -188,7 +264,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
             alt="Arc"
           />
         ),
-        label: tcommon("filter_feature.browser"),
+        label: "Navigateur",
         value: "Arc"
       },
       {
@@ -200,12 +276,12 @@ export const FilterFeature = ({}: { tkey: string }) => {
             alt="Chrome"
           />
         ),
-        label: tcommon("filter_feature.browser"),
+        label: "Navigateur",
         value: "Chrome"
       },
       {
         icon: <SmartphoneCharging size={18} />,
-        label: tcommon("filter_feature.device"),
+        label: "Appareil",
         value: "Mobile"
       },
       {
@@ -217,12 +293,12 @@ export const FilterFeature = ({}: { tkey: string }) => {
             alt="Safari"
           />
         ),
-        label: tcommon("filter_feature.browser"),
+        label: "Navigateur",
         value: "Safari"
       },
       {
         icon: <Tablet size={18} />,
-        label: tcommon("filter_feature.device"),
+        label: "Appareil",
         value: "Tablet"
       },
       {
@@ -234,12 +310,12 @@ export const FilterFeature = ({}: { tkey: string }) => {
             alt="Firefox"
           />
         ),
-        label: tcommon("filter_feature.browser"),
+        label: "Navigateur",
         value: "Firefox"
       },
       {
         icon: <Laptop size={18} />,
-        label: tcommon("filter_feature.device"),
+        label: "Appareil",
         value: "Desktop"
       }
     ]
@@ -268,7 +344,7 @@ const InfiniteRow = ({
   blocks,
   speed
 }: {
-  blocks: { icon: React.ReactNode; label: string; value: string }[];
+  blocks: { icon: React.ReactNode; label: string; value: string; highlight?: boolean }[];
   speed: string;
 }) => {
   const duplicated = [...blocks, ...blocks];
@@ -285,13 +361,33 @@ const InfiniteRow = ({
   );
 };
 
-const FilterBlock = ({ icon, label, value }: { icon: React.ReactNode; label: string; value: string }) => (
-  <div className="flex h-9 rounded-md border-[2px] border-neutral-200 text-sm leading-none text-neutral-800 [&>*]:h-full">
-    <div className="flex items-center gap-2 px-2 text-neutral-500">
+const FilterBlock = ({
+  icon,
+  label,
+  value,
+  highlight = false
+}: {
+  icon: React.ReactNode;
+  label: string;
+  value: string;
+  highlight?: boolean;
+}) => (
+  <div
+    className={`flex h-9 rounded-lg border-[2px] text-sm leading-none [&>*]:h-full transition-all duration-300 ${
+      highlight
+        ? "border-neutral-100 bg-gradient-to-r from-blue-50 to-indigo-50 text-[#3970ff]"
+        : "border-neutral-100 text-neutral-800"
+    }`}
+  >
+    <div className={`flex items-center gap-2 px-3 rounded-l-lg ${highlight ? "text-[#3970ff]" : "text-neutral-500"}`}>
       <span className="shrink-0">{icon}</span>
       {label}
     </div>
-    <div className="flex items-center text-neutral-500">=</div>
-    <div className="flex items-center gap-2 px-2">{value}</div>
+    <div className={`flex items-center px-1 ${highlight ? "text-[#3970ff]" : "text-neutral-500"}`}>=</div>
+    <div
+      className={`flex items-center gap-2 px-3 font-semibold rounded-r-lg ${highlight ? "text-[#3970ff]" : "text-neutral-800"}`}
+    >
+      {value}
+    </div>
   </div>
 );

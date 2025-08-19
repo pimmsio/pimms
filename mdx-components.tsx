@@ -6,6 +6,7 @@ import { Centered, Fast, CtaBottomText } from "@/components/mdx/content";
 import ImageSlide from "@/components/landings/Image-slide";
 import CtaButton from "@/components/cta/CtaButton";
 import { HideOnMobile, HideOnDesktop } from "@/components/mdx/content";
+import DeeplinkDemo from "@/components/landings/deeplink-demo";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -27,6 +28,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     CtaBottomText,
     ImageSlide,
     HideOnMobile,
-    HideOnDesktop
+    HideOnDesktop,
+    DeeplinkDemo
   };
 }

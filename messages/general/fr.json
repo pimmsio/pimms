@@ -3,8 +3,9 @@
     "header": {
       "tagline": "Liens directs pim.ms"
     },
+    "without_pimms": "Sans PIMMS",
     "footer": {
-      "description": "PIMMS est la plateforme de deeplink pour optimiser tes conversions sur mobile.",
+      "description": "Track, attribute, automate, scale",
       "nav": {
         "privacy": "Politique de confidentialité",
         "terms": "Conditions d'utilisation",

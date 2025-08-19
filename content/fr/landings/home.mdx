@@ -1,6 +1,6 @@
 ---
-title: Convertis les clics en clients et en revenus
-summary: Le seul outil capable d'identifier les liens qui génèrent de vraies conversions — là où les autres s'arrêtent aux clics.
+title: Convertis plus de clics en revenus
+summary: Outil de partage de liens qui connecte tes réseaux sociaux et campagnes email aux vraies ventes — pour que tu puisses booster ce qui rapporte.
 publishedAt: 2025-01-01
 updatedAt: 2025-01-01
 slug: home
@@ -13,222 +13,313 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   @Avatars
   
   <Hero>
-    # Convertis les clics en **clients** et en **revenus**
+    # Convertis davantage de clics en **revenus**
 
-    @Summary Analyse le traffic de tes liens pour apprendre ce qui fait acheter tes clients — et réussir à vendre plus.
+    @Summary Plus de leads. Plus de ventes pour chaque post et email grâce à des liens qui relient clics → leads → ventes.
   </Hero>
-  <Centered>
+  <AnimatedCentered>
     @CtaButton <Fast /> Démarre<HideOnDesktop>gratuitement</HideOnDesktop><HideOnMobile>avec 10 liens offerts</HideOnMobile>
 
     @CtaDemo Réserve une démo
-  </Centered>
+  </AnimatedCentered>
   @ImageSlide
 </Slide>
 
 <Slide variant="secondary" id="problem">
-  <Centered>
-    @Label[variant="problem"] Le Problème
-    ## Sans PIMMS, tu perds des **conversions**
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      @Label[variant="problem"] LE PROBLÈME
+      ## Sans PIMMS, tu perds des **conversions**
+    </Centered>
+  </BlurFade>
   
   <Section variant="card">
     <TwoColumns ratio="2-1">
       <Column span={2} order="text">
-        @WithoutPimms
+        <BlurFade direction="left" inView>
+          @WithoutPimms
 
-        @Text[size="lg"] Chaque fois que tes contenus s'ouvrent dans un navigateur intégré sur mobile, l'expérience est cassée.
-        
-        <List>
-          @Item[variant="problem"] **Les liens s'ouvrent dans un mini navigateur intégré**, pas dans les apps officielles
+          @Text[size="lg"] Sur mobile, tes liens bloquent. Tu ne sais pas quelles campagnes d'emailing ou de réseaux sociaux vendent. Tu perds du temps à faire du reporting.
           
-          @Item[variant="problem"] **Les utilisateurs sont déconnectés**: profil sociaux inaccessibles, paiements en plus d'étapes...
-          
-          @Item[variant="problem"] **Résultat, ils abandonnent à cause de frictions inutiles**.
-        </List>
+          <List>
+            @Item[variant="problem"] **Tes liens s'ouvrent dans des mini-navigateurs**, pas dans les vraies apps
+            
+            @Item[variant="problem"] **Tes clients abandonnent** : profils déconnectés, paiements compliqués
+            
+            @Item[variant="problem"] **Tu vois les clics, pas les ventes** — impossible de savoir ce qui marche
+            
+            @Item[variant="problem"] **Résultat : tu perds du temps et de l'argent**
+          </List>
+        </BlurFade>
       </Column>
       <Column span={1} order="visual">
-        <Video src="https://assets.pimms.io/too-many-step-paypal.mp4" />
+        <BlurFade direction="right" delay={0.2} inView>
+          <Video src="https://assets.pimms.io/too-many-step-paypal.mp4" />
+        </BlurFade>
       </Column>
     </TwoColumns>
-  </Section>
-  
-  <Section variant="card">
-    @WithoutPimms
-
-    @Text[size="lg"] Tu perds des conversions si tu n'as pas activé le tracking des conversions sur tes liens.
-    
-    <List layout="horizontal">
-      @Item[variant="problem"] La plupart des outils de liens **suivent les clics, mais pas les conversions** (formulaires remplis, rendez-vous réservés, ventes…)
-      
-      @Item[variant="problem"] **Tu ne sais pas ce qui marche vraiment** : quel lien apporte des résultats, quel canal, quelle campagne, quel post…
-      
-      @Item[variant="problem"] Résultat, sans optimiser ton travail, **tu perds du temps et des conversions**.
-    </List>
   </Section>
 </Slide>
 
-<Slide id="top-features">
-  <Centered>
-    @Label[variant="solution"] La Solution
-    ## Avec PIMMS, tu convertis plus et tu sais exactement **pourquoi**
-    @Text[size="lg"] Tes liens s'ouvrent directement dans les apps mobiles officielles. Tu réduis les frictions et tu suis la performance de chaque lien, chaque canal. Tu analyses les clics, les conversions, et les ventes.
-  </Centered>
+<Slide id="solution" variant="secondary">
+  <BlurFade direction="up" inView>
+    <Centered>
+      @Label[variant="solution"] LA SOLUTION
+      ## Avec PIMMS, tu sais **ce qui marche vraiment**
+      @Text[size="lg"] Tes liens marchent parfaitement sur mobile et tu vois enfin ce qui vend et combien.
+    </Centered>
+  </BlurFade>
 
   <Section>
-    <TwoColumns ratio="7-5">
+    <TwoColumns ratio="7-5" mobileCard>
       <Column span={7} order="visual">
-        @DeeplinkDemo
+        <BlurFade direction="left" inView>
+          <DeeplinkDemo />
+        </BlurFade>
       </Column>
       <Column span={5} order="text">
-        ### Offre une expérience fluide, et sans friction
-        @Text Tes liens s'ouvrent directement dans les apps mobiles officielles comme Youtube, Instagram, ou encore Safari et Chrome. C'est moins de frictions, plus d'engagement. Fini les pertes d'utilisateurs.
+        <BlurFade direction="right" delay={0.2} inView>
+          ### Ça marche vraiment sur mobile
+          @Text Sur mobile, les liens classiques s’ouvrent dans des mini-navigateurs où tes clients sont déconnectés. 
+
+          @Text Avec PIMMS, tes liens s’ouvrent dans les apps officielles (Instagram, YouTube, LinkedIn) : comptes déjà connectés, paiement ou inscription en 1 étape.
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
   <Section>
-    <TwoColumns ratio="5-7">
+    <TwoColumns ratio="5-7" mobileCard>
       <Column span={5} order="text">
-        ### Découvre enfin ce qui génère des conversions
-        @Text Visualise l'impact de chaque lien dans un dashboard, et relie chaque contenu, chaque action à un résultat concret (achat, inscription, etc.)
+        <BlurFade direction="left" inView>
+          ### Vois ce qui génère des ventes
+          @Text Analyse tes campagnes sur la période de ton choix.
+
+          @Text Tu vois quelle campagne, quelle séquence, quel post ou quel email déclenche l'achat.
+          
+          @Text Tout est centralisé dans un tableau de bord clair.
+        </BlurFade>
       </Column>
       <Column span={7} order="visual">
-        @AnalyticsDemo
+        <BlurFade direction="right" delay={0.2} inView>
+          @AnalyticsDemo
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
   <Section>
-    <TwoColumns ratio="7-5">
+    <TwoColumns ratio="7-5" mobileCard>
       <Column span={7} order="visual">
-        @Referer
+        <BlurFade direction="left" inView>
+          @FilterFeature
+        </BlurFade>
       </Column>
       <Column span={5} order="text">
-        ### Prends de meilleures décisions, plus vite
-        @Text Grace aux données claires et en temps réel, tu sais exactement quoi ajuster, accélérer ou stopper pour maximiser tes conversions.
+        <BlurFade direction="right" inView>
+          ### Double ce qui marche, coupe le reste
+          @Text Repère tes campagnes qui convertissent le mieux.
+          
+          @Text Filtre par plateforme, UTM, source, pays et appareil pour isoler les segments rentables.
+          
+          @Text Vois les tendances en vue graphique, trie en vue liste et exporte. Fais plus de ce qui marche, coupe le reste.
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
+</Slide>
 
-  <Section>
-    <TwoColumns ratio="5-7">
-      <Column span={5} order="text">
-        ### Améliore ce qui convertit, coupe le reste
-        @Text Arrête d'agir à l'aveugle et mise sur ce qui fait grandir ton activité. Utilise les filtres détaillés par campagne UTM, source, pays, appareil, navigateur, canal...
-      </Column>
-      <Column span={7} order="visual">
-        @FilterFeature
-      </Column>
-    </TwoColumns>
-  </Section>
+
+<Slide id="why-pimms">
+  <BlurFade direction="up" inView>
+    <Centered>
+      @Label[variant="why"] LES AVANTAGES
+      ## Pourquoi les top créateurs **choisissent PIMMS ?**
+    </Centered>
+  </BlurFade>
 
   <Section variant="card">
     <List layout="horizontal">
-      <FeatureCard>
-        @IconBox[icon="zap"]
-        #### Données en temps réel
-        @Text Chaque clic, conversion, vente s'affiche en live pour pouvoir réagir vite.
-      </FeatureCard>
-      <FeatureCard>
-        @IconBox[icon="globe"]
-        #### Domaines personnalisés
-        @Text Crée des liens courts professionnels et uniques avec ton propre nom de domaine.
-      </FeatureCard>
-      <FeatureCard>
-        @IconBox[icon="share"]
-        #### Dashboards partagés
-        @Text Collabore en équipe pour suivre les perfs et prendre les bonnes décisions ensemble.
-      </FeatureCard>
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard>
+          @IconBox[icon="target"]
+          #### Attribution parfaite
+          @Text Tracking des conversions et des ventes, post par post, email par email. Obtiens une vue précise du parcours client.
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard>
+          @IconBox[icon="mobile"]
+          #### Contourne les ad blockers
+          @Text Notre technologie de tracking côté serveur sans cookies tiers n'est pas bloquée par les ad blockers, même sur iOS.
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard>
+          @IconBox[icon="link"]
+          #### Deep links natifs
+          @Text Les liens s'ouvrent directement dans les apps mobiles officielles. Cette technique peut convertir +30% de plus.
+        </FeatureCard>
+      </BlurFade>
     </List>
   </Section>
 </Slide>
 
 <Slide variant="secondary" id="pricing">
-  <Centered>
-    @Label[variant="none"] Tarification
-    ## Choisis le plan qui correspond à tes besoins
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      @Label[variant="default"] Tarification
+      ## Choisis le plan qui **correspond à tes besoins**
+      @Text[size="lg"] Démarre avec 10 liens gratuits. Upgrade quand tu en as besoin.
+    </Centered>
+  </BlurFade>
   
   <Section>
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
-        @LifetimeOfferFree
+        <BlurFade direction="left" delay={0.1} inView>
+          @LifetimeOfferFree
+        </BlurFade>
       </Column>
       <Column span={1}>
-        @LifetimeOfferStarter
+        <BlurFade direction="up" delay={0.2} inView>
+          @LifetimeOfferStarter
+        </BlurFade>
       </Column>
       <Column span={1}>
-        @LifetimeOfferPro
+        <BlurFade direction="right" delay={0.3} inView>
+          @LifetimeOfferPro
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
   <Section>
-    @LifetimeOfferScale
+    <BlurFade direction="up" delay={0.4} inView>
+      @LifetimeOfferScale
+    </BlurFade>
   </Section>
 </Slide>
 
-<Slide variant="secondary" size="sm" spacing="bottom" noPadding>
-  @LogosCircle
+
+<Slide id="integrations">
+  <BlurFade direction="up" inView>
+    <Centered>
+      ## Fonctionne avec les outils **que tu utilises déjà**
+      @Text[size="lg"] PIMMS fonctionne avec tous tes outils. Tu ne changes rien à ta façon de travailler.
+    </Centered>
+  </BlurFade>
+
+  <Section variant="card">
+    <List layout="horizontal">
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard>
+          @IconBox[icon="share"]
+          #### Plateformes sociales
+          @Text Partage tes liens PIMMS sur Instagram, LinkedIn, YouTube et X. Vois quels posts génèrent des ventes.
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard>
+          @IconBox[icon="link"]
+          #### Emails et formulaires
+          @Text Connecte Lemlist, Tally, Cal.com, etc. Mesure quelles campagnes et quels formulaires convertissent.
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard>
+          @IconBox[icon="check"]
+          #### Suivi des paiements
+          @Text Connecte Stripe, Shopify, Systeme.io, etc. Relie automatiquement ton contenu aux ventes.
+        </FeatureCard>
+      </BlurFade>
+    </List>
+  </Section>
 </Slide>
 
-<Slide>
-  <Centered>
-    @Label[variant="none"] FAQ
-    ## Questions fréquentes
-    @Text[size="lg"] Tout ce que tu dois savoir sur PIMMS
-  </Centered>
+<Slide size="sm" spacing="bottom" noPadding>
+  <BlurFade direction="up" inView>
+    @LogosCircle
+  </BlurFade>
+</Slide>
+
+<Slide variant="secondary">
+  <BlurFade direction="up" inView>
+    <Centered>
+      ## Questions fréquentes
+    </Centered>
+  </BlurFade>
   
   <Section>
 
 ::: faq
-### Qu'est-ce que PIMMS et comment ça fonctionne ?
-PIMMS est un outil de gestion de liens qui garantit que tes liens s'ouvrent directement dans les apps mobiles officielles (YouTube, Instagram, etc.) au lieu des navigateurs intégrés. Il suit aussi les conversions au-delà des clics, te montrant quels liens génèrent de vrais résultats comme des ventes et des inscriptions.
+### PIMMS, c'est quoi ?
+PIMMS te montre ce qui vend, par campagne, post, story ou email. Grâce au track côté serveur, chaque clic est relié aux ventes (Stripe, Shopify, etc.) pour que tu mises sur ce qui marche.
 :::
 
 ::: faq
-### En quoi PIMMS est différent des autres raccourcisseurs de liens ?
-Contrairement aux raccourcisseurs traditionnels qui ne suivent que les clics, PIMMS suit les conversions réelles et garantit que les liens s'ouvrent dans les apps natives pour une meilleure expérience utilisateur. Cela réduit les frictions et augmente significativement les taux de conversion.
+### Comment PIMMS augmente tes conversions ?
+Tes liens s'ouvrent dans les apps officielles (Instagram, YouTube, LinkedIn) plutôt que dans des mini-navigateurs. Tes clients restent connectés (profils et paiements enregistrés) et peuvent acheter ou s'inscrire en une étape — ça peut augmenter les conversions d'environ 30 %.
 :::
 
 ::: faq
-### Quel type de conversions puis-je suivre ?
-Tu peux suivre tout événement de conversion incluant les ventes, soumissions de formulaires, inscriptions, rendez-vous, téléchargements et événements personnalisés. PIMMS fournit des analyses détaillées montrant quels liens, campagnes et canaux génèrent ces conversions.
+### Tu vois des résultats en combien de temps ?
+Tracking en temps réel. Tu vois les conversions au moment où elles arrivent. La plupart des utilisateurs constatent tout de suite une meilleure UX sur mobile et, en quelques jours, savent quels contenus rapportent le plus.
 :::
 
 ::: faq
-### Ai-je besoin de compétences techniques pour utiliser PIMMS ?
-Aucune compétence technique requise ! PIMMS est conçu pour être facile à utiliser. Crée simplement tes liens, partage-les et regarde les analyses. Pour les fonctionnalités avancées comme le suivi des conversions, nous fournissons des guides faciles à suivre.
+### Est-ce que je dois coder pour utiliser PIMMS ?
+Non, tu n'as pas besoin de coder. La mise en place de l'analytics web et du suivi des revenus prend environ 2 minutes. Pour les fonctionnalités avancées (attribution des revenus), on propose aussi des solutions no‑code.
 :::
 
 ::: faq
-### Puis-je utiliser mon propre domaine ?
-Oui ! Tu peux utiliser des domaines personnalisés avec PIMMS. Le plan gratuit inclut 1 domaine, le plan Pro inclut 3 domaines, et le plan Scale inclut des domaines illimités.
+### La configuration prend combien de temps ?
+10 à 15 minutes. C'est 100 % web, rien à installer. Après l'inscription, tu suis le guide ou tu réserves un appel si tu veux être accompagné.
 :::
 
 ::: faq
-### Qu'est-ce qui est inclus dans le plan gratuit ?
-Commence avec 10 liens intelligents qui redirigent directement vers les apps mobiles. Suis tes performances avec des analyses en temps réel, crée des codes QR, et utilise ton propre domaine. Inclut l'accès API, les templates UTM, et 30 jours de conservation des données.
+### Pourquoi le tracking PIMMS est-il plus fiable que le tracking par pixels ?
+Tracking côté serveur, non bloqué par les ad blockers, et qui continue même si les cookies sont supprimés. Techniquement : pas de cookies tiers ; un identifiant unique et respectueux de la vie privée transite dans l’URL entre domaines ; un cookie first‑party au niveau du domaine racine conserve cet ID entre sessions et sous‑domaines ; côté serveur, on rapproche les événements pour attribuer les conversions de façon fiable (y compris sur iOS).
 :::
 
 ::: faq
-### L'offre à vie est-elle vraiment un paiement unique ?
-Oui ! L'offre Pro à vie est un paiement unique de 59€ (HT) qui te donne des liens illimités, suivi illimité, suivi complet des conversions, 6 mois de conservation des données et toutes les fonctionnalités Pro pour toujours.
+### Quelle est la différence avec Google Analytics ?
+Google Analytics mesure les visites de site mais suit mal les conversions depuis les apps sociales (limitations iOS). PIMMS suit depuis le lien, ce qui permet une attribution fiable même depuis les stories Instagram et les posts LinkedIn.
 :::
 
 ::: faq
-### Comment fonctionne la collaboration en équipe ?
-Tu peux inviter des membres de l'équipe pour accéder aux analyses partagées. Le plan Pro inclut 3 membres d'équipe, et le plan Pro inclut 5 membres d'équipe.
+### PIMMS marche avec tes outils ?
+Oui. Compatible avec plus de 100 outils (Stripe, Shopify, Systeme.io, Cal.com, Calendly, Tally, Lemlist, plateformes email...). Connexions via Zapier ou webhooks pour suivre automatiquement tes conversions.
 :::
 
 ::: faq
-### Quelles intégrations sont disponibles ?
-PIMMS s'intègre avec Cal.com, Calendly, Tally, Stripe, Zapier, webhooks, et fournit un accès API pour des intégrations personnalisées. Plus de 100 intégrations sont disponibles dans les plans Pro et Pro.
+### Quels prestataires de paiement sont supportés ?
+Intégrations natives avec Stripe et Systeme.io (tu peux connecter plusieurs prestataires). Tu peux aussi envoyer tes données via Zapier ou Make, ou utiliser notre Payments API pour pousser tes paiements vers PIMMS.
 :::
 
 ::: faq
-### Puis-je annuler ou upgrader à tout moment ?
-Absolument ! Tu peux passer du plan gratuit au Pro à tout moment. L'offre à vie est un achat unique sans frais récurrents. Le plan Scale est sur mesure et peut être adapté selon tes besoins.
+### Est-ce que PIMMS suit les sous‑domaines ?
+Oui. Installe le script de tracking sur ton domaine racine (ex. example.com) et sur tous les sous‑domaines que tu veux suivre (ex. app.example.com, blog.example.com) pour obtenir des analytics unifiés sans perte de données. Il est aussi possible de suivre un domaine externe via une option du script.
+:::
+
+::: faq
+### Est-ce que PIMMS a une API ?
+Oui. PIMMS a une API : pim.ms/api
+:::
+
+::: faq
+### Que contient le plan gratuit ?
+10 liens intelligents, tracking en temps réel, ton domaine, des QR codes et la gestion UTM. Pas de carte bancaire — tu vois des résultats tout de suite.
+:::
+
+::: faq
+### L'offre à vie, c'est vraiment à vie ?
+Oui. 59 € une seule fois pour des liens illimités, un tracking complet, la collaboration en équipe et 6 mois de données conservées. Pas d'abonnement : c'est à toi pour toujours.
+:::
+
+::: faq
+### Comment ça marche en équipe ?
+Partage les données avec ton équipe pour décider plus vite. Starter : 3 personnes. Pro : 5 personnes. Tout le monde voit les mêmes chiffres pour miser sur ce qui rapporte.
 :::
 
   </Section>
@@ -238,16 +329,20 @@ Absolument ! Tu peux passer du plan gratuit au Pro à tout moment. L'offre à vi
   <Section variant="card">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
-        @H2[align="left"] Accès à PIMMS
-        
-        @Text[size="lg"] Teste PIMMS gratuitement et découvre comment rediriger mieux vers tes contenus, convertir plus et suivre enfin ce qui marche vraiment.
+        <BlurFade direction="left" inView>
+          @H2[align="left"] Tout commence ici
+          
+          @Text[size="lg"] Si tu es arrivé jusque-là, c'est qu'il est temps de profiter de 10 liens gratuits.
 
-        @CtaButton <Fast /> Démarre gratuitement
-        
-        @CtaBottomText Pas de CB requise • Juste plus de conversions
+          @CtaButton <Fast /> Démarre gratuitement
+          
+          @CtaBottomText 10 liens intelligents inclus • Pas de CB requise
+        </BlurFade>
       </Column>
-      <Column span={1} order="visual">
-        @BouncingImages
+      <Column span={1} order="text">
+        <BlurFade direction="right" delay={0.2} inView>
+          @BouncingImages
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>

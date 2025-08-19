@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import { cn } from "../../lib/utils";
 import AnalyticsAreaChart, { EventType } from "./analytics-area-chart";
+import MixedAnalyticsChart from "./mixed-analytics-chart";
 import NumberFlow from "@number-flow/react";
 import { subDays } from "date-fns";
 import { useTranslations } from "next-intl";
@@ -61,8 +62,8 @@ export const AnalyticsDemo = ({
   // and compute total events for each tab
   const demoData = useMemo(() => {
     const dataClicks = [180, 230, 320, 305, 330, 290, 340, 310, 380, 360, 270, 360, 280, 270, 350, 370, 350, 340, 300];
-    const dataLeads = [34, 34, 51, 34, 43, 41, 63, 38, 56, 71, 41, 58, 31, 49, 56, 57, 46, 44, 42];
-    const dataSales = [11, 12, 15, 11, 13, 13, 21, 14, 12, 25, 10, 13, 9, 10, 21, 18, 15, 8, 13];
+    const dataLeads = [0, 8, 12, 0, 15, 0, 18, 0, 22, 25, 0, 20, 0, 12, 16, 28, 0, 14, 18];
+    const dataSales = [0, 2, 3, 0, 4, 0, 5, 0, 6, 8, 0, 5, 0, 3, 4, 7, 0, 3, 4];
 
     // For A/B/C testing, split total into 3 variations that add up
     const dataClicksA = showABTesting ? dataClicks.map((val) => Math.round(val * 0.35)) : [];
@@ -120,7 +121,7 @@ export const AnalyticsDemo = ({
   const totalEvents = {
     clicks: demoData.reduce((acc, curr) => acc + curr.values.clicks, 0),
     leads: demoData.reduce((acc, curr) => acc + curr.values.leads, 0),
-    sales: demoData.reduce((acc, curr) => acc + curr.values.sales, 0),
+    sales: demoData.reduce((acc, curr) => acc + curr.values.saleAmount, 0),
     ...(showABTesting && {
       clicksA: demoData.reduce((acc, curr) => acc + (curr.values.clicksA || 0), 0),
       clicksB: demoData.reduce((acc, curr) => acc + (curr.values.clicksB || 0), 0),
@@ -136,9 +137,9 @@ export const AnalyticsDemo = ({
 
   if (showABTesting) {
     return (
-      <div className="bg-card">
+      <div className="bg-card rounded-2xl">
         {/* A/B/C Testing Header */}
-        <div className="bg-gradient-to-r from-blue-50 to-purple-50 border-b border-[#E7EEFF] rounded-t-2xl p-4">
+        <div className="p-4">
           <div className="flex items-center justify-between">
             <div>
               <h3 className="text-lg font-semibold text-gray-800">A/B/C Test Results</h3>
@@ -295,48 +296,57 @@ export const AnalyticsDemo = ({
 
   // Original single variation display
   return (
-    <div className="bg-card">
-      <div
-        className={`scrollbar-hide grid w-full grid-cols-3 divide-x divide-[#E7EEFF] overflow-y-hidden border-b-1 border-[#E7EEFF] rounded-t-2xl`}
-      >
-        {tabs.map(({ id }) => {
-          return (
-            <div key={id} className="relative z-0">
-              <div
-                className={cn(
-                  "cursor-pointer border-box relative block h-full flex-none px-4 py-1",
-                  "transition-colors hover:bg-[#E7EEFF] focus:outline-none active:bg-[#E7EEFF]",
-                  "ring-inset ring-neutral-500 focus-visible:ring-1",
-                  selectedTab === id && "bg-[#E7EEFF]"
-                )}
-                onClick={() => setSelectedTab(id)}
-              >
-                <div className="flex items-center gap-1 text-sm text-neutral-600">
-                  <span>{RESOURCE_LABELS[id]}</span>
-                </div>
-                <div className="mt-1 flex h-8 items-center">
-                  <NumberFlow
-                    value={id === "sales" && tab.id === "sales" ? totalEvents.sales : totalEvents[id]}
-                    className={cn("text-xl font-medium sm:text-xl")}
-                    format={
-                      id === "sales"
-                        ? {
-                            style: "currency",
-                            currency: tcommon("analytics_chart.currency"),
-                            trailingZeroDisplay: "stripIfInteger"
-                          }
-                        : {
-                            notation: totalEvents[id] > 999999 ? "compact" : "standard"
-                          }
-                    }
-                  />
-                </div>
-              </div>
-            </div>
-          );
-        })}
+    <div className="bg-card rounded-2xl">
+      {/* Static KPI Cards */}
+      <div className="grid gap-1 sm:gap-4 grid-cols-3 p-2">
+        {/* Clicks Card */}
+        <div className="rounded-lg border border-gray-200 bg-blue-50/50 py-2 px-4">
+          <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
+            <div className="w-2 h-2 bg-[#3870FF] rounded-full"></div>
+            <span>Clics</span>
+          </div>
+          <div className="text-xl font-bold text-gray-800">
+            <NumberFlow
+              value={totalEvents.clicks}
+              format={{ notation: totalEvents.clicks > 999999 ? "compact" : "standard" }}
+            />
+          </div>
+        </div>
+
+        {/* Leads Card */}
+        <div className="rounded-lg border border-gray-200 bg-orange-50/50 py-2 px-4">
+          <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
+            <div className="w-2 h-2 bg-[#FFD399] rounded-full"></div>
+            <span>Leads</span>
+          </div>
+          <div className="text-xl font-bold text-gray-800">
+            <NumberFlow
+              value={totalEvents.leads}
+              format={{ notation: totalEvents.leads > 999999 ? "compact" : "standard" }}
+            />
+          </div>
+        </div>
+
+        {/* Sales Card */}
+        <div className="rounded-lg border border-gray-200 bg-green-50/50 py-2 px-4">
+          <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
+            <div className="w-2 h-2 bg-[#00F5B8] rounded-full"></div>
+            <span>Ventes</span>
+          </div>
+          <div className="text-xl font-bold text-gray-800">
+            <NumberFlow
+              value={totalEvents.sales}
+              format={{
+                style: "currency",
+                currency: tcommon("analytics_chart.currency"),
+                trailingZeroDisplay: "stripIfInteger"
+              }}
+            />
+          </div>
+        </div>
       </div>
-      <AnalyticsAreaChart resource={tab.id} demoData={demoData} tkey={tkey} height={280} />
+      {/* Single Mixed Chart */}
+      <MixedAnalyticsChart resource="clicks" demoData={demoData} tkey={tkey} height={280} />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 ---
-title: Turn every click into lead and revenue
-summary: Link-sharing tool that identifies your top-performing campaigns and links – so you can boost what really works.
+title: Turn more clicks into sales
+summary: Link-sharing tool that connects your social media and email campaigns to actual sales – so you can boost what really works.
 publishedAt: 2025-01-01
 updatedAt: 2025-01-01
 slug: home
@@ -12,216 +12,301 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
 <Slide size="xs">
   <Avatars />
   <Hero>
-    <H1>Turn every click into <Primary>lead</Primary> and <Primary>revenue</Primary></H1>
-    <Summary>Link-sharing tool that analyzes your traffic to find what makes people buy – so you can get more.</Summary>
+    <H1>Turn more clicks into <Primary>sales</Primary></H1>
+    <Summary>More leads. More sales on every post and email with links that connect the dots: clicks → leads → revenue.</Summary>
   </Hero>
-  <Centered>
+  <AnimatedCentered>
     <CtaButton><Fast /> Start for free<HideOnMobile>with 10 links</HideOnMobile></CtaButton>
     <CtaDemo>Get a demo</CtaDemo>
-  </Centered>
+  </AnimatedCentered>
   <ImageSlide />
 </Slide>
 
 <Slide variant="secondary" id="problem">
-  <Centered>
-    <Label variant="problem">The Problem</Label>
-    <H2>Without PIMMS, you're losing <Primary>conversions</Primary></H2>
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="problem">The Problem</Label>
+      <H2>Without PIMMS, you're losing <Primary>conversions</Primary></H2>
+    </Centered>
+  </BlurFade>
   
   <Section variant="card">
     <TwoColumns ratio="2-1">
       <Column span={2} order="text">
-        <WithoutPimms />
-        <Text size="lg">
-          Every time your content opens in an in-app mobile browser, the experience breaks.
-        </Text>
-        <List>
-          <Item variant="problem">**Links open in a tiny in-app browser**, not in official apps</Item>
-          <Item variant="problem">**Users get disconnected**: no access to social profiles, payments in more steps...</Item>
-          <Item variant="problem">**The result? They drop off due to unnecessary friction**.</Item>
-        </List>
+        <BlurFade direction="left" inView>
+          <WithoutPimms />
+          <Text size="lg">
+            On mobile, your links break in in‑app browsers. You don’t know which email or social campaigns sell, and you waste time on reporting.
+          </Text>
+          <List>
+            <Item variant="problem">**Your links open in mini-browsers**, not in the real apps</Item>
+            <Item variant="problem">**Customers drop off**: logged-out profiles, clunky payments</Item>
+            <Item variant="problem">**You see clicks, not sales** — impossible to know what works</Item>
+            <Item variant="problem">**Result: you waste time and money**</Item>
+          </List>
+        </BlurFade>
       </Column>
       <Column span={1} order="visual">
-        <Video src="https://assets.pimms.io/too-many-step-paypal.mp4" />
+        <BlurFade direction="right" delay={0.2} inView>
+          <Video src="https://assets.pimms.io/too-many-step-paypal.mp4" />
+        </BlurFade>
       </Column>
     </TwoColumns>
-  </Section>
-  
-  <Section variant="card">
-    <WithoutPimms />
-    <Text size="lg">
-      You're also losing conversions because you don't track what happens after your links are clicked.
-    </Text>
-    <List layout="horizontal">
-      <Item variant="problem">Most link tools **track clicks, but not real conversions**</Item>
-      <Item variant="problem">**You don't know what's really working**: which link is driving results (forms, appointments, sales…), which channel, which campaign, which post…</Item>
-      <Item variant="problem">The result? Without optimization, **you waste time and miss out on conversions**.</Item>
-    </List>
   </Section>
 </Slide>
 
-<Slide id="top-features">
-  <Centered>
-    <Label variant="solution">The Solution</Label>
-    <H2>With PIMMS, you convert more and <Primary>know why</Primary></H2>
-    <Text size="lg">Your links open directly in official mobile apps. Reduce friction and track the performance of every link and channel. Analyze clicks, conversions, and sales.</Text>
-  </Centered>
+<Slide id="solution">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="solution">The Solution</Label>
+      <H2>With PIMMS, you <Primary>know what actually works</Primary></H2>
+      <Text size="lg">Your links work perfectly on mobile, and you finally see what sells — and by how much.</Text>
+    </Centered>
+  </BlurFade>
 
   <Section>
-    <TwoColumns ratio="7-5">
+    <TwoColumns ratio="7-5" mobileCard>
       <Column span={7} order="visual">
-        <DeeplinkDemo />
+        <BlurFade direction="left" inView>
+          <DeeplinkDemo />
+        </BlurFade>
       </Column>
       <Column span={5} order="text">
-        <H3>Provide a smooth, frictionless experience</H3>
-        <Text>Your links open seamlessly in official mobile apps like YouTube, Instagram, Safari, and Chrome. Less friction, more engagement, zero user loss.</Text>
+        <BlurFade direction="right" delay={0.2} inView>
+          <H3>Works properly on mobile</H3>
+          <Text>Classic links open in tiny in-app browsers where users are logged out. </Text>
+          <Text>With PIMMS, links open in official apps (Instagram, YouTube, LinkedIn): accounts already logged in, purchase or sign-up in one step.</Text>
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
   <Section>
-    <TwoColumns ratio="5-7">
+    <TwoColumns ratio="5-7" mobileCard>
       <Column span={5} order="text">
-        <H3>Finally uncover what's driving conversions</H3>
-        <Text>Visualize each link's impact within a dashboard, connecting every piece of content and action directly to tangible results (sales, sign-ups, etc.).</Text>
+        <BlurFade direction="left" inView>
+          <H3>See what actually generates sales</H3>
+          <Text>Analyze your campaigns over any period.</Text>
+          <Text>See which campaign, sequence, post or email triggers the purchase.</Text>
+          <Text>Everything is centralized in a clear dashboard.</Text>
+        </BlurFade>
       </Column>
       <Column span={7} order="visual">
-        <AnalyticsDemo />
+        <BlurFade direction="right" delay={0.2} inView>
+          <AnalyticsDemo />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
   <Section>
-    <TwoColumns ratio="7-5">
+    <TwoColumns ratio="7-5" mobileCard>
       <Column span={7} order="visual">
-        <Referer />
+        <BlurFade direction="left" inView>
+          <FilterFeature />
+        </BlurFade>
       </Column>
       <Column span={5} order="text">
-        <H3>Make better decisions, faster</H3>
-        <Text>With clear, real-time data, you know exactly what to tweak, accelerate, or pause to maximize conversions.</Text>
+        <BlurFade direction="right" inView>
+          <H3>Double down on what works</H3>
+          <Text>Compare campaigns to spot what converts best.</Text>
+          <Text>Filter by platform, UTM, source, country and device to isolate profitable segments. </Text>
+          <Text>See trends in chart view, sort in list view and export. Do more of what works, cut the rest.</Text>
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
+</Slide>
 
-  <Section>
-    <TwoColumns ratio="5-7">
-      <Column span={5} order="text">
-        <H3>Boost what's converting, cut out the rest</H3>
-        <Text>Stop guessing and focus on what's driving growth. Leverage detailed filtering by UTM campaigns, sources, countries, devices, browsers, and channels.</Text>
-      </Column>
-      <Column span={7} order="visual">
-        <FilterFeature />
-      </Column>
-    </TwoColumns>
-  </Section>
+<Slide id="why-pimms">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="why">Why PIMMS</Label>
+      <H2>Why top creators <Primary>choose PIMMS?</Primary></H2>
+    </Centered>
+  </BlurFade>
 
   <Section variant="card">
     <List layout="horizontal">
-      <FeatureCard>
-        <IconBox icon="zap" />
-        <H4>Real-time data</H4>
-        <Text>Every click, conversion, and sale is shown live, enabling quick action.</Text>
-      </FeatureCard>
-      <FeatureCard>
-        <IconBox icon="globe" />
-        <H4>Custom domains</H4>
-        <Text>Create short, professional, and unique links using your own domain name.</Text>
-      </FeatureCard>
-      <FeatureCard>
-        <IconBox icon="share" />
-        <H4>Shared dashboards</H4>
-        <Text>Collaborate with your team to track performance and make informed decisions together.</Text>
-      </FeatureCard>
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard>
+          <IconBox icon="target" />
+          <H4>Accurate attribution</H4>
+          <Text>Tracking for conversions and sales, down to each post and email. Complete journey data, no gaps.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard>
+          <IconBox icon="mobile" />
+          <H4>Bypass ad blockers</H4>
+          <Text>Server-side tracking that ad blockers can’t stop, without third-party cookies. Reliable data, even on iOS.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard>
+          <IconBox icon="link" />
+          <H4>Native deep links</H4>
+          <Text>Links open directly in official apps. Less friction, can increase conversions by around 30%.</Text>
+        </FeatureCard>
+      </BlurFade>
     </List>
   </Section>
 </Slide>
 
 <Slide variant="secondary" id="pricing">
-  <Centered>
-    <Label variant="none">Pricing</Label>
-    <H2>Our plans offer the best value for your money</H2>
-  </Centered>
-
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Pricing</Label>
+      <H2>Choose the plan that <Primary>fits your needs</Primary></H2>
+      <Text size="lg">Start with 10 free links. Upgrade when you need to.</Text>
+    </Centered>
+  </BlurFade>
+  
   <Section>
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
-        <LifetimeOfferFree />
+        <BlurFade direction="left" delay={0.1} inView>
+          <LifetimeOfferFree />
+        </BlurFade>
       </Column>
       <Column span={1}>
-        <LifetimeOfferStarter />
+        <BlurFade direction="up" delay={0.2} inView>
+          <LifetimeOfferStarter />
+        </BlurFade>
       </Column>
       <Column span={1}>
-        <LifetimeOfferPro />
+        <BlurFade direction="right" delay={0.3} inView>
+          <LifetimeOfferPro />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
   
   <Section>
-    <LifetimeOfferScale />
+    <BlurFade direction="up" delay={0.4} inView>
+      <LifetimeOfferScale />
+    </BlurFade>
+  </Section>
+</Slide>
+
+<Slide id="integrations">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Works with the tools <Primary>you already use</Primary></H2>
+      <Text size="lg">PIMMS works with your stack. No change to how you work.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section variant="card">
+    <List layout="horizontal">
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard>
+          <IconBox icon="share" />
+          <H4>Social platforms</H4>
+          <Text>Share on Instagram, LinkedIn, YouTube and X. See which posts drive sales.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard>
+          <IconBox icon="link" />
+          <H4>Emails and forms</H4>
+          <Text>Connect Lemlist, Tally, Cal.com, etc. Measure which campaigns and forms convert.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard>
+          <IconBox icon="check" />
+          <H4>Payment tracking</H4>
+          <Text>Connect Stripe, Shopify, Systeme.io, etc. Automatically tie content to sales.</Text>
+        </FeatureCard>
+      </BlurFade>
+    </List>
   </Section>
 </Slide>
 
 <Slide variant="secondary" size="sm" spacing="bottom" noPadding>
-  <LogosCircle />
+  <BlurFade direction="up" inView>
+    <LogosCircle />
+  </BlurFade>
 </Slide>
 
 <Slide>
-  <Centered>
-    <Label variant="none">FAQ</Label>
-    <H2>Frequently Asked Questions</H2>
-    <Text size="lg">Everything you need to know about PIMMS</Text>
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Frequently Asked Questions</H2>
+    </Centered>
+  </BlurFade>
   
   <Section>
 
 ::: faq
-### What is PIMMS and how does it work?
-PIMMS is a link management tool that ensures your links open directly in official mobile apps (YouTube, Instagram, etc.) instead of in-app browsers. It also tracks conversions beyond clicks, showing you which links drive real results like sales and sign-ups.
+### What is PIMMS?
+PIMMS shows what sells by campaign, post, story or email. With server‑side tracking, each click is tied to sales (Stripe, Shopify, etc.) so you can invest in what works.
 :::
 
 ::: faq
-### How does PIMMS differ from other link shorteners?
-Unlike traditional link shorteners that only track clicks, PIMMS tracks actual conversions and ensures links open in native apps for better user experience. This reduces friction and increases conversion rates significantly.
+### How does PIMMS improve my conversion rates?
+PIMMS opens links directly in official mobile apps (Instagram, YouTube, LinkedIn) instead of mini browsers. Customers stay logged in with saved profiles and payments, so checkout or signup happens in one step — typically increasing conversions by around 30%.
 :::
 
 ::: faq
-### What kind of conversions can I track?
-You can track any conversion event including sales, form submissions, sign-ups, appointments, downloads, and custom events. PIMMS provides detailed analytics showing which links, campaigns, and channels drive these conversions.
+### When do I see results?
+Real‑time tracking. You see conversions as they happen. Most users notice immediate UX improvements on mobile, and within a few days you know which content actually drives revenue.
 :::
 
 ::: faq
-### Do I need technical skills to use PIMMS?
-No technical skills required! PIMMS is designed to be user-friendly. Simply create your links, share them, and watch the analytics. For advanced features like conversion tracking, we provide easy-to-follow guides.
+### Do I need to code to use PIMMS?
+You don't need to code to use PIMMS. You can set up web analytics and revenue tracking in about 2 minutes. For advanced features like revenue attribution, we also offer no‑code options.
 :::
 
 ::: faq
-### Can I use my own domain?
-Yes! You can use custom domains with PIMMS. The free plan includes 1 domain, Pro plan includes 3 domains, and Scale plan includes unlimited domains.
+### How long does setup take?
+10–15 minutes. 100% web, nothing to install. After signup, follow the guide or book a call if you want help.
+:::
+
+::: faq
+### Why is PIMMS more reliable than pixel/cookie tracking?
+Server‑side tracking isn’t blocked by ad blockers and keeps working even if cookies are deleted. Under the hood: no third‑party cookies; a privacy‑safe unique ID is passed in the URL across domains; a first‑party cookie scoped to your root domain preserves the ID across sessions and subdomains; and the server reconciles events to attribute conversions reliably (including on iOS).
+:::
+
+::: faq
+### What makes PIMMS different from Google Analytics?
+Google Analytics shows website visits but can't track conversions from social media apps properly due to iOS restrictions. PIMMS tracks from the link level, giving you accurate attribution even from Instagram stories and LinkedIn posts.
+:::
+
+::: faq
+### Does PIMMS work with my existing tools?
+Yes. Works with 100+ tools (Stripe, Cal.com, Calendly, Tally, Beehiiv, email platforms...). Connect via Zapier or webhooks to auto‑track conversions.
+:::
+
+::: faq
+### Which payment providers are supported?
+Native integrations with Stripe and Systeme.io (you can connect multiple providers). You can also send data via Zapier or Make, or use our Payments API to push payment events to PIMMS.
+:::
+
+::: faq
+### Does PIMMS track across subdomains?
+Yes. Install the tracking script on your root domain (e.g., example.com) and on any subdomains you want to track (e.g., app.example.com, blog.example.com) to unify analytics across your whole domain ecosystem. Tracking to an external domain is also possible with a script option.
+:::
+
+::: faq
+### Does PIMMS have an API?
+Yes. PIMMS has an API: pim.ms/api
 :::
 
 ::: faq
 ### What's included in the free plan?
-Get started with 10 smart links that redirect users directly to mobile apps. Track performance with real-time analytics, create QR codes, and use your own custom domain. Includes API access, UTM templates, and 30 days of data retention.
+Start with 10 smart links that work perfectly on mobile, real-time conversion tracking, custom domain, QR codes, and UTM campaign organization. No credit card required – see results immediately.
 :::
 
 ::: faq
 ### Is the lifetime deal really one-time payment?
-Yes! The Pro lifetime deal is a one-time payment of €59 (excl. VAT) that gives you unlimited links, unlimited tracking, full conversion tracking, 6 months data retention, and all Pro features forever.
+Yes! The Pro lifetime deal is €59 (one-time) for unlimited links, full conversion tracking, team collaboration, and 6 months data retention. No recurring fees, own it forever.
 :::
 
 ::: faq
 ### How does team collaboration work?
-You can invite team members to access shared analytics. Pro plan includes 3 team members, and Pro plan includes 5 team members.
-:::
-
-::: faq
-### What integrations are available?
-PIMMS integrates with Cal.com, Calendly, Tally, Stripe, Zapier, webhooks, and provides API access for custom integrations. 100+ integrations are available in Pro and Pro plans.
-:::
-
-::: faq
-### Can I cancel or upgrade anytime?
-Absolutely! You can upgrade from Free to Pro anytime. The lifetime deal is a one-time purchase with no recurring fees. Scale plan is on-demand and can be customized to your needs.
+Share performance data across your team to see what content works best. Starter plan includes 3 team members, Pro includes 5. Everyone sees the same conversion data to align on what actually drives results.
 :::
 
   </Section>
@@ -231,13 +316,17 @@ Absolutely! You can upgrade from Free to Pro anytime. The lifetime deal is a one
   <Section variant="card">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
-        <H2 align="left">Get access to PIMMS</H2>
-        <Text size="lg">Try PIMMS for free and discover how to drive better traffic to your content, boost conversions, and finally track what really works.</Text>
-        <CtaButton><Fast /> Start for free</CtaButton>
-        <CtaBottomText>No credit card needed • Just more conversions</CtaBottomText>
+        <BlurFade direction="left" inView>
+          <H2 align="left">Everything starts here</H2>
+          <Text size="lg">If you made it this far, it's time to grab 10 free links.</Text>
+          <CtaButton><Fast /> Start for free</CtaButton>
+          <CtaBottomText>10 smart links included • No credit card</CtaBottomText>
+        </BlurFade>
       </Column>
-      <Column span={1} order="visual">
-        <BouncingImages />
+      <Column span={1} order="text">
+        <BlurFade direction="right" delay={0.2} inView>
+          <BouncingImages />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
