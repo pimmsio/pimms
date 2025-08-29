@@ -1,17 +1,17 @@
-import { Bricolage_Grotesque } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 
-export const bricolage_grotesque = Bricolage_Grotesque({
+export const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"]
+  weight: ["400", "500", "600", "700"]
 });
 
 export const H2 = ({ children, className }: { children: React.ReactNode; className?: string }) => {
   return (
     <h2
       className={twMerge(
-        bricolage_grotesque.className,
-        "text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-primary text-center !leading-tight text-balance",
+        plus_jakarta_sans.className,
+        "text-3xl md:text-4xl xl:text-5xl font-bold text-text-primary text-center !tracking-tighter !leading-tight text-balance",
         className
       )}
     >

@@ -40,7 +40,7 @@ export const Avatars = ({ children }: AvatarsProps) => {
       direction="up"
       delay={0.2}
       inView={false}
-      className="flex flex-col items-center justify-center gap-3 mt-12"
+      className="flex flex-col items-center justify-center gap-3 mt-8"
     >
       <li className="flex items-center gap-2 pt-2">
         <AvatarsLaurier direction="left" />

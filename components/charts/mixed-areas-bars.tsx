@@ -65,11 +65,10 @@ export function MixedAreasAndBars() {
                         width={barWidth}
                         height={leadsHeight}
                         radius={4}
-                        fill={(s as any).barFill ?? "var(--color-data-secondary)"}
-                        fillOpacity={0.5}
+                        fill={(s as any).barFill ?? "var(--color-vibrant-amber)"}
                         stroke="rgba(255, 255, 255, 0.2)"
                         strokeWidth={1}
-                        className={cn(s.colorClassName ?? "text-data-secondary")}
+                        className={cn(s.colorClassName ?? "text-vibrant-amber")}
                       />
                     </motion.g>
                   ) : null;
@@ -92,7 +91,6 @@ export function MixedAreasAndBars() {
                         height={salesHeight}
                         radius={4}
                         fill={(s as any).barFill ?? "var(--color-data-success)"}
-                        fillOpacity={0.6}
                         stroke="rgba(255, 255, 255, 0.2)"
                         strokeWidth={1}
                         className={cn(s.colorClassName ?? "text-data-success")}
@@ -124,10 +122,10 @@ export function MixedAreasAndBars() {
                 className="text-zinc-50"
                 id={`${s.id}-area-gradient`}
                 fromOffset="0%"
-                from="#d1d5db"
+                from="var(--color-stroke-light)"
                 fromOpacity={0.2}
                 toOffset="100%"
-                to="#e5e7eb"
+                to="var(--color-path-neutral)"
                 toOpacity={0.05}
                 x1={0}
                 x2={0}

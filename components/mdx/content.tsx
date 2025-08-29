@@ -2,9 +2,6 @@ import { ReactNode } from "react";
 import { Zap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { H2 as BaseH2 } from "@/components/base/h2";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"], style: ["italic"] });
 
 // Typography components
 export const H1 = ({ children }: { children: ReactNode }) => <>{children}</>;
@@ -56,16 +53,7 @@ export const Label = ({
   variant?: "default" | "problem" | "solution" | "why" | "none";
 }) => {
   const icons = {
-    default: (
-      <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          strokeWidth={2}
-          d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-        />
-      </svg>
-    ),
+    default: null,
     problem: (
       <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
@@ -100,7 +88,7 @@ export const Label = ({
   };
 
   const variantClasses: Record<string, string> = {
-    default: "bg-gray-50 text-gray-900 border border-gray-200",
+    default: "bg-white text-primary border border-gray-200",
     problem: "bg-gray-50 text-gray-900 border border-gray-200",
     solution: "bg-success-light/20 text-success border border-success-border/50",
     why: "bg-info-light/20 text-info border border-info-border/50",
@@ -309,13 +297,27 @@ export const CtaButton = ({
     <div className="flex items-center justify-center lg:justify-start mb-4">
       <button
         onClick={handleClick}
-        className={`inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap font-semibold leading-tight transition-all duration-200 h-12 px-8 text-base rounded-full hover:scale-105 ${
+        className={`relative overflow-hidden inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap font-semibold leading-tight transition-transform duration-200 h-12 px-8 text-base hover:scale-105 ${
           variant === "inverse"
-            ? "bg-white text-brand-primary hover:bg-gray-50 shadow-lg hover:shadow-xl border border-white/20"
-            : "bg-brand-primary text-white hover:bg-brand-primary/90 shadow-sm hover:shadow-md"
+            ? "rounded-full bg-white text-brand-primary hover:bg-gray-50 shadow-lg hover:shadow-xl border border-white/20"
+            : "rounded-2xl text-white bg-gradient-to-r from-brand-primary-400 to-brand-primary"
         }`}
+        style={
+          variant === "inverse"
+            ? undefined
+            : {
+                boxShadow:
+                  "rgba(255, 255, 255, 0.25) 0px 2.4px 1.2px 0px inset, rgba(0, 0, 0, 0.1) 0px 1.2px 1.2px 0px inset, rgba(0, 0, 0, 0.1) 0px -2.4px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 9.6px 4.8px inset, rgba(0, 0, 0, 0.2) 0px 8px 20px -4px"
+              }
+        }
       >
-        {children}
+        {variant !== "inverse" && (
+          <div className="pointer-events-none absolute inset-0">
+            <div className="absolute -left-8 top-1/2 -translate-y-1/2 w-28 h-8 bg-white/20 blur-[6px] rotate-[-30deg] opacity-100 shadow-[0_1px_2px_rgba(0,0,0,0.25)]" />
+            <div className="absolute left-12 top-1/2 -translate-y-1/2 w-36 h-8 bg-white/20 blur-[10px] rotate-[-30deg] opacity-90" />
+          </div>
+        )}
+        <span className="relative z-[1]">{children}</span>
       </button>
     </div>
   );
@@ -337,7 +339,7 @@ export const CtaBottomText = ({
 
 // Layout components
 export const Centered = ({ children }: { children: ReactNode }) => (
-  <div className="flex flex-col items-center text-center space-y-6 mb-16 max-w-4xl mx-auto sm:px-4 w-full">
+  <div className="flex flex-col items-center text-center space-y-6 mb-16 max-w-5xl mx-auto sm:px-4 w-full">
     {children}
   </div>
 );
@@ -359,19 +361,19 @@ export const Section = ({
 }) => {
   const getBaseClasses = () => {
     if (variant === "card") {
-      return "bg-white rounded-3xl border border-gray-200 px-2 py-8 sm:p-8 lg:p-12 mb-16";
+      return "bg-white rounded-3xl border border-gray-200 overflow-hidden px-2 py-8 sm:p-8 lg:p-12 mb-16";
     }
     if (variant === "branded") {
-      return "rounded-3xl border border-brand-primary/20 px-6 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10 mb-16";
+      return "rounded-3xl border border-brand-primary/20 overflow-hidden px-2 py-8 sm:p-8 lg:p-12 mb-16";
     }
     return "py-8 mb-16";
   };
 
   const widthClasses = {
-    full: "",
-    "6xl": "max-w-6xl mx-auto",
-    "4xl": "max-w-4xl mx-auto",
-    "2xl": "max-w-2xl mx-auto"
+    full: "lg:max-w-4xl xl:max-w-full",
+    "6xl": "max-w-6xl mx-auto lg:max-w-4xl xl:max-w-6xl",
+    "4xl": "max-w-4xl mx-auto lg:max-w-4xl xl:max-w-4xl",
+    "2xl": "max-w-2xl mx-auto lg:max-w-2xl xl:max-w-2xl"
   };
 
   const getBackgroundStyle = () => {
@@ -391,29 +393,27 @@ export const Section = ({
 export const TwoColumns = ({
   children,
   ratio = "1-1",
-  mobileCard = false
+  variant = "default"
 }: {
   children: ReactNode;
   ratio?: "1-1" | "1-2" | "2-1" | "1-1-1" | "5-7" | "7-5";
-  mobileCard?: boolean;
+  variant?: "default" | "card";
 }) => {
   const ratioClasses = {
-    "1-1": "lg:grid-cols-2", // 1:1 ratio (2 columns)
-    "1-2": "lg:grid-cols-3", // 1:2 ratio (2 columns with different spans)
-    "2-1": "lg:grid-cols-3", // 2:1 ratio (2 columns with different spans)
-    "1-1-1": "md:grid-cols-1 lg:grid-cols-3", // 1:1:1 ratio (3 equal columns, responsive)
-    "5-7": "lg:grid-cols-12", // 5:7 ratio
-    "7-5": "lg:grid-cols-12" // 7:5 ratio
+    "1-1": "grid grid-cols-1 lg:grid-cols-2", // 1:1 ratio (2 columns)
+    "1-2": "grid grid-cols-1 lg:grid-cols-3", // 1:2 ratio (2 columns with different spans)
+    "2-1": "grid grid-cols-1 lg:grid-cols-3", // 2:1 ratio (2 columns with different spans)
+    "1-1-1": "grid grid-cols-1 md:grid-cols-1 lg:grid-cols-3", // 1:1:1 ratio (3 equal columns, responsive)
+    "5-7": "flex flex-col md:flex-row", // 5:7 ratio
+    "7-5": "flex flex-col md:flex-row" // 7:5 ratio
   };
 
   const gapClasses = ratio === "1-1-1" ? "gap-8 md:gap-12 lg:gap-8" : "gap-8 lg:gap-16";
   const alignClasses = ratio === "1-1-1" ? "items-stretch" : "items-start sm:items-center";
-  const cardClasses = mobileCard
-    ? "bg-white rounded-3xl border border-gray-200 py-12 px-4 sm:bg-transparent sm:rounded-none sm:border-none sm:py-0 sm:px-0"
-    : "";
+  const cardClasses = variant === "card" ? "bg-white rounded-3xl border border-gray-200 py-12" : "";
 
   return (
-    <div className={`grid grid-cols-1 ${ratioClasses[ratio]} ${gapClasses} ${alignClasses} ${cardClasses}`}>
+    <div className={`${ratioClasses[ratio]} ${gapClasses} ${alignClasses} ${cardClasses} overflow-hidden`}>
       {children}
     </div>
   );
@@ -429,22 +429,22 @@ export const Column = ({
   order?: "default" | "text" | "visual";
 }) => {
   const spanClasses = {
-    1: "lg:col-span-1",
-    2: "lg:col-span-2",
-    3: "lg:col-span-3",
-    5: "lg:col-span-5",
-    7: "lg:col-span-7"
+    1: "md:col-span-1",
+    2: "md:col-span-2",
+    3: "md:col-span-3",
+    5: "md:basis-5/12 w-full",
+    7: "md:basis-7/12 w-full"
   };
 
   // On mobile, text columns come first (order-1), visual columns come second (order-2)
   // On desktop, reset to default order (lg:order-none)
   const orderClasses = {
     default: "",
-    text: "order-1 lg:order-none px-4 sm:px-0 text-pretty sm:text-wrap",
-    visual: "order-2 lg:order-none sm:bg-white sm:rounded-3xl sm:border sm:border-gray-200"
+    text: "order-1 md:order-none px-4 md:px-0 text-pretty md:text-wrap",
+    visual: "order-2 md:order-none overflow-hidden"
   };
 
-  return <div className={`${spanClasses[span]} ${orderClasses[order]} space-y-6`}>{children}</div>;
+  return <div className={`${spanClasses[span]} ${orderClasses[order]} space-y-6 min-w-0`}>{children}</div>;
 };
 
 // Problem components
@@ -462,14 +462,49 @@ export const WithoutPimms = () => {
 
 // Media components
 export const Video = ({ src }: { src: string }) => (
-  <video autoPlay loop muted playsInline className="w-full h-auto object-cover border border-gray-200 rounded-3xl">
+  <video
+    autoPlay
+    loop
+    muted
+    playsInline
+    className="w-full h-auto object-contain md:object-cover border border-gray-200 rounded-3xl"
+  >
     <source src={src} type="video/mp4" />
   </video>
 );
 
 // Styling components
 export const Primary = ({ children }: { children: React.ReactNode }) => (
-  <span className={`text-brand-primary ${inter.className} font-bold italic`}>{children}</span>
+  <span className={`bg-gradient-to-r from-[#2fcdfa] to-brand-primary bg-clip-text text-transparent`}>{children}</span>
+);
+
+export const TitleIcon = ({ src, variant = "h1" }: { src: string; variant?: "h1" | "h2" }) => (
+  <span className="inline-block align-baseline ml-2 mr-1">
+    <span
+      data-framer-name="Icon"
+      className={`inline-block relative bg-gradient-to-tr to-[#2fcdfa] from-brand-primary rounded-lg rotate-7 translate-0.5 shadow-md shadow-brand-primary/40 ${
+        variant === "h2" ? "w-8 h-8 md:w-9 md:h-9 xl:w-12 xl:h-12" : "w-10 h-10 md:w-12 md:h-12 lg:w-15 lg:h-15"
+      }`}
+    >
+      <img
+        decoding="async"
+        width={181}
+        height={181}
+        src={src}
+        alt=""
+        style={{
+          position: "absolute",
+          inset: 0,
+          display: "block",
+          width: "100%",
+          height: "100%",
+          borderRadius: "inherit",
+          objectPosition: "center center",
+          objectFit: "cover"
+        }}
+      />
+    </span>
+  </span>
 );
 
 export const HideOnMobile = ({ children }: { children: React.ReactNode }) => (

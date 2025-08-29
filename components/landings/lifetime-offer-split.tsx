@@ -211,7 +211,7 @@ export const LifetimeOfferScale = ({ tkey }: { tkey: string }) => {
         <ul className="space-y-3">
           {features.map((feature, i) => (
             <li key={i} className="flex items-start gap-3 py-1">
-              <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+              <Check className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
               <span className="text-sm text-gray-300 leading-relaxed">{feature}</span>
             </li>
           ))}

@@ -14,7 +14,7 @@ type TimeSeriesChartProps<T extends Datum> = PropsWithChildren<ChartProps<T>>;
 
 export function TimeSeriesChart<T extends Datum>(props: TimeSeriesChartProps<T>) {
   return (
-    <ParentSize className="relative">
+    <ParentSize className="relative min-w-0">
       {({ width, height }) => {
         return width > 0 && height > 0 && <TimeSeriesChartInner {...props} width={width} height={height} />;
       }}

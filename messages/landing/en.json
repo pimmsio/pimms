@@ -10,7 +10,8 @@
       "link": "Start for free",
       "bottom": "No credit card required • No subscription",
       "main": "<fast>⚡</fast> Start for free<large> with 10 links</large>",
-      "main_short": "<fast>⚡</fast> Start for free"
+      "main_short": "<fast>⚡</fast> Start for free",
+      "demo": "Book a demo"
     },
     "logos_circle": {
       "title": "THE BEST?",
@@ -56,7 +57,7 @@
     },
     "hero": {
       "avatars": {
-        "title": "Trusted by creators and startups",
+        "title": "5/5 stars from top creators",
         "avatar1": {
           "name": "Mathieu Visière",
           "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
@@ -106,6 +107,7 @@
       "everything_in_growth": "Everything in Pro and more:",
       "plan_free": "Free",
       "plan_starter": "Starter",
+      "plan_pro": "Pro",
       "plan_organization": "Organization",
       "plan_enterprise": "Enterprise",
       "feature_smart_deeplinks_10": "10 links",

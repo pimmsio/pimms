@@ -54,9 +54,8 @@ export default function MixedAnalyticsChart({
       id: "leads",
       valueAccessor: (d: any) => d.values.leads,
       isActive: true,
-      colorClassName: "text-data-secondary",
-      barFill: "var(--color-data-secondary)",
-      barOpacity: 1,
+      colorClassName: "text-vibrant-amber",
+      barFill: "var(--color-vibrant-amber)",
       type: "bar" as const,
       showHoverCircle: false, // Hide hover circle for bars
       excludeFromYScale: true // Exclude from Y-scale to not affect line chart scaling
@@ -75,7 +74,10 @@ export default function MixedAnalyticsChart({
   ];
 
   return (
-    <div className="chart-container flex w-full items-center justify-center p-4" style={{ height: `${height + 32}px` }}>
+    <div
+      className="chart-container flex w-full items-center justify-center p-4 overflow-hidden"
+      style={{ height: `${height + 32}px` }}
+    >
       <TimeSeriesChart
         data={chartData}
         series={series}
@@ -89,10 +91,7 @@ export default function MixedAnalyticsChart({
           const conversionRate = clicks > 0 ? (leads / clicks) * 100 : 0;
 
           return (
-            <div
-              className="bg-white rounded px-3 py-2.5 shadow-xl min-w-[180px] border-0"
-              onClick={(e) => e.stopPropagation()}
-            >
+            <div className="bg-white rounded px-3 py-2.5 min-w-[180px] border-0" onClick={(e) => e.stopPropagation()}>
               <p className="text-neutral-900 font-medium mb-2 text-sm">
                 {formatDateTooltip(d.date, {
                   interval,

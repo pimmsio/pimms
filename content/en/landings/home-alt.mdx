@@ -17,38 +17,72 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   </Hero>
   <AnimatedCentered>
     <CtaButton><Fast /> Start for free<HideOnMobile>with 10 links</HideOnMobile></CtaButton>
+    <CtaDemo>Book a demo</CtaDemo>
   </AnimatedCentered>
   <ImageSlide />
+</Slide>
+
+<Slide variant="secondary" id="problem">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="problem">The Problem</Label>
+      <H2>Without PIMMS, you're losing <Primary>conversions</Primary></H2>
+    </Centered>
+  </BlurFade>
+  
+  <Section variant="card">
+    <TwoColumns ratio="2-1">
+      <Column span={2} order="text">
+        <BlurFade direction="left" inView>
+          <WithoutPimms />
+          <Text size="lg">
+            On mobile, your links break in in‑app browsers. You don’t know which email or social campaigns sell, and you waste time on reporting.
+          </Text>
+          <List>
+            <Item variant="problem">**Your links open in mini-browsers**, not in the real apps</Item>
+            <Item variant="problem">**Customers drop off**: logged-out profiles, clunky payments</Item>
+            <Item variant="problem">**You see clicks, not sales** — impossible to know what works</Item>
+            <Item variant="problem">**Result: you waste time and money**</Item>
+          </List>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <Video src="https://assets.pimms.io/too-many-step-paypal.mp4" />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
 </Slide>
 
 <Slide id="solution">
   <BlurFade direction="up" inView>
     <Centered>
-      <Label variant="default">Enhanced Features</Label>
-      <H2>10x your <TitleIcon variant="h2" src="https://framerusercontent.com/images/Led55HZk8y51YAkMijCTktxBLJU.png" /> <Primary>Growth</Primary>. Link Sharing Tool that helps you Connect every Touchpoint to Sales.</H2>
-      <Text size="lg">(Ridiculously easy to integrate with your marketing stack 😉)</Text>
+      <Label variant="solution">The Solution</Label>
+      <H2>With PIMMS, you <Primary>know what actually works</Primary></H2>
+      <Text size="lg">Your links work perfectly on mobile, and you finally see what sells — and by how much.</Text>
     </Centered>
   </BlurFade>
 
   <Section>
-    <TwoColumns ratio="5-7" variant="card">
+    <TwoColumns ratio="7-5" mobileCard>
+      <Column span={7} order="visual">
+        <BlurFade direction="left" inView>
+          <DeeplinkDemo />
+        </BlurFade>
+      </Column>
       <Column span={5} order="text">
-        <BlurFade direction="left" delay={0.2} inView>
+        <BlurFade direction="right" delay={0.2} inView>
           <H3>Works properly on mobile</H3>
           <Text>Classic links open in tiny in-app browsers where users are logged out. </Text>
           <Text>With PIMMS, links open in official apps (Instagram, YouTube, LinkedIn): accounts already logged in, purchase or sign-up in one step.</Text>
-        </BlurFade>
-      </Column>
-      <Column span={7} order="visual">
-        <BlurFade direction="right" inView>
-          <DeeplinkDemo />
         </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
   <Section>
-    <TwoColumns ratio="5-7" variant="card">
+    <TwoColumns ratio="5-7" mobileCard>
       <Column span={5} order="text">
         <BlurFade direction="left" inView>
           <H3>See what actually generates sales</H3>
@@ -66,18 +100,18 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   </Section>
 
   <Section>
-    <TwoColumns ratio="5-7" variant="card">
-      <Column span={5} order="text">
+    <TwoColumns ratio="7-5" mobileCard>
+      <Column span={7} order="visual">
         <BlurFade direction="left" inView>
+          <FilterFeature />
+        </BlurFade>
+      </Column>
+      <Column span={5} order="text">
+        <BlurFade direction="right" inView>
           <H3>Double down on what works</H3>
           <Text>Compare campaigns to spot what converts best.</Text>
           <Text>Filter by platform, UTM, source, country and device to isolate profitable segments. </Text>
           <Text>See trends in chart view, sort in list view and export. Do more of what works, cut the rest.</Text>
-        </BlurFade>
-      </Column>
-      <Column span={7} order="visual">
-        <BlurFade direction="right" inView>
-          <FilterFeature />
         </BlurFade>
       </Column>
     </TwoColumns>
@@ -87,41 +121,35 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
 <Slide id="why-pimms">
   <BlurFade direction="up" inView>
     <Centered>
-      <Label variant="default">PIMMS vs Others</Label>
-      <H2>Why top Creators <TitleIcon variant="h2" src="https://framerusercontent.com/images/6PLtldGQTTAmwCohIFmY7SRvOs.png" /> <Primary>Choose PIMMS?</Primary></H2>
+      <Label variant="why">Why PIMMS</Label>
+      <H2>Why top creators <Primary>choose PIMMS?</Primary></H2>
     </Centered>
   </BlurFade>
 
-  <Section>
-    <ComparisonContainer>
-      <ComparisonHeader />
-      <ComparisonRow others={true} pimms={true}>Custom short links and QR codes</ComparisonRow>
-      <ComparisonRow others={true} pimms={true}>Custom domains + SSL certificates</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Deep links that open in 100+ official apps</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>All payments always work (Stripe, PayPal, Credit cards...)</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Accurate attribution (click → lead → sale)</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Customer insights accross all your channels</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>AI-powered Lead scoring</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Bypass ad blockers (server-side tracking)</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Live analytics with advanced segmentation</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>A/B testing</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Start in 10 minutes</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Advanced redirection (per device, country, app stores)</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>24/7 Dedicated support</ComparisonRow>
-
-      <ComparisonExtras>
-        <ComparisonExtra color="text-vibrant-pink">Lead scoring</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-pink">Customer insights</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-indigo">Work w/ Calendars (Calendly, Cal.com, iClosed)</ComparisonExtra>
-        <ComparisonExtra color="text-brand-primary">Work w/ Forms (Typeform, Tally)</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-indigo">Work w/ Site builders (Webflow, WordPress, Lovable)</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-pink">QR Codes with logo</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-pink">UTM builder</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-pink">Custom link previews</ComparisonExtra>
-        <ComparisonExtra color="text-brand-cyan">API access</ComparisonExtra>
-        <ComparisonExtra color="text-brand-cyan">Webhooks</ComparisonExtra>
-      </ComparisonExtras>
-    </ComparisonContainer>
+  <Section variant="card">
+    <List layout="horizontal">
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard>
+          <IconBox icon="target" />
+          <H4>Accurate attribution</H4>
+          <Text>Tracking for conversions and sales, down to each post and email. Complete journey data, no gaps.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard>
+          <IconBox icon="mobile" />
+          <H4>Bypass ad blockers</H4>
+          <Text>Server-side tracking that ad blockers can’t stop, without third-party cookies. Reliable data, even on iOS.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard>
+          <IconBox icon="link" />
+          <H4>Native deep links</H4>
+          <Text>Links open directly in official apps. Less friction, can increase conversions by around 30%.</Text>
+        </FeatureCard>
+      </BlurFade>
+    </List>
   </Section>
 </Slide>
 
@@ -129,7 +157,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   <BlurFade direction="up" inView>
     <Centered>
       <Label variant="default">Pricing</Label>
-      <H2>Fair <TitleIcon variant="h2" src="	https://framerusercontent.com/images/vIYcfQmXR01tw943jGuajZJhi3k.png" /> <Primary>Pricing</Primary> that fits your needs</H2>
+      <H2>Choose the plan that <Primary>fits your needs</Primary></H2>
       <Text size="lg">Start with 10 free links. Upgrade when you need to.</Text>
     </Centered>
   </BlurFade>
@@ -278,7 +306,7 @@ Share performance data across your team to see what content works best. Starter 
   </Section>
 </Slide>
 
-<Slide variant="primary" id="free">
+<Slide variant="primary" id="free" noPadding>
   <Section variant="branded">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">

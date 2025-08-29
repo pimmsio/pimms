@@ -280,7 +280,7 @@ export default function BlogPost({ params }: Props) {
         </nav>
 
         {/* Title */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-primary mb-3 sm:mb-4 max-w-4xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-3 sm:mb-4 max-w-4xl">
           {post.metadata.title}
         </h1>
 
