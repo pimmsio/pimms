@@ -12,6 +12,8 @@
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
+    "@dicebear/collection": "^9.2.4",
+    "@dicebear/core": "^9.2.4",
     "@getpimms/analytics": "1.1.4",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",

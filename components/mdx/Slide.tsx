@@ -9,6 +9,7 @@ interface SlideProps {
   maxWidth?: "full" | "6xl" | "4xl" | "2xl";
   id?: string;
   noPadding?: boolean;
+  noOverflow?: boolean;
 }
 
 export const Slide = ({
@@ -18,7 +19,8 @@ export const Slide = ({
   spacing = "none",
   maxWidth = "6xl",
   id,
-  noPadding = false
+  noPadding = false,
+  noOverflow
 }: SlideProps) => {
   const variantClasses = {
     primary: "bg-background-secondary text-foreground",
@@ -28,10 +30,10 @@ export const Slide = ({
   };
 
   const sizeClasses = {
-    xs: "py-8",
-    sm: "py-12",
-    md: "py-20",
-    lg: "py-28"
+    xs: "py-4 sm:py-8",
+    sm: "py-8 sm:py-12",
+    md: "py-12 sm:py-20",
+    lg: "py-20 sm:py-28"
   };
 
   const spacingClasses = {
@@ -49,7 +51,13 @@ export const Slide = ({
   return (
     <section
       id={id}
-      className={cn(variantClasses[variant], sizeClasses[size], spacingClasses[spacing], "w-full")}
+      className={cn(
+        variantClasses[variant],
+        sizeClasses[size],
+        spacingClasses[spacing],
+        "w-full",
+        noOverflow ? "overflow-hidden" : ""
+      )}
       style={variant === "inverse" ? { backgroundColor: "#08272e" } : undefined}
     >
       <div className={cn(widthClasses[maxWidth], noPadding ? "" : "px-4 md:px-6")}>{children}</div>

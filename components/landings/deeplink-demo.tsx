@@ -44,14 +44,14 @@ export const DeeplinkDemo = () => {
   const whatsappRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="relative flex h-[360px] w-full items-center justify-center overflow-hidden" ref={containerRef}>
-      <div className="flex size-full items-center justify-center px-8">
-        <div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-4xl gap-12 sm:gap-16">
+    <div className="relative flex w-full items-center justify-center overflow-hidden" ref={containerRef}>
+      <div className="flex w-full items-center justify-center px-4 sm:px-6">
+        <div className="flex flex-col md:flex-row items-center justify-between w-full gap-8 md:gap-12 lg:gap-16">
           {/* Left - Lien PIMMS */}
           <div className="flex-shrink-0">
             <div
               ref={linkRef}
-              className="rounded-xl px-3 py-1 sm:p-4 border-2 border-brand-primary-600 z-20 relative bg-white"
+              className="rounded-xl px-3 py-1 md:p-4 border-2 border-brand-primary-600 z-20 relative bg-white"
             >
               <div className="text-sm font-semibold text-gray-700 mb-2">Lien</div>
               <div className="text-lg font-bold">PIMMS</div>
@@ -74,30 +74,48 @@ export const DeeplinkDemo = () => {
           </div>
 
           {/* Right - Apps intelligemment sélectionnées */}
-          <div className="flex-shrink-0">
-            <div className="grid grid-cols-2 gap-2 sm:gap-12">
+          <div>
+            <div className="grid grid-cols-2 gap-3 md:gap-6 lg:gap-12">
               {/* Première colonne */}
-              <div className="flex flex-row sm:flex-col gap-2 sm:gap-8 items-center justify-center">
-                <Circle ref={youtubeRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
-                  <img src={outerLogos[0]?.src} alt="Youtube" className="w-6 h-6 sm:w-8 sm:h-8" />
+              <div className="flex flex-row md:flex-col gap-2 md:gap-8 items-center justify-center">
+                <Circle
+                  ref={youtubeRef}
+                  className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
+                >
+                  <img src={outerLogos[0]?.src} alt="Youtube" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
-                <Circle ref={instagramRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
-                  <img src={outerLogos[3]?.src} alt="Instagram" className="w-6 h-6 sm:w-8 sm:h-8" />
+                <Circle
+                  ref={instagramRef}
+                  className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
+                >
+                  <img src={outerLogos[3]?.src} alt="Instagram" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
-                <Circle ref={amazonRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
-                  <img src={outerLogos[1]?.src} alt="Amazon" className="w-6 h-6 sm:w-8 sm:h-8" />
+                <Circle
+                  ref={amazonRef}
+                  className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
+                >
+                  <img src={outerLogos[1]?.src} alt="Amazon" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
               </div>
               {/* Deuxième colonne */}
-              <div className="flex flex-row sm:flex-col gap-2 sm:gap-16 items-center justify-center">
-                <Circle ref={chromeRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
-                  <img src={outerLogos[2]?.src} alt="Chrome" className="w-6 h-6 sm:w-8 sm:h-8" />
+              <div className="flex flex-row md:flex-col gap-2 md:gap-12 lg:gap-16 items-center justify-center">
+                <Circle
+                  ref={chromeRef}
+                  className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
+                >
+                  <img src={outerLogos[2]?.src} alt="Chrome" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
-                <Circle ref={linkedinRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
-                  <img src={outerLogos[4]?.src} alt="Linkedin" className="w-6 h-6 sm:w-8 sm:h-8" />
+                <Circle
+                  ref={linkedinRef}
+                  className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
+                >
+                  <img src={outerLogos[4]?.src} alt="Linkedin" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
-                <Circle ref={whatsappRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
-                  <img src={outerLogos[5]?.src} alt="Whatsapp" className="w-6 h-6 sm:w-8 sm:h-8" />
+                <Circle
+                  ref={whatsappRef}
+                  className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
+                >
+                  <img src={outerLogos[5]?.src} alt="Whatsapp" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
               </div>
             </div>

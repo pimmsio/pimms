@@ -1,0 +1,147 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { Marquee } from "@/components/magicui/marquee";
+import { Chrome, CircleCheck, CircleX, CreditCard, Wallet, Youtube } from "lucide-react";
+import { useTranslations } from "next-intl";
+import React from "react";
+import Logo from "../logo";
+import { NeonGradientCard } from "../magicui/neon-gradient-card";
+
+type ConversionFlipCardProps = {
+  failures?: string[];
+  successes?: string[];
+  className?: string;
+  /** CSS animation duration value, e.g. "15s" */
+  duration?: string;
+};
+
+/**
+ * Animated status card that travels vertically within its container.
+ * When the card's center crosses the container's vertical midpoint,
+ * it flips from a red X state (fail) to a green Check state (success)
+ * and the text switches accordingly.
+ */
+export default function ConversionFlipCard({
+  failures,
+  successes,
+  className,
+  duration = "15s"
+}: ConversionFlipCardProps) {
+  const t = useTranslations("landing.conversion");
+  const cardGap = "gap-3";
+  const defaultFailures = [t("fail.paypal_failed"), t("fail.youtube_abandoned"), t("fail.signup_abandoned")];
+  const defaultSuccesses = [
+    t("success.payment_completed"),
+    t("success.youtube_success"),
+    t("success.signup_completed")
+  ];
+  const timeLabels = [
+    t("time.just_now"),
+    t("time.1m"),
+    t("time.2m"),
+    t("time.5m"),
+    t("time.8m"),
+    t("time.12m"),
+    t("time.20m")
+  ];
+
+  function StatusCard({ type, text, time }: { type: "fail" | "success"; text: string; time: string }) {
+    const isSuccess = type === "success";
+    const providerIcon = getProviderIcon(text);
+    return (
+      <div className="mx-auto w-[94%] overflow-hidden">
+        <div className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3">
+          <div className={cn("flex items-center justify-between space-x-1 w-full", cardGap)}>
+            <div
+              className={cn(
+                "mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 shadow-sm",
+                isSuccess
+                  ? "bg-gradient-to-br from-vibrant-green/20 to-vibrant-green/5 text-vibrant-green"
+                  : "bg-gradient-to-br from-vibrant-red/20 to-vibrant-red/5 text-vibrant-red"
+              )}
+            >
+              {isSuccess ? <CircleCheck className="h-5 w-5" /> : <CircleX className="h-5 w-5" />}
+            </div>
+            <div className="min-w-0 flex-1 w-full">
+              <div className="truncate font-medium w-full text-sm">{text}</div>
+              <div className="text-xs text-gray-500">{time}</div>
+            </div>
+            <div className="ml-3 hidden sm:flex h-8 w-8 items-center justify-center rounded-lg bg-gray-50 ring-1 ring-gray-200">
+              <div className="text-gray-400">{providerIcon}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  function getProviderIcon(text: string) {
+    const lower = text.toLowerCase();
+    if (lower.includes("youtube")) return <Youtube className="h-5 w-5" />;
+    if (lower.includes("paypal")) return <Wallet className="h-5 w-5" />;
+    if (lower.includes("payment")) return <CreditCard className="h-5 w-5" />;
+    if (lower.includes("signup") || lower.includes("sign up") || lower.includes("sign-up"))
+      return <Chrome className="h-5 w-5" />;
+    return <Chrome className="h-5 w-5" />;
+  }
+
+  // Render a few duplicates so the marquee looks dense
+  const duplicates = Array.from({ length: 6 }, (_, i) => i);
+  const duplicatesReversed = Array.from(duplicates);
+
+  return (
+    <div
+      className={cn(
+        "relative mx-auto flex h-[380px] w-full flex-col overflow-auto rounded-3xl backdrop-blur px-4",
+        className
+      )}
+      style={{ contain: "layout paint" } as React.CSSProperties}
+    >
+      <div className="relative h-1/2">
+        <Marquee
+          direction="vertical"
+          pauseOnHover
+          reverse
+          className={cn("h-full [--duration:var(--speed,15s)]")}
+          style={{ ["--duration" as any]: duration } as React.CSSProperties}
+        >
+          {(failures ?? defaultFailures)
+            .flatMap((_, idx) => (failures ?? defaultFailures)[idx % (failures ?? defaultFailures).length])
+            .map((text, idx) => (
+              <StatusCard key={`fail-${idx}`} type="fail" text={text} time={timeLabels[idx % timeLabels.length]} />
+            ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-white" />
+      </div>
+
+      <div className="relative h-1/2">
+        <Marquee
+          direction="vertical"
+          reverse
+          pauseOnHover
+          className={cn("h-full [--duration:var(--speed,15s)]")}
+          style={{ ["--duration" as any]: duration } as React.CSSProperties}
+        >
+          {(successes ?? defaultSuccesses)
+            .map((_, idx) => (idx + 2) % (successes ?? defaultSuccesses).length)
+            .flatMap((idx) => (successes ?? defaultSuccesses)[idx % (successes ?? defaultSuccesses).length])
+            .map((text, idx) => (
+              <StatusCard key={`ok-${idx}`} type="success" text={text} time={timeLabels[idx % timeLabels.length]} />
+            ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white" />
+      </div>
+
+      <div className="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2">
+        <NeonGradientCard
+          borderRadius={20}
+          neonColors={{ firstColor: "#2fcdfa90", secondColor: "#3970ff90" }}
+          className="relative flex w-full items-center justify-center rounded-xl"
+        >
+          <Logo className="absolute inset-0 w-16 xl:w-16 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 mt-[0px]" />
+        </NeonGradientCard>
+      </div>
+    </div>
+  );
+}

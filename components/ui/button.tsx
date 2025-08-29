@@ -9,17 +9,12 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-brand-primary text-white rounded-full hover:bg-brand-primary/90 shadow-sm hover:shadow-md",
-        destructive: "bg-error text-white rounded-full hover:bg-error/90 shadow-sm",
-        outline: "border-2 border-brand-primary bg-white text-brand-primary rounded-full hover:bg-brand-primary/5",
-        secondary:
-          "bg-white text-brand-primary rounded-full border border-gray-200 hover:border-brand-primary/30 hover:bg-gray-50",
-        inverse:
-          "bg-white text-brand-primary rounded-full hover:bg-gray-50 shadow-lg hover:shadow-xl border border-white/20",
-        // New vibrant gradient variant for primary CTAs
-        gradient:
-          "relative rounded-full text-white shadow-md hover:shadow-lg bg-gradient-to-r from-[#2563eb] via-[#6366f1] to-[#8b5cf6] hover:from-[#1d4ed8] hover:via-[#5458ee] hover:to-[#7c3aed]",
-        ghost: "hover:bg-gray-100 rounded-full",
+        default: "bg-brand-primary text-white rounded-2xl hover:bg-brand-primary/90 shadow-sm hover:shadow-md",
+        destructive: "bg-error text-white rounded-2xl hover:bg-error/90 shadow-sm",
+        outline: "border-2 border-brand-primary bg-white text-brand-primary rounded-2xl hover:bg-brand-primary/5",
+        secondary: "bg-white text-primary rounded-2xl border border-gray-200 hover:bg-gray-50",
+        inverse: "bg-white text-primary rounded-2xl hover:bg-gray-50 shadow-lg border border-white/20",
+        ghost: "hover:bg-gray-100 rounded-2xl",
         link: "text-brand-primary underline-offset-4 hover:underline"
       },
       size: {

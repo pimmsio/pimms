@@ -37,7 +37,7 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
   pathColor = "gray",
   pathWidth = 2,
   pathOpacity = 0.2,
-  gradientStartColor = "var(--color-vibrant-amber)",
+  gradientStartColor = "var(--color-vibrant-orange)",
   gradientStopColor = "var(--color-vibrant-purple)",
   startXOffset = 0,
   startYOffset = 0,
@@ -93,11 +93,9 @@ export const AnimatedBeam: React.FC<AnimatedBeamProps> = ({
     };
 
     // Initialize ResizeObserver
-    const resizeObserver = new ResizeObserver((entries) => {
-      // For all entries, recalculate the path
-      for (const entry of entries) {
-        updatePath();
-      }
+    const resizeObserver = new ResizeObserver(() => {
+      // Recalculate the path on any observed resize
+      updatePath();
     });
 
     // Observe the container element

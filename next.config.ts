@@ -37,7 +37,7 @@ const nextConfig: NextConfig = {
         hostname: "assets.seobotai.com"
       },
       {
-        hostname: "via.placeholder.com"
+        hostname: "placehold.co"
       },
       {
         hostname: "www.google.com"

@@ -3,14 +3,84 @@
     "nav": {
       "how_it_works": "Intro",
       "solutions": "Solutions",
+      "features": "Fonctionnalités",
+      "onboarding": "Onboarding",
       "dashboard": "Se connecter",
       "pricing": "Tarification"
+    },
+    "conversion": {
+      "fail": {
+        "paypal_failed": "Paiement PayPal échoué",
+        "youtube_abandoned": "Abonnement YouTube abandonné",
+        "signup_abandoned": "Inscription abandonnée"
+      },
+      "success": {
+        "payment_completed": "Paiement réussi",
+        "youtube_success": "Abonnement YouTube confirmé",
+        "signup_completed": "Inscription complétée"
+      },
+      "time": {
+        "just_now": "À l’instant",
+        "1m": "il y a 1 min",
+        "2m": "il y a 2 min",
+        "5m": "il y a 5 min",
+        "8m": "il y a 8 min",
+        "12m": "il y a 12 min",
+        "20m": "il y a 20 min"
+      }
+    },
+    "ribbon": {
+      "leads": "Leads",
+      "sales": "Ventes",
+      "sources": {
+        "emailing": "emailing",
+        "form": "formulaire",
+        "outreach": "outreach",
+        "shop": "boutique",
+        "website": "site web",
+        "funnel": "funnel"
+      }
+    },
+    "funnel": {
+      "event": {
+        "meeting_booked": "Nouveau rendez-vous réservé",
+        "subscriber": "Nouvel abonné",
+        "lead": "Nouveau lead",
+        "follower": "Nouveau follower"
+      }
+    },
+    "lead_list": {
+      "score": {
+        "very_warm": "Très chaud",
+        "warm": "Chaud",
+        "lukewarm": "Tiède",
+        "cold": "Froid"
+      },
+      "items": {
+        "shopify_new_leads": "Nouveaux leads depuis la boutique",
+        "meeting_booked": "Nouveau rendez-vous",
+        "newsletter_subscription": "Nouvelle inscription newsletter",
+        "payment_received": "Paiement reçu",
+        "form_submission": "Nouveau formulaire soumis",
+        "survey_response": "Réponse au questionnaire",
+        "blog_comment": "Nouveau commentaire sur le blog",
+        "signup_landing": "Inscription depuis la landing"
+      },
+      "time": {
+        "1m": "il y a 1 min",
+        "2m": "il y a 2 min",
+        "3m": "il y a 3 min",
+        "5m": "il y a 5 min",
+        "7m": "il y a 7 min",
+        "8m": "il y a 8 min"
+      }
     },
     "cta": {
       "link": "Commencer gratuitement",
       "bottom": "Aucune carte bancaire requise • Sans abonnement",
       "main": "<fast>⚡</fast> Commencez gratuitement<large> avec 10 liens</large>",
-      "main_short": "<fast>⚡</fast> Commencez gratuitement"
+      "main_short": "<fast>⚡</fast> Commencez gratuitement",
+      "demo": "Réserver une démo"
     },
     "logos_circle": {
       "title": "LE PLUS ?",
