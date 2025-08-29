@@ -146,15 +146,15 @@ export const AnalyticsDemo = ({
             </div>
             <div className="flex gap-3">
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-[#3970ff] rounded-full"></div>
+                <div className="w-3 h-3 bg-brand-primary rounded-full"></div>
                 <span className="text-sm font-medium text-gray-700">Variation A</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-[#10B981] rounded-full"></div>
+                <div className="w-3 h-3 bg-success rounded-full"></div>
                 <span className="text-sm font-medium text-gray-700">Variation B</span>
               </div>
               <div className="flex items-center gap-2">
-                <div className="w-3 h-3 bg-[#EF4444] rounded-full"></div>
+                <div className="w-3 h-3 bg-error rounded-full"></div>
                 <span className="text-sm font-medium text-gray-700">Variation C</span>
               </div>
             </div>
@@ -162,7 +162,7 @@ export const AnalyticsDemo = ({
         </div>
 
         {/* A/B/C Testing Metrics */}
-        <div className="grid w-full grid-cols-3 divide-x divide-[#E7EEFF] border-b border-[#E7EEFF]">
+        <div className="grid w-full grid-cols-3 divide-x divide-brand-primary-100 border-b border-brand-primary-100">
           {tabs.map(({ id }) => {
             const total = totalEvents[id] || 0;
             const valueA = totalEvents[`${id}A` as keyof typeof totalEvents] || 0;
@@ -177,14 +177,14 @@ export const AnalyticsDemo = ({
               <div key={id} className="relative z-0">
                 <div
                   className={cn(
-                    "cursor-pointer border-box relative block h-full flex-none px-4 py-3",
-                    "transition-colors hover:bg-[#E7EEFF] focus:outline-none active:bg-[#E7EEFF]",
+                    "cursor-pointer border-box relative block h-full flex-none px-6 py-4",
+                    "transition-colors hover:bg-brand-primary-100 focus:outline-none active:bg-brand-primary-100",
                     "ring-inset ring-neutral-500 focus-visible:ring-1",
-                    selectedTab === id && "bg-[#E7EEFF]"
+                    selectedTab === id && "bg-brand-primary-100"
                   )}
                   onClick={() => setSelectedTab(id)}
                 >
-                  <div className="flex items-center justify-between mb-3">
+                  <div className="flex items-center justify-between mb-4">
                     <span className="text-sm font-medium text-neutral-600">{RESOURCE_LABELS[id]}</span>
                     <NumberFlow
                       value={total}
@@ -204,9 +204,9 @@ export const AnalyticsDemo = ({
                   </div>
 
                   {/* Variation A */}
-                  <div className="flex items-center justify-between mb-1">
+                  <div className="flex items-center justify-between mb-2">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-[#3970ff] rounded-full"></div>
+                      <div className="w-2 h-2 bg-brand-primary rounded-full"></div>
                       <span className="text-xs text-gray-500">A</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -230,7 +230,7 @@ export const AnalyticsDemo = ({
                   {/* Variation B */}
                   <div className="flex items-center justify-between mb-1">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-[#10B981] rounded-full"></div>
+                      <div className="w-2 h-2 bg-success rounded-full"></div>
                       <span className="text-xs text-gray-500">B</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -254,7 +254,7 @@ export const AnalyticsDemo = ({
                   {/* Variation C */}
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 bg-[#EF4444] rounded-full"></div>
+                      <div className="w-2 h-2 bg-error rounded-full"></div>
                       <span className="text-xs text-gray-500">C</span>
                     </div>
                     <div className="flex items-center gap-2">
@@ -300,9 +300,9 @@ export const AnalyticsDemo = ({
       {/* Static KPI Cards */}
       <div className="grid gap-1 sm:gap-4 grid-cols-3 p-2">
         {/* Clicks Card */}
-        <div className="rounded-lg border border-gray-200 bg-blue-50/50 py-2 px-4">
+        <div className="rounded-lg border border-gray-200 bg-data-primary-light/10 py-2 px-4">
           <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
-            <div className="w-2 h-2 bg-[#3870FF] rounded-full"></div>
+            <div className="w-2 h-2 bg-data-primary rounded-full"></div>
             <span>Clics</span>
           </div>
           <div className="text-xl font-bold text-gray-800">
@@ -314,9 +314,9 @@ export const AnalyticsDemo = ({
         </div>
 
         {/* Leads Card */}
-        <div className="rounded-lg border border-gray-200 bg-orange-50/50 py-2 px-4">
+        <div className="rounded-lg border border-gray-200 bg-data-secondary-light/10 py-2 px-4">
           <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
-            <div className="w-2 h-2 bg-[#FFD399] rounded-full"></div>
+            <div className="w-2 h-2 bg-data-secondary rounded-full"></div>
             <span>Leads</span>
           </div>
           <div className="text-xl font-bold text-gray-800">
@@ -328,9 +328,9 @@ export const AnalyticsDemo = ({
         </div>
 
         {/* Sales Card */}
-        <div className="rounded-lg border border-gray-200 bg-green-50/50 py-2 px-4">
+        <div className="rounded-lg border border-gray-200 bg-data-success-light/10 py-2 px-4">
           <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
-            <div className="w-2 h-2 bg-[#00F5B8] rounded-full"></div>
+            <div className="w-2 h-2 bg-data-success rounded-full"></div>
             <span>Ventes</span>
           </div>
           <div className="text-xl font-bold text-gray-800">

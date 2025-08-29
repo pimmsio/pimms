@@ -11,7 +11,7 @@ export const H1 = ({ children, className }: { children: React.ReactNode; classNa
     <h1
       className={twMerge(
         bricolage_grotesque.className,
-        "text-4xl md:text-5xl lg:text-6xl !leading-10 sm:!leading-14 lg:!leading-16 font-extrabold !tracking-tight text-balance text-[#08272E]",
+        "text-4xl md:text-5xl lg:text-6xl !leading-tight font-extrabold !tracking-tight text-balance text-text-primary",
         className
       )}
     >
@@ -25,7 +25,7 @@ export const H1Blog = ({ children, className }: { children: React.ReactNode; cla
     <h1
       className={twMerge(
         bricolage_grotesque.className,
-        "text-3xl md:text-4xl font-extrabold !leading-10 sm:!leading-14 lg:!leading-16 !tracking-tight text-balance text-[#08272E] text-center",
+        "text-3xl md:text-4xl font-extrabold !leading-tight !tracking-tight text-balance text-text-primary text-center",
         className
       )}
     >
@@ -38,7 +38,7 @@ export const H1Subtitle = ({ children, className }: { children: React.ReactNode;
   return (
     <p
       className={twMerge(
-        "text-lg md:text-xl text-[#5C5B61] font-medium leading-relaxed text-balance text-center",
+        "text-lg md:text-xl lg:text-2xl text-text-secondary font-medium leading-relaxed text-balance text-center max-w-4xl mx-auto",
         className
       )}
     >

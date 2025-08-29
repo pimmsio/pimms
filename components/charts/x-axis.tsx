@@ -37,30 +37,22 @@ export function XAxis({
   showGridLines = false,
   highlightLast = true,
   showAxisLine = true,
-  tickFormat = (date) =>
-    date.toLocaleDateString("en-US", { month: "short", day: "numeric" }),
+  tickFormat = (date) => date.toLocaleDateString("en-US", { month: "short", day: "numeric" })
 }: XAxisProps) {
-  const { data, margin, width, height, xScale, startDate, endDate } =
-    useChartContext();
+  const { data, margin, width, height, xScale, startDate, endDate } = useChartContext();
 
   const { tooltipData } = useChartTooltipContext();
 
   const tickValues = useMemo(() => {
     const maxTicks = maxTicksProp ?? (width < 450 ? 4 : width < 600 ? 6 : 8);
 
-    const tickInterval =
-      getFactors(data.length).find((f) => (data.length + 1) / f <= maxTicks) ??
-      1;
+    const tickInterval = getFactors(data.length).find((f) => (data.length + 1) / f <= maxTicks) ?? 1;
 
     // If the interval would result in < 2 ticks, just use the first and last date instead
     const twoTicks = data.length / tickInterval < 2;
 
     return data
-      .filter((_, idx, { length }) =>
-        twoTicks
-          ? idx === 0 || idx === length - 1
-          : (idx + 1) % tickInterval === 0,
-      )
+      .filter((_, idx, { length }) => (twoTicks ? idx === 0 || idx === length - 1 : (idx + 1) % tickInterval === 0))
       .map(({ date }) => date);
   }, [width, maxTicksProp, data]);
 
@@ -73,20 +65,15 @@ export function XAxis({
         tickValues={tickValues}
         hideTicks
         hideAxisLine={!showAxisLine}
-        stroke="#00000026"
+        stroke="var(--color-stroke-light)"
         tickFormat={(date) => tickFormat(date as Date)}
         tickLabelProps={(date, idx, { length }) => ({
           className: "transition-colors",
-          textAnchor:
-            idx === 0 ? "start" : idx === length - 1 ? "end" : "middle",
+          textAnchor: idx === 0 ? "start" : idx === length - 1 ? "end" : "middle",
           fontSize: 12,
-          fill: (
-            tooltipData
-              ? tooltipData.date === date
-              : highlightLast && idx === length - 1
-          )
-            ? "#000"
-            : "#00000066",
+          fill: (tooltipData ? tooltipData.date === date : highlightLast && idx === length - 1)
+            ? "var(--color-text-primary)"
+            : "var(--color-text-muted)"
         })}
       />
       {showGridLines && (
@@ -99,11 +86,8 @@ export function XAxis({
                 x2={xScale(date)}
                 y1={height}
                 y2={0}
-                stroke={
-                  date === tooltipData?.date ? "transparent" : "#00000026"
-                }
-                strokeWidth={1}
-                strokeDasharray={[startDate, endDate].includes(date) ? 0 : 5}
+                stroke={date === tooltipData?.date ? "transparent" : "var(--color-stroke-light)"}
+                className={[startDate, endDate].includes(date) ? "" : "chart-grid-line"}
               />
             ))}
         </Group>

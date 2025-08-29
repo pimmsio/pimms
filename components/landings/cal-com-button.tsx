@@ -4,14 +4,24 @@ import { Button } from "@/components/ui/button";
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
 
-export default function CalComButton({ children }: { children: React.ReactNode }) {
+export default function CalComButton({
+  children,
+  variant = "default",
+  size = "lg",
+  className = ""
+}: {
+  children: React.ReactNode;
+  variant?: "default" | "inverse";
+  size?: "default" | "sm" | "lg";
+  className?: string;
+}) {
   useEffect(() => {
     (async function () {
       const cal = await getCalApi();
       cal("ui", {
         theme: "light",
         styles: {
-          branding: { brandColor: "#FF6B35" }
+          branding: { brandColor: "var(--color-brand-primary)" }
         }
       });
     })();
@@ -19,8 +29,9 @@ export default function CalComButton({ children }: { children: React.ReactNode }
 
   return (
     <Button
-      size="lg"
-      className="w-full md:w-auto md:px-12 bg-[#FF6B35] hover:bg-[#e55a2b] text-white"
+      variant={variant}
+      size={size}
+      className={className || "w-full sm:w-auto"}
       data-cal-link="alexandre-sarfati/30-minutes-demo?pimms_id=1"
     >
       {children}

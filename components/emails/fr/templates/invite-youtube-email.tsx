@@ -1,24 +1,8 @@
-import {
-  Body,
-  Container,
-  Head,
-  Hr,
-  Html,
-  Img,
-  Link,
-  Preview,
-  Section,
-  Tailwind,
-  Text,
-} from "@react-email/components";
+import { Body, Container, Head, Hr, Html, Img, Link, Preview, Section, Tailwind, Text } from "@react-email/components";
 import { Footer } from "../components/footer";
 import { WORDMARK_BLACK } from "@/app/constants";
 
-export function InviteYoutubeEmail({
-  email = "alexandre@pimms.io",
-}: {
-  email: string;
-}) {
+export function InviteYoutubeEmail({ email = "alexandre@pimms.io" }: { email: string }) {
   return (
     <Html>
       <Head />
@@ -39,13 +23,12 @@ export function InviteYoutubeEmail({
             </Text>
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
-              Accès en avant-première – je vous offre 10 deeplinks pour
-              démarrer.
+              Accès en avant-première – je vous offre 10 deeplinks pour démarrer.
             </Text>
 
             <Section className="my-8">
               <Link
-                className="px-5 py-3 bg-[#dc2e65] text-white font-semibold outline outline-[6px] transition outline-[#ffeaf1] cursor-pointer no-underline rounded-xl"
+                className="px-5 py-3 bg-[#dc2e65] text-white font-semibold outline-[6px] outline-[#ffeaf1] cursor-pointer no-underline rounded-xl transition"
                 href="https://app.pimms.io/register"
                 target="_blank"
                 rel="noreferrer"
@@ -54,20 +37,17 @@ export function InviteYoutubeEmail({
               </Link>
             </Section>
 
-            <Hr className="mx-0 mt-8mb-6 w-full border border-neutral-200" />
+            <Hr className="mx-0 mt-8 mb-6 w-full border border-neutral-200" />
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
-              Je vais vous faire gagner des abonnés sur votre chaîne YouTube
-              grâce à un concept unique: les deeplinks{" "}
+              Je vais vous faire gagner des abonnés sur votre chaîne YouTube grâce à un concept unique: les deeplinks{" "}
               <Link href="https://pimms.io" className="text-black no-underline">
                 pim.ms
               </Link>
               .
             </Text>
 
-            <Text className="mt-4 text-sm font-bold leading-6 text-neutral-600">
-              Comment ça marche ?
-            </Text>
+            <Text className="mt-4 text-sm font-bold leading-6 text-neutral-600">Comment ça marche ?</Text>
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
               - Copiez collez des liens classiques (exemple:{" "}
@@ -86,8 +66,7 @@ export function InviteYoutubeEmail({
             </Text>
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
-              Nos liens réussissent à convertir sur mobile, là où les autres ont
-              échoué.
+              Nos liens réussissent à convertir sur mobile, là où les autres ont échoué.
             </Text>
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
@@ -100,14 +79,13 @@ export function InviteYoutubeEmail({
 
             <Hr className="mx-0 my-6 w-full border border-neutral-200" />
             <Text className="text-xs font-light leading-6 text-neutral-600">
-              Je m&apos;appelle Alexandre Sarfati et j&apos;ai créé PIMMS. Ceci
-              est un email automatique, mais si vous répondez, je vous lirai
-              directement.
+              Je m&apos;appelle Alexandre Sarfati et j&apos;ai créé PIMMS. Ceci est un email automatique, mais si vous
+              répondez, je vous lirai directement.
             </Text>
 
             <Text className="text-xs font-light leading-6 text-neutral-600">
-              Si vous avez des retours ou des commentaires sur notre produit,
-              j&apos;adorerais le savoir. Merci par avance, Alexandre.
+              Si vous avez des retours ou des commentaires sur notre produit, j&apos;adorerais le savoir. Merci par
+              avance, Alexandre.
             </Text>
 
             <Footer email={email} marketing />

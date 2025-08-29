@@ -22,23 +22,23 @@ export const Footer = ({
 
   return (
     <footer className={cn("bg-gray-50 border-t border-gray-100", className)}>
-      <div className="px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
+      <div className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
         <div className="max-w-7xl mx-auto">
           {/* Main footer content */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 mb-16">
             {/* Logo and description column */}
-            <div className="lg:col-span-2 space-y-6">
+            <div className="lg:col-span-2 space-y-8">
               <Logo />
-              <p className="text-[#5C5B61] leading-relaxed max-w-sm">{t("footer.description")}</p>
-              <div className="flex gap-3">
+              <p className="text-text-secondary leading-relaxed max-w-sm">{t("footer.description")}</p>
+              <div className="flex gap-4">
                 <Link
                   href="https://github.com/pimmsio/getpimms"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-[#3970ff] group-hover:bg-[#3970ff] group-hover:shadow-sm">
-                    <GithubIcon className="w-4 h-4 text-[#5C5B61] group-hover:text-white transition-colors" />
+                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
+                    <GithubIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
                   </div>
                 </Link>
                 <Link
@@ -47,8 +47,8 @@ export const Footer = ({
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-[#3970ff] group-hover:bg-[#3970ff] group-hover:shadow-sm">
-                    <LinkedInIcon className="w-4 h-4 text-[#5C5B61] group-hover:text-white transition-colors" />
+                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
+                    <LinkedInIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
                   </div>
                 </Link>
                 <Link
@@ -57,8 +57,8 @@ export const Footer = ({
                   rel="noopener noreferrer"
                   className="group"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-[#3970ff] group-hover:bg-[#3970ff] group-hover:shadow-sm">
-                    <InstagramIcon className="w-4 h-4 text-[#5C5B61] group-hover:text-white transition-colors" />
+                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
+                    <InstagramIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
                   </div>
                 </Link>
               </div>
@@ -68,7 +68,7 @@ export const Footer = ({
             <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
               {/* Solutions */}
               <div>
-                <h6 className="text-[#08272E] font-semibold mb-4 text-sm uppercase tracking-wide">
+                <h6 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">
                   {t("footer.category.solutions")}
                 </h6>
                 <ul className="space-y-3">
@@ -98,7 +98,7 @@ export const Footer = ({
                   </li>
                 </ul>
 
-                <h6 className="text-[#08272E] font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
+                <h6 className="text-text-primary font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
                   {t("footer.category.alternatives")}
                 </h6>
                 <ul className="space-y-3">
@@ -108,7 +108,7 @@ export const Footer = ({
                         locale,
                         "/articles/bitly-vs-pimms-what-founders-really-need-beyond-click-tracking"
                       )}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.alternatives.bitly")}
                     </Link>
@@ -118,14 +118,14 @@ export const Footer = ({
 
               {/* Resources */}
               <div>
-                <h6 className="text-[#08272E] font-semibold mb-4 text-sm uppercase tracking-wide">
+                <h6 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">
                   {t("footer.category.resources")}
                 </h6>
                 <ul className="space-y-3">
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/articles/category/guides")}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.resources.guides")}
                     </Link>
@@ -133,7 +133,7 @@ export const Footer = ({
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/articles/category/tutorials")}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.resources.tutorials")}
                     </Link>
@@ -143,7 +143,7 @@ export const Footer = ({
                       href="https://pim.ms/api"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.resources.api")}
                     </Link>
@@ -153,7 +153,7 @@ export const Footer = ({
                       href="https://pim.ms/sdk-ts"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.resources.sdk-ts")}
                     </Link>
@@ -161,21 +161,21 @@ export const Footer = ({
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/articles/category/digital-marketing")}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.resources.blog")}
                     </Link>
                   </li>
                 </ul>
 
-                <h6 className="text-[#08272E] font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
+                <h6 className="text-text-primary font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
                   {t("footer.category.freetools")}
                 </h6>
                 <ul className="space-y-3">
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/freetools/site-checker")}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.freetools.site-checker")}
                     </Link>
@@ -185,12 +185,12 @@ export const Footer = ({
 
               {/* Legal */}
               <div>
-                <h6 className="text-[#08272E] font-semibold mb-4 text-sm uppercase tracking-wide">Legal</h6>
+                <h6 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">Legal</h6>
                 <ul className="space-y-3">
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/articles/terms")}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.nav.terms")}
                     </Link>
@@ -198,7 +198,7 @@ export const Footer = ({
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/articles/imprint")}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.nav.imprint")}
                     </Link>
@@ -206,7 +206,7 @@ export const Footer = ({
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/articles/privacy")}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.nav.privacy")}
                     </Link>
@@ -214,7 +214,7 @@ export const Footer = ({
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/articles/abuse")}
-                      className="text-[#5C5B61] hover:text-[#3970ff] transition-colors duration-200 text-sm"
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.nav.report")}
                     </Link>
@@ -228,9 +228,9 @@ export const Footer = ({
           <div className="border-t border-gray-200 pt-8">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <div>
-                <p className="text-[#5C5B61] text-sm mb-2">{t("footer.copyright")}</p>
+                <p className="text-text-secondary text-sm mb-2">{t("footer.copyright")}</p>
                 {showRef && (
-                  <p className="text-[#5C5B61] text-xs max-w-2xl leading-relaxed">
+                  <p className="text-text-secondary text-xs max-w-2xl leading-relaxed">
                     The PIMMS team builds powerful, privacy-conscious marketing tools — helping anyone grow online with
                     smart links and QR codes. &apos;QR Code&apos; is a registered trademark of DENSO WAVE INCORPORATED.
                     This project is based on <DubRef /> open-source software licensed under the AGPL.{" "}
@@ -238,7 +238,7 @@ export const Footer = ({
                       href="https://github.com/pimmsio/getpimms"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[#3970ff] hover:underline"
+                      className="text-brand-primary hover:underline"
                     >
                       View source on GitHub
                     </Link>
@@ -252,7 +252,7 @@ export const Footer = ({
                     href="https://zapier.com/apps/pimms/integrations"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-[#3970ff] hover:shadow-sm transition-all duration-200"
+                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-brand-primary hover:shadow-sm transition-all duration-200"
                   >
                     <Image
                       src="/static/zapier-apps.svg"
@@ -266,7 +266,7 @@ export const Footer = ({
                     href="https://marketplace.stripe.com/apps/pimms"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-[#3970ff] hover:shadow-sm transition-all duration-200"
+                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-brand-primary hover:shadow-sm transition-all duration-200"
                   >
                     <Image
                       src="/static/stripe-apps.svg"

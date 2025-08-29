@@ -7,27 +7,16 @@ import { scaleBand, scaleLinear, scaleUtc } from "@visx/scale";
 import { Bar, Circle, Line } from "@visx/shape";
 import { PropsWithChildren, useMemo, useState } from "react";
 import { ChartContext, ChartTooltipContext } from "./chart-context";
-import {
-  ChartProps,
-  Datum,
-  type ChartContext as ChartContextType,
-} from "./types";
+import { ChartProps, Datum, type ChartContext as ChartContextType } from "./types";
 import { useTooltip } from "./useTooltip";
 
 type TimeSeriesChartProps<T extends Datum> = PropsWithChildren<ChartProps<T>>;
 
-export function TimeSeriesChart<T extends Datum>(
-  props: TimeSeriesChartProps<T>
-) {
+export function TimeSeriesChart<T extends Datum>(props: TimeSeriesChartProps<T>) {
   return (
     <ParentSize className="relative">
       {({ width, height }) => {
-        return (
-          width > 0 &&
-          height > 0 && (
-            <TimeSeriesChartInner {...props} width={width} height={height} />
-          )
-        );
+        return width > 0 && height > 0 && <TimeSeriesChartInner {...props} width={width} height={height} />;
       }}
     </ParentSize>
   );
@@ -47,9 +36,9 @@ function TimeSeriesChartInner<T extends Datum>({
     top: 12,
     right: 5,
     bottom: 32,
-    left: 5,
+    left: 5
   },
-  padding: paddingProp,
+  padding: paddingProp
 }: {
   width: number;
   height: number;
@@ -58,12 +47,12 @@ function TimeSeriesChartInner<T extends Datum>({
 
   const margin = {
     ...marginProp,
-    left: marginProp.left + (leftAxisMargin ?? 0),
+    left: marginProp.left + (leftAxisMargin ?? 0)
   };
 
   const padding = paddingProp ?? {
     top: 0.1,
-    bottom: type === "area" ? 0.1 : 0,
+    bottom: type === "area" ? 0.1 : 0
   };
 
   const width = outerWidth - margin.left - margin.right;
@@ -75,7 +64,7 @@ function TimeSeriesChartInner<T extends Datum>({
 
     return {
       startDate: dates[times.indexOf(Math.min(...times))],
-      endDate: dates[times.indexOf(Math.max(...times))],
+      endDate: dates[times.indexOf(Math.max(...times))]
     };
   }, [data]);
 
@@ -89,7 +78,7 @@ function TimeSeriesChartInner<T extends Datum>({
     return {
       // Start at 0 for bar charts
       minY: type === "area" ? Math.min(...values) : Math.min(0, ...values),
-      maxY: Math.max(...values),
+      maxY: Math.max(...values)
     };
   }, [data, series]);
 
@@ -97,26 +86,23 @@ function TimeSeriesChartInner<T extends Datum>({
     const rangeY = maxY - minY;
     return {
       yScale: scaleLinear<number>({
-        domain: [
-          minY - rangeY * (padding.bottom ?? 0),
-          maxY + rangeY * (padding.top ?? 0),
-        ],
+        domain: [minY - rangeY * (padding.bottom ?? 0), maxY + rangeY * (padding.top ?? 0)],
         range: [height, 0],
         nice: true,
-        clamp: true,
+        clamp: true
       }),
       xScale:
         type === "area"
           ? scaleUtc<number>({
               domain: [startDate, endDate],
-              range: [0, width],
+              range: [0, width]
             })
           : scaleBand({
               domain: data.map(({ date }) => date),
               range: [0, width],
               padding: Math.min(0.75, (width / data.length) * 0.02),
-              align: 0.5,
-            }),
+              align: 0.5
+            })
     };
   }, [startDate, endDate, minY, maxY, height, width, data.length, type]);
 
@@ -138,24 +124,17 @@ function TimeSeriesChartInner<T extends Datum>({
     tooltipClassName,
     defaultTooltipIndex,
     leftAxisMargin,
-    setLeftAxisMargin,
+    setLeftAxisMargin
   };
 
   const tooltipContext = useTooltip({
     seriesId: series[0].id,
     chartContext,
-    defaultIndex: defaultTooltipIndex ?? undefined,
+    defaultIndex: defaultTooltipIndex ?? undefined
   });
 
-  const {
-    tooltipData,
-    TooltipWrapper,
-    tooltipLeft,
-    tooltipTop,
-    handleTooltip,
-    hideTooltip,
-    containerRef,
-  } = tooltipContext;
+  const { tooltipData, TooltipWrapper, tooltipLeft, tooltipTop, handleTooltip, hideTooltip, containerRef } =
+    tooltipContext;
 
   return (
     <ChartContext.Provider value={chartContext}>
@@ -168,10 +147,7 @@ function TimeSeriesChartInner<T extends Datum>({
               ("bandwidth" in xScale ? (
                 <>
                   <Bar
-                    x={
-                      (xScale(tooltipData.date) ?? 0) -
-                      xScale.bandwidth() * xScale.padding()
-                    }
+                    x={(xScale(tooltipData.date) ?? 0) - xScale.bandwidth() * xScale.padding()}
                     width={xScale.bandwidth() * (1 + xScale.padding() * 2)}
                     y={0}
                     height={height}
@@ -199,7 +175,7 @@ function TimeSeriesChartInner<T extends Datum>({
                         cx={xScale(tooltipData.date)}
                         cy={yScale(s.valueAccessor(tooltipData))}
                         r={4}
-                        className={s.colorClassName ?? "text-blue-800"}
+                        className={s.colorClassName ?? "text-brand-primary-800"}
                         fill="currentColor"
                       />
                     ))}
@@ -239,8 +215,7 @@ function TimeSeriesChartInner<T extends Datum>({
                   tooltipClassName
                 )}
               >
-                {tooltipContent?.(tooltipData) ??
-                  series[0].valueAccessor(tooltipData)}
+                {tooltipContent?.(tooltipData) ?? series[0].valueAccessor(tooltipData)}
               </div>
             </TooltipWrapper>
           )}

@@ -35,7 +35,7 @@ export default function SiteCheckerPage() {
           <SiteCheckerForm />
 
           {/* About Section */}
-          <div className="bg-gradient-to-r from-gray-50 to-blue-50 border border-gray-200 rounded-2xl p-8">
+          <div className="bg-gradient-info border border-gray-200 rounded-2xl p-8">
             <h3 className="text-xl font-bold text-gray-900 mb-4">About This Tool</h3>
             <p className="text-gray-700 leading-relaxed">
               This free tool validates that your website has the PIMMS analytics script properly installed. It checks

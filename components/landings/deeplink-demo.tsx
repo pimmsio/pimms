@@ -49,8 +49,11 @@ export const DeeplinkDemo = () => {
         <div className="flex flex-col sm:flex-row items-center justify-between w-full max-w-4xl gap-12 sm:gap-16">
           {/* Left - Lien PIMMS */}
           <div className="flex-shrink-0">
-            <div ref={linkRef} className="rounded-xl px-3 py-1 sm:p-4 border-2 border-gray-200 z-20 relative bg-white">
-              <div className="text-sm font-semibold text-gray-700 mb-1">Lien</div>
+            <div
+              ref={linkRef}
+              className="rounded-xl px-3 py-1 sm:p-4 border-2 border-brand-primary-600 z-20 relative bg-white"
+            >
+              <div className="text-sm font-semibold text-gray-700 mb-2">Lien</div>
               <div className="text-lg font-bold">PIMMS</div>
               <div className="text-sm text-gray-600 font-mono">pim.ms/lien-court</div>
             </div>
@@ -75,25 +78,25 @@ export const DeeplinkDemo = () => {
             <div className="grid grid-cols-2 gap-2 sm:gap-12">
               {/* Première colonne */}
               <div className="flex flex-row sm:flex-col gap-2 sm:gap-8 items-center justify-center">
-                <Circle ref={youtubeRef} className="size-10 sm:size-14 border-gray-200 border-1 bg-white">
+                <Circle ref={youtubeRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
                   <img src={outerLogos[0]?.src} alt="Youtube" className="w-6 h-6 sm:w-8 sm:h-8" />
                 </Circle>
-                <Circle ref={instagramRef} className="size-10 sm:size-14 border-gray-200 border-1 bg-white">
+                <Circle ref={instagramRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
                   <img src={outerLogos[3]?.src} alt="Instagram" className="w-6 h-6 sm:w-8 sm:h-8" />
                 </Circle>
-                <Circle ref={amazonRef} className="size-10 sm:size-14 border-gray-200 border-1 bg-white">
+                <Circle ref={amazonRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
                   <img src={outerLogos[1]?.src} alt="Amazon" className="w-6 h-6 sm:w-8 sm:h-8" />
                 </Circle>
               </div>
               {/* Deuxième colonne */}
               <div className="flex flex-row sm:flex-col gap-2 sm:gap-16 items-center justify-center">
-                <Circle ref={chromeRef} className="size-10 sm:size-14 border-gray-200 border-1 bg-white">
+                <Circle ref={chromeRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
                   <img src={outerLogos[2]?.src} alt="Chrome" className="w-6 h-6 sm:w-8 sm:h-8" />
                 </Circle>
-                <Circle ref={linkedinRef} className="size-10 sm:size-14 border-gray-200 border-1 bg-white">
+                <Circle ref={linkedinRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
                   <img src={outerLogos[4]?.src} alt="Linkedin" className="w-6 h-6 sm:w-8 sm:h-8" />
                 </Circle>
-                <Circle ref={whatsappRef} className="size-10 sm:size-14 border-gray-200 border-1 bg-white">
+                <Circle ref={whatsappRef} className="grayscale size-10 sm:size-14 border-gray-200 border-1 bg-white">
                   <img src={outerLogos[5]?.src} alt="Whatsapp" className="w-6 h-6 sm:w-8 sm:h-8" />
                 </Circle>
               </div>
@@ -107,9 +110,9 @@ export const DeeplinkDemo = () => {
         containerRef={containerRef}
         fromRef={linkRef}
         toRef={userRef}
-        pathColor="#e5e7eb"
-        gradientStartColor="#3970ff"
-        gradientStopColor="#3970ff"
+        pathColor="var(--color-path-neutral)"
+        gradientStartColor="var(--color-brand-primary)"
+        gradientStopColor="var(--color-brand-primary)"
         duration={5}
         curvature={0}
         delay={1}
@@ -123,9 +126,9 @@ export const DeeplinkDemo = () => {
         containerRef={containerRef}
         fromRef={userRef}
         toRef={youtubeRef}
-        pathColor="#e5e7eb"
-        gradientStartColor="#3970ff"
-        gradientStopColor="#3970ff"
+        pathColor="var(--color-path-neutral)"
+        gradientStartColor="var(--color-brand-primary)"
+        gradientStopColor="var(--color-brand-primary)"
         duration={5}
         delay={1.5}
         curvature={0}
@@ -137,9 +140,9 @@ export const DeeplinkDemo = () => {
         containerRef={containerRef}
         fromRef={userRef}
         toRef={chromeRef}
-        pathColor="#e5e7eb"
-        gradientStartColor="#3970ff"
-        gradientStopColor="#3970ff"
+        pathColor="var(--color-path-neutral)"
+        gradientStartColor="var(--color-brand-primary)"
+        gradientStopColor="var(--color-brand-primary)"
         duration={5}
         delay={1.5}
         curvature={0}
@@ -151,9 +154,9 @@ export const DeeplinkDemo = () => {
         containerRef={containerRef}
         fromRef={userRef}
         toRef={instagramRef}
-        pathColor="#e5e7eb"
-        gradientStartColor="#3970ff"
-        gradientStopColor="#3970ff"
+        pathColor="var(--color-path-neutral)"
+        gradientStartColor="var(--color-brand-primary)"
+        gradientStopColor="var(--color-brand-primary)"
         duration={5}
         delay={1.5}
         curvature={0}
@@ -165,9 +168,9 @@ export const DeeplinkDemo = () => {
         containerRef={containerRef}
         fromRef={userRef}
         toRef={linkedinRef}
-        pathColor="#e5e7eb"
-        gradientStartColor="#3970ff"
-        gradientStopColor="#3970ff"
+        pathColor="var(--color-path-neutral)"
+        gradientStartColor="var(--color-brand-primary)"
+        gradientStopColor="var(--color-brand-primary)"
         duration={5}
         delay={1.5}
         curvature={0}
@@ -179,9 +182,9 @@ export const DeeplinkDemo = () => {
         containerRef={containerRef}
         fromRef={userRef}
         toRef={amazonRef}
-        pathColor="#e5e7eb"
-        gradientStartColor="#3970ff"
-        gradientStopColor="#3970ff"
+        pathColor="var(--color-path-neutral)"
+        gradientStartColor="var(--color-brand-primary)"
+        gradientStopColor="var(--color-brand-primary)"
         duration={5}
         delay={1.5}
         curvature={0}
@@ -193,9 +196,9 @@ export const DeeplinkDemo = () => {
         containerRef={containerRef}
         fromRef={userRef}
         toRef={whatsappRef}
-        pathColor="#e5e7eb"
-        gradientStartColor="#3970ff"
-        gradientStopColor="#3970ff"
+        pathColor="var(--color-path-neutral)"
+        gradientStartColor="var(--color-brand-primary)"
+        gradientStopColor="var(--color-brand-primary)"
         duration={5}
         delay={1.5}
         curvature={0}

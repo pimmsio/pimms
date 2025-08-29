@@ -87,12 +87,12 @@ export default function SiteCheckerForm() {
   };
 
   return (
-    <div className="space-y-8 md:space-y-12">
+    <div className="space-y-12 md:space-y-16">
       {/* Form Section */}
-      <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-8 shadow-sm">
-        <form onSubmit={handleSubmit} className="space-y-6">
+      <div className="bg-white rounded-3xl border border-gray-200 p-6 md:p-8 shadow-sm">
+        <form onSubmit={handleSubmit} className="space-y-8">
           <div>
-            <label htmlFor="url" className="block text-base md:text-lg font-semibold text-gray-800 mb-3">
+            <label htmlFor="url" className="block text-base md:text-lg font-semibold text-gray-800 mb-4">
               Enter your website URL
             </label>
             <Input
@@ -105,7 +105,7 @@ export default function SiteCheckerForm() {
             />
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+          <div className="flex flex-col sm:flex-row gap-4 md:gap-6">
             <Button
               type="submit"
               disabled={loading || !url}
@@ -152,55 +152,55 @@ export default function SiteCheckerForm() {
 
           {result.error ? (
             <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-gray-50 border border-gray-300 rounded-xl">
-              <XCircle className="w-6 h-6 md:w-8 md:h-8 text-[#08272E] flex-shrink-0 mt-1" />
+              <XCircle className="w-6 h-6 md:w-8 md:h-8 text-text-primary flex-shrink-0 mt-1" />
               <div className="flex-1">
-                <h3 className="text-base md:text-lg font-semibold text-[#08272E] mb-2">Error checking script</h3>
-                <p className="text-sm md:text-base text-[#5C5B61] leading-relaxed">{result.error}</p>
+                <h3 className="text-base md:text-lg font-semibold text-text-primary mb-2">Error checking script</h3>
+                <p className="text-sm md:text-base text-text-secondary leading-relaxed">{result.error}</p>
               </div>
             </div>
           ) : result.scriptFound ? (
             <div className="space-y-4 md:space-y-6">
-              <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-[#3970ff]/5 border border-[#3970ff]/20 rounded-xl">
-                <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-[#3970ff] flex-shrink-0 mt-1" />
+              <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-brand-primary/5 border border-brand-primary/20 rounded-xl">
+                <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-brand-primary flex-shrink-0 mt-1" />
                 <div className="flex-1">
-                  <h3 className="text-base md:text-lg font-semibold text-[#08272E] mb-2">PiMMs Script Found!</h3>
-                  <p className="text-sm md:text-base text-[#5C5B61] mb-3 leading-relaxed">
+                  <h3 className="text-base md:text-lg font-semibold text-text-primary mb-2">PiMMs Script Found!</h3>
+                  <p className="text-sm md:text-base text-text-secondary mb-3 leading-relaxed">
                     Your site is using PiMMs analytics script. Great job! You&apos;re all set to track your important
                     conversions and marketing campaigns.
                   </p>
-                  <div className="text-xs md:text-sm text-[#3970ff] mb-2">
+                  <div className="text-xs md:text-sm text-brand-primary mb-2">
                     Script URL:
-                    <code className="bg-[#3970ff]/10 px-2 py-1 rounded text-xs break-all">{result.scriptUrl}</code>
+                    <code className="bg-brand-primary/10 px-2 py-1 rounded text-xs break-all">{result.scriptUrl}</code>
                   </div>
                 </div>
               </div>
 
               {/* Benefits Section */}
               <div className="mt-6 space-y-4 md:space-y-6">
-                <div className="bg-[#3970ff]/5 border border-[#3970ff]/20 rounded-xl p-4 md:p-6">
-                  <h4 className="text-base md:text-lg font-semibold text-[#08272E] mb-3 md:mb-4">
+                <div className="bg-brand-primary/5 border border-brand-primary/20 rounded-xl p-4 md:p-6">
+                  <h4 className="text-base md:text-lg font-semibold text-text-primary mb-3 md:mb-4">
                     What this means for your conversions:
                   </h4>
-                  <ul className="text-[#5C5B61] space-y-2 text-xs md:text-sm">
+                  <ul className="text-text-secondary space-y-2 text-xs md:text-sm">
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#3970ff] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>
-                        Automatically captures the <code className="bg-[#3970ff]/10 px-1 rounded">pimms_id</code> from
-                        PiMMs links
+                        Automatically captures the <code className="bg-brand-primary/10 px-1 rounded">pimms_id</code>{" "}
+                        from PiMMs links
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#3970ff] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>Tracks conversions when users complete important actions on your site</span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#3970ff] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>
                         Records events like checkouts, sign-ups, and payments with the associated PiMMs link campaign
                       </span>
                     </li>
                     <li className="flex items-start">
-                      <span className="w-2 h-2 bg-[#3970ff] rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>
                         No additional setup required - the script handles everything automatically when implemented
                         correctly
@@ -211,19 +211,21 @@ export default function SiteCheckerForm() {
 
                 {/* Optional Scripts Section */}
                 <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-6">
-                  <h4 className="text-base md:text-lg font-semibold text-[#08272E] mb-3 md:mb-4">Optional Scripts</h4>
+                  <h4 className="text-base md:text-lg font-semibold text-text-primary mb-3 md:mb-4">
+                    Optional Scripts
+                  </h4>
                   <div className="space-y-3">
                     <div className="flex items-start">
                       {result.injectFormScriptFound ? (
-                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[#3970ff] mt-0.5 mr-3 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-brand-primary mt-0.5 mr-3 flex-shrink-0" />
                       ) : (
                         <XCircle className="w-4 h-4 md:w-5 md:h-5 text-gray-400 mt-0.5 mr-3 flex-shrink-0" />
                       )}
                       <div className="min-w-0 flex-1">
-                        <p className="text-xs md:text-sm font-medium text-[#08272E]">
+                        <p className="text-xs md:text-sm font-medium text-text-primary">
                           Inject Form Script {result.injectFormScriptFound ? "(Found)" : "(Not Found)"}
                         </p>
-                        <p className="text-xs text-[#5C5B61] leading-relaxed">
+                        <p className="text-xs text-text-secondary leading-relaxed">
                           Automatically injects tracking ID into forms
                         </p>
                       </div>
@@ -231,15 +233,15 @@ export default function SiteCheckerForm() {
 
                     <div className="flex items-start">
                       {result.exposeScriptFound ? (
-                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-[#3970ff] mt-0.5 mr-3 flex-shrink-0" />
+                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-brand-primary mt-0.5 mr-3 flex-shrink-0" />
                       ) : (
                         <XCircle className="w-4 h-4 md:w-5 md:h-5 text-gray-400 mt-0.5 mr-3 flex-shrink-0" />
                       )}
                       <div className="min-w-0 flex-1">
-                        <p className="text-xs md:text-sm font-medium text-[#08272E]">
+                        <p className="text-xs md:text-sm font-medium text-text-primary">
                           Expose Script {result.exposeScriptFound ? "(Found)" : "(Not Found)"}
                         </p>
-                        <p className="text-xs text-[#5C5B61] leading-relaxed">
+                        <p className="text-xs text-text-secondary leading-relaxed">
                           Exposes tracking ID to all your urls (for systeme.io funnel tracking)
                         </p>
                       </div>
@@ -262,10 +264,12 @@ export default function SiteCheckerForm() {
           ) : (
             <div className="space-y-4 md:space-y-6">
               <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-gray-50 border border-gray-200 rounded-xl">
-                <AlertCircle className="w-6 h-6 md:w-8 md:h-8 text-[#5C5B61] flex-shrink-0 mt-1" />
+                <AlertCircle className="w-6 h-6 md:w-8 md:h-8 text-text-secondary flex-shrink-0 mt-1" />
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-base md:text-lg font-semibold text-[#08272E] mb-2">❌ PiMMs Script Not Found</h3>
-                  <p className="text-sm md:text-base text-[#5C5B61] leading-relaxed">
+                  <h3 className="text-base md:text-lg font-semibold text-text-primary mb-2">
+                    ❌ PiMMs Script Not Found
+                  </h3>
+                  <p className="text-sm md:text-base text-text-secondary leading-relaxed">
                     The PiMMs analytics script was not detected on your website.
                   </p>
                 </div>
@@ -311,10 +315,10 @@ import { Analytics as PimmsAnalytics } from "@getpimms/analytics"
                   </div>
 
                   <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 md:p-6">
-                    <h6 className="text-base md:text-lg font-semibold text-[#08272E] mb-3">
+                    <h6 className="text-base md:text-lg font-semibold text-text-primary mb-3">
                       💡 Testing Your Installation
                     </h6>
-                    <p className="text-[#5C5B61] text-xs md:text-sm leading-relaxed">
+                    <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
                       After installing, you can use this tool to automatically verify your setup, or manually check by
                       opening your browser console and typing{" "}
                       <code className="bg-gray-200 px-2 py-1 rounded text-xs break-all">window._pimmsAnalytics</code>.
@@ -327,7 +331,7 @@ import { Analytics as PimmsAnalytics } from "@getpimms/analytics"
                       Need detailed guidance?{" "}
                       <a
                         href={getCanonicalLink(locale, "/articles/introducing-conversion")}
-                        className="text-[#3970ff] hover:text-[#3970ff]/80 underline font-medium break-words"
+                        className="text-brand-primary hover:text-brand-primary/80 underline font-medium break-words"
                       >
                         Read our complete conversion tracking setup guide
                       </a>

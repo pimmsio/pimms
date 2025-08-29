@@ -77,8 +77,8 @@ export default function Author({
         src={author.image}
       />
       <div>
-        <p className={`${sizeClasses[size].name} font-semibold text-[#08272E]`}>{author.name}</p>
-        {showRole && <p className={`${sizeClasses[size].role} text-[#5C5B61]`}>{author.role}</p>}
+        <p className={`${sizeClasses[size].name} font-semibold text-text-primary`}>{author.name}</p>
+        {showRole && <p className={`${sizeClasses[size].role} text-text-secondary`}>{author.role}</p>}
       </div>
     </>
   );

@@ -7,11 +7,13 @@ export const Paragraph = ({
 }: {
   children: React.ReactNode;
   className?: string;
-  size?: "md" | "sm";
+  size?: "md" | "sm" | "lg";
 }) => {
-  return (
-    <p className={twMerge("text-base leading-relaxed text-[#5C5B61]", size === "sm" && "text-sm", className)}>
-      {children}
-    </p>
-  );
+  const sizeClasses = {
+    sm: "text-sm md:text-base",
+    md: "text-base md:text-lg",
+    lg: "text-lg md:text-xl"
+  };
+
+  return <p className={twMerge(sizeClasses[size], "leading-relaxed text-text-secondary", className)}>{children}</p>;
 };

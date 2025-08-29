@@ -43,22 +43,14 @@ export function YAxis({
   integerTicks = false,
   tickValues: tickValuesProp,
   tickFormat = (value: number) => value.toString(),
-  tickAxisSpacing = 8,
+  tickAxisSpacing = 8
 }: YAxisProps) {
-  const {
-    width,
-    height,
-    margin,
-    yScale,
-    minY,
-    leftAxisMargin,
-    setLeftAxisMargin,
-  } = useChartContext();
+  const { width, height, margin, yScale, minY, leftAxisMargin, setLeftAxisMargin } = useChartContext();
 
   const tickValues = useMemo(() => {
     if (tickValuesProp) return tickValuesProp;
 
-    const numTicks = numTicksProp ?? height < 350 ? 3 : 4;
+    const numTicks = (numTicksProp ?? height < 350) ? 3 : 4;
 
     return yScale.ticks(numTicks).filter((value) =>
       // Both of these reduce the number of ticks farther below numTicks, but this should only affect small ranges
@@ -68,19 +60,9 @@ export function YAxis({
 
   useLayoutEffect(() => {
     const maxWidth =
-      Math.max(
-        ...tickValues.map(
-          (v) => getStringWidth(tickFormat(v), { fontSize: 12 }) ?? 0
-        )
-      ) + tickAxisSpacing;
+      Math.max(...tickValues.map((v) => getStringWidth(tickFormat(v), { fontSize: 12 }) ?? 0)) + tickAxisSpacing;
     if ((leftAxisMargin ?? 0) < maxWidth) setLeftAxisMargin(maxWidth);
-  }, [
-    tickValues,
-    tickAxisSpacing,
-    leftAxisMargin,
-    tickFormat,
-    setLeftAxisMargin,
-  ]);
+  }, [tickValues, tickAxisSpacing, leftAxisMargin, tickFormat, setLeftAxisMargin]);
 
   return (
     <>
@@ -95,9 +77,9 @@ export function YAxis({
         tickLength={tickAxisSpacing}
         tickLabelProps={() => ({
           fontSize: 12,
-          fill: "#00000066",
+          fill: "var(--color-text-muted)",
           textAnchor: "end",
-          verticalAnchor: "middle",
+          verticalAnchor: "middle"
         })}
       />
       {showGridLines && (
@@ -107,18 +89,7 @@ export function YAxis({
               const y = yScale(value);
               if (y === height) return undefined; // Don't draw grid line at bottom of chart area
 
-              return (
-                <Line
-                  key={value.toString()}
-                  y1={y}
-                  y2={y}
-                  x1={0}
-                  x2={width}
-                  stroke="#00000026"
-                  strokeWidth={1}
-                  strokeDasharray={5}
-                />
-              );
+              return <Line key={value.toString()} y1={y} y2={y} x1={0} x2={width} className="chart-grid-line" />;
             })}
         </Group>
       )}

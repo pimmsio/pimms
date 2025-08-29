@@ -64,38 +64,38 @@ export default function AnalyticsAreaChart({
 
   const series = showABTesting
     ? [
-        // Variation A (Blue)
+        // Variation A (Primary)
         {
           id: "variation-a",
           valueAccessor: (d: any) => d.values[resource === "sales" ? `${saleUnit}A` : `${resource}A`] || 0,
           isActive: true,
-          colorClassName: "text-[#3970ff]",
-          strokeColor: "#3970ff",
-          fillColor: "#3970ff",
-          strokeWidth: 3,
-          fillOpacity: 0.1
+          colorClassName: "text-data-primary",
+          strokeColor: "var(--color-data-primary)",
+          fillColor: "var(--color-data-primary)",
+          strokeWidth: 2.5,
+          fillOpacity: 0.15
         },
-        // Variation B (Green)
+        // Variation B (Secondary)
         {
           id: "variation-b",
           valueAccessor: (d: any) => d.values[resource === "sales" ? `${saleUnit}B` : `${resource}B`] || 0,
           isActive: true,
-          colorClassName: "text-[#10B981]",
-          strokeColor: "#10B981",
-          fillColor: "#10B981",
-          strokeWidth: 3,
-          fillOpacity: 0.1
+          colorClassName: "text-data-secondary",
+          strokeColor: "var(--color-data-secondary)",
+          fillColor: "var(--color-data-secondary)",
+          strokeWidth: 2.5,
+          fillOpacity: 0.15
         },
-        // Variation C (Red)
+        // Variation C (Success/Money)
         {
           id: "variation-c",
           valueAccessor: (d: any) => d.values[resource === "sales" ? `${saleUnit}C` : `${resource}C`] || 0,
           isActive: true,
-          colorClassName: "text-[#EF4444]",
-          strokeColor: "#EF4444",
-          fillColor: "#EF4444",
-          strokeWidth: 3,
-          fillOpacity: 0.1
+          colorClassName: "text-data-success",
+          strokeColor: "var(--color-data-success)",
+          fillColor: "var(--color-data-success)",
+          strokeWidth: 2.5,
+          fillOpacity: 0.15
         }
       ]
     : [
@@ -103,30 +103,36 @@ export default function AnalyticsAreaChart({
           id: "clicks",
           valueAccessor: (d: any) => d.values.clicks,
           isActive: resource === "clicks",
-          colorClassName: "text-[#3970ff]",
-          strokeColor: "#3970ff",
-          fillColor: "#E7EEFF"
+          colorClassName: "text-data-primary",
+          strokeColor: "var(--color-data-primary)",
+          fillColor: "var(--color-data-primary)",
+          strokeWidth: 2.5,
+          fillOpacity: 0.15
         },
         {
           id: "leads",
           valueAccessor: (d: any) => d.values.leads,
           isActive: resource === "leads",
-          colorClassName: "text-[#3970ff]",
-          strokeColor: "#3970ff",
-          fillColor: "#E7EEFF"
+          colorClassName: "text-data-primary",
+          strokeColor: "var(--color-data-primary)",
+          fillColor: "var(--color-data-primary)",
+          strokeWidth: 2.5,
+          fillOpacity: 0.15
         },
         {
           id: "sales",
           valueAccessor: (d: any) => d.values[saleUnit],
           isActive: resource === "sales",
-          colorClassName: "text-[#3970ff]",
-          strokeColor: "#3970ff",
-          fillColor: "#E7EEFF"
+          colorClassName: "text-data-success",
+          strokeColor: "var(--color-data-success)",
+          fillColor: "var(--color-data-success)",
+          strokeWidth: 2.5,
+          fillOpacity: 0.15
         }
       ];
 
   return (
-    <div className="flex w-full items-center justify-center" style={{ height: `${height}px` }}>
+    <div className="chart-container flex w-full items-center justify-center p-4" style={{ height: `${height + 32}px` }}>
       <TimeSeriesChart
         data={chartData}
         series={series}
@@ -148,7 +154,7 @@ export default function AnalyticsAreaChart({
                   <>
                     <Fragment key="variation-a">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#3970ff] rounded-full"></div>
+                        <div className="w-2 h-2 bg-brand-primary rounded-full"></div>
                         <p className="capitalize text-neutral-600">Variation A</p>
                       </div>
                       <p className="text-right font-medium text-neutral-900">
@@ -161,7 +167,7 @@ export default function AnalyticsAreaChart({
                     </Fragment>
                     <Fragment key="variation-b">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#10B981] rounded-full"></div>
+                        <div className="w-2 h-2 bg-success rounded-full"></div>
                         <p className="capitalize text-neutral-600">Variation B</p>
                       </div>
                       <p className="text-right font-medium text-neutral-900">
@@ -174,7 +180,7 @@ export default function AnalyticsAreaChart({
                     </Fragment>
                     <Fragment key="variation-c">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-[#EF4444] rounded-full"></div>
+                        <div className="w-2 h-2 bg-error rounded-full"></div>
                         <p className="capitalize text-neutral-600">Variation C</p>
                       </div>
                       <p className="text-right font-medium text-neutral-900">

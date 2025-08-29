@@ -166,26 +166,20 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
         <BlurFade direction="left" delay={0.1} inView>
-          <LifetimeOfferFree />
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="up" delay={0.2} inView>
           <LifetimeOfferStarter />
         </BlurFade>
       </Column>
       <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
+        <BlurFade direction="up" delay={0.2} inView>
           <LifetimeOfferPro />
         </BlurFade>
       </Column>
+      <Column span={1}>
+        <BlurFade direction="right" delay={0.3} inView>
+          <OnDemandOfferBusiness />
+        </BlurFade>
+      </Column>
     </TwoColumns>
-  </Section>
-  
-  <Section>
-    <BlurFade direction="up" delay={0.4} inView>
-      <LifetimeOfferScale />
-    </BlurFade>
   </Section>
 </Slide>
 
@@ -312,15 +306,15 @@ Share performance data across your team to see what content works best. Starter 
   </Section>
 </Slide>
 
-<Slide variant="accent" id="free">
-  <Section variant="card">
+<Slide variant="primary" id="free" noPadding>
+  <Section variant="branded">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
-          <H2 align="left">Everything starts here</H2>
-          <Text size="lg">If you made it this far, it's time to grab 10 free links.</Text>
-          <CtaButton><Fast /> Start for free</CtaButton>
-          <CtaBottomText>10 smart links included • No credit card</CtaBottomText>
+          <H2 align="left" variant="white">Everything starts here</H2>
+          <Text size="lg" variant="white">If you made it this far, it's time to grab 10 free links.</Text>
+          <CtaButton variant="inverse"><Fast /> Start for free</CtaButton>
+          <CtaBottomText variant="white">10 smart links included • No credit card</CtaBottomText>
         </BlurFade>
       </Column>
       <Column span={1} order="text">

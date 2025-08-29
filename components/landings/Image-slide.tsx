@@ -12,13 +12,13 @@ const ImageSlide = () => {
       <Section id="video" className="max-w-7xl md:px-0 md:pt-4 md:pb-16">
         {/* Mobile: Simple card without padding border */}
         <div className="md:hidden">
-          <div className="bg-white rounded-2xl border border-gray-100 overflow-hidden">
+          <div className="bg-white rounded-3xl border border-gray-100 overflow-hidden">
             <Image
               src={`https://assets.pimms.io/landing-growth-insights-${locale}.webp?v=6`}
               alt="PIMMS Growth Insights Dashboard"
               width={1400}
               height={1050}
-              className="w-full h-full object-cover"
+              className="grayscale w-full h-full object-cover"
               priority
             />
           </div>
@@ -37,13 +37,13 @@ const ImageSlide = () => {
               backgroundSize: "100% 100%"
             }}
           >
-            <div className="bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-100 overflow-hidden transition-all duration-300">
+            <div className="bg-white/90 backdrop-blur-sm rounded-3xl border border-gray-100 overflow-hidden transition-all duration-300">
               <Image
                 src={`https://assets.pimms.io/landing-growth-insights-${locale}.webp?v=6`}
                 alt="PIMMS Growth Insights Dashboard"
                 width={1400}
                 height={1050}
-                className="w-full h-full object-cover"
+                className="grayscale w-full h-full object-cover"
                 priority
               />
             </div>

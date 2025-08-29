@@ -170,7 +170,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
     <Centered>
       @Label[variant="default"] Tarification
       ## Choisis le plan qui **correspond à tes besoins**
-      @Text[size="lg"] Démarre avec 10 liens gratuits. Upgrade quand tu en as besoin.
+      @Text[size="lg"] Offre à vie limitée • Plus de 1000 créateurs nous font confiance
     </Centered>
   </BlurFade>
   
@@ -178,26 +178,20 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
         <BlurFade direction="left" delay={0.1} inView>
-          @LifetimeOfferFree
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="up" delay={0.2} inView>
           @LifetimeOfferStarter
         </BlurFade>
       </Column>
       <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
+        <BlurFade direction="up" delay={0.2} inView>
           @LifetimeOfferPro
         </BlurFade>
       </Column>
+      <Column span={1}>
+        <BlurFade direction="right" delay={0.3} inView>
+          @LifetimeOfferScale
+        </BlurFade>
+      </Column>
     </TwoColumns>
-  </Section>
-
-  <Section>
-    <BlurFade direction="up" delay={0.4} inView>
-      @LifetimeOfferScale
-    </BlurFade>
   </Section>
 </Slide>
 
@@ -325,18 +319,18 @@ Partage les données avec ton équipe pour décider plus vite. Starter : 3 perso
   </Section>
 </Slide>
 
-<Slide variant="accent" id="free">
-  <Section variant="card">
+<Slide variant="primary" id="free" noPadding>
+  <Section variant="branded">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
-          @H2[align="left"] Tout commence ici
+          @H2[align="left" variant="white"] Tout commence ici
           
-          @Text[size="lg"] Si tu es arrivé jusque-là, c'est qu'il est temps de profiter de 10 liens gratuits.
+          @Text[size="lg" variant="white"] Si tu es arrivé jusque-là, c'est qu'il est temps de profiter de 10 liens gratuits.
 
-          @CtaButton <Fast /> Démarre gratuitement
+          @CtaButton[variant="inverse"] <Fast /> Démarre gratuitement
           
-          @CtaBottomText 10 liens intelligents inclus • Pas de CB requise
+          @CtaBottomText[variant="white"] 10 liens inclus • Pas de CB requise
         </BlurFade>
       </Column>
       <Column span={1} order="text">

@@ -68,8 +68,8 @@ export function PreActions({ language, filename, codeId }: PreActionsProps) {
       >
         {copied ? (
           <>
-            <Check className="w-3 h-3 text-[#3970ff]" />
-            <span className="text-[#3970ff]">Copied!</span>
+            <Check className="w-3 h-3 text-brand-primary" />
+            <span className="text-brand-primary">Copied!</span>
           </>
         ) : (
           <>

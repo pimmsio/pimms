@@ -3,7 +3,7 @@ import { cn } from "@/lib/utils";
 
 interface SlideProps {
   children: ReactNode;
-  variant?: "primary" | "secondary" | "accent";
+  variant?: "primary" | "secondary" | "accent" | "inverse";
   size?: "xs" | "sm" | "md" | "lg";
   spacing?: "none" | "bottom";
   maxWidth?: "full" | "6xl" | "4xl" | "2xl";
@@ -23,19 +23,20 @@ export const Slide = ({
   const variantClasses = {
     primary: "bg-background-secondary text-foreground",
     secondary: "bg-zinc-100",
-    accent: "bg-background-secondary text-foreground"
+    accent: "bg-background-secondary text-foreground",
+    inverse: "bg-transparent text-white"
   };
 
   const sizeClasses = {
-    xs: "py-4",
-    sm: "py-8",
-    md: "py-16",
-    lg: "py-24"
+    xs: "py-8",
+    sm: "py-12",
+    md: "py-20",
+    lg: "py-28"
   };
 
   const spacingClasses = {
     none: "",
-    bottom: "pb-16"
+    bottom: "pb-20"
   };
 
   const widthClasses = {
@@ -46,7 +47,11 @@ export const Slide = ({
   };
 
   return (
-    <section id={id} className={cn(variantClasses[variant], sizeClasses[size], spacingClasses[spacing], "w-full")}>
+    <section
+      id={id}
+      className={cn(variantClasses[variant], sizeClasses[size], spacingClasses[spacing], "w-full")}
+      style={variant === "inverse" ? { backgroundColor: "#08272e" } : undefined}
+    >
       <div className={cn(widthClasses[maxWidth], noPadding ? "" : "px-4 md:px-6")}>{children}</div>
     </section>
   );

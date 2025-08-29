@@ -14,16 +14,16 @@ export const ListItem = ({
   size?: "sm" | "md" | "lg";
 }) => {
   return (
-    <li className={twMerge("flex-row flex gap-2 items-center tracking-tight", className)}>
+    <li className={twMerge("flex-row flex gap-3 items-center tracking-tight", className)}>
       <div
         className={twMerge(
-          "w-fit h-fit rounded-full bg-[#3970ff]/10 text-[#3970ff]",
-          size === "sm" && "p-1",
-          size === "md" && "p-1.5",
-          size === "lg" && "p-2",
-          variant === "alert" && "bg-gray-100 text-[#5C5B61]",
-          variant === "success" && "bg-[#3970ff]/10 text-[#3970ff]",
-          variant === "primary" && "bg-[#08272E] text-white"
+          "w-fit h-fit rounded-full bg-brand-primary/10 text-brand-primary",
+          size === "sm" && "p-1.5",
+          size === "md" && "p-2",
+          size === "lg" && "p-2.5",
+          variant === "alert" && "bg-gray-100 text-text-secondary",
+          variant === "success" && "bg-brand-primary/10 text-brand-primary",
+          variant === "primary" && "bg-text-primary text-white"
         )}
       >
         {icon}

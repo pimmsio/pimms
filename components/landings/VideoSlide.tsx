@@ -44,7 +44,7 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
 
   return (
     <Section id="video">
-      <div className="relative overflow-hidden border-2 border-[#3970ff] rounded-2xl">
+      <div className="relative overflow-hidden border-2 border-brand-primary rounded-3xl">
         <div className="w-full grid grid-cols-1 grid-rows-1 aspect-video overflow-hidden">
           <iframe
             ref={iframeRef}
@@ -72,7 +72,7 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
             <video autoPlay loop muted playsInline className="w-full h-full object-cover z-0 pointer-events-none">
               <source src={cover} type="video/mp4" />
             </video>
-            <div className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto rounded-full z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-[#3970ff] ring-4 ring-[#E7EEFF]">
+            <div className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto rounded-full z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-brand-primary ring-4 ring-brand-primary-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="32"

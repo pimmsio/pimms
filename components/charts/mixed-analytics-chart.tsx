@@ -45,14 +45,18 @@ export default function MixedAnalyticsChart({
       id: "clicks",
       valueAccessor: (d: any) => d.values.clicks,
       isActive: true,
-      colorClassName: "text-[#3870FF]",
+      colorClassName: "text-data-primary",
+      strokeColor: "var(--color-data-primary)",
+      strokeWidth: 2.5,
       type: "line" as const
     },
     {
       id: "leads",
       valueAccessor: (d: any) => d.values.leads,
       isActive: true,
-      colorClassName: "text-[#FFD399]",
+      colorClassName: "text-data-secondary",
+      barFill: "var(--color-data-secondary)",
+      barOpacity: 1,
       type: "bar" as const,
       showHoverCircle: false, // Hide hover circle for bars
       excludeFromYScale: true // Exclude from Y-scale to not affect line chart scaling
@@ -61,7 +65,9 @@ export default function MixedAnalyticsChart({
       id: "sales",
       valueAccessor: (d: any) => d.values.saleAmount, // Use revenue amount, not sales count
       isActive: true,
-      colorClassName: "text-[#00F5B8]",
+      colorClassName: "text-data-success",
+      barFill: "var(--color-data-success)",
+      barOpacity: 1,
       type: "bar" as const,
       showHoverCircle: false, // Hide hover circle for bars
       excludeFromYScale: true // Exclude from Y-scale to not affect line chart scaling
@@ -69,7 +75,7 @@ export default function MixedAnalyticsChart({
   ];
 
   return (
-    <div className="flex w-full items-center justify-center" style={{ height: `${height}px` }}>
+    <div className="chart-container flex w-full items-center justify-center p-4" style={{ height: `${height + 32}px` }}>
       <TimeSeriesChart
         data={chartData}
         series={series}
@@ -98,7 +104,7 @@ export default function MixedAnalyticsChart({
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 bg-[#3870FF] rounded-full"></div>
+                    <div className="w-2.5 h-2.5 bg-data-primary rounded-full"></div>
                     <span className="text-neutral-600 text-xs">Clicks</span>
                   </div>
                   <span className="text-neutral-900 font-semibold text-sm">{nFormatter(clicks, { full: true })}</span>
@@ -106,7 +112,7 @@ export default function MixedAnalyticsChart({
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 bg-orange-300 rounded-full"></div>
+                    <div className="w-2.5 h-2.5 bg-data-secondary rounded-full"></div>
                     <span className="text-neutral-600 text-xs">Leads</span>
                   </div>
                   <span className="text-neutral-900 font-semibold text-sm">{nFormatter(leads, { full: true })}</span>
@@ -114,7 +120,7 @@ export default function MixedAnalyticsChart({
 
                 <div className="flex items-center justify-between">
                   <div className="flex items-center gap-2">
-                    <div className="w-2.5 h-2.5 bg-[#00F5B8] rounded-full"></div>
+                    <div className="w-2.5 h-2.5 bg-data-success rounded-full"></div>
                     <span className="text-neutral-600 text-xs">Revenue</span>
                   </div>
                   <span className="text-neutral-900 font-semibold text-sm">

@@ -87,7 +87,7 @@ function MdxLink({ href, children }: { href?: string; children: React.ReactNode 
     return (
       <Link
         href={getCanonicalLink(locale, href)}
-        className="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 transition-colors duration-200 font-medium"
+        className="text-vibrant-blue hover:text-brand-primary-800 underline decoration-2 underline-offset-2 transition-colors duration-200 font-medium"
       >
         {children}
       </Link>
@@ -99,7 +99,7 @@ function MdxLink({ href, children }: { href?: string; children: React.ReactNode 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-blue-600 hover:text-blue-800 underline decoration-2 underline-offset-2 hover:decoration-blue-800 transition-colors duration-200 font-medium inline-flex items-center gap-1"
+      className="text-vibrant-blue hover:text-brand-primary-800 underline decoration-2 underline-offset-2 hover:decoration-brand-primary-800 transition-colors duration-200 font-medium inline-flex items-center gap-1"
     >
       {children}
     </a>
@@ -162,12 +162,12 @@ const components = {
     );
   },
   blockquote: ({ children }: { children: React.ReactNode }) => (
-    <blockquote className="my-6 sm:my-8 border-l-4 border-[#3970ff] bg-gradient-to-r from-[#3970ff]/5 to-transparent p-4 sm:p-5 rounded-r-xl">
+    <blockquote className="my-6 sm:my-8 border-l-4 border-brand-primary bg-gradient-primary-soft p-4 sm:p-5 rounded-r-xl">
       <div className="text-gray-700 italic text-base sm:text-lg leading-relaxed">{children}</div>
     </blockquote>
   ),
   ul: ({ children }: { children: React.ReactNode }) => (
-    <ul className="my-5 sm:my-6 space-y-2.5 list-disc list-outside ml-1 text-gray-600 text-base marker:text-[#3970ff] pl-1">
+    <ul className="my-5 sm:my-6 space-y-2.5 list-disc list-outside ml-1 text-gray-600 text-base marker:text-brand-primary pl-1">
       {children}
     </ul>
   ),
@@ -254,12 +254,12 @@ export default function BlogPost({ params }: Props) {
   return (
     <>
       {/* Header section */}
-      <Section className="py-8 sm:py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50/30 to-white">
+      <Section className="py-8 sm:py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-gradient-background-soft">
         {/* Breadcrumb */}
-        <nav className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-[#5C5B61] mb-4 sm:mb-6 overflow-x-auto scrollbar-hide">
+        <nav className="flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-text-secondary mb-4 sm:mb-6 overflow-x-auto scrollbar-hide">
           <Link
             href={getCanonicalLink(locale, "/articles")}
-            className="hover:text-[#3970ff] transition-colors whitespace-nowrap font-medium"
+            className="hover:text-brand-primary transition-colors whitespace-nowrap font-medium"
           >
             {t("breadcrumb.articles")}
           </Link>
@@ -268,7 +268,7 @@ export default function BlogPost({ params }: Props) {
             <span key={category} className="flex items-center gap-1.5 sm:gap-2">
               <Link
                 href={getCanonicalLink(locale, `/articles/category/${category}`)}
-                className="hover:text-[#3970ff] transition-colors capitalize whitespace-nowrap font-medium"
+                className="hover:text-brand-primary transition-colors capitalize whitespace-nowrap font-medium"
               >
                 {category.replace("-", " ")}
               </Link>
@@ -280,17 +280,17 @@ export default function BlogPost({ params }: Props) {
         </nav>
 
         {/* Title */}
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#08272E] mb-3 sm:mb-4 max-w-4xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-text-primary mb-3 sm:mb-4 max-w-4xl">
           {post.metadata.title}
         </h1>
 
         {/* Subtitle */}
-        <p className="text-base sm:text-lg text-[#5C5B61] mb-4 sm:mb-6 max-w-3xl leading-relaxed">
+        <p className="text-base sm:text-lg text-text-secondary mb-4 sm:mb-6 max-w-3xl leading-relaxed">
           {post.metadata.summary}
         </p>
 
         {/* Meta info */}
-        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#5C5B61]">
+        <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-text-secondary">
           {author && (
             <div className="flex items-center gap-2">
               <Author username={author.slug} size="sm" />
@@ -326,22 +326,22 @@ export default function BlogPost({ params }: Props) {
                   "prose prose-base lg:prose-lg max-w-none",
                   // Headings
                   "prose-headings:font-bold",
-                  "prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:leading-tight prose-h2:mt-8 sm:prose-h2:mt-10 prose-h2:mb-3 sm:prose-h2:mb-4 prose-h2:text-[#08272E]",
-                  "prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:leading-snug prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4 prose-h3:text-[#08272E]",
-                  "prose-h4:text-lg sm:prose-h4:text-xl prose-h4:leading-snug prose-h4:mt-5 sm:prose-h4:mt-6 prose-h4:mb-2.5 sm:prose-h4:mb-3 prose-h4:text-[#08272E] prose-h4:font-semibold",
+                  "prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:leading-tight prose-h2:mt-8 sm:prose-h2:mt-10 prose-h2:mb-3 sm:prose-h2:mb-4 prose-h2:text-text-primary",
+                  "prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:leading-snug prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4 prose-h3:text-text-primary",
+                  "prose-h4:text-lg sm:prose-h4:text-xl prose-h4:leading-snug prose-h4:mt-5 sm:prose-h4:mt-6 prose-h4:mb-2.5 sm:prose-h4:mb-3 prose-h4:text-text-primary prose-h4:font-semibold",
                   // Paragraphs
-                  "prose-p:text-[#5C5B61] prose-p:leading-relaxed prose-p:mb-4 sm:prose-p:mb-5",
+                  "prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-4 sm:prose-p:mb-5",
                   // Lists
                   "prose-ul:my-5 sm:prose-ul:my-6 prose-ol:my-5 sm:prose-ol:my-6",
-                  "prose-li:text-[#5C5B61] prose-li:mb-2 prose-li:leading-relaxed",
+                  "prose-li:text-text-secondary prose-li:mb-2 prose-li:leading-relaxed",
                   // Inline code
                   "prose-code:text-sm prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none prose-code:bg-transparent prose-code:text-gray-800",
                   // Blockquote
-                  "prose-blockquote:border-l-4 prose-blockquote:border-[#3970ff] prose-blockquote:bg-gradient-to-r prose-blockquote:from-[#3970ff]/5 prose-blockquote:to-transparent prose-blockquote:p-4 sm:prose-blockquote:p-5 prose-blockquote:my-6 sm:prose-blockquote:my-8 prose-blockquote:italic prose-blockquote:rounded-r-xl",
+                  "prose-blockquote:border-l-4 prose-blockquote:border-brand-primary prose-blockquote:bg-gradient-primary-soft prose-blockquote:p-4 sm:prose-blockquote:p-5 prose-blockquote:my-6 sm:prose-blockquote:my-8 prose-blockquote:italic prose-blockquote:rounded-r-xl",
                   // Links
-                  "prose-a:text-[#3970ff] prose-a:no-underline hover:prose-a:underline prose-a:font-medium",
+                  "prose-a:text-brand-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium",
                   // Strong
-                  "prose-strong:font-semibold prose-strong:text-[#08272E]",
+                  "prose-strong:font-semibold prose-strong:text-text-primary",
                   // HR
                   "prose-hr:my-8 sm:prose-hr:my-10 prose-hr:border-gray-200",
                   // Tighten default margins for first/last child in article
@@ -386,7 +386,7 @@ export default function BlogPost({ params }: Props) {
               {author && (
                 <>
                   <div className="mb-4 sm:mb-6">
-                    <h3 className="text-xs font-semibold text-[#08272E] uppercase tracking-wide mb-3 sm:mb-4">
+                    <h3 className="text-xs font-semibold text-text-primary uppercase tracking-wide mb-3 sm:mb-4">
                       {t("writtenBy")}
                     </h3>
                     <div className="flex items-center gap-3">
@@ -399,8 +399,8 @@ export default function BlogPost({ params }: Props) {
                         src={author.image}
                       />
                       <div>
-                        <p className="text-sm sm:text-base font-semibold text-[#08272E]">{author.name}</p>
-                        <p className="text-xs sm:text-sm text-[#5C5B61]">{author.role}</p>
+                        <p className="text-sm sm:text-base font-semibold text-text-primary">{author.name}</p>
+                        <p className="text-xs sm:text-sm text-text-secondary">{author.role}</p>
                       </div>
                     </div>
                   </div>
@@ -409,7 +409,7 @@ export default function BlogPost({ params }: Props) {
               )}
 
               <div>
-                <h3 className="text-xs font-bold text-[#08272E] uppercase tracking-wide mb-4">
+                <h3 className="text-xs font-bold text-text-primary uppercase tracking-wide mb-4">
                   {t("tableOfContents")}
                 </h3>
                 <TableOfContents content={post.content} />
@@ -420,12 +420,12 @@ export default function BlogPost({ params }: Props) {
       </Section>
 
       {relatedArticles.length > 0 && (
-        <Section className="py-10 sm:py-14 md:py-20 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-white to-gray-50/50">
+        <Section className="py-10 sm:py-14 md:py-20 px-4 md:px-6 lg:px-8 bg-gradient-background-reverse">
           <div className="text-center mb-8 sm:mb-10">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#08272E] mb-2 sm:mb-3">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-text-primary mb-2 sm:mb-3">
               {t("continueReading")}
             </h2>
-            <p className="text-base sm:text-lg text-[#5C5B61]">{t("exploreMore")}</p>
+            <p className="text-base sm:text-lg text-text-secondary">{t("exploreMore")}</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
@@ -443,21 +443,23 @@ export default function BlogPost({ params }: Props) {
                     width={1200}
                     height={630}
                   />
-                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-[#3970ff] text-xs font-semibold px-3 py-1.5 rounded-full capitalize shadow-sm">
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-brand-primary text-xs font-semibold px-3 py-1.5 rounded-full capitalize shadow-sm">
                     {post.metadata.categories[0].replace("-", " ")}
                   </div>
                 </div>
 
                 <div className="p-5 sm:p-6">
-                  <h3 className="font-bold text-lg sm:text-xl text-[#08272E] group-hover:text-[#3970ff] transition-colors mb-2.5 line-clamp-2">
+                  <h3 className="font-bold text-lg sm:text-xl text-text-primary group-hover:text-brand-primary transition-colors mb-2.5 line-clamp-2">
                     {post.metadata.title}
                   </h3>
-                  <p className="text-[#5C5B61] line-clamp-2 mb-4 text-sm sm:text-base leading-relaxed">
+                  <p className="text-text-secondary line-clamp-2 mb-4 text-sm sm:text-base leading-relaxed">
                     {post.metadata.summary}
                   </p>
-                  <div className="flex items-center justify-between text-xs sm:text-sm text-[#5C5B61]">
+                  <div className="flex items-center justify-between text-xs sm:text-sm text-text-secondary">
                     <span className="font-medium">{formatDate(post.metadata.updatedAt)}</span>
-                    <span className="text-[#3970ff] opacity-0 group-hover:opacity-100 transition-opacity">Read →</span>
+                    <span className="text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                      Read →
+                    </span>
                   </div>
                 </div>
               </Link>

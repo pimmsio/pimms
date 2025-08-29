@@ -260,18 +260,18 @@ export const LinkedinPost = ({
               </div>
             </>
           )}
-          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-[#3970ff] cursor-pointer">
+          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-brand-primary cursor-pointer">
             {likes}
           </div>
         </div>
         <div className="flex flex-row">
-          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-[#3970ff] cursor-pointer">
+          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-brand-primary cursor-pointer">
             {comments} comments
           </div>
-          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-[#3970ff] cursor-pointer">
+          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-brand-primary cursor-pointer">
             ·
           </div>
-          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-[#3970ff] cursor-pointer">
+          <div className="text-[12px] leading-[14px] font-normal pl-[4px] text-black/60 hover:underline hover:text-brand-primary cursor-pointer">
             {shares} shares
           </div>
         </div>

@@ -11,7 +11,7 @@ export const H2 = ({ children, className }: { children: React.ReactNode; classNa
     <h2
       className={twMerge(
         bricolage_grotesque.className,
-        "text-3xl md:text-4xl font-extrabold text-[#08272E] text-center leading-tight text-balance",
+        "text-3xl md:text-4xl lg:text-5xl font-extrabold text-text-primary text-center !leading-tight text-balance",
         className
       )}
     >

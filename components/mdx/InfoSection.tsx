@@ -7,24 +7,24 @@ interface InfoSectionProps {
 export function InfoSection({ type = "info", title, children }: InfoSectionProps) {
   const styles = {
     info: {
-      bg: "bg-[#3970ff]/5",
-      border: "border-[#3970ff]/20",
+      bg: "bg-brand-primary/5",
+      border: "border-brand-primary/20",
       icon: "💡",
-      titleColor: "text-[#3970ff]",
+      titleColor: "text-brand-primary",
       contentColor: "text-gray-700"
     },
     warning: {
-      bg: "bg-amber-50/50",
-      border: "border-amber-200/50",
+      bg: "bg-warning-light/50",
+      border: "border-warning-border/50",
       icon: "⚠️",
-      titleColor: "text-amber-700",
+      titleColor: "text-warning",
       contentColor: "text-gray-700"
     },
     tip: {
-      bg: "bg-emerald-50/50",
-      border: "border-emerald-200/50",
+      bg: "bg-success-light/50",
+      border: "border-success-border/50",
       icon: "✨",
-      titleColor: "text-emerald-700",
+      titleColor: "text-success",
       contentColor: "text-gray-700"
     }
   };
@@ -32,14 +32,14 @@ export function InfoSection({ type = "info", title, children }: InfoSectionProps
   const style = styles[type];
 
   return (
-    <div className={`${style.bg} ${style.border} border rounded-lg sm:rounded-xl p-4 sm:p-5 my-6 sm:my-8`}>
+    <div className={`${style.bg} ${style.border} border rounded-xl p-6 my-8 sm:my-12`}>
       {title && (
-        <h4 className={`${style.titleColor} font-semibold text-sm sm:text-base mb-2 flex items-center gap-2`}>
-          <span className="text-base sm:text-lg">{style.icon}</span>
+        <h4 className={`${style.titleColor} font-semibold text-base sm:text-lg mb-4 flex items-center gap-3`}>
+          <span className="text-lg sm:text-xl">{style.icon}</span>
           {title}
         </h4>
       )}
-      <div className={`text-xs sm:text-sm ${style.contentColor} leading-relaxed`}>{children}</div>
+      <div className={`text-base ${style.contentColor} leading-relaxed`}>{children}</div>
     </div>
   );
 }

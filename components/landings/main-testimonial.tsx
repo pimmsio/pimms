@@ -9,19 +9,19 @@ export default function MainTestimonial({ tkey }: { tkey: string }) {
 
   return (
     <Section id="main-testimonial">
-      <div className="bg-white rounded-2xl border border-gray-200 p-8 lg:p-12 text-center max-w-3xl mx-auto">
-        <div className="space-y-6">
+      <div className="bg-white rounded-3xl border border-gray-200 p-8 lg:p-12 text-center max-w-3xl mx-auto">
+        <div className="space-y-8">
           {/* Rating Stars */}
           <div className="flex justify-center gap-1">
             {Array.from({ length: 5 }, (_, index) => (
-              <Star key={index} className="w-6 h-6 text-[#3970ff] fill-current" />
+              <Star key={index} className="w-6 h-6 text-brand-primary fill-current" />
             ))}
           </div>
           {/* Testimonial Quote */}
           <div className="max-w-2xl mx-auto">
-            <Paragraph className="text-xl text-[#08272E] font-medium">
+            <Paragraph className="text-xl text-text-primary font-medium">
               {t.rich("main_testimonial.text", {
-                strong: (chunks) => <span className="font-bold text-[#3970ff]">{chunks}</span>
+                strong: (chunks) => <span className="font-bold text-brand-primary">{chunks}</span>
               })}
             </Paragraph>
           </div>
@@ -34,14 +34,14 @@ export default function MainTestimonial({ tkey }: { tkey: string }) {
                 className="w-14 h-14"
               />
               <div className="text-left">
-                <p className="font-bold text-[#08272E] text-lg">{t("main_testimonial.author_name")}</p>
-                <p className="text-[#5C5B61] text-sm">{t("main_testimonial.author_title")}</p>
+                <p className="font-bold text-text-primary text-lg leading-tight">{t("main_testimonial.author_name")}</p>
+                <p className="text-text-secondary text-sm mt-1">{t("main_testimonial.author_title")}</p>
               </div>
             </div>
           </div>
           {/* Trust indicators */}
           <div className="pt-2">
-            <div className="inline-flex items-center text-xs font-semibold text-[#08272E] bg-gray-100 px-4 py-2 rounded-full uppercase tracking-wider">
+            <div className="inline-flex items-center text-xs font-semibold text-text-primary bg-gray-100 px-4 py-2 rounded-full uppercase tracking-wider">
               {t("main_testimonial.verified")}
             </div>
           </div>

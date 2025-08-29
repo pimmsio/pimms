@@ -18,7 +18,7 @@ export default function CtaButtonBig({
   type: string;
   className?: string;
   value?: string | React.ReactNode;
-  variant?: "default" | "secondary" | "outline";
+  variant?: "default" | "secondary" | "outline" | "inverse";
   size?: "default" | "sm" | "lg" | "xl";
   href?: string;
 }) {

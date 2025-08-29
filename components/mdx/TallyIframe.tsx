@@ -3,7 +3,13 @@
 import { useEffect } from "react";
 import { ExternalLink, FileText } from "lucide-react";
 
-export default function TallyIframe({ src = "https://tally.so/embed/3jo7Wx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1", title = "Report Abuse" }: { src?: string; title?: string }) {
+export default function TallyIframe({
+  src = "https://tally.so/embed/3jo7Wx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",
+  title = "Report Abuse"
+}: {
+  src?: string;
+  title?: string;
+}) {
   useEffect(() => {
     const script = document.createElement("script");
     script.innerHTML = `
@@ -15,10 +21,10 @@ export default function TallyIframe({ src = "https://tally.so/embed/3jo7Wx?align
   return (
     <div className="my-4 sm:my-6 md:my-8 rounded-lg sm:rounded-xl overflow-hidden border border-gray-200 bg-white">
       {/* Header */}
-      <div className="bg-[#3970ff]/5 border-b border-gray-200 px-6 py-4">
+      <div className="bg-brand-primary/5 border-b border-gray-200 px-6 py-4">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-[#3970ff]/10 rounded-full flex items-center justify-center">
-            <FileText className="w-5 h-5 text-[#3970ff]" />
+          <div className="w-10 h-10 bg-brand-primary/10 rounded-full flex items-center justify-center">
+            <FileText className="w-5 h-5 text-brand-primary" />
           </div>
           <div>
             <h3 className="font-semibold text-gray-900 text-base">Interactive Form</h3>
@@ -32,13 +38,7 @@ export default function TallyIframe({ src = "https://tally.so/embed/3jo7Wx?align
 
       {/* Iframe container */}
       <div className="aspect-video w-full bg-gray-50">
-        <iframe
-          data-tally-src={src}
-          loading="lazy"
-          width="100%"
-          height="659"
-          title={title}
-        ></iframe>
+        <iframe data-tally-src={src} loading="lazy" width="100%" height="659" title={title}></iframe>
       </div>
     </div>
   );

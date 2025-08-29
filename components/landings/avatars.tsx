@@ -40,7 +40,7 @@ export const Avatars = ({ children }: AvatarsProps) => {
       direction="up"
       delay={0.2}
       inView={false}
-      className="flex flex-col items-center justify-center gap-2 mt-10"
+      className="flex flex-col items-center justify-center gap-3 mt-12"
     >
       <li className="flex items-center gap-2 pt-2">
         <AvatarsLaurier direction="left" />
@@ -59,7 +59,7 @@ export const Avatars = ({ children }: AvatarsProps) => {
         </div>
         <AvatarsLaurier direction="right" />
       </li>
-      {children && <div className="text-sm text-[#5C5B61] font-medium">{children}</div>}
+      {children && <div className="text-base text-text-secondary font-medium">{children}</div>}
     </BlurFade>
   );
 };

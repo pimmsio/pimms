@@ -109,7 +109,7 @@ const LogosCircle: React.FC = () => {
                 <img
                   src={outerLogos[index]?.src}
                   alt={outerLogos[index]?.alt}
-                  className="w-16 h-16 min-w-16 max-w-16 object-contain p-2 touch-none pointer-events-none"
+                  className="grayscale hover:grayscale-0 w-16 h-16 min-w-16 max-w-16 object-contain p-2 touch-none pointer-events-none"
                 />
               </motion.div>
             </div>
@@ -138,7 +138,7 @@ const LogosCircle: React.FC = () => {
                 <img
                   src={innerLogos[index]?.src}
                   alt={innerLogos[index]?.alt}
-                  className="w-12 h-12 min-w-12 max-w-12 object-contain p-1.5 touch-none pointer-events-none"
+                  className="grayscale w-12 h-12 min-w-12 max-w-12 object-contain p-1.5 touch-none pointer-events-none"
                 />
               </motion.div>
             </div>
@@ -146,13 +146,11 @@ const LogosCircle: React.FC = () => {
         </motion.div>
 
         <div className="text-center max-w-sm z-20 px-4">
-          <Paragraph className="font-semibold text-[#3970ff] mb-4">{tcommon("logos_circle.title")}</Paragraph>
-          <H2 className="mb-6">
+          <H2 className="mb-8">
             {tcommon.rich("logos_circle.heading", {
-              strong: (chunks) => <span className="text-[#3970ff]">{chunks}</span>
+              strong: (chunks) => <span className="text-brand-primary">{chunks}</span>
             })}
           </H2>
-          <Paragraph className="text-lg mb-8">{tcommon("logos_circle.description")}</Paragraph>
           <div>
             <CtaButtonBig
               type="sales"

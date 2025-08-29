@@ -6,7 +6,7 @@ export const AnimatedCentered = ({ children }: { children: ReactNode }) => (
     direction="up"
     delay={0.8}
     inView={false}
-    className="flex flex-col items-center text-center space-y-4 mb-12 max-w-4xl mx-auto px-4 w-full"
+    className="flex flex-col items-center text-center space-y-6 mb-16 max-w-4xl mx-auto px-4 w-full"
   >
     {children}
   </BlurFade>

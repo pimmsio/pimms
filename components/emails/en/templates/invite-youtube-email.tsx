@@ -1,24 +1,8 @@
-import {
-  Body,
-  Container,
-  Head,
-  Hr,
-  Html,
-  Img,
-  Link,
-  Preview,
-  Section,
-  Tailwind,
-  Text,
-} from "@react-email/components";
+import { Body, Container, Head, Hr, Html, Img, Link, Preview, Section, Tailwind, Text } from "@react-email/components";
 import { Footer } from "../components/footer";
 import { WORDMARK_BLACK } from "@/app/constants";
 
-export function InviteYoutubeEmail({
-  email = "alexandre@pimms.io",
-}: {
-  email: string;
-}) {
+export function InviteYoutubeEmail({ email = "alexandre@pimms.io" }: { email: string }) {
   return (
     <Html>
       <Head />
@@ -44,7 +28,7 @@ export function InviteYoutubeEmail({
 
             <Section className="my-8">
               <Link
-                className="px-5 py-3 bg-[#dc2e65] text-white font-semibold outline outline-[6px] transition outline-[#ffeaf1] cursor-pointer no-underline rounded-xl"
+                className="px-5 py-3 bg-[#dc2e65] text-white font-semibold outline-[6px] outline-[#ffeaf1] cursor-pointer no-underline rounded-xl transition"
                 href="https://app.pimms.io/register"
                 target="_blank"
                 rel="noreferrer"
@@ -53,20 +37,17 @@ export function InviteYoutubeEmail({
               </Link>
             </Section>
 
-            <Hr className="mx-0 mt-8mb-6 w-full border border-neutral-200" />
+            <Hr className="mx-0 mt-8 mb-6 w-full border border-neutral-200" />
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
-              I’m going to help you grow your YouTube channel with a unique
-              concept:{" "}
+              I’m going to help you grow your YouTube channel with a unique concept:{" "}
               <Link href="https://pimms.io" className="text-black no-underline">
                 pim.ms
               </Link>{" "}
               direct links.
             </Text>
 
-            <Text className="mt-4 text-sm font-bold leading-6 text-neutral-600">
-              How does it work?
-            </Text>
+            <Text className="mt-4 text-sm font-bold leading-6 text-neutral-600">How does it work?</Text>
 
             <Text className="mt-4 text-sm font-light leading-6 text-neutral-600">
               - Copy and paste standard links (e.g.,{" "}
@@ -93,19 +74,18 @@ export function InviteYoutubeEmail({
               <Link href="https://pimms.io" className="text-black no-underline">
                 pim.ms
               </Link>{" "}
-              link concept at{" "}
-              <Link href="https://pim.ms/youtube">pim.ms/youtube</Link>
+              link concept at <Link href="https://pim.ms/youtube">pim.ms/youtube</Link>
             </Text>
 
             <Hr className="mx-0 my-6 w-full border border-neutral-200" />
             <Text className="text-xs font-light leading-6 text-neutral-600">
-              My name is Alexandre Sarfati, and I created PIMMS. This is an
-              automated email, but if you reply, I’ll read it personally.
+              My name is Alexandre Sarfati, and I created PIMMS. This is an automated email, but if you reply, I’ll read
+              it personally.
             </Text>
 
             <Text className="text-xs font-light leading-6 text-neutral-600">
-              If you have any feedback or comments about our product, I’d love
-              to hear them. Thanks in advance, Alexandre.
+              If you have any feedback or comments about our product, I’d love to hear them. Thanks in advance,
+              Alexandre.
             </Text>
 
             <Footer email={email} marketing />

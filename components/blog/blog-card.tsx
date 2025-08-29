@@ -29,20 +29,20 @@ export default function BlogCard({ slug, metadata }: { slug: string; metadata: P
           width={1200}
           height={630}
         />
-        <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-[#3970ff] text-xs font-semibold px-3 py-1.5 rounded-full capitalize shadow-sm">
+        <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm text-brand-primary text-xs font-semibold px-4 py-2 rounded-full capitalize shadow-sm">
           {/* Category badge */}
           {metadata.categories[0].replace("-", " ")}
         </div>
       </div>
 
-      <div className="p-5 sm:p-6">
-        <h3 className="font-bold text-lg sm:text-xl text-[#08272E] group-hover:text-[#3970ff] transition-colors line-clamp-2 mb-2.5">
+      <div className="p-6">
+        <h3 className="font-bold text-lg sm:text-xl text-text-primary group-hover:text-brand-primary transition-colors line-clamp-2 mb-4">
           {title}
         </h3>
 
-        <p className="text-sm sm:text-base text-[#5C5B61] line-clamp-2 mb-4 leading-relaxed">{summary}</p>
+        <p className="text-sm sm:text-base text-text-secondary line-clamp-2 mb-6 leading-relaxed">{summary}</p>
 
-        <div className="flex items-center justify-between text-xs sm:text-sm text-[#5C5B61]">
+        <div className="flex items-center justify-between text-xs sm:text-sm text-text-secondary">
           <div className="flex items-center gap-2.5 sm:gap-3">
             {author && <Author username={author} imageOnly size="sm" noLink />}
             <div className="flex items-center gap-1.5">
@@ -50,7 +50,7 @@ export default function BlogCard({ slug, metadata }: { slug: string; metadata: P
               <span className="font-medium">{formatDate(publishedAt)}</span>
             </div>
           </div>
-          <ArrowUpRight className="w-4 h-4 text-[#3970ff] opacity-0 group-hover:opacity-100 transition-opacity" />
+          <ArrowUpRight className="w-4 h-4 text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity" />
         </div>
       </div>
     </Link>

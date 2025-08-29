@@ -8,26 +8,44 @@ const inter = Inter({ subsets: ["latin"], style: ["italic"] });
 
 // Typography components
 export const H1 = ({ children }: { children: ReactNode }) => <>{children}</>;
-export const H2 = ({ children, align = "center" }: { children: ReactNode; align?: "center" | "left" }) => (
-  <BaseH2 className={align === "left" ? "text-left" : ""}>{children}</BaseH2>
-);
+export const H2 = ({
+  children,
+  align = "center",
+  variant = "default"
+}: {
+  children: ReactNode;
+  align?: "center" | "left";
+  variant?: "default" | "white";
+}) => {
+  const colorClass = variant === "white" ? "text-white" : "";
+  return <BaseH2 className={`${align === "left" ? "text-left" : ""} ${colorClass}`}>{children}</BaseH2>;
+};
 export const H3 = ({ children }: { children: ReactNode }) => (
-  <h3 className="text-2xl font-bold text-[#08272E] mb-4">{children}</h3>
+  <h3 className="text-2xl md:text-3xl font-bold text-text-primary mb-6 leading-tight">{children}</h3>
 );
 export const H4 = ({ children }: { children: ReactNode }) => (
-  <h4 className="font-semibold text-lg text-[#08272E] mb-3">{children}</h4>
+  <h4 className="text-xl md:text-2xl font-semibold text-text-primary mb-4 leading-tight">{children}</h4>
 );
 export const Summary = ({ children }: { children: ReactNode }) => <>{children}</>;
-export const Text = ({ children, size = "base" }: { children: ReactNode; size?: "base" | "lg" }) => {
+export const Text = ({
+  children,
+  size = "base",
+  variant = "default"
+}: {
+  children: ReactNode;
+  size?: "base" | "lg";
+  variant?: "default" | "white";
+}) => {
   const sizeClasses = {
-    base: "",
-    lg: "text-lg"
+    base: "text-base md:text-lg",
+    lg: "text-lg md:text-xl"
   };
 
   // Default color is muted (gray-600), lg size gets mb-8
-  const spacing = size === "lg" ? "mb-8" : "";
+  const spacing = size === "lg" ? "mb-8" : "mb-4";
+  const colorClass = variant === "white" ? "text-white/90" : "text-gray-600";
 
-  return <div className={`${sizeClasses[size]} text-gray-600 ${spacing} leading-relaxed mb-2`}>{children}</div>;
+  return <div className={`${sizeClasses[size]} ${colorClass} ${spacing} leading-relaxed`}>{children}</div>;
 };
 export const SmallText = ({ children }: { children: ReactNode }) => <>{children}</>;
 export const Label = ({
@@ -82,17 +100,17 @@ export const Label = ({
   };
 
   const variantClasses: Record<string, string> = {
-    default: "bg-gray-100 text-gray-900 border border-gray-200",
+    default: "bg-gray-50 text-gray-900 border border-gray-200",
     problem: "bg-gray-50 text-gray-900 border border-gray-200",
-    solution: "bg-green-50 text-green-700 border border-green-200",
-    why: "bg-blue-50 text-blue-700 border border-blue-200",
+    solution: "bg-success-light/20 text-success border border-success-border/50",
+    why: "bg-info-light/20 text-info border border-info-border/50",
     none: "bg-transparent text-gray-900"
   };
 
   return (
-    <div className="inline-flex items-center justify-center mb-6">
+    <div className="inline-flex items-center justify-center mb-8">
       <div
-        className={`rounded-full flex items-center justify-center gap-2 uppercase text-xs font-semibold px-3 py-1.5 ${variantClasses[variant]}`}
+        className={`rounded-full flex items-center justify-center gap-2 uppercase text-xs font-semibold px-4 py-2 ${variantClasses[variant]}`}
       >
         {variant !== "none" && icons[variant]}
         {children}
@@ -109,7 +127,7 @@ export const List = ({
   children: ReactNode;
   layout?: "vertical" | "horizontal";
 }) => {
-  const layoutClasses = layout === "horizontal" ? "grid gap-4 md:grid-cols-2 lg:grid-cols-3" : "space-y-4";
+  const layoutClasses = layout === "horizontal" ? "grid gap-6 md:grid-cols-2 lg:grid-cols-3" : "space-y-6";
 
   return <div className={layoutClasses}>{children}</div>;
 };
@@ -123,13 +141,13 @@ export const Item = ({
 }) => {
   if (variant === "problem") {
     const X = () => (
-      <svg className="w-5 h-5 text-rose-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-vibrant-rose" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
       </svg>
     );
 
     return (
-      <div className="rounded-xl flex items-start gap-4 p-4 bg-gray-50 border border-gray-200">
+      <div className="rounded-xl flex items-start gap-4 p-6 bg-gray-50 border border-gray-200">
         <div className="rounded-full flex-shrink-0 w-6 h-6 bg-gray-100 flex items-center justify-center mt-0.5">
           <X />
         </div>
@@ -140,14 +158,14 @@ export const Item = ({
 
   if (variant === "solution") {
     const Check = () => (
-      <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-vibrant-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
       </svg>
     );
 
     return (
-      <div className="rounded-xl flex items-start gap-4 p-4 bg-green-50 border border-green-200">
-        <div className="rounded-full flex-shrink-0 w-6 h-6 bg-green-100 flex items-center justify-center mt-0.5">
+      <div className="rounded-xl flex items-start gap-4 p-6 bg-success-light border border-success-border">
+        <div className="rounded-full flex-shrink-0 w-6 h-6 bg-success-light flex items-center justify-center mt-0.5">
           <Check />
         </div>
         <p className="text-gray-900 font-medium flex-1 leading-relaxed">{children}</p>
@@ -163,7 +181,9 @@ export const Feature = ({ children }: { children: ReactNode }) => <>{children}</
 export const FeatureTitle = ({ children }: { children: ReactNode }) => <>{children}</>;
 export const FeatureText = ({ children }: { children: ReactNode }) => <>{children}</>;
 
-export const FeatureCard = ({ children }: { children: ReactNode }) => <div className="text-center">{children}</div>;
+export const FeatureCard = ({ children }: { children: ReactNode }) => (
+  <div className="text-center space-y-4 p-6">{children}</div>
+);
 
 export const IconBox = ({
   icon
@@ -171,9 +191,9 @@ export const IconBox = ({
   icon: "zap" | "globe" | "share" | "target" | "mobile" | "chart" | "link" | "integration" | "check";
 }) => {
   const icons = {
-    zap: <Zap size={28} className="text-[#3970ff]" />,
+    zap: <Zap size={32} className="text-brand-primary" />,
     globe: (
-      <svg className="w-7 h-7 text-[#3970ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -183,7 +203,7 @@ export const IconBox = ({
       </svg>
     ),
     share: (
-      <svg className="w-7 h-7 text-[#3970ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -193,7 +213,7 @@ export const IconBox = ({
       </svg>
     ),
     target: (
-      <svg className="w-7 h-7 text-[#3970ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -203,7 +223,7 @@ export const IconBox = ({
       </svg>
     ),
     mobile: (
-      <svg className="w-7 h-7 text-[#3970ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -213,7 +233,7 @@ export const IconBox = ({
       </svg>
     ),
     chart: (
-      <svg className="w-7 h-7 text-[#3970ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -223,7 +243,7 @@ export const IconBox = ({
       </svg>
     ),
     link: (
-      <svg className="w-7 h-7 text-[#3970ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -233,7 +253,7 @@ export const IconBox = ({
       </svg>
     ),
     integration: (
-      <svg className="w-7 h-7 text-[#3970ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -243,7 +263,7 @@ export const IconBox = ({
       </svg>
     ),
     check: (
-      <svg className="w-7 h-7 text-[#3970ff]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-8 h-8 text-brand-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -255,7 +275,7 @@ export const IconBox = ({
   };
 
   return (
-    <div className="inline-flex items-center justify-center w-16 h-16 bg-[#3970ff]/10 rounded-2xl mb-6">
+    <div className="inline-flex items-center justify-center w-20 h-20 bg-brand-primary/10 rounded-2xl mb-6">
       {icons[icon]}
     </div>
   );
@@ -268,15 +288,56 @@ export const Features = ({ children }: { children: ReactNode }) => <>{children}<
 // CTA components
 export const CTA = ({ children }: { children: ReactNode }) => <>{children}</>;
 export const Fast = () => <Zap size={32} fill="currentColor" />;
-export const CtaBottomText = ({ children }: { children: ReactNode }) => (
-  <div className="flex items-center justify-center lg:justify-start gap-2 mt-4">
-    <span className="text-sm text-[#5C5B61]">{children}</span>
-  </div>
-);
+export const CtaButton = ({
+  children,
+  variant = "default"
+}: {
+  children: ReactNode;
+  variant?: "default" | "inverse";
+}) => {
+  const handleClick = () => {
+    // Scroll to waitlist or redirect to app
+    const waitlistSection = document.getElementById("waitlist");
+    if (waitlistSection) {
+      waitlistSection.scrollIntoView({ behavior: "smooth" });
+    } else {
+      window.open("https://app.pim.ms/register", "_blank");
+    }
+  };
+
+  return (
+    <div className="flex items-center justify-center lg:justify-start mb-4">
+      <button
+        onClick={handleClick}
+        className={`inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap font-semibold leading-tight transition-all duration-200 h-12 px-8 text-base rounded-full hover:scale-105 ${
+          variant === "inverse"
+            ? "bg-white text-brand-primary hover:bg-gray-50 shadow-lg hover:shadow-xl border border-white/20"
+            : "bg-brand-primary text-white hover:bg-brand-primary/90 shadow-sm hover:shadow-md"
+        }`}
+      >
+        {children}
+      </button>
+    </div>
+  );
+};
+export const CtaBottomText = ({
+  children,
+  variant = "default"
+}: {
+  children: ReactNode;
+  variant?: "default" | "white";
+}) => {
+  const colorClass = variant === "white" ? "text-white/80" : "text-text-secondary";
+  return (
+    <div className="flex items-center justify-center lg:justify-start gap-2 mt-4">
+      <span className={`text-sm ${colorClass}`}>{children}</span>
+    </div>
+  );
+};
 
 // Layout components
 export const Centered = ({ children }: { children: ReactNode }) => (
-  <div className="flex flex-col items-center text-center space-y-4 mb-12 max-w-4xl mx-auto sm:px-4 w-full">
+  <div className="flex flex-col items-center text-center space-y-6 mb-16 max-w-4xl mx-auto sm:px-4 w-full">
     {children}
   </div>
 );
@@ -292,12 +353,19 @@ export const Section = ({
   id
 }: {
   children: ReactNode;
-  variant?: "card" | "plain";
+  variant?: "card" | "branded" | "plain";
   maxWidth?: "full" | "6xl" | "4xl" | "2xl";
   id?: string;
 }) => {
-  const baseClasses =
-    variant === "card" ? "bg-white rounded-3xl border border-gray-200 px-2 py-8 sm:p-8 lg:p-12 mb-12" : "py-4 mb-16";
+  const getBaseClasses = () => {
+    if (variant === "card") {
+      return "bg-white rounded-3xl border border-gray-200 px-2 py-8 sm:p-8 lg:p-12 mb-16";
+    }
+    if (variant === "branded") {
+      return "rounded-3xl border border-brand-primary/20 px-6 py-6 sm:px-8 sm:py-8 lg:px-10 lg:py-10 mb-16";
+    }
+    return "py-8 mb-16";
+  };
 
   const widthClasses = {
     full: "",
@@ -306,8 +374,15 @@ export const Section = ({
     "2xl": "max-w-2xl mx-auto"
   };
 
+  const getBackgroundStyle = () => {
+    if (variant === "branded") {
+      return { backgroundColor: "#3970ff" };
+    }
+    return undefined;
+  };
+
   return (
-    <div id={id} className={`${baseClasses} ${widthClasses[maxWidth]}`}>
+    <div id={id} className={`${getBaseClasses()} ${widthClasses[maxWidth]}`} style={getBackgroundStyle()}>
       {children}
     </div>
   );
@@ -331,10 +406,10 @@ export const TwoColumns = ({
     "7-5": "lg:grid-cols-12" // 7:5 ratio
   };
 
-  const gapClasses = ratio === "1-1-1" ? "gap-12 md:gap-16 lg:gap-8" : "gap-8 lg:gap-12";
+  const gapClasses = ratio === "1-1-1" ? "gap-8 md:gap-12 lg:gap-8" : "gap-8 lg:gap-16";
   const alignClasses = ratio === "1-1-1" ? "items-stretch" : "items-start sm:items-center";
   const cardClasses = mobileCard
-    ? "bg-white rounded-2xl border border-gray-200 py-12 px-2 sm:bg-transparent sm:rounded-none sm:border-none sm:py-0 sm:px-0"
+    ? "bg-white rounded-3xl border border-gray-200 py-12 px-4 sm:bg-transparent sm:rounded-none sm:border-none sm:py-0 sm:px-0"
     : "";
 
   return (
@@ -366,10 +441,10 @@ export const Column = ({
   const orderClasses = {
     default: "",
     text: "order-1 lg:order-none px-4 sm:px-0 text-pretty sm:text-wrap",
-    visual: "order-2 lg:order-none sm:bg-white sm:rounded-2xl sm:border sm:border-gray-200"
+    visual: "order-2 lg:order-none sm:bg-white sm:rounded-3xl sm:border sm:border-gray-200"
   };
 
-  return <div className={`${spanClasses[span]} ${orderClasses[order]} space-y-4`}>{children}</div>;
+  return <div className={`${spanClasses[span]} ${orderClasses[order]} space-y-6`}>{children}</div>;
 };
 
 // Problem components
@@ -387,14 +462,14 @@ export const WithoutPimms = () => {
 
 // Media components
 export const Video = ({ src }: { src: string }) => (
-  <video autoPlay loop muted playsInline className="w-full h-auto object-cover border border-gray-200 rounded-2xl">
+  <video autoPlay loop muted playsInline className="w-full h-auto object-cover border border-gray-200 rounded-3xl">
     <source src={src} type="video/mp4" />
   </video>
 );
 
 // Styling components
 export const Primary = ({ children }: { children: React.ReactNode }) => (
-  <span className={`text-[#3970ff] ${inter.className} font-bold italic`}>{children}</span>
+  <span className={`text-brand-primary ${inter.className} font-bold italic`}>{children}</span>
 );
 
 export const HideOnMobile = ({ children }: { children: React.ReactNode }) => (

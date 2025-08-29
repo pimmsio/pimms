@@ -28,13 +28,13 @@ export const TheNeedToggle = ({ content }: { content: TheNeedContent }) => {
   }, 3000);
 
   return (
-    <div className="bg-white border border-gray-200 p-8">
-      <div className="flex items-center justify-between mb-8">
+    <div className="bg-white border border-gray-200 rounded-3xl p-8">
+      <div className="flex items-center justify-between mb-10">
         <div className="flex items-center gap-4">
           <button
             onClick={() => setShowSolution(false)}
             className={`px-4 py-2 text-sm font-medium ${
-              !showSolution ? "text-blue-600" : "text-gray-600 hover:text-gray-900"
+              !showSolution ? "text-vibrant-blue" : "text-gray-600 hover:text-gray-900"
             }`}
           >
             {content.withoutPimms}
@@ -42,7 +42,7 @@ export const TheNeedToggle = ({ content }: { content: TheNeedContent }) => {
           <button
             onClick={() => setShowSolution(true)}
             className={`px-4 py-2 text-sm font-medium ${
-              showSolution ? "text-blue-600" : "text-gray-600 hover:text-gray-900"
+              showSolution ? "text-vibrant-blue" : "text-gray-600 hover:text-gray-900"
             }`}
           >
             {content.withPimms}
@@ -50,15 +50,19 @@ export const TheNeedToggle = ({ content }: { content: TheNeedContent }) => {
         </div>
       </div>
 
-      <div className="space-y-6">
+      <div className="space-y-8">
         <Paragraph className="text-lg text-gray-600 leading-relaxed">
           {showSolution ? content.solution.description : content.problem.description}
         </Paragraph>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {(showSolution ? content.solution.points : content.problem.points).map((point, i) => (
-            <div key={i} className="flex items-start gap-4 p-4 bg-gray-50 border border-gray-200">
+            <div key={i} className="flex items-start gap-4 p-6 bg-gray-50 border border-gray-200 rounded-xl">
               <div className="flex-shrink-0 w-8 h-8 bg-gray-100 flex items-center justify-center mt-0.5">
-                {showSolution ? <Check className="w-5 h-5 text-blue-600" /> : <X className="w-5 h-5 text-gray-600" />}
+                {showSolution ? (
+                  <Check className="w-5 h-5 text-vibrant-blue" />
+                ) : (
+                  <X className="w-5 h-5 text-gray-600" />
+                )}
               </div>
               <Paragraph className="text-gray-900 font-medium flex-1 leading-relaxed">{point}</Paragraph>
             </div>

@@ -82,12 +82,12 @@ function ABTestingReferer() {
             <div className="text-lg font-semibold text-gray-900">43 conversions</div>
             <div className="text-xs text-gray-500">560 clicks</div>
           </div>
-          <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+          <div className="p-3 bg-success-light rounded-lg border border-success-border">
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-600">Variation B</span>
-              <span className="text-xs bg-green-200 px-2 py-1 rounded font-medium">12.1%</span>
+              <span className="text-xs bg-success-border px-2 py-1 rounded font-medium">12.1%</span>
             </div>
-            <div className="text-lg font-semibold text-green-700">67 conversions</div>
+            <div className="text-lg font-semibold text-success">67 conversions</div>
             <div className="text-xs text-gray-500">554 clicks</div>
           </div>
         </div>
@@ -106,12 +106,12 @@ function ABTestingReferer() {
           <span className="font-medium text-gray-700">Twitter</span>
         </div>
         <div className="grid grid-cols-2 gap-3">
-          <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+          <div className="p-3 bg-success-light rounded-lg border border-success-border">
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-600">Variation A</span>
-              <span className="text-xs bg-green-200 px-2 py-1 rounded font-medium">14.8%</span>
+              <span className="text-xs bg-success-border px-2 py-1 rounded font-medium">14.8%</span>
             </div>
-            <div className="text-lg font-semibold text-green-700">8 conversions</div>
+            <div className="text-lg font-semibold text-success">8 conversions</div>
             <div className="text-xs text-gray-500">54 clicks</div>
           </div>
           <div className="p-3 bg-gray-50 rounded-lg">
@@ -146,12 +146,12 @@ function ABTestingReferer() {
             <div className="text-lg font-semibold text-gray-900">12 conversions</div>
             <div className="text-xs text-gray-500">78 clicks</div>
           </div>
-          <div className="p-3 bg-green-50 rounded-lg border border-green-200">
+          <div className="p-3 bg-success-light rounded-lg border border-success-border">
             <div className="flex justify-between items-center">
               <span className="text-sm text-gray-600">Variation B</span>
-              <span className="text-xs bg-green-200 px-2 py-1 rounded font-medium">22.5%</span>
+              <span className="text-xs bg-success-border px-2 py-1 rounded font-medium">22.5%</span>
             </div>
-            <div className="text-lg font-semibold text-green-700">18 conversions</div>
+            <div className="text-lg font-semibold text-success">18 conversions</div>
             <div className="text-xs text-gray-500">80 clicks</div>
           </div>
         </div>

@@ -137,13 +137,21 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       VideoSlide,
 
       // CTA components
-      CtaButton: ({ children }: { children?: React.ReactNode }) => {
+      CtaButton: ({
+        children,
+        variant = "default"
+      }: {
+        children?: React.ReactNode;
+        variant?: "default" | "secondary" | "outline" | "inverse";
+      }) => {
         const t = useTranslations("landing");
         // If children is provided, use it directly
         if (children) {
           return (
             <CtaButtonBig
               type="sales"
+              size="lg"
+              variant={variant}
               className="py-3 my-2 w-full gap-1 sm:w-fit mx-auto sm:min-w-[380px]"
               value={children}
             />
@@ -153,6 +161,8 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
         return (
           <CtaButtonBig
             type="sales"
+            size="lg"
+            variant={variant}
             className="py-3 my-2 w-full md:w-fit mx-auto"
             value={t.rich("cta.main", {
               fast: () => <Zap size={32} fill="currentColor" />,

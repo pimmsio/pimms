@@ -2,9 +2,8 @@ import type { MDXComponents } from "mdx/types";
 import { H1, H2, H3, H4, Primary, Summary, Text } from "@/components/mdx/content";
 import { Avatars } from "@/components/landings/avatars";
 import { Hero } from "@/components/landings/hero";
-import { Centered, Fast, CtaBottomText } from "@/components/mdx/content";
+import { Centered, Fast, CtaBottomText, CtaButton } from "@/components/mdx/content";
 import ImageSlide from "@/components/landings/Image-slide";
-import CtaButton from "@/components/cta/CtaButton";
 import { HideOnMobile, HideOnDesktop } from "@/components/mdx/content";
 import DeeplinkDemo from "@/components/landings/deeplink-demo";
 

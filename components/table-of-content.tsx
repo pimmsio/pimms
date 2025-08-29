@@ -39,13 +39,13 @@ export default function TableOfContents({ content }: { content: string }) {
   }, [headings]);
 
   if (headings.length === 0) {
-    return <p className="text-sm text-[#5C5B61]">No headings found</p>;
+    return <p className="text-sm text-text-secondary">No headings found</p>;
   }
 
   return (
-    <nav className="space-y-0.5 sm:space-y-1 max-w-full">
+    <nav className="space-y-1 sm:space-y-2 max-w-full">
       {headings.map(({ level, text, id }, index) => (
-        <div key={id + index} className={`${level === 3 ? "pl-2 sm:pl-3" : ""}`}>
+        <div key={id + index} className={`${level === 3 ? "pl-3 sm:pl-4" : ""}`}>
           <a
             href={`#${id}`}
             onClick={(e) => {
@@ -62,8 +62,8 @@ export default function TableOfContents({ content }: { content: string }) {
                 setTimeout(() => setActiveId(id), 500);
               }
             }}
-            className={`block text-xs sm:text-sm py-0.5 sm:py-1 pr-2 transition-colors duration-150 truncate ${
-              activeId === id ? "text-[#3970ff] font-medium" : "text-[#5C5B61] hover:text-[#08272E]"
+            className={`block text-sm py-1 sm:py-1.5 pr-2 transition-colors duration-150 truncate ${
+              activeId === id ? "text-brand-primary font-medium" : "text-text-secondary hover:text-text-primary"
             }`}
             title={text}
           >

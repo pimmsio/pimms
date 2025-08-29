@@ -32,16 +32,16 @@ export default function BlogLayoutHero({ slug }: { slug?: string }) {
 
   console.log(category, slug);
   return (
-    <Section className="py-10 sm:py-14 md:py-18 lg:py-24 px-4 md:px-6 lg:px-8 bg-gradient-to-b from-gray-50/50 to-white">
-      <div className="text-center mb-10 sm:mb-12">
+    <Section className="py-12 sm:py-16 md:py-20 lg:py-28 px-4 md:px-6 lg:px-8 bg-gradient-background-soft">
+      <div className="text-center mb-12 sm:mb-16">
         <H2 className="text-3xl sm:text-4xl md:text-5xl mb-4 font-bold">{t(`category.${category}.title`)}</H2>
-        <Paragraph className="text-base sm:text-lg px-4 max-w-2xl mx-auto text-[#5C5B61]">
+        <Paragraph className="text-base sm:text-lg px-4 max-w-2xl mx-auto text-text-secondary">
           {t(`category.${category}.description`)}
         </Paragraph>
       </div>
 
       {/* Category navigation */}
-      <nav className="flex justify-center mb-10 sm:mb-12 px-4">
+      <nav className="flex justify-center mb-12 sm:mb-16 px-4">
         <div className="inline-flex items-center bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm p-1.5 sm:p-2 overflow-x-auto max-w-full">
           <div className="flex gap-1 sm:gap-1.5">
             <CategoryLink
@@ -82,7 +82,9 @@ const CategoryLink = ({
       <div
         className={twMerge(
           "rounded-lg sm:rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap",
-          active ? "bg-[#3970ff] text-white shadow-sm" : "text-[#5C5B61] hover:bg-gray-50 hover:text-[#08272E]"
+          active
+            ? "bg-brand-primary text-white shadow-sm"
+            : "text-text-secondary hover:bg-gray-50 hover:text-text-primary"
         )}
       >
         {icon}

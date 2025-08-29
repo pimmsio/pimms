@@ -21,11 +21,9 @@ export function Figure(props: FigureProps) {
   const caption = (props as any).caption as string | undefined;
 
   return (
-    <figure className="my-6 sm:my-8 -mx-4 sm:-mx-6 md:mx-0 not-prose">
+    <figure className="my-8 sm:my-12 -mx-4 sm:-mx-6 md:mx-0 not-prose">
       {content}
-      {caption && (
-        <figcaption className="mt-3 text-center text-xs sm:text-sm text-gray-500 italic px-4">{caption}</figcaption>
-      )}
+      {caption && <figcaption className="mt-4 text-center text-sm text-gray-500 italic px-4">{caption}</figcaption>}
     </figure>
   );
 }

@@ -1,5 +1,4 @@
 import { RectClipPath } from "@visx/clip-path";
-import { LinearGradient } from "@visx/gradient";
 import { Group } from "@visx/group";
 import { BarRounded } from "@visx/shape";
 import { AnimatePresence, motion } from "@/lib/framer-motion";
@@ -12,7 +11,6 @@ export function Bars({
 }: {
   seriesStyles?: {
     id: string;
-    gradientClassName?: string;
     barClassName?: string;
     barFill?: string;
   }[];
@@ -40,21 +38,6 @@ export function Bars({
                 key={`${s.id}_${startDate.toString()}_${endDate.toString()}`}
                 clipPath={`url(#${clipPathId})`}
               >
-                {/* Bar gradient */}
-                <LinearGradient
-                  className={cn(s.colorClassName ?? "text-[#08272E]", styles?.gradientClassName)}
-                  id={`${s.id}-background`}
-                  fromOffset="0%"
-                  from="currentColor"
-                  fromOpacity={0.01}
-                  toOffset="40%"
-                  to="currentColor"
-                  toOpacity={1}
-                  x1={0}
-                  x2={0}
-                  y1={1}
-                />
-
                 {/* Bars */}
                 <motion.g initial={{ y: 100 }} animate={{ y: 0 }} transition={{ duration: 0.15, ease: "easeOut" }}>
                   {data.map((d) => {
@@ -69,10 +52,13 @@ export function Bars({
                         y={y}
                         width={barWidth}
                         height={barHeight}
-                        radius={1000}
+                        radius={4}
                         top
-                        className={cn(s.colorClassName ?? "text-blue-700", styles?.barClassName)}
-                        fill={styles?.barFill ?? `url(#${s.id}-background)`}
+                        className={cn(s.colorClassName ?? "text-data-primary", styles?.barClassName)}
+                        fill={styles?.barFill ?? (s as any).barFill ?? "var(--color-data-primary)"}
+                        fillOpacity={1}
+                        stroke="rgba(255, 255, 255, 0.3)"
+                        strokeWidth={1}
                       />
                     ) : null;
                   })}

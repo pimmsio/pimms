@@ -47,22 +47,6 @@ export function MixedAreasAndBars() {
               key={`${s.id}_${startDate.toString()}_${endDate.toString()}`}
               clipPath={`url(#${clipPathId})`}
             >
-              {/* Bar gradient */}
-              <LinearGradient
-                className={cn(s.colorClassName ?? "text-orange-500")}
-                id={`${s.id}-background`}
-                fromOffset="0%"
-                from="currentColor"
-                fromOpacity={0.3}
-                toOffset="100%"
-                to="currentColor"
-                toOpacity={0.8}
-                x1={0}
-                x2={0}
-                y1={1}
-                y2={0}
-              />
-
               {data.map((d: any, i: number) => {
                 const value = s.valueAccessor(d) ?? 0;
                 const x = (xScale(d.date) ?? 0) - barWidth / 2;
@@ -80,9 +64,12 @@ export function MixedAreasAndBars() {
                         y={leadsY}
                         width={barWidth}
                         height={leadsHeight}
-                        radius={2}
-                        fill={`url(#${s.id}-background)`}
-                        className={cn(s.colorClassName ?? "text-orange-500")}
+                        radius={4}
+                        fill={(s as any).barFill ?? "var(--color-data-secondary)"}
+                        fillOpacity={0.5}
+                        stroke="rgba(255, 255, 255, 0.2)"
+                        strokeWidth={1}
+                        className={cn(s.colorClassName ?? "text-data-secondary")}
                       />
                     </motion.g>
                   ) : null;
@@ -103,9 +90,12 @@ export function MixedAreasAndBars() {
                         y={salesY}
                         width={barWidth}
                         height={salesHeight}
-                        radius={2}
-                        fill={`url(#${s.id}-background)`}
-                        className={cn(s.colorClassName ?? "text-green-500")}
+                        radius={4}
+                        fill={(s as any).barFill ?? "var(--color-data-success)"}
+                        fillOpacity={0.6}
+                        stroke="rgba(255, 255, 255, 0.2)"
+                        strokeWidth={1}
+                        className={cn(s.colorClassName ?? "text-data-success")}
                       />
                     </motion.g>
                   ) : null;
@@ -131,14 +121,14 @@ export function MixedAreasAndBars() {
             >
               {/* Line gradient for area fill */}
               <LinearGradient
-                className={cn(s.colorClassName ?? "text-blue-500")}
+                className="text-zinc-50"
                 id={`${s.id}-area-gradient`}
                 fromOffset="0%"
-                from="currentColor"
-                fromOpacity={0.1}
+                from="#d1d5db"
+                fromOpacity={0.2}
                 toOffset="100%"
-                to="currentColor"
-                toOpacity={0.02}
+                to="#e5e7eb"
+                toOpacity={0.05}
                 x1={0}
                 x2={0}
                 y1={0}
@@ -173,10 +163,10 @@ export function MixedAreasAndBars() {
                   <motion.path
                     initial={{ d: path(zeroedData) || "" }}
                     animate={{ d: path(data) || "" }}
-                    className={cn(s.colorClassName ?? "text-blue-500")}
-                    stroke="currentColor"
+                    className={cn(s.colorClassName ?? "text-data-primary")}
+                    stroke={(s as any).strokeColor ?? "var(--color-data-primary)"}
                     strokeOpacity={1}
-                    strokeWidth={3}
+                    strokeWidth={(s as any).strokeWidth ?? 2.5}
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     fill="transparent"
@@ -190,8 +180,10 @@ export function MixedAreasAndBars() {
                   cx={xScale(data.at(-1)!.date) ?? 0}
                   cy={yScale(s.valueAccessor(data.at(-1)!))}
                   r={4}
-                  className={cn(s.colorClassName ?? "text-blue-500")}
-                  fill="currentColor"
+                  className={cn(s.colorClassName ?? "text-data-primary")}
+                  fill={(s as any).strokeColor ?? "var(--color-data-primary)"}
+                  stroke="white"
+                  strokeWidth="2"
                 />
               )}
             </motion.g>

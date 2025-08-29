@@ -42,9 +42,9 @@ export function Areas() {
                       <motion.path
                         initial={{ d: path(zeroedData) || "", opacity: 0 }}
                         animate={{ d: path(data) || "", opacity: 1 }}
-                        className={cn(s.colorClassName ?? "text-[#3970ff]")}
-                        fill={(s as any).fillColor ?? "#E7EEFF"}
-                        fillOpacity={(s as any).fillOpacity ?? 0.3}
+                        className={cn(s.colorClassName ?? "text-data-primary")}
+                        fill={(s as any).fillColor ?? "var(--color-data-primary)"}
+                        fillOpacity={(s as any).fillOpacity ?? 0.15}
                       />
                     );
                   }}
@@ -55,11 +55,13 @@ export function Areas() {
                     <motion.path
                       initial={{ d: path(zeroedData) || "" }}
                       animate={{ d: path(data) || "" }}
-                      className={cn(s.colorClassName ?? "text-[#3970ff]")}
-                      stroke={(s as any).strokeColor ?? "#3970ff"}
+                      className={cn(s.colorClassName ?? "text-data-primary")}
+                      stroke={(s as any).strokeColor ?? "var(--color-data-primary)"}
                       strokeOpacity={(s as any).strokeOpacity ?? 1}
-                      strokeWidth={(s as any).strokeWidth ?? 3}
+                      strokeWidth={(s as any).strokeWidth ?? 2.5}
                       fill="transparent"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     />
                   )}
                 </Area>

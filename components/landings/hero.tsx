@@ -23,7 +23,7 @@ export const Hero = ({ children }: HeroProps) => {
 
   return (
     <HeroSection>
-      <div className="text-center space-y-10">
+      <div className="text-center space-y-8">
         {parsed.title && (
           <BlurFade direction="up" delay={0.1} inView={false}>
             <H1>{parsed.title}</H1>

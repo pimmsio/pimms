@@ -12,11 +12,11 @@ export default function BlogHeader() {
 
   return (
     <header className="w-full bg-white border-b border-gray-100">
-      <div className="max-w-5xl mx-auto h-12 sm:h-14 md:h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8">
-        <div className="flex-shrink-0 mr-4">
+      <div className="max-w-5xl mx-auto h-16 flex items-center justify-between px-4 sm:px-6 lg:px-8">
+        <div className="flex-shrink-0 mr-6">
           <Logo />
         </div>
-        <nav className="flex items-center gap-3 sm:gap-4 md:gap-6">
+        <nav className="flex items-center gap-4 md:gap-6">
           <Link href={getCanonicalLink(locale, "/articles")}>
             <Button
               variant="link"

@@ -11,18 +11,20 @@ interface FeatureItem {
   excluded?: boolean;
 }
 
-const renderFeatureList = (features: (string | FeatureItem)[], checkColor: string = "text-green-600") => {
+const renderFeatureList = (features: (string | FeatureItem)[], checkColor: string = "text-success") => {
   return features.map((feature, i) => {
     const isExcluded = typeof feature === "object" && feature.excluded;
     const featureText = typeof feature === "object" ? feature.text : feature;
     return (
-      <li key={i} className="flex items-start gap-3">
+      <li key={i} className="flex items-start gap-3 py-1">
         {isExcluded ? (
-          <X className="w-4 h-4 md:w-5 md:h-5 text-gray-400 flex-shrink-0 mt-0.5" />
+          <X className="w-4 h-4 text-gray-400 flex-shrink-0 mt-0.5" />
         ) : (
-          <Check className={`w-4 h-4 md:w-5 md:h-5 ${checkColor} flex-shrink-0 mt-0.5`} />
+          <Check className={`w-4 h-4 ${checkColor} flex-shrink-0 mt-0.5`} />
         )}
-        <span className={`text-sm md:text-base ${isExcluded ? "text-gray-400 line-through" : "text-[#08272E]"}`}>
+        <span
+          className={`text-sm ${isExcluded ? "text-muted-foreground line-through" : "text-foreground"} leading-relaxed font-medium`}
+        >
           {featureText}
         </span>
       </li>
@@ -45,31 +47,25 @@ export const LifetimeOfferFree = ({ tkey }: { tkey: string }) => {
   ];
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-6 h-full shadow-sm hover:shadow-md transition-shadow flex flex-col">
-      <div className="space-y-4 flex-1">
-        <div>
-          <h3 className="text-xl md:text-2xl font-bold text-[#08272E]">{t("lifetime_offer.plan_free")}</h3>
-          <p className="text-[#5C5B61] mt-1 text-sm md:text-base">{t("lifetime_offer.free_pass")}</p>
+    <div className="bg-white rounded-2xl outline outline-gray-200 h-full shadow-sm hover:shadow-md transition-all duration-300 flex flex-col gap-4">
+      <div className="p-6 sm:p-8">
+        <div className="text-left flex flex-col gap-1">
+          <h3 className="text-lg font-bold leading-tight text-text-primary">{t("lifetime_offer.plan_free")}</h3>
+          <p className="text-text-secondary text-xs max-w-[28ch]">{t("lifetime_offer.free_pass")}</p>
         </div>
 
-        <div className="pb-4 border-b border-gray-200">
-          <div className="flex items-baseline gap-1">
-            <span className="text-3xl md:text-4xl font-bold text-[#08272E]">€0</span>
-          </div>
-          <p className="text-[#5C5B61] text-xs md:text-sm mt-1">{t("lifetime_offer.forever")}</p>
+        <div className="text-left flex flex-col gap-0">
+          <span className="text-2xl font-bold leading-tight text-text-primary">€0</span>
+          <p className="text-text-secondary text-xs">{t("lifetime_offer.forever")}</p>
         </div>
 
-        <div className="flex-1">
-          <p className="text-xs md:text-sm font-semibold text-[#08272E] mb-2">Try it out for free:</p>
-
-          <ul className="space-y-2">{renderFeatureList(features, "text-[#3970ff]")}</ul>
-        </div>
-      </div>
-
-      <div className="mt-6">
-        <Button size="lg" className="w-full bg-gray-900 hover:bg-gray-800" asChild>
+        <Button size="sm" variant="outline" className="w-full text-xs mt-2" asChild>
           <Link href={`${APP_URL}/register`}>{t("lifetime_offer.start_free_cta")}</Link>
         </Button>
+      </div>
+
+      <div className="bg-accent rounded-b-2xl flex-1 border-t border-gray-100 p-6 sm:p-8">
+        <ul className="space-y-2">{renderFeatureList(features, "text-brand-primary")}</ul>
       </div>
     </div>
   );
@@ -90,38 +86,37 @@ export const LifetimeOfferStarter = ({ tkey }: { tkey: string }) => {
   ];
 
   return (
-    <div className="bg-white rounded-2xl border border-gray-200 p-6 h-full shadow-sm hover:shadow-md transition-shadow flex flex-col">
-      <div className="space-y-4 flex-1">
-        <div>
-          <h3 className="text-xl md:text-2xl font-bold text-[#08272E]">{t("lifetime_offer.plan_starter")}</h3>
-          <p className="text-[#5C5B61] mt-1 text-sm md:text-base">{t("lifetime_offer.lifetime_deal")}</p>
-        </div>
-
-        <div className="pb-4 border-b border-gray-200">
-          <div className="flex items-baseline gap-1">
-            <span className="text-3xl md:text-4xl font-bold text-[#08272E]">59€</span>
-            <span className="text-xs md:text-sm text-[#5C5B61] ml-2">{t("lifetime_offer.tax")}</span>
-          </div>
-          <p className="text-[#5C5B61] text-xs md:text-sm mt-1">{t("lifetime_offer.pay_once")}</p>
-        </div>
-
-        <div className="flex-1">
-          <p className="text-xs md:text-sm font-semibold text-[#08272E] mb-2">
-            {t("lifetime_offer.everything_in_starter")}
+    <div className="bg-white rounded-2xl outline outline-border h-full shadow-sm hover:shadow-md transition-all duration-300">
+      <div className="p-6 sm:p-8 flex flex-col gap-8">
+        <div className="text-left flex flex-col gap-1">
+          <h3 className="text-xl font-semibold leading-tight text-foreground">{t("lifetime_offer.plan_starter")}</h3>
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-[30ch]">
+            {t("lifetime_offer.lifetime_deal")}
           </p>
-
-          <ul className="space-y-2">{renderFeatureList(features, "text-[#3970ff]")}</ul>
         </div>
-      </div>
 
-      <div className="mt-6">
+        <div className="text-left flex flex-col gap-0">
+          <div className="flex items-baseline gap-1">
+            <span className="text-5xl font-bold leading-tight text-foreground">59€</span>
+            <span className="text-lg text-muted-foreground">HT</span>
+          </div>
+          <p className="text-muted-foreground text-sm">{t("lifetime_offer.pay_once")}</p>
+        </div>
+
         <CtaButtonBig
           type="pricing"
-          size="lg"
-          className="w-full"
           value={t("lifetime_offer.cta")}
           href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS"
+          className="w-full"
+          size="lg"
         />
+      </div>
+
+      <div className="bg-zinc-50 rounded-b-2xl flex-1 border-t border-primary/20 sm:min-h-[420px] p-6 sm:p-8">
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground mb-3">
+          {t("lifetime_offer.everything_in_starter")}
+        </p>
+        <ul className="space-y-3">{renderFeatureList(features, "text-primary")}</ul>
       </div>
     </div>
   );
@@ -142,41 +137,37 @@ export const LifetimeOfferPro = ({ tkey }: { tkey: string }) => {
   ];
 
   return (
-    <div className="bg-white rounded-2xl border-2 border-[#3970ff] p-6 relative h-full shadow-lg hover:shadow-xl transition-shadow flex flex-col">
-      <div className="absolute -top-2.5 left-6 bg-[#3970ff] text-white px-3 py-1 rounded-full text-xs font-semibold uppercase">
-        {t("lifetime_offer.popular")}
-      </div>
-      <div className="space-y-4 flex-1">
-        <div>
-          <h3 className="text-xl md:text-2xl font-bold text-[#08272E]">{t("lifetime_offer.plan_pro")}</h3>
-          <p className="text-[#5C5B61] mt-1 text-sm md:text-base">{t("lifetime_offer.growth_subtitle")}</p>
-        </div>
-
-        <div className="pb-4 border-b border-gray-200">
-          <div className="flex items-baseline gap-1">
-            <span className="text-3xl md:text-4xl font-bold text-[#08272E]">99€</span>
-            <span className="text-xs md:text-sm text-[#5C5B61] ml-2">{t("lifetime_offer.tax")}</span>
-          </div>
-          <p className="text-[#5C5B61] text-xs md:text-sm mt-1">{t("lifetime_offer.pay_once")}</p>
-        </div>
-
-        <div className="flex-1">
-          <p className="text-xs md:text-sm font-semibold text-[#08272E] mb-2">
-            {t("lifetime_offer.everything_in_pro")}
+    <div className="bg-white rounded-2xl outline-1 outline-brand-primary h-full shadow-md hover:shadow-lg transition-all duration-300">
+      <div className="p-6 sm:p-8 flex flex-col gap-8">
+        <div className="text-left flex flex-col gap-1">
+          <h3 className="text-xl font-semibold leading-tight text-foreground">{t("lifetime_offer.plan_pro")}</h3>
+          <p className="text-muted-foreground text-sm leading-relaxed max-w-[30ch]">
+            {t("lifetime_offer.growth_subtitle")}
           </p>
-
-          <ul className="space-y-2">{renderFeatureList(features, "text-[#3970ff]")}</ul>
         </div>
-      </div>
 
-      <div className="mt-6">
+        <div className="text-left flex flex-col gap-0">
+          <div className="flex items-baseline gap-1">
+            <span className="text-5xl font-bold leading-tight text-foreground">99€</span>
+            <span className="text-lg text-muted-foreground">HT</span>
+          </div>
+          <p className="text-muted-foreground text-sm">{t("lifetime_offer.pay_once")}</p>
+        </div>
+
         <CtaButtonBig
           type="pricing"
-          size="lg"
-          className="w-full"
           value={t("lifetime_offer.cta")}
           href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07"
+          className="w-full"
+          size="lg"
         />
+      </div>
+
+      <div className="bg-zinc-50 rounded-b-2xl flex-1 border-t border-brand-primary/20 sm:min-h-[420px] p-6 sm:p-8">
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground mb-3">
+          {t("lifetime_offer.everything_in_pro")}
+        </p>
+        <ul className="space-y-3">{renderFeatureList(features, "text-brand-primary")}</ul>
       </div>
     </div>
   );
@@ -191,35 +182,40 @@ export const LifetimeOfferScale = ({ tkey }: { tkey: string }) => {
     t("lifetime_offer.feature_sales_tracking_scale"),
     t("lifetime_offer.feature_team_unlimited"),
     t("lifetime_offer.feature_domains_unlimited"),
-    t("lifetime_offer.feature_bulk_operations"),
-    t("lifetime_offer.feature_data_more"),
-    t("lifetime_offer.feature_priority_support")
+    t("lifetime_offer.feature_bulk_operations")
   ];
 
   return (
-    <div className="bg-white rounded-2xl border-2 border-[#FF6B35] p-6 md:p-8 relative shadow-lg hover:shadow-xl transition-shadow">
-      <div className="absolute -top-2.5 left-6 bg-[#FF6B35] text-white px-3 py-1 rounded-full text-xs font-semibold uppercase">
-        {t("lifetime_offer.ondemand")}
-      </div>
-
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 md:gap-6 pb-6 border-b border-gray-200">
-        <div>
-          <h3 className="text-2xl md:text-3xl font-bold text-[#08272E]">{t("lifetime_offer.business_title")}</h3>
-          <p className="text-[#5C5B61] text-xs md:text-sm mt-2">{t("lifetime_offer.everything_in_growth")}</p>
+    <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl outline outline-gray-700 h-full shadow-md hover:shadow-lg transition-all duration-300">
+      <div className="p-6 sm:p-8 flex flex-col gap-8">
+        <div className="text-left flex flex-col gap-1 sm:min-h-[124px]">
+          <h3 className="text-xl font-semibold leading-tight text-white">{t("lifetime_offer.business_title")}</h3>
+          <p className="text-gray-300 text-sm leading-relaxed max-w-[30ch]">
+            {t("lifetime_offer.everything_in_growth")}
+          </p>
         </div>
+
+        <div className="text-left">
+          <span className="text-2xl font-medium leading-tight text-gray-300">{t("lifetime_offer.ondemand")}</span>
+        </div>
+
+        <CalComButton variant="inverse" className="w-full">
+          {t("lifetime_offer.contact_sales")}
+        </CalComButton>
       </div>
 
-      <div className="grid md:grid-cols-2 gap-3 md:gap-4 py-5 md:py-6">
-        {features.map((feature, i) => (
-          <div key={i} className="flex items-start gap-3">
-            <Check className="w-4 h-4 md:w-5 md:h-5 text-[#e55a2b] flex-shrink-0 mt-0.5" />
-            <span className="text-sm md:text-base text-[#08272E]">{feature}</span>
-          </div>
-        ))}
-      </div>
-
-      <div className="text-center">
-        <CalComButton>{t("lifetime_offer.contact_sales")}</CalComButton>
+      <div className="bg-gray-800 rounded-b-2xl flex-1 border-t border-white/10 sm:min-h-[420px] p-6 sm:p-8">
+        <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-300 mb-3">
+          {t("lifetime_offer.everything_in_growth")}
+        </p>
+        <ul className="space-y-3">
+          {features.map((feature, i) => (
+            <li key={i} className="flex items-start gap-3 py-1">
+              <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+              <span className="text-sm text-gray-300 leading-relaxed">{feature}</span>
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );

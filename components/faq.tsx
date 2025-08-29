@@ -45,7 +45,7 @@ export default async function FAQ({ defaultFaqs, fkey }: { defaultFaqs: number[]
       <div className="text-center mb-12">
         <Label className="mb-6">{t("title")}</Label>
         <H2 className="mb-4">{t("heading")}</H2>
-        <Paragraph className="text-lg text-[#5C5B61] max-w-2xl mx-auto">{t("description")}</Paragraph>
+        <Paragraph className="text-lg text-text-secondary max-w-2xl mx-auto">{t("description")}</Paragraph>
       </div>
 
       <div className="max-w-3xl mx-auto">
@@ -54,8 +54,8 @@ export default async function FAQ({ defaultFaqs, fkey }: { defaultFaqs: number[]
           <div className="space-y-4">
             {faqs.map((faq, index) => (
               <div key={index} className="bg-white rounded-xl border border-gray-200 p-6">
-                <h3 className="text-lg font-semibold text-[#08272E] mb-3">{faq.question}</h3>
-                <p className="text-[#5C5B61] text-base">{faq.answer}</p>
+                <h3 className="text-lg font-semibold text-text-primary mb-3">{faq.question}</h3>
+                <p className="text-text-secondary text-base">{faq.answer}</p>
               </div>
             ))}
           </div>

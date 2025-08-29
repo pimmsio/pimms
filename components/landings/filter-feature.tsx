@@ -11,44 +11,14 @@ const getFaviconUrl = (url: string) => {
 
 export const FilterFeature = ({}: { tkey: string }) => {
   const utmLabel = (
-    <Label className="text-xs font-medium bg-blue-50 text-[#3970ff] border border-blue-200 px-2 py-0.5 rounded">
+    <Label className="text-xs font-medium bg-info-light/20 text-brand-primary border border-info-border/50 px-2 py-0.5 rounded">
       UTM
     </Label>
   );
 
-
-
-  const tagLabel = <Tag size={12} className="text-[#3970ff]" />;
+  const tagLabel = <Tag size={12} className="text-brand-primary" />;
 
   const ROWS = [
-    // Première rangée : Géolocalisation
-    [
-      {
-        icon: <img alt="France" src={getFlagUrl("FR")} className="rounded-md" />,
-        label: "Pays",
-        value: "France"
-      },
-      {
-        icon: <img alt="CH" src={getFlagUrl("CH")} className="rounded-md" />,
-        label: "Ville",
-        value: "Zurich"
-      },
-      {
-        icon: <img alt="US" src={getFlagUrl("US")} className="rounded-md" />,
-        label: "Ville",
-        value: "New York"
-      },
-      {
-        icon: <img alt="FR" src={getFlagUrl("FR")} className="rounded-md" />,
-        label: "Ville",
-        value: "Lyon"
-      },
-      {
-        icon: <img alt="AU" src={getFlagUrl("AU")} className="rounded-md" />,
-        label: "Ville",
-        value: "Melbourne"
-      }
-    ],
     // Deuxième rangée : Sources de trafic spécifiques
     [
       {
@@ -65,7 +35,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
         highlight: true
       },
       {
-        icon: <Instagram size={16} className="text-pink-500" />,
+        icon: <Instagram size={16} className="text-vibrant-pink" />,
         label: "Lien",
         value: "Profil Instagram",
         highlight: true
@@ -84,7 +54,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
         highlight: true
       },
       {
-        icon: <Calendar size={16} className="text-blue-500" />,
+        icon: <Calendar size={16} className="text-vibrant-blue" />,
         label: "Event",
         value: "Webinar du 15",
         highlight: true
@@ -253,6 +223,34 @@ export const FilterFeature = ({}: { tkey: string }) => {
         value: "HubSpot Demo Call"
       }
     ],
+    // Première rangée : Géolocalisation
+    [
+      {
+        icon: <img alt="France" src={getFlagUrl("FR")} className="rounded-md" />,
+        label: "Pays",
+        value: "France"
+      },
+      {
+        icon: <img alt="CH" src={getFlagUrl("CH")} className="rounded-md" />,
+        label: "Ville",
+        value: "Zurich"
+      },
+      {
+        icon: <img alt="US" src={getFlagUrl("US")} className="rounded-md" />,
+        label: "Ville",
+        value: "New York"
+      },
+      {
+        icon: <img alt="FR" src={getFlagUrl("FR")} className="rounded-md" />,
+        label: "Ville",
+        value: "Lyon"
+      },
+      {
+        icon: <img alt="AU" src={getFlagUrl("AU")} className="rounded-md" />,
+        label: "Ville",
+        value: "Melbourne"
+      }
+    ],
     // Sixième rangée : Navigateurs et appareils
     [
       {
@@ -374,18 +372,18 @@ const FilterBlock = ({
 }) => (
   <div
     className={`flex h-9 rounded-lg border-[2px] text-sm leading-none [&>*]:h-full transition-all duration-300 ${
-      highlight
-        ? "border-neutral-100 bg-gradient-to-r from-blue-50 to-indigo-50 text-[#3970ff]"
-        : "border-neutral-100 text-neutral-800"
+      highlight ? "border-neutral-100 bg-gradient-info text-brand-primary" : "border-neutral-100 text-neutral-800"
     }`}
   >
-    <div className={`flex items-center gap-2 px-3 rounded-l-lg ${highlight ? "text-[#3970ff]" : "text-neutral-500"}`}>
+    <div
+      className={`flex items-center gap-2 px-3 rounded-l-lg ${highlight ? "text-brand-primary" : "text-neutral-500"}`}
+    >
       <span className="shrink-0">{icon}</span>
       {label}
     </div>
-    <div className={`flex items-center px-1 ${highlight ? "text-[#3970ff]" : "text-neutral-500"}`}>=</div>
+    <div className={`flex items-center px-1 ${highlight ? "text-brand-primary" : "text-neutral-500"}`}>=</div>
     <div
-      className={`flex items-center gap-2 px-3 font-semibold rounded-r-lg ${highlight ? "text-[#3970ff]" : "text-neutral-800"}`}
+      className={`flex items-center gap-2 px-3 font-semibold rounded-r-lg ${highlight ? "text-brand-primary" : "text-neutral-800"}`}
     >
       {value}
     </div>
