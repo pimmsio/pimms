@@ -2,32 +2,37 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-08-29T11:46:56.887Z"
+    "lastmod": "2025-08-29T19:05:41.051Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-08-29T11:46:56.887Z"
+    "lastmod": "2025-08-29T19:05:41.052Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-08-29T11:46:56.887Z"
+    "lastmod": "2025-08-29T19:05:41.052Z"
   },
   "/landings/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-08-29T11:46:56.887Z"
+    "lastmod": "2025-08-29T19:05:41.052Z"
   },
   "/landings/ab-testing": {
     "en": "/solutions/ab-testing",
     "fr": "/landings/ab-testing",
-    "lastmod": "2025-08-29T11:46:56.887Z"
+    "lastmod": "2025-08-29T19:05:41.052Z"
+  },
+  "/landings/growth-1": {
+    "en": "/growth-1",
+    "fr": "/growth-1",
+    "lastmod": "2025-08-29T19:05:41.052Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-08-29T11:46:56.887Z"
+    "lastmod": "2025-08-29T19:05:41.052Z"
   },
   "/articles": {
     "en": "/articles",

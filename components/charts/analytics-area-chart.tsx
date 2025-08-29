@@ -75,14 +75,14 @@ export default function AnalyticsAreaChart({
           strokeWidth: 2.5,
           fillOpacity: 0.15
         },
-        // Variation B (Secondary)
+        // Variation B (Amber)
         {
           id: "variation-b",
           valueAccessor: (d: any) => d.values[resource === "sales" ? `${saleUnit}B` : `${resource}B`] || 0,
           isActive: true,
-          colorClassName: "text-data-secondary",
-          strokeColor: "var(--color-data-secondary)",
-          fillColor: "var(--color-data-secondary)",
+          colorClassName: "text-vibrant-amber",
+          strokeColor: "var(--color-vibrant-amber)",
+          fillColor: "var(--color-vibrant-amber)",
           strokeWidth: 2.5,
           fillOpacity: 0.15
         },
@@ -113,9 +113,9 @@ export default function AnalyticsAreaChart({
           id: "leads",
           valueAccessor: (d: any) => d.values.leads,
           isActive: resource === "leads",
-          colorClassName: "text-data-primary",
-          strokeColor: "var(--color-data-primary)",
-          fillColor: "var(--color-data-primary)",
+          colorClassName: "text-vibrant-amber",
+          strokeColor: "var(--color-vibrant-amber)",
+          fillColor: "var(--color-vibrant-amber)",
           strokeWidth: 2.5,
           fillOpacity: 0.15
         },
@@ -167,7 +167,7 @@ export default function AnalyticsAreaChart({
                     </Fragment>
                     <Fragment key="variation-b">
                       <div className="flex items-center gap-2">
-                        <div className="w-2 h-2 bg-success rounded-full"></div>
+                        <div className="w-2 h-2 bg-vibrant-amber rounded-full"></div>
                         <p className="capitalize text-neutral-600">Variation B</p>
                       </div>
                       <p className="text-right font-medium text-neutral-900">

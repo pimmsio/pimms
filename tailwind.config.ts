@@ -22,6 +22,7 @@ export default {
         "brand-primary-700": "var(--color-brand-primary-700)",
         "brand-primary-800": "var(--color-brand-primary-800)",
         "brand-primary-900": "var(--color-brand-primary-900)",
+        "brand-cyan": "var(--color-brand-cyan)",
 
         // Vibrant palette
         "vibrant-blue": "var(--color-vibrant-blue)",
