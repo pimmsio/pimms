@@ -1,5 +1,7 @@
 import type { MDXComponents } from "mdx/types";
 import { H1, H2, H3, H4, Primary, Summary, Text } from "@/components/mdx/content";
+import { Highlight } from "@/components/mdx/Highlight";
+import { TextHighlight } from "@/components/mdx/TextHighlight";
 import { Avatars } from "@/components/landings/avatars";
 import { Hero } from "@/components/landings/hero";
 import { Centered, Fast, CtaBottomText, CtaButton } from "@/components/mdx/content";
@@ -18,6 +20,8 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     p: Text,
     // Components available in MDX
     Primary,
+    Highlight,
+    TextHighlight,
     Summary,
     Avatars,
     Hero,

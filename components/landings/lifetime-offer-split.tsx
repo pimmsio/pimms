@@ -112,7 +112,7 @@ export const LifetimeOfferStarter = ({ tkey }: { tkey: string }) => {
         />
       </div>
 
-      <div className="bg-zinc-50 rounded-b-2xl flex-1 border-t border-primary/20 sm:min-h-[420px] p-6 sm:p-8">
+      <div className="bg-zinc-50 rounded-b-2xl flex-1 border-t border-primary/20 sm:min-h-[455px] p-6 sm:p-8">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground mb-3">
           {t("lifetime_offer.everything_in_starter")}
         </p>
@@ -163,7 +163,7 @@ export const LifetimeOfferPro = ({ tkey }: { tkey: string }) => {
         />
       </div>
 
-      <div className="bg-zinc-50 rounded-b-2xl flex-1 border-t border-brand-primary/20 sm:min-h-[420px] p-6 sm:p-8">
+      <div className="bg-zinc-50 rounded-b-2xl flex-1 border-t border-brand-primary/20 sm:min-h-[455px] p-6 sm:p-8">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-muted-foreground mb-3">
           {t("lifetime_offer.everything_in_pro")}
         </p>
@@ -188,7 +188,7 @@ export const LifetimeOfferScale = ({ tkey }: { tkey: string }) => {
   return (
     <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl outline outline-gray-700 h-full shadow-md hover:shadow-lg transition-all duration-300">
       <div className="p-6 sm:p-8 flex flex-col gap-8">
-        <div className="text-left flex flex-col gap-1 sm:min-h-[124px]">
+        <div className="text-left flex flex-col gap-1 sm:min-h-[101px]">
           <h3 className="text-xl font-semibold leading-tight text-white">{t("lifetime_offer.business_title")}</h3>
           <p className="text-gray-300 text-sm leading-relaxed max-w-[30ch]">
             {t("lifetime_offer.everything_in_growth")}
@@ -204,14 +204,14 @@ export const LifetimeOfferScale = ({ tkey }: { tkey: string }) => {
         </CalComButton>
       </div>
 
-      <div className="bg-gray-800 rounded-b-2xl flex-1 border-t border-white/10 sm:min-h-[420px] p-6 sm:p-8">
+      <div className="bg-gray-800 rounded-b-2xl flex-1 border-t border-white/10 sm:min-h-[455px] p-6 sm:p-8">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-300 mb-3">
           {t("lifetime_offer.everything_in_growth")}
         </p>
         <ul className="space-y-3">
           {features.map((feature, i) => (
             <li key={i} className="flex items-start gap-3 py-1">
-              <Check className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" />
+              <Check className="w-4 h-4 text-success flex-shrink-0 mt-0.5" />
               <span className="text-sm text-gray-300 leading-relaxed">{feature}</span>
             </li>
           ))}

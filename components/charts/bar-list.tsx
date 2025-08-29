@@ -73,7 +73,7 @@ export function LineItem({
             position: "absolute",
             inset: 0
           }}
-          className="h-full origin-left rounded-lg bg-gradient-to-r from-data-primary/30 to-data-primary/15"
+          className="h-full origin-left rounded-lg bg-gradient-to-r from-data-clicks/30 to-data-clicks/15"
           transition={{ ease: "easeOut", duration: 0.3 }}
           initial={{ transform: "scaleX(0)" }}
           animate={{ transform: "scaleX(1)" }}

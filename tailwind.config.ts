@@ -22,24 +22,17 @@ export default {
         "brand-primary-700": "var(--color-brand-primary-700)",
         "brand-primary-800": "var(--color-brand-primary-800)",
         "brand-primary-900": "var(--color-brand-primary-900)",
+        "brand-secondary": "var(--color-brand-secondary)",
 
         // Vibrant palette
         "vibrant-blue": "var(--color-vibrant-blue)",
-        "vibrant-cyan": "var(--color-vibrant-cyan)",
-        "vibrant-teal": "var(--color-vibrant-teal)",
         "vibrant-emerald": "var(--color-vibrant-emerald)",
         "vibrant-green": "var(--color-vibrant-green)",
         "vibrant-lime": "var(--color-vibrant-lime)",
-        "vibrant-yellow": "var(--color-vibrant-yellow)",
-        "vibrant-amber": "var(--color-vibrant-amber)",
         "vibrant-orange": "var(--color-vibrant-orange)",
         "vibrant-red": "var(--color-vibrant-red)",
-        "vibrant-rose": "var(--color-vibrant-rose)",
         "vibrant-pink": "var(--color-vibrant-pink)",
-        "vibrant-fuchsia": "var(--color-vibrant-fuchsia)",
         "vibrant-purple": "var(--color-vibrant-purple)",
-        "vibrant-violet": "var(--color-vibrant-violet)",
-        "vibrant-indigo": "var(--color-vibrant-indigo)",
 
         // Semantic colors
         "success": "var(--color-success)",
@@ -72,12 +65,9 @@ export default {
         "stroke-medium": "var(--color-stroke-medium)",
 
         // Unified data colors - for charts, legends & metrics
-        "data-primary": "var(--color-data-primary)",
-        "data-primary-light": "var(--color-data-primary-light)",
-        "data-secondary": "var(--color-data-secondary)",
-        "data-secondary-light": "var(--color-data-secondary-light)",
-        "data-success": "var(--color-data-success)",
-        "data-success-light": "var(--color-data-success-light)"
+        "data-clicks": "var(--color-data-clicks)",
+        "data-leads": "var(--color-data-leads)",
+        "data-sales": "var(--color-data-sales)"
       },
       backgroundImage: {
         // Gradient tokens
@@ -89,12 +79,7 @@ export default {
         "gradient-info": "var(--gradient-info)",
         "gradient-success": "var(--gradient-success)",
         "gradient-warning": "var(--gradient-warning)",
-        "gradient-error": "var(--gradient-error)",
-
-        // Unified data gradients
-        "gradient-data-primary": "var(--gradient-data-primary)",
-        "gradient-data-secondary": "var(--gradient-data-secondary)",
-        "gradient-data-success": "var(--gradient-data-success)"
+        "gradient-error": "var(--gradient-error)"
       }
     }
   },

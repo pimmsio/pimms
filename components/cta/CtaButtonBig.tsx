@@ -42,9 +42,19 @@ export default function CtaButtonBig({
       variant={variant}
       size={size}
       onClick={handleClick}
-      className={twMerge("font-bold", className)}
+      className={twMerge(
+        "font-bold transition-transform hover:scale-105 relative overflow-hidden",
+        variant === "inverse" ? "" : "rounded-2xl text-white bg-gradient-to-r from-brand-secondary to-brand-primary",
+        className
+      )}
       disabled={isLoading}
     >
+      {variant !== "inverse" && (
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute -left-8 top-1/2 -translate-y-1/2 w-28 h-8 bg-white/20 blur-[6px] rotate-[-30deg] opacity-100 shadow-[0_1px_2px_rgba(0,0,0,0.25)]" />
+          <div className="absolute left-12 top-1/2 -translate-y-1/2 w-36 h-8 bg-white/20 blur-[10px] rotate-[-30deg] opacity-90" />
+        </div>
+      )}
       {isLoading ? <Loader2 className="h-4 w-4 animate-spin" /> : value}
     </Button>
   );

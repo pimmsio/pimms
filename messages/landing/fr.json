@@ -3,6 +3,8 @@
     "nav": {
       "how_it_works": "Intro",
       "solutions": "Solutions",
+      "features": "Fonctionnalités",
+      "onboarding": "Onboarding",
       "dashboard": "Se connecter",
       "pricing": "Tarification"
     },
@@ -10,7 +12,8 @@
       "link": "Commencer gratuitement",
       "bottom": "Aucune carte bancaire requise • Sans abonnement",
       "main": "<fast>⚡</fast> Commencez gratuitement<large> avec 10 liens</large>",
-      "main_short": "<fast>⚡</fast> Commencez gratuitement"
+      "main_short": "<fast>⚡</fast> Commencez gratuitement",
+      "demo": "Réserver une démo"
     },
     "logos_circle": {
       "title": "LE PLUS ?",

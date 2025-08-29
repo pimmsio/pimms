@@ -1,7 +1,7 @@
-import { Bricolage_Grotesque } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import { twMerge } from "tailwind-merge";
 
-export const bricolage_grotesque = Bricolage_Grotesque({
+export const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"]
 });
@@ -10,8 +10,8 @@ export const H1 = ({ children, className }: { children: React.ReactNode; classNa
   return (
     <h1
       className={twMerge(
-        bricolage_grotesque.className,
-        "text-4xl md:text-5xl lg:text-6xl !leading-tight font-extrabold !tracking-tight text-balance text-text-primary",
+        plus_jakarta_sans.className,
+        "text-5xl md:text-6xl lg:text-7xl !leading-[1.1] font-bold !tracking-tighter text-balance text-text-primary max-w-2xl mx-auto",
         className
       )}
     >
@@ -24,8 +24,8 @@ export const H1Blog = ({ children, className }: { children: React.ReactNode; cla
   return (
     <h1
       className={twMerge(
-        bricolage_grotesque.className,
-        "text-3xl md:text-4xl font-extrabold !leading-tight !tracking-tight text-balance text-text-primary text-center",
+        plus_jakarta_sans.className,
+        "text-3xl md:text-4xl font-bold !leading-[1.1] !tracking-tighter text-balance text-text-primary text-center",
         className
       )}
     >
@@ -38,7 +38,7 @@ export const H1Subtitle = ({ children, className }: { children: React.ReactNode;
   return (
     <p
       className={twMerge(
-        "text-lg md:text-xl lg:text-2xl text-text-secondary font-medium leading-relaxed text-balance text-center max-w-4xl mx-auto",
+        "text-md md:text-lg lg:text-xl text-text-secondary leading-relaxed text-balance text-center max-w-4xl mx-auto",
         className
       )}
     >

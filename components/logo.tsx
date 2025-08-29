@@ -7,14 +7,11 @@ export default function Logo({ className }: { className?: string }) {
   const locale = useLocale();
 
   return (
-    <Link
-      href={getCanonicalLink(locale, "/")}
-      className="flex items-start flex-col space-y-2 z-10"
-    >
+    <Link href={getCanonicalLink(locale, "/")} className="flex items-start flex-col space-y-2 z-10">
       <Image
         src="/static/logo.svg"
         alt="pim.ms"
-        className={cn("w-20 md:w-24", className)}
+        className={cn("w-18 xl:w-22 mt-1", className)}
         width={1000}
         height={179}
       />

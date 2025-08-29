@@ -1,21 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
 import { localPoint } from "@visx/event";
-import {
-  TooltipWithBounds,
-  useTooltipInPortal,
-  useTooltip as useVisxTooltip,
-} from "@visx/tooltip";
+import { TooltipWithBounds, useTooltipInPortal, useTooltip as useVisxTooltip } from "@visx/tooltip";
 import { bisector } from "d3-array";
 import { useCallback, useContext, useEffect, useMemo } from "react";
-import { ChartTooltipSyncContext } from "./tooltip-sync";
-import {
-  ChartContext,
-  ChartTooltipContext,
-  Datum,
-  Series,
-  TimeSeriesDatum,
-} from "./types";
+// Local no-op sync context to remove external dependency on deleted tooltip-sync file
+import { createContext } from "react";
+export const ChartTooltipSyncContext = createContext<{
+  tooltipDate: Date | null;
+  setTooltipDate?: (d: Date | null) => void;
+}>({ tooltipDate: null });
+import { ChartContext, ChartTooltipContext, Datum, Series, TimeSeriesDatum } from "./types";
 
 const bisectDate = bisector<Datum, Date>((d) => new Date(d.date)).left;
 
@@ -34,7 +29,7 @@ export function useTooltip<T extends Datum>({
   renderInPortal = false,
   snapToY = false,
   snapToX = true,
-  defaultIndex,
+  defaultIndex
 }: TooltipOptions<T>): ChartTooltipContext {
   const { series, data, xScale, yScale, margin } = chartContext;
 
@@ -43,11 +38,10 @@ export function useTooltip<T extends Datum>({
   const visxTooltipInPortal = useTooltipInPortal({
     scroll: true,
     detectBounds: true,
-    debounce: 200,
+    debounce: 200
   });
 
-  const defaultTooltipDatum =
-    defaultIndex !== undefined ? data[defaultIndex] : undefined;
+  const defaultTooltipDatum = defaultIndex !== undefined ? data[defaultIndex] : undefined;
 
   const defaultTooltipData = useMemo(
     () =>
@@ -55,13 +49,7 @@ export function useTooltip<T extends Datum>({
         ? {
             tooltipData: defaultTooltipDatum,
             tooltipLeft: snapToX ? xScale(defaultTooltipDatum.date) : 0,
-            tooltipTop: snapToY
-              ? yScale(
-                  series
-                    .find((s) => s.id === seriesId)!
-                    .valueAccessor(defaultTooltipDatum)
-                )
-              : 0,
+            tooltipTop: snapToY ? yScale(series.find((s) => s.id === seriesId)!.valueAccessor(defaultTooltipDatum)) : 0
           }
         : undefined,
     [defaultTooltipDatum, snapToX, snapToY, xScale, yScale, series, seriesId]
@@ -77,48 +65,29 @@ export function useTooltip<T extends Datum>({
   useEffect(() => {
     if (
       tooltipSyncContext.tooltipDate &&
-      visxTooltip.tooltipData?.date.getTime() !==
-        tooltipSyncContext.tooltipDate.getTime()
+      visxTooltip.tooltipData?.date.getTime() !== tooltipSyncContext.tooltipDate.getTime()
     ) {
-      const d = data.find(
-        (d) => d.date.getTime() === tooltipSyncContext.tooltipDate?.getTime()
-      );
+      const d = data.find((d) => d.date.getTime() === tooltipSyncContext.tooltipDate?.getTime());
       if (!d) return;
 
       visxTooltip.showTooltip({
         tooltipData: d,
         tooltipLeft: xScale(d.date),
-        tooltipTop: snapToY
-          ? yScale(series.find((s) => s.id === seriesId)!.valueAccessor(d))
-          : 0,
+        tooltipTop: snapToY ? yScale(series.find((s) => s.id === seriesId)!.valueAccessor(d)) : 0
       });
-    } else if (
-      tooltipSyncContext.tooltipDate === null &&
-      visxTooltip.tooltipData?.date
-    ) {
+    } else if (tooltipSyncContext.tooltipDate === null && visxTooltip.tooltipData?.date) {
       visxTooltip.hideTooltip();
     }
-  }, [
-    tooltipSyncContext.tooltipDate,
-    visxTooltip.tooltipData,
-    snapToX,
-    snapToY,
-    xScale,
-    yScale,
-  ]);
+  }, [tooltipSyncContext.tooltipDate, visxTooltip.tooltipData, snapToX, snapToY, xScale, yScale]);
 
   const handleTooltip = useCallback(
-    (
-      event: React.TouchEvent<SVGRectElement> | React.MouseEvent<SVGRectElement>
-    ) => {
+    (event: React.TouchEvent<SVGRectElement> | React.MouseEvent<SVGRectElement>) => {
       const lp = localPoint(event) || { x: 0 };
       const x = lp.x - margin.left;
       const x0 =
         "invert" in xScale
           ? xScale.invert(x)
-          : (xScale.domain()[
-              Math.round((x - xScale.step() * 0.75) / xScale.step())
-            ] as Date | undefined);
+          : (xScale.domain()[Math.round((x - xScale.step() * 0.75) / xScale.step())] as Date | undefined);
 
       if (x0 === undefined) {
         console.log("x0 is undefined", { defaultTooltipData });
@@ -131,17 +100,12 @@ export function useTooltip<T extends Datum>({
       const d1 = data[index];
       let d = d0;
       if (d1?.date) {
-        d =
-          x0.valueOf() - d0.date.valueOf() > d1.date.valueOf() - x0.valueOf()
-            ? d1
-            : d0;
+        d = x0.valueOf() - d0.date.valueOf() > d1.date.valueOf() - x0.valueOf() ? d1 : d0;
       }
       visxTooltip.showTooltip({
         tooltipData: d,
         tooltipLeft: snapToX ? xScale(d.date) : x,
-        tooltipTop: snapToY
-          ? yScale(series.find((s) => s.id === seriesId)!.valueAccessor(d))
-          : 0,
+        tooltipTop: snapToY ? yScale(series.find((s) => s.id === seriesId)!.valueAccessor(d)) : 0
       });
 
       tooltipSyncContext.setTooltipDate?.(d.date);
@@ -154,13 +118,11 @@ export function useTooltip<T extends Datum>({
       series,
       defaultTooltipData,
       visxTooltip.showTooltip,
-      tooltipSyncContext.setTooltipDate,
+      tooltipSyncContext.setTooltipDate
     ]
   );
 
-  const TooltipWrapper = renderInPortal
-    ? visxTooltipInPortal.TooltipInPortal
-    : TooltipWithBounds;
+  const TooltipWrapper = renderInPortal ? visxTooltipInPortal.TooltipInPortal : TooltipWithBounds;
 
   return {
     handleTooltip,
@@ -172,6 +134,6 @@ export function useTooltip<T extends Datum>({
 
       if (defaultTooltipData) visxTooltip.showTooltip(defaultTooltipData);
       else visxTooltip.hideTooltip();
-    },
+    }
   };
 }

@@ -28,10 +28,10 @@ export const Slide = ({
   };
 
   const sizeClasses = {
-    xs: "py-8",
-    sm: "py-12",
-    md: "py-20",
-    lg: "py-28"
+    xs: "py-4 sm:py-8",
+    sm: "py-8 sm:py-12",
+    md: "py-12 sm:py-20",
+    lg: "py-20 sm:py-28"
   };
 
   const spacingClasses = {

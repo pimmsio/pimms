@@ -1,10 +1,5 @@
-/* eslint-disable react-hooks/exhaustive-deps */
-
-import { cn } from "../../lib/utils";
-import { Group } from "@visx/group";
 import { ParentSize } from "@visx/responsive";
 import { scaleBand, scaleLinear, scaleUtc } from "@visx/scale";
-import { Bar, Circle, Line } from "@visx/shape";
 import { PropsWithChildren, useMemo, useState } from "react";
 import { ChartContext, ChartTooltipContext } from "./chart-context";
 import { ChartProps, Datum, type ChartContext as ChartContextType } from "./types";
@@ -14,7 +9,7 @@ type TimeSeriesChartProps<T extends Datum> = PropsWithChildren<ChartProps<T>>;
 
 export function TimeSeriesChart<T extends Datum>(props: TimeSeriesChartProps<T>) {
   return (
-    <ParentSize className="relative">
+    <ParentSize className="relative w-full h-full min-w-0">
       {({ width, height }) => {
         return width > 0 && height > 0 && <TimeSeriesChartInner {...props} width={width} height={height} />;
       }}
@@ -55,8 +50,8 @@ function TimeSeriesChartInner<T extends Datum>({
     bottom: type === "area" ? 0.1 : 0
   };
 
-  const width = outerWidth - margin.left - margin.right;
-  const height = outerHeight - margin.top - margin.bottom;
+  const width = Math.max(0, outerWidth - margin.left - margin.right);
+  const height = Math.max(0, outerHeight - margin.top - margin.bottom);
 
   const { startDate, endDate } = useMemo(() => {
     const dates = data.map(({ date }) => date);
@@ -133,93 +128,14 @@ function TimeSeriesChartInner<T extends Datum>({
     defaultIndex: defaultTooltipIndex ?? undefined
   });
 
-  const { tooltipData, TooltipWrapper, tooltipLeft, tooltipTop, handleTooltip, hideTooltip, containerRef } =
-    tooltipContext;
+  const { containerRef } = tooltipContext;
 
   return (
     <ChartContext.Provider value={chartContext}>
       <ChartTooltipContext.Provider value={tooltipContext}>
         <svg width={outerWidth} height={outerHeight} ref={containerRef}>
           {children}
-          <Group left={margin.left} top={margin.top}>
-            {/* Tooltip hover line + circle */}
-            {tooltipData &&
-              ("bandwidth" in xScale ? (
-                <>
-                  <Bar
-                    x={(xScale(tooltipData.date) ?? 0) - xScale.bandwidth() * xScale.padding()}
-                    width={xScale.bandwidth() * (1 + xScale.padding() * 2)}
-                    y={0}
-                    height={height}
-                    fill="black"
-                    fillOpacity={0.05}
-                  />
-                </>
-              ) : (
-                <>
-                  <Line
-                    x1={xScale(tooltipData.date)}
-                    x2={xScale(tooltipData.date)}
-                    y1={height}
-                    y2={0}
-                    stroke="black"
-                    strokeOpacity={0.5}
-                    strokeWidth={1}
-                  />
-
-                  {series
-                    .filter(({ isActive }) => isActive)
-                    .map((s) => (
-                      <Circle
-                        key={s.id}
-                        cx={xScale(tooltipData.date)}
-                        cy={yScale(s.valueAccessor(tooltipData))}
-                        r={4}
-                        className={s.colorClassName ?? "text-brand-primary-800"}
-                        fill="currentColor"
-                      />
-                    ))}
-                </>
-              ))}
-
-            {/* Tooltip hover region */}
-            <Bar
-              x={0}
-              y={0}
-              width={width}
-              height={height}
-              onTouchStart={handleTooltip}
-              onTouchMove={handleTooltip}
-              onMouseMove={handleTooltip}
-              onMouseLeave={hideTooltip}
-              fill="transparent"
-            />
-          </Group>
         </svg>
-
-        {/* Tooltips */}
-        <div className="pointer-events-none absolute inset-0">
-          {tooltipData && (
-            <TooltipWrapper
-              key={tooltipData.date.toString()}
-              left={(tooltipLeft ?? 0) + margin.left}
-              top={(tooltipTop ?? 0) + margin.top}
-              offsetLeft={"bandwidth" in xScale ? xScale.bandwidth() + 8 : 8}
-              offsetTop={12}
-              className="absolute"
-              unstyled={true}
-            >
-              <div
-                className={cn(
-                  "pointer-events-none rounded-xl border-[2px] border-neutral-100 bg-white px-4 py-2 text-base shadow-sm",
-                  tooltipClassName
-                )}
-              >
-                {tooltipContent?.(tooltipData) ?? series[0].valueAccessor(tooltipData)}
-              </div>
-            </TooltipWrapper>
-          )}
-        </div>
       </ChartTooltipContext.Provider>
     </ChartContext.Provider>
   );

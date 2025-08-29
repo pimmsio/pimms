@@ -2,18 +2,16 @@ import { cn } from "@/lib/utils";
 import { LinearGradient } from "@visx/gradient";
 import { RectClipPath } from "@visx/clip-path";
 import { Group } from "@visx/group";
-import { Area, AreaClosed, Circle } from "@visx/shape";
+import { Area, AreaClosed } from "@visx/shape";
 import { BarRounded } from "@visx/shape";
 import { curveMonotoneX } from "@visx/curve";
 import { AnimatePresence, motion } from "framer-motion";
 import { useId, useMemo } from "react";
-import { useChartContext, useChartTooltipContext } from "./chart-context";
+import { useChartContext } from "./chart-context";
 
 export function MixedAreasAndBars() {
   const clipPathId = useId();
   const { data, series, margin, xScale, yScale, width, height, startDate, endDate } = useChartContext();
-
-  const { tooltipData } = useChartTooltipContext();
 
   // Data with all values set to zero to animate from
   const zeroedData = useMemo(() => {
@@ -28,7 +26,7 @@ export function MixedAreasAndBars() {
   const barSeries = series.filter((s: any) => s.type === "bar");
 
   // Calculate bar width based on scale type
-  const barWidth = "bandwidth" in xScale ? xScale.bandwidth() : (width / data.length) * 0.4;
+  const barWidth = "bandwidth" in xScale ? xScale.bandwidth() : Math.max(2, (width / data.length) * 0.4);
 
   return (
     <Group left={margin.left} top={margin.top}>
@@ -65,11 +63,10 @@ export function MixedAreasAndBars() {
                         width={barWidth}
                         height={leadsHeight}
                         radius={4}
-                        fill={(s as any).barFill ?? "var(--color-data-secondary)"}
-                        fillOpacity={0.5}
+                        fill={(s as any).barFill ?? "var(--color-vibrant-orange)"}
                         stroke="rgba(255, 255, 255, 0.2)"
                         strokeWidth={1}
-                        className={cn(s.colorClassName ?? "text-data-secondary")}
+                        className={cn(s.colorClassName ?? "text-vibrant-orange")}
                       />
                     </motion.g>
                   ) : null;
@@ -91,11 +88,10 @@ export function MixedAreasAndBars() {
                         width={barWidth}
                         height={salesHeight}
                         radius={4}
-                        fill={(s as any).barFill ?? "var(--color-data-success)"}
-                        fillOpacity={0.6}
+                        fill={(s as any).barFill ?? "var(--color-data-sales)"}
                         stroke="rgba(255, 255, 255, 0.2)"
                         strokeWidth={1}
-                        className={cn(s.colorClassName ?? "text-data-success")}
+                        className={cn(s.colorClassName ?? "text-data-sales")}
                       />
                     </motion.g>
                   ) : null;
@@ -124,11 +120,11 @@ export function MixedAreasAndBars() {
                 className="text-zinc-50"
                 id={`${s.id}-area-gradient`}
                 fromOffset="0%"
-                from="#d1d5db"
-                fromOpacity={0.2}
-                toOffset="100%"
-                to="#e5e7eb"
-                toOpacity={0.05}
+                from="var(--color-brand-secondary)"
+                fromOpacity={0.25}
+                toOffset="50%"
+                to="var(--color-brand-secondary-light)"
+                toOpacity={0}
                 x1={0}
                 x2={0}
                 y1={0}
@@ -163,8 +159,8 @@ export function MixedAreasAndBars() {
                   <motion.path
                     initial={{ d: path(zeroedData) || "" }}
                     animate={{ d: path(data) || "" }}
-                    className={cn(s.colorClassName ?? "text-data-primary")}
-                    stroke={(s as any).strokeColor ?? "var(--color-data-primary)"}
+                    className={cn(s.colorClassName ?? "text-data-clicks")}
+                    stroke={(s as any).strokeColor ?? "var(--color-data-clicks)"}
                     strokeOpacity={1}
                     strokeWidth={(s as any).strokeWidth ?? 2.5}
                     strokeLinecap="round"
@@ -173,19 +169,6 @@ export function MixedAreasAndBars() {
                   />
                 )}
               </Area>
-
-              {/* Latest value circle */}
-              {!tooltipData && (
-                <Circle
-                  cx={xScale(data.at(-1)!.date) ?? 0}
-                  cy={yScale(s.valueAccessor(data.at(-1)!))}
-                  r={4}
-                  className={cn(s.colorClassName ?? "text-data-primary")}
-                  fill={(s as any).strokeColor ?? "var(--color-data-primary)"}
-                  stroke="white"
-                  strokeWidth="2"
-                />
-              )}
             </motion.g>
           ))}
       </AnimatePresence>
