@@ -18,6 +18,10 @@ export const basePathnames = {
   "/landings/ab-testing": {
     en: "/solutions/ab-testing"
   },
+  "/landings/for-creators": {
+    en: "/for-creators",
+    fr: "/pour-les-createurs-de-contenu"
+  },
   "/freetools/site-checker": {
     en: "/freetools/pimms-tracking-site-checker-install",
     fr: "/freetools/pimms-tracking-site-checker-installation"

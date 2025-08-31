@@ -4,7 +4,7 @@ summary: The only short links that open your products or books directly in the o
 publishedAt: 2025-01-01
 updatedAt: 2025-01-01
 slug: amazon
-image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
+image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
 ---
 
 <Header />
@@ -32,9 +32,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
     <TwoColumns ratio="2-1">
       <Column span={2} order="text">
         <WithoutPimms />
-        <Text size="lg">
-          When your Amazon products don't open in the official Amazon app, the customer journey breaks.
-        </Text>
+        <Text size="lg">When your Amazon products don't open in the official Amazon app, the customer journey breaks.</Text>
         <List>
           <Item variant="problem">**Links open inside a tiny in-app browser** instead of the official Amazon app</Item>
           <Item variant="problem">**Users aren't signed in**: they can't easily buy, rate, or review</Item>
@@ -48,112 +46,218 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   </Section>
 </Slide>
 
-<Slide id="top-features">
-  <Centered>
-    <Label variant="solution">The Solution</Label>
-    <H2>With PIMMS, you sell more and <Primary>know why</Primary></H2>
-    <Text size="lg">Your links open directly in the Amazon app. Reduce friction and track the performance of every link and campaign.</Text>
-  </Centered>
+<Slide id="features">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Enhanced Features</Label>
+      <H2>10x your <TitleIcon variant="h2" icon="growth" /> <Primary>Growth</Primary>. Collect more Leads and unlock more Revenue with Smart links.</H2>
+      <Text size="lg">(Ridiculously easy to integrate with your growth stack 😉)</Text>
+    </Centered>
+  </BlurFade>
 
-  <Section>
-    <TwoColumns ratio="7-5">
-      <Column span={7} order="visual">
-        <DeeplinkDemo />
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.2} inView>
+          <H3>It starts with Links that <TextHighlight color="blue">Convert more</TextHighlight></H3>
+          <Text>Run outreach campaigns, start emailing campaigns, share links on social media.</Text>
+          <Text>Pimms deeplinks remove the hassle of in app browser, making purchases and signups happen 30% more often.</Text>
+        </BlurFade>
       </Column>
-      <Column span={5} order="text">
-        <H3>Seamless purchasing experience</H3>
-        <Text>Your links take shoppers directly to the official Amazon app. Fewer lost clicks, more reviews and sales.</Text>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" inView>
+          <ConversionFlipCard />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section>
-    <TwoColumns ratio="5-7">
-      <Column span={5} order="text">
-        <H3>Finally see what drives orders</H3>
-        <Text>View each link's impact in a dashboard, mapping each promotion or campaign to the right channel.</Text>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle" noPadding>
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <div className="pt-12 md:py-12">
+            <H3>Collect leads on <TextHighlight color="orange">autopilot</TextHighlight></H3>
+            <Text>Collect high-quality leads and signals from every campaign across all your channels.</Text>
+            <Text>It's fully automated, whether you run a social campaign, an emailing sequence, a webinar or a podcast.</Text>
+          </div>
+        </BlurFade>
       </Column>
-      <Column span={7} order="visual">
-        <AnalyticsDemo showConversions={false} />
-      </Column>
-    </TwoColumns>
-  </Section>
-
-  <Section>
-    <TwoColumns ratio="7-5">
-      <Column span={7} order="visual">
-        <Referer />
-      </Column>
-      <Column span={5} order="text">
-        <H3>Make better decisions faster</H3>
-        <Text>With clear, real-time data, pinpoint your best-performing products and optimize your sales strategy.</Text>
+      <Column span={1} order="visual" noPadding position="start">
+        <BlurFade direction="right" delay={0.2} inView>
+          <AvatarFunnel />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section>
-    <TwoColumns ratio="5-7">
-      <Column span={5} order="text">
-        <H3>Accelerate your growth by focusing on what works</H3>
-        <Text>Stop guessing and double down on what converts. Analyze by UTM campaigns, source, country, device, and channel.</Text>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Prioritize with <TextHighlight color="red">Lead Scoring AI</TextHighlight></H3>
+          <Text>Manage your leads with intelligent scoring and deep customer insights.</Text>
+          <Text>Understand which prospects are most likely to convert and focus your efforts on the highest-value opportunities.</Text>
+        </BlurFade>
       </Column>
-      <Column span={7} order="visual">
-        <FilterFeature />
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <LeadScoringAnimatedList />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section variant="card">
-    <List layout="horizontal">
-      <FeatureCard>
-        <IconBox icon="zap" />
-        <H4>Real-time data</H4>
-        <Text>Every click, conversion, and sale is shown live, enabling quick action.</Text>
-      </FeatureCard>
-      <FeatureCard>
-        <IconBox icon="globe" />
-        <H4>Custom domains</H4>
-        <Text>Create short, professional, and unique links using your own domain name.</Text>
-      </FeatureCard>
-      <FeatureCard>
-        <IconBox icon="share" />
-        <H4>Link previews</H4>
-        <Text>Offer customizable link previews by easily editing the image, title, and description.</Text>
-      </FeatureCard>
-    </List>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Unlock <TextHighlight color="blue">key insights</TextHighlight></H3>
+          <Text>Monitor lead behavior in real time. Track campaign results, A/B tests, and how buyer journeys are performing.</Text>
+          <Text>Discover which combination of touchpoints drives more revenue and optimize your entire funnels.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <AnalyticsDemo />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Integrate your <TextHighlight color="green">Growth Stack</TextHighlight></H3>
+          <Text>Native integrations with Stripe, Systeme.io, Shopify, Cal.com, Zapier, WordPress and more.</Text>
+          <Text>And our relentless dev team keeps dropping new integrations like there’s no tomorrow.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" inView>
+          <IntegrationsGrid />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+</Slide>
+
+<Slide id="why-pimms">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">PIMMS vs Others</Label>
+      <H2>Why top Creators <TitleIcon variant="h2" icon="why" /> <Primary>Choose PIMMS?</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+    <ComparisonContainer>
+      <ComparisonHeader />
+      <ComparisonRow others={true} pimms={true}>Short links / QR codes</ComparisonRow>
+      <ComparisonRow others={true} pimms={true}>Custom domains for maximum deliverability</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Deep links for +30% more conversions</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Realtime revenue insights</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Customer insights & Lead scoring AI</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Bypass ad blockers (server-side tracking)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Funnel A/B testing</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Fast Setup (start in 10 minutes)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Advanced traffic redirection (per device, country, app stores)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>24/7 Dedicated support</ComparisonRow>
+
+      <ComparisonExtras>
+        <ComparisonExtra color="text-vibrant-blue">QR Codes with logo</ComparisonExtra>
+        <ComparisonExtra color="text-vibrant-red">Fewer failed payments</ComparisonExtra>
+        <ComparisonExtra color="text-vibrant-blue">Custom link previews</ComparisonExtra>
+        <ComparisonExtra color="text-brand-secondary">API access</ComparisonExtra>
+        <ComparisonExtra color="text-brand-secondary">Webhooks</ComparisonExtra>
+      </ComparisonExtras>
+    </ComparisonContainer>
   </Section>
 </Slide>
 
 <Slide variant="secondary" id="pricing">
-  <Centered>
-    <Label variant="none">Pricing</Label>
-    <H2>Choose the plan that fits your needs</H2>
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Pricing</Label>
+      <H2>Fair <TitleIcon variant="h2" icon="pricing" /> <Primary>Pricing</Primary> that fits your needs</H2>
+      <Text size="lg">Start with 10 free links. Upgrade when you need to.</Text>
+    </Centered>
+  </BlurFade>
   
   <Section>
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
-        <LifetimeOfferStarter />
+        <BlurFade direction="left" delay={0.1} inView>
+          <LifetimeOfferStarter />
+        </BlurFade>
       </Column>
       <Column span={1}>
-        <LifetimeOfferPro />
+        <BlurFade direction="up" delay={0.2} inView>
+          <LifetimeOfferPro />
+        </BlurFade>
       </Column>
       <Column span={1}>
-        <OnDemandOfferBusiness />
+        <BlurFade direction="right" delay={0.3} inView>
+          <OnDemandOfferBusiness />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 </Slide>
 
+<Slide id="onboarding">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Effortless Onboarding in <TitleIcon variant="h2" icon="minutes" /> <Primary>Minutes</Primary></H2>
+      <Text size="lg">Skip the guesswork. We help you get started fast and hassle free.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section variant="card" background="grid">
+    <List layout="horizontal">
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="share" />
+          <H4>Post on social media</H4>
+          <Text>Share links on LinkedIn, YouTube, X, Instagram or TikTok. Manage and create UTM campaigns in one dashboard. Organize your links with tags and comments.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="target" />
+          <H4>Outreach like never</H4>
+          <Text>Connect with your customers with Lemlist, Brevo, Tally, Cal.com, iClosed, Systeme.io, and more. Automate your outreach and collect leads on autopilot.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="cash" />
+          <H4>Turn clicks into cash</H4>
+          <Text>Connect payment systems like Stripe, Shopify, Systeme.io in one click. Our native integrations guide you through approvals without any hassle.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="arrowUp" />
+          <H4>Grow on autopilot</H4>
+          <Text>Track real time analytics and scale while we run the backend. Spot growth opportunities and expand operation with full support from our team.</Text>
+        </FeatureCard>
+      </BlurFade>
+    </List>
+  </Section>
+</Slide>
+
 <Slide>
-  <Centered>
-    <Label variant="none">FAQ</Label>
-    <H2>Selling on Amazon?</H2>
-    <Text size="lg">Here are the most common questions people ask before using PIMMS to boost their Amazon sales and reviews.</Text>
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Curated <TitleIcon variant="h2" icon="questions" /> <Primary>Questions</Primary></H2>
+      <Text size="lg">Book a call or reach out anytime, we’re here to help.</Text>
+    </Centered>
+  </BlurFade>
   
   <Section>
-
+ 
 ::: faq
 ### What makes PIMMS different from a regular Amazon link?
 When you share a link to a product or book on Amazon, it often opens in a small in-app browser (like Instagram or Facebook). PIMMS redirects users straight to the official Amazon app. The result? A smoother shopping experience, more sales, and more positive reviews.
@@ -207,17 +311,27 @@ Amazon Analytics shows you what happens *on* Amazon once people arrive. PIMMS sh
   </Section>
 </Slide>
 
-<Slide variant="accent" id="free">
-  <Section variant="card">
+<Slide variant="secondary" size="sm" spacing="bottom" noPadding>
+  <BlurFade direction="up" inView>
+    <LogosCircle />
+  </BlurFade>
+</Slide>
+
+<Slide variant="primary" id="free">
+  <Section variant="branded">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
-        <H2 align="left">Free access to PIMMS</H2>
-        <Text size="lg">Stop losing sales on Amazon - start with 10 free deeplinks today.</Text>
-        <CtaButton><Fast /> Start for free</CtaButton>
-        <CtaBottomText>No credit card required • Just more sales</CtaBottomText>
+        <BlurFade direction="left" inView>
+          <H2 align="left" variant="white">It starts here</H2>
+          <Text size="lg" variant="white">If you made it this far, it's time to grab 10 free links.</Text>
+          <CtaButton variant="inverse"><Fast /> Start for free</CtaButton>
+          <CtaBottomText variant="white">10 smart links included • No credit card</CtaBottomText>
+        </BlurFade>
       </Column>
       <Column span={1} order="text">
-        <BouncingImages />
+        <BlurFade direction="right" delay={0.2} inView>
+          <BouncingImages />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>

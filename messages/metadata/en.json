@@ -1,7 +1,7 @@
 {
   "metadata": {
     "home": {
-      "title": "Link sharing tool for measuring conversions | PIMMS",
+      "title": "Turn more clicks into sales | PIMMS",
       "description": "Tool that tracks your top performing links – so you can boost what really works.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
@@ -23,6 +23,11 @@
     "ab-testing": {
       "title": "A/B test your links and campaigns to maximize conversions | PIMMS",
       "description": "Stop guessing what works. A/B test your links, track real conversions, and make data-driven decisions that actually boost your results.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
+    "for-creators": {
+      "title": "PIMMS for Creators: Turn clicks into leads and sales",
+      "description": "Collect more leads, book more meetings and grow revenue with smart links, deep links and real-time insights.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "abuse": {

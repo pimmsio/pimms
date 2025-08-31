@@ -25,6 +25,11 @@
       "description": "Arrête de deviner ce qui marche. L'A/B testing des liens courts vous permet de tester les liens, suivre les conversions réelles et prendre des décisions basées sur des données qui augmentent effectivement vos résultats.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
+    "for-creators": {
+      "title": "PIMMS pour Créateurs : Transforme les clics en leads et ventes",
+      "description": "Collecte plus de leads, réserve plus de RDV et augmente ton CA avec des smart links, deep links et des insights en temps réel.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
     "abuse": {
       "title": "Signaler un abus"
     },

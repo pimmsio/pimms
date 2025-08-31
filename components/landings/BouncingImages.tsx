@@ -84,7 +84,7 @@ export default function BouncingImages({ tkey = "landing" }: BouncingImagesProps
   };
 
   return (
-    <div className="relative flex items-start justify-center w-full max-w-md mx-auto sm:min-h-[275px]">
+    <div className="relative flex items-start justify-center w-full max-w-md mx-auto sm:min-h-[275px]" data-nosnippet>
       <div
         className={`
           relative border border-gray-200 mr-[-20px] sm:mr-[-30px] rounded-xl bg-white

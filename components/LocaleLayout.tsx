@@ -22,18 +22,12 @@ export default async function BaseLayout({ children, locale }: Props) {
         <meta name="apple-mobile-web-app-title" content="Pimms" />
         <LinkedInInsight />
       </Head>
-      <body
-        className={`${inter.className} antialiased overscroll-none scroll-smooth`}
-      >
+      <body className={`${inter.className} antialiased overscroll-none scroll-smooth`}>
         <RootProviders>
-          <NextIntlClientProvider messages={messages}>
-            {children}
-          </NextIntlClientProvider>
+          <NextIntlClientProvider messages={messages}>{children}</NextIntlClientProvider>
         </RootProviders>
       </body>
-      <GoogleTagManager
-        gtmId={process.env.NEXT_PUBLIC_GTM_CONTAINER_ID as string}
-      />
+      <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GTM_CONTAINER_ID as string} />
     </html>
   );
 }

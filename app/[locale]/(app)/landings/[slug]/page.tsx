@@ -22,9 +22,10 @@ import { notFound } from "next/navigation";
 
 // Import MDX components
 import { Highlight } from "@/components/mdx/Highlight";
+import { TextHighlight } from "@/components/mdx/TextHighlight";
 import { Pre } from "@/components/mdx/Pre";
 import TallyIframe from "@/components/mdx/TallyIframe";
-import { Slide } from "@/components/mdx/LandingSection";
+import { Slide } from "@/components/mdx/Slide";
 import { CallToAction } from "@/components/mdx/CallToAction";
 import { Callout } from "@/components/mdx/Callout";
 import { Faq } from "@/components/mdx/Faq";
@@ -55,6 +56,9 @@ import LogosCircle from "@/components/logos-circle";
 import { DeeplinkDemo as DeeplinkDemoComponent } from "@/components/landings/deeplink-demo";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
 import BouncingImages from "@/components/landings/BouncingImages";
+import IntegrationsGrid from "@/components/landings/integrations-grid";
+import LeadScoringAnimatedList from "@/components/landings/LeadScoringAnimatedList";
+import ConversionFlipCard from "@/components/landings/ConversionFlipCard";
 
 // Import generic content components
 import {
@@ -85,6 +89,7 @@ import {
   TwoColumns,
   Column,
   Primary,
+  TitleIcon,
   HideOnMobile,
   HideOnDesktop
 } from "@/components/mdx/content";
@@ -96,6 +101,15 @@ import { FilterFeature } from "@/components/landings/filter-feature";
 import { ABTestingDemo } from "@/components/landings/ab-testing-demo";
 
 import CtaDemo from "@/components/cta/CtaDemo";
+import {
+  ComparisonContainer,
+  ComparisonHeader,
+  ComparisonRow,
+  ComparisonExtras,
+  ComparisonExtra
+} from "@/components/landings/ComparisonTable";
+import AvatarFunnel from "../../../../../components/landings/AvatarFunnel";
+import HeroRibbon from "../../../../../components/landings/HeroRibbon";
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
   const { slug } = await params;
@@ -104,11 +118,12 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 }
 
 export async function generateStaticParams() {
-  return [{ slug: "home" }, { slug: "youtube" }, { slug: "amazon" }];
+  return [{ slug: "home" }, { slug: "youtube" }, { slug: "amazon" }, { slug: "growth-2" }];
 }
 
 export default async function LandingPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
+  const seedNonce = crypto.randomUUID();
 
   try {
     const page = getPage(locale, landingFolders, slug);
@@ -122,8 +137,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
 
       // Landing page specific components
       Avatars: ({ children }: { children?: React.ReactNode }) => {
-        const t = useTranslations("landing");
-        return <Avatars>{children || <SmallText>{t("hero.avatars.title")}</SmallText>}</Avatars>;
+        return <Avatars>{children || null}</Avatars>;
       },
       Hero,
       Problem,
@@ -131,10 +145,21 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       LifetimeOfferStarter: () => <LifetimeOfferStarter tkey="landing" />,
       LifetimeOfferPro: () => <LifetimeOfferPro tkey="landing" />,
       LifetimeOfferScale: () => <LifetimeOfferScale tkey="landing" />,
+      // Alias used by some MDX pages
+      OnDemandOfferBusiness: () => <LifetimeOfferScale tkey="landing" />,
       BouncingImages: () => <BouncingImages tkey="landing" />,
       LogosCircle,
+      IntegrationsGrid,
+      HeroRibbon: (props: any) => <HeroRibbon seedNonce={seedNonce} {...props} />,
+      AvatarFunnel: (props: any) => <AvatarFunnel seedNonce={seedNonce} {...props} />,
+      ConversionFlipCard,
       ImageSlide,
       VideoSlide,
+      ComparisonContainer,
+      ComparisonHeader,
+      ComparisonRow,
+      ComparisonExtras,
+      ComparisonExtra,
 
       // CTA components
       CtaButton: ({
@@ -150,9 +175,9 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
           return (
             <CtaButtonBig
               type="sales"
-              size="lg"
+              size="xl"
               variant={variant}
-              className="py-3 my-2 w-full gap-1 sm:w-fit mx-auto sm:min-w-[380px]"
+              className="py-3 my-2 gap-1 w-fit mx-auto sm:min-w-[380px]"
               value={children}
             />
           );
@@ -161,7 +186,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
         return (
           <CtaButtonBig
             type="sales"
-            size="lg"
+            size="xl"
             variant={variant}
             className="py-3 my-2 w-full md:w-fit mx-auto"
             value={t.rich("cta.main", {
@@ -174,6 +199,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       CtaDemo,
       // Content components
       Primary,
+      TitleIcon,
       HideOnMobile,
       HideOnDesktop,
       Fast,
@@ -193,6 +219,8 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       H2,
       H3,
       H4,
+      Highlight,
+      TextHighlight,
       Summary,
       Text,
       SmallText,
@@ -230,6 +258,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       code: Highlight,
       pre: Pre,
       TallyIframe,
+      LeadScoringAnimatedList,
       // Ordered list mapping to respect start numbering when lists are split
       ol: ({ children, className, style, start, ...rest }: React.OlHTMLAttributes<HTMLOListElement>) => {
         const styleObj: React.CSSProperties = typeof style === "object" && style !== null ? style : {};
@@ -258,13 +287,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       },
 
       // Chart components
-      AnalyticsDemo: ({ showConversions, showABTesting }: { showConversions?: boolean; showABTesting?: boolean }) => (
-        <AnalyticsDemo
-          tkey="landing"
-          showConversions={showConversions !== false}
-          showABTesting={showABTesting || false}
-        />
-      ),
+      AnalyticsDemo: () => <AnalyticsDemo tkey="landing" />,
       Referer: ({ showABTesting }: { showABTesting?: boolean }) => <Referer showABTesting={showABTesting} />,
       FilterFeature: () => <FilterFeature tkey="landing" />,
       ABTestingDemo: () => <ABTestingDemo />,

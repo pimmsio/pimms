@@ -13,7 +13,7 @@ export const TestimonialCard = ({ tkey }: { tkey: string }) => {
         <div className="flex gap-1">
           {Array.from({ length: 5 }, (_, index) => (
             <div key={index}>
-              <Star className="w-5 h-5 text-vibrant-yellow fill-current" />
+              <Star className="w-5 h-5 text-vibrant-orange fill-current" />
             </div>
           ))}
         </div>

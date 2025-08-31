@@ -4,7 +4,7 @@ summary: Stop guessing what works. A/B test your links, track real conversions, 
 publishedAt: 2025-01-01
 updatedAt: 2025-01-01
 slug: ab-testing
-image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
+image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
 ---
 
 <Header />
@@ -32,9 +32,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
     <TwoColumns ratio="2-1">
       <Column span={3} order="text">
         <WithoutPimms />
-        <Text size="lg">
-          You're running campaigns and sharing links, but you have no idea which ones actually drive results.
-        </Text>
+        <Text size="lg">You're running campaigns and sharing links, but you have no idea which ones actually drive results.</Text>
         <List>
           <Item variant="problem">**You can't compare performance** between different campaigns, channels, or content variations</Item>
           <Item variant="problem">**You only see clicks, not conversions**: which links actually drive sales, signups, or appointments?</Item>
@@ -46,9 +44,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   
   <Section variant="card">
     <WithoutPimms />
-    <Text size="lg">
-      Most tools show you vanity metrics like clicks and impressions, but what you really need to know is what converts.
-    </Text>
+    <Text size="lg">Most tools show you vanity metrics like clicks and impressions, but what you really need to know is what converts.</Text>
     <List layout="horizontal">
       <Item variant="problem">**You can't A/B test different landing pages** or call-to-action variations effectively</Item>
       <Item variant="problem">**You waste time and money** on campaigns that look good on paper but don't drive real business results</Item>
@@ -57,116 +53,218 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   </Section>
 </Slide>
 
-<Slide id="top-features">
-  <Centered>
-    <Label variant="solution">The Solution</Label>
-    <H2>With PIMMS, you A/B test everything and <Primary>know what converts</Primary></H2>
-    <Text size="lg">Track real conversions beyond clicks. Compare different campaigns, channels, and content variations. Make decisions based on actual results, not guesswork.</Text>
-  </Centered>
+<Slide id="features">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Enhanced Features</Label>
+      <H2>10x your <TitleIcon variant="h2" icon="growth" /> <Primary>Growth</Primary>. Collect more Leads and unlock more Revenue with Smart links.</H2>
+      <Text size="lg">(Ridiculously easy to integrate with your growth stack 😉)</Text>
+    </Centered>
+  </BlurFade>
 
-  <Section>
-    <TwoColumns ratio="7-5">
-      <Column span={7} order="visual">
-        <ABTestingDemo />
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.2} inView>
+          <H3>It starts with Links that <TextHighlight color="blue">Convert more</TextHighlight></H3>
+          <Text>Run outreach campaigns, start emailing campaigns, share links on social media.</Text>
+          <Text>Pimms deeplinks remove the hassle of in app browser, making purchases and signups happen 30% more often.</Text>
+        </BlurFade>
       </Column>
-      <Column span={5} order="text">
-        <H3>Set up A/B tests in seconds</H3>
-        <Text>Create A/B tests with our intuitive interface. Add multiple URL variations, set test duration, and start testing instantly. No complex setup required.</Text>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" inView>
+          <ConversionFlipCard />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section>
-    <TwoColumns ratio="5-7">
-      <Column span={5} order="text">
-        <H3>Track real conversions, not just clicks</H3>
-        <Text>Connect every click to actual business results: sales, signups, form submissions, appointments. Know which A/B test variations drive the most revenue.</Text>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle" noPadding>
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <div className="pt-12 md:py-12">
+            <H3>Collect leads on <TextHighlight color="orange">autopilot</TextHighlight></H3>
+            <Text>Collect high-quality leads and signals from every campaign across all your channels.</Text>
+            <Text>It's fully automated, whether you run a social campaign, an emailing sequence, a webinar or a podcast.</Text>
+          </div>
+        </BlurFade>
       </Column>
-      <Column span={7} order="visual">
-        <AnalyticsDemo showABTesting={true} />
-      </Column>
-    </TwoColumns>
-  </Section>
-
-  <Section>
-    <TwoColumns ratio="7-5">
-      <Column span={7} order="visual">
-        <FilterFeature />
-      </Column>
-      <Column span={5} order="text">
-        <H3>Segment and analyze like a pro</H3>
-        <Text>Filter results by UTM campaigns, traffic sources, devices, countries, and more. Understand exactly which audience segments convert best.</Text>
+      <Column span={1} order="visual" noPadding position="start">
+        <BlurFade direction="right" delay={0.2} inView>
+          <AvatarFunnel />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section>
-    <TwoColumns ratio="5-7">
-      <Column span={5} order="text">
-        <H3>Test across all your marketing channels</H3>
-        <Text>Run the same A/B test across LinkedIn, Twitter, email, ads, and more. See which channels convert best for your specific audience and content.</Text>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Prioritize with <TextHighlight color="red">Lead Scoring AI</TextHighlight></H3>
+          <Text>Manage your leads with intelligent scoring and deep customer insights.</Text>
+          <Text>Understand which prospects are most likely to convert and focus your efforts on the highest-value opportunities.</Text>
+        </BlurFade>
       </Column>
-      <Column span={7} order="visual">
-        <Referer showABTesting={true} />
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <LeadScoringAnimatedList />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section variant="card">
-    <List layout="horizontal">
-      <FeatureCard>
-        <IconBox icon="zap" />
-        <H4>Real-time results</H4>
-        <Text>See A/B test results instantly. No waiting weeks to know which variation is winning.</Text>
-      </FeatureCard>
-      <FeatureCard>
-        <IconBox icon="globe" />
-        <H4>Custom domains</H4>
-        <Text>Test with branded links that build trust and improve conversion rates across all campaigns.</Text>
-      </FeatureCard>
-      <FeatureCard>
-        <IconBox icon="share" />
-        <H4>Team collaboration</H4>
-        <Text>Share A/B test results with your team. Make data-driven decisions together with shared dashboards.</Text>
-      </FeatureCard>
-    </List>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Unlock <TextHighlight color="blue">key insights</TextHighlight></H3>
+          <Text>Monitor lead behavior in real time. Track campaign results, A/B tests, and how buyer journeys are performing.</Text>
+          <Text>Discover which combination of touchpoints drives more revenue and optimize your entire funnels.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <AnalyticsDemo />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Integrate your <TextHighlight color="green">Growth Stack</TextHighlight></H3>
+          <Text>Native integrations with Stripe, Systeme.io, Shopify, Cal.com, Zapier, WordPress and more.</Text>
+          <Text>And our relentless dev team keeps dropping new integrations like there’s no tomorrow.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" inView>
+          <IntegrationsGrid />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+</Slide>
+
+<Slide id="why-pimms">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">PIMMS vs Others</Label>
+      <H2>Why top Creators <TitleIcon variant="h2" icon="why" /> <Primary>Choose PIMMS?</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+    <ComparisonContainer>
+      <ComparisonHeader />
+      <ComparisonRow others={true} pimms={true}>Short links / QR codes</ComparisonRow>
+      <ComparisonRow others={true} pimms={true}>Custom domains for maximum deliverability</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Deep links for +30% more conversions</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Realtime revenue insights</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Customer insights & Lead scoring AI</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Bypass ad blockers (server-side tracking)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Funnel A/B testing</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Fast Setup (start in 10 minutes)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Advanced traffic redirection (per device, country, app stores)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>24/7 Dedicated support</ComparisonRow>
+
+      <ComparisonExtras>
+        <ComparisonExtra color="text-vibrant-blue">QR Codes with logo</ComparisonExtra>
+        <ComparisonExtra color="text-vibrant-red">Fewer failed payments</ComparisonExtra>
+        <ComparisonExtra color="text-vibrant-blue">Custom link previews</ComparisonExtra>
+        <ComparisonExtra color="text-brand-secondary">API access</ComparisonExtra>
+        <ComparisonExtra color="text-brand-secondary">Webhooks</ComparisonExtra>
+      </ComparisonExtras>
+    </ComparisonContainer>
   </Section>
 </Slide>
 
 <Slide variant="secondary" id="pricing">
-  <Centered>
-    <Label variant="none">Pricing</Label>
-    <H2>Choose the plan that fits your testing needs</H2>
-  </Centered>
-
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Pricing</Label>
+      <H2>Fair <TitleIcon variant="h2" icon="pricing" /> <Primary>Pricing</Primary> that fits your needs</H2>
+      <Text size="lg">Start with 10 free links. Upgrade when you need to.</Text>
+    </Centered>
+  </BlurFade>
+  
   <Section>
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
-        <LifetimeOfferStarter />
+        <BlurFade direction="left" delay={0.1} inView>
+          <LifetimeOfferStarter />
+        </BlurFade>
       </Column>
       <Column span={1}>
-        <LifetimeOfferPro />
+        <BlurFade direction="up" delay={0.2} inView>
+          <LifetimeOfferPro />
+        </BlurFade>
       </Column>
       <Column span={1}>
-        <OnDemandOfferBusiness />
+        <BlurFade direction="right" delay={0.3} inView>
+          <OnDemandOfferBusiness />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 </Slide>
 
-<Slide variant="secondary" size="sm" spacing="bottom" noPadding>
-  <LogosCircle />
+<Slide id="onboarding">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Effortless Onboarding in <TitleIcon variant="h2" icon="minutes" /> <Primary>Minutes</Primary></H2>
+      <Text size="lg">Skip the guesswork. We help you get started fast and hassle free.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section variant="card" background="grid">
+    <List layout="horizontal">
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="share" />
+          <H4>Post on social media</H4>
+          <Text>Share links on LinkedIn, YouTube, X, Instagram or TikTok. Manage and create UTM campaigns in one dashboard. Organize your links with tags and comments.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="target" />
+          <H4>Outreach like never</H4>
+          <Text>Connect with your customers with Lemlist, Brevo, Tally, Cal.com, iClosed, Systeme.io, and more. Automate your outreach and collect leads on autopilot.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="cash" />
+          <H4>Turn clicks into cash</H4>
+          <Text>Connect payment systems like Stripe, Shopify, Systeme.io in one click. Our native integrations guide you through approvals without any hassle.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="arrowUp" />
+          <H4>Grow on autopilot</H4>
+          <Text>Track real time analytics and scale while we run the backend. Spot growth opportunities and expand operation with full support from our team.</Text>
+        </FeatureCard>
+      </BlurFade>
+    </List>
+  </Section>
 </Slide>
 
 <Slide>
-  <Centered>
-    <Label variant="none">FAQ</Label>
-    <H2>A/B Testing Questions</H2>
-    <Text size="lg">Everything you need to know about A/B testing with PIMMS</Text>
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Curated <TitleIcon variant="h2" icon="questions" /> <Primary>Questions</Primary></H2>
+      <Text size="lg">Book a call or reach out anytime, we’re here to help.</Text>
+    </Centered>
+  </BlurFade>
   
   <Section>
-
+ 
 ::: faq
 ### How do I A/B test different landing pages with PIMMS?
 Create multiple PIMMS links pointing to different landing page variations. Track conversions from each link to see which version performs better. You can compare results side-by-side in your dashboard.
@@ -220,17 +318,27 @@ While PIMMS shows you real-time data to make informed decisions, you manually co
   </Section>
 </Slide>
 
-<Slide variant="accent" id="free">
-  <Section variant="card">
+<Slide variant="secondary" size="sm" spacing="bottom" noPadding>
+  <BlurFade direction="up" inView>
+    <LogosCircle />
+  </BlurFade>
+</Slide>
+
+<Slide variant="primary" id="free">
+  <Section variant="branded">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
-        <H2 align="left">Start A/B testing today</H2>
-        <Text size="lg">Stop guessing what works. Start A/B testing your campaigns and links to maximize conversions with data-driven decisions.</Text>
-        <CtaButton><Fast /> Start testing for free</CtaButton>
-        <CtaBottomText>No credit card needed • Just better results</CtaBottomText>
+        <BlurFade direction="left" inView>
+          <H2 align="left" variant="white">It starts here</H2>
+          <Text size="lg" variant="white">If you made it this far, it's time to grab 10 free links.</Text>
+          <CtaButton variant="inverse"><Fast /> Start for free</CtaButton>
+          <CtaBottomText variant="white">10 smart links included • No credit card</CtaBottomText>
+        </BlurFade>
       </Column>
       <Column span={1} order="text">
-        <BouncingImages />
+        <BlurFade direction="right" delay={0.2} inView>
+          <BouncingImages />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>

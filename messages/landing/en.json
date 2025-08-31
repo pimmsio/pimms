@@ -1,62 +1,93 @@
 {
   "landing": {
     "nav": {
-      "how_it_works": "How it works",
-      "solutions": "Solutions",
+      "features": "Features",
+      "onboarding": "Onboarding",
       "dashboard": "Sign in",
       "pricing": "Pricing"
+    },
+    "conversion": {
+      "fail": {
+        "paypal_failed": "PayPal payment failed",
+        "youtube_abandoned": "YouTube subscription abandoned",
+        "signup_abandoned": "Signup abandoned"
+      },
+      "success": {
+        "payment_completed": "Payment completed",
+        "youtube_success": "YouTube subscription successful",
+        "signup_completed": "Signup completed"
+      },
+      "time": {
+        "just_now": "Just now",
+        "1m": "1m ago",
+        "2m": "2m ago",
+        "5m": "5m ago",
+        "8m": "8m ago",
+        "12m": "12m ago",
+        "20m": "20m ago"
+      }
+    },
+    "ribbon": {
+      "leads": "Leads",
+      "sales": "Sales",
+      "sources": {
+        "emailing": "emailing",
+        "form": "form",
+        "outreach": "outreach",
+        "shop": "shop",
+        "website": "website",
+        "funnel": "funnel"
+      }
+    },
+    "funnel": {
+      "event": {
+        "meeting_booked": "New meeting booked",
+        "subscriber": "New subscriber",
+        "lead": "New lead",
+        "follower": "New follower"
+      }
+    },
+    "lead_list": {
+      "score": {
+        "very_warm": "Very warm",
+        "warm": "Warm",
+        "lukewarm": "Lukewarm",
+        "cold": "Cold"
+      },
+      "items": {
+        "shopify_new_leads": "New leads from your shop",
+        "meeting_booked": "New meeting booked",
+        "newsletter_subscription": "New subscription to newsletter",
+        "payment_received": "Payment received",
+        "form_submission": "New form submission",
+        "survey_response": "Survey response received",
+        "blog_comment": "New comment on blog",
+        "signup_landing": "Signup from landing"
+      },
+      "time": {
+        "1m": "1m ago",
+        "2m": "2m ago",
+        "3m": "3m ago",
+        "5m": "5m ago",
+        "7m": "7m ago",
+        "8m": "8m ago"
+      }
     },
     "cta": {
       "link": "Start for free",
       "bottom": "No credit card required • No subscription",
       "main": "<fast>⚡</fast> Start for free<large> with 10 links</large>",
-      "main_short": "<fast>⚡</fast> Start for free"
+      "main_short": "<fast>⚡</fast> Start for free",
+      "demo": "Book a demo"
     },
     "logos_circle": {
-      "title": "THE BEST?",
-      "heading": "It tracks very <strong>well</strong>",
-      "description": "100+ integrations."
+      "heading": "Less Busywork, More <strong>Growth</strong>"
     },
     "analytics_chart": {
-      "clicks": "Clicks",
-      "leads": "Conversions",
-      "sales": "Sales",
-      "saleAmount": "Revenue",
-      "currency": "EUR",
-      "locale": "en-US"
-    },
-    "filter_feature": {
-      "country": "Country",
-      "city": "City",
-      "browser": "Browser",
-      "device": "Device",
-      "referral": "Referral",
-      "utm": {
-        "campaign": "Campaign",
-        "source": "Source",
-        "medium": "Medium",
-        "linkedin_launch": "linkedin_launch",
-        "newsletter_april": "newsletter_april",
-        "google_promo": "google_promo",
-        "calendly_partner": "calendly_partner",
-        "webinar_jean": "webinar_jean",
-        "fb_retargeting": "fb_retargeting"
-      },
-      "tag": {
-        "title": "Tag",
-        "launch": "Launch",
-        "onboarding": "Onboarding",
-        "retargeting": "Retargeting",
-        "emailing": "Emailing",
-        "sales": "Sales",
-        "demo": "Demo",
-        "paid_ads": "Meta Ads",
-        "beta": "Beta"
-      }
+      "currency": "EUR"
     },
     "hero": {
       "avatars": {
-        "title": "Trusted by creators and startups",
         "avatar1": {
           "name": "Mathieu Visière",
           "image": "https://assets.pimms.io/mathieu-visiere.jpeg"
@@ -81,33 +112,28 @@
     },
     "free_offer": {
       "images": {
-        "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6",
+        "1": "https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7",
         "alt1": "PIMMS Dashboard showing a list of direct links",
-        "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=6",
+        "2": "https://assets.pimms.io/dashboard-links-screenshot-2.webp?v=7",
         "alt2": "PIMMS Dashboard showing analytics of direct links"
       }
     },
     "lifetime_offer": {
       "cta": "Unlock lifetime access",
-      "monthly_per_person": "/month for one person",
       "pay_once": "One-time payment, no subscription",
       "free_pass": "Perfect for testing & exploring",
       "lifetime_deal": "For creators needing smart marketing",
-      "popular": "Most popular",
-      "tax": "Excl. VAT",
-      "billed_annually": "Yearly (2 months free)",
       "forever": "Forever",
-      "contact_sales": "Contact Sales",
-      "growth_subtitle": "Infopreneurs, marketers & agencies",
+      "contact_sales": "Book a demo",
+      "growth_subtitle": "Growth hackers, marketers & agencies",
       "business_title": "Business",
       "ondemand": "On-demand",
       "everything_in_starter": "Everything in Free, plus:",
-      "everything_in_pro": "Everything in Pro, plus:",
+      "everything_in_pro": "Everything in Starter, plus:",
       "everything_in_growth": "Everything in Pro and more:",
       "plan_free": "Free",
       "plan_starter": "Starter",
-      "plan_organization": "Organization",
-      "plan_enterprise": "Enterprise",
+      "plan_pro": "Pro",
       "feature_smart_deeplinks_10": "10 links",
       "feature_smart_deeplinks_200": "200 links /month",
       "feature_smart_deeplinks_600": "600 links /month",
@@ -132,9 +158,7 @@
       "feature_domains_unlimited": "Unlimited custom domains",
       "feature_data_30_days": "30 days of click & scan data",
       "feature_data_6_months": "6 months of data",
-      "feature_data_9_months": "9 months of data",
       "feature_data_12_months": "12 months of data",
-      "feature_data_more": "More than a year of data",
       "feature_data_unlimited": "Unlimited data retention",
       "feature_integrations_pro": "100+ integrations incl. Zapier",
       "feature_api_access": "API access",
@@ -143,22 +167,7 @@
       "feature_priority_support_1_month": "1 month priority support included",
       "feature_priority_support_3_months": "3 months priority support included",
       "start_free_cta": "Start for free",
-      "select_plan": "Select plan",
-      "feature_1_project": "1 project",
-      "feature_3_projects": "3 project",
-      "feature_10_projects": "10 project",
-      "feature_unlimited_projects": "Unlimited project",
-      "feature_1_page": "1 page",
-      "feature_10_pages": "10 page",
-      "feature_30_pages": "30 page",
-      "feature_unlimited_pages": "Unlimited page",
-      "feature_share_readonly": "Share Read-only link",
-      "feature_share_with_others": "Share with others",
-      "feature_export_framer": "Export - Framer",
-      "feature_single_libraries": "Single libraries",
-      "feature_team_libraries": "Team libraries",
-      "feature_single_workspace": "Single workspace",
-      "feature_team_workspace": "Team workspace"
+      "select_plan": "Select plan"
     }
   }
 }

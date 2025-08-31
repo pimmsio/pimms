@@ -4,7 +4,7 @@ summary: Les seuls liens courts qui ouvrent directement tes vidéos dans l'app o
 publishedAt: 2025-01-01
 updatedAt: 2025-01-01
 slug: youtube
-image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
+image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
 ---
 
 <Header />
@@ -32,9 +32,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
     <TwoColumns ratio="2-1">
       <Column span={2} order="text">
         <WithoutPimms />
-        <Text size="lg">
-          Quand tes vidéos ne s'ouvrent pas dans l'app officielle YouTube, l'expérience est cassée.
-        </Text>
+        <Text size="lg">Quand tes vidéos ne s'ouvrent pas dans l'app officielle YouTube, l'expérience est cassée.</Text>
         <List>
           <Item variant="problem">**Les liens s'ouvrent dans un mini navigateur intégré**, pas dans l'app officielle YouTube</Item>
           <Item variant="problem">**Les utilisateurs sont déconnectés**: ils ne peuvent pas liker, commenter, s'abonner...</Item>
@@ -48,112 +46,222 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6
   </Section>
 </Slide>
 
-<Slide id="top-features">
-  <Centered>
-    <Label variant="solution">La Solution</Label>
-    <H2>Avec PIMMS, tu obtiens plus d'abonnés et tu sais <Primary>pourquoi</Primary></H2>
-    <Text size="lg">Tes liens s'ouvrent directement dans l'app officielle YouTube. Tu réduis les frictions et tu suis la performance de chaque lien, chaque canal.</Text>
-  </Centered>
+<Slide id="features">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Fonctionnalités avancées</Label>
+      <H2>10x plus de <TitleIcon variant="h2" icon="growth" /> <Primary>Growth</Primary>. Collecte des Leads et débloque plus de Revenus avec des Smart Links.</H2>
+      <Text size="lg">(Et tellement facile à intégrer à ta stack growth 😉)</Text>
+    </Centered>
+  </BlurFade>
 
-  <Section>
-    <TwoColumns ratio="7-5" mobileCard>
-      <Column span={7} order="visual">
-        <DeeplinkDemo />
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.2} inView>
+          <H3>Tout commence avec des liens qui <TextHighlight color="blue">convertissent mieux</TextHighlight></H3>
+          <Text>Lance des campagnes d’outreach, des séquences d’emailing, partage des liens sur les réseaux.</Text>
+          <Text>Les deeplinks PIMMS éliminent les mini‑navigateurs. Achats et inscriptions se font jusqu’à 30 % plus souvent.</Text>
+        </BlurFade>
       </Column>
-      <Column span={5} order="text">
-        <H3>Offre une expérience fluide, et sans friction</H3>
-        <Text>Tes liens s'ouvrent directement dans l'app officielle YouTube. C'est moins de frictions, plus d'engagement. Fini les pertes d'utilisateurs.</Text>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" inView>
+          <ConversionFlipCard />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section>
-    <TwoColumns ratio="5-7" mobileCard>
-      <Column span={5} order="text">
-        <H3>Découvre enfin ce qui génère des clics</H3>
-        <Text>Visualise l'impact de chaque lien dans un dashboard, et relie chaque contenu, chaque action au bon canal de communication, à la bonne campagne</Text>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle" noPadding>
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <div className="pt-12 md:py-12">
+            <H3>Collecte de leads en <TextHighlight color="orange">autopilote</TextHighlight></H3>
+            <Text>Collecte des leads qualifiés et des signaux depuis chaque campagne, sur tous tes canaux.</Text>
+            <Text>C’est 100 % automatisé, que tu fasses une campagne sociale, une séquence email, un webinar ou un podcast.</Text>
+          </div>
+        </BlurFade>
       </Column>
-      <Column span={7} order="visual">
-        <AnalyticsDemo showConversions={false} />
-      </Column>
-    </TwoColumns>
-  </Section>
-
-  <Section>
-    <TwoColumns ratio="7-5" mobileCard>
-      <Column span={7} order="visual">
-        <Referer />
-      </Column>
-      <Column span={5} order="text">
-        <H3>Prends de meilleures décisions, plus vite</H3>
-        <Text>Grace aux données claires et en temps réel, tu sais exactement quoi ajuster, accélérer ou stopper pour maximiser ton nombre d'abonnés.</Text>
+      <Column span={1} order="visual" noPadding position="start">
+        <BlurFade direction="right" delay={0.2} inView>
+          <AvatarFunnel />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section>
-    <TwoColumns ratio="5-7">
-      <Column span={5} order="text">
-        <H3>Améliore ce qui convertit, coupe le reste</H3>
-        <Text>Arrête d'agir à l'aveugle et mise sur ce qui fait grandir ta chaine. Utilise les filtres détaillés par campagne UTM, source, pays, appareil, navigateur, canal...</Text>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Priorise avec du <TextHighlight color="red">Lead Scoring IA</TextHighlight></H3>
+          <Text>Gère tes prospects avec un lead scoring intelligent et des signaux d’intent/engagement actionnables.</Text>
+          <Text>Priorise ton pipeline et concentre l’effort sur les deals à plus forte probabilité.</Text>
+        </BlurFade>
       </Column>
-      <Column span={7} order="visual">
-        <FilterFeature />
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <LeadScoringAnimatedList />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 
-  <Section variant="card">
-    <List layout="horizontal">
-      <FeatureCard>
-        <IconBox icon="zap" />
-        <H4>Données en temps réel</H4>
-        <Text>Chaque clic, conversion, vente s'affiche en live pour pouvoir réagir vite.</Text>
-      </FeatureCard>
-      <FeatureCard>
-        <IconBox icon="globe" />
-        <H4>Domaines personnalisés</H4>
-        <Text>Crée des liens courts professionnels et uniques avec ton propre nom de domaine.</Text>
-      </FeatureCard>
-      <FeatureCard>
-        <IconBox icon="share" />
-        <H4>Aperçus de liens</H4>
-        <Text>Propose des aperçus de liens et modifie facilement l'image, le titre et la description.</Text>
-      </FeatureCard>
-    </List>
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Des <TextHighlight color="blue">KPI actionnables</TextHighlight></H3>
+          <Text>Suis en temps réel l’engagement et la progression dans le funnel. Mesure la perf des campagnes, A/B tests et parcours.</Text>
+          <Text>Identifie les touchpoints qui génèrent du revenu et optimise tes funnels de vente de bout en bout.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <AnalyticsDemo />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" inView>
+          <H3>Compatible avec ta <TextHighlight color="green">Stack de Growth</TextHighlight></H3>
+          <Text>Intégrations natives avec Stripe, Systeme.io, Shopify, Cal.com, Zapier, WordPress et plus.</Text>
+          <Text>Et notre équipe produit expédie de nouvelles intégrations en continu toutes les semaines.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" inView>
+          <IntegrationsGrid />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+</Slide>
+
+<Slide id="why-pimms">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">PIMMS vs les autres</Label>
+      <H2>Pourquoi les meilleurs Créateurs <TitleIcon variant="h2" icon="why" /> <Primary>choisissent PIMMS ?</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+    <ComparisonContainer>
+      <ComparisonHeader />
+      <ComparisonRow others={true} pimms={true}>Liens courts / QR codes</ComparisonRow>
+      <ComparisonRow others={true} pimms={true}>Domaines personnalisés pour une délivrabilité maximale</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Deep links officiels (+30 % de conversions)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Plus d’achats et d’inscriptions en autopilote</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Tracking précis (clic → lead → vente)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>CA et conversions en temps réel dans un tableau de bord unique</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Insights clients & lead scoring (IA)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Contourne les ad blockers (tracking côté serveur)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>A/B testing de funnel</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Mise en place rapide (démarre en 10 minutes)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Redirection de trafic avancée (par appareil, pays, stores)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Support dédié 24/7</ComparisonRow>
+
+      <ComparisonExtras>
+        <ComparisonExtra color="text-vibrant-blue">QR Codes avec logo</ComparisonExtra>
+        <ComparisonExtra color="text-vibrant-green">Lead scoring</ComparisonExtra>
+        <ComparisonExtra color="text-vibrant-green">Insights client</ComparisonExtra>
+        <ComparisonExtra color="text-vibrant-red">Moins d’échecs de paiement</ComparisonExtra>
+        <ComparisonExtra color="text-vibrant-blue">Aperçus de liens personnalisés</ComparisonExtra>
+        <ComparisonExtra color="text-brand-secondary">Accès API</ComparisonExtra>
+        <ComparisonExtra color="text-brand-secondary">Webhooks</ComparisonExtra>
+      </ComparisonExtras>
+    </ComparisonContainer>
   </Section>
 </Slide>
 
 <Slide variant="secondary" id="pricing">
-  <Centered>
-    <Label variant="none">Tarification</Label>
-    <H2>Choisis le plan qui correspond à tes besoins</H2>
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Tarifs</Label>
+      <H2>Des <TitleIcon variant="h2" icon="pricing" /> <Primary>Tarifs</Primary> justes, adaptés à tes besoins</H2>
+      <Text size="lg">Commence avec 10 liens gratuits. Upgrade quand tu veux.</Text>
+    </Centered>
+  </BlurFade>
   
   <Section>
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
-        <LifetimeOfferStarter />
+        <BlurFade direction="left" delay={0.1} inView>
+          <LifetimeOfferStarter />
+        </BlurFade>
       </Column>
       <Column span={1}>
-        <LifetimeOfferPro />
+        <BlurFade direction="up" delay={0.2} inView>
+          <LifetimeOfferPro />
+        </BlurFade>
       </Column>
       <Column span={1}>
-        <OnDemandOfferBusiness />
+        <BlurFade direction="right" delay={0.3} inView>
+          <OnDemandOfferBusiness />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>
 </Slide>
 
+<Slide id="onboarding">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Onboarding sans effort en <TitleIcon variant="h2" icon="minutes" /> <Primary>quelques minutes</Primary></H2>
+      <Text size="lg">Fini le tâtonnement. On t’aide à démarrer vite et sans friction.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section variant="card" background="grid">
+    <List layout="horizontal">
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="share" />
+          <H4>Publie sur les réseaux sociaux</H4>
+          <Text>Partage des liens sur LinkedIn, YouTube, X, Instagram ou TikTok. Gère et crée tes campagnes UTM dans un seul tableau de bord. Organise tes liens avec tags et commentaires.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="target" />
+          <H4>Scale ton outreach</H4>
+          <Text>Connecte Lemlist, Brevo, Tally, Cal.com, iClosed, Systeme.io et plus. Automatise ton outreach et collecte des leads en autopilote.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="cash" />
+          <H4>Transforme les clics en revenus</H4>
+          <Text>Connecte Stripe, Shopify, Systeme.io en un clic. Nos intégrations natives te guident dans les validations sans prise de tête.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard variant="fancy">
+          <IconBox icon="arrowUp" />
+          <H4>Scale en pilote automatique</H4>
+          <Text>Suis des analytics en temps réel et scale pendant qu’on gère le backend. Repère les opportunités de croissance et déploie avec le support complet de l’équipe.</Text>
+        </FeatureCard>
+      </BlurFade>
+    </List>
+  </Section>
+</Slide>
+
 <Slide>
-  <Centered>
-    <Label variant="none">FAQ</Label>
-    <H2>Tu as une chaîne YouTube ?</H2>
-    <Text size="lg">Voici les questions les plus fréquentes qu'on nous pose avant d'utiliser PIMMS pour booster sa chaîne.</Text>
-  </Centered>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2><TitleIcon variant="h2" icon="questions" /> <Primary>Questions</Primary> fréquentes</H2>
+      <Text size="lg">Besoin d’aller plus vite ? Réserve une démo, on te montre en direct.</Text>
+    </Centered>
+  </BlurFade>
   
   <Section>
-
+ 
 ::: faq
 ### Qu'est-ce qui distingue PIMMS d'un lien classique YouTube ?
 Quand tu partages un lien vers ta chaîne ou une vidéo, il s'ouvre souvent dans un mini navigateur intégré (Insta, LinkedIn, etc.). PIMMS redirige directement vers l'app YouTube officielle. Résultat : meilleure expérience, plus de vues, plus d'abonnés.
@@ -207,17 +315,27 @@ YouTube Analytics te montre ce qu'il se passe *dans* YouTube. PIMMS te montre ce
   </Section>
 </Slide>
 
-<Slide variant="accent" id="free">
-  <Section variant="card">
+<Slide variant="secondary" size="sm" spacing="bottom" noPadding>
+  <BlurFade direction="up" inView>
+    <LogosCircle />
+  </BlurFade>
+</Slide>
+
+<Slide variant="primary" id="free">
+  <Section variant="branded">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
-        <H2 align="left">Accès à PIMMS</H2>
-        <Text size="lg">Gagne des abonnés – on t'offre 10 liens pour commencer gratuitement.</Text>
-        <CtaButton><Fast /> Démarre gratuitement</CtaButton>
-        <CtaBottomText>Pas de CB requise • Juste plus d'abonnés</CtaBottomText>
+        <BlurFade direction="left" inView>
+          <H2 align="left" variant="white">Ça commence ici</H2>
+          <Text size="lg" variant="white">Si tu es arrivé jusque‑là, c’est le moment de récupérer 10 liens gratuits.</Text>
+          <CtaButton variant="inverse"><Fast /> Démarre gratuitement</CtaButton>
+          <CtaBottomText variant="white">10 liens intelligents inclus • Pas de carte bancaire</CtaBottomText>
+        </BlurFade>
       </Column>
       <Column span={1} order="text">
-        <BouncingImages />
+        <BlurFade direction="right" delay={0.2} inView>
+          <BouncingImages />
+        </BlurFade>
       </Column>
     </TwoColumns>
   </Section>

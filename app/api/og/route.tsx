@@ -10,16 +10,11 @@ export async function GET(request: Request) {
     (
       <div tw="flex flex-col w-full h-full items-start justify-center bg-[#f6f5eb] text-[#1f242e] relative">
         <div tw="absolute top-[50px] left-[50px] flex">
-          <img
-            src="https://assets.pimms.io/wordmark.png"
-            alt="PIMMS Logo"
-            width={200}
-            height={36}
-          />
+          <img src="https://assets.pimms.io/wordmark.png" alt="PIMMS Logo" width={200} height={36} />
         </div>
         <div tw="absolute bottom-[-15px] right-[-105px] flex">
           <img
-            src="https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=6"
+            src="https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7"
             alt="PIMMS Logo"
             width={505}
             height={550}
@@ -30,16 +25,14 @@ export async function GET(request: Request) {
           <h1 tw="text-6xl font-bold my-4 leading-tight">{title}</h1>
 
           <div tw="flex mt-8">
-            <div tw="bg-[#dc2e65] text-4xl text-white font-bold rounded-2xl px-6 pt-3 pb-4">
-              Learn more
-            </div>
+            <div tw="bg-[#dc2e65] text-4xl text-white font-bold rounded-2xl px-6 pt-3 pb-4">Learn more</div>
           </div>
         </div>
       </div>
     ),
     {
       width: 1200,
-      height: 630,
+      height: 630
       // fonts: [
       //   {
       //     name: "Inter",

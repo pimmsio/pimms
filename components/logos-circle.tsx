@@ -2,30 +2,30 @@
 
 import React from "react";
 import { motion } from "@/lib/framer-motion";
-import { Paragraph } from "./base/paragraph";
 import { H2 } from "./base/h2";
 import CtaButtonBig from "./cta/CtaButtonBig";
 import { Zap } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Section } from "./base/section";
+import { Primary } from "./mdx/content";
 
-// Outer logos
+// Outer logos (mix of top deeplink brands and key integrations)
 const outerBaseUrl = "/static/logos/deeplinks";
+const integrationsBaseUrl = "/static/logos/integrations";
 const outerLogos = [
-  { src: `${outerBaseUrl}/airbnb.svg`, alt: "Airbnb" },
-  { src: `${outerBaseUrl}/amazon.svg`, alt: "Amazon" },
-  { src: `${outerBaseUrl}/chrome.svg`, alt: "Chrome" },
-  { src: `${outerBaseUrl}/discord.svg`, alt: "Discord" },
-  { src: `${outerBaseUrl}/github.svg`, alt: "Github" },
   { src: `${outerBaseUrl}/instagram.svg`, alt: "Instagram" },
   { src: `${outerBaseUrl}/linkedin.svg`, alt: "Linkedin" },
   { src: `${outerBaseUrl}/youtube.svg`, alt: "Youtube" },
-  { src: `${outerBaseUrl}/reddit.svg`, alt: "Reddit" },
-  { src: `${outerBaseUrl}/safari.svg`, alt: "Safari" },
-  { src: `${outerBaseUrl}/spotify.svg`, alt: "Spotify" },
-  { src: `${outerBaseUrl}/twitch.svg`, alt: "Twitch" },
-  { src: `${outerBaseUrl}/whatsapp.svg`, alt: "Whatsapp" },
-  { src: `${outerBaseUrl}/x.svg`, alt: "X" }
+  { src: `${integrationsBaseUrl}/wordpress.svg`, alt: "WordPress" },
+  { src: `${integrationsBaseUrl}/webflow.svg`, alt: "Webflow" },
+  { src: `${integrationsBaseUrl}/lovable.svg`, alt: "Lovable" },
+  { src: `${integrationsBaseUrl}/lemlist.svg`, alt: "Lemlist" },
+  { src: `${integrationsBaseUrl}/brevo.jpeg`, alt: "Brevo" },
+  { src: `${integrationsBaseUrl}/clay.png`, alt: "Clay" },
+  { src: `${integrationsBaseUrl}/trigify.jpeg`, alt: "Trigify" },
+  { src: `${integrationsBaseUrl}/slack.svg`, alt: "Slack" },
+  { src: `${integrationsBaseUrl}/framer.svg`, alt: "Framer" },
+  { src: `${integrationsBaseUrl}/systemeio.jpeg`, alt: "Systeme.io" }
 ];
 
 const innerBaseUrl = "/static/logos/integrations";
@@ -148,7 +148,7 @@ const LogosCircle: React.FC = () => {
         <div className="text-center max-w-sm z-20 px-4">
           <H2 className="mb-8">
             {tcommon.rich("logos_circle.heading", {
-              strong: (chunks) => <span className="text-brand-primary">{chunks}</span>
+              strong: (chunks) => <Primary>{chunks}</Primary>
             })}
           </H2>
           <div>

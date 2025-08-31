@@ -1,0 +1,125 @@
+---
+title: Step-by-step guide to track your Elementor form leads with PiMMs
+summary: Learn how to connect PiMMs to Elementor forms and automatically track every lead with full marketing attribution.
+publishedAt: 2025-09-01
+updatedAt: 2025-09-01
+slug: how-to-track-elementor-form-leads-conversion-tracking
+image: https://assets.pimms.io/elementor-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-systemeio-sales-and-leads
+  - how-to-track-webflow-leads
+  - no-code-guide-for-website
+---
+
+Do you want to see exactly where your Elementor form leads come from—whether from ads, social media, or email campaigns?
+
+With **PiMMs**, it takes just a few minutes—no code needed.
+
+## 1. Install the tracking script
+
+1. Make sure you have **Elementor Pro** installed (forms require Pro version)
+2. Go to your **WordPress Elementor dashboard**
+3. Paste this script in the `<head>` tag:
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js" data-forward-all="true"></script>
+```
+
+4. Click **Save**
+
+5. **Check** if the script is properly installed
+
+<LinkCard
+  href="/freetools/site-checker"
+  title="Verify your script installation"
+  description="Use our free tool to automatically check if the PiMMs analytics script is properly installed on your website."
+/>
+
+## 2. Build a PiMMs-compatible form
+
+PiMMs auto-detects your fields — just follow this:
+
+Add a **required email field**
+- The field `Label` must start with `email` (like `Email`, `email 1`, `e-mail perso`, etc.)
+
+To track names:
+- Use one field labeled `fullname`, `name`, etc.
+- Or two fields: `firstname` and `lastname`
+
+👉 Check it by selecting the Input → **Label**.
+
+Now, you need to add a hidden input field with the name and labeled `pimms_id` and the value comes from the url parameter `pimms_id`.
+
+<img src="https://placehold.co/600x400?text=Screenshot+Required\nHow+to+Add+hidden+field+pimms_id" alt="Add hidden field pimms_id" />
+
+## 3. Get your Workspace ID
+
+1. Log in to your [PiMMs dashboard](https://app.pimms.io)
+2. Go to **Settings** → **Workspace ID**
+3. Copy your ID (e.g. `ws_abc123xyz`)
+
+## 4. Add the Elementor webhook for form submissions
+
+To setup a new form: [Elementor Forms Builder](https://elementor.com/pages/form-builder/)
+
+1. In Elementor, select your form
+2. Go to **Form** → **Send to**
+3. Choose **"Webhook"**
+4. Use the following webhook URL:
+
+```
+https://app.pimms.io/api/elementor/webhook?workspace_id=your-id
+```
+
+Replace `your-id` with your **Workspace ID**
+
+Example:  
+
+```
+https://app.pimms.io/api/elementor/webhook?workspace_id=ws_abc123xyz
+```
+
+<img src="https://placehold.co/600x400?text=Screenshot+Required\nHow+to+Add+the+Elementor+webhook" alt="Add the Elementor webhook" />
+
+## 4. Create a tracking link in PiMMs
+
+1. Go to [PiMMs](https://app.pimms.io)
+2. Create a new short link pointing to your **Elementor page** with the form
+3. Enable **Conversion tracking**
+
+**Example**:  
+```
+https://pim.ms/my-landing-page
+```
+
+Use this link in your ads, outreach campaigns, emailing or social channels — everywhere you get traffic.
+
+<img src="https://placehold.co/600x400?text=Screenshot+Required\nHow+to+Create+a+tracking+link+in+PiMMs" alt="Create a tracking link in PiMMs" />
+
+## 5. Test your setup
+
+1. Open your PiMMs link in an **incognito tab**
+2. Fill out your Elementor form (use a test email like `test+pimms@yourdomain.com`)
+3. Submit the form
+4. Check your [PiMMs dashboard](https://app.pimms.io)
+
+You should see a new lead with full attribution showing exactly where it came from.
+
+<img src="https://placehold.co/600x400?text=Screenshot+Required\nHow+to+Test+your+setup" alt="Test your setup" />
+
+## 6. Troubleshooting tips
+
+- Make sure you have **Elementor Pro** (free version doesn't include webhooks)
+- Confirm that the PiMMs script is properly installed (use our free tool to verify)
+- Double-check that your **Workspace ID** is correct in both the webhook URL
+- Test filling the form and submitting in **incognito mode** with a fresh email address
+- Make sure you enter your page via your **PiMMs link**, not directly
+
+## You're all set 🎉
+
+Every WordPress Elementor form lead collected via your PiMMs links will now be tracked — with full attribution showing exactly which campaign, ad, or channel generated each lead.
+
+👉 [Create your first PiMMs link](https://pimms.io)
