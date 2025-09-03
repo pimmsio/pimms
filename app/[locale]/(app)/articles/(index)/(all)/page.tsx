@@ -32,7 +32,12 @@ export default function BlogPage() {
 
   const articles = posts
     .filter((post) => !post.metadata.categories?.includes("legal"))
-    .sort((a, b) => b?.metadata.publishedAt.localeCompare(a?.metadata.publishedAt));
+    .sort((a, b) => {
+      // Sort by updatedAt if available, fallback to publishedAt
+      const aDate = a?.metadata.updatedAt || a?.metadata.publishedAt;
+      const bDate = b?.metadata.updatedAt || b?.metadata.publishedAt;
+      return bDate.localeCompare(aDate);
+    });
 
   return articles.map((article, idx) => (
     <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} priority={idx <= 1} />

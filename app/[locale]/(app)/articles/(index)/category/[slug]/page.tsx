@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: MetadataProps) {
 
 export async function generateStaticParams() {
   return BLOG_CATEGORIES.map((category) => ({
-    slug: category,
+    slug: category
   }));
 }
 
@@ -36,20 +36,18 @@ export default function BlogCategory({ params }: Props) {
 
   const articles = posts
     .filter((post) => post.metadata.categories?.includes(data))
-    .sort((a, b) =>
-      b?.metadata.publishedAt.localeCompare(a?.metadata.publishedAt)
-    );
+    .sort((a, b) => {
+      // Sort by updatedAt if available, fallback to publishedAt
+      const aDate = a?.metadata.updatedAt || a?.metadata.publishedAt;
+      const bDate = b?.metadata.updatedAt || b?.metadata.publishedAt;
+      return bDate.localeCompare(aDate);
+    });
 
   if (!articles || articles.length === 0) {
     notFound();
   }
 
   return articles.map((article, idx) => (
-    <BlogCard
-      key={article.slug}
-      slug={article.slug}
-      metadata={article.metadata}
-      priority={idx <= 1}
-    />
+    <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} priority={idx <= 1} />
   ));
 }

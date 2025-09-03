@@ -2,47 +2,52 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-08-31T22:28:57.342Z"
+    "lastmod": "2025-09-03T12:55:27.773Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-08-31T22:28:57.342Z"
+    "lastmod": "2025-09-03T12:55:27.774Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-08-31T22:28:57.342Z"
+    "lastmod": "2025-09-03T12:55:27.774Z"
   },
   "/landings/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-08-31T22:28:57.342Z"
+    "lastmod": "2025-09-03T12:55:27.774Z"
   },
   "/landings/ab-testing": {
     "en": "/solutions/ab-testing",
     "fr": "/landings/ab-testing",
-    "lastmod": "2025-08-31T22:28:57.342Z"
+    "lastmod": "2025-09-03T12:55:27.774Z"
   },
   "/landings/for-creators": {
     "en": "/for-creators",
     "fr": "/pour-les-createurs-de-contenu",
-    "lastmod": "2025-08-31T22:28:57.342Z"
+    "lastmod": "2025-09-03T12:55:27.774Z"
+  },
+  "/landings/systemeio": {
+    "en": "/solutions/systemeio",
+    "fr": "/solutions/systemeio",
+    "lastmod": "2025-09-03T12:55:27.774Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-08-31T22:28:57.342Z"
+    "lastmod": "2025-09-03T12:55:27.774Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2025-09-01T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-06-30T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -52,22 +57,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2025-09-01T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-06-30T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
     "fr": "/guides",
-    "lastmod": "2025-09-01T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/category/tutorials": {
     "en": "/tutorials",
     "fr": "/tutoriels",
-    "lastmod": "2025-04-29T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/5-dynamic-link-personalization-tips-for-higher-conversions": {
     "en": "/blog/5-dynamic-link-personalization-tips-for-higher-conversions",
@@ -90,7 +95,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/a-comprehensive-guide-to-essential-vibe-coding-tools": {
     "en": "/blog/a-comprehensive-guide-to-essential-vibe-coding-tools",
-    "lastmod": "2025-06-21T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/ab-testing-for-agencies-how-to-deliver-results-to-clients": {
     "en": "/blog/ab-testing-for-agencies-how-to-deliver-results-to-clients",
@@ -111,32 +116,32 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/ai-powered-marketing-attribution-what-you-need-to-know": {
     "en": "/blog/ai-powered-marketing-attribution-what-you-need-to-know",
-    "lastmod": "2025-06-18T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/best-10-url-shorteners-for-link-management-tracking": {
     "en": "/blog/best-10-url-shorteners-for-link-management-tracking",
-    "lastmod": "2025-06-16T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/best-ab-testing-tools-2025-edition": {
     "en": "/blog/best-ab-testing-tools-2025-edition",
-    "lastmod": "2025-06-17T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/bitly-vs-pimms-what-founders-really-need-beyond-click-tracking": {
     "en": "/blog/bitly-vs-pimms-what-founders-really-need-beyond-click-tracking",
-    "lastmod": "2025-05-23T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/bitly-vs-pimms-ce-qu-une-startup-a-vraiment-besoin-au-dela-du-suivi-des-clics"
   },
   "/articles/branded-short-links-vs-generic-does-it-impact-your-conversion-rate": {
     "en": "/blog/branded-short-links-vs-generic-does-it-impact-your-conversion-rate",
-    "lastmod": "2025-06-11T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/build-fast-build-smart-using-apis-for-mvps-and-analytics": {
     "en": "/blog/build-fast-build-smart-using-apis-for-mvps-and-analytics",
-    "lastmod": "2025-06-19T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/can-i-track-deep-links-and-conversions-without-using-an-sdk": {
     "en": "/blog/can-i-track-deep-links-and-conversions-without-using-an-sdk",
-    "lastmod": "2025-06-20T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/can-you-test-more-than-one-change-at-a-time-and-other-ab-testing-faqs": {
     "en": "/blog/can-you-test-more-than-one-change-at-a-time-and-other-ab-testing-faqs",
@@ -186,7 +191,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-do-i-track-conversions-across-multiple-marketing-channels": {
     "en": "/blog/how-do-i-track-conversions-across-multiple-marketing-channels",
-    "lastmod": "2025-06-13T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/how-long-should-i-run-an-ab-test": {
     "en": "/blog/how-long-should-i-run-an-ab-test",
@@ -240,7 +245,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-to-track-stripe-payment-link-conversions": {
     "en": "/blog/how-to-track-stripe-payment-link-conversions",
-    "lastmod": "2025-06-25T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/how-to-track-stripe-sales-and-subscriptions-with-utm-links-without-writing-code": {
     "en": "/blog/how-to-track-stripe-sales-and-subscriptions-with-utm-links-without-writing-code",
@@ -249,7 +254,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-utm-parameters-impact-conversion-paths": {
     "en": "/blog/how-utm-parameters-impact-conversion-paths",
-    "lastmod": "2025-05-13T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/comment-les-parametres-utm-influencent-les-parcours-de-conversion"
   },
   "/articles/is-bitly-good-for-conversion-tracking": {
@@ -259,15 +264,15 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/measure-click-performance-and-track-link-conversions-easily": {
     "en": "/blog/measure-click-performance-and-track-link-conversions-easily",
-    "lastmod": "2025-06-26T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/minimum-viable-analytics-the-ideal-tracking-stack-for-your-mvp": {
     "en": "/blog/minimum-viable-analytics-the-ideal-tracking-stack-for-your-mvp",
-    "lastmod": "2025-06-08T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/no-code-analytics-guide-for-saas": {
     "en": "/blog/no-code-analytics-guide-for-saas",
-    "lastmod": "2025-06-14T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/prompt-first-development-how-to-set-up-attribution-with-one-prompt": {
     "en": "/blog/prompt-first-development-how-to-set-up-attribution-with-one-prompt",
@@ -280,19 +285,19 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/set-up-analytics-and-marketing-attribution-in-1-hour-for-your-mvp": {
     "en": "/blog/set-up-analytics-and-marketing-attribution-in-1-hour-for-your-mvp",
-    "lastmod": "2025-06-27T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/the-best-way-to-get-utm-parameters-into-stripe": {
     "en": "/blog/the-best-way-to-get-utm-parameters-into-stripe",
-    "lastmod": "2025-06-28T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/the-complete-guide-to-marketing-attribution-for-saas-founders": {
     "en": "/blog/the-complete-guide-to-marketing-attribution-for-saas-founders",
-    "lastmod": "2025-06-08T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/top-10-marketing-attribution-tools-you-need-in-2025": {
     "en": "/blog/top-10-marketing-attribution-tools-you-need-in-2025",
-    "lastmod": "2025-06-29T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/top-5-tools-for-funnel-behavior-tracking": {
     "en": "/blog/top-5-tools-for-funnel-behavior-tracking",
@@ -306,11 +311,11 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/track-conversions-from-webflow-tally-or-typeform-in-under-3-minutes": {
     "en": "/blog/track-conversions-from-webflow-tally-or-typeform-in-under-3-minutes",
-    "lastmod": "2025-05-23T00:00:00.000Z"
+    "lastmod": "2025-09-02T00:00:00.000Z"
   },
   "/articles/track-stripe-payments-with-utm-parameters": {
     "en": "/blog/track-stripe-payments-with-utm-parameters",
-    "lastmod": "2025-05-13T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/ultimate-guide-to-cross-channel-automation-with-make": {
     "en": "/blog/ultimate-guide-to-cross-channel-automation-with-make",
@@ -318,24 +323,24 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/ultimate-guide-to-no-code-deep-linking": {
     "en": "/blog/ultimate-guide-to-no-code-deep-linking",
-    "lastmod": "2025-05-23T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/unlock-systemeio-attribution-with-pimms": {
     "en": "/blog/unlock-systemeio-attribution-with-pimms",
-    "lastmod": "2025-05-07T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/marketing-attribution-ventes-et-leads-avec-systemeio"
   },
   "/articles/utm-and-deep-linking-how-to-easily-unify-web-and-mobile-attribution": {
     "en": "/blog/utm-and-deep-linking-how-to-easily-unify-web-and-mobile-attribution",
-    "lastmod": "2025-06-30T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/utm-tracking-for-organic-social-media-posts": {
     "en": "/blog/utm-tracking-for-organic-social-media-posts",
-    "lastmod": "2025-05-09T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/utm-tracking-for-social-media-campaigns-in-make": {
     "en": "/blog/utm-tracking-for-social-media-campaigns-in-make",
-    "lastmod": "2025-05-18T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/utm-tracking-for-social-media-segments": {
     "en": "/blog/utm-tracking-for-social-media-segments",
@@ -343,19 +348,19 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/vibe-coding-meets-analytics-how-to-instrument-your-ai-generated-app-with-no-effort": {
     "en": "/blog/vibe-coding-meets-analytics-how-to-instrument-your-ai-generated-app-with-no-effort",
-    "lastmod": "2025-05-23T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/what-are-the-best-marketing-attribution-tools-for-startups": {
     "en": "/blog/what-are-the-best-marketing-attribution-tools-for-startups",
-    "lastmod": "2025-05-27T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/what-is-marketing-attribution-a-beginners-guide": {
     "en": "/blog/what-is-marketing-attribution-a-beginners-guide",
-    "lastmod": "2025-06-15T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/what-tools-should-i-use-to-track-users-and-conversions-in-my-mvp": {
     "en": "/blog/what-tools-should-i-use-to-track-users-and-conversions-in-my-mvp",
-    "lastmod": "2025-05-27T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/whats-the-best-way-to-track-stripe-sales-and-subscriptions": {
     "en": "/blog/whats-the-best-way-to-track-stripe-sales-and-subscriptions",
@@ -363,87 +368,88 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/whats-the-difference-between-a-short-link-and-a-smart-link": {
     "en": "/blog/whats-the-difference-between-a-short-link-and-a-smart-link",
-    "lastmod": "2025-06-16T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/whats-the-easiest-way-to-set-up-link-tracking-with-attribution": {
     "en": "/blog/whats-the-easiest-way-to-set-up-link-tracking-with-attribution",
-    "lastmod": "2025-05-27T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/which-ai-tools-can-help-you-launch-a-saas": {
     "en": "/blog/which-ai-tools-can-help-you-launch-a-saas",
-    "lastmod": "2025-06-17T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/why-link-in-bio-is-becoming-a-mini-sales-funnel": {
     "en": "/blog/why-link-in-bio-is-becoming-a-mini-sales-funnel",
-    "lastmod": "2025-06-18T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z"
   },
   "/articles/how-to-track-calendly": {
     "en": "/guides/how-to-track-calendly-bookings-marketing-attribution",
-    "lastmod": "2025-05-14T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-calendly-attribution-marketing"
   },
   "/articles/how-to-track-elementor-form-leads": {
     "en": "/guides/how-to-track-elementor-form-leads-conversion-tracking",
-    "lastmod": "2025-09-01T00:00:00.000Z"
+    "lastmod": "2025-09-03T00:00:00.000Z",
+    "fr": "/guides/comment-suivre-leads-formulaires-elementor-attribution-marketing"
   },
   "/articles/how-to-track-framer": {
     "en": "/guides/how-to-track-framer-form-submissions-marketing-attribution",
-    "lastmod": "2025-05-14T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-framer-attribution-marketing"
   },
   "/articles/how-to-track-sales-with-stripe-checkout": {
     "en": "/guides/track-stripe-checkout-conversions-with-pimms",
-    "lastmod": "2025-05-20T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/suivre-conversions-stripe-checkout-avec-pimms"
   },
   "/articles/how-to-track-systemeio-sales-and-leads": {
     "en": "/guides/how-to-track-systemeio-sales-and-leads-marketing-attribution",
-    "lastmod": "2025-05-13T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-ventes-et-leads-systemeio-attribution-marketing"
   },
   "/articles/how-to-track-tally": {
     "en": "/guides/how-to-track-tally-form-submissions-marketing-attribution",
-    "lastmod": "2025-05-15T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-tally-attribution-marketing"
   },
   "/articles/how-to-track-webflow-leads": {
     "en": "/guides/how-to-track-webflow-form-submissions-marketing-attribution",
-    "lastmod": "2025-05-13T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-lead-webflow-attribution-marketing"
   },
   "/articles/introducing-conversion": {
     "en": "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
-    "lastmod": "2025-05-19T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/guide-developpeur-tracking-conversions"
   },
   "/articles/no-code-guide-for-website": {
     "en": "/guides/how-to-track-conversions-on-vibe-coding-ai-no-code-sites",
-    "lastmod": "2025-05-14T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-conversions-sites-vibe-coding-no-code-ai"
   },
   "/articles/setup-stripe-for-website": {
     "en": "/guides/how-to-track-stripe-sales-marketing-attribution",
-    "lastmod": "2025-05-16T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-ventes-stripe-attribution-marketing"
   },
   "/articles/start-with-cal-com-and-zapier": {
     "en": "/guides/how-to-track-cal-com-bookings-marketing-attribution",
-    "lastmod": "2025-05-13T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-cal-com-attribution-marketing"
   },
   "/articles/start-with-iclosed-and-zapier": {
     "en": "/guides/how-to-track-iclosed-bookings-marketing-attribution",
-    "lastmod": "2025-05-14T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-iclosed-attribution-marketing"
   },
   "/articles/start-with-zapier": {
     "en": "/tutorials/how-to-track-conversions-with-zapier-and-pimms",
-    "lastmod": "2025-04-29T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/tutoriels/comment-tracker-les-conversions-avec-zapier-attribution-marketing"
   },
   "/articles/utm-guide": {
     "en": "/tutorials/mastering-utm-tracking-with-deep-linking",
-    "lastmod": "2025-04-29T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/tutoriels/maitriser-le-tracking-utm-et-le-deep-linking"
   },
   "/articles/abuse": {

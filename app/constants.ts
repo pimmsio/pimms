@@ -47,7 +47,7 @@ export const BLOG_CATEGORIES = [
   "guides",
   "tutorials",
   "digital-marketing",
-  "legal",
+  "legal"
 ];
 
 export const AUTHORS: {
@@ -59,13 +59,13 @@ export const AUTHORS: {
   {
     name: "Alexandre Sarfati",
     role: "Founder",
-    image: "https://assets.pimms.io/linkedin-profile-alex-pimms.jpg",
-    slug: "alexandre",
+    image: "https://assets.pimms.io/linkedin-profile-alex-pimms.webp",
+    slug: "alexandre"
   },
   {
     name: "Emma",
-    role: "Castro",
+    role: "Page",
     image: "https://assets.pimms.io/linkedin-profile-emma.jpg?v=3",
-    slug: "emma",
-  },
+    slug: "emma"
+  }
 ];

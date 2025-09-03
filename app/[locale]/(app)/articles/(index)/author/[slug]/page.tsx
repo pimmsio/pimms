@@ -14,7 +14,7 @@ export async function generateMetadata({ params }: MetadataProps) {
 
 export async function generateStaticParams() {
   return AUTHORS.map((author) => ({
-    slug: author?.slug,
+    slug: author?.slug
   }));
 }
 
@@ -35,25 +35,19 @@ export default function BlogCategory({ params }: Props) {
   const posts = getPages(locale, articleFolders);
 
   const articles = posts
-    .filter(
-      (post) =>
-        post.metadata.author === data.slug &&
-        !post.metadata.categories.includes("legal")
-    )
-    .sort((a, b) =>
-      b?.metadata.publishedAt.localeCompare(a?.metadata.publishedAt)
-    );
+    .filter((post) => post.metadata.author === data.slug && !post.metadata.categories.includes("legal"))
+    .sort((a, b) => {
+      // Sort by updatedAt if available, fallback to publishedAt
+      const aDate = a?.metadata.updatedAt || a?.metadata.publishedAt;
+      const bDate = b?.metadata.updatedAt || b?.metadata.publishedAt;
+      return bDate.localeCompare(aDate);
+    });
 
   if (!articles || articles.length === 0) {
     notFound();
   }
 
   return articles.map((article, idx) => (
-    <BlogCard
-      key={article.slug}
-      slug={article.slug}
-      metadata={article.metadata}
-      priority={idx <= 1}
-    />
+    <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} priority={idx <= 1} />
   ));
 }

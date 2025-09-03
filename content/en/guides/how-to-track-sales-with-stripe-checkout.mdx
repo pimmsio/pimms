@@ -1,8 +1,8 @@
 ---
-title: Step-by-step guide for developers to track Stripe Checkout conversions
-summary: Learn how to implement Stripe Checkout attribution using PiMMs — connect each payment to its source click with just a few lines of code.  
+title: Stripe Checkout Tracking: Developer Guide 2025
+summary: Implement complete Stripe Checkout tracking for developers. Connect every payment to its marketing source with webhook integration and revenue attribution using clean code examples.  
 publishedAt: 2025-05-20  
-updatedAt: 2025-05-20  
+updatedAt: 2025-09-03  
 slug: track-stripe-checkout-conversions-with-pimms  
 image: https://assets.pimms.io/stripe-checkout-guide-pimms.webp?v=2
 author: alexandre  
@@ -13,22 +13,24 @@ related:
   - introducing-conversion
 ---
 
-Want to attribute every Stripe Checkout sale to the exact click that caused it?
+**Stripe Checkout tracking** lets developers see exactly which marketing campaigns generate actual revenue from their e-commerce store. This complete guide shows you how to implement **Stripe payment attribution** and **e-commerce analytics** in 15-20 minutes using Pimms.
 
-This guide shows you how to track **sale events** when using **Stripe Checkout** — the recommended method for most developers — with **PiMMs**.
+You'll get **real-time payment tracking** showing which ads, email campaigns, or social media posts drive actual purchases through your Stripe Checkout flow. Perfect for **e-commerce conversion tracking** with complete **revenue attribution** from click to payment.
 
-👉 Before continuing, make sure you understand the PiMMs attribution flow:  
-📘 [How PiMMs tracks clicks, leads, and sales](/articles/introducing-conversion)
+**What you'll implement:** Complete payment tracking setup, webhook integration, and revenue attribution for every Stripe Checkout transaction in your application.
+
+👉 Before continuing, make sure you understand the Pimms attribution flow:  
+📘 [How Pimms tracks clicks, leads, and sales](/articles/introducing-conversion)
 
 ## What you’ll achieve
 
 By the end of this guide, you’ll be able to:
 
 - Automatically track when someone completes a Stripe Checkout  
-- Attribute that sale to a PiMMs click  
+- Attribute that sale to a Pimms click  
 - Link the conversion to a user or customer in your app  
 
-PiMMs handles the heavy lifting — you just need to pass the right ID at the right moment.
+Pimms handles the heavy lifting — you just need to pass the right ID at the right moment.
 
 ## 1. Prerequisites
 
@@ -36,13 +38,13 @@ Before you dive into code, make sure you’ve completed the setup below:
 
 - **Client-side tracking is live**  
 
-See [Set up the PiMMs script or SDK on your site](/articles/introducing-conversion)
+See [Set up the Pimms script or SDK on your site](/articles/introducing-conversion)
 
 - **Your links have conversion tracking enabled**  
 
 Either globally in **Workspace Settings**, or individually from the **Link Builder**.
 
-- **You’ve installed the official PiMMs x Stripe integration**  
+- **You’ve installed the official Pimms x Stripe integration**  
 
 Follow the steps in the [Stripe setup guide](/articles/setup-stripe-for-website)
 
@@ -50,7 +52,7 @@ Follow the steps in the [Stripe setup guide](/articles/setup-stripe-for-website)
 
 If you're using `stripe.checkout.sessions.create`, just pass the right ID when creating the session.
 
-This lets PiMMs associate the purchase with the original click and the correct user in your database.
+This lets Pimms associate the purchase with the original click and the correct user in your database.
 
 Use the ID you used to create the conversion.
 
@@ -134,34 +136,62 @@ await stripe.customers.update(user.id, {
 })
 ```
 
-✅ This allows PiMMs to link future payments (invoices, renewals, etc.) to the original click.
+✅ This allows Pimms to link future payments (invoices, renewals, etc.) to the original click.
 
-## 4. What PiMMs tracks automatically
+## 4. What Pimms tracks automatically
 
-Once your integration is live, PiMMs will listen for key Stripe events:
+Once your integration is live, Pimms will listen for key Stripe events:
 
 - `checkout.session.completed` — primary sale trigger  
 - `invoice.paid` — for subscriptions  
 - `customer.created`, `customer.updated` — for ID mapping  
 - `charge.refunded` — to handle refunds  
 
-You don’t need to manage any webhooks — PiMMs handles everything behind the scenes.
+You don’t need to manage any webhooks — Pimms handles everything behind the scenes.
 
 ## Currency handling (soon)
 
 Multi-currency support is coming soon.
 
-For now, PiMMs automatically converts all amounts to USD using real-time exchange rates. Workspace-level currency preferences will be added shortly.
+For now, Pimms automatically converts all amounts to USD using real-time exchange rates. Workspace-level currency preferences will be added shortly.
 
 ## What about Stripe Payment Links?
 
 If you're using Stripe Payment Links instead of Checkout, follow this guide:  
 👉 [Track sales using Stripe Payment Links](/articles/setup-stripe-for-website)
 
+## FAQs
+
+::: faq
+
+### How do I track Stripe Checkout conversions for subscriptions?
+
+Stripe Checkout tracking works perfectly for both one-time payments and subscription billing. For subscriptions, you'll track the initial conversion when customers first subscribe, plus you can track subsequent billing events. The webhook integration captures all payment types automatically, giving you complete subscription revenue attribution.
+
+:::
+
+::: faq
+
+### Can I track Stripe payments across multiple currencies?
+
+Yes! Stripe Checkout tracking with Pimms automatically handles multi-currency payments. Each transaction is recorded with its original currency and amount, so you can see revenue attribution across different markets. This is perfect for international e-commerce stores with global payment processing.
+
+:::
+
+::: faq
+
+### What's the difference between Stripe Checkout and Elements tracking?
+
+This guide covers Stripe Checkout (the hosted payment page). For Stripe Elements (embedded forms), you'll need custom implementation on your success page rather than webhook events. Stripe Checkout tracking is generally easier to implement and provides more reliable attribution data since it uses server-side webhooks.
+
+:::
+
 ## You're done 🎉
 
-Stripe Checkout is now fully connected to your PiMMs attribution flow.
+Stripe Checkout is now fully connected to your Pimms conversion tracking and sales attribution flow.
 
-Every sale is tied to the right link, campaign, and user — with zero manual effort.
+Every sale is tied to the right link, campaign, and user — with complete analytics and zero manual effort.
 
 👉 [Track your first sale](https://app.pimms.io)
+
+<CallToAction />

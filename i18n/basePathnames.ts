@@ -22,6 +22,10 @@ export const basePathnames = {
     en: "/for-creators",
     fr: "/pour-les-createurs-de-contenu"
   },
+  "/landings/systemeio": {
+    en: "/solutions/systemeio",
+    fr: "/solutions/systemeio"
+  },
   "/freetools/site-checker": {
     en: "/freetools/pimms-tracking-site-checker-install",
     fr: "/freetools/pimms-tracking-site-checker-installation"

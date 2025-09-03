@@ -99,6 +99,7 @@ import { AnalyticsDemo } from "@/components/charts/analytics-demo";
 import Referer from "@/components/charts/referer";
 import { FilterFeature } from "@/components/landings/filter-feature";
 import { ABTestingDemo } from "@/components/landings/ab-testing-demo";
+import { SystemeIoStarterCard, SystemeIoProCard } from "@/components/landings/systemeio-pricing";
 
 import CtaDemo from "@/components/cta/CtaDemo";
 import {
@@ -147,6 +148,9 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       LifetimeOfferScale: () => <LifetimeOfferScale tkey="landing" />,
       // Alias used by some MDX pages
       OnDemandOfferBusiness: () => <LifetimeOfferScale tkey="landing" />,
+      // Systeme.io custom pricing components
+      SystemeIoStarterCard,
+      SystemeIoProCard,
       BouncingImages: () => <BouncingImages tkey="landing" />,
       LogosCircle,
       IntegrationsGrid,

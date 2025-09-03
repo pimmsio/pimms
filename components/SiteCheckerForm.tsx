@@ -163,9 +163,9 @@ export default function SiteCheckerForm() {
               <div className="flex items-start space-x-3 md:space-x-4 p-4 md:p-6 bg-brand-primary/5 border border-brand-primary/20 rounded-xl">
                 <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-brand-primary flex-shrink-0 mt-1" />
                 <div className="flex-1">
-                  <h3 className="text-base md:text-lg font-semibold text-text-primary mb-2">PiMMs Script Found!</h3>
+                  <h3 className="text-base md:text-lg font-semibold text-text-primary mb-2">Pimms Script Found!</h3>
                   <p className="text-sm md:text-base text-text-secondary mb-3 leading-relaxed">
-                    Your site is using PiMMs analytics script. Great job! You&apos;re all set to track your important
+                    Your site is using Pimms analytics script. Great job! You&apos;re all set to track your important
                     conversions and marketing campaigns.
                   </p>
                   <div className="text-xs md:text-sm text-brand-primary mb-2">
@@ -186,7 +186,7 @@ export default function SiteCheckerForm() {
                       <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>
                         Automatically captures the <code className="bg-brand-primary/10 px-1 rounded">pimms_id</code>{" "}
-                        from PiMMs links
+                        from Pimms links
                       </span>
                     </li>
                     <li className="flex items-start">
@@ -196,7 +196,7 @@ export default function SiteCheckerForm() {
                     <li className="flex items-start">
                       <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
                       <span>
-                        Records events like checkouts, sign-ups, and payments with the associated PiMMs link campaign
+                        Records events like checkouts, sign-ups, and payments with the associated Pimms link campaign
                       </span>
                     </li>
                     <li className="flex items-start">
@@ -267,10 +267,10 @@ export default function SiteCheckerForm() {
                 <AlertCircle className="w-6 h-6 md:w-8 md:h-8 text-text-secondary flex-shrink-0 mt-1" />
                 <div className="min-w-0 flex-1">
                   <h3 className="text-base md:text-lg font-semibold text-text-primary mb-2">
-                    ❌ PiMMs Script Not Found
+                    ❌ Pimms Script Not Found
                   </h3>
                   <p className="text-sm md:text-base text-text-secondary leading-relaxed">
-                    The PiMMs analytics script was not detected on your website.
+                    The Pimms analytics script was not detected on your website.
                   </p>
                 </div>
               </div>

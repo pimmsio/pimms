@@ -1,8 +1,8 @@
 ---
-title: Guide étape par étape pour suivre les leads Webflow avec PiMMs
-summary: Apprends à connecter PiMMs à Webflow pour suivre chaque lead et chaque formulaire avec une attribution complète et précise.
+title: Suivi Formulaires Webflow: Guide Analytics 2025
+summary: Configurez le suivi complet des formulaires Webflow en minutes. Suivez chaque lead avec analytics montrant quelles campagnes génèrent des soumissions et conversions.
 publishedAt: 2025-05-13
-updatedAt: 2025-05-13
+updatedAt: 2025-09-03
 slug: comment-suivre-formulaires-lead-webflow-attribution-marketing
 image: https://assets.pimms.io/webflow-guide-pimms.webp
 author: alexandre
@@ -13,9 +13,11 @@ related:
   - no-code-guide-for-website
 ---
 
-Tu veux savoir précisément d’où viennent tes leads Webflow ?
+Le **suivi formulaires Webflow** te permet de voir exactement quelles campagnes marketing génèrent tes meilleurs leads et soumissions de formulaires. Ce guide complet montre comment configurer le **tracking formulaire Webflow** et les **analytics Webflow** en 15-20 minutes avec Pimms.
 
-Avec **PiMMs**, ça ne prend que quelques minutes — aucun code nécessaire.
+Tu obtiendras un **suivi de conversion en temps réel** montrant quelles publicités, posts réseaux sociaux, ou campagnes email génèrent vraiment des soumissions. Parfait pour la **génération de leads Webflow** avec **attribution marketing** complète sur tous tes formulaires de site web.
+
+**Ce que tu vas accomplir :** Configuration analytics formulaire complète, intégration webhook, et suivi campagne pour chaque formulaire de ton site Webflow.
 
 <LinkCard
   href="/articles/no-code-guide-for-website"
@@ -23,13 +25,13 @@ Avec **PiMMs**, ça ne prend que quelques minutes — aucun code nécessaire.
   description="Lis cet autre guide si ton site contient des liens vers des outils comme Cal.com, Tally, Stripe, etc."
 />
 
-## 1. Installer les scripts PiMMs sur Webflow
+## 1. Installer les scripts Pimms sur Webflow
 
 ### Pour les plans Webflow payants
 
 1. Rends-toi dans les **paramètres de ton projet Webflow**
 2. Va dans l’onglet **Custom Code**
-3. Colle les deux scripts PiMMs ci-dessous dans la section **Head** :
+3. Colle les deux scripts Pimms ci-dessous dans la section **Head** :
 
 Important: Injecte le script suivant dans tous les pages de ton site.
 
@@ -46,7 +48,7 @@ En plus, injecte le script suivant dans toutes les pages où tu as un formulaire
 <LinkCard
   href="/freetools/site-checker"
   title="Vérifiez votre installation de script"
-  description="Utilisez notre outil gratuit pour vérifier automatiquement si le script analytics PiMMs est correctement installé sur votre site web."
+  description="Utilisez notre outil gratuit pour vérifier automatiquement si le script analytics Pimms est correctement installé sur votre site web."
 />
 
 4. Clique sur **Save** puis republie ton site.
@@ -57,11 +59,11 @@ En plus, injecte le script suivant dans toutes les pages où tu as un formulaire
 
 ### 🆓 Pour le plan gratuit Webflow (alternative)
 
-Utilise l’application **CodeBlock** pour ajouter les deux scripts PiMMs sur chaque page contenant un formulaire.
+Utilise l’application **CodeBlock** pour ajouter les deux scripts Pimms sur chaque page contenant un formulaire.
 
-## 2. Rendre ton formulaire Webflow compatible avec PiMMs
+## 2. Rendre ton formulaire Webflow compatible avec Pimms
 
-PiMMs détecte automatiquement tes champs. Voici simplement ce qu’il faut respecter :
+Pimms détecte automatiquement tes champs. Voici simplement ce qu’il faut respecter :
 
 Ajoute un **champ Email obligatoire**
 - Le nom du champ (field Name dans Webflow) doit commencer par `email` (ex : `Email`, `email-pro`, etc.)
@@ -70,7 +72,7 @@ Pour suivre les noms :
 - Un seul champ nommé `fullname` ou `name`, etc.
 - Ou deux champs séparés : `firstname` et `lastname`
 
-⚠️ PiMMs utilise le champ **Name** interne (dans Webflow), et non pas l’étiquette visible (Label) ou l’ID HTML.
+⚠️ Pimms utilise le champ **Name** interne (dans Webflow), et non pas l’étiquette visible (Label) ou l’ID HTML.
 
 👉 Pour vérifier ce paramètre : clique sur ton champ → panneau **Settings** → champ **Name**.
 
@@ -78,7 +80,7 @@ Pour suivre les noms :
 
 ## 3. Récupérer ton Workspace ID
 
-1. Connecte-toi à ton [dashboard PiMMs](https://app.pimms.io)
+1. Connecte-toi à ton [dashboard Pimms](https://app.pimms.io)
 2. Clique sur **Settings → Workspace ID**
 3. Copie ton ID (ex : `ws_abc123xyz`)
 
@@ -101,9 +103,9 @@ Exemple :
 
 ![Webflow webhook setup](https://assets.pimms.io/webflow-webhook-setup.webp)
 
-## 5. Créer ton lien de tracking PiMMs
+## 5. Créer ton lien de tracking Pimms
 
-1. Connecte-toi à [PiMMs](https://app.pimms.io)
+1. Connecte-toi à [Pimms](https://app.pimms.io)
 2. Crée un nouveau lien court vers ta **page Webflow**
 3. Active le suivi des **Conversions**
 
@@ -114,20 +116,48 @@ Par exemple :
 
 ## 6. Tester ton installation
 
-1. Ouvre ton lien PiMMs dans un **onglet de navigation privée**
+1. Ouvre ton lien Pimms dans un **onglet de navigation privée**
 2. Remplis et valide le formulaire Webflow
-3. Vérifie ton [dashboard PiMMs](https://app.pimms.io)
+3. Vérifie ton [dashboard Pimms](https://app.pimms.io)
 4. Tu dois voir apparaître ton nouveau lead avec une attribution complète
 
 ## 7. Conseils en cas de problème
 
-- Vérifie que les **deux scripts PiMMs** sont correctement installés.
+- Vérifie que les **deux scripts Pimms** sont correctement installés.
 - Vérifie que ton `workspace_id` dans l’URL du webhook est exact.
 - Effectue tes tests en **navigation privée** avec une nouvelle adresse email à chaque fois.
-- Assure-toi que la page Webflow est ouverte depuis ton lien PiMMs, et non directement : c’est nécessaire pour démarrer le tracking.
+- Assure-toi que la page Webflow est ouverte depuis ton lien Pimms, et non directement : c’est nécessaire pour démarrer le tracking.
+
+## FAQ
+
+::: faq
+
+### Combien de temps prend la configuration du suivi formulaires Webflow ?
+
+La configuration complète du suivi formulaires Webflow prend 15-20 minutes en suivant notre guide étape par étape. Tu installeras les scripts de suivi, configureras l'intégration webhook, et testeras la connexion. La plupart des utilisateurs terminent la configuration en une session avec des résultats de suivi immédiats.
+
+:::
+
+::: faq
+
+### Le suivi formulaires Webflow fonctionne-t-il avec les plans gratuits ?
+
+Non, le suivi formulaires Webflow nécessite un plan Webflow payant pour accéder aux fonctionnalités de code personnalisé. Le plan gratuit Webflow ne permet pas d'ajouter des scripts de suivi ou du code personnalisé nécessaire pour les analytics de formulaire et l'attribution des leads.
+
+:::
+
+::: faq
+
+### Puis-je suivre plusieurs formulaires sur un site Webflow ?
+
+Oui ! Une fois que tu configures le suivi Pimms, tous les formulaires de ton site Webflow sont automatiquement suivis. Chaque soumission de formulaire est attribuée à la campagne, publicité ou canal spécifique qui a amené le visiteur, te donnant une visibilité complète des analytics de formulaire.
+
+:::
 
 ## Tout est prêt 🎉
 
-Chaque lead Webflow capté via tes liens PiMMs sera désormais parfaitement tracké, avec attribution complète et statistiques précises.
+Chaque lead Webflow capté via tes liens Pimms sera désormais parfaitement tracké, avec des analytics de conversion complètes et une attribution précise.
 
-👉 [Crée ton premier lien PiMMs dès maintenant](https://app.pimms.io)
+👉 [Crée ton premier lien Pimms dès maintenant](https://app.pimms.io)
+
+<CallToAction />

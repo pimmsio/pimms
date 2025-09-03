@@ -19,7 +19,7 @@ export async function GET(request: NextRequest) {
 
     const response = await fetch(parsedUrl, {
       headers: {
-        "User-Agent": "Mozilla/5.0 (compatible; PiMMs-Script-Checker/1.0)",
+        "User-Agent": "Mozilla/5.0 (compatible; Pimms-Script-Checker/1.0)",
         "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
       },
       signal: AbortSignal.timeout(10000)
@@ -88,7 +88,7 @@ export async function GET(request: NextRequest) {
       const wsResponse = await fetch(wsUrl, {
         headers: {
           Accept: "text/html",
-          "User-Agent": "PiMMs Checker"
+          "User-Agent": "Pimms Checker"
         }
       });
 

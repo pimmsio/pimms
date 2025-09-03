@@ -715,11 +715,6 @@ const redirects = [
     permanent: true
   },
   {
-    source: "/blog/utm-tracking-for-organic-social-media-posts",
-    destination: "/blog/utm-tracking-for-organic-social-media-posts",
-    permanent: true
-  },
-  {
     source: "/fr/blog/7-ways-to-boost-mobile-app-conversion-rates-in-2025",
     destination: "/fr/blog/7-moyens-pour-booster-les-conversions-des-apps-mobiles-en-2025",
     permanent: true

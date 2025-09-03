@@ -78,7 +78,11 @@
       "bottom": "Aucune carte bancaire requise • Sans abonnement",
       "main": "<fast>⚡</fast> Commencez gratuitement<large> avec 10 liens</large>",
       "main_short": "<fast>⚡</fast> Commencez gratuitement",
-      "demo": "Réserver une démo"
+      "demo": "Réserver une démo",
+      "title": "Ça commence ici",
+      "subtitle": "Si vous êtes arrivé jusqu'ici, il est temps de récupérer 10 liens gratuits.",
+      "button": "Commencer gratuitement",
+      "bottom_text": "10 liens intelligents inclus • Aucune carte bancaire"
     },
     "logos_circle": {
       "heading": "10x plus de <strong>Growth</strong>"

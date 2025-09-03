@@ -1,8 +1,8 @@
 ---
-title: Step-by-step guide for developers to set conversion tracking
-summary: Learn how to track leads, bookings, and sales using PiMMs smart links, frontend scripts, and API — full visibility, zero guesswork.
+title: Developer Conversion Tracking: Complete API Guide 2025
+summary: Implement complete conversion tracking with Pimms JavaScript SDK and API. Track leads, bookings, and sales with full attribution from click to conversion — comprehensive developer documentation.
 publishedAt: 2025-05-19
-updatedAt: 2025-05-19
+updatedAt: 2025-09-03
 slug: step-by-step-guide-for-developers-to-set-conversion-tracking
 image: https://assets.pimms.io/javascript-guide-pimms.webp
 author: alexandre
@@ -13,19 +13,21 @@ related:
   - setup-stripe-for-website
 ---
 
-Want to know exactly what drives your conversions — from the first click to the final payment?
+**Developer conversion tracking** lets you implement complete analytics and attribution across your entire application stack. This comprehensive guide shows you how to use **Pimms JavaScript SDK** and **tracking API** to monitor every step from first click to final conversion.
 
-With **PiMMs**, you can track every meaningful step:
+You'll implement **real-time conversion tracking** for leads, bookings, and sales with complete **attribution analytics**. Perfect for **full-stack developers** who need granular **conversion data** and **API integration** capabilities.
 
-- **Click** — when someone clicks a PiMMs link or scans a QR code  
+**What you'll implement:** Complete SDK integration, API tracking setup, and conversion attribution for every user interaction in your application.
+
+- **Click** — when someone clicks a Pimms link or scans a QR code  
 - **Lead (Conversion)** — when they fill out a form or book a meeting  
 - **Sale** — when they pay (e.g. Stripe checkout)
 
-Every PiMMs link generates a unique `pimms_id` that travels through the entire funnel. You just need to:
+Every Pimms link generates a unique `pimms_id` that travels through the entire funnel. You just need to:
 
-1. Install the PiMMs script or SDK to assign the `pimms_id`  
+1. Install the Pimms script or SDK to assign the `pimms_id`  
 2. Enable conversion tracking on your links  
-3. Send the conversion event to PiMMs (via API, Zapier, or npm)
+3. Send the conversion event to Pimms (via API, Zapier, or npm)
 
 ## 1. Set up client-side tracking (required)
 
@@ -48,12 +50,12 @@ import { Analytics as PimmsAnalytics } from "@getpimms/analytics"
 <PimmsAnalytics />
 ```
 
-More information about the client-side tracking options in the [PiMMs Analytics Repository](https://github.com/getpimms/analytics)
+More information about the client-side tracking options in the [Pimms Analytics Repository](https://github.com/getpimms/analytics)
 
 <LinkCard
   href="/freetools/site-checker"
   title="Verify your script installation"
-  description="Use our free tool to automatically check if the PiMMs analytics script is properly installed on your website."
+  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
 />
 
 ### Enable conversion tracking on your links
@@ -72,9 +74,9 @@ Once the tracking script is in place, you need to ensure that each link is tagge
 
 ✅ A/B test links always have tracking enabled by default.
 
-## 2. Send conversion events to PiMMs (Zapier, API, or SDK)
+## 2. Send conversion events to Pimms (Zapier, API, or SDK)
 
-When a user converts — submits a form, books a meeting, or makes a payment — you need to report that event to PiMMs.
+When a user converts — submits a form, books a meeting, or makes a payment — you need to report that event to Pimms.
 
 ### ➤ Track a lead
 
@@ -103,13 +105,13 @@ await pimms.track.lead({
 ```
 
 Notes: 
-- To create a token, go to your PiMMs dashboard → **Settings** → **API Keys**
+- To create a token, go to your Pimms dashboard → **Settings** → **API Keys**
 - The token is private — don't share it
 - `pimms_id` is a unique identifier that follows the user throughout the funnel. You can retrieve the `pimms_id` from the `pimms_id` cookie stored in the browser.
 
-More information on the [PiMMs SDK](https://github.com/getpimms/pimms-ts)
+More information on the [Pimms SDK](https://github.com/getpimms/pimms-ts)
 
-More information on the [PiMMs API](https://pim.ms/api)
+More information on the [Pimms API](https://pim.ms/api)
 
 | Property         | Description                                                                 | Required |
 |------------------|-----------------------------------------------------------------------------|----------|
@@ -129,7 +131,7 @@ There are two approaches to track sales:
 
 #### Special case: Stripe, Shopify, Systeme.io
 
-PiMMs already handles attribution for these platforms — you just need to pass the correct ID.
+Pimms already handles attribution for these platforms — you just need to pass the correct ID.
 
 - **Stripe Payment Links**
 
@@ -184,8 +186,36 @@ Need more flexibility? Here’s what’s possible:
 - **Use `?via=` query param** (coming soon)
 - **Restrict tracking to your domain** (coming soon)
 
+## FAQs
+
+::: faq
+
+### Do I need to be a developer to implement Pimms tracking?
+
+This guide is for developers who want full control. If you're non-technical, check our no-code guides for platforms like Webflow, Calendly, and Stripe that require zero coding.
+
+:::
+
+::: faq
+
+### Can I track conversions across different domains and subdomains?
+
+Currently, Pimms tracks within the same domain. Cross-domain tracking is coming soon. For now, use separate tracking setups for different domains.
+
+:::
+
+::: faq
+
+### How quickly do conversions appear in the Pimms dashboard?
+
+Conversions appear in real-time, typically within 1-2 seconds of the API call. You can see click-to-conversion data immediately after events are sent.
+
+:::
+
 ## You're all set 🎉
 
-You now have everything you need to track what really converts — with full attribution and real-time analytics.
+You now have everything you need to implement complete conversion tracking and analytics — with full attribution from click to conversion and real-time data.
 
-👉 [Create your first PiMMs link](https://app.pimms.io)
+👉 [Create your first Pimms link](https://app.pimms.io)
+
+<CallToAction />

@@ -78,7 +78,11 @@
       "bottom": "No credit card required • No subscription",
       "main": "<fast>⚡</fast> Start for free<large> with 10 links</large>",
       "main_short": "<fast>⚡</fast> Start for free",
-      "demo": "Book a demo"
+      "demo": "Book a demo",
+      "title": "It starts here",
+      "subtitle": "If you made it this far, it's time to grab 10 free links.",
+      "button": "Start for free",
+      "bottom_text": "10 smart links included • No credit card"
     },
     "logos_circle": {
       "heading": "Less Busywork, More <strong>Growth</strong>"

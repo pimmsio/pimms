@@ -38,7 +38,7 @@ import { Figure } from "@/components/mdx/Figure";
 import { articleFolders } from "@/i18n/config";
 import TallyIframe from "@/components/mdx/TallyIframe";
 import { BreadcrumbStructuredData } from "@/components/mdx/BreadcrumbStructuredData";
-import { Clock, ChevronRight } from "lucide-react";
+import { Clock, ChevronRight, Edit3 } from "lucide-react";
 import Author from "@/components/blog/author";
 import { useTranslations } from "next-intl";
 
@@ -298,8 +298,14 @@ export default function BlogPost({ params }: Props) {
           )}
           <div className="flex items-center gap-1.5 bg-gray-100/50 px-3 py-1.5 rounded-full">
             <Clock className="w-3.5 h-3.5 opacity-60" />
-            <span className="font-medium">{formatDate(post.metadata.publishedAt)}</span>
+            <span className="font-medium">Published {formatDate(post.metadata.publishedAt)}</span>
           </div>
+          {post.metadata.updatedAt && (
+            <div className="flex items-center gap-1.5 bg-blue-50/70 px-3 py-1.5 rounded-full border border-blue-200/30">
+              <Edit3 className="w-3.5 h-3.5 opacity-60 text-blue-600/70" />
+              <span className="font-medium text-blue-600/70">Updated {formatDate(post.metadata.updatedAt)}</span>
+            </div>
+          )}
         </div>
       </Section>
 
@@ -449,15 +455,28 @@ export default function BlogPost({ params }: Props) {
                 </div>
 
                 <div className="p-5 sm:p-6">
-                  <h3 className="font-bold text-lg sm:text-xl text-text-primary group-hover:text-brand-primary transition-colors mb-2.5 line-clamp-2">
+                  <h3 className="font-bold text-lg sm:text-xl text-text-primary group-hover:text-brand-primary transition-colors mb-2.5 leading-tight">
                     {post.metadata.title}
                   </h3>
                   <p className="text-text-secondary line-clamp-2 mb-4 text-sm sm:text-base leading-relaxed">
                     {post.metadata.summary}
                   </p>
                   <div className="flex items-center justify-between text-xs sm:text-sm text-text-secondary">
-                    <span className="font-medium">{formatDate(post.metadata.updatedAt)}</span>
-                    <span className="text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity">
+                    <div className="flex flex-col gap-1.5 flex-1 min-w-0">
+                      <div className="flex items-center gap-1.5">
+                        <Clock className="w-3.5 h-3.5 opacity-60 flex-shrink-0" />
+                        <span className="font-medium truncate">Published {formatDate(post.metadata.publishedAt)}</span>
+                      </div>
+                      {post.metadata.updatedAt && (
+                        <div className="flex items-center gap-1.5 text-blue-600/70">
+                          <Edit3 className="w-3.5 h-3.5 opacity-60 flex-shrink-0" />
+                          <span className="font-medium text-xs truncate">
+                            Updated {formatDate(post.metadata.updatedAt)}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <span className="text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
                       Read →
                     </span>
                   </div>

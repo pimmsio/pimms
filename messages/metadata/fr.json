@@ -6,8 +6,8 @@
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "site-checker": {
-      "title": "Outil Gratuit de Vérification Script PiMMs | Vérifier l'Installation Analytics",
-      "description": "Outil gratuit pour vérifier si ton site web a correctement installé le script analytics PiMMs pour le suivi des conversions. Vérification instantanée avec guide d'installation.",
+      "title": "Outil Gratuit de Vérification Script Pimms | Vérifier l'Installation Analytics",
+      "description": "Outil gratuit pour vérifier si ton site web a correctement installé le script analytics Pimms pour le suivi des conversions. Vérification instantanée avec guide d'installation.",
       "image": "https://assets.pimms.io/tracking-website-checker.webp"
     },
     "youtube": {
@@ -28,6 +28,11 @@
     "for-creators": {
       "title": "PIMMS pour Créateurs : Transforme les clics en leads et ventes",
       "description": "Collecte plus de leads, réserve plus de RDV et augmente ton CA avec des smart links, deep links et des insights en temps réel.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
+    "systemeio": {
+      "title": "PIMMS pour Systeme.io : Suis tes tunnels et ventes",
+      "description": "Suis tes tunnels Systeme.io et tes ventes avec des smart links, deep links et des insights en temps réel.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "abuse": {

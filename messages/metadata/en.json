@@ -7,7 +7,7 @@
     },
     "site-checker": {
       "title": "Scan PIMMS script tool checker  | Verify your tracking installation",
-      "description": "Free tool to check if your website has the PiMMs analytics script properly installed for conversion tracking.",
+      "description": "Free tool to check if your website has the Pimms analytics script properly installed for conversion tracking.",
       "image": "https://assets.pimms.io/tracking-website-checker.webp"
     },
     "youtube": {
@@ -28,6 +28,11 @@
     "for-creators": {
       "title": "PIMMS for Creators: Turn clicks into leads and sales",
       "description": "Collect more leads, book more meetings and grow revenue with smart links, deep links and real-time insights.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
+    "systemeio": {
+      "title": "PIMMS for Systeme.io: Track your funnels and sales",
+      "description": "Track your Systeme.io funnels and sales with smart links, deep links and real-time insights.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "abuse": {

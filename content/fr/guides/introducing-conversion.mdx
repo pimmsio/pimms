@@ -1,8 +1,8 @@
 ---
-title: Guide étape par étape pour les développeurs – configurer le tracking des conversions
-summary: Apprends à suivre les leads, prises de rendez-vous et ventes avec les liens intelligents PiMMs, des scripts frontend et l’API — visibilité complète, zéro approximations.
+title: Suivi Conversion Développeur: Guide API Complet 2025
+summary: Implémente le suivi conversion complet avec SDK JavaScript Pimms et API. Suis leads, réservations, et ventes avec attribution totale du clic à la conversion — documentation développeur compréhensive.
 publishedAt: 2025-05-19
-updatedAt: 2025-05-19
+updatedAt: 2025-09-03
 slug: guide-developpeur-tracking-conversions
 image: https://assets.pimms.io/javascript-guide-pimms.webp
 author: alexandre
@@ -13,19 +13,21 @@ related:
   - setup-stripe-for-website
 ---
 
-Tu veux savoir exactement ce qui génère des conversions — du premier clic jusqu'au paiement final ?
+Le **suivi conversion développeur** te permet d'implémenter des analytics et attribution complètes sur l'ensemble de ta stack d'application. Ce guide compréhensif montre comment utiliser le **SDK JavaScript Pimms** et l'**API de suivi** pour surveiller chaque étape du premier clic à la conversion finale.
 
-Avec **PiMMs**, tu peux suivre chaque étape importante :
+Tu implémenteras un **suivi de conversion en temps réel** pour leads, réservations, et ventes avec des **analytics d'attribution** complètes. Parfait pour les **développeurs full-stack** qui ont besoin de **données de conversion** granulaires et de capacités d'**intégration API**.
 
-- **Clic** — lorsqu’un utilisateur clique sur un lien PiMMs ou scanne un QR code  
+**Ce que tu vas implémenter :** Intégration SDK complète, configuration suivi API, et attribution conversion pour chaque interaction utilisateur dans ton application.
+
+- **Clic** — lorsqu’un utilisateur clique sur un lien Pimms ou scanne un QR code  
 - **Lead (Conversion)** — lorsqu’il remplit un formulaire ou réserve un créneau  
 - **Vente** — lorsqu’il paie (par exemple via Stripe)
 
-Chaque lien PiMMs génère un identifiant unique `pimms_id` qui suit l’utilisateur tout au long du tunnel. Tu dois simplement :
+Chaque lien Pimms génère un identifiant unique `pimms_id` qui suit l’utilisateur tout au long du tunnel. Tu dois simplement :
 
-1. Installer le script ou SDK PiMMs pour capter le `pimms_id`  
+1. Installer le script ou SDK Pimms pour capter le `pimms_id`  
 2. Activer le suivi des conversions sur tes liens  
-3. Envoyer les événements de conversion à PiMMs (via API, Zapier ou npm)
+3. Envoyer les événements de conversion à Pimms (via API, Zapier ou npm)
 
 ## 1. Configure le tracking côté client (obligatoire)
 
@@ -48,12 +50,12 @@ import { Analytics as PimmsAnalytics } from "@getpimms/analytics"
 <PimmsAnalytics />
 ```
 
-Plus d'informations sur les options de tracking côté client dans le [PiMMs Analytics Repository](https://github.com/getpimms/analytics)
+Plus d'informations sur les options de tracking côté client dans le [Pimms Analytics Repository](https://github.com/getpimms/analytics)
 
 <LinkCard
   href="/freetools/site-checker"
   title="Vérifiez votre installation de script"
-  description="Utilisez notre outil gratuit pour vérifier automatiquement si le script analytics PiMMs est correctement installé sur votre site web."
+  description="Utilisez notre outil gratuit pour vérifier automatiquement si le script analytics Pimms est correctement installé sur votre site web."
 />
 
 ### Active le tracking des conversions sur tes liens
@@ -72,9 +74,9 @@ Une fois le script installé, tu dois activer le suivi pour chaque lien.
 
 ✅ Les tests A/B ont toujours le suivi activé par défaut.
 
-## 2. Envoie les événements de conversion à PiMMs (Zapier, API ou SDK)
+## 2. Envoie les événements de conversion à Pimms (Zapier, API ou SDK)
 
-Quand un utilisateur convertit — formulaire, rendez-vous, paiement — tu dois envoyer l’événement à PiMMs.
+Quand un utilisateur convertit — formulaire, rendez-vous, paiement — tu dois envoyer l’événement à Pimms.
 
 ### ➤ Suivre un lead
 
@@ -103,11 +105,11 @@ await pimms.track.lead({
 ```
 
 Notes: 
-- Pour créer un token, sur ton dashboard PiMMs, va dans les **Settings** → **API Keys**
+- Pour créer un token, sur ton dashboard Pimms, va dans les **Settings** → **API Keys**
 - Le token est privé — ne le partage pas
 - `pimms_id` est un identifiant unique qui suit l’utilisateur tout au long du tunnel. Tu peux récupérer le `pimms_id` depuis le cookie `pimms_id` enregistré dans le navigateur.
 
-Plus d'informations sur le [PiMMs SDK](https://github.com/getpimms/pimms-ts)
+Plus d'informations sur le [Pimms SDK](https://github.com/getpimms/pimms-ts)
 
 Plus d'informations sur l'API dans la [Documentation API](https://pim.ms/api)
 
@@ -129,7 +131,7 @@ Deux manières de suivre les ventes :
 
 #### Cas particulier : Stripe, Shopify, Systeme.io
 
-PiMMs gère déjà l’attribution pour ces plateformes — il suffit de transmettre le bon identifiant.
+Pimms gère déjà l’attribution pour ces plateformes — il suffit de transmettre le bon identifiant.
 
 - **Stripe Payment Links**
 
@@ -183,8 +185,36 @@ Tu veux aller plus loin ? Voici ce qui est possible :
 - **Paramètre `?via=`** *(bientôt dispo)*  
 - **Limiter le tracking à ton domaine** *(bientôt dispo)*
 
-## C’est bon, tout est prêt 🎉
+## FAQ
 
-Tu as maintenant tout ce qu’il faut pour suivre ce qui convertit vraiment — avec attribution complète et analytics en temps réel.
+::: faq
 
-👉 [Crée ton premier lien PiMMs](https://app.pimms.io)
+### Dois-je être développeur pour implémenter le suivi Pimms ?
+
+Ce guide est destiné aux développeurs qui veulent un contrôle total. Si tu n'es pas technique, consulte nos guides no-code pour des plateformes comme Webflow, Calendly, et Stripe qui ne nécessitent aucun codage.
+
+:::
+
+::: faq
+
+### Puis-je suivre les conversions sur différents domaines et sous-domaines ?
+
+Actuellement, Pimms suit dans le même domaine. Le suivi cross-domain arrive bientôt. Pour l'instant, utilise des configurations de suivi séparées pour différents domaines.
+
+:::
+
+::: faq
+
+### Combien de temps avant que les conversions apparaissent dans le tableau de bord Pimms ?
+
+Les conversions apparaissent en temps réel, généralement en 1-2 secondes après l'appel API. Tu peux voir les données de clic à conversion immédiatement après l'envoi des événements.
+
+:::
+
+## C'est bon, tout est prêt 🎉
+
+Tu as maintenant tout ce qu'il faut pour implémenter un suivi de conversion complet et des analytics — avec attribution totale du clic à la conversion et données en temps réel.
+
+👉 [Crée ton premier lien Pimms](https://app.pimms.io)
+
+<CallToAction />

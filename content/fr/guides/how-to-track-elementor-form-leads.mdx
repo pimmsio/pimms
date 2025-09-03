@@ -1,0 +1,180 @@
+---
+title: Suivi Formulaires WordPress Elementor: Guide 2025
+summary: Configurez le suivi complet des formulaires WordPress Elementor en minutes. Suivez chaque lead avec attribution. Guide étape par étape avec captures montrant quelles campagnes génèrent des conversions.
+publishedAt: 2025-09-01
+updatedAt: 2025-09-03
+slug: comment-suivre-leads-formulaires-elementor-attribution-marketing
+image: https://assets.pimms.io/wordpress-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-systemeio-sales-and-leads
+  - how-to-track-webflow-leads
+  - no-code-guide-for-website
+---
+
+Le **suivi formulaires WordPress Elementor** te permet de voir exactement quelles campagnes marketing génèrent tes meilleurs leads. Ce guide complet montre comment configurer le **tracking formulaire Elementor** en 10-15 minutes avec Pimms.
+
+Tu obtiendras une **attribution des leads en temps réel** montrant quelles publicités, posts réseaux sociaux, ou campagnes email génèrent vraiment des soumissions de formulaires. Parfait pour le **suivi leads WordPress** avec **attribution marketing** complète sur tous tes formulaires Elementor Pro.
+
+**Ce que tu vas accomplir :** Configuration analytics formulaire complète, intégration webhook, et suivi campagne pour chaque formulaire Elementor de ton site WordPress.
+
+## 1. Installer le script de suivi
+
+**Prérequis**
+
+Assure-toi d'avoir **Elementor Pro** installé (les formulaires nécessitent la version Pro).
+
+**Ajouter le script dans WordPress**
+
+1. Va dans ton **Tableau de bord WordPress**
+2. Navigue vers : **Elementor** → **Code personnalisé** → **Ajouter un nouveau code**
+
+![Menu Code personnalisé Elementor](https://assets.pimms.io/elementor-custom-code-menu.webp)
+
+3. Colle le script suivant :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js" data-forward-all="true"></script>
+```
+
+4. Définis l'**Emplacement** sur `<head>`
+
+![Définir l'emplacement sur Head](https://assets.pimms.io/elementor-set-location-head.webp)
+
+5. Clique sur **Publier**
+6. Choisis où afficher le code (sélectionne **Site entier** — recommandé)
+
+![Choisir Site entier](https://assets.pimms.io/elementor-choose-entire-site.webp)
+
+7. Clique sur **Enregistrer et fermer**
+
+**Vérifie** que le script est correctement installé
+
+<LinkCard
+  href="/freetools/site-checker"
+  title="Vérifie l'installation de ton script"
+  description="Utilise notre outil gratuit pour vérifier automatiquement que le script d'analyse Pimms est correctement installé sur ton site web."
+/>
+
+## 2. Créer un formulaire compatible avec Pimms
+
+Pimms détecte automatiquement tes champs — suis simplement ces étapes :
+
+**Ajouter un widget de formulaire Elementor**
+
+1. Ouvre ton **Widget de formulaire** dans Elementor
+2. Ajoute des champs nom et email 
+3. Va dans le champ que tu veux configurer :
+   - **Champ de formulaire** → **Sélectionner le champ** → **Avancé**
+4. Vérifie que l'**ID** est correct
+
+![Vérifier l'ID du champ](https://assets.pimms.io/elementor-check-field-id.webp)
+
+**Capturer le paramètre `pimms_id`**
+
+1. Ajoute un nouveau **Champ de formulaire**
+2. Configure-le comme suit :
+   - **Type** : Masqué
+   - **Étiquette** : pimms_id
+   - **Avancé → Valeur par défaut** : Clique sur l'icône **Balises dynamiques** → sélectionne **Paramètre de requête**
+   - **Dans Avancé → ID, assure-toi de ne pas utiliser : `pimms_id`**
+
+![Configurer le champ masqué](https://assets.pimms.io/elementor-configure-hidden-field.webp?v=2)
+
+3. Dans les paramètres :
+   - **Méthode** : GET
+   - **Nom du paramètre** : `pimms_id`
+
+## 3. Ajouter le webhook Elementor pour les soumissions de formulaire
+
+Pour configurer un nouveau formulaire : [Générateur de formulaires Elementor](https://elementor.com/pages/form-builder/)
+
+**Configurer la soumission de formulaire**
+
+1. Dans les paramètres du Widget de formulaire, va dans l'onglet : **Actions après soumission**
+
+![Onglet Actions après soumission](https://assets.pimms.io/elementor-actions-after-submit.webp)
+
+2. Ajoute **Webhook** comme action
+
+![Ajouter l'action Webhook](https://assets.pimms.io/elementor-add-webhook-action.webp)
+
+Utilise l'URL de webhook suivante :
+
+```
+https://app.pimms.io/api/elementor/webhook?workspace_id=ton-id
+```
+
+Remplace `ton-id` par ton **ID de workspace**
+
+Exemple :  
+
+```
+https://app.pimms.io/api/elementor/webhook?workspace_id=ws_abc123xyz
+```
+
+## 4. Créer un lien de suivi dans Pimms
+
+1. Va sur [Pimms](https://app.pimms.io)
+2. Crée un nouveau lien court pointant vers ta **page Elementor** avec le formulaire
+3. Active le **Suivi de conversion**
+
+**Exemple** :  
+```
+https://pim.ms/ma-landing-page
+```
+
+Utilise ce lien dans tes publicités, campagnes de prospection, emailing ou réseaux sociaux — partout où tu obtiens du trafic.
+
+## 5. Tester ta configuration
+
+1. Ouvre ton lien Pimms dans un **onglet de navigation privée**
+2. Remplis ton formulaire Elementor (utilise un email de test comme `test+pimms@tondomaine.com`)
+3. Soumets le formulaire
+4. Vérifie ton [tableau de bord Pimms](https://app.pimms.io)
+
+Tu devrais voir un nouveau lead avec une attribution complète montrant exactement d'où il vient.
+
+## 6. Conseils de dépannage
+
+- Assure-toi d'avoir **Elementor Pro** (la version gratuite n'inclut pas les webhooks)
+- Confirme que le script Pimms est correctement installé (utilise notre outil gratuit pour vérifier)
+- Vérifie bien que ton **ID de workspace** est correct dans l'URL du webhook
+- Teste en remplissant et soumettant le formulaire en **mode navigation privée** avec une nouvelle adresse email
+- Assure-toi d'accéder à ta page via ton **lien Pimms**, pas directement
+
+## FAQ
+
+::: faq
+
+### Combien de temps prend la configuration du suivi formulaires WordPress Elementor ?
+
+La configuration complète du suivi formulaires WordPress Elementor prend 10-15 minutes en suivant notre guide étape par étape. Tu installeras le script de suivi, configureras l'intégration webhook, et testeras la connexion. La plupart des utilisateurs terminent la configuration en une session avec des résultats immédiats.
+
+:::
+
+::: faq
+
+### Le suivi formulaire Elementor fonctionne-t-il avec la version gratuite ?
+
+Non, le suivi formulaires WordPress Elementor nécessite **Elementor Pro** pour la fonctionnalité webhook et les fonctionnalités de formulaire avancées. La version gratuite Elementor n'inclut pas les widgets de formulaire ou les capacités webhook nécessaires pour le suivi de conversion et l'attribution des leads.
+
+:::
+
+::: faq
+
+### Puis-je suivre plusieurs formulaires Elementor sur un site WordPress ?
+
+Oui ! Une fois que tu configures le suivi Pimms, tous les formulaires Elementor compatibles de ton site WordPress sont automatiquement suivis. Chaque soumission de formulaire est attribuée à la campagne, publicité ou canal spécifique qui a amené le visiteur, te donnant une visibilité complète des analytics de conversion.
+
+:::
+
+## Tu es prêt 🎉
+
+Chaque lead de formulaire WordPress Elementor collecté via tes liens Pimms sera maintenant suivi — avec une attribution complète montrant exactement quelle campagne, publicité ou canal a généré chaque lead.
+
+👉 [Crée ton premier lien Pimms](https://pimms.io)
+
+<CallToAction />
