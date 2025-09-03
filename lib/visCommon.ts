@@ -66,7 +66,7 @@ export function buildFunnelGeometry(opts: {
   leftMargin: number;
   rightMargin: number;
 }) {
-  const { width, centerX, centerY, yTop, topWidth, leftMargin, rightMargin } = opts;
+  const { centerX, centerY, yTop, topWidth, leftMargin, rightMargin } = opts;
 
   const leftTopX = centerX - topWidth / 2;
   const rightTopX = centerX + topWidth / 2;

@@ -59,7 +59,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1" variant="card" background="subtle">
       <Column span={1} order="text">
         <BlurFade direction="left" delay={0.2} inView>
-          <H3>It starts with Links that <TextHighlight color="blue">Convert more</TextHighlight></H3>
+          <H3>Share Links that <TextHighlight color="blue">Collect more</TextHighlight></H3>
           <Text>Run outreach campaigns, start emailing campaigns, share links on social media.</Text>
           <Text>Pimms deeplinks remove the hassle of in app browser, making purchases and signups happen 30% more often.</Text>
         </BlurFade>
@@ -95,7 +95,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1" variant="card" background="subtle">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
-          <H3>Prioritize with <TextHighlight color="red">Lead Scoring AI</TextHighlight></H3>
+          <H3>Prioritize with <TextHighlight color="red">AI</TextHighlight></H3>
           <Text>Manage your leads with intelligent scoring and deep customer insights.</Text>
           <Text>Understand which prospects are most likely to convert and focus your efforts on the highest-value opportunities.</Text>
         </BlurFade>
@@ -129,7 +129,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1" variant="card" background="subtle">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
-          <H3>Integrate your <TextHighlight color="green">Growth Stack</TextHighlight></H3>
+          <H3>Compatible with your <TextHighlight color="green">Workflow</TextHighlight></H3>
           <Text>Native integrations with Stripe, Systeme.io, Shopify, Cal.com, Zapier, WordPress and more.</Text>
           <Text>And our relentless dev team keeps dropping new integrations like there’s no tomorrow.</Text>
         </BlurFade>
@@ -147,7 +147,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   <BlurFade direction="up" inView>
     <Centered>
       <Label variant="default">PIMMS vs Others</Label>
-      <H2>Why top Creators <TitleIcon variant="h2" icon="why" /> <Primary>Choose PIMMS?</Primary></H2>
+      <H2>Why the <TitleIcon variant="h2" icon="why" /> <Primary>top 1%</Primary> Choose PIMMS?</H2>
     </Centered>
   </BlurFade>
 
@@ -164,14 +164,6 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
       <ComparisonRow others={false} pimms={true}>Fast Setup (start in 10 minutes)</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>Advanced traffic redirection (per device, country, app stores)</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>24/7 Dedicated support</ComparisonRow>
-
-      <ComparisonExtras>
-        <ComparisonExtra color="text-vibrant-blue">QR Codes with logo</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-red">Fewer failed payments</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-blue">Custom link previews</ComparisonExtra>
-        <ComparisonExtra color="text-brand-secondary">API access</ComparisonExtra>
-        <ComparisonExtra color="text-brand-secondary">Webhooks</ComparisonExtra>
-      </ComparisonExtras>
     </ComparisonContainer>
   </Section>
 </Slide>
@@ -179,8 +171,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
 <Slide variant="secondary" id="pricing">
   <BlurFade direction="up" inView>
     <Centered>
-      <Label variant="default">Pricing</Label>
-      <H2>Fair <TitleIcon variant="h2" icon="pricing" /> <Primary>Pricing</Primary> that fits your needs</H2>
+      <H2>Fair <TitleIcon variant="h2" icon="pricing" /> <Primary>Pricing</Primary></H2>
       <Text size="lg">Start with 10 free links. Upgrade when you need to.</Text>
     </Centered>
   </BlurFade>
@@ -189,17 +180,72 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
         <BlurFade direction="left" delay={0.1} inView>
-          <LifetimeOfferStarter />
+          <PricingCard variant="starter">
+            <PricingHeader>
+              <PricingTitleGroup>
+                <PricingTitle variant="starter">Starter</PricingTitle>
+                <PricingSubtitle variant="starter">Perfect to get started</PricingSubtitle>
+              </PricingTitleGroup>
+              <PricingPrice variant="starter">59€</PricingPrice>
+              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter">Unlock lifetime access</PricingCta>
+            </PricingHeader>
+            <PricingFeatures title="Everything in Free, plus:" variant="starter">
+              <PricingFeature variant="starter">200 smart links /month</PricingFeature>
+              <PricingFeature variant="starter">Unlimited Leads tracking</PricingFeature>
+              <PricingFeature variant="starter">100+ integrations incl. Zapier</PricingFeature>
+              <PricingFeature variant="starter">Unlimited UTM</PricingFeature>
+              <PricingFeature variant="starter">3 custom domains</PricingFeature>
+              <PricingFeature variant="starter">3 team members</PricingFeature>
+              <PricingFeature variant="starter">6 months of data</PricingFeature>
+              <PricingFeature variant="starter">1 month priority support included</PricingFeature>
+            </PricingFeatures>
+          </PricingCard>
         </BlurFade>
       </Column>
       <Column span={1}>
         <BlurFade direction="up" delay={0.2} inView>
-          <LifetimeOfferPro />
+          <PricingCard variant="pro">
+            <PricingHeader>
+              <PricingTitleGroup>
+                <PricingTitle variant="pro">Pro</PricingTitle>
+                <PricingSubtitle variant="pro">The choice of 90% of our customers</PricingSubtitle>
+              </PricingTitleGroup>
+              <PricingPrice variant="pro">99€</PricingPrice>
+              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro">Unlock lifetime access</PricingCta>
+            </PricingHeader>
+            <PricingFeatures title="Everything in Starter, plus:" variant="pro">
+              <PricingFeature variant="pro">600 smart links /month</PricingFeature>
+              <PricingFeature variant="pro">Limited sales tracking</PricingFeature>
+              <PricingFeature variant="pro">Support Stripe payments</PricingFeature>
+              <PricingFeature variant="pro">A/B testing</PricingFeature>
+              <PricingFeature variant="pro">Webhooks</PricingFeature>
+              <PricingFeature variant="pro">5 team members</PricingFeature>
+              <PricingFeature variant="pro">12 months of data</PricingFeature>
+              <PricingFeature variant="pro">3 months priority support included</PricingFeature>
+            </PricingFeatures>
+          </PricingCard>
         </BlurFade>
       </Column>
       <Column span={1}>
         <BlurFade direction="right" delay={0.3} inView>
-          <OnDemandOfferBusiness />
+          <PricingCard variant="business">
+            <PricingHeader>
+              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
+                <PricingTitle variant="business">Business</PricingTitle>
+                <PricingSubtitle variant="business">Everything in Pro and more:</PricingSubtitle>
+              </PricingTitleGroup>
+              <PricingPrice variant="business">On-demand</PricingPrice>
+              <PricingCta variant="business">Book a demo</PricingCta>
+            </PricingHeader>
+            <PricingFeatures title="Everything in Pro and more:" variant="business">
+              <PricingFeature variant="business">Unlimited short links</PricingFeature>
+              <PricingFeature variant="business">Unlimited Leads tracking</PricingFeature>
+              <PricingFeature variant="business">Unlimited Sales tracking</PricingFeature>
+              <PricingFeature variant="business">Unlimited team members</PricingFeature>
+              <PricingFeature variant="business">Unlimited custom domains</PricingFeature>
+              <PricingFeature variant="business">Bulk link operations</PricingFeature>
+            </PricingFeatures>
+          </PricingCard>
         </BlurFade>
       </Column>
     </TwoColumns>
@@ -260,52 +306,52 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
  
 ::: faq
 ### How is PIMMS different from a regular YouTube link?
-When you share a YouTube link, it often opens in an in-app browser (like on Instagram or LinkedIn). PIMMS redirects straight to the official YouTube app instead. That means a smoother experience, more views, and more subscribers.
+Most YouTube links open inside an in‑app browser (Instagram, LinkedIn…). PIMMS sends people straight to the YouTube app, so they’re logged in and can subscribe or engage instantly — smoother UX, more views, more subscribers.
 :::
 
 ::: faq
 ### Can I track who clicks on my YouTube links?
-Yes. You can see how many people clicked your link, where they came from, and what device they used. Even on the free plan, you get clean, useful insights to understand your traffic.
+Yes. See clicks, sources, device and country breakdowns. Even on the free plan, you get clear insights to understand your audience.
 :::
 
 ::: faq
 ### Can PIMMS help me get more subscribers?
-Yes. Since users land directly in the YouTube app (and are already logged in), it's easier for them to subscribe. Fewer steps, less friction, better conversion.
+Yes. Opening the video in the YouTube app removes friction. People are already signed in, so subscribing is one tap.
 :::
 
 ::: faq
 ### Can I create a link for each video or playlist?
-Absolutely. You can create as many smart links as you want—for individual videos, Shorts, playlists, livestreams, or your channel homepage.
+Yes. Create smart links for videos, Shorts, playlists, livestreams, or your channel homepage — as many as you need.
 :::
 
 ::: faq
 ### Can I see which links perform best?
-Yes. You can track the number of clicks and see where they came from (social platform, device, country, etc.). While PIMMS doesn't track YouTube subscriptions directly, this data helps you understand what actually drives engagement.
+Yes. Compare clicks and sources (platform, device, country). While PIMMS doesn’t track YouTube subscriptions directly, this data shows what actually drives engagement.
 :::
 
 ::: faq
 ### Does PIMMS work with other platforms?
-Yes. Share your PIMMS links on Instagram, TikTok, Twitter, LinkedIn, or even in newsletters. Your audience will always be redirected to the right place automatically.
+Yes. Share PIMMS links across Instagram, TikTok, X, LinkedIn, newsletters — the link adapts and sends people to the right place automatically.
 :::
 
 ::: faq
 ### Do I need to connect my YouTube account or install anything?
-Nope. No login, no integration needed. You just create your link, share it, and we take care of the rest.
+No. No account connection, no install. Create a link, share it, and PIMMS handles the rest.
 :::
 
 ::: faq
 ### Is it safe for me and my audience?
-Yes. PIMMS follows strong security practices and doesn't collect or resell unnecessary personal data. Whether you're a solo creator or part of a team, your data is protected.
+Yes. Privacy‑first and secure. We don’t collect unnecessary personal data or resell information.
 :::
 
 ::: faq
 ### How is PIMMS different from a simple link shortener?
-PIMMS doesn't just shorten links—it makes them smarter. It detects the user's platform and device, and opens the YouTube app directly. You also get full click tracking and analytics without the complexity.
+PIMMS doesn’t just shorten. It detects platform and device to open the YouTube app directly, and gives you click analytics to optimize.
 :::
 
 ::: faq
 ### How is this different from YouTube Analytics?
-YouTube Analytics shows you what happens *inside* YouTube. PIMMS shows you what happens *before* that—who clicked, where they came from, and which link drove the view. It's 100% complementary.
+YouTube Analytics shows what happens inside YouTube. PIMMS shows what happens before — who clicked, from where, and which link drove the view. It’s 100% complementary.
 :::
 
   </Section>

@@ -17,14 +17,14 @@ export type LeadItem = {
 };
 
 const sourceLogo: Record<LeadSource, string> = {
-  shopify: "/static/logos/integrations/shopify.svg",
-  calcom: "/static/logos/integrations/calcom.jpeg",
-  brevo: "/static/logos/integrations/brevo.jpeg",
-  stripe: "/static/logos/integrations/stripe.svg",
-  zapier: "/static/logos/integrations/zapier.jpeg",
-  tally: "/static/logos/integrations/tally.svg",
-  wordpress: "/static/logos/integrations/wordpress.svg",
-  webflow: "/static/logos/integrations/webflow.svg"
+  shopify: "/static/symbols/integrations/shopify.svg",
+  calcom: "/static/symbols/integrations/calcom.jpeg",
+  brevo: "/static/symbols/integrations/brevo.jpeg",
+  stripe: "/static/symbols/integrations/stripe.svg",
+  zapier: "/static/symbols/integrations/zapier.jpeg",
+  tally: "/static/symbols/integrations/tally.svg",
+  wordpress: "/static/symbols/integrations/wordpress.svg",
+  webflow: "/static/symbols/integrations/webflow.svg"
 };
 
 function maskEmail(email: string): string {

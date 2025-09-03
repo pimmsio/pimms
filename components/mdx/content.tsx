@@ -5,6 +5,8 @@ import { FaArrowTrendUp, FaRegClock, FaDollarSign, FaMedal, FaQuestion } from "r
 import { BiSolidZap } from "react-icons/bi";
 import { MdRocketLaunch } from "react-icons/md";
 import { Share2, Target, DollarSign as DollarIcon, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { cn } from "../../lib/utils";
 
 // Typography components
 export const H1 = ({ children }: { children: ReactNode }) => <>{children}</>;
@@ -245,12 +247,19 @@ export const CTA = ({ children }: { children: ReactNode }) => <>{children}</>;
 export const Fast = () => <BiSolidZap size={32} fill="currentColor" />;
 export const CtaButton = ({
   children,
-  variant = "default"
+  variant = "default",
+  href
 }: {
   children: ReactNode;
   variant?: "default" | "inverse";
+  href?: string;
 }) => {
   const handleClick = () => {
+    if (href) {
+      window.location.href = href;
+      return;
+    }
+
     // Scroll to waitlist or redirect to app
     const waitlistSection = document.getElementById("waitlist");
     if (waitlistSection) {
@@ -298,8 +307,8 @@ export const CtaBottomText = ({
 }) => {
   const colorClass = variant === "white" ? "text-white/80" : "text-text-secondary";
   return (
-    <div className="flex items-center justify-center lg:justify-start gap-2 mt-4">
-      <span className={`text-sm ${colorClass}`}>{children}</span>
+    <div className={`flex flex-row items-center justify-center lg:justify-start gap-2 mt-4 text-sm ${colorClass}`}>
+      {children}
     </div>
   );
 };
@@ -360,7 +369,7 @@ export const Section = ({
 
   const getBaseClasses = () => {
     if (variant === "card") {
-      return "bg-white rounded-3xl border border-gray-200 px-2 py-8 sm:p-8 lg:p-12 mb-16";
+      return "bg-white rounded-3xl border border-gray-200 px-4 py-8 sm:p-8 lg:p-12 mb-16";
     }
     if (variant === "branded") {
       return "rounded-3xl border border-brand-primary/20 px-2 py-8 sm:p-8 lg:p-12 mb-16";
@@ -522,6 +531,21 @@ export const Video = ({ src }: { src: string }) => (
   >
     <source src={src} type="video/mp4" />
   </video>
+);
+
+// Logo components
+export const InlineLogo = ({ src, alt, className }: { src: string; alt: string; className?: string }) => (
+  <Image
+    src={src}
+    alt={alt}
+    width={183}
+    height={39}
+    className={cn("inline-block h-12 md:h-15 lg:h-18 w-auto ml-2 md:ml-3 lg:ml-4", className)}
+    style={{
+      display: "inline-block",
+      verticalAlign: "middle"
+    }}
+  />
 );
 
 // Styling components

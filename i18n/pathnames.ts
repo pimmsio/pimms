@@ -2,42 +2,42 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-03T12:55:27.773Z"
+    "lastmod": "2025-09-04T10:42:03.715Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-03T12:55:27.774Z"
+    "lastmod": "2025-09-04T10:42:03.716Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-09-03T12:55:27.774Z"
+    "lastmod": "2025-09-04T10:42:03.716Z"
   },
   "/landings/amazon": {
     "en": "/solutions/deep-links-amazon",
     "fr": "/solutions/deep-links-amazon",
-    "lastmod": "2025-09-03T12:55:27.774Z"
+    "lastmod": "2025-09-04T10:42:03.716Z"
   },
   "/landings/ab-testing": {
     "en": "/solutions/ab-testing",
     "fr": "/landings/ab-testing",
-    "lastmod": "2025-09-03T12:55:27.774Z"
+    "lastmod": "2025-09-04T10:42:03.716Z"
   },
   "/landings/for-creators": {
     "en": "/for-creators",
     "fr": "/pour-les-createurs-de-contenu",
-    "lastmod": "2025-09-03T12:55:27.774Z"
+    "lastmod": "2025-09-04T10:42:03.716Z"
   },
   "/landings/systemeio": {
-    "en": "/solutions/systemeio",
-    "fr": "/solutions/systemeio",
-    "lastmod": "2025-09-03T12:55:27.774Z"
+    "en": "/solutions/systemeio-funnel-tracking-sales",
+    "fr": "/solutions/tracking-systemeio-funnel-ventes",
+    "lastmod": "2025-09-04T10:42:03.716Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-09-03T12:55:27.774Z"
+    "lastmod": "2025-09-04T10:42:03.716Z"
   },
   "/articles": {
     "en": "/articles",
@@ -76,7 +76,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/5-dynamic-link-personalization-tips-for-higher-conversions": {
     "en": "/blog/5-dynamic-link-personalization-tips-for-higher-conversions",
-    "lastmod": "2025-05-23T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/5-conseils-de-personnalisation-dynamique-des-liens-pour-augmenter-tes-conversions"
   },
   "/articles/5-funnel-tracking-errors-that-skew-data": {
@@ -86,7 +86,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/7-ways-to-boost-mobile-app-conversion-rates-in-2025": {
     "en": "/blog/7-ways-to-boost-mobile-app-conversion-rates-in-2025",
-    "lastmod": "2025-05-02T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/7-moyens-pour-booster-les-conversions-des-apps-mobiles-en-2025"
   },
   "/articles/a-b-testing-for-smart-links-step-by-step-guide": {
@@ -107,7 +107,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/ab-testing-steps-for-funnel-optimization": {
     "en": "/blog/ab-testing-steps-for-funnel-optimization",
-    "lastmod": "2025-05-05T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/ab-testing-pour-optimiser-son-tunnel-de-conversion"
   },
   "/articles/affiliate-revenue-tracking-with-utm-parameters": {
@@ -149,12 +149,12 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/deep-linking-for-influencer-campaigns-basics": {
     "en": "/blog/deep-linking-for-influencer-campaigns-basics",
-    "lastmod": "2025-05-06T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/les-bases-du-marketing-influence-avec-deep-linking"
   },
   "/articles/deep-links-vs-universal-links-whats-the-difference": {
     "en": "/blog/deep-links-vs-universal-links-whats-the-difference",
-    "lastmod": "2025-05-01T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/deep-links-vs-universal-links-quelle-est-la-difference"
   },
   "/articles/first-article": {
@@ -163,12 +163,12 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/from-first-click-to-conversion-understand-exactly-how-your-marketing-drives-revenue": {
     "en": "/blog/from-first-click-to-conversion-how-your-marketing-drives-revenue",
-    "lastmod": "2025-05-09T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/comprends-comment-ton-marketing-genere-du-chiffre-d-affaires"
   },
   "/articles/glossary-utms-tracking-attribution-conversions-deep-links-essential-terms-explained": {
     "en": "/blog/glossary-utms-tracking-attribution-conversions-deep-links",
-    "lastmod": "2025-05-27T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/glossaire-utms-tracking-attribution-conversions-deep-links"
   },
   "/articles/gradual-rollouts-how-to-ab-test-with-90-10-traffic-splits-to-mitigate-risk": {
@@ -181,7 +181,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-deep-links-improve-conversion-paths": {
     "en": "/blog/how-deep-links-improve-conversion-paths",
-    "lastmod": "2025-05-03T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/comment-les-deep-links-ameliorent-les-parcours-de-conversion"
   },
   "/articles/how-do-i-add-analytics-to-an-ai-generated-app-or-prompt-based-build": {
@@ -225,7 +225,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-to-build-roi-dashboards-for-marketing-campaigns": {
     "en": "/blog/how-to-build-roi-dashboards-for-marketing-campaigns",
-    "lastmod": "2025-05-23T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/comment-creer-des-dashboards-roi-pour-tes-campagnes-marketing"
   },
   "/articles/how-to-track-email-campaign-revenue": {
@@ -240,7 +240,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-to-track-revenue-per-click": {
     "en": "/blog/how-to-track-revenue-per-click",
-    "lastmod": "2025-05-04T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/comment-suivre-le-revenu-par-clic"
   },
   "/articles/how-to-track-stripe-payment-link-conversions": {
@@ -301,7 +301,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/top-5-tools-for-funnel-behavior-tracking": {
     "en": "/blog/top-5-tools-for-funnel-behavior-tracking",
-    "lastmod": "2025-05-23T00:00:00.000Z",
+    "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/top-5-outils-pour-suivre-le-comportement-dans-les-funnels"
   },
   "/articles/top-7-attribution-tools-for-startups-no-code-and-dev-friendly": {

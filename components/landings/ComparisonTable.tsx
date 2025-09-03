@@ -70,28 +70,3 @@ export function ComparisonRow({
     </div>
   );
 }
-
-export function ComparisonExtras({ children }: { children: ReactNode }) {
-  return (
-    <div className="hidden md:block px-3 md:px-6 py-5 bg-gray-50/60 border-t border-gray-200">
-      <div className="flex flex-wrap gap-3">{children}</div>
-    </div>
-  );
-}
-
-export function ComparisonExtra({
-  children,
-  Icon,
-  color = "text-gray-700"
-}: {
-  children: ReactNode;
-  Icon?: any;
-  color?: string;
-}) {
-  return (
-    <span className="inline-flex items-center gap-2 rounded-full bg-white border border-gray-200 px-4 py-2 shadow-sm">
-      {Icon && <Icon className={`w-5 h-5 ${color}`} />}
-      <span className={`text-sm font-semibold ${color}`}>{children}</span>
-    </span>
-  );
-}

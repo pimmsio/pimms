@@ -19,6 +19,7 @@ import { generateLandingMetadata, getCanonicalLink } from "@/lib/utils";
 import { landingFolders } from "@/i18n/config";
 import { Zap } from "lucide-react";
 import { notFound } from "next/navigation";
+import { FaCreditCard, FaLock } from "react-icons/fa6";
 
 // Import MDX components
 import { Highlight } from "@/components/mdx/Highlight";
@@ -45,12 +46,7 @@ import { Problem } from "@/components/landings/problem";
 import Header from "@/components/landings/header";
 import ImageSlide from "@/components/landings/Image-slide";
 import VideoSlide from "@/components/landings/VideoSlide";
-import {
-  LifetimeOfferFree,
-  LifetimeOfferStarter,
-  LifetimeOfferPro,
-  LifetimeOfferScale
-} from "@/components/landings/lifetime-offer-split";
+
 import Footer from "@/components/footer/footer";
 import LogosCircle from "@/components/logos-circle";
 import { DeeplinkDemo as DeeplinkDemoComponent } from "@/components/landings/deeplink-demo";
@@ -91,7 +87,8 @@ import {
   Primary,
   TitleIcon,
   HideOnMobile,
-  HideOnDesktop
+  HideOnDesktop,
+  InlineLogo
 } from "@/components/mdx/content";
 
 // Import chart components
@@ -99,16 +96,20 @@ import { AnalyticsDemo } from "@/components/charts/analytics-demo";
 import Referer from "@/components/charts/referer";
 import { FilterFeature } from "@/components/landings/filter-feature";
 import { ABTestingDemo } from "@/components/landings/ab-testing-demo";
-import { SystemeIoStarterCard, SystemeIoProCard } from "@/components/landings/systemeio-pricing";
+import {
+  PricingCard,
+  PricingTitle,
+  PricingSubtitle,
+  PricingPrice,
+  PricingCta,
+  PricingFeatures,
+  PricingFeature,
+  PricingHeader,
+  PricingTitleGroup
+} from "@/components/mdx/PricingComponents";
 
 import CtaDemo from "@/components/cta/CtaDemo";
-import {
-  ComparisonContainer,
-  ComparisonHeader,
-  ComparisonRow,
-  ComparisonExtras,
-  ComparisonExtra
-} from "@/components/landings/ComparisonTable";
+import { ComparisonContainer, ComparisonHeader, ComparisonRow } from "@/components/landings/ComparisonTable";
 import AvatarFunnel from "../../../../../components/landings/AvatarFunnel";
 import HeroRibbon from "../../../../../components/landings/HeroRibbon";
 
@@ -142,15 +143,17 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       },
       Hero,
       Problem,
-      LifetimeOfferFree: () => <LifetimeOfferFree tkey="landing" />,
-      LifetimeOfferStarter: () => <LifetimeOfferStarter tkey="landing" />,
-      LifetimeOfferPro: () => <LifetimeOfferPro tkey="landing" />,
-      LifetimeOfferScale: () => <LifetimeOfferScale tkey="landing" />,
-      // Alias used by some MDX pages
-      OnDemandOfferBusiness: () => <LifetimeOfferScale tkey="landing" />,
-      // Systeme.io custom pricing components
-      SystemeIoStarterCard,
-      SystemeIoProCard,
+
+      // Composable pricing components
+      PricingCard,
+      PricingTitle,
+      PricingSubtitle,
+      PricingPrice,
+      PricingCta,
+      PricingFeatures,
+      PricingFeature,
+      PricingHeader,
+      PricingTitleGroup,
       BouncingImages: () => <BouncingImages tkey="landing" />,
       LogosCircle,
       IntegrationsGrid,
@@ -162,16 +165,15 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       ComparisonContainer,
       ComparisonHeader,
       ComparisonRow,
-      ComparisonExtras,
-      ComparisonExtra,
-
       // CTA components
       CtaButton: ({
         children,
-        variant = "default"
+        variant = "default",
+        href
       }: {
         children?: React.ReactNode;
         variant?: "default" | "secondary" | "outline" | "inverse";
+        href?: string;
       }) => {
         const t = useTranslations("landing");
         // If children is provided, use it directly
@@ -183,6 +185,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
               variant={variant}
               className="py-3 my-2 gap-1 w-fit mx-auto sm:min-w-[380px]"
               value={children}
+              href={href}
             />
           );
         }
@@ -197,6 +200,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
               fast: () => <Zap size={32} fill="currentColor" />,
               large: (chunks: any) => <span className="hidden md:block">{chunks}</span>
             })}
+            href={href}
           />
         );
       },
@@ -208,6 +212,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       HideOnDesktop,
       Fast,
       CtaBottomText,
+      InlineLogo,
 
       // Animated components
       AnimatedCentered,
@@ -297,7 +302,11 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       ABTestingDemo: () => <ABTestingDemo />,
       DeeplinkDemo: () => {
         return <DeeplinkDemoComponent />;
-      }
+      },
+
+      // React Icons
+      FaCreditCard,
+      FaLock
     };
 
     const pathname = slug === "home" ? "/" : `/landings/${slug}`;

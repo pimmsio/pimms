@@ -121,14 +121,14 @@ export default function HeroRibbon({ seedNonce }: Props) {
   const LABEL_FONT_SIZE = 14;
   const LABEL_FONT_WEIGHT = 600;
   const LABELS = [
-    { id: "brevo", text: tribbon("emailing"), src: "/static/logos/integrations/brevo.jpeg" },
-    { id: "linkedin", text: tribbon("form"), src: "/static/logos/integrations/framer.svg" },
-    { id: "lemlist", text: tribbon("outreach"), src: "/static/logos/integrations/lemlist.svg" },
-    { id: "shopify", text: tribbon("shop"), src: "/static/logos/integrations/shopify.svg" },
-    { id: "chrome", text: tribbon("website"), src: "/static/logos/integrations/wordpress.svg" },
-    { id: "systemeio", text: tribbon("funnel"), src: "/static/logos/integrations/systemeio.jpeg" },
-    { id: "calcom", text: tribbon("form"), src: "/static/logos/integrations/calcom.jpeg" },
-    { id: "calendly", text: tribbon("form"), src: "/static/logos/integrations/calendly.svg" }
+    { id: "brevo", text: tribbon("emailing"), src: "/static/symbols/integrations/brevo.jpeg" },
+    { id: "linkedin", text: tribbon("form"), src: "/static/symbols/integrations/framer.svg" },
+    { id: "lemlist", text: tribbon("outreach"), src: "/static/symbols/integrations/lemlist.svg" },
+    { id: "shopify", text: tribbon("shop"), src: "/static/symbols/integrations/shopify.svg" },
+    { id: "chrome", text: tribbon("website"), src: "/static/symbols/integrations/wordpress.svg" },
+    { id: "systemeio", text: tribbon("funnel"), src: "/static/symbols/integrations/systemeio.jpeg" },
+    { id: "calcom", text: tribbon("form"), src: "/static/symbols/integrations/calcom.jpeg" },
+    { id: "calendly", text: tribbon("form"), src: "/static/symbols/integrations/calendly.svg" }
   ] as const;
 
   const { ribbonPath, lanePathAt } = buildRibbonGeometry({

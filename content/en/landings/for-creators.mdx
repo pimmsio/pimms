@@ -65,7 +65,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1" variant="card" background="subtle">
       <Column span={1} order="text">
         <BlurFade direction="left" delay={0.2} inView>
-          <H3>It starts with Links that <TextHighlight color="blue">Convert more</TextHighlight></H3>
+          <H3>Share Links that <TextHighlight color="blue">Collect more</TextHighlight></H3>
           <Text>Run outreach campaigns, start emailing campaigns, share links on social media.</Text>
           <Text>Pimms deeplinks remove the hassle of in app browser, making purchases and signups happen 30% more often.</Text>
         </BlurFade>
@@ -101,7 +101,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1" variant="card" background="subtle">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
-          <H3>Prioritize with <TextHighlight color="red">Lead Scoring AI</TextHighlight></H3>
+          <H3>Prioritize with <TextHighlight color="red">AI</TextHighlight></H3>
           <Text>Manage your leads with intelligent scoring and deep customer insights.</Text>
           <Text>Understand which prospects are most likely to convert and focus your efforts on the highest-value opportunities.</Text>
         </BlurFade>
@@ -135,7 +135,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1" variant="card" background="subtle">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
-          <H3>Integrate your <TextHighlight color="green">Growth Stack</TextHighlight></H3>
+          <H3>Compatible with your <TextHighlight color="green">Workflow</TextHighlight></H3>
           <Text>Native integrations with Stripe, Systeme.io, Shopify, Cal.com, Zapier, WordPress and more.</Text>
           <Text>And our relentless dev team keeps dropping new integrations like there’s no tomorrow.</Text>
         </BlurFade>
@@ -153,7 +153,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   <BlurFade direction="up" inView>
     <Centered>
       <Label variant="default">PIMMS vs Others</Label>
-      <H2>Why top Creators <TitleIcon variant="h2" icon="why" /> <Primary>Choose PIMMS?</Primary></H2>
+      <H2>Why the <TitleIcon variant="h2" icon="why" /> <Primary>top 1%</Primary> Choose PIMMS?</H2>
     </Centered>
   </BlurFade>
 
@@ -170,14 +170,6 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
       <ComparisonRow others={false} pimms={true}>Fast Setup (start in 10 minutes)</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>Advanced traffic redirection (per device, country, app stores)</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>24/7 Dedicated support</ComparisonRow>
-
-      <ComparisonExtras>
-        <ComparisonExtra color="text-vibrant-blue">QR Codes with logo</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-red">Fewer failed payments</ComparisonExtra>
-        <ComparisonExtra color="text-vibrant-blue">Custom link previews</ComparisonExtra>
-        <ComparisonExtra color="text-brand-secondary">API access</ComparisonExtra>
-        <ComparisonExtra color="text-brand-secondary">Webhooks</ComparisonExtra>
-      </ComparisonExtras>
     </ComparisonContainer>
   </Section>
 </Slide>
@@ -185,8 +177,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
 <Slide variant="secondary" id="pricing">
   <BlurFade direction="up" inView>
     <Centered>
-      <Label variant="default">Pricing</Label>
-      <H2>Fair <TitleIcon variant="h2" icon="pricing" /> <Primary>Pricing</Primary> that fits your needs</H2>
+      <H2>Fair <TitleIcon variant="h2" icon="pricing" /> <Primary>Pricing</Primary></H2>
       <Text size="lg">Start with 10 free links. Upgrade when you need to.</Text>
     </Centered>
   </BlurFade>
@@ -195,17 +186,72 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1-1">
       <Column span={1}>
         <BlurFade direction="left" delay={0.1} inView>
-          <LifetimeOfferStarter />
+          <PricingCard variant="starter">
+            <PricingHeader>
+              <PricingTitleGroup>
+                <PricingTitle variant="starter">Starter</PricingTitle>
+                <PricingSubtitle variant="starter">Perfect to get started</PricingSubtitle>
+              </PricingTitleGroup>
+              <PricingPrice variant="starter">59€</PricingPrice>
+              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter">Unlock lifetime access</PricingCta>
+            </PricingHeader>
+            <PricingFeatures title="Everything in Free, plus:" variant="starter">
+              <PricingFeature variant="starter">200 smart links /month</PricingFeature>
+              <PricingFeature variant="starter">Unlimited Leads tracking</PricingFeature>
+              <PricingFeature variant="starter">100+ integrations incl. Zapier</PricingFeature>
+              <PricingFeature variant="starter">Unlimited UTM</PricingFeature>
+              <PricingFeature variant="starter">3 custom domains</PricingFeature>
+              <PricingFeature variant="starter">3 team members</PricingFeature>
+              <PricingFeature variant="starter">6 months of data</PricingFeature>
+              <PricingFeature variant="starter">1 month priority support included</PricingFeature>
+            </PricingFeatures>
+          </PricingCard>
         </BlurFade>
       </Column>
       <Column span={1}>
         <BlurFade direction="up" delay={0.2} inView>
-          <LifetimeOfferPro />
+          <PricingCard variant="pro">
+            <PricingHeader>
+              <PricingTitleGroup>
+                <PricingTitle variant="pro">Pro</PricingTitle>
+                <PricingSubtitle variant="pro">The choice of 90% of our customers</PricingSubtitle>
+              </PricingTitleGroup>
+              <PricingPrice variant="pro">99€</PricingPrice>
+              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro">Unlock lifetime access</PricingCta>
+            </PricingHeader>
+            <PricingFeatures title="Everything in Starter, plus:" variant="pro">
+              <PricingFeature variant="pro">600 smart links /month</PricingFeature>
+              <PricingFeature variant="pro">Limited sales tracking</PricingFeature>
+              <PricingFeature variant="pro">Support Stripe payments</PricingFeature>
+              <PricingFeature variant="pro">A/B testing</PricingFeature>
+              <PricingFeature variant="pro">Webhooks</PricingFeature>
+              <PricingFeature variant="pro">5 team members</PricingFeature>
+              <PricingFeature variant="pro">12 months of data</PricingFeature>
+              <PricingFeature variant="pro">3 months priority support included</PricingFeature>
+            </PricingFeatures>
+          </PricingCard>
         </BlurFade>
       </Column>
       <Column span={1}>
         <BlurFade direction="right" delay={0.3} inView>
-          <OnDemandOfferBusiness />
+          <PricingCard variant="business">
+            <PricingHeader>
+              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
+                <PricingTitle variant="business">Business</PricingTitle>
+                <PricingSubtitle variant="business">Everything in Pro and more:</PricingSubtitle>
+              </PricingTitleGroup>
+              <PricingPrice variant="business">On-demand</PricingPrice>
+              <PricingCta variant="business">Book a demo</PricingCta>
+            </PricingHeader>
+            <PricingFeatures title="Everything in Pro and more:" variant="business">
+              <PricingFeature variant="business">Unlimited short links</PricingFeature>
+              <PricingFeature variant="business">Unlimited Leads tracking</PricingFeature>
+              <PricingFeature variant="business">Unlimited Sales tracking</PricingFeature>
+              <PricingFeature variant="business">Unlimited team members</PricingFeature>
+              <PricingFeature variant="business">Unlimited custom domains</PricingFeature>
+              <PricingFeature variant="business">Bulk link operations</PricingFeature>
+            </PricingFeatures>
+          </PricingCard>
         </BlurFade>
       </Column>
     </TwoColumns>
@@ -266,32 +312,32 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
  
 ::: faq
 ### What does PIMMS actually do?
-PIMMS turns every link you share into a revenue channel. It opens in the official app to boost conversions, tracks click → lead → sale server‑side, and shows exactly which campaigns make you money.
+PIMMS turns every link you share into a revenue channel. Links open in the official app to boost conversions, tracking runs server‑side from click → lead → sale, and your dashboard shows exactly which campaigns make money.
 ::::
 
 ::: faq
 ### Why do PIMMS links convert up to 30% more?
-Links open in the official mobile apps (Instagram, YouTube, LinkedIn, TikTok) — not slow in‑app browsers. People stay logged‑in with saved profiles and payments, so checkout or signup happens in one step.
+Links open in the official apps (Instagram, YouTube, LinkedIn, TikTok), not in slow in‑app browsers. People stay signed in and payments are saved, so checkout or signup is one step.
 ::::
 
 ::: faq
 ### How fast will I see impact?
-Immediately for UX, within days for revenue. Real‑time dashboards show conversions as they happen and reveal which posts, emails or ads actually drive sales.
+Immediately for UX; usually within days for revenue. Real‑time dashboards attribute each conversion to the exact post, email or ad that caused it.
 ::::
 
 ::: faq
 ### Do I need developers to set it up?
-No. 100% web, nothing to install. Basic setup takes 10–15 minutes. Follow the guide or book a call — we’ll get you to first results fast.
+No. It’s 100% web, nothing to install. Setup takes 10–15 minutes: paste one script and start creating links. Follow the guide or book a call if you want help.
 ::::
 
 ::: faq
 ### Can PIMMS track revenue end‑to‑end?
-Yes. We attribute click → lead → sale with server‑side tracking and native integrations (Stripe, Shopify, Systeme.io…). You’ll know which link drove the money.
+Yes. We attribute click → lead → sale with server‑side tracking and native integrations (Stripe, Shopify, Systeme.io…). You’ll see which link drove each sale.
 ::::
 
 ::: faq
 ### How is attribution accurate from social apps?
-We track from the link level, not just page views. A privacy‑safe ID is carried across domains, a first‑party cookie keeps it consistent, and the server reconciles events — including on iOS.
+Attribution starts at the link, not just the page. A privacy‑safe ID travels across domains, a first‑party cookie keeps it consistent, and the server reconciles events — including on iOS.
 ::::
 
 ::: faq
@@ -306,22 +352,22 @@ Yes. Works with 100+ tools: Stripe, Shopify, Cal.com, Tally, Beehiiv, WordPress 
 
 ::: faq
 ### Does PIMMS work across domains and subdomains?
-Yes. Install the script on your root domain (e.g., example.com) and any subdomains (e.g., app.example.com, blog.example.com) to unify analytics. External domains are supported via options.
+Yes. Install the script on your root domain and subdomains to unify analytics. External domains are supported via link options.
 ::::
 
 ::: faq
 ### Do you have an API and webhooks?
-Yes — full API and webhooks for custom workflows. See docs at pim.ms/api.
+Yes — a full REST API and webhooks for custom workflows and analytics exports. See pim.ms/api.
 ::::
 
 ::: faq
 ### What’s included in the free plan?
-10 smart links, real‑time analytics, custom domain, QR codes, and UTM campaign management. No credit card. See value before you pay.
+10 smart links, real‑time analytics, a custom domain, QR codes, and UTM campaign management. No credit card required — prove the value before you pay.
 ::::
 
 ::: faq
 ### Is the lifetime deal really one‑time?
-Yes. Pro lifetime is €59 (one‑time). You get unlimited links, full conversion tracking, team collaboration, and 6‑month data retention. No recurring fees.
+Yes. Pro lifetime is €59 (one payment). You get unlimited links, full conversion tracking, team collaboration, and 6‑month data retention. No recurring fees.
 ::::
 
 ::: faq
@@ -331,7 +377,7 @@ Invite teammates to share one source of truth. Starter includes 3 members, Pro i
 
 ::: faq
 ### Is PIMMS privacy‑first and secure?
-Yes. Privacy‑safe by design: no third‑party cookies, first‑party only. You control integrations and retention. Enterprise‑grade security for data in transit and at rest.
+Yes. Privacy‑first by design: no third‑party cookies, first‑party only. You control integrations and retention. Enterprise‑grade security for data in transit and at rest.
 ::::
 
   </Section>

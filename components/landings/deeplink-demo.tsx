@@ -4,7 +4,7 @@ import React, { forwardRef, useRef } from "react";
 import { cn } from "@/lib/utils";
 import { AnimatedBeam } from "@/components/magicui/animated-beam";
 
-const outerBaseUrl = "/static/logos/deeplinks";
+const outerBaseUrl = "/static/symbols/deeplinks";
 const outerLogos = [
   { src: `${outerBaseUrl}/youtube.svg`, alt: "Youtube" },
   { src: `${outerBaseUrl}/amazon.svg`, alt: "Amazon" },

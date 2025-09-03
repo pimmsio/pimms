@@ -77,23 +77,15 @@ export const Footer = ({
                       href={getCanonicalLink(locale, "/landings/youtube")}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      YouTube
+                      Deeplinks YouTube
                     </Link>
                   </li>
                   <li>
                     <Link
-                      href={getCanonicalLink(locale, "/landings/amazon")}
+                      href={getCanonicalLink(locale, "/landings/systemeio")}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      Amazon
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      href={getCanonicalLink(locale, "/landings/ab-testing")}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      A/B Testing
+                      Tracking funnels Systeme.io
                     </Link>
                   </li>
                 </ul>

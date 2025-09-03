@@ -7,8 +7,8 @@ import { useInterval } from "ahooks";
 
 type Logo = { src: string; alt: string; size?: "sm" | "md" | "lg" };
 
-const baseUrl = "/static/logos/integrations";
-const deeplinksBaseUrl = "/static/logos/deeplinks";
+const baseUrl = "/static/symbols/integrations";
+const deeplinksBaseUrl = "/static/symbols/deeplinks";
 
 const logoPool: Logo[] = [
   { src: `${baseUrl}/shopify.svg`, alt: "Shopify", size: "lg" },

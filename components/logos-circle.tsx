@@ -13,8 +13,8 @@ import { useLocale } from "next-intl";
 import { getCanonicalLink } from "@/lib/utils";
 
 // Outer logos (mix of top deeplink brands and key integrations)
-const outerBaseUrl = "/static/logos/deeplinks";
-const integrationsBaseUrl = "/static/logos/integrations";
+const outerBaseUrl = "/static/symbols/deeplinks";
+const integrationsBaseUrl = "/static/symbols/integrations";
 const outerLogos = [
   { src: `${outerBaseUrl}/instagram.svg`, alt: "Instagram" },
   { src: `${outerBaseUrl}/linkedin.svg`, alt: "Linkedin" },
@@ -39,7 +39,7 @@ const outerLogos = [
   }
 ];
 
-const innerBaseUrl = "/static/logos/integrations";
+const innerBaseUrl = "/static/symbols/integrations";
 const innerLogos = [
   { src: `${innerBaseUrl}/calcom.jpeg`, alt: "Calcom", guide: "/articles/start-with-cal-com-and-zapier" },
   { src: `${innerBaseUrl}/calendly.svg`, alt: "Calendly", guide: "/articles/how-to-track-calendly" },

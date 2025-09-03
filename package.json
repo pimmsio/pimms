@@ -10,7 +10,8 @@
     "prepare": "husky install",
     "generate:pathnames": "tsx scripts/generatePathnames.ts",
     "links:validate": "node scripts/validate-internal-links.js",
-    "links:fix": "node scripts/fix-internal-links.js"
+    "links:fix": "node scripts/fix-internal-links.js",
+    "redirects:check": "node scripts/check-redirects.js"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",
