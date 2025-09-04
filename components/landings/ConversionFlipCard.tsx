@@ -30,11 +30,21 @@ export default function ConversionFlipCard({
 }: ConversionFlipCardProps) {
   const t = useTranslations("landing.conversion");
   const cardGap = "gap-3";
-  const defaultFailures = [t("fail.paypal_failed"), t("fail.youtube_abandoned"), t("fail.signup_abandoned")];
+  const defaultFailures = [
+    t("fail.paypal_failed"),
+    t("fail.youtube_abandoned"),
+    t("fail.signup_abandoned"),
+    t("fail.appointment_cancelled"),
+    t("fail.training_subscription_failed"),
+    t("fail.magnet_lead_lost")
+  ];
   const defaultSuccesses = [
     t("success.payment_completed"),
     t("success.youtube_success"),
-    t("success.signup_completed")
+    t("success.signup_completed"),
+    t("success.appointment_scheduled"),
+    t("success.training_subscription_success"),
+    t("success.magnet_lead_captured")
   ];
   const timeLabels = [
     t("time.just_now"),

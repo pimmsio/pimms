@@ -1,7 +1,7 @@
 ---
 title: Transforme plus de clics en ventes
 summary: Pour les créateurs, experts growth et équipes marketing qui veulent collecter 1000+ leads/semaine, booker plus de meetings et augmenter leurs revenus.
-publishedAt: 2025-01-01
+publishedAt: 2025-09-04
 updatedAt: 2025-09-03
 slug: home
 image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
@@ -9,23 +9,20 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
 
 <Header />
 
-<Slide size="xs" noPadding>
+<Slide size="xs" noPadding noOverflow>
   <Avatars />
   <Hero>
-    <H1>Convertis <HideOnMobile>plus de </HideOnMobile><HideOnDesktop>les </HideOnDesktop> Clics en <TitleIcon icon="sales" /> <Primary>Ventes</Primary></H1>
+    <H1>Convertis <HideOnMobile>plus de </HideOnMobile><HideOnDesktop> </HideOnDesktop> Clics en <TitleIcon icon="sales" /> <Primary>Ventes</Primary></H1>
     <Summary>Pour les créateurs, experts growth et équipes marketing qui veulent collecter 1000+ leads/semaine, booker plus de meetings et augmenter leurs revenus.</Summary>
   </Hero>
   <AnimatedCentered noPadding>
-    <CtaButton><Fast /> Démarre gratuitement<HideOnMobile> avec 10 liens</HideOnMobile></CtaButton>
+    <CtaButton><SwapRotate>Démarre gratuitement<HideOnMobile> avec 10 liens</HideOnMobile></SwapRotate></CtaButton>
+    <HideOnMobile><HeroBenefits /></HideOnMobile>
   </AnimatedCentered>
-</Slide>
-
-<Slide maxWidth="full" noPadding noOverflow size="xs">
-  <Section margin="none" noPadding>
-    <BlurFade direction="left" delay={1.2}>
-      <HeroRibbon />
-    </BlurFade>
-  </Section>
+  <PrimaryGradient />
+  <BlurFade direction="top">
+    <HeroRibbon />
+  </BlurFade>
 </Slide>
 
 <Slide id="features">
@@ -169,7 +166,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
                 <PricingSubtitle variant="starter">Parfait pour débuter</PricingSubtitle>
               </PricingTitleGroup>
               <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter">Débloquer l'accès à vie</PricingCta>
+              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Débloquer l'accès à vie</SwapRotate></PricingCta>
             </PricingHeader>
             <PricingFeatures title="Tout dans l'offre gratuite, plus :" variant="starter">
               <PricingFeature variant="starter">200 liens /mois</PricingFeature>
@@ -193,7 +190,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
                 <PricingSubtitle variant="pro">Le choix de 90% de nos clients</PricingSubtitle>
               </PricingTitleGroup>
               <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro">Débloquer l'accès à vie</PricingCta>
+              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Débloquer l'accès à vie</SwapRotate></PricingCta>
             </PricingHeader>
             <PricingFeatures title="Tout dans l'offre Starter, plus :" variant="pro">
               <PricingFeature variant="pro">600 liens /mois</PricingFeature>
@@ -217,7 +214,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
                 <PricingSubtitle variant="business">Solution sur mesure</PricingSubtitle>
               </PricingTitleGroup>
               <PricingPrice variant="business">Sur demande</PricingPrice>
-              <PricingCta variant="business">Nous contacter</PricingCta>
+              <PricingCta variant="business"><SwapRotate>Nous contacter</SwapRotate></PricingCta>
             </PricingHeader>
             <PricingFeatures title="Solution sur mesure" variant="business">
               <PricingFeature variant="business">Liens courts illimités</PricingFeature>
@@ -276,14 +273,14 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   </Section>
 </Slide>
 
-<Slide variant="primary" id="free" noPadding>
+<Slide variant="primary" id="free">
   <Section variant="branded">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
           <H2 align="left" variant="white">Ça commence ici</H2>
           <Text size="lg" variant="white">Si tu es arrivé jusque‑là, c’est le moment de récupérer 10 liens gratuits.</Text>
-          <CtaButton variant="inverse" ><Fast /> Démarre gratuitement</CtaButton>
+          <CtaButton variant="inverse" ><SwapRotate>Démarre gratuitement</SwapRotate></CtaButton>
           <CtaBottomText variant="white">10 liens intelligents inclus • Pas de carte bancaire</CtaBottomText>
         </BlurFade>
       </Column>

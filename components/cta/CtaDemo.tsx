@@ -33,7 +33,7 @@ export default function CtaDemo({
       variant={variant}
       size={size}
       className={twMerge(
-        "w-full sm:w-fit mx-auto xl:my-0 rounded-2xl px-5 h-10 text-sm font-semibold text-white bg-primary hover:bg-primary/90 shadow-none hover:shadow-none my-0",
+        "w-full sm:w-fit min-w-[130px] mx-auto xl:my-0 rounded-full h-10 text-sm font-semibold text-white bg-gradient-to-r from-gray-600 to-gray-800 hover:to-gray-900 my-0 border-0 shadow-sm hover:shadow-sm shadow-gray-400 hover:shadow-gray-500",
         className
       )}
       data-cal-link="alexandre-sarfati/30-minutes-demo?pimms_id=1"

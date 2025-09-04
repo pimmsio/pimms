@@ -7,6 +7,9 @@ export default {
   ],
   theme: {
     extend: {
+      borderWidth: {
+        "3": "3px"
+      },
       colors: {
         // Brand colors
         "brand-primary": "var(--color-brand-primary)",

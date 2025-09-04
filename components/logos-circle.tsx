@@ -11,6 +11,7 @@ import { Primary } from "./mdx/content";
 import Link from "next/link";
 import { useLocale } from "next-intl";
 import { getCanonicalLink } from "@/lib/utils";
+import { SwapRotate } from "./magicui/swap-rotate";
 
 // Outer logos (mix of top deeplink brands and key integrations)
 const outerBaseUrl = "/static/symbols/deeplinks";
@@ -205,10 +206,14 @@ const LogosCircle: React.FC = () => {
             <CtaButtonBig
               type="sales"
               size="lg"
-              value={tcommon.rich("cta.main_short", {
-                fast: () => <Zap size={32} fill="currentColor" />,
-                large: (chunks) => <span className="hidden md:block">{chunks}</span>
-              })}
+              value={
+                <SwapRotate>
+                  {tcommon.rich("cta.main_short", {
+                    fast: () => <Zap size={32} fill="currentColor" />,
+                    large: (chunks) => <span className="hidden md:block">{chunks}</span>
+                  })}
+                </SwapRotate>
+              }
             />
           </div>
         </div>

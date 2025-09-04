@@ -15,24 +15,19 @@
       "description": "Send your viewers straight to the official YouTube app. Reduce friction, increase engagement, and track the impact of every link on your subscribers.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
-    "amazon": {
-      "title": "Boost your Amazon sales with deeplinks | PIMMS",
-      "description": "Open your products and books directly in the official Amazon app. Remove friction, increase sales and reviews, and track your link performance precisely.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
-    "ab-testing": {
-      "title": "A/B test your links and campaigns to maximize conversions | PIMMS",
-      "description": "Stop guessing what works. A/B test your links, track real conversions, and make data-driven decisions that actually boost your results.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
-    "for-creators": {
-      "title": "PIMMS for Creators: Turn clicks into leads and sales",
-      "description": "Collect more leads, book more meetings and grow revenue with smart links, deep links and real-time insights.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
     "systemeio": {
       "title": "PIMMS for Systeme.io: Track your funnels and sales",
       "description": "Track your Systeme.io funnels and sales with smart links, deep links and real-time insights.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
+    "linkedin-tracker": {
+      "title": "PIMMS for LinkedIn: Track your LinkedIn leads",
+      "description": "Track your LinkedIn leads with smart links, deep links and real-time insights.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
+    "landing-page-tracking": {
+      "title": "PIMMS for Landing Pages: Track your landing page conversions",
+      "description": "Track your landing page conversions with smart links, deep links and real-time insights.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "abuse": {

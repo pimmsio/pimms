@@ -1,7 +1,7 @@
 ---
 title: Turn more clicks into sales
 summary: For creators, growth experts and marketing teams who want to collect 1000+ leads weekly, book more meetings and grow their revenue.
-publishedAt: 2025-01-01
+publishedAt: 2025-09-04
 updatedAt: 2025-09-03
 slug: home
 image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
@@ -9,23 +9,20 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
 
 <Header />
 
-<Slide size="xs" noPadding>
+<Slide size="xs" noPadding noOverflow>
   <Avatars />
   <Hero>
     <H1>Turn more Clicks into <TitleIcon icon="sales" /> <Primary>Sales</Primary></H1>
     <Summary>For creators, growth experts and marketing teams who want to collect 1000+ leads weekly, book more meetings and grow their revenue.</Summary>
   </Hero>
   <AnimatedCentered noPadding>
-    <CtaButton><Fast /> Try Pimms for Free</CtaButton>
+    <CtaButton><SwapRotate>Try Pimms for Free</SwapRotate></CtaButton>
+    <HideOnMobile><HeroBenefits /></HideOnMobile>
   </AnimatedCentered>
-</Slide>
-
-<Slide maxWidth="full" noPadding noOverflow size="xs">
-  <Section margin="none" noPadding>
-    <BlurFade direction="left" delay={1.2}>
-      <HeroRibbon />
-    </BlurFade>
-  </Section>
+  <PrimaryGradient />
+  <BlurFade direction="top">
+    <HeroRibbon />
+  </BlurFade>
 </Slide>
 
 <Slide id="features">
@@ -169,7 +166,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
                 <PricingSubtitle variant="starter">Perfect to get started</PricingSubtitle>
               </PricingTitleGroup>
               <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter">Unlock lifetime access</PricingCta>
+              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Unlock lifetime access</SwapRotate></PricingCta>
             </PricingHeader>
             <PricingFeatures title="Everything in Free, plus:" variant="starter">
               <PricingFeature variant="starter">200 smart links /month</PricingFeature>
@@ -193,7 +190,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
                 <PricingSubtitle variant="pro">The choice of 90% of our customers</PricingSubtitle>
               </PricingTitleGroup>
               <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro">Unlock lifetime access</PricingCta>
+              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Unlock lifetime access</SwapRotate></PricingCta>
             </PricingHeader>
             <PricingFeatures title="Everything in Starter, plus:" variant="pro">
               <PricingFeature variant="pro">600 smart links /month</PricingFeature>
@@ -217,7 +214,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
                 <PricingSubtitle variant="business">Everything in Pro and more:</PricingSubtitle>
               </PricingTitleGroup>
               <PricingPrice variant="business">On-demand</PricingPrice>
-              <PricingCta variant="business">Book a demo</PricingCta>
+              <PricingCta variant="business"><SwapRotate>Book a demo</SwapRotate></PricingCta>
             </PricingHeader>
             <PricingFeatures title="Everything in Pro and more:" variant="business">
               <PricingFeature variant="business">Unlimited short links</PricingFeature>
@@ -276,14 +273,14 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   </Section>
 </Slide>
 
-<Slide variant="primary" id="free" noPadding>
+<Slide variant="primary" id="free">
   <Section variant="branded">
     <TwoColumns ratio="1-1">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
           <H2 align="left" variant="white">It starts here</H2>
           <Text size="lg" variant="white">If you made it this far, it's time to grab 10 free links.</Text>
-          <CtaButton variant="inverse"><Fast /> Start for free</CtaButton>
+          <CtaButton variant="inverse"><SwapRotate>Start for free</SwapRotate></CtaButton>
           <CtaBottomText variant="white">10 smart links included • No credit card</CtaBottomText>
         </BlurFade>
       </Column>

@@ -4,7 +4,7 @@ import { BlurFade } from "@/components/magicui/blur-fade";
 import { ReactNode } from "react";
 import { parseChildren } from "@/lib/mdx/parseChildren";
 import { H1 as MDXH1, Summary } from "@/components/mdx/content";
-
+import { SwapRotate } from "../magicui/swap-rotate";
 interface HeroProps {
   children?: ReactNode;
 }
@@ -23,7 +23,7 @@ export const Hero = ({ children }: HeroProps) => {
 
   return (
     <HeroSection>
-      <div className="text-center space-y-8">
+      <div className="text-center space-y-10">
         {parsed.title && (
           <BlurFade direction="up" delay={0.1} inView={false}>
             <H1>{parsed.title}</H1>

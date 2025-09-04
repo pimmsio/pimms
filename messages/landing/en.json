@@ -10,12 +10,18 @@
       "fail": {
         "paypal_failed": "PayPal payment failed",
         "youtube_abandoned": "YouTube subscription abandoned",
-        "signup_abandoned": "Signup abandoned"
+        "signup_abandoned": "Signup abandoned",
+        "appointment_cancelled": "Monday appointment cancelled",
+        "training_subscription_failed": "Training subscription failed",
+        "magnet_lead_lost": "Lead magnet abandoned"
       },
       "success": {
         "payment_completed": "Payment completed",
         "youtube_success": "YouTube subscription successful",
-        "signup_completed": "Signup completed"
+        "signup_completed": "Signup completed",
+        "appointment_scheduled": "New Monday appointment",
+        "training_subscription_success": "New training subscription",
+        "magnet_lead_captured": "New lead via magnet"
       },
       "time": {
         "just_now": "Just now",
@@ -76,8 +82,8 @@
     "cta": {
       "link": "Start for free",
       "bottom": "No credit card required • No subscription",
-      "main": "<fast>⚡</fast> Start for free<large> with 10 links</large>",
-      "main_short": "<fast>⚡</fast> Start for free",
+      "main": "Start for free<large> with 10 links</large>",
+      "main_short": "Start for free",
       "demo": "Book a demo",
       "title": "It starts here",
       "subtitle": "If you made it this far, it's time to grab 10 free links.",
@@ -112,7 +118,53 @@
           "name": "Jean Castets",
           "image": "https://assets.pimms.io/jean-castets.jpeg"
         }
+      },
+      "benefits": {
+        "credibility": "+ credibility",
+        "opportunities": "+ opportunities",
+        "conversions": "+ conversions"
       }
+    },
+    "onboarding": {
+      "title": "Simple. Fast.",
+      "step1": {
+        "title": "1-Click Setup",
+        "description": "Simply add our tracking link to your LinkedIn profile. Instant setup, no complex code required."
+      },
+      "step2": {
+        "title": "Identify Your Visitors",
+        "description": "Watch as anonymous profile visitors turn into identified leads with company data and behavioral insights."
+      },
+      "step3": {
+        "title": "Convert Automatically",
+        "description": "Set up automated workflows to engage hot prospects and book calls with your highest-value visitors."
+      },
+      "bonus": {
+        "title": "Unlimited Tracking",
+        "description": "No limits on tracked visitors. Data stored and analyzed continuously to maximize your conversions."
+      }
+    },
+    "testimonials": {
+      "title": "satisfaction",
+      "testimonial1": {
+        "name": "Mathieu Visière",
+        "role": "Digital Marketing Consultant",
+        "text": "Since using PIMMS to track my LinkedIn profile, I've multiplied my qualified leads by 5. I finally know which posts actually generate business and I can follow up with prospects automatically."
+      },
+      "testimonial2": {
+        "name": "Ronan Jaffré",
+        "role": "Business Coach",
+        "text": "Amazing! I thought my LinkedIn visitors were lost forever. Now I identify them and convert them into clients. My conversion rate doubled in 30 days."
+      },
+      "testimonial3": {
+        "name": "Jean Castets",
+        "role": "SaaS Entrepreneur",
+        "text": "PIMMS revolutionized my LinkedIn prospecting. Automated workflows engage my visitors while I sleep. It's like having a 24/7 salesperson on my profile."
+      }
+    },
+    "contact": {
+      "question": "Need help?",
+      "action": "Talk with Alexandre on Cal.com"
     },
     "free_offer": {
       "images": {

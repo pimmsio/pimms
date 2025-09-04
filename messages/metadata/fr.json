@@ -15,24 +15,19 @@
       "description": "Offre à tes spectateurs une ouverture directe de tes vidéos dans l'app YouTube officielle. Réduis les frictions, augmente l'engagement et suis l'impact de chacun de tes liens sur tes abonnés.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
-    "amazon": {
-      "title": "Booste tes ventes Amazon grâce aux deeplinks | PIMMS",
-      "description": "Ouvre directement tes produits et livres dans l'app Amazon officielle. Réduis les frictions, augmente tes ventes et tes évaluations, tout en suivant précisément les performances de tes liens.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
-    "ab-testing": {
-      "title": "A/B testing des liens courts pour maximiser les conversions | PIMMS",
-      "description": "Arrête de deviner ce qui marche. L'A/B testing des liens courts vous permet de tester les liens, suivre les conversions réelles et prendre des décisions basées sur des données qui augmentent effectivement vos résultats.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
-    "for-creators": {
-      "title": "PIMMS pour Créateurs : Transforme les clics en leads et ventes",
-      "description": "Collecte plus de leads, réserve plus de RDV et augmente ton CA avec des smart links, deep links et des insights en temps réel.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
     "systemeio": {
       "title": "PIMMS pour Systeme.io : Suis tes tunnels et ventes",
       "description": "Suis tes tunnels Systeme.io et tes ventes avec des smart links, deep links et des insights en temps réel.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
+    "linkedin-tracker": {
+      "title": "PIMMS pour LinkedIn : Tracke tes leads LinkedIn",
+      "description": "Tracke tes leads LinkedIn avec des smart links, deep links et des insights en temps réel.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+    },
+    "landing-page-tracking": {
+      "title": "PIMMS pour Landing Pages : Tracke tes conversions landing page",
+      "description": "Tracke tes conversions landing page avec des smart links, deep links et des insights en temps réel.",
       "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "abuse": {

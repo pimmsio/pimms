@@ -21,8 +21,20 @@ export const Footer = ({
   const t = useTranslations("general");
 
   return (
-    <footer className={cn("bg-gray-50 border-t border-gray-100", className)}>
-      <div className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
+    <footer className={cn("bg-gray-50 border-t border-gray-100 relative overflow-hidden", className)}>
+      <div
+        className="absolute inset-0 flex items-center justify-center pointer-events-none"
+        style={{
+          transform: "translateY(30%)",
+          opacity: 0.03
+        }}
+      >
+        <div className="scale-[11] sm:scale-[9] lg:scale-[4]">
+          <Image src="/static/logo.svg" alt="pim.ms logo" width={400} height={72} className="w-auto h-auto" />
+        </div>
+      </div>
+
+      <div className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Main footer content */}
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 lg:gap-16 mb-16">
@@ -72,6 +84,22 @@ export const Footer = ({
                   {t("footer.category.solutions")}
                 </h6>
                 <ul className="space-y-3">
+                  <li>
+                    <Link
+                      href={getCanonicalLink(locale, "/landings/linkedin-tracker")}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      LinkedIn Profile Analytics
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={getCanonicalLink(locale, "/landings/landing-page-tracking")}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Landing Page Tracking
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       href={getCanonicalLink(locale, "/landings/youtube")}

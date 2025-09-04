@@ -5,6 +5,7 @@ import { useTranslations } from "next-intl";
 import { Button } from "../ui/button";
 import Link from "next/link";
 import { APP_URL } from "../../app/constants";
+import { SwapRotate } from "../magicui/swap-rotate";
 
 export default function Header() {
   const tcommon = useTranslations("landing");
@@ -28,7 +29,7 @@ export default function Header() {
             </div>
             <div className="ml-auto flex items-center">
               <CtaDemo variant="secondary" size="default">
-                {tcommon("cta.demo")}
+                <SwapRotate>{tcommon("cta.demo")}</SwapRotate>
               </CtaDemo>
             </div>
           </nav>

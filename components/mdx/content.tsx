@@ -307,7 +307,7 @@ export const CtaBottomText = ({
 }) => {
   const colorClass = variant === "white" ? "text-white/80" : "text-text-secondary";
   return (
-    <div className={`flex flex-row items-center justify-center lg:justify-start gap-2 mt-4 text-sm ${colorClass}`}>
+    <div className={`flex flex-row items-center justify-center lg:justify-start gap-2 mt-2 text-xs ${colorClass}`}>
       {children}
     </div>
   );
@@ -561,7 +561,7 @@ export const TitleIcon = ({
   icon,
   variant = "h1"
 }: {
-  icon: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions";
+  icon: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash";
   variant?: "h1" | "h2";
 }) => {
   const sizeClasses =
@@ -576,7 +576,9 @@ export const TitleIcon = ({
     why: FaMedal,
     pricing: FaDollarSign,
     minutes: FaRegClock,
-    questions: FaQuestion
+    questions: FaQuestion,
+    target: Target,
+    cash: DollarIcon
   } as const;
 
   const LucideIcon = iconMap[icon];

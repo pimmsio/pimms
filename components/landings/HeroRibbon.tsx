@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useId, useMemo, useState } from "react";
+import React, { useId, useMemo } from "react";
 import { getAvatarSvgCached, getSharedSeeds } from "@/lib/avatarPool";
 import { usePerSlotSeeds, Avatar } from "@/lib/avatarAnim";
 import { User, DollarSign, AtSign, Phone } from "lucide-react";
@@ -28,7 +28,6 @@ function useAvatars(count: number, seedNonce: string): Avatar[] {
 export default function HeroRibbon({ seedNonce }: Props) {
   const uid = useId();
   const avatars = useAvatars(10, seedNonce);
-  const tcommon = useTranslations("landing");
   const tribbon = useTranslations("landing.ribbon.sources");
   const POOL_SIZE = 60;
 
@@ -59,20 +58,20 @@ export default function HeroRibbon({ seedNonce }: Props) {
   const P_LOGO_RADIUS = 24;
   const P_LOGO_GAP = 10;
 
-  const [leadCount, setLeadCount] = useState(0);
-  const [salesCount, setSalesCount] = useState(0);
+  // const [leadCount, setLeadCount] = useState(0);
+  // const [salesCount, setSalesCount] = useState(0);
 
   const DEAL_RATIO = 0.2;
 
-  const avatarMeta = useMemo(
-    () =>
-      avatars.map((a, idx) => ({
-        delayMs: a.delayMs,
-        duration: (4800 + idx * 160) * SPEED_MULTIPLIER,
-        isDeal: idx % Math.round(1 / DEAL_RATIO) === 0
-      })),
-    [avatars, SPEED_MULTIPLIER]
-  );
+  // const avatarMeta = useMemo(
+  //   () =>
+  //     avatars.map((a, idx) => ({
+  //       delayMs: a.delayMs,
+  //       duration: (4800 + idx * 160) * SPEED_MULTIPLIER,
+  //       isDeal: idx % Math.round(1 / DEAL_RATIO) === 0
+  //     })),
+  //   [avatars, SPEED_MULTIPLIER]
+  // );
 
   const getDelayMs = React.useCallback((idx: number) => avatars[idx].delayMs, [avatars]);
   const getDurationMs = React.useCallback((idx: number) => (4800 + idx * 160) * SPEED_MULTIPLIER, [SPEED_MULTIPLIER]);
@@ -88,32 +87,32 @@ export default function HeroRibbon({ seedNonce }: Props) {
   });
 
   // counters
-  useEffect(() => {
-    const startMs = performance.now();
-    const prev = new Array(avatarMeta.length).fill(0);
-    const tick = () => {
-      const now = performance.now();
-      const elapsed = now - startMs + PREFILL_MS;
-      let leads = 0;
-      let sales = 0;
-      for (let i = 0; i < avatarMeta.length; i++) {
-        const { delayMs, duration, isDeal } = avatarMeta[i];
-        const t = elapsed - delayMs;
-        const crosses = t >= 0 ? Math.floor((t - duration / 2) / duration) + 1 : 0;
-        const d = Math.max(0, crosses - prev[i]);
-        if (d) {
-          prev[i] = crosses;
-          if (isDeal) sales += d;
-          else leads += d;
-        }
-      }
-      if (leads) setLeadCount((c) => c + leads);
-      if (sales) setSalesCount((c) => c + sales);
-    };
-    const id = window.setInterval(tick, 500);
-    tick();
-    return () => clearInterval(id);
-  }, [avatarMeta, PREFILL_MS]);
+  // useEffect(() => {
+  //   const startMs = performance.now();
+  //   const prev = new Array(avatarMeta.length).fill(0);
+  //   const tick = () => {
+  //     const now = performance.now();
+  //     const elapsed = now - startMs + PREFILL_MS;
+  //     let leads = 0;
+  //     let sales = 0;
+  //     for (let i = 0; i < avatarMeta.length; i++) {
+  //       const { delayMs, duration, isDeal } = avatarMeta[i];
+  //       const t = elapsed - delayMs;
+  //       const crosses = t >= 0 ? Math.floor((t - duration / 2) / duration) + 1 : 0;
+  //       const d = Math.max(0, crosses - prev[i]);
+  //       if (d) {
+  //         prev[i] = crosses;
+  //         if (isDeal) sales += d;
+  //         else leads += d;
+  //       }
+  //     }
+  //     if (leads) setLeadCount((c) => c + leads);
+  //     if (sales) setSalesCount((c) => c + sales);
+  //   };
+  //   const id = window.setInterval(tick, 500);
+  //   tick();
+  //   return () => clearInterval(id);
+  // }, [avatarMeta, PREFILL_MS]);
 
   const LABEL_MAX_WIDTH = 220;
   const LABEL_MAX_HEIGHT = 36;
@@ -145,7 +144,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
 
   return (
     <div
-      className="w-full grid place-items-center mt-12 mb-28 sm:mb-12 md:mt-0 md:mb-4"
+      className="w-full grid place-items-center mb-28 sm:mb-12 mt-20 md:mt-6 md:mb-4"
       aria-hidden="true"
       data-nosnippet
     >
@@ -163,7 +162,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
               <feDropShadow dx="0" dy="2" stdDeviation="3" floodOpacity="0.1" />
             </filter>
             <linearGradient id={`${uid}-ribbonFill`} x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#eef2ff" />
+              <stop offset="0%" stopColor="#ffffff" />
               <stop offset="100%" stopColor="#ffffff" />
             </linearGradient>
             <linearGradient id={`${uid}-blueBar`} x1="0%" y1="0%" x2="0%" y2="100%">
@@ -396,7 +395,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
                 </g>
 
                 {/* Counters */}
-                <g transform={`translate(${-P_LOGO_RADIUS - 12} ${-P_LOGO_RADIUS + 2})`}>
+                {/* <g transform={`translate(${-P_LOGO_RADIUS - 12} ${-P_LOGO_RADIUS + 2})`}>
                   <foreignObject x={-260} y={0} width={260} height={P_LOGO_RADIUS * 2}>
                     <div
                       style={{
@@ -424,9 +423,9 @@ export default function HeroRibbon({ seedNonce }: Props) {
                       </div>
                     </div>
                   </foreignObject>
-                </g>
+                </g> */}
 
-                <g transform={`translate(${P_LOGO_RADIUS + 12} ${-P_LOGO_RADIUS + 2})`}>
+                {/* <g transform={`translate(${P_LOGO_RADIUS + 12} ${-P_LOGO_RADIUS + 2})`}>
                   <foreignObject x={0} y={0} width={260} height={P_LOGO_RADIUS * 2}>
                     <div
                       style={{
@@ -454,7 +453,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
                       </div>
                     </div>
                   </foreignObject>
-                </g>
+                </g> */}
               </g>
             );
           })()}

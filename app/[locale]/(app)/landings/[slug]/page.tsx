@@ -55,6 +55,9 @@ import BouncingImages from "@/components/landings/BouncingImages";
 import IntegrationsGrid from "@/components/landings/integrations-grid";
 import LeadScoringAnimatedList from "@/components/landings/LeadScoringAnimatedList";
 import ConversionFlipCard from "@/components/landings/ConversionFlipCard";
+import HeroBenefits from "@/components/landings/hero-benefits";
+import StylizedTestimonials from "@/components/landings/stylized-testimonials";
+import ContactSidebar from "@/components/landings/contact-sidebar";
 
 // Import generic content components
 import {
@@ -112,6 +115,7 @@ import CtaDemo from "@/components/cta/CtaDemo";
 import { ComparisonContainer, ComparisonHeader, ComparisonRow } from "@/components/landings/ComparisonTable";
 import AvatarFunnel from "../../../../../components/landings/AvatarFunnel";
 import HeroRibbon from "../../../../../components/landings/HeroRibbon";
+import { SwapRotate } from "../../../../../components/magicui/swap-rotate";
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
   const { slug } = await params;
@@ -120,7 +124,13 @@ export async function generateMetadata({ params }: MetadataProps): Promise<Metad
 }
 
 export async function generateStaticParams() {
-  return [{ slug: "home" }, { slug: "youtube" }, { slug: "amazon" }, { slug: "growth-2" }];
+  return [
+    { slug: "home" },
+    { slug: "youtube" },
+    { slug: "linkedin-tracker" },
+    { slug: "systemeio" },
+    { slug: "landing-page-tracking" }
+  ];
 }
 
 export default async function LandingPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
@@ -162,6 +172,16 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       ConversionFlipCard,
       ImageSlide,
       VideoSlide,
+      PrimaryGradient: () => (
+        <div
+          style={{ background: "radial-gradient(600px 50% at 50% 100%, #2fcdfa40, rgba(90, 70, 255, 0))" }}
+          className="absolute inset-0 pointer-events-none"
+        />
+      ),
+      HeroBenefits,
+      SwapRotate,
+      StylizedTestimonials,
+      ContactSidebar,
       ComparisonContainer,
       ComparisonHeader,
       ComparisonRow,
@@ -183,7 +203,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
               type="sales"
               size="xl"
               variant={variant}
-              className="py-3 my-2 gap-1 w-fit mx-auto sm:min-w-[380px]"
+              className="my-2 gap-1 w-fit mx-auto sm:min-w-[380px]"
               value={children}
               href={href}
             />

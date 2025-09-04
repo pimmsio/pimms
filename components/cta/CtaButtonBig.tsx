@@ -43,8 +43,10 @@ export default function CtaButtonBig({
       size={size}
       onClick={handleClick}
       className={twMerge(
-        "font-bold transition-transform hover:scale-105 relative overflow-hidden",
-        variant === "inverse" ? "" : "rounded-2xl text-white bg-gradient-to-r from-brand-secondary to-brand-primary",
+        "font-bold relative overflow-hidden min-w-[130px]",
+        variant === "inverse"
+          ? ""
+          : "rounded-full text-white bg-linear-to-r from-brand-secondary to-brand-primary hover:to-brand-primary-700 shadow-sm hover:shadow-sm shadow-brand-primary-600 hover:shadow-brand-primary-900",
         className
       )}
       disabled={isLoading}

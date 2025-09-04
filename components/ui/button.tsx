@@ -13,15 +13,15 @@ const buttonVariants = cva(
         destructive: "bg-error text-white rounded-2xl hover:bg-error/90 shadow-sm",
         outline: "border-2 border-brand-primary bg-white text-brand-primary rounded-2xl hover:bg-brand-primary/5",
         secondary: "bg-white text-primary rounded-2xl border border-gray-200 hover:bg-gray-50",
-        inverse: "bg-white text-primary rounded-2xl hover:bg-gray-50 shadow-lg border border-white/20",
+        inverse: "bg-white text-primary rounded-full hover:bg-gray-50 shadow-lg border border-white/20",
         ghost: "hover:bg-gray-100 rounded-2xl",
         link: "text-brand-primary underline-offset-4 hover:underline"
       },
       size: {
-        default: "h-11 px-6 text-sm",
-        sm: "h-9 px-4 text-xs",
-        lg: "h-12 px-8 text-base font-semibold",
-        xl: "h-14 px-6 sm:px-12 text-lg font-semibold"
+        default: "h-11 text-sm",
+        sm: "h-9 text-xs",
+        lg: "h-12 text-base font-semibold",
+        xl: "h-14 text-lg font-semibold"
       }
     },
     defaultVariants: {

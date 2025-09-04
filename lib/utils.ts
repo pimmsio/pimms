@@ -63,9 +63,11 @@ export async function generateLandingMetadata({
       canonical: getFullLink(canonical),
       languages: {
         en: getFullLink(langPath["en"]),
-        ...(langPath["fr"] && {
-          fr: getFullLink(`/fr${langPath["fr"]}`)
-        })
+        // Only add French if the content actually exists in French (different from English path)
+        ...(langPath["fr"] &&
+          langPath["fr"] !== langPath["en"] && {
+            fr: getFullLink(`/fr${langPath["fr"]}`)
+          })
       }
     }
   });
@@ -102,9 +104,11 @@ export async function generateAuthorMetadata({
       canonical: getFullLink(canonical),
       languages: {
         en: getFullLink(langPath["en"]),
-        ...(langPath["fr"] && {
-          fr: getFullLink(`/fr${langPath["fr"]}`)
-        })
+        // Only add French if the content actually exists in French (different from English path)
+        ...(langPath["fr"] &&
+          langPath["fr"] !== langPath["en"] && {
+            fr: getFullLink(`/fr${langPath["fr"]}`)
+          })
       }
     }
   });
@@ -141,9 +145,11 @@ export async function generateCategoryMetadata({
       canonical: getFullLink(canonical),
       languages: {
         en: getFullLink(langPath["en"]),
-        ...(langPath["fr"] && {
-          fr: getFullLink(`/fr${langPath["fr"]}`)
-        })
+        // Only add French if the content actually exists in French (different from English path)
+        ...(langPath["fr"] &&
+          langPath["fr"] !== langPath["en"] && {
+            fr: getFullLink(`/fr${langPath["fr"]}`)
+          })
       }
     }
   });
@@ -184,9 +190,11 @@ export async function generatePagesMetadata({
       canonical: getFullLink(canonical),
       languages: {
         en: getFullLink(langPath["en"]),
-        ...(langPath["fr"] && {
-          fr: getFullLink(`/fr${langPath["fr"]}`)
-        })
+        // Only add French if the content actually exists in French (different from English path)
+        ...(langPath["fr"] &&
+          langPath["fr"] !== langPath["en"] && {
+            fr: getFullLink(`/fr${langPath["fr"]}`)
+          })
       }
     },
     publishedTime: publishedAt,

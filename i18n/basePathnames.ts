@@ -11,20 +11,17 @@ export const basePathnames = {
     en: "/solutions/deep-links-youtube-channel",
     fr: "/solutions/deep-links-chaine-youtube"
   },
-  "/landings/amazon": {
-    en: "/solutions/deep-links-amazon",
-    fr: "/solutions/deep-links-amazon"
-  },
-  "/landings/ab-testing": {
-    en: "/solutions/ab-testing"
-  },
-  "/landings/for-creators": {
-    en: "/for-creators",
-    fr: "/pour-les-createurs-de-contenu"
-  },
   "/landings/systemeio": {
     en: "/solutions/systemeio-funnel-tracking-sales",
     fr: "/solutions/tracking-systemeio-funnel-ventes"
+  },
+  "/landings/linkedin-tracker": {
+    en: "/solutions/linkedin-analytics-profile-visitor-tracking",
+    fr: "/solutions/analytics-profil-linkedin-visiteurs"
+  },
+  "/landings/landing-page-tracking": {
+    en: "/solutions/conversion-tracking-landing-page-analytics",
+    fr: "/solutions/suivi-conversions-analytics-landing-page"
   },
   "/freetools/site-checker": {
     en: "/freetools/pimms-tracking-site-checker-install",

@@ -31,7 +31,7 @@ export default function CalComButton({
     <Button
       variant={variant}
       size={size}
-      className={(className || "") + " w-full sm:w-auto transition-transform shadow-sm shadow-gray-200/60"}
+      className={(className || "") + "min-w-[130px] w-full sm:w-auto transition-transform shadow-sm shadow-gray-200/60"}
       data-cal-link="alexandre-sarfati/30-minutes-demo?pimms_id=1"
     >
       {children}
