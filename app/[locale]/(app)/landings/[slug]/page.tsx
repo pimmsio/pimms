@@ -15,7 +15,7 @@ import { remarkFaqDirective } from "@/lib/mdx/remarkFaqDirective";
 import { remarkCtaPlaceholder } from "@/lib/mdx/remarkCtaDirective";
 import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { remarkAtSyntax } from "@/lib/mdx/remark-at-syntax";
-import { generateLandingMetadata, getCanonicalLink } from "@/lib/utils";
+import { cn, generateLandingMetadata, getCanonicalLink } from "@/lib/utils";
 import { landingFolders } from "@/i18n/config";
 import { Zap } from "lucide-react";
 import { notFound } from "next/navigation";
@@ -172,12 +172,6 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       ConversionFlipCard,
       ImageSlide,
       VideoSlide,
-      PrimaryGradient: () => (
-        <div
-          style={{ background: "radial-gradient(600px 50% at 50% 100%, #2fcdfa40, rgba(90, 70, 255, 0))" }}
-          className="absolute inset-0 pointer-events-none"
-        />
-      ),
       HeroBenefits,
       SwapRotate,
       StylizedTestimonials,
@@ -252,6 +246,9 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       TextHighlight,
       Summary,
       Text,
+      Stronger: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+        <strong className={cn("font-bold text-lg", className)}>{children}</strong>
+      ),
       SmallText,
       Label,
       List,

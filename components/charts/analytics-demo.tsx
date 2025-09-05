@@ -12,7 +12,7 @@ export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
   // generate different data for each tab
   // and compute total events for each tab
   const demoData = useMemo(() => {
-    const dataClicks = [180, 230, 320, 305, 330, 290, 340, 310, 380, 360, 270, 360, 280, 270, 350, 370, 350, 340, 300];
+    const dataClicks = [180, 230, 320, 305, 330, 290, 260, 320, 370, 330, 270, 310, 280, 210, 260, 230, 220, 160, 130];
     const dataLeads = [0, 8, 12, 0, 15, 0, 18, 0, 22, 25, 0, 20, 0, 12, 16, 28, 0, 14, 18];
     const dataSales = [0, 2, 3, 0, 4, 0, 5, 0, 6, 8, 0, 5, 0, 3, 4, 7, 0, 3, 4];
 

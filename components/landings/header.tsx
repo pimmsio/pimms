@@ -16,18 +16,21 @@ export default function Header() {
           <div className="flex-shrink-0 mr-8">
             <Logo />
           </div>
-          <nav className="flex items-center gap-3 md:gap-4 flex-1">
-            <div className="hidden lg:flex items-center gap-4 md:gap-6 lg:absolute lg:left-1/2 lg:-translate-x-1/2">
+          <nav className="flex items-center justify-end lg:justify-between gap-3 md:gap-4 flex-1">
+            <div className="hidden lg:flex items-center gap-4 md:gap-6 mx-auto">
               <NavLink id="features" text={tcommon("nav.features")} />
               <NavLink id="pricing" text={tcommon("nav.pricing")} />
               <NavLink id="onboarding" text={tcommon("nav.onboarding")} />
-              <Link href={`${APP_URL}/login`}>
-                <Button variant="link" className="text-sm font-medium text-gray-600 hover:text-gray-900">
+            </div>
+            <div className="w-fit flex items-center gap-8">
+              <Link href={`${APP_URL}/login`} className="hidden sm:block">
+                <Button
+                  variant="link"
+                  className="text-sm font-medium text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full px-4 py-2"
+                >
                   {tcommon("nav.dashboard")}
                 </Button>
               </Link>
-            </div>
-            <div className="ml-auto flex items-center">
               <CtaDemo variant="secondary" size="default">
                 <SwapRotate>{tcommon("cta.demo")}</SwapRotate>
               </CtaDemo>

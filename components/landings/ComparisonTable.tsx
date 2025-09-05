@@ -27,13 +27,13 @@ function Pill({ value, rounded = true }: { value: boolean; rounded?: boolean }) 
     <div className="flex items-center justify-center">
       {value ? (
         <span
-          className={`inline-flex items-center justify-center w-7 h-7 ${rounded ? "rounded-full bg-gradient-to-b from-white to-white/30 shadow-sm" : "rounded-md"} text-primary`}
+          className={`inline-flex items-center justify-center w-7 h-7 ${rounded ? "rounded-full bg-gradient-to-b from-white to-white/30 shadow-sm" : ""} text-primary`}
         >
           <Check className="w-4 h-4" />
         </span>
       ) : (
         <span
-          className={`inline-flex items-center justify-center w-7 h-7 ${rounded ? "rounded-full bg-gray-100 border border-gray-200" : "rounded-md"} text-primary`}
+          className={`inline-flex items-center justify-center w-7 h-7 ${rounded ? "rounded-full bg-gray-100 border border-gray-200" : "text-vibrant-red bg-vibrant-red/10 rounded-full"} text-primary`}
         >
           <X className="w-5 h-5" />
         </span>

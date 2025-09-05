@@ -44,12 +44,26 @@ function maskEmail(email: string): string {
 function useScoreLabel() {
   const t = useTranslations("landing.lead_list.score");
   return (score: number): { label: string; emoji: string; color: string; bg: string } => {
-    if (score >= 80) return { label: t("very_warm"), emoji: "🔥", color: "text-red-600", bg: "bg-red-50 ring-red-200" };
-    if (score >= 60)
-      return { label: t("warm"), emoji: "🔥", color: "text-orange-600", bg: "bg-orange-50 ring-orange-200" };
-    if (score >= 40)
-      return { label: t("lukewarm"), emoji: "🔥", color: "text-amber-600", bg: "bg-amber-50 ring-amber-200" };
-    return { label: t("cold"), emoji: "❄️", color: "text-sky-600", bg: "bg-sky-50 ring-sky-200" };
+    if (score >= 80)
+      return {
+        label: t("very_warm"),
+        emoji: "🔥",
+        color: "text-vibrant-red/80",
+        bg: "bg-vibrant-red/5 ring-vibrant-red/30"
+      };
+    if (score >= 50)
+      return {
+        label: t("warm"),
+        emoji: "🔥",
+        color: "text-vibrant-orange",
+        bg: "bg-vibrant-orange/10 ring-vibrant-orange/30"
+      };
+    return {
+      label: t("cold"),
+      emoji: "❄️",
+      color: "text-brand-primary",
+      bg: "bg-brand-primary/5 ring-brand-primary/30"
+    };
   };
 }
 
@@ -83,7 +97,7 @@ function LeadCard({ item }: { item: LeadItem }) {
           </div>
         </div>
         <div className="flex items-end sm:items-center flex-col sm:flex-row gap-1.5">
-          <div className="flex items-center rounded-full px-2.5 ring-1 ring-gray-200 shrink-0" style={{}}>
+          <div className="flex items-center rounded-full px-2.5 sm:py-1 ring-1 ring-gray-200 shrink-0" style={{}}>
             <span className="text-sm font-semibold text-gray-900">{item.score} %</span>
           </div>
           <div

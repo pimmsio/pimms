@@ -11,7 +11,7 @@ export const H2 = ({ children, className }: { children: React.ReactNode; classNa
     <h2
       className={twMerge(
         plus_jakarta_sans.className,
-        "text-3xl md:text-4xl xl:text-5xl font-bold text-text-primary text-center !tracking-tighter !leading-tight text-balance",
+        "text-3xl md:text-4xl xl:text-5xl font-bold text-text-primary text-center !tracking-tight !leading-tight text-balance",
         className
       )}
     >

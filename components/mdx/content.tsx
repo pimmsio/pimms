@@ -32,11 +32,13 @@ export const Summary = ({ children }: { children: ReactNode }) => <>{children}</
 export const Text = ({
   children,
   size = "base",
-  variant = "default"
+  variant = "default",
+  className
 }: {
   children: ReactNode;
   size?: "sm" | "base" | "md" | "lg";
   variant?: "default" | "white";
+  className?: string;
 }) => {
   const sizeClasses = {
     sm: "text-sm md:text-base",
@@ -49,7 +51,7 @@ export const Text = ({
   const spacing = size === "lg" ? "mb-8" : "mb-4";
   const colorClass = variant === "white" ? "text-white/90" : "text-gray-600";
 
-  return <p className={`${sizeClasses[size]} ${colorClass} ${spacing} leading-relaxed`}>{children}</p>;
+  return <p className={`${sizeClasses[size]} ${colorClass} ${spacing} leading-relaxed ${className}`}>{children}</p>;
 };
 export const SmallText = ({ children }: { children: ReactNode }) => <>{children}</>;
 export const Label = ({
@@ -136,7 +138,7 @@ export const Item = ({
 }) => {
   if (variant === "problem") {
     const X = () => (
-      <svg className="w-5 h-5 text-vibrant-pink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <svg className="w-5 h-5 text-vibrant-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
       </svg>
     );
@@ -491,7 +493,7 @@ export const Column = ({
   // On desktop, reset to default order (lg:order-none)
   const orderClasses = {
     default: "",
-    text: "order-1 md:order-none px-8 text-pretty md:text-wrap",
+    text: "order-1 md:order-none px-4 sm:px-8 text-pretty md:text-wrap",
     visual: "order-2 md:order-none"
   };
 

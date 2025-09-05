@@ -188,7 +188,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
 
           <g mask={`url(#${uid}-edgeFadeMask)`}>
             <g>
-              <path d={ribbonPath} fill={`url(#${uid}-ribbonFill)`} stroke="#e5e7eb" strokeWidth="1.25" />
+              <path d={ribbonPath} fill={`url(#${uid}-ribbonFill)`} />
             </g>
             <g clipPath={`url(#${uid}-ribbonClip)`}>
               {avatars.map((a, idx) => {
@@ -213,10 +213,10 @@ export default function HeroRibbon({ seedNonce }: Props) {
                         fill="freeze"
                       />
                       <g clipPath={`url(#${uid}-avatarClip)`}>
-                        <circle cx="0" cy="0" r={AVATAR_RADIUS} fill="#ffffff" />
+                        <circle cx="0" cy="0" r={AVATAR_RADIUS} fill="#f3f4f6" />
                         <g opacity={1}>
                           <g transform={`translate(${-16} ${-16})`}>
-                            <User width={32} height={32} stroke="#1f2937" strokeWidth={2} />
+                            <User width={32} height={32} />
                           </g>
                           <animate
                             attributeName="opacity"
@@ -259,7 +259,6 @@ export default function HeroRibbon({ seedNonce }: Props) {
                           />
                         </g>
                       </g>
-                      <circle cx="0" cy="0" r={AVATAR_RADIUS} fill="none" stroke="#e5e7eb" strokeWidth="1" />
                       {hasLabel &&
                         (() => {
                           const text = label.text;
@@ -274,7 +273,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
                           const y0 = AVATAR_RADIUS + LABEL_GAP;
                           return (
                             <g opacity={0} transform={`translate(0 0)`}>
-                              <rect x={x0} y={y0} width={w} height={h} rx={rx} fill="#ffffff" stroke="#e5e7eb" />
+                              <rect x={x0} y={y0} width={w} height={h} rx={rx} fill="#ffffff" stroke="#f3f4f6" />
                               <image
                                 href={label.src}
                                 x={x0 + padX}
@@ -319,7 +318,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
                               <g>
                                 {badges.map((b, i) => (
                                   <g key={i} transform={`translate(${baseX + i * (BADGE_R * 2 + GAP)} ${baseY})`}>
-                                    <circle r={BADGE_R} cx={0} cy={0} fill="#ffffff" stroke="#e5e7eb" strokeWidth={1} />
+                                    <circle r={BADGE_R} cx={0} cy={0} fill="#ffffff" stroke="#f3f4f6" />
                                     {b === "email" && (
                                       <g transform={`translate(${-7} ${-7})`}>
                                         <AtSign width={14} height={14} stroke="#0f172a" strokeWidth={2} />

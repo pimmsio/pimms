@@ -35,7 +35,7 @@ export const FilterFeature = ({}: { tkey: string }) => {
         highlight: true
       },
       {
-        icon: <Instagram size={16} className="text-vibrant-pink" />,
+        icon: <Instagram size={16} className="text-vibrant-red" />,
         label: "Lien",
         value: "Profil Instagram",
         highlight: true

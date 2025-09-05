@@ -34,8 +34,6 @@ export default {
         "vibrant-lime": "var(--color-vibrant-lime)",
         "vibrant-orange": "var(--color-vibrant-orange)",
         "vibrant-red": "var(--color-vibrant-red)",
-        "vibrant-pink": "var(--color-vibrant-pink)",
-        "vibrant-purple": "var(--color-vibrant-purple)",
 
         // Semantic colors
         "success": "var(--color-success)",

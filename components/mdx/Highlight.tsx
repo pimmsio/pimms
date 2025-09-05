@@ -1,6 +1,6 @@
 interface HighlightProps {
   children: React.ReactNode;
-  color?: "blue" | "green" | "yellow" | "red" | "purple";
+  color?: "blue" | "green" | "yellow" | "red";
 }
 
 export function Highlight({ children, color = "blue" }: HighlightProps) {
@@ -8,8 +8,7 @@ export function Highlight({ children, color = "blue" }: HighlightProps) {
     blue: "bg-info-light text-info border-info-border",
     green: "bg-success-light text-success border-success-border",
     yellow: "bg-warning-light text-warning border-warning-border",
-    red: "bg-error-light text-error border-error-border",
-    purple: "bg-vibrant-purple/10 text-vibrant-purple border-vibrant-purple/20"
+    red: "bg-error-light text-error border-error-border"
   };
 
   return (

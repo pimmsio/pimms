@@ -200,33 +200,29 @@ body {
   --color-brand-secondary-light: #ebfbfe;
   --color-brand-secondary-dark: #059dc7;
 
-  --color-green: #22d3a9;
-  --color-green-light: #e7fbf5;
-  --color-green-border: #c6f7ec;
-  --color-green-300: #aef4e3;
-  --color-green-600: #16a57f;
+  --color-green: #1ec198;
+  --color-green-light: #e6f4f1;
+  --color-green-border: #6bfbce;
+  --color-green-300: #6bfbce;
+  --color-green-600: #1ec198;
 
-  --color-red: #ff6b6b;
+  --color-red: #f0174a;
   --color-red-light: #ffe6e6;
   --color-red-border: #ffc9c9;
   --color-red-300: #ffb3b3;
   --color-red-400: #ff9b9b;
   --color-red-600: #f25555;
 
-  --color-yellow: #f7c948;
-  --color-yellow-light: #fff7d1;
-  --color-yellow-border: #ffe8a3;
+  --color-orange: #f59f00;
+  --color-orange-border: #f59f00;
 
   --color-vibrant-blue: var(--color-brand-primary);
   --color-vibrant-green: var(--color-green);
-  --color-vibrant-orange: #ffaf47;
-  --color-vibrant-orange-light: #ffcc8a;
-  --color-vibrant-red: #ff6b6b;
-  --color-vibrant-pink: #ffc7e0;
-  --color-vibrant-purple: #e8bdff;
+  --color-vibrant-orange: var(--color-orange);
+  --color-vibrant-red: var(--color-red);
 
   --color-data-clicks: var(--color-brand-primary);
-  --color-data-leads: var(--color-vibrant-orange-light);
+  --color-data-leads: #ffc65a;
   --color-data-sales: var(--color-vibrant-green);
 
   --color-success: var(--color-green);

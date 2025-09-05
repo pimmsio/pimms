@@ -67,8 +67,8 @@ export default function ConversionFlipCard({
               className={cn(
                 "mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 shadow-sm",
                 isSuccess
-                  ? "bg-gradient-to-br from-vibrant-green/20 to-vibrant-green/5 text-vibrant-green"
-                  : "bg-gradient-to-br from-vibrant-red/20 to-vibrant-red/5 text-vibrant-red"
+                  ? "bg-gradient-to-br from-vibrant-green/20 to-vibrant-green/5 text-vibrant-green ring-vibrant-green/30"
+                  : "bg-gradient-to-br from-vibrant-red/20 to-vibrant-red/5 text-vibrant-red/80 ring-vibrant-red/40"
               )}
             >
               {isSuccess ? <CircleCheck className="h-5 w-5" /> : <CircleX className="h-5 w-5" />}
@@ -143,7 +143,7 @@ export default function ConversionFlipCard({
       <div className="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2">
         <NeonGradientCard
           borderRadius={20}
-          neonColors={{ firstColor: "#2fcdfa90", secondColor: "#3970ff90" }}
+          neonColors={{ firstColor: "#6bfbce90", secondColor: "#1ec19890" }}
           className="relative flex w-full items-center justify-center rounded-xl"
         >
           <Logo className="absolute inset-0 w-16 xl:w-16 left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 mt-[0px]" />

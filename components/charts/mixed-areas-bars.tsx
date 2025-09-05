@@ -52,7 +52,7 @@ export function MixedAreasAndBars() {
                 if (s.id === "leads") {
                   // Leads bars - scale to max 30% of chart height
                   const maxLeads = Math.max(...data.map((d: any) => d.values.leads || 0));
-                  const leadsHeight = maxLeads > 0 ? (value / maxLeads) * (height * 0.3) : 0;
+                  const leadsHeight = maxLeads > 0 ? (value / maxLeads) * (height * 0.5) : 0;
                   const leadsY = height - leadsHeight;
 
                   return value > 0 ? (
@@ -62,10 +62,9 @@ export function MixedAreasAndBars() {
                         y={leadsY}
                         width={barWidth}
                         height={leadsHeight}
-                        radius={4}
+                        radius={Math.min(barWidth / 2, leadsHeight / 2)}
+                        bottom={true}
                         fill={(s as any).barFill ?? "var(--color-vibrant-orange)"}
-                        stroke="rgba(255, 255, 255, 0.2)"
-                        strokeWidth={1}
                         className={cn(s.colorClassName ?? "text-vibrant-orange")}
                       />
                     </motion.g>
@@ -76,7 +75,7 @@ export function MixedAreasAndBars() {
                   const maxLeads = Math.max(...data.map((d: any) => d.values.leads || 0));
                   const maxRevenue = Math.max(...data.map((d: any) => d.values.saleAmount || 0));
 
-                  const leadsHeight = maxLeads > 0 ? (leadsValue / maxLeads) * (height * 0.3) : 0;
+                  const leadsHeight = maxLeads > 0 ? (leadsValue / maxLeads) * (height * 0.5) : 0;
                   const salesHeight = maxRevenue > 0 ? (value / maxRevenue) * (height * 0.2) : 0;
                   const salesY = height - leadsHeight - salesHeight;
 
@@ -87,10 +86,9 @@ export function MixedAreasAndBars() {
                         y={salesY}
                         width={barWidth}
                         height={salesHeight}
-                        radius={4}
+                        radius={Math.min(barWidth / 2, salesHeight / 2)}
+                        top={true}
                         fill={(s as any).barFill ?? "var(--color-data-sales)"}
-                        stroke="rgba(255, 255, 255, 0.2)"
-                        strokeWidth={1}
                         className={cn(s.colorClassName ?? "text-data-sales")}
                       />
                     </motion.g>
@@ -115,23 +113,63 @@ export function MixedAreasAndBars() {
               transition={{ duration: 0.3 }}
               key={`${s.id}_line`}
             >
-              {/* Line gradient for area fill */}
-              <LinearGradient
-                className="text-zinc-50"
-                id={`${s.id}-area-gradient`}
-                fromOffset="0%"
-                from="var(--color-brand-secondary)"
-                fromOpacity={0.25}
-                toOffset="50%"
-                to="var(--color-brand-secondary-light)"
-                toOpacity={0}
-                x1={0}
-                x2={0}
-                y1={0}
-                y2={1}
-              />
+              {/* Gradient that glows close to the line */}
+              <defs>
+                {/* Create a mask from the line path with gradient falloff */}
+                <mask id={`${s.id}-line-mask`}>
+                  <rect width={width} height={height} fill="black" />
+                  {/* Create multiple strokes with decreasing opacity for gradient effect */}
+                  <Area
+                    data={data}
+                    x={(d: any) => xScale(d.date) ?? 0}
+                    y={(d: any) => yScale(s.valueAccessor(d) ?? 0)}
+                    curve={curveMonotoneX}
+                  >
+                    {({ path }) => (
+                      <g>
+                        <path
+                          d={path(data) || ""}
+                          stroke="white"
+                          strokeWidth="30"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          opacity="0.1"
+                        />
+                        <path
+                          d={path(data) || ""}
+                          stroke="white"
+                          strokeWidth="20"
+                          fill="none"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          opacity="0.3"
+                        />
+                      </g>
+                    )}
+                  </Area>
+                </mask>
 
-              {/* Area fill */}
+                {/* Simple fill color for the glow */}
+                <linearGradient
+                  id={`${s.id}-area-gradient`}
+                  gradientUnits="userSpaceOnUse"
+                  x1={0}
+                  y1={0}
+                  x2={0}
+                  y2={height}
+                >
+                  <stop offset="0%" stopColor="var(--color-brand-secondary)" stopOpacity={0.4} />
+                  <stop offset="100%" stopColor="var(--color-brand-secondary)" stopOpacity={0.1} />
+                </linearGradient>
+              </defs>
+
+              {/* Area fill with gradient following the line */}
+              <g mask={`url(#${s.id}-line-mask)`}>
+                <rect width={width} height={height} fill={`url(#${s.id}-area-gradient)`} />
+              </g>
+
+              {/* Regular area fill */}
               <AreaClosed
                 data={data}
                 x={(d: any) => xScale(d.date) ?? 0}
@@ -144,6 +182,7 @@ export function MixedAreasAndBars() {
                     initial={{ d: path(zeroedData) || "", opacity: 0 }}
                     animate={{ d: path(data) || "", opacity: 1 }}
                     fill={`url(#${s.id}-area-gradient)`}
+                    mask={`url(#${s.id}-line-mask)`}
                   />
                 )}
               </AreaClosed>

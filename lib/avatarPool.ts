@@ -89,15 +89,18 @@ export function getAvatarSvgCached(seed: string): string {
   const avatar = createAvatar(avataaars, {
     seed,
     radius: 50,
-    backgroundType: ["gradientLinear"],
-    backgroundColor: ["bfdbfe", "ebfbfe"],
-    eyes: ["happy", "hearts", "default"],
+    backgroundColor: ["ebfbfe", "eff6ff", "e6f4f1", "ffe6e6"],
+    eyes: ["happy", "default"],
     eyebrows: ["default", "raisedExcited", "defaultNatural", "raisedExcitedNatural"],
     mouth: ["smile", "default", "serious"],
-    accessories: ["prescription01", "prescription02", "round", "sunglasses", "wayfarers"],
     style: ["default"],
     // on passe UNE seule couleur choisie
-    skinColor: [skinColor]
+    skinColor: [skinColor],
+    hairColor: ["08272e", "e8d1a9", "241c11", "f25555"],
+    facialHairColor: ["08272e"],
+    accessoriesProbability: 0,
+    hatColor: ["08272e"],
+    clothesColor: ["1d4ed8", "08272e"]
   });
 
   const sanitized = sanitizeSvg(avatar.toString());
