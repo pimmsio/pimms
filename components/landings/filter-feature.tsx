@@ -1,4 +1,4 @@
-import { Laptop, Tag, Tablet, SmartphoneCharging, Instagram, Calendar } from "lucide-react";
+import { Laptop, Tag, Tablet, SmartphoneCharging, Instagram, Calendar } from "@/components/icons/custom-icons";
 import React from "react";
 import { Label } from "../base/label";
 

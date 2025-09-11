@@ -1,4 +1,4 @@
-import { BookOpen, Users, TrendingUp } from "lucide-react";
+import { BookOpen, Users, TrendingUp } from "@/components/icons/custom-icons";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import { BLOG_CATEGORIES } from "../../app/constants";

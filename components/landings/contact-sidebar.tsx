@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
-import { Calendar } from "lucide-react";
+import { Calendar } from "@/components/icons/custom-icons";
 
 interface ContactSidebarProps {
   className?: string;

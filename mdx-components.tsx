@@ -9,9 +9,8 @@ import { Hero } from "@/components/landings/hero";
 import { Centered, Fast, CtaBottomText, CtaButton } from "@/components/mdx/content";
 import ImageSlide from "@/components/landings/Image-slide";
 import { HideOnMobile, HideOnDesktop } from "@/components/mdx/content";
-import DeeplinkDemo from "@/components/landings/deeplink-demo";
 import LeadScoringAnimatedList from "@/components/landings/LeadScoringAnimatedList";
-import { FaCreditCard, FaLock } from "react-icons/fa6";
+import { FaCreditCard, FaLock } from "@/components/icons/custom-icons";
 import { AnimatedCentered } from "@/components/mdx/AnimatedCentered";
 import { Slide } from "@/components/mdx/Slide";
 import {
@@ -53,7 +52,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     ImageSlide,
     HideOnMobile,
     HideOnDesktop,
-    DeeplinkDemo,
     LeadScoringAnimatedList,
     FaCreditCard,
     FaLock,

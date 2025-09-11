@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { getCanonicalLink } from "@/lib/utils";
 import { useLocale } from "next-intl";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight } from "@/components/icons/custom-icons";
 
 export function LinkCards({ children }: { children: React.ReactNode }) {
   return <div className="not-prose grid grid-cols-1 md:grid-cols-2 gap-6 my-8 sm:my-12">{children}</div>;

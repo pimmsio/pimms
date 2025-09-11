@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import { Star } from "lucide-react";
+import { Star } from "@/components/icons/custom-icons";
 
 interface StylizedTestimonialsProps {
   className?: string;

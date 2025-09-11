@@ -1,10 +1,19 @@
 import { ReactNode } from "react";
 import { useTranslations } from "next-intl";
 import { H2 as BaseH2 } from "@/components/base/h2";
-import { FaArrowTrendUp, FaRegClock, FaDollarSign, FaMedal, FaQuestion } from "react-icons/fa6";
-import { BiSolidZap } from "react-icons/bi";
-import { MdRocketLaunch } from "react-icons/md";
-import { Share2, Target, DollarSign as DollarIcon, TrendingUp } from "lucide-react";
+import {
+  FaArrowTrendUp,
+  FaRegClock,
+  FaDollarSign,
+  FaMedal,
+  FaQuestion,
+  BiSolidZap,
+  MdRocketLaunch,
+  Share2,
+  Target,
+  DollarSign as DollarIcon,
+  TrendingUp
+} from "@/components/icons/custom-icons";
 import Image from "next/image";
 import { cn } from "../../lib/utils";
 

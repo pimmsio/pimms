@@ -1,6 +1,6 @@
 import { useTranslations } from "next-intl";
 import { Avatar } from "@/components/base/avatar";
-import { Star } from "lucide-react";
+import { Star } from "@/components/icons/custom-icons";
 import { Paragraph } from "../base/paragraph";
 
 export const TestimonialCard = ({ tkey }: { tkey: string }) => {

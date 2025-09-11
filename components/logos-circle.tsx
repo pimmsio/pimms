@@ -4,7 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { H2 } from "./base/h2";
 import CtaButtonBig from "./cta/CtaButtonBig";
-import { Zap } from "lucide-react";
+import { Zap } from "@/components/icons/custom-icons";
 import { useTranslations } from "next-intl";
 import { Section } from "./base/section";
 import { Primary } from "./mdx/content";

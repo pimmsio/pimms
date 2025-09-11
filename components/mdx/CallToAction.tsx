@@ -1,4 +1,4 @@
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap } from "@/components/icons/custom-icons";
 import Link from "next/link";
 import { APP_URL } from "@/app/constants";
 import { useTranslations } from "next-intl";

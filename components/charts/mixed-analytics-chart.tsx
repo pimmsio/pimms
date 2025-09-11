@@ -1,6 +1,4 @@
-import { TimeSeriesChart } from "./time-series-chart";
-
-import { MixedAreasAndBars } from "./mixed-areas-bars";
+import { ResponsiveContainer, TimeSeriesChart, MixedAreasAndBars } from "./lightweight-chart";
 export const EVENT_TYPES = ["clicks", "leads", "sales"] as const;
 export type EventType = (typeof EVENT_TYPES)[number];
 
@@ -19,7 +17,6 @@ export default function MixedAnalyticsChart({
     };
   }[];
   tkey?: string;
-  showABTesting?: boolean;
   height?: number;
 }) {
   const chartData = demoData;
@@ -60,16 +57,27 @@ export default function MixedAnalyticsChart({
 
   return (
     <div className="chart-container relative w-full h-full overflow-hidden" style={{ height: `${height}px` }}>
-      <TimeSeriesChart
-        data={chartData}
-        series={series}
-        defaultTooltipIndex={chartData.length - 2}
-        tooltipClassName="p-0"
-        margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
-        padding={{ top: 0, bottom: 0 }}
-      >
-        <MixedAreasAndBars />
-      </TimeSeriesChart>
+      <ResponsiveContainer className="relative w-full h-full min-w-0">
+        {({ width, height: containerHeight }) => {
+          return (
+            width > 0 &&
+            containerHeight > 0 && (
+              <TimeSeriesChart
+                data={chartData}
+                series={series}
+                width={width}
+                height={containerHeight}
+                defaultTooltipIndex={chartData.length - 2}
+                tooltipClassName="p-0"
+                margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+                padding={{ top: 0, bottom: 0 }}
+              >
+                <MixedAreasAndBars />
+              </TimeSeriesChart>
+            )
+          );
+        }}
+      </ResponsiveContainer>
     </div>
   );
 }

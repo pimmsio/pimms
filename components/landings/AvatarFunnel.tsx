@@ -2,7 +2,7 @@
 
 import React, { useEffect, useId, useMemo, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { CalendarCheck, MailPlus, UserPlus } from "lucide-react";
+import { CalendarCheck, MailPlus, UserPlus } from "@/components/icons/custom-icons";
 import { useTranslations } from "next-intl";
 import { getAvatarSvgCached, getSharedSeeds } from "@/lib/avatarPool";
 import { Avatar, usePerSlotSeeds } from "@/lib/avatarAnim";

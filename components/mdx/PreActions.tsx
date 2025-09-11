@@ -1,6 +1,6 @@
 "use client";
 
-import { Copy, Check } from "lucide-react";
+import { Copy, Check } from "@/components/icons/custom-icons";
 import { useState } from "react";
 
 interface PreActionsProps {

@@ -1,32 +1,62 @@
 "use client";
 
-import { Analytics as PimmsAnalytics } from "@getpimms/analytics/react";
+import { ReactNode, Suspense, useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import posthog from "posthog-js";
 import { PostHogProvider } from "posthog-js/react";
-import { ReactNode } from "react";
-import { Analytics } from "@vercel/analytics/next";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import PostHogPageView from "@/components/posthog-pageview";
 
+// Lazy load analytics components for better initial bundle size
+const PimmsAnalytics = dynamic(() => import("@getpimms/analytics/react").then((mod) => ({ default: mod.Analytics })), {
+  ssr: false
+});
+
+const VercelAnalytics = dynamic(() => import("@vercel/analytics/next").then((mod) => ({ default: mod.Analytics })), {
+  ssr: false
+});
+
+const SpeedInsights = dynamic(
+  () => import("@vercel/speed-insights/next").then((mod) => ({ default: mod.SpeedInsights })),
+  {
+    ssr: false
+  }
+);
+
+const PostHogPageView = dynamic(() => import("@/components/posthog-pageview"), {
+  ssr: false
+});
+
+// Initialize PostHog with lazy loading
 if (typeof window !== "undefined" && !!process.env.NEXT_PUBLIC_POSTHOG_KEY) {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
-    // api_host: "/_proxy/posthog/ingest",
     api_host: "https://eu.i.posthog.com",
-    // ui_host: "https://eu.posthog.com",
     person_profiles: "identified_only",
-    capture_pageview: false, // Disable automatic pageview capture, as we capture manually
-    capture_pageleave: true // Enable pageleave capture
+    capture_pageview: false,
+    capture_pageleave: true
   });
 }
 
 export default function RootProviders({ children }: { children: ReactNode }) {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <>{children}</>;
+  }
+
   return (
     <PostHogProvider client={posthog}>
-      <PostHogPageView />
+      <Suspense fallback={null}>
+        <PostHogPageView />
+      </Suspense>
       {children}
-      <PimmsAnalytics />
-      <Analytics />
-      <SpeedInsights />
+      <Suspense fallback={null}>
+        <PimmsAnalytics />
+        <VercelAnalytics />
+        <SpeedInsights />
+      </Suspense>
     </PostHogProvider>
   );
 }

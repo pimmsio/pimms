@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check } from "@/components/icons/custom-icons";
 import { ReactNode } from "react";
 import CalComButton from "@/components/landings/cal-com-button";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";

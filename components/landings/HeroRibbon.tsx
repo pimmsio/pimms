@@ -3,7 +3,7 @@
 import React, { useId, useMemo } from "react";
 import { getAvatarSvgCached, getSharedSeeds } from "@/lib/avatarPool";
 import { usePerSlotSeeds, Avatar } from "@/lib/avatarAnim";
-import { User, DollarSign, AtSign, Phone } from "lucide-react";
+import { User, DollarSign, AtSign, Phone } from "@/components/icons/custom-icons";
 import { useTranslations } from "next-intl";
 import { buildRibbonGeometry, computeBegin, getLaneOffsets } from "@/lib/visCommon";
 

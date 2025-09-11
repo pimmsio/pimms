@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { Check, X } from "lucide-react";
+import { Check, X } from "@/components/icons/custom-icons";
 import Logo from "../logo";
 
 export function ComparisonContainer({ children }: { children: ReactNode }) {

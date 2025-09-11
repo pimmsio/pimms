@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
-import { Chrome, CircleCheck, CircleX, CreditCard, Wallet, Youtube } from "lucide-react";
+import { Chrome, CircleCheck, CircleX, CreditCard, Wallet, Youtube } from "@/components/icons/custom-icons";
 import { useTranslations } from "next-intl";
 import React from "react";
 import Logo from "../logo";

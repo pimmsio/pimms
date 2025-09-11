@@ -1,4 +1,4 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "@/components/icons/custom-icons";
 
 export function Faq({ question, answer, children }: { question: string; answer?: string; children?: React.ReactNode }) {
   return (

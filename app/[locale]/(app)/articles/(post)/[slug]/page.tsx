@@ -31,14 +31,13 @@ import { LinkCard } from "@/components/mdx/LinkCards";
 import { Quote } from "@/components/mdx/Quote";
 import { Steps, Step, StepCompleted } from "@/components/mdx/Steps";
 import { Highlight } from "@/components/mdx/Highlight";
-import { Callout } from "@/components/mdx/Callout";
 import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { Pre } from "@/components/mdx/Pre";
 import { Figure } from "@/components/mdx/Figure";
 import { articleFolders } from "@/i18n/config";
 import TallyIframe from "@/components/mdx/TallyIframe";
 import { BreadcrumbStructuredData } from "@/components/mdx/BreadcrumbStructuredData";
-import { Clock, ChevronRight, Edit3 } from "lucide-react";
+import { Clock, ChevronRight, Edit3 } from "@/components/icons/custom-icons";
 import Author from "@/components/blog/author";
 import { useTranslations } from "next-intl";
 
@@ -234,7 +233,6 @@ const components = {
   Step,
   StepCompleted,
   Highlight,
-  Callout,
   pre: Pre,
   Figure,
   Tally: TallyIframe

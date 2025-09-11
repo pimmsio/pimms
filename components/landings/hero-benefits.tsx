@@ -1,4 +1,4 @@
-import { TrendingUp, DollarSign } from "lucide-react";
+import { TrendingUp, DollarSign } from "@/components/icons/custom-icons";
 import { useTranslations } from "next-intl";
 
 interface HeroBenefitsProps {

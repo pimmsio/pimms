@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { CheckCircle, XCircle, Clock, AlertCircle } from "lucide-react";
+import { CheckCircle, XCircle, Clock, AlertCircle } from "@/components/icons/custom-icons";
 import { getCanonicalLink } from "../lib/utils";
 import { useLocale } from "next-intl";
 import { H2 } from "./base/h2";

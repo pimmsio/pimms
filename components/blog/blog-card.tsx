@@ -5,7 +5,7 @@ import Author from "./author";
 import { notFound } from "next/navigation";
 import { getCanonicalLink } from "../../lib/utils";
 import { useLocale } from "next-intl";
-import { Clock, ArrowUpRight, Tag, Edit3 } from "lucide-react";
+import { Clock, ArrowUpRight, Tag, Edit3 } from "@/components/icons/custom-icons";
 
 // Function to extract integration name from guide titles
 function extractIntegrationName(title: string, categories: string[]): string | null {
@@ -45,7 +45,15 @@ function extractIntegrationName(title: string, categories: string[]): string | n
   return null;
 }
 
-export default function BlogCard({ slug, metadata, priority = false }: { slug: string; metadata: PageMetadata; priority?: boolean }) {
+export default function BlogCard({
+  slug,
+  metadata,
+  priority = false
+}: {
+  slug: string;
+  metadata: PageMetadata;
+  priority?: boolean;
+}) {
   const locale = useLocale();
 
   if (!metadata || !slug) {
