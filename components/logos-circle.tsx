@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { motion } from "@/lib/framer-motion";
+import { motion } from "framer-motion";
 import { H2 } from "./base/h2";
 import CtaButtonBig from "./cta/CtaButtonBig";
 import { Zap } from "lucide-react";
@@ -12,6 +12,7 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { getCanonicalLink } from "@/lib/utils";
 import { SwapRotate } from "./magicui/swap-rotate";
+import Image from "next/image";
 
 // Outer logos (mix of top deeplink brands and key integrations)
 const outerBaseUrl = "/static/symbols/deeplinks";
@@ -28,13 +29,13 @@ const outerLogos = [
   { src: `${integrationsBaseUrl}/webflow.svg`, alt: "Webflow", guide: "/articles/how-to-track-webflow-leads" },
   { src: `${integrationsBaseUrl}/lovable.svg`, alt: "Lovable" },
   { src: `${integrationsBaseUrl}/lemlist.svg`, alt: "Lemlist" },
-  { src: `${integrationsBaseUrl}/brevo.jpeg`, alt: "Brevo" },
-  { src: `${integrationsBaseUrl}/clay.png`, alt: "Clay" },
+  { src: `${integrationsBaseUrl}/brevo.svg`, alt: "Brevo" },
+  { src: `${integrationsBaseUrl}/clay.webp`, alt: "Clay" },
   { src: `${integrationsBaseUrl}/trigify.jpeg`, alt: "Trigify" },
   { src: `${integrationsBaseUrl}/slack.svg`, alt: "Slack" },
   { src: `${integrationsBaseUrl}/framer.svg`, alt: "Framer", guide: "/articles/how-to-track-framer" },
   {
-    src: `${integrationsBaseUrl}/systemeio.jpeg`,
+    src: `${integrationsBaseUrl}/systemeio.webp`,
     alt: "Systeme.io",
     guide: "/articles/how-to-track-systemeio-sales-and-leads"
   }
@@ -42,7 +43,7 @@ const outerLogos = [
 
 const innerBaseUrl = "/static/symbols/integrations";
 const innerLogos = [
-  { src: `${innerBaseUrl}/calcom.jpeg`, alt: "Calcom", guide: "/articles/start-with-cal-com-and-zapier" },
+  { src: `${innerBaseUrl}/calcom.svg`, alt: "Calcom", guide: "/articles/start-with-cal-com-and-zapier" },
   { src: `${innerBaseUrl}/calendly.svg`, alt: "Calendly", guide: "/articles/how-to-track-calendly" },
   {
     src: `${innerBaseUrl}/make.svg`,
@@ -117,10 +118,17 @@ const LogosCircle: React.FC = () => {
                 transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
                 className="bg-white p-2 rounded-xl border border-gray-200 flex-shrink-0"
               >
-                <img
-                  src={logo?.src}
-                  alt={logo?.alt}
+                <Image
+                  src={logo?.src || "/static/logo.svg"}
+                  alt={logo?.alt || "Logo"}
+                  width={64}
+                  height={64}
                   className="grayscale hover:grayscale-0 w-16 h-16 min-w-16 max-w-16 object-contain p-2 transition-all duration-200"
+                  loading="lazy"
+                  priority={false}
+                  sizes="64px"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZjNmNGY2Ii8+Cjwvc3ZnPgo="
                 />
               </motion.div>
             );
@@ -163,10 +171,17 @@ const LogosCircle: React.FC = () => {
                 transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
                 className="bg-white p-2 rounded-xl border border-gray-200 flex-shrink-0"
               >
-                <img
-                  src={logo?.src}
-                  alt={logo?.alt}
+                <Image
+                  src={logo?.src || "/static/logo.svg"}
+                  alt={logo?.alt || "Logo"}
+                  width={48}
+                  height={48}
                   className="grayscale hover:grayscale-0 w-12 h-12 min-w-12 max-w-12 object-contain p-1.5 transition-all duration-200"
+                  loading="lazy"
+                  priority={false}
+                  sizes="48px"
+                  placeholder="blur"
+                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjZjNmNGY2Ii8+Cjwvc3ZnPgo="
                 />
               </motion.div>
             );

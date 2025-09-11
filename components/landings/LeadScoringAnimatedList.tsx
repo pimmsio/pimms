@@ -18,8 +18,8 @@ export type LeadItem = {
 
 const sourceLogo: Record<LeadSource, string> = {
   shopify: "/static/symbols/integrations/shopify.svg",
-  calcom: "/static/symbols/integrations/calcom.jpeg",
-  brevo: "/static/symbols/integrations/brevo.jpeg",
+  calcom: "/static/symbols/integrations/calcom.svg",
+  brevo: "/static/symbols/integrations/brevo.svg",
   stripe: "/static/symbols/integrations/stripe.svg",
   zapier: "/static/symbols/integrations/zapier.jpeg",
   tally: "/static/symbols/integrations/tally.svg",
@@ -85,6 +85,8 @@ function LeadCard({ item }: { item: LeadItem }) {
             width={28}
             height={28}
             className="object-contain grayscale"
+            sizes="28px"
+            style={{ maxWidth: "28px", maxHeight: "28px" }}
           />
         </div>
         <div className="flex min-w-0 flex-1 flex-col">

@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 export const plus_jakarta_sans = Plus_Jakarta_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"]
+  weight: ["400", "700"]
 });
 
 export const H1 = ({ children, className }: { children: React.ReactNode; className?: string }) => {

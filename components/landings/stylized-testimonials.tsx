@@ -75,6 +75,8 @@ export default function StylizedTestimonials({ className = "" }: StylizedTestimo
                 <img
                   src={testimonial.bannerImage}
                   alt={`Bannière LinkedIn de ${testimonial.name}`}
+                  width="400"
+                  height="128"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -89,6 +91,8 @@ export default function StylizedTestimonials({ className = "" }: StylizedTestimo
                       <img
                         src={testimonial.profileImage}
                         alt={`Photo de profil de ${testimonial.name}`}
+                        width="64"
+                        height="64"
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />

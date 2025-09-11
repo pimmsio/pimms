@@ -133,6 +133,10 @@ export async function generateStaticParams() {
   ];
 }
 
+// Enable static generation with revalidation
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
 export default async function LandingPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
   const seedNonce = crypto.randomUUID();

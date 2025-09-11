@@ -12,8 +12,8 @@ export default function Logo({ className }: { className?: string }) {
         src="/static/logo.svg"
         alt="pim.ms"
         className={cn("w-18 xl:w-22 mt-1", className)}
-        width={1000}
-        height={179}
+        width={72}
+        height={13}
       />
     </Link>
   );

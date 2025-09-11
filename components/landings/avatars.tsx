@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
 import { useTranslations } from "next-intl";
-import { BlurFade } from "@/components/magicui/blur-fade";
 
 interface AvatarsProps {
   children?: ReactNode;
@@ -11,33 +10,36 @@ export const Avatars = ({ children }: AvatarsProps) => {
   // Always use home avatars since they're shared across all landing pages
   const t = useTranslations("landing.hero");
 
-  // Get avatars from translations
-  const avatars = [
-    {
-      name: t("avatars.avatar1.name"),
-      image: t("avatars.avatar1.image")
-    },
-    {
-      name: t("avatars.avatar2.name"),
-      image: t("avatars.avatar2.image")
-    },
-    {
-      name: t("avatars.avatar3.name"),
-      image: t("avatars.avatar3.image")
-    },
-    {
-      name: t("avatars.avatar4.name"),
-      image: t("avatars.avatar4.image")
-    },
-    {
-      name: t("avatars.avatar5.name"),
-      image: t("avatars.avatar5.image")
-    }
-  ];
+  // Memoize avatars to prevent unnecessary re-renders
+  const avatars = useMemo(
+    () => [
+      {
+        name: t("avatars.avatar1.name"),
+        image: t("avatars.avatar1.image")
+      },
+      {
+        name: t("avatars.avatar2.name"),
+        image: t("avatars.avatar2.image")
+      },
+      {
+        name: t("avatars.avatar3.name"),
+        image: t("avatars.avatar3.image")
+      },
+      {
+        name: t("avatars.avatar4.name"),
+        image: t("avatars.avatar4.image")
+      },
+      {
+        name: t("avatars.avatar5.name"),
+        image: t("avatars.avatar5.image")
+      }
+    ],
+    [t]
+  );
 
   return (
-    <BlurFade direction="up" delay={0.2} inView={false} className="flex items-center justify-center gap-3 mt-5">
-      <li className="flex items-center gap-1" data-nosnippet>
+    <div className="flex items-center justify-center gap-3 mt-5">
+      <div className="flex items-center gap-1" data-nosnippet>
         <AvatarsLaurier direction="left" />
         <div className="flex flex-col sm:flex-row items-center gap-2 select-none cursor-default">
           <div className="flex -space-x-2 overflow-hidden">
@@ -47,15 +49,23 @@ export const Avatars = ({ children }: AvatarsProps) => {
                 className="relative w-8 h-8 rounded-full outline-3 outline-white overflow-hidden"
                 style={{ zIndex: avatars.length - index }}
               >
-                <Image src={avatar.image} alt={avatar.name} fill className="object-cover" sizes="32px" />
+                <Image
+                  src={avatar.image}
+                  alt={avatar.name}
+                  fill
+                  className="object-cover"
+                  sizes="32px"
+                  loading="lazy"
+                  priority={false}
+                />
               </div>
             ))}
           </div>
           {children && <div className="text-sm text-brand-primary font-semibold ml-2">{children}</div>}
         </div>
         <AvatarsLaurier direction="right" />
-      </li>
-    </BlurFade>
+      </div>
+    </div>
   );
 };
 

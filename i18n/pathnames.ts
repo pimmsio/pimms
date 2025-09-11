@@ -2,47 +2,47 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-05T20:01:57.160Z"
+    "lastmod": "2025-09-11T22:17:35.179Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-05T20:01:57.161Z"
+    "lastmod": "2025-09-11T22:17:35.179Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-09-05T20:01:57.161Z"
+    "lastmod": "2025-09-11T22:17:35.179Z"
   },
   "/landings/systemeio": {
     "en": "/solutions/systemeio-funnel-tracking-sales",
     "fr": "/solutions/tracking-systemeio-funnel-ventes",
-    "lastmod": "2025-09-05T20:01:57.161Z"
+    "lastmod": "2025-09-11T22:17:35.179Z"
   },
   "/landings/linkedin-tracker": {
     "en": "/solutions/linkedin-analytics-profile-visitor-tracking",
     "fr": "/solutions/analytics-profil-linkedin-visiteurs",
-    "lastmod": "2025-09-05T20:01:57.161Z"
+    "lastmod": "2025-09-11T22:17:35.179Z"
   },
   "/landings/landing-page-tracking": {
     "en": "/solutions/conversion-tracking-landing-page-analytics",
     "fr": "/solutions/suivi-conversions-analytics-landing-page",
-    "lastmod": "2025-09-05T20:01:57.161Z"
+    "lastmod": "2025-09-11T22:17:35.179Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-09-05T20:01:57.161Z"
+    "lastmod": "2025-09-11T22:17:35.179Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2025-09-03T00:00:00.000Z"
+    "lastmod": "2025-09-10T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-09-03T00:00:00.000Z"
+    "lastmod": "2025-09-10T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -57,7 +57,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-09-03T00:00:00.000Z"
+    "lastmod": "2025-09-10T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -151,6 +151,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/deep-links-vs-universal-links-whats-the-difference",
     "lastmod": "2025-09-03T00:00:00.000Z",
     "fr": "/blog/deep-links-vs-universal-links-quelle-est-la-difference"
+  },
+  "/articles/dubco-alternatives-comparison-2025": {
+    "en": "/blog/dubco-alternatives-comparison-2025",
+    "lastmod": "2025-09-10T00:00:00.000Z"
   },
   "/articles/first-article": {
     "en": "/blog/what-is-pimms",
@@ -272,6 +276,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/prompt-first-development-how-to-set-up-attribution-with-one-prompt": {
     "en": "/blog/prompt-first-development-how-to-set-up-attribution-with-one-prompt",
     "lastmod": "2025-06-08T00:00:00.000Z"
+  },
+  "/articles/rebrandly-alternatives-comparison-2025": {
+    "en": "/blog/rebrandly-alternatives-comparison-2025",
+    "lastmod": "2025-09-10T00:00:00.000Z"
   },
   "/articles/referrer-vs-utm-vs-fingerprinting-what-really-tells-you-where-a-click-came-from": {
     "en": "/blog/referrer-vs-utm-vs-fingerprinting-where-a-click-came-from",

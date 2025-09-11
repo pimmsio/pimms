@@ -6,7 +6,7 @@ import { use } from "react";
 
 type Props = {
   children: React.ReactNode;
-  params: Promise<{ locale: "en" | "fr" }>;
+  params: Promise<{ locale: string }>;
 };
 
 export function generateStaticParams() {

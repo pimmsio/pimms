@@ -40,6 +40,8 @@ export default function ContactSidebar({ className = "" }: ContactSidebarProps) 
                 <img
                   src="https://assets.pimms.io/alexandre-sarfati.jpeg"
                   alt="Photo de profil d'Alexandre Sarfati"
+                  width="64"
+                  height="64"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

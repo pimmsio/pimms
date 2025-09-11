@@ -82,19 +82,19 @@ export const DeeplinkDemo = () => {
                   ref={youtubeRef}
                   className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
                 >
-                  <img src={outerLogos[0]?.src} alt="Youtube" className="w-6 h-6 md:w-8 md:h-8" />
+                  <img src={outerLogos[0]?.src} alt="Youtube" width="32" height="32" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
                 <Circle
                   ref={instagramRef}
                   className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
                 >
-                  <img src={outerLogos[3]?.src} alt="Instagram" className="w-6 h-6 md:w-8 md:h-8" />
+                  <img src={outerLogos[3]?.src} alt="Instagram" width="32" height="32" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
                 <Circle
                   ref={amazonRef}
                   className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
                 >
-                  <img src={outerLogos[1]?.src} alt="Amazon" className="w-6 h-6 md:w-8 md:h-8" />
+                  <img src={outerLogos[1]?.src} alt="Amazon" width="32" height="32" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
               </div>
               {/* Deuxième colonne */}
@@ -103,19 +103,19 @@ export const DeeplinkDemo = () => {
                   ref={chromeRef}
                   className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
                 >
-                  <img src={outerLogos[2]?.src} alt="Chrome" className="w-6 h-6 md:w-8 md:h-8" />
+                  <img src={outerLogos[2]?.src} alt="Chrome" width="32" height="32" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
                 <Circle
                   ref={linkedinRef}
                   className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
                 >
-                  <img src={outerLogos[4]?.src} alt="Linkedin" className="w-6 h-6 md:w-8 md:h-8" />
+                  <img src={outerLogos[4]?.src} alt="Linkedin" width="32" height="32" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
                 <Circle
                   ref={whatsappRef}
                   className="grayscale size-10 sm:size-12 md:size-14 border-gray-200 border-1 bg-white"
                 >
-                  <img src={outerLogos[5]?.src} alt="Whatsapp" className="w-6 h-6 md:w-8 md:h-8" />
+                  <img src={outerLogos[5]?.src} alt="Whatsapp" width="32" height="32" className="w-6 h-6 md:w-8 md:h-8" />
                 </Circle>
               </div>
             </div>

@@ -38,7 +38,8 @@ export const LinkedinPost = ({
                 src={avatar}
                 className="flex object-cover w-full h-full transition-opacity !duration-500 opacity-0 data-[loaded=true]:opacity-100"
                 alt="avatar"
-                data-loaded="true"
+                loading="lazy"
+                decoding="async"
               />
             </span>
             <div className="ml-2 flex flex-col">

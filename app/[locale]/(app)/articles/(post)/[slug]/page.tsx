@@ -58,6 +58,10 @@ export async function generateStaticParams() {
   return allParams;
 }
 
+// Enable static generation with revalidation for blog posts
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
 export async function generateMetadata({ params }: MetadataProps) {
   const { slug, locale } = await params;
   const post = getPage(locale, articleFolders, slug);

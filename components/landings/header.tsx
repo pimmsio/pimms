@@ -10,9 +10,9 @@ import { SwapRotate } from "../magicui/swap-rotate";
 export default function Header() {
   const tcommon = useTranslations("landing");
   return (
-    <header className="w-full sticky top-3 xl:top-0 z-50 bg-transparent xl:bg-white/80 xl:backdrop-blur-md xl:border-b xl:border-gray-100/50">
+    <header className="w-full sticky top-3 xl:top-0 z-50 bg-transparent xl:bg-white/90 xl:border-b xl:border-gray-100/50">
       <div className="max-w-5xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="h-16 xl:h-20 mt-3 xl:mt-0 bg-white/90 xl:bg-transparent backdrop-blur-md xl:backdrop-blur-0 border border-gray-100/60 xl:border-0 shadow-[0_10px_40px_-15px_rgba(42,74,155,0.2)] xl:shadow-none rounded-3xl xl:rounded-none flex items-center justify-between px-6 sm:px-8 relative">
+        <div className="h-16 xl:h-20 mt-3 xl:mt-0 bg-white/95 xl:bg-transparent border border-gray-100/60 xl:border-0 shadow-lg xl:shadow-none rounded-3xl xl:rounded-none flex items-center justify-between px-6 sm:px-8 relative">
           <div className="flex-shrink-0 mr-8">
             <Logo />
           </div>

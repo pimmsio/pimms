@@ -1,5 +1,4 @@
 import { cn } from "@/lib/utils";
-import { LinearGradient } from "@visx/gradient";
 import { RectClipPath } from "@visx/clip-path";
 import { Group } from "@visx/group";
 import { Area, AreaClosed } from "@visx/shape";

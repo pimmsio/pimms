@@ -1,9 +1,8 @@
 import { ParentSize } from "@visx/responsive";
 import { scaleBand, scaleLinear, scaleUtc } from "@visx/scale";
 import { PropsWithChildren, useMemo, useState } from "react";
-import { ChartContext, ChartTooltipContext } from "./chart-context";
+import { ChartContext } from "./chart-context";
 import { ChartProps, Datum, type ChartContext as ChartContextType } from "./types";
-import { useTooltip } from "./useTooltip";
 
 type TimeSeriesChartProps<T extends Datum> = PropsWithChildren<ChartProps<T>>;
 
@@ -122,21 +121,11 @@ function TimeSeriesChartInner<T extends Datum>({
     setLeftAxisMargin
   };
 
-  const tooltipContext = useTooltip({
-    seriesId: series[0].id,
-    chartContext,
-    defaultIndex: defaultTooltipIndex ?? undefined
-  });
-
-  const { containerRef } = tooltipContext;
-
   return (
     <ChartContext.Provider value={chartContext}>
-      <ChartTooltipContext.Provider value={tooltipContext}>
-        <svg width={outerWidth} height={outerHeight} ref={containerRef}>
-          {children}
-        </svg>
-      </ChartTooltipContext.Provider>
+      <svg width={outerWidth} height={outerHeight}>
+        {children}
+      </svg>
     </ChartContext.Provider>
   );
 }

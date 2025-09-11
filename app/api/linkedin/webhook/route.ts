@@ -1,14 +1,9 @@
-import {
-  buildConversionPayload,
-  hashEmail,
-  sendToLinkedIn,
-} from "@/lib/linkedin";
-import { withAxiom } from "next-axiom";
+import { buildConversionPayload, hashEmail, sendToLinkedIn } from "@/lib/linkedin";
 
 const LEAD_CONVERSION_URN = "urn:lla:llaPartnerConversion:20971594";
 const SALE_CONVERSION_URN = "urn:lla:llaPartnerConversion:20971602";
 
-export const POST = withAxiom(async (req: Request) => {
+export const POST = async (req: Request) => {
   const rawBody = await req.text();
 
   try {
@@ -30,7 +25,7 @@ export const POST = withAxiom(async (req: Request) => {
         conversionUrn: LEAD_CONVERSION_URN,
         eventId,
         hashedEmail,
-        timestamp,
+        timestamp
       });
     } else if (event === "sale.created") {
       const sale = data.sale;
@@ -45,8 +40,8 @@ export const POST = withAxiom(async (req: Request) => {
         timestamp,
         conversionValue: {
           currencyCode: sale.currency.toUpperCase(),
-          amount: sale.amount.toString(),
-        },
+          amount: sale.amount.toString()
+        }
       });
     } else {
       return new Response("Unsupported event", { status: 200 });
@@ -63,7 +58,7 @@ export const POST = withAxiom(async (req: Request) => {
     console.log("LinkedIn conversion sent", {
       event,
       email,
-      eventId,
+      eventId
     });
 
     return new Response("OK", { status: 201 });
@@ -71,4 +66,4 @@ export const POST = withAxiom(async (req: Request) => {
     console.error("Webhook parsing failed", { error: err.message });
     return new Response("Invalid payload", { status: 400 });
   }
-});
+};

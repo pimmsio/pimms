@@ -5,8 +5,16 @@ import { NextIntlClientProvider } from "next-intl";
 import { Inter } from "next/font/google";
 import RootProviders from "../app/providers";
 import LinkedInInsight from "./linkedin-insight";
+import { ResourceHints } from "./resource-hints";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({
+  subsets: ["latin"],
+  display: "swap", // Optimize font loading
+  preload: true,
+  fallback: ["system-ui", "-apple-system", "sans-serif"],
+  adjustFontFallback: true, // Reduce layout shift
+  variable: "--font-inter"
+});
 
 type Props = {
   children: React.ReactNode;
@@ -20,6 +28,7 @@ export default async function BaseLayout({ children, locale }: Props) {
     <html lang={locale}>
       <Head>
         <meta name="apple-mobile-web-app-title" content="Pimms" />
+        <ResourceHints />
         <LinkedInInsight />
       </Head>
       <body className={`${inter.className} antialiased overscroll-none scroll-smooth`}>

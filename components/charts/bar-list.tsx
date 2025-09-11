@@ -1,9 +1,13 @@
 "use client";
 
-import NumberFlow, { NumberFlowGroup } from "@number-flow/react";
-import { motion } from "@/lib/framer-motion";
+import { motion } from "framer-motion";
 import { ReactNode, useMemo } from "react";
 import { cn } from "../../lib/utils";
+
+// Simple number formatting utility
+const formatNumber = (value: number, options?: Intl.NumberFormatOptions) => {
+  return new Intl.NumberFormat("en-US", options).format(value);
+};
 
 export default function BarList({
   data,
@@ -28,13 +32,11 @@ export default function BarList({
   }));
 
   const bars = (
-    <NumberFlowGroup>
-      <div className="relative grid h-full auto-rows-min grid-cols-1">
-        {data.map((_, idx) => (
-          <LineItem key={idx} {...itemProps[idx]} />
-        ))}
-      </div>
-    </NumberFlowGroup>
+    <div className="relative grid h-full auto-rows-min grid-cols-1">
+      {data.map((_, idx) => (
+        <LineItem key={idx} {...itemProps[idx]} />
+      ))}
+    </div>
   );
 
   return bars;
@@ -82,17 +84,9 @@ export function LineItem({
           {lineItem}
         </div>
         <div className="z-10 flex items-center mx-2">
-          <NumberFlow
-            value={percentage}
-            className={cn("z-10 text-sm text-neutral-600 transition-transform duration-300")}
-            style={{
-              transform: `translateX(var(--tw-translate-x, 0)) translateZ(0)`
-            }}
-            format={{
-              notation: "compact"
-            }}
-          />
-          %
+          <span className={cn("z-10 text-sm text-neutral-600 transition-transform duration-300")}>
+            {formatNumber(percentage, { notation: "compact" })}%
+          </span>
         </div>
       </div>
     </div>

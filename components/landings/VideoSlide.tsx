@@ -30,7 +30,7 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
     }
     return () => {
       if (playerRef.current) {
-        playerRef.current.unload().catch(() => {});
+        playerRef.current.destroy();
         playerRef.current = null;
       }
     };

@@ -26,6 +26,10 @@ export async function generateMetadata({ params }: MetadataProps) {
   };
 }
 
+// Enable static generation with revalidation for blog index
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
 export default function BlogPage() {
   const locale = useLocale();
   const posts = getPages(locale, articleFolders);

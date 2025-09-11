@@ -29,7 +29,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
   const uid = useId();
   const avatars = useAvatars(10, seedNonce);
   const tribbon = useTranslations("landing.ribbon.sources");
-  const POOL_SIZE = 60;
+  const POOL_SIZE = 30;
 
   // ===== Adjustable parameters =====
   const width = 1000;
@@ -47,7 +47,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
   const BLUE_BAR_EXTRA = 90;
   const PREFILL_MS = 40000;
   const SPEED_MULTIPLIER = 3;
-  const GLOBAL_VISUAL_DELAY_MS = 1500;
+  const GLOBAL_VISUAL_DELAY_MS = 0;
 
   const EDGE_FADE = 0.08;
 
@@ -120,13 +120,13 @@ export default function HeroRibbon({ seedNonce }: Props) {
   const LABEL_FONT_SIZE = 14;
   const LABEL_FONT_WEIGHT = 600;
   const LABELS = [
-    { id: "brevo", text: tribbon("emailing"), src: "/static/symbols/integrations/brevo.jpeg" },
+    { id: "brevo", text: tribbon("emailing"), src: "/static/symbols/integrations/brevo.svg" },
     { id: "linkedin", text: tribbon("form"), src: "/static/symbols/integrations/framer.svg" },
     { id: "lemlist", text: tribbon("outreach"), src: "/static/symbols/integrations/lemlist.svg" },
     { id: "shopify", text: tribbon("shop"), src: "/static/symbols/integrations/shopify.svg" },
     { id: "chrome", text: tribbon("website"), src: "/static/symbols/integrations/wordpress.svg" },
-    { id: "systemeio", text: tribbon("funnel"), src: "/static/symbols/integrations/systemeio.jpeg" },
-    { id: "calcom", text: tribbon("form"), src: "/static/symbols/integrations/calcom.jpeg" },
+    { id: "systemeio", text: tribbon("funnel"), src: "/static/symbols/integrations/systemeio.webp" },
+    { id: "calcom", text: tribbon("form"), src: "/static/symbols/integrations/calcom.svg" },
     { id: "calendly", text: tribbon("form"), src: "/static/symbols/integrations/calendly.svg" }
   ] as const;
 

@@ -45,7 +45,7 @@ function extractIntegrationName(title: string, categories: string[]): string | n
   return null;
 }
 
-export default function BlogCard({ slug, metadata }: { slug: string; metadata: PageMetadata; priority?: boolean }) {
+export default function BlogCard({ slug, metadata, priority = false }: { slug: string; metadata: PageMetadata; priority?: boolean }) {
   const locale = useLocale();
 
   if (!metadata || !slug) {
@@ -67,6 +67,9 @@ export default function BlogCard({ slug, metadata }: { slug: string; metadata: P
           alt={title}
           width={1200}
           height={630}
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+          priority={priority}
+          loading={priority ? "eager" : "lazy"}
         />
         <div className="absolute top-4 left-4 flex gap-2">
           <div className="bg-white/95 backdrop-blur-sm text-brand-primary text-xs font-semibold px-4 py-2 rounded-full capitalize shadow-sm">

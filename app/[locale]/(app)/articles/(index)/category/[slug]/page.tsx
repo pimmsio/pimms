@@ -18,6 +18,10 @@ export async function generateStaticParams() {
   }));
 }
 
+// Enable static generation with revalidation for category pages
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
 type Props = {
   params: Promise<{ slug: string }>;
 };

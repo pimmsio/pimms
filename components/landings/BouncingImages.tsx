@@ -99,6 +99,8 @@ export default function BouncingImages({ tkey = "landing" }: BouncingImagesProps
           width={400}
           height={434}
           className="object-cover w-full h-auto"
+          loading="lazy"
+          sizes="(max-width: 640px) 192px, 224px"
         />
       </div>
       <div
@@ -115,6 +117,8 @@ export default function BouncingImages({ tkey = "landing" }: BouncingImagesProps
           width={400}
           height={434}
           className="object-cover w-full h-auto"
+          loading="lazy"
+          sizes="(max-width: 640px) 192px, 224px"
         />
       </div>
     </div>

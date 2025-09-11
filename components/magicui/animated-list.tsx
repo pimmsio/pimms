@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { useInterval } from "ahooks";
-import { AnimatePresence, motion } from "motion/react";
+import { AnimatePresence, motion } from "framer-motion";
 import React, { ComponentPropsWithoutRef, useMemo, useState } from "react";
 
 export function AnimatedListItem({ children }: { children: React.ReactNode }) {
