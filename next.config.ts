@@ -33,6 +33,11 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   // Enable compression and minification
   compress: true,
+  // Optimize performance
+  poweredByHeader: false,
+  generateEtags: false,
+
+  // Additional HTML optimization (swcMinify is default in Next.js 15)
   // Enable source maps for production builds
   productionBrowserSourceMaps: true,
   // Add headers for better SEO, security, and performance
@@ -113,15 +118,48 @@ const nextConfig: NextConfig = {
           ...config.optimization.splitChunks,
           cacheGroups: {
             ...config.optimization.splitChunks?.cacheGroups,
-            // Separate CSS into smaller chunks
+            // Separate critical CSS for faster loading
+            criticalStyles: {
+              name: "critical-styles",
+              test: /\.(css|scss|sass)$/,
+              chunks: "initial",
+              priority: 25,
+              enforce: true,
+              minSize: 0
+            },
+            // Separate non-critical CSS
             styles: {
               name: "styles",
               test: /\.(css|scss|sass)$/,
-              chunks: "all",
+              chunks: "async",
               priority: 20,
               enforce: true
             },
-            // Separate vendor chunks for better caching
+            // Separate Vimeo player into its own chunk
+            vimeo: {
+              test: /[\\/]node_modules[\\/]@vimeo\/player[\\/]/,
+              name: "vimeo-player",
+              chunks: "async",
+              priority: 25,
+              enforce: true
+            },
+            // Separate Dicebear avatar generation into its own chunk
+            dicebear: {
+              test: /[\\/]node_modules[\\/]@dicebear[\\/]/,
+              name: "dicebear-avatars",
+              chunks: "async",
+              priority: 24,
+              enforce: true
+            },
+            // Separate Cal.com embed into its own chunk
+            calcom: {
+              test: /[\\/]node_modules[\\/]@calcom[\\/]/,
+              name: "calcom-embed",
+              chunks: "async",
+              priority: 23,
+              enforce: true
+            },
+            // Separate vendor chunks for better caching (lower priority)
             vendor: {
               test: /[\\/]node_modules[\\/]/,
               name: "vendors",
@@ -173,8 +211,18 @@ const nextConfig: NextConfig = {
         reuseExistingChunk: true
       };
 
-      // Target modern browsers to reduce polyfills
+      // Target modern browsers to reduce polyfills and legacy JavaScript
       config.target = ["web", "es2022"];
+
+      // Reduce legacy JavaScript polyfills
+      config.resolve = {
+        ...config.resolve,
+        alias: {
+          ...config.resolve?.alias,
+          // Use modern builds when available
+          "core-js": false
+        }
+      };
 
       // Optimize for modern JavaScript features
       if (config.resolve) {
@@ -186,12 +234,15 @@ const nextConfig: NextConfig = {
   },
   // Keep server-only packages out of client bundle
   serverExternalPackages: ["googleapis", "googleapis-common"],
+
+  // Modern browser targeting to reduce polyfills
+  transpilePackages: [],
   // Enable experimental optimizations
   experimental: {
     // Use modern JavaScript features
     esmExternals: true,
-    // Disable CSS optimization temporarily due to critters dependency issue
-    // optimizeCss: true,
+    // Re-enable CSS optimization with better configuration
+    optimizeCss: true,
     // Enable CSS chunking for better loading
     cssChunking: true,
     // Enable static optimization

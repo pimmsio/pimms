@@ -5,18 +5,19 @@
 export function ResourceHints() {
   return (
     <>
-      {/* DNS prefetch for external domains */}
-      <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//fonts.gstatic.com" />
-      <link rel="dns-prefetch" href="//api.pimms.io" />
-      <link rel="dns-prefetch" href="//assets.pimms.io" />
+      {/* Preconnect to critical font origins - highest priority */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
+
+      {/* Preconnect to critical API origins */}
+      <link rel="preconnect" href="https://assets.pimms.io" />
+
+      {/* DNS prefetch for analytics and tracking domains */}
       <link rel="dns-prefetch" href="//eu.i.posthog.com" />
       <link rel="dns-prefetch" href="//eu-assets.i.posthog.com" />
       <link rel="dns-prefetch" href="//vitals.vercel-insights.com" />
-
-      {/* Preconnect to critical origins */}
-      <link rel="preconnect" href="https://api.pimms.io" />
-      <link rel="preconnect" href="https://assets.pimms.io" />
+      <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="//px.ads.linkedin.com" />
     </>
   );
 }

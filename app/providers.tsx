@@ -25,13 +25,23 @@ const PostHogPageView = dynamic(() => import("@/components/posthog-pageview"), {
   ssr: false
 });
 
-// Initialize PostHog with lazy loading
+// Initialize PostHog with lazy loading and optimized settings
 if (typeof window !== "undefined" && !!process.env.NEXT_PUBLIC_POSTHOG_KEY) {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
     api_host: "https://eu.i.posthog.com",
     person_profiles: "identified_only",
     capture_pageview: false,
-    capture_pageleave: true
+    capture_pageleave: true,
+    // Disable heavy features to reduce bundle size
+    disable_surveys: true,
+    disable_session_recording: true,
+    disable_web_experiments: true,
+    loaded: (posthog) => {
+      // Only load essential features
+      if (process.env.NODE_ENV === "development") {
+        posthog.debug();
+      }
+    }
   });
 }
 

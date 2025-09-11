@@ -34,7 +34,6 @@
     "next": "15.5.2",
     "next-intl": "^4.3.7",
     "next-mdx-remote": "^5.0.0",
-    "next-mdx-remote-client": "^2.1.3",
     "pimms": "^0.4.0",
     "posthog-js": "^1.262.0",
     "react": "^19.1.1",

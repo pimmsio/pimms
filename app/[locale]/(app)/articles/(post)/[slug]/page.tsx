@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { formatDate, getPage, getPages } from "@/lib/mdx";
-import { MDXRemote } from "next-mdx-remote-client/rsc";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { twMerge } from "tailwind-merge";
 import { use } from "react";
 import React from "react";
