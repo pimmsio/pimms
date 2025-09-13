@@ -9,6 +9,10 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        jakarta: ["var(--font-jakarta)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"]
+      },
       borderWidth: {
         "3": "3px"
       },

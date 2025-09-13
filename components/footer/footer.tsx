@@ -30,7 +30,7 @@ export const Footer = ({
         }}
       >
         <div className="scale-[11] sm:scale-[9] lg:scale-[4]">
-          <Image src="/static/logo.svg" alt="pim.ms logo" width={400} height={72} className="w-auto h-auto" />
+          <img src="/static/logo.svg" alt="pim.ms logo" width={400} height={72} className="w-auto h-auto" />
         </div>
       </div>
 

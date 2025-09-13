@@ -3,8 +3,6 @@ import { H1, H2, H3, H4, Primary, Summary, Text, InlineLogo, TitleIcon } from "@
 import { Highlight } from "@/components/mdx/Highlight";
 import { TextHighlight } from "@/components/mdx/TextHighlight";
 import { Avatars } from "@/components/landings/avatars";
-import AvatarFunnel from "@/components/landings/AvatarFunnel";
-import HeroRibbon from "@/components/landings/HeroRibbon";
 import { Hero } from "@/components/landings/hero";
 import { Centered, Fast, CtaBottomText, CtaButton } from "@/components/mdx/content";
 import ImageSlide from "@/components/landings/Image-slide";
@@ -26,8 +24,6 @@ import {
 } from "@/components/mdx/PricingComponents";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
-  const seedNonce = crypto.randomUUID();
-
   return {
     ...components,
     // Map markdown elements to custom components
@@ -57,8 +53,6 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     FaLock,
     AnimatedCentered,
     Slide,
-    HeroRibbon: (props: any) => <HeroRibbon seedNonce={seedNonce} {...props} />,
-    AvatarFunnel: (props: any) => <AvatarFunnel seedNonce={seedNonce} {...props} />,
     // New pricing components
     PricingCard,
     PricingTitle,

@@ -2,7 +2,6 @@ import Logo from "@/components/logo";
 import CtaDemo from "@/components/cta/CtaDemo";
 import NavLink from "./NavLink";
 import { useTranslations } from "next-intl";
-import { Button } from "../ui/button";
 import Link from "next/link";
 import { APP_URL } from "../../app/constants";
 import { SwapRotate } from "../magicui/swap-rotate";
@@ -23,13 +22,11 @@ export default function Header() {
               <NavLink id="onboarding" text={tcommon("nav.onboarding")} />
             </div>
             <div className="w-fit flex items-center gap-8">
-              <Link href={`${APP_URL}/login`} className="hidden sm:block">
-                <Button
-                  variant="link"
-                  className="text-sm font-medium text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full px-4 py-2"
-                >
-                  {tcommon("nav.dashboard")}
-                </Button>
+              <Link
+                href={`${APP_URL}/login`}
+                className="hidden sm:inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap font-medium leading-tight ring-offset-background transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 text-sm text-gray-600 hover:text-gray-900 bg-gray-100 hover:bg-gray-200 rounded-full px-4 py-3"
+              >
+                {tcommon("nav.dashboard")}
               </Link>
               <CtaDemo variant="secondary" size="default">
                 <SwapRotate>{tcommon("cta.demo")}</SwapRotate>

@@ -103,6 +103,7 @@ export default function ConversionFlipCard({
         className
       )}
       data-nosnippet
+      data-noindex="true"
       style={{ contain: "layout paint" } as React.CSSProperties}
     >
       <div className="relative h-1/2">

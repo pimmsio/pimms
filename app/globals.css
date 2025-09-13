@@ -3,6 +3,15 @@
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 
+/* Optimized background patterns - moved from inline styles */
+.pimms-image-backdrop {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(57, 112, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(57, 112, 255, 0.05) 0%, transparent 50%);
+  background-position: 0% 0%;
+  background-size: 100% 100%;
+}
+
 /* Base styles */
 html {
   scroll-behavior: smooth;
@@ -24,6 +33,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background-secondary);
   color: var(--color-text-primary);
+}
+
+/* Font utility fallbacks mapped to next/font CSS variables */
+.font-jakarta {
+  font-family: var(--font-jakarta), sans-serif;
+}
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
 }
 
 /* Scrollbar hide utility */

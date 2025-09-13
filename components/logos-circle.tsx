@@ -12,7 +12,6 @@ import Link from "next/link";
 import { useLocale } from "next-intl";
 import { getCanonicalLink } from "@/lib/utils";
 import { SwapRotate } from "./magicui/swap-rotate";
-import Image from "next/image";
 
 // Outer logos (mix of top deeplink brands and key integrations)
 const outerBaseUrl = "/static/symbols/deeplinks";
@@ -84,7 +83,7 @@ const LogosCircle: React.FC = () => {
   const innerPositions = generateRingPositions(innerCount, innerRadius);
 
   return (
-    <Section id="logos" className="overflow-hidden">
+    <Section id="logos" className="overflow-hidden" data-nosnippet>
       <div className="relative w-full h-[800px] flex items-center justify-center">
         <div
           className="absolute z-10 border border-gray-200 rounded-full touch-none pointer-events-none"
@@ -94,6 +93,7 @@ const LogosCircle: React.FC = () => {
             width: `${outerRadius * 2}px`,
             height: `${outerRadius * 2}px`
           }}
+          data-noindex="true"
         />
         <div
           className="absolute z-10 border border-gray-200 rounded-full touch-none pointer-events-none"
@@ -103,6 +103,7 @@ const LogosCircle: React.FC = () => {
             width: `${innerRadius * 2}px`,
             height: `${innerRadius * 2}px`
           }}
+          data-noindex="true"
         />
 
         <motion.div
@@ -118,17 +119,13 @@ const LogosCircle: React.FC = () => {
                 transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
                 className="bg-white p-2 rounded-xl border border-gray-200 flex-shrink-0"
               >
-                <Image
+                <img
                   src={logo?.src || "/static/logo.svg"}
                   alt={logo?.alt || "Logo"}
                   width={64}
                   height={64}
                   className="grayscale hover:grayscale-0 w-16 h-16 min-w-16 max-w-16 object-contain p-2 transition-all duration-200"
                   loading="lazy"
-                  priority={false}
-                  sizes="64px"
-                  placeholder="blur"
-                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjQiIGhlaWdodD0iNjQiIHZpZXdCb3g9IjAgMCA2NCA2NCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjY0IiBoZWlnaHQ9IjY0IiBmaWxsPSIjZjNmNGY2Ii8+Cjwvc3ZnPgo="
                 />
               </motion.div>
             );
@@ -141,6 +138,7 @@ const LogosCircle: React.FC = () => {
                   left: `calc(50% + ${pos.x}px - ${outerSize / 2}px)`,
                   top: `calc(50% + ${pos.y}px - ${outerSize / 2}px)`
                 }}
+                suppressHydrationWarning
               >
                 {logo?.guide ? (
                   <Link
@@ -171,17 +169,13 @@ const LogosCircle: React.FC = () => {
                 transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
                 className="bg-white p-2 rounded-xl border border-gray-200 flex-shrink-0"
               >
-                <Image
+                <img
                   src={logo?.src || "/static/logo.svg"}
                   alt={logo?.alt || "Logo"}
                   width={48}
                   height={48}
                   className="grayscale hover:grayscale-0 w-12 h-12 min-w-12 max-w-12 object-contain p-1.5 transition-all duration-200"
                   loading="lazy"
-                  priority={false}
-                  sizes="48px"
-                  placeholder="blur"
-                  blurDataURL="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiBmaWxsPSIjZjNmNGY2Ii8+Cjwvc3ZnPgo="
                 />
               </motion.div>
             );
@@ -194,6 +188,7 @@ const LogosCircle: React.FC = () => {
                   left: `calc(50% + ${pos.x}px - ${innerSize / 2}px)`,
                   top: `calc(50% + ${pos.y}px - ${innerSize / 2}px)`
                 }}
+                suppressHydrationWarning
               >
                 {logo?.guide ? (
                   <Link

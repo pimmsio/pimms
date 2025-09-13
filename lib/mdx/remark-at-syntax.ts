@@ -2,13 +2,6 @@ import { visit } from "unist-util-visit";
 
 export function remarkAtSyntax() {
   return (tree: any) => {
-    console.log("=== remarkAtSyntax plugin started ===");
-
-    // Log all node types to understand the structure
-    visit(tree, (node: any) => {
-      console.log(`Node type: ${node.type}`, node.value || node.children?.length || "");
-    });
-
     // Helper function to transform @Component syntax in text nodes
     function transformAtSyntax(text: string) {
       // Parse @Component[attr="value"] syntax
@@ -50,12 +43,10 @@ export function remarkAtSyntax() {
 
     // Transform @ComponentName lines in paragraphs
     visit(tree, "paragraph", (node: any, index, parent) => {
-      console.log("Found paragraph node:", node);
       if (!parent || index === undefined) return;
 
       const firstChild = node.children?.[0];
       if (firstChild?.type === "text" && firstChild.value.startsWith("@")) {
-        console.log("Found @ syntax:", firstChild.value);
         const jsxNode = transformAtSyntax(firstChild.value);
         if (jsxNode) {
           // Add remaining children from the paragraph
@@ -122,11 +113,9 @@ export function remarkAtSyntax() {
 
     // Transform ** to <Primary> in headings
     visit(tree, "heading", (node: any) => {
-      console.log("Found heading:", node);
       for (let i = 0; i < node.children.length; i++) {
         const child = node.children[i];
         if (child.type === "strong") {
-          console.log("Transforming ** to Primary");
           // Replace strong with Primary JSX element
           node.children[i] = {
             type: "mdxJsxTextElement",

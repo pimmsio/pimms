@@ -86,7 +86,7 @@ export const IntegrationsGrid: React.FC = () => {
   );
 
   return (
-    <div ref={containerRef} className="relative w-full overflow-hidden rounded-3xl md:rounded-none" data-nosnippet>
+    <div ref={containerRef} className="relative w-full overflow-hidden rounded-3xl md:rounded-none" data-nosnippet data-noindex="true">
       <div className="relative" style={{ height: GRID_HEIGHT }}>
         <div
           className="absolute left-1/2 top-1/2 origin-center"
@@ -124,14 +124,25 @@ export const IntegrationsGrid: React.FC = () => {
                 >
                   {logo && (
                     <div className="relative w-full h-full">
-                      <Image
-                        src={logo.src}
-                        alt={logo.alt}
-                        fill
-                        sizes={`${CARD}px`}
-                        className={cover ? "object-cover" : "object-contain p-2"}
-                        loading="lazy"
-                      />
+                      {logo.src.endsWith(".svg") ? (
+                        <img
+                          src={logo.src}
+                          alt={logo.alt}
+                          width={CARD}
+                          height={CARD}
+                          className={`w-full h-full ${cover ? "object-cover" : "object-contain p-2"}`}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          fill
+                          sizes={`${CARD}px`}
+                          className={cover ? "object-cover" : "object-contain p-2"}
+                          loading="lazy"
+                        />
+                      )}
                     </div>
                   )}
                 </motion.div>

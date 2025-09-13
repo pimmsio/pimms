@@ -33,9 +33,14 @@ const nextConfig: NextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   // Enable compression and minification
   compress: true,
-  // Optimize performance
+  // Optimize performance and HTML size
   poweredByHeader: false,
   generateEtags: false,
+  // Optimize HTML output
+  trailingSlash: false,
+
+  // Optimize for better text-to-HTML ratio
+  reactStrictMode: true,
 
   // Additional HTML optimization (swcMinify is default in Next.js 15)
   // Enable source maps for production builds
@@ -241,12 +246,22 @@ const nextConfig: NextConfig = {
   experimental: {
     // Use modern JavaScript features
     esmExternals: true,
-    // Re-enable CSS optimization with better configuration
-    optimizeCss: true,
+    // Re-enable CSS optimization with critters dependency installed
+    optimizeCss: {
+      // Enable critical CSS inlining and unused CSS removal
+      critters: true,
+      // Remove unused CSS to reduce HTML size
+      removeUnusedCss: true,
+      // Inline critical CSS for faster rendering
+      inlineCriticalCss: true,
+      // Preload non-critical CSS
+      preloadCss: true
+    },
     // Enable CSS chunking for better loading
     cssChunking: true,
     // Enable static optimization
     optimisticClientCache: true,
+    // Optimize package imports to reduce bundle size
     optimizePackageImports: [
       "@radix-ui/react-accordion",
       "@radix-ui/react-slot",
@@ -257,7 +272,9 @@ const nextConfig: NextConfig = {
       "clsx",
       "class-variance-authority",
       "tailwind-merge"
-    ]
+    ],
+    // Minimize client-side JavaScript
+    optimizeServerReact: true
   },
   // Turbopack configuration (moved from experimental.turbo)
   turbopack: {
@@ -269,8 +286,12 @@ const nextConfig: NextConfig = {
     }
   },
   images: {
+    deviceSizes: [640, 768, 1024, 1280], // Reduced from 15+ to 4 sizes
+    imageSizes: [16, 32, 48, 64], // Reduced from 10+ to 4 sizes for small images
+    minimumCacheTTL: 31536000, // 1 year cache
+    // Disable optimization for very small images to avoid srcSet bloat
+    unoptimized: false,
     formats: ["image/webp"],
-    minimumCacheTTL: 86400,
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",

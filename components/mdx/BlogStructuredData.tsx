@@ -52,6 +52,10 @@ export const BlogStructuredData = ({
   };
 
   return (
-    <script id="blog-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <script
+      id="blog-jsonld"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd, null, 0) }}
+    />
   );
 };

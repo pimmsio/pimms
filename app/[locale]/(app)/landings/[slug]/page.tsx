@@ -153,7 +153,9 @@ export const dynamic = "force-static";
 
 export default async function LandingPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
-  const seedNonce = crypto.randomUUID();
+  // Use page-specific seed that changes every hour for fresh animations
+  const currentHour = Math.floor(Date.now() / (1000 * 60 * 60)); // Changes every hour
+  const seedNonce = `${slug}-${locale}-h${currentHour}`;
 
   try {
     const page = getPage(locale, landingFolders, slug);
@@ -201,11 +203,13 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       CtaButton: ({
         children,
         variant = "default",
-        href
+        href,
+        className
       }: {
         children?: React.ReactNode;
         variant?: "default" | "secondary" | "outline" | "inverse";
         href?: string;
+        className?: string;
       }) => {
         const t = useTranslations("landing");
         // If children is provided, use it directly
@@ -215,7 +219,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
               type="sales"
               size="xl"
               variant={variant}
-              className="my-2 gap-1 w-fit mx-auto sm:min-w-[380px]"
+              className={cn("my-2 gap-1 w-full sm:w-fit mx-auto sm:min-w-[380px]", className)}
               value={children}
               href={href}
             />
@@ -373,7 +377,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
           }}
         />
 
-        <FaqStructuredData path={path} faqs={page.faqs} />
+        <FaqStructuredData path={path} faqs={page.faqs} locale={locale} />
       </>
     );
   } catch {

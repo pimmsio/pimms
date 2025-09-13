@@ -26,7 +26,7 @@ export function CallToAction() {
           {t("title")}
         </h3>
 
-        <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto text-white/95 leading-relaxed px-4 sm:px-0 drop-shadow-sm">
+        <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto text-white/95 leading-relaxed px-4 sm:px-0 drop-shadow-sm text-balance">
           {t("subtitle")}
         </p>
 

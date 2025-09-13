@@ -496,7 +496,7 @@ export default function BlogPost({ params }: Props) {
         path={getCanonicalLink(locale, `/articles/${slug}`)}
         author={author}
       />
-      <FaqStructuredData path={getCanonicalLink(locale, `/articles/${slug}`)} faqs={post.faqs} />
+      <FaqStructuredData path={getCanonicalLink(locale, `/articles/${slug}`)} faqs={post.faqs} locale={locale} />
     </>
   );
 }
