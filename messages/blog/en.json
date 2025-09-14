@@ -66,6 +66,11 @@
         "label": "Legal",
         "title": "Legal",
         "description": "Legal documents for PIMMS."
+      },
+      "tool-comparison": {
+        "label": "Tool Comparison",
+        "title": "Tool Comparisons",
+        "description": "Detailed comparisons of marketing tools to help you choose the right one."
       }
     }
   }

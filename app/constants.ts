@@ -47,7 +47,8 @@ export const BLOG_CATEGORIES = [
   "guides",
   "tutorials",
   "digital-marketing",
-  "legal"
+  "legal",
+  "tool-comparison"
 ];
 
 export const AUTHORS: {

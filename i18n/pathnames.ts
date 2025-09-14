@@ -2,37 +2,37 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-14T15:51:10.804Z"
+    "lastmod": "2025-09-14T16:38:27.301Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-14T15:51:10.805Z"
+    "lastmod": "2025-09-14T16:38:27.302Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-09-14T15:51:10.805Z"
+    "lastmod": "2025-09-14T16:38:27.302Z"
   },
   "/landings/systemeio": {
     "en": "/solutions/systemeio-funnel-tracking-sales",
     "fr": "/solutions/tracking-systemeio-funnel-ventes",
-    "lastmod": "2025-09-14T15:51:10.805Z"
+    "lastmod": "2025-09-14T16:38:27.302Z"
   },
   "/landings/linkedin-tracker": {
     "en": "/solutions/linkedin-analytics-profile-visitor-tracking",
     "fr": "/solutions/analytics-profil-linkedin-visiteurs",
-    "lastmod": "2025-09-14T15:51:10.805Z"
+    "lastmod": "2025-09-14T16:38:27.302Z"
   },
   "/landings/landing-page-tracking": {
     "en": "/solutions/conversion-tracking-landing-page-analytics",
     "fr": "/solutions/suivi-conversions-analytics-landing-page",
-    "lastmod": "2025-09-14T15:51:10.805Z"
+    "lastmod": "2025-09-14T16:38:27.302Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-09-14T15:51:10.805Z"
+    "lastmod": "2025-09-14T16:38:27.302Z"
   },
   "/articles": {
     "en": "/articles",
@@ -67,6 +67,11 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/tutorials": {
     "en": "/tutorials",
     "fr": "/tutoriels",
+    "lastmod": "2025-09-14T00:00:00.000Z"
+  },
+  "/articles/category/tool-comparison": {
+    "en": "/tools",
+    "fr": "/outils",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
   "/articles/5-dynamic-link-personalization-tips-for-higher-conversions": {

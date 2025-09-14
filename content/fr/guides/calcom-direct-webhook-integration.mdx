@@ -1,0 +1,225 @@
+---
+title: Intégration Webhook Directe Cal.com avec Pimms 2025
+summary: Configure des webhooks Cal.com directs pour suivre les réservations sans Zapier. Obtiens une attribution rendez-vous en temps réel montrant quelles campagnes génèrent tes meilleurs rendez-vous sans dépendances tierces.
+publishedAt: 2025-09-13
+updatedAt: 2025-09-14
+slug: integration-webhook-directe-calcom-pimms
+image: https://assets.pimms.io/calcom-direct-webhook-guide.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - start-with-cal-com-and-zapier
+  - how-to-track-calendly
+  - no-code-guide-for-website
+---
+
+**L'intégration webhook directe Cal.com** élimine le besoin de Zapier et te donne un suivi de réservation instantané en temps réel. Ce guide te montre comment configurer des **webhooks Cal.com natifs** avec Pimms en 15 minutes pour une **attribution rendez-vous** complète sans aucune dépendance tierce.
+
+Tu obtiendras des **notifications de réservation instantanées** et un **suivi de conversion en temps réel** montrant exactement quelles campagnes marketing, publicités ou posts réseaux sociaux génèrent vraiment des réservations de rendez-vous.
+
+**Ce que tu vas accomplir :** Configuration webhook Cal.com directe, suivi réservation temps réel, et attribution rendez-vous complète pour chaque rendez-vous.
+
+## 1. Ajouter le champ pimms_id à ton formulaire Cal.com
+
+1. Connecte-toi à ton **dashboard Cal.com**
+2. Ouvre le **type d'événement** que tu veux suivre et clique sur **Edit**
+3. Va dans **Advanced → Booking Questions**
+
+![Cal.com edit form](https://assets.pimms.io/cal-edit-form.webp)
+
+4. Clique sur **Add a question** et configure :
+- **Type** : Short text
+- **Identifier** : `pimms_id`
+- **Label** : `pimms_id`
+- **Required** : No
+- **Active** : "Disable input if URL identifier is prefilled"
+- **Désactive** : "Show on booking page"
+
+![Cal.com form setup](https://assets.pimms.io/cal-fill-the-question-for-the-pimms_id.webp)
+
+5. **Enregistre** le formulaire
+
+## 2. Configurer le webhook dans Cal.com
+
+1. Dans ton dashboard Cal.com, va dans **Settings → Developer → Webhooks**
+2. Clique sur **New Webhook**
+3. Configure le webhook :
+
+**URL du Webhook** :
+```
+https://app.pimms.io/api/calcom/webhook
+```
+
+**Événements à surveiller** :
+- ✅ `BOOKING_CREATED`
+- ✅ `BOOKING_CANCELLED` (optionnel)
+- ✅ `BOOKING_RESCHEDULED` (optionnel)
+
+**Template** : Sélectionne **Default**
+
+![Cal.com webhook setup](https://assets.pimms.io/calcom-webhook-setup.webp)
+
+4. Clique sur **Save** pour créer le webhook
+
+## 3. Créer ton lien de tracking Pimms
+
+1. Va sur ton [dashboard Pimms](https://app.pimms.io)
+2. Crée un lien court pointant vers ton **URL de réservation Cal.com**
+3. Active le **Suivi de conversion**
+
+**Exemple** :
+```
+https://pim.ms/ma-page-reservation
+```
+
+Utilise ce lien dans tes publicités, emails, prospection LinkedIn, et posts réseaux sociaux.
+
+![Pimms tracking link](https://assets.pimms.io/pimms-tracking-link.webp?v=2)
+
+## 4. Tester ta configuration
+
+1. Ouvre ton lien Pimms dans un **onglet incognito**
+2. Réserve un rendez-vous test avec un email test
+3. Vérifie ton [dashboard Pimms](https://app.pimms.io)
+
+Tu devrais voir une nouvelle **conversion** suivie automatiquement en quelques secondes.
+
+![Test webhook réussi](https://assets.pimms.io/calcom-direct-webhook-test.webp)
+
+## 5. Configuration avancée pour calendriers intégrés
+
+Si tu utilises Cal.com intégré sur ton site web, suis ces étapes supplémentaires :
+
+### Pour les intégrations popup
+
+Ajoute le script Pimms à ton site web :
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+Puis utilise l'attribut `data-cal-link` avec le paramètre pimms_id :
+```html
+<button data-cal-link="tonnom/meeting?pimms_id=1">Réserver maintenant</button>
+```
+
+### Pour les intégrations inline
+
+Ajoute les deux scripts Pimms à ton site web :
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
+```
+
+Puis utilise le pimms_id dynamique dans ta configuration calendrier :
+```js
+Cal.ns["30min"]("inline", {
+  elementOrSelector: "#cal-booking-place",
+  calLink: `alexandre/30min?pimms_id=${window.pimms_id}`
+});
+```
+
+## 6. Structure du payload webhook
+
+Pour référence, voici ce que Cal.com envoie au webhook :
+
+```json
+{
+  "triggerEvent": "BOOKING_CREATED",
+  "createdAt": "2025-09-13T10:30:00.000Z",
+  "payload": {
+    "booking": {
+      "id": 12345,
+      "uid": "abc123def456",
+      "title": "Rendez-vous 30 min",
+      "startTime": "2025-09-13T15:00:00.000Z",
+      "endTime": "2025-09-13T15:30:00.000Z",
+      "status": "ACCEPTED",
+      "responses": {
+        "pimms_id": "click_abc123xyz789"
+      },
+      "eventType": {
+        "title": "Rendez-vous 30 min",
+        "slug": "30min"
+      }
+    },
+    "attendees": [
+      {
+        "email": "client@exemple.com",
+        "name": "Jean Dupont",
+        "timeZone": "Europe/Paris"
+      }
+    ]
+  }
+}
+```
+
+## 7. Dépannage
+
+### Le webhook ne reçoit pas de données
+- Vérifie que l'URL du webhook est exactement : `https://app.pimms.io/api/calcom/webhook`
+- Vérifie que l'événement `BOOKING_CREATED` est sélectionné
+- Assure-toi que le webhook est **Actif** dans les paramètres Cal.com
+
+### Aucune conversion n'apparaît dans Pimms
+- Confirme que le champ `pimms_id` est correctement ajouté à ton formulaire Cal.com
+- Assure-toi que les visiteurs utilisent ton **lien Pimms** pour accéder à la page de réservation
+- Teste en **mode incognito** avec une adresse email fraîche
+
+### Plusieurs réservations du même email
+- Seule la première réservation de chaque email est comptée comme conversion
+- Cela évite le suivi de conversion en double
+
+## 8. Avantages de l'intégration webhook directe
+
+**Comparé à l'intégration Zapier :**
+
+| Fonctionnalité | Webhook Direct | Zapier |
+|----------------|----------------|---------|
+| **Vitesse** | Instantané (< 1 seconde) | Délai 1-15 minutes |
+| **Fiabilité** | Connexion directe | Dépendance tierce |
+| **Coût** | Gratuit | Abonnement Zapier requis |
+| **Complexité setup** | Moyenne | Facile |
+| **Maintenance** | Aucune | Gestion compte Zapier |
+
+## FAQs
+
+::: faq
+
+### Ai-je besoin d'un plan Cal.com payant pour les webhooks ?
+
+Oui, les webhooks sont disponibles sur les plans payants de Cal.com (Pro et plus). Le plan gratuit n'inclut pas la fonctionnalité webhook.
+
+:::
+
+::: faq
+
+### Puis-je suivre plusieurs types d'événements Cal.com ?
+
+Oui ! Le webhook suivra automatiquement tous les types d'événements qui ont le champ `pimms_id` configuré. Tu n'as pas besoin de webhooks séparés pour chaque type d'événement.
+
+:::
+
+::: faq
+
+### Que se passe-t-il si le webhook échoue ?
+
+Cal.com retentera automatiquement les livraisons de webhook échouées. S'il y a des problèmes persistants, vérifie tes logs webhook dans le dashboard Cal.com.
+
+:::
+
+::: faq
+
+### Puis-je utiliser ceci avec Cal.com auto-hébergé ?
+
+Oui ! Cette intégration fonctionne avec Cal.com cloud et les instances auto-hébergées. Assure-toi juste que ton instance auto-hébergée peut atteindre l'endpoint webhook Pimms.
+
+:::
+
+## Tu es prêt 🎉
+
+Chaque réservation Cal.com sera maintenant suivie instantanément avec des données d'attribution complètes. Pas de délais, pas de dépendances tierces, juste un suivi direct en temps réel.
+
+👉 [Crée ton premier lien Pimms](https://app.pimms.io)
+
+<CallToAction />

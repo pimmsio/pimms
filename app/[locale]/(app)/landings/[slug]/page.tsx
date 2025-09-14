@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { getPage } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
@@ -153,6 +153,10 @@ export const dynamic = "force-static";
 
 export default async function LandingPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
+
+  // Set locale for server components - CRITICAL for static generation with next-intl
+  setRequestLocale(locale);
+
   // Use page-specific seed that changes every hour for fresh animations
   const currentHour = Math.floor(Date.now() / (1000 * 60 * 60)); // Changes every hour
   const seedNonce = `${slug}-${locale}-h${currentHour}`;

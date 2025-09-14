@@ -54,5 +54,9 @@ export const basePathnames = {
   "/articles/category/tutorials": {
     en: "/tutorials",
     fr: "/tutoriels"
+  },
+  "/articles/category/tool-comparison": {
+    en: "/tools",
+    fr: "/outils"
   }
 };

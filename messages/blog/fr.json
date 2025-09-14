@@ -60,6 +60,10 @@
       "legal": {
         "title": "Mentions légales",
         "description": "Mentions légales pour PIMMS."
+      },
+      "tool-comparison": {
+        "title": "Comparaisons d'outils",
+        "description": "Comparaisons détaillées d'outils marketing pour t'aider à choisir."
       }
     }
   }

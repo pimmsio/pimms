@@ -60,8 +60,13 @@
         "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
       },
       "legal": {
-        "title": "PIMMS | Legal documents",
+        "title": "PIMMS | Legal documents",
         "description": "Legal documents for PIMMS such as our terms of service and privacy policy.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "tool-comparison": {
+        "title": "PIMMS | Tool Comparisons and Reviews",
+        "description": "Detailed comparisons of marketing tools to help you choose the right solution for your business needs.",
         "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
       }
     },

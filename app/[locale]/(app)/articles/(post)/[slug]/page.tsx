@@ -99,7 +99,7 @@ export async function generateStaticParams() {
 
 // Enable static generation with revalidation for blog posts
 export const revalidate = 3600; // Revalidate every hour
-// Removed force-static to allow dynamic locale detection
+export const dynamic = "force-static";
 
 export async function generateMetadata({ params }: MetadataProps) {
   const { slug, locale } = await params;

@@ -63,6 +63,11 @@
         "title": "PIMMS | Documents légaux",
         "description": "Documents légaux pour PIMMS, tels que notre politique de confidentialité et nos conditions d'utilisation.",
         "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
+      },
+      "tool-comparison": {
+        "title": "PIMMS | Comparaisons d'outils et avis",
+        "description": "Comparaisons détaillées d'outils marketing pour t'aider à choisir la bonne solution pour tes besoins business.",
+        "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
       }
     },
     "authors": {

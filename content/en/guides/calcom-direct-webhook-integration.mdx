@@ -1,0 +1,225 @@
+---
+title: Direct Cal.com Webhook Integration with Pimms 2025
+summary: Set up direct Cal.com webhooks to track bookings without Zapier. Get real-time meeting attribution showing which campaigns generate your best appointments with zero third-party dependencies.
+publishedAt: 2025-09-13
+updatedAt: 2025-09-14
+slug: calcom-direct-webhook-integration-pimms
+image: https://assets.pimms.io/calcom-direct-webhook-guide.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - start-with-cal-com-and-zapier
+  - how-to-track-calendly
+  - no-code-guide-for-website
+---
+
+**Direct Cal.com webhook integration** eliminates the need for Zapier and gives you instant, real-time booking tracking. This guide shows you how to set up **native Cal.com webhooks** with Pimms in 15 minutes for complete **meeting attribution** without any third-party dependencies.
+
+You'll get **instant booking notifications** and **real-time conversion tracking** showing exactly which marketing campaigns, ads, or YouTube posts drive actual appointment bookings.
+
+**What you'll accomplish:** Direct Cal.com webhook setup, real-time booking tracking, and complete meeting attribution for every appointment.
+
+## 1. Add the pimms_id field to your Cal.com form
+
+1. Log in to your **Cal.com dashboard**
+2. Open the **event type** you want to track and click **Edit**
+3. Go to **Advanced → Booking Questions**
+
+![Cal.com edit form](https://assets.pimms.io/cal-edit-form.webp)
+
+4. Click **Add a question** and configure:
+- **Type**: Short text
+- **Identifier**: `pimms_id`
+- **Label**: `pimms_id`
+- **Required**: No
+- **Enable**: "Disable input if URL identifier is prefilled"
+- **Disable**: "Show on booking page"
+
+![Cal.com form setup](https://assets.pimms.io/cal-fill-the-question-for-the-pimms_id.webp)
+
+5. **Save** the form
+
+## 2. Set up the webhook in Cal.com
+
+1. In your Cal.com dashboard, go to **Settings → Developer → Webhooks**
+2. Click **New Webhook**
+3. Configure the webhook:
+
+**Webhook URL**:
+```
+https://app.pimms.io/api/calcom/webhook
+```
+
+**Events to subscribe to**:
+- ✅ `BOOKING_CREATED`
+- ✅ `BOOKING_CANCELLED` (optional)
+- ✅ `BOOKING_RESCHEDULED` (optional)
+
+**Template**: Select **Default**
+
+![Cal.com webhook setup](https://assets.pimms.io/calcom-webhook-setup.webp)
+
+4. Click **Save** to create the webhook
+
+## 3. Create your Pimms tracking link
+
+1. Go to your [Pimms dashboard](https://app.pimms.io)
+2. Create a short link pointing to your **Cal.com booking URL**
+3. Enable **Conversion tracking**
+
+**Example**:
+```
+https://pim.ms/my-booking-page
+```
+
+Use this link in your ads, emails, LinkedIn outreach, and social posts.
+
+![Pimms tracking link](https://assets.pimms.io/pimms-tracking-link.webp?v=2)
+
+## 4. Test your setup
+
+1. Open your Pimms link in an **incognito tab**
+2. Book a test meeting with a test email
+3. Check your [Pimms dashboard](https://app.pimms.io)
+
+You should see a new **conversion** tracked automatically within seconds.
+
+![Successful webhook test](https://assets.pimms.io/calcom-direct-webhook-test.webp)
+
+## 5. Advanced setup for embedded calendars
+
+If you're using Cal.com embedded on your website, follow these additional steps:
+
+### For popup embeds
+
+Add the Pimms script to your website:
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+Then use the `data-cal-link` attribute with the pimms_id parameter:
+```html
+<button data-cal-link="yourname/meeting?pimms_id=1">Book now</button>
+```
+
+### For inline embeds
+
+Add both Pimms scripts to your website:
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
+```
+
+Then use the dynamic pimms_id in your calendar configuration:
+```js
+Cal.ns["30min"]("inline", {
+  elementOrSelector: "#cal-booking-place",
+  calLink: `alexandre/30min?pimms_id=${window.pimms_id}`
+});
+```
+
+## 6. Webhook payload structure
+
+For reference, here's what Cal.com sends to the webhook:
+
+```json
+{
+  "triggerEvent": "BOOKING_CREATED",
+  "createdAt": "2025-09-13T10:30:00.000Z",
+  "payload": {
+    "booking": {
+      "id": 12345,
+      "uid": "abc123def456",
+      "title": "30 min meeting",
+      "startTime": "2025-09-13T15:00:00.000Z",
+      "endTime": "2025-09-13T15:30:00.000Z",
+      "status": "ACCEPTED",
+      "responses": {
+        "pimms_id": "click_abc123xyz789"
+      },
+      "eventType": {
+        "title": "30 min meeting",
+        "slug": "30min"
+      }
+    },
+    "attendees": [
+      {
+        "email": "customer@example.com",
+        "name": "John Doe",
+        "timeZone": "Europe/Paris"
+      }
+    ]
+  }
+}
+```
+
+## 7. Troubleshooting
+
+### Webhook not receiving data
+- Verify the webhook URL is exactly: `https://app.pimms.io/api/calcom/webhook`
+- Check that `BOOKING_CREATED` event is selected
+- Ensure the webhook is **Active** in Cal.com settings
+
+### No conversions showing in Pimms
+- Confirm the `pimms_id` field is correctly added to your Cal.com form
+- Make sure visitors use your **Pimms link** to access the booking page
+- Test in **incognito mode** with a fresh email address
+
+### Multiple bookings from same email
+- Only the first booking from each email is counted as a conversion
+- This prevents duplicate conversion tracking
+
+## 8. Benefits of direct webhook integration
+
+**Compared to Zapier integration:**
+
+| Feature | Direct Webhook | Zapier |
+|---------|----------------|---------|
+| **Speed** | Instant (< 1 second) | 1-15 minutes delay |
+| **Reliability** | Direct connection | Third-party dependency |
+| **Cost** | Free | Zapier subscription required |
+| **Setup complexity** | Medium | Easy |
+| **Maintenance** | None | Zapier account management |
+
+## FAQs
+
+::: faq
+
+### Do I need a paid Cal.com plan for webhooks?
+
+Yes, webhooks are available on Cal.com's paid plans (Pro and above). The free plan doesn't include webhook functionality.
+
+:::
+
+::: faq
+
+### Can I track multiple Cal.com event types?
+
+Yes! The webhook will automatically track all event types that have the `pimms_id` field configured. You don't need separate webhooks for each event type.
+
+:::
+
+::: faq
+
+### What happens if the webhook fails?
+
+Cal.com will retry failed webhook deliveries automatically. If there are persistent issues, check your webhook logs in the Cal.com dashboard.
+
+:::
+
+::: faq
+
+### Can I use this with self-hosted Cal.com?
+
+Yes! This integration works with both Cal.com cloud and self-hosted instances. Just make sure your self-hosted instance can reach the Pimms webhook endpoint.
+
+:::
+
+## You're all set 🎉
+
+Every Cal.com booking will now be tracked instantly with complete attribution data. No delays, no third-party dependencies, just direct real-time tracking.
+
+👉 [Create your first Pimms link](https://app.pimms.io)
+
+<CallToAction />
