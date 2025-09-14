@@ -1,5 +1,5 @@
 import { Metadata } from "next";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { getPage } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
@@ -17,9 +17,9 @@ import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { remarkAtSyntax } from "@/lib/mdx/remark-at-syntax";
 import { cn, generateLandingMetadata, getCanonicalLink } from "@/lib/utils";
 import { landingFolders } from "@/i18n/config";
-import { Zap } from "lucide-react";
+import { Zap } from "@/components/icons/custom-icons";
 import { notFound } from "next/navigation";
-import { FaCreditCard, FaLock } from "react-icons/fa6";
+import { FaCreditCard, FaLock } from "@/components/icons/custom-icons";
 
 // Import MDX components
 import { Highlight } from "@/components/mdx/Highlight";
@@ -28,7 +28,6 @@ import { Pre } from "@/components/mdx/Pre";
 import TallyIframe from "@/components/mdx/TallyIframe";
 import { Slide } from "@/components/mdx/Slide";
 import { CallToAction } from "@/components/mdx/CallToAction";
-import { Callout } from "@/components/mdx/Callout";
 import { Faq } from "@/components/mdx/Faq";
 import { Figure } from "@/components/mdx/Figure";
 import { InfoSection } from "@/components/mdx/InfoSection";
@@ -49,7 +48,6 @@ import VideoSlide from "@/components/landings/VideoSlide";
 
 import Footer from "@/components/footer/footer";
 import LogosCircle from "@/components/logos-circle";
-import { DeeplinkDemo as DeeplinkDemoComponent } from "@/components/landings/deeplink-demo";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
 import BouncingImages from "@/components/landings/BouncingImages";
 import IntegrationsGrid from "@/components/landings/integrations-grid";
@@ -94,11 +92,27 @@ import {
   InlineLogo
 } from "@/components/mdx/content";
 
-// Import chart components
-import { AnalyticsDemo } from "@/components/charts/analytics-demo";
-import Referer from "@/components/charts/referer";
-import { FilterFeature } from "@/components/landings/filter-feature";
-import { ABTestingDemo } from "@/components/landings/ab-testing-demo";
+// Dynamic import chart components for better performance
+import nextDynamic from "next/dynamic";
+
+const AnalyticsDemo = nextDynamic(
+  () => import("@/components/charts/analytics-demo").then((mod) => ({ default: mod.AnalyticsDemo })),
+  {
+    loading: () => <div className="w-full h-[220px] bg-gray-50 animate-pulse rounded-lg" />
+  }
+);
+
+const Referer = nextDynamic(() => import("@/components/charts/referer"), {
+  loading: () => <div className="w-full h-[220px] bg-gray-50 animate-pulse rounded-lg" />
+});
+
+const FilterFeature = nextDynamic(
+  () => import("@/components/landings/filter-feature").then((mod) => ({ default: mod.FilterFeature })),
+  {
+    loading: () => <div className="w-full h-[220px] bg-gray-50 animate-pulse rounded-lg" />
+  }
+);
+
 import {
   PricingCard,
   PricingTitle,
@@ -133,9 +147,15 @@ export async function generateStaticParams() {
   ];
 }
 
+// Enable static generation with revalidation
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
 export default async function LandingPage({ params }: { params: Promise<{ slug: string; locale: string }> }) {
   const { slug, locale } = await params;
-  const seedNonce = crypto.randomUUID();
+  // Use page-specific seed that changes every hour for fresh animations
+  const currentHour = Math.floor(Date.now() / (1000 * 60 * 60)); // Changes every hour
+  const seedNonce = `${slug}-${locale}-h${currentHour}`;
 
   try {
     const page = getPage(locale, landingFolders, slug);
@@ -180,16 +200,18 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       ComparisonHeader,
       ComparisonRow,
       // CTA components
-      CtaButton: ({
+      CtaButton: async ({
         children,
         variant = "default",
-        href
+        href,
+        className
       }: {
         children?: React.ReactNode;
         variant?: "default" | "secondary" | "outline" | "inverse";
         href?: string;
+        className?: string;
       }) => {
-        const t = useTranslations("landing");
+        const t = await getTranslations({ locale, namespace: "landing" });
         // If children is provided, use it directly
         if (children) {
           return (
@@ -197,7 +219,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
               type="sales"
               size="xl"
               variant={variant}
-              className="my-2 gap-1 w-fit mx-auto sm:min-w-[380px]"
+              className={cn("my-2 gap-1 w-full sm:w-fit mx-auto sm:min-w-[380px]", className)}
               value={children}
               href={href}
             />
@@ -271,7 +293,6 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
 
       // MDX components
       CallToAction,
-      Callout,
       Faq,
       InfoSection,
       LinkCards,
@@ -314,13 +335,8 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
 
       // Chart components
       AnalyticsDemo: () => <AnalyticsDemo tkey="landing" />,
-      Referer: ({ showABTesting }: { showABTesting?: boolean }) => <Referer showABTesting={showABTesting} />,
+      Referer: () => <Referer />,
       FilterFeature: () => <FilterFeature tkey="landing" />,
-      ABTestingDemo: () => <ABTestingDemo />,
-      DeeplinkDemo: () => {
-        return <DeeplinkDemoComponent />;
-      },
-
       // React Icons
       FaCreditCard,
       FaLock
@@ -361,7 +377,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
           }}
         />
 
-        <FaqStructuredData path={path} faqs={page.faqs} />
+        <FaqStructuredData path={path} faqs={page.faqs} locale={locale} />
       </>
     );
   } catch {

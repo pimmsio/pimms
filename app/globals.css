@@ -3,6 +3,15 @@
 @custom-variant dark (&:is(.dark *));
 @plugin "@tailwindcss/typography";
 
+/* Optimized background patterns - moved from inline styles */
+.pimms-image-backdrop {
+  background-image:
+    radial-gradient(circle at 20% 80%, rgba(57, 112, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(57, 112, 255, 0.05) 0%, transparent 50%);
+  background-position: 0% 0%;
+  background-size: 100% 100%;
+}
+
 /* Base styles */
 html {
   scroll-behavior: smooth;
@@ -24,6 +33,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: var(--color-background-secondary);
   color: var(--color-text-primary);
+}
+
+/* Font utility fallbacks mapped to next/font CSS variables */
+.font-jakarta {
+  font-family: var(--font-jakarta), sans-serif;
+}
+.font-inter {
+  font-family: var(--font-inter), sans-serif;
 }
 
 /* Scrollbar hide utility */
@@ -65,48 +82,200 @@ body {
   font-weight: 600;
 }
 
-/* Typography and prose harmonization */
+/* Typography and prose harmonization - Improved consistency */
 .prose {
-  line-height: 1.75;
+  line-height: 1.7;
   font-size: 1rem;
-}
-.prose p {
-  font-size: 1rem;
-}
-.prose h2 {
-  font-size: 1.5rem;
-}
-.prose h3 {
-  font-size: 1.25rem;
-}
-.prose h4 {
-  font-size: 1.125rem;
+  color: var(--color-text-secondary);
 }
 
+/* Consistent paragraph styling */
+.prose p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--color-text-secondary);
+  margin-bottom: 1.25rem;
+}
+
+/* Much more subtle heading hierarchy - closer to paragraph size for readability */
+.prose h1 {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  margin-top: 1.25rem;
+  margin-bottom: 0.625rem;
+}
+
+.prose h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.prose h4 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  line-height: 1.6;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive typography scaling - subtle and readable */
 @media (min-width: 640px) {
   .prose {
     font-size: 1.0625rem;
   }
   .prose p {
     font-size: 1.0625rem;
+    margin-bottom: 1.5rem;
+  }
+  .prose h1 {
+    font-size: 1.375rem;
+    margin-top: 1.75rem;
+    margin-bottom: 0.875rem;
   }
   .prose h2 {
-    font-size: 1.875rem;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
   }
   .prose h3 {
-    font-size: 1.5rem;
+    font-size: 1.125rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.625rem;
   }
   .prose h4 {
-    font-size: 1.25rem;
+    font-size: 1.0625rem;
+    margin-top: 1.125rem;
+    margin-bottom: 0.5rem;
   }
 }
 
-.prose h2,
-.prose h3 {
-  letter-spacing: -0.01em;
+@media (min-width: 1024px) {
+  .prose {
+    font-size: 1.125rem;
+  }
+  .prose p {
+    font-size: 1.125rem;
+  }
+  .prose h1 {
+    font-size: 1.5rem;
+  }
+  .prose h2 {
+    font-size: 1.375rem;
+  }
+  .prose h3 {
+    font-size: 1.25rem;
+  }
+  .prose h4 {
+    font-size: 1.125rem;
+  }
 }
 
-/* Reduce spacing before/after code blocks inside lists */
+/* Improved heading letter spacing and styling */
+.prose h1,
+.prose h2,
+.prose h3,
+.prose h4 {
+  letter-spacing: -0.015em;
+  font-feature-settings:
+    "kern" 1,
+    "liga" 1;
+}
+
+/* Clean link styling - no ugly underlines */
+.prose a {
+  color: var(--color-brand-primary-800);
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.2s ease-in-out;
+}
+
+.prose a:hover {
+  color: var(--color-brand-primary-900);
+}
+
+/* Links in headings - clean and simple */
+.prose h1 a,
+.prose h2 a,
+.prose h3 a,
+.prose h4 a {
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+  display: inline;
+  transition: color 0.2s ease-in-out;
+}
+
+.prose h1 a:hover,
+.prose h2 a:hover,
+.prose h3 a:hover,
+.prose h4 a:hover {
+  color: var(--color-brand-primary);
+}
+
+/* Lists styling */
+.prose ul {
+  margin: 1.25rem 0;
+}
+
+.prose ol {
+  margin: 1.25rem 0;
+}
+
+.prose li {
+  margin: 0.5rem 0;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+}
+
+/* Strong/bold text */
+.prose strong {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+/* Code styling */
+.prose code {
+  background-color: #f3f4f6;
+  color: #374151;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+
+.prose pre {
+  background-color: #1f2937;
+  color: #f9fafb;
+  border-radius: 0.5rem;
+  padding: 1.25rem;
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background-color: transparent;
+  color: inherit;
+  padding: 0;
+  border-radius: 0;
+}
+
+/* Improved content organization and spacing */
 .prose li > .pre-block {
   margin-top: 0.5rem;
   margin-bottom: 0.75rem;
@@ -114,6 +283,78 @@ body {
 .prose ol > li .pre-block,
 .prose ul > li .pre-block {
   margin-left: 0.25rem;
+}
+
+/* Better image spacing and organization */
+.prose img {
+  margin: 2rem 0;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.prose img:hover {
+  transform: scale(1.02);
+}
+
+/* Enhanced section spacing */
+.prose section {
+  margin: 3rem 0;
+}
+
+/* Better organization for content blocks */
+.prose > * + * {
+  margin-top: 1.5rem;
+}
+
+.prose > h2 + *,
+.prose > h3 + *,
+.prose > h4 + * {
+  margin-top: 1rem;
+}
+
+/* Improved FAQ and special component spacing */
+.prose .faq-container {
+  margin: 2.5rem 0;
+}
+
+.prose .info-section {
+  margin: 2rem 0;
+}
+
+/* Better mobile responsive spacing */
+@media (max-width: 640px) {
+  .prose {
+    font-size: 0.9rem;
+  }
+
+  .prose h1 {
+    font-size: 1.75rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .prose h2 {
+    font-size: 1.5rem;
+    margin-top: 1.25rem;
+    margin-bottom: 0.625rem;
+  }
+
+  .prose h3 {
+    font-size: 1.25rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose h4 {
+    font-size: 1.125rem;
+    margin-top: 0.875rem;
+    margin-bottom: 0.375rem;
+  }
+
+  .prose p {
+    margin-bottom: 1rem;
+  }
 }
 
 /* Normalize table spacing */

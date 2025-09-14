@@ -1,12 +1,11 @@
 import { notFound } from "next/navigation";
 import { formatDate, getPage, getPages } from "@/lib/mdx";
-import { MDXRemote } from "next-mdx-remote-client/rsc";
+import { MDXRemote } from "next-mdx-remote/rsc";
 import { twMerge } from "tailwind-merge";
-import { use } from "react";
 import React from "react";
 import { locales } from "@/i18n/config";
-import { useLocale } from "next-intl";
 import { generatePagesMetadata, getCanonicalLink } from "@/lib/utils";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Section } from "@/components/base/section";
 import Image from "next/image";
 import Link from "next/link";
@@ -31,16 +30,56 @@ import { LinkCard } from "@/components/mdx/LinkCards";
 import { Quote } from "@/components/mdx/Quote";
 import { Steps, Step, StepCompleted } from "@/components/mdx/Steps";
 import { Highlight } from "@/components/mdx/Highlight";
-import { Callout } from "@/components/mdx/Callout";
 import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { Pre } from "@/components/mdx/Pre";
 import { Figure } from "@/components/mdx/Figure";
 import { articleFolders } from "@/i18n/config";
 import TallyIframe from "@/components/mdx/TallyIframe";
 import { BreadcrumbStructuredData } from "@/components/mdx/BreadcrumbStructuredData";
-import { Clock, ChevronRight, Edit3 } from "lucide-react";
+import { Clock, ChevronRight, Edit3, ArrowUpRight } from "@/components/icons/custom-icons";
 import Author from "@/components/blog/author";
-import { useTranslations } from "next-intl";
+
+// Function to extract integration name from guide titles
+function extractIntegrationName(title: string, categories: string[]): string | null {
+  if (!categories.includes("guides")) return null;
+
+  const integrations = [
+    "Calendly",
+    "Webflow",
+    "WordPress",
+    "Elementor",
+    "Framer",
+    "Stripe",
+    "HubSpot",
+    "Mailchimp",
+    "Shopify",
+    "Google Analytics",
+    "Facebook",
+    "Instagram",
+    "LinkedIn",
+    "Twitter",
+    "TikTok",
+    "YouTube",
+    "Twitch",
+    "Discord",
+    "Slack",
+    "Notion",
+    "Airtable",
+    "Zapier",
+    "Make",
+    "Bubble",
+    "Wix",
+    "Squarespace"
+  ];
+
+  for (const integration of integrations) {
+    if (title.toLowerCase().includes(integration.toLowerCase())) {
+      return integration;
+    }
+  }
+
+  return null;
+}
 
 export async function generateStaticParams() {
   const allParams = [];
@@ -58,6 +97,10 @@ export async function generateStaticParams() {
   return allParams;
 }
 
+// Enable static generation with revalidation for blog posts
+export const revalidate = 3600; // Revalidate every hour
+// Removed force-static to allow dynamic locale detection
+
 export async function generateMetadata({ params }: MetadataProps) {
   const { slug, locale } = await params;
   const post = getPage(locale, articleFolders, slug);
@@ -74,9 +117,7 @@ export async function generateMetadata({ params }: MetadataProps) {
   });
 }
 
-function MdxLink({ href, children }: { href?: string; children: React.ReactNode }) {
-  const locale = useLocale();
-
+function MdxLink({ href, children, locale }: { href?: string; children: React.ReactNode; locale: string }) {
   if (!href) {
     return <span>{children}</span>;
   }
@@ -87,7 +128,7 @@ function MdxLink({ href, children }: { href?: string; children: React.ReactNode 
     return (
       <Link
         href={getCanonicalLink(locale, href)}
-        className="text-vibrant-blue hover:text-brand-primary-800 underline decoration-2 underline-offset-2 transition-colors duration-200 font-medium"
+        className="text-brand-primary hover:text-brand-primary-hover font-normal transition-colors duration-200"
       >
         {children}
       </Link>
@@ -99,7 +140,7 @@ function MdxLink({ href, children }: { href?: string; children: React.ReactNode 
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-vibrant-blue hover:text-brand-primary-800 underline decoration-2 underline-offset-2 hover:decoration-brand-primary-800 transition-colors duration-200 font-medium inline-flex items-center gap-1"
+      className="text-brand-primary hover:text-brand-primary-hover font-normal transition-colors duration-200"
     >
       {children}
     </a>
@@ -107,10 +148,10 @@ function MdxLink({ href, children }: { href?: string; children: React.ReactNode 
 }
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 };
 
-const components = {
+const createComponents = (locale: string) => ({
   table: ({ children }: { children: React.ReactNode }) => (
     <div className="my-6 sm:my-8 -mx-4 sm:-mx-6 md:mx-0 overflow-hidden">
       <div className="overflow-x-auto scrollbar-hide">
@@ -128,12 +169,14 @@ const components = {
     <tr className="border-b border-gray-50 last:border-0 hover:bg-gray-50/30 transition-colors">{children}</tr>
   ),
   th: ({ children }: { children: React.ReactNode }) => (
-    <th className="px-3 sm:px-4 py-2.5 sm:py-3 text-left text-xs font-semibold text-gray-700 uppercase tracking-wide">
+    <th className="px-4 sm:px-6 py-3 sm:py-4 text-left text-sm font-semibold text-text-primary uppercase tracking-wide bg-gray-50/80">
       {children}
     </th>
   ),
   td: ({ children }: { children: React.ReactNode }) => (
-    <td className="px-3 sm:px-4 py-2.5 sm:py-3 text-sm text-gray-600">{children}</td>
+    <td className="px-4 sm:px-6 py-3 sm:py-4 text-sm sm:text-base text-text-secondary border-t border-gray-100">
+      {children}
+    </td>
   ),
   img: ({ src, alt }: { src: string; alt: string }) => {
     const ImageBlock = () => (
@@ -151,16 +194,11 @@ const components = {
 
     return <ImageBlock />;
   },
-  a: MdxLink,
-  Iframe: ({ src }: { src: string }) => {
-    return (
-      <div className="my-6 sm:my-8 -mx-4 sm:-mx-6 md:mx-0">
-        <div className="aspect-video w-full rounded-none sm:rounded-xl overflow-hidden shadow-sm">
-          <iframe src={src} className="w-full h-full" allowFullScreen />
-        </div>
-      </div>
-    );
-  },
+  a: ({ href, children }: { href?: string; children: React.ReactNode }) => (
+    <MdxLink href={href} locale={locale}>
+      {children}
+    </MdxLink>
+  ),
   blockquote: ({ children }: { children: React.ReactNode }) => (
     <blockquote className="my-6 sm:my-8 border-l-4 border-brand-primary bg-gradient-primary-soft p-4 sm:p-5 rounded-r-xl">
       <div className="text-gray-700 italic text-base sm:text-lg leading-relaxed">{children}</div>
@@ -212,7 +250,7 @@ const components = {
   },
   li: ({ children }: { children: React.ReactNode }) => <li className="leading-relaxed pl-1">{children}</li>,
   p: ({ children }: { children: React.ReactNode }) => (
-    <p className="my-4 sm:my-5 text-base leading-relaxed text-gray-600">{children}</p>
+    <p className="my-5 sm:my-6 text-base sm:text-lg leading-relaxed text-text-secondary font-normal">{children}</p>
   ),
   code: ({ children }: { children: React.ReactNode }) => (
     <code className="px-1.5 py-0.5 text-sm bg-gray-100 text-gray-800 rounded-md font-mono">{children}</code>
@@ -230,17 +268,22 @@ const components = {
   Step,
   StepCompleted,
   Highlight,
-  Callout,
   pre: Pre,
   Figure,
-  Tally: TallyIframe
-};
+  Tally: TallyIframe,
+  Stronger: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+    <strong className={`font-bold ${className || ""}`}>{children}</strong>
+  )
+});
 
-export default function BlogPost({ params }: Props) {
-  const { slug } = use(params);
-  const locale = useLocale();
+export default async function BlogPost({ params }: Props) {
+  const { slug, locale } = await params;
+
+  // Set locale for server components
+  setRequestLocale(locale);
+
   const post = getPage(locale, articleFolders, slug);
-  const t = useTranslations("blog.post");
+  const t = await getTranslations({ locale, namespace: "blog.post" });
 
   const relatedArticles =
     (post.metadata.related && post.metadata.related.map((slug: string) => getPage(locale, articleFolders, slug))) || [];
@@ -293,31 +336,36 @@ export default function BlogPost({ params }: Props) {
         <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs sm:text-sm text-text-secondary">
           {author && (
             <div className="flex items-center gap-2">
-              <Author username={author.slug} size="sm" />
+              <Author username={author.slug} size="sm" locale={locale} />
             </div>
           )}
           <div className="flex items-center gap-1.5 bg-gray-100/50 px-3 py-1.5 rounded-full">
             <Clock className="w-3.5 h-3.5 opacity-60" />
-            <span className="font-medium">Published {formatDate(post.metadata.publishedAt)}</span>
+            <span className="font-medium">
+              {t("published")} {formatDate(post.metadata.publishedAt)}
+            </span>
           </div>
           {post.metadata.updatedAt && (
-            <div className="flex items-center gap-1.5 bg-blue-50/70 px-3 py-1.5 rounded-full border border-blue-200/30">
-              <Edit3 className="w-3.5 h-3.5 opacity-60 text-blue-600/70" />
-              <span className="font-medium text-blue-600/70">Updated {formatDate(post.metadata.updatedAt)}</span>
+            <div className="flex items-center gap-1.5 bg-blue-50 px-3 py-1.5 rounded-full border border-blue-200">
+              <Edit3 className="w-3.5 h-3.5 text-blue-900" />
+              <span className="font-medium text-blue-900">
+                {t("updated")} {formatDate(post.metadata.updatedAt)}
+              </span>
             </div>
           )}
         </div>
       </Section>
 
       {/* Main content */}
-      <Section className="py-8 sm:py-12 md:py-16 bg-white px-4 md:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8 max-w-6xl mx-auto">
+      <Section className="py-0 sm:py-0 md:py-0 px-4 md:px-0 lg:px-0">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-4 max-w-6xl mx-auto">
           <article className="lg:col-span-3">
-            <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200 p-4 sm:p-6 md:p-8 lg:p-12">
+            <div className="bg-white rounded-xl sm:rounded-2xl border border-gray-200">
               {post.metadata.image && (
                 <div className="mb-6 sm:mb-8 -mx-4 sm:-mx-6 md:-mx-8 lg:mx-0">
                   <Image
-                    className="w-full rounded-none sm:rounded-xl"
+                    className="w-full h-full rounded-xl object-cover aspect-[16/7] group-hover:scale-105 transition-transform duration-500"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
                     src={post.metadata.image}
                     alt={post.metadata.title}
                     width={1200}
@@ -329,34 +377,44 @@ export default function BlogPost({ params }: Props) {
 
               <div
                 className={twMerge(
+                  "px-4 sm:px-6 md:px-8 lg:px-12",
                   "prose prose-base lg:prose-lg max-w-none",
-                  // Headings
-                  "prose-headings:font-bold",
-                  "prose-h2:text-2xl sm:prose-h2:text-3xl prose-h2:leading-tight prose-h2:mt-8 sm:prose-h2:mt-10 prose-h2:mb-3 sm:prose-h2:mb-4 prose-h2:text-text-primary",
-                  "prose-h3:text-xl sm:prose-h3:text-2xl prose-h3:leading-snug prose-h3:mt-6 sm:prose-h3:mt-8 prose-h3:mb-3 sm:prose-h3:mb-4 prose-h3:text-text-primary",
-                  "prose-h4:text-lg sm:prose-h4:text-xl prose-h4:leading-snug prose-h4:mt-5 sm:prose-h4:mt-6 prose-h4:mb-2.5 sm:prose-h4:mb-3 prose-h4:text-text-primary prose-h4:font-semibold",
-                  // Paragraphs
-                  "prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-4 sm:prose-p:mb-5",
+                  // Headings - much more subtle, closer to paragraph size for readability
+                  "prose-headings:font-medium prose-headings:tracking-normal",
+                  "prose-h1:text-xl sm:prose-h1:text-2xl prose-h1:leading-relaxed prose-h1:mt-0 prose-h1:mb-4 prose-h1:text-text-primary",
+                  "prose-h2:text-lg sm:prose-h2:text-xl prose-h2:leading-relaxed prose-h2:mt-6 sm:prose-h2:mt-8 prose-h2:mb-3 prose-h2:text-text-primary prose-h2:font-medium",
+                  "prose-h3:text-base sm:prose-h3:text-lg prose-h3:leading-relaxed prose-h3:mt-5 sm:prose-h3:mt-6 prose-h3:mb-2 prose-h3:text-text-primary prose-h3:font-medium",
+                  "prose-h4:text-base prose-h4:leading-relaxed prose-h4:mt-4 sm:prose-h4:mt-5 prose-h4:mb-2 prose-h4:text-text-primary prose-h4:font-medium",
+                  // Paragraphs and text
+                  "prose-p:text-text-secondary prose-p:leading-relaxed prose-p:mb-5 sm:prose-p:mb-6",
+                  "prose-strong:font-semibold prose-strong:text-text-primary",
                   // Lists
                   "prose-ul:my-5 sm:prose-ul:my-6 prose-ol:my-5 sm:prose-ol:my-6",
                   "prose-li:text-text-secondary prose-li:mb-2 prose-li:leading-relaxed",
-                  // Inline code
-                  "prose-code:text-sm prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none prose-code:bg-transparent prose-code:text-gray-800",
-                  // Blockquote
-                  "prose-blockquote:border-l-4 prose-blockquote:border-brand-primary prose-blockquote:bg-gradient-primary-soft prose-blockquote:p-4 sm:prose-blockquote:p-5 prose-blockquote:my-6 sm:prose-blockquote:my-8 prose-blockquote:italic prose-blockquote:rounded-r-xl",
-                  // Links
-                  "prose-a:text-brand-primary prose-a:no-underline hover:prose-a:underline prose-a:font-medium",
-                  // Strong
-                  "prose-strong:font-semibold prose-strong:text-text-primary",
-                  // HR
-                  "prose-hr:my-8 sm:prose-hr:my-10 prose-hr:border-gray-200",
-                  // Tighten default margins for first/last child in article
+                  // Links - clean and readable, no ugly underlines
+                  "prose-a:text-brand-primary prose-a:no-underline hover:prose-a:text-brand-primary-hover prose-a:transition-colors prose-a:duration-200",
+                  // Code
+                  "prose-code:text-sm prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded-md prose-code:before:content-none prose-code:after:content-none prose-code:bg-gray-100 prose-code:text-gray-800",
+                  "prose-pre:bg-gray-900 prose-pre:text-gray-100 prose-pre:rounded-lg prose-pre:p-4 prose-pre:overflow-x-auto",
+                  // Blockquote styling
+                  "prose-blockquote:border-l-4 prose-blockquote:border-brand-primary prose-blockquote:bg-gradient-to-r prose-blockquote:from-brand-primary-light prose-blockquote:to-transparent prose-blockquote:p-5 prose-blockquote:my-8 prose-blockquote:italic prose-blockquote:rounded-r-xl prose-blockquote:text-text-primary",
+                  // Enhanced table styling
+                  "prose-table:border-collapse prose-table:border-0 prose-table:w-full",
+                  "prose-thead:bg-gray-50/80",
+                  "prose-th:border-b prose-th:border-gray-200 prose-th:px-4 prose-th:py-3 prose-th:text-left prose-th:font-semibold prose-th:text-gray-700",
+                  "prose-td:border-b prose-td:border-gray-100 prose-td:px-4 prose-td:py-3 prose-td:text-text-secondary",
+                  "prose-tr:hover:bg-gray-50/30 prose-tr:transition-colors",
+                  // Images
+                  "prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8",
+                  // HR styling
+                  "prose-hr:my-12 prose-hr:border-gray-200",
+                  // Margin control for first/last elements
                   "[&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
                 )}
               >
                 <MDXRemote
                   source={post.content}
-                  components={components}
+                  components={createComponents(locale)}
                   options={{
                     mdxOptions: {
                       remarkPlugins: [
@@ -369,7 +427,7 @@ export default function BlogPost({ params }: Props) {
                       ],
                       rehypePlugins: [
                         rehypeSlug,
-                        rehypeAutolinkHeadings,
+                        [rehypeAutolinkHeadings, { behavior: "wrap" }],
                         rehypeOlStartCounter,
                         [
                           rehypePrettyCode,
@@ -434,67 +492,77 @@ export default function BlogPost({ params }: Props) {
             <p className="text-base sm:text-lg text-text-secondary">{t("exploreMore")}</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-            {relatedArticles.map((post) => (
-              <Link
-                key={post.slug}
-                href={getCanonicalLink(locale, `/articles/${post.slug}`)}
-                className="group block bg-white border border-gray-100 rounded-xl sm:rounded-2xl overflow-hidden hover:border-gray-200 hover:shadow-md transition-all duration-200"
-              >
-                <div className="relative overflow-hidden aspect-[16/9]">
-                  <Image
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    src={post.metadata.image}
-                    alt={post.metadata.title}
-                    width={1200}
-                    height={630}
-                  />
-                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-sm text-brand-primary text-xs font-semibold px-3 py-1.5 rounded-full capitalize shadow-sm">
-                    {post.metadata.categories[0].replace("-", " ")}
-                  </div>
-                </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {relatedArticles.map((post) => {
+              const integrationName = extractIntegrationName(post.metadata.title, post.metadata.categories || []);
 
-                <div className="p-5 sm:p-6">
-                  <h3 className="font-bold text-lg sm:text-xl text-text-primary group-hover:text-brand-primary transition-colors mb-2.5 leading-tight">
-                    {post.metadata.title}
-                  </h3>
-                  <p className="text-text-secondary line-clamp-2 mb-4 text-sm sm:text-base leading-relaxed">
-                    {post.metadata.summary}
-                  </p>
-                  <div className="flex items-center justify-between text-xs sm:text-sm text-text-secondary">
-                    <div className="flex flex-col gap-1.5 flex-1 min-w-0">
-                      <div className="flex items-center gap-1.5">
-                        <Clock className="w-3.5 h-3.5 opacity-60 flex-shrink-0" />
-                        <span className="font-medium truncate">Published {formatDate(post.metadata.publishedAt)}</span>
+              return (
+                <Link
+                  key={post.slug}
+                  href={getCanonicalLink(locale, `/articles/${post.slug}`)}
+                  className="group block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                >
+                  <div className="relative overflow-hidden">
+                    <Image
+                      className="w-full h-full object-cover aspect-[16/7] group-hover:scale-105 transition-transform duration-500"
+                      src={post.metadata.image}
+                      alt={post.metadata.title}
+                      width={1200}
+                      height={630}
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+                    />
+                    <div className="absolute top-4 left-4 flex gap-2">
+                      <div className="bg-brand-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full capitalize">
+                        {post.metadata.categories[0].replace("-", " ")}
                       </div>
-                      {post.metadata.updatedAt && (
-                        <div className="flex items-center gap-1.5 text-blue-600/70">
-                          <Edit3 className="w-3.5 h-3.5 opacity-60 flex-shrink-0" />
-                          <span className="font-medium text-xs truncate">
-                            Updated {formatDate(post.metadata.updatedAt)}
-                          </span>
+                      {integrationName && (
+                        <div className="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                          {integrationName}
                         </div>
                       )}
                     </div>
-                    <span className="text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0">
-                      Read →
-                    </span>
                   </div>
-                </div>
-              </Link>
-            ))}
+
+                  <div className="p-6 pb-5">
+                    <h3 className="font-bold text-xl text-gray-900 group-hover:text-brand-primary transition-colors mb-4 leading-tight line-clamp-3">
+                      {post.metadata.title}
+                    </h3>
+
+                    <p className="text-gray-600 line-clamp-3 mb-5 leading-relaxed text-base">{post.metadata.summary}</p>
+
+                    <div className="flex items-center justify-between">
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
+                        {post.metadata.author && (
+                          <Author username={post.metadata.author} size="sm" noLink locale={locale} />
+                        )}
+                        <span className="text-sm font-medium text-gray-500 ml-0 sm:ml-0">
+                          {formatDate(post.metadata.updatedAt || post.metadata.publishedAt)}
+                        </span>
+                      </div>
+                      <ArrowUpRight className="w-5 h-5 text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
+                    </div>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
         </Section>
       )}
 
-      <BreadcrumbStructuredData slug={slug} category={post.metadata.categories[0]} metadata={post.metadata} />
+      <BreadcrumbStructuredData
+        slug={slug}
+        category={post.metadata.categories[0]}
+        metadata={post.metadata}
+        locale={locale}
+      />
       <BlogStructuredData
         type={post.dir}
         metadata={post.metadata}
         path={getCanonicalLink(locale, `/articles/${slug}`)}
         author={author}
+        locale={locale}
       />
-      <FaqStructuredData path={getCanonicalLink(locale, `/articles/${slug}`)} faqs={post.faqs} />
+      <FaqStructuredData path={getCanonicalLink(locale, `/articles/${slug}`)} faqs={post.faqs} locale={locale} />
     </>
   );
 }

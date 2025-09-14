@@ -1,10 +1,10 @@
-import { ArrowRight, Zap } from "lucide-react";
+import { ArrowRight, Zap } from "@/components/icons/custom-icons";
 import Link from "next/link";
 import { APP_URL } from "@/app/constants";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 
-export function CallToAction() {
-  const t = useTranslations("landing.cta");
+export async function CallToAction({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "landing.cta" });
 
   return (
     <div
@@ -22,11 +22,11 @@ export function CallToAction() {
       </div>
 
       <div className="relative z-10">
-        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-white drop-shadow-sm">
+        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 text-white! drop-shadow-sm">
           {t("title")}
         </h3>
 
-        <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto text-white/95 leading-relaxed px-4 sm:px-0 drop-shadow-sm">
+        <p className="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-2xl mx-auto text-white/95! leading-relaxed px-4 sm:px-0 drop-shadow-sm text-balance">
           {t("subtitle")}
         </p>
 
@@ -41,7 +41,7 @@ export function CallToAction() {
           </Link>
         </div>
 
-        <p className="text-white/85 text-sm mt-6 font-medium">{t("bottom_text")}</p>
+        <p className="text-white/85! text-sm mt-6 font-medium">{t("bottom_text")}</p>
       </div>
     </div>
   );

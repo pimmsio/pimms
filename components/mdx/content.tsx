@@ -1,15 +1,27 @@
 import { ReactNode } from "react";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { H2 as BaseH2 } from "@/components/base/h2";
-import { FaArrowTrendUp, FaRegClock, FaDollarSign, FaMedal, FaQuestion } from "react-icons/fa6";
-import { BiSolidZap } from "react-icons/bi";
-import { MdRocketLaunch } from "react-icons/md";
-import { Share2, Target, DollarSign as DollarIcon, TrendingUp } from "lucide-react";
+import {
+  FaArrowTrendUp,
+  FaRegClock,
+  FaDollarSign,
+  FaMedal,
+  FaQuestion,
+  BiSolidZap,
+  MdRocketLaunch,
+  Share2,
+  Target,
+  DollarSign as DollarIcon,
+  TrendingUp
+} from "@/components/icons/custom-icons";
 import Image from "next/image";
 import { cn } from "../../lib/utils";
 
 // Typography components
 export const H1 = ({ children }: { children: ReactNode }) => <>{children}</>;
+export const Stronger = ({ children, className }: { children: ReactNode; className?: string }) => (
+  <strong className={cn("font-bold", className)}>{children}</strong>
+);
 export const H2 = ({
   children,
   align = "center",
@@ -42,16 +54,20 @@ export const Text = ({
 }) => {
   const sizeClasses = {
     sm: "text-sm md:text-base",
-    base: "text-base",
-    md: "text-md md:text-lg",
-    lg: "text-lg md:text-xl"
+    base: "text-base md:text-lg",
+    md: "text-lg md:text-xl",
+    lg: "text-xl md:text-2xl"
   };
 
-  // Default color is muted (gray-600), lg size gets mb-8
-  const spacing = size === "lg" ? "mb-8" : "mb-4";
-  const colorClass = variant === "white" ? "text-white/90" : "text-gray-600";
+  // Improved spacing and color consistency
+  const spacing = size === "lg" ? "mb-8" : "mb-6";
+  const colorClass = variant === "white" ? "text-white/90" : "text-text-secondary";
 
-  return <p className={`${sizeClasses[size]} ${colorClass} ${spacing} leading-relaxed ${className}`}>{children}</p>;
+  return (
+    <p className={`${sizeClasses[size]} ${colorClass} ${spacing} leading-relaxed font-medium ${className}`}>
+      {children}
+    </p>
+  );
 };
 export const SmallText = ({ children }: { children: ReactNode }) => <>{children}</>;
 export const Label = ({
@@ -510,8 +526,8 @@ export const Column = ({
 };
 
 // Problem components
-export const WithoutPimms = () => {
-  const t = useTranslations("general");
+export const WithoutPimms = async ({ locale }: { locale: string }) => {
+  const t = await getTranslations({ locale, namespace: "general" });
 
   return (
     <div className="inline-flex items-center gap-2 text-gray-600 font-semibold text-xs uppercase tracking-wider mb-4">
@@ -551,13 +567,22 @@ export const InlineLogo = ({ src, alt, className }: { src: string; alt: string; 
 );
 
 // Styling components
-export const Primary = ({ children }: { children: React.ReactNode }) => (
-  <span
-    className={`bg-gradient-to-r from-brand-secondary to-brand-primary bg-clip-text text-transparent pr-[2px] [-webkit-text-fill-color:transparent]`}
-  >
-    {children}
-  </span>
-);
+export const Primary = ({
+  children,
+  variant = "h2",
+  icon
+}: {
+  children: React.ReactNode;
+  variant?: "h1" | "h2";
+  icon?: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash";
+}) => {
+  return (
+    <span className="bg-gradient-to-r from-brand-secondary to-brand-primary bg-clip-text text-transparent pr-[2px] [-webkit-text-fill-color:transparent] inline-flex items-baseline gap-1">
+      {icon && <TitleIcon icon={icon} variant={variant} />}
+      <span>{children}</span>
+    </span>
+  );
+};
 
 export const TitleIcon = ({
   icon,
@@ -567,7 +592,9 @@ export const TitleIcon = ({
   variant?: "h1" | "h2";
 }) => {
   const sizeClasses =
-    variant === "h2" ? "w-9 h-9 md:w-10 md:h-10 xl:w-12 xl:h-12" : "w-12 h-12 md:w-14 md:h-14 xl:w-16 xl:h-16";
+    variant === "h2"
+      ? "w-9 h-9 md:w-10 md:h-10 xl:w-12 xl:h-12 ml-1"
+      : "w-10 h-10 md:w-12 md:h-12 xl:w-14 xl:h-14 ml-1";
 
   const sizeIconClasses =
     variant === "h2" ? "w-5 h-5 md:w-6 md:h-6 xl:w-7 xl:h-7" : "w-8 h-8 md:w-10 md:h-10 xl:w-11 xl:h-11";
@@ -586,16 +613,11 @@ export const TitleIcon = ({
   const LucideIcon = iconMap[icon];
 
   return (
-    <span className="inline-block align-baseline ml-2 mr-1">
-      <span
-        data-framer-name="Icon"
-        className={`inline-block relative bg-gradient-to-tr to-brand-secondary from-brand-primary rounded-lg rotate-7 translate-0.5 shadow-md shadow-brand-primary/40 ${sizeClasses}`}
-      >
-        <span className="absolute inset-0 flex items-center justify-center text-white">
-          <LucideIcon className={`${sizeIconClasses} drop-shadow-lg drop-shadow-brand-primary`} />
-        </span>
-      </span>
-    </span>
+    <div
+      className={`inline-flex items-center align-baseline justify-center bg-gradient-to-tr to-brand-secondary from-brand-primary rounded-lg rotate-7 -translate-x-0.5 -translate-y-0.5 md:-translate-y-1 shadow-md shadow-brand-primary/40 ${sizeClasses}`}
+    >
+      <LucideIcon className={`${sizeIconClasses} drop-shadow-lg drop-shadow-brand-primary text-white`} />
+    </div>
   );
 };
 

@@ -1,10 +1,10 @@
 import { AUTHORS } from "../../app/constants";
 import { getCanonicalLink } from "../../lib/utils";
-import { useLocale } from "next-intl";
 import Link from "next/link";
 
 interface AuthorProps {
   username: string;
+  locale: string;
   imageOnly?: boolean;
   showRole?: boolean;
   size?: "sm" | "md" | "lg";
@@ -13,12 +13,12 @@ interface AuthorProps {
 
 export default function Author({
   username,
+  locale,
   imageOnly = false,
   showRole = false,
   size = "md",
   noLink = false
 }: AuthorProps) {
-  const locale = useLocale();
   const author = AUTHORS.find((author) => author.slug === username);
 
   if (!author) return null;

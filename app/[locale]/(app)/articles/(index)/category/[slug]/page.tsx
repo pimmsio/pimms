@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { useLocale } from "next-intl";
 import { getPages } from "@/lib/mdx";
 import BlogCard from "@/components/blog/blog-card";
 import { use } from "react";
 import { BLOG_CATEGORIES } from "../../../../../../constants";
-import { articleFolders } from "@/i18n/config";
+import { articleFolders, locales } from "@/i18n/config";
 import { generateCategoryMetadata } from "@/lib/utils";
+import { setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({ params }: MetadataProps) {
   const { slug } = await params;
@@ -13,18 +13,33 @@ export async function generateMetadata({ params }: MetadataProps) {
 }
 
 export async function generateStaticParams() {
-  return BLOG_CATEGORIES.map((category) => ({
-    slug: category
-  }));
+  const allParams = [];
+
+  for (const locale of locales) {
+    for (const category of BLOG_CATEGORIES) {
+      allParams.push({
+        locale,
+        slug: category
+      });
+    }
+  }
+
+  return allParams;
 }
 
+// Enable static generation with revalidation for category pages
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 };
 
 export default function BlogCategory({ params }: Props) {
-  const { slug } = use(params);
-  const locale = useLocale();
+  const { slug, locale } = use(params);
+
+  // Set locale for server components
+  setRequestLocale(locale);
 
   const data = BLOG_CATEGORIES.find((category) => category === slug);
 
@@ -48,6 +63,6 @@ export default function BlogCategory({ params }: Props) {
   }
 
   return articles.map((article, idx) => (
-    <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} priority={idx <= 1} />
+    <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} locale={locale} priority={idx <= 1} />
   ));
 }

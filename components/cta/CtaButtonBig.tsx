@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/tracking";
 import { twMerge } from "tailwind-merge";
 import { useState } from "react";
-import { Loader2 } from "lucide-react";
+import { Loader2 } from "@/components/icons/custom-icons";
 import { APP_URL } from "../../app/constants";
 
 export default function CtaButtonBig({

@@ -2,7 +2,7 @@
 
 import { cn } from "@/lib/utils";
 import { Marquee } from "@/components/magicui/marquee";
-import { Chrome, CircleCheck, CircleX, CreditCard, Wallet, Youtube } from "lucide-react";
+import { Chrome, CircleCheck, CircleX, CreditCard, Wallet, Youtube } from "@/components/icons/custom-icons";
 import { useTranslations } from "next-intl";
 import React from "react";
 import Logo from "../logo";
@@ -103,6 +103,7 @@ export default function ConversionFlipCard({
         className
       )}
       data-nosnippet
+      data-noindex="true"
       style={{ contain: "layout paint" } as React.CSSProperties}
     >
       <div className="relative h-1/2">

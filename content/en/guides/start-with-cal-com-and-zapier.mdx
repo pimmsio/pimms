@@ -2,7 +2,7 @@
 title: Track Cal.com Bookings: Complete Zapier Setup 2025
 summary: Connect Pimms to Cal.com via Zapier with no coding required. Track every booking with complete meeting analytics showing which campaigns generate your best appointments.
 publishedAt: 2025-04-26
-updatedAt: 2025-09-03
+updatedAt: 2025-09-14
 slug: how-to-track-cal-com-bookings-marketing-attribution
 image: https://assets.pimms.io/calcom-guide-pimms.webp
 author: alexandre
@@ -16,7 +16,7 @@ related:
 
 **Cal.com booking tracking** lets you see exactly which marketing campaigns generate your most valuable meetings and appointments. This complete guide shows you how to connect **Cal.com to Pimms** via Zapier in 10-15 minutes with zero coding required.
 
-You'll get **real-time meeting attribution** showing which ads, email campaigns, LinkedIn outreach, or social media posts drive actual appointment bookings. Perfect for **B2B lead tracking** with complete **appointment analytics** from click to booked meeting.
+You'll get **real-time meeting attribution** showing which ads, email campaigns, LinkedIn outreach, or YouTube posts drive actual appointment bookings. Perfect for **B2B lead tracking** with complete **appointment analytics** from click to booked meeting.
 
 **What you'll accomplish:** Complete Cal.com integration via Zapier, booking tracking setup, and meeting attribution for every appointment in your calendar.
 
@@ -116,16 +116,62 @@ You should see a new **conversion** tracked automatically.
 
 ## 6. Troubleshooting tips
 
-- If someone books multiple times using the same email, only the first meeting is counted as a conversion.
-- Make sure the `pimms_id` field is correctly added to the Cal.com form
-- Check that your Zap is published and active
-- Look at **Zapier Task History** if a step fails
+### Common issues and solutions
 
-## Best ways to share your Cal.com booking form
+**No conversions showing in Pimms:**
+- Make sure the `pimms_id` field is correctly added to the Cal.com form
+- Verify visitors are using your **Pimms link** to access the booking page
+- Test in **incognito mode** with a fresh email address
+- Check that conversion tracking is **enabled** on your Pimms link
+
+**Zap not triggering:**
+- Verify your Zap is **published** and **active**
+- Check **Zapier Task History** for error details
+- Ensure the Cal.com account connected to Zapier has the right permissions
+- Test with a new booking to trigger the Zap
+
+**Field mapping errors:**
+- Double-check that `pimms_id` maps to **Click ID** in the Pimms action
+- Ensure attendee email maps to **Email** field
+- Verify attendee name maps to **Name** field
+
+**Multiple bookings from same email:**
+- Only the first booking from each email is counted as a conversion
+- This prevents duplicate conversion tracking and is expected behavior
+
+**Zapier delays:**
+- Zapier can have 1-15 minute delays depending on your plan
+- For instant tracking, consider the [direct webhook integration](/articles/calcom-direct-webhook-integration)
+
+## 7. Zapier vs Direct Webhook Integration
+
+**Choose Zapier if:**
+- You prefer no-code setup
+- You're comfortable with 1-15 minute delays
+- You want the easiest setup process
+- You already use Zapier for other automations
+
+**Choose Direct Webhooks if:**
+- You need instant tracking (< 1 second)
+- You want zero third-party dependencies
+- You have a Cal.com paid plan (webhooks required)
+- You prefer direct integrations
+
+| Feature | Zapier Integration | Direct Webhook |
+|---------|-------------------|----------------|
+| **Setup Difficulty** | Easy | Medium |
+| **Speed** | 1-15 minutes | < 1 second |
+| **Cost** | Zapier subscription | Free |
+| **Reliability** | High (third-party) | Highest (direct) |
+| **Cal.com Plan** | Free plan works | Paid plan required |
+
+👉 [Try direct webhook integration](/articles/calcom-direct-webhook-integration)
+
+## 8. Best ways to share your Cal.com booking form
 
 ### Option A — Create a Pimms short link
 
-Use this if you're sharing your Cal.com link via email, ads, QR codes, or social media.
+Use this if you're sharing your Cal.com link via email, ads, QR codes, or YouTube.
 
 1. Go to [Pimms](https://app.pimms.io)
 2. Create a short link pointing to your Cal.com booking page

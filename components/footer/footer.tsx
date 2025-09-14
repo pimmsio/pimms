@@ -1,4 +1,4 @@
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations, getLocale } from "next-intl/server";
 import Logo from "../logo";
 import Link from "next/link";
 import { cn, getCanonicalLink } from "../../lib/utils";
@@ -7,8 +7,9 @@ import { LinkedInIcon } from "../icons/linkedin-icon";
 import { GithubIcon } from "../icons/github-icon";
 import Image from "next/image";
 import { DubRef } from "./dub-ref";
+import { OptimizedImage } from "../ui/optimized-image";
 
-export const Footer = ({
+export const Footer = async ({
   className,
   showApps = true,
   showRef = false
@@ -17,8 +18,8 @@ export const Footer = ({
   showApps?: boolean;
   showRef?: boolean;
 }) => {
-  const locale = useLocale();
-  const t = useTranslations("general");
+  const t = await getTranslations("general");
+  const locale = await getLocale();
 
   return (
     <footer className={cn("bg-gray-50 border-t border-gray-100 relative overflow-hidden", className)}>
@@ -30,7 +31,14 @@ export const Footer = ({
         }}
       >
         <div className="scale-[11] sm:scale-[9] lg:scale-[4]">
-          <Image src="/static/logo.svg" alt="pim.ms logo" width={400} height={72} className="w-auto h-auto" />
+          <OptimizedImage
+            src="/static/logo.svg"
+            alt="pim.ms logo"
+            width={400}
+            height={72}
+            className="w-auto h-auto"
+            loading="lazy"
+          />
         </div>
       </div>
 
@@ -48,6 +56,7 @@ export const Footer = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  aria-label="Follow us on GitHub"
                 >
                   <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
                     <GithubIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
@@ -58,6 +67,7 @@ export const Footer = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  aria-label="Follow us on LinkedIn"
                 >
                   <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
                     <LinkedInIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
@@ -68,6 +78,7 @@ export const Footer = ({
                   target="_blank"
                   rel="noopener noreferrer"
                   className="group"
+                  aria-label="Follow us on Instagram"
                 >
                   <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
                     <InstagramIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
@@ -80,9 +91,9 @@ export const Footer = ({
             <div className="lg:col-span-3 grid grid-cols-2 md:grid-cols-3 gap-8">
               {/* Solutions */}
               <div>
-                <h6 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">
+                <h3 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">
                   {t("footer.category.solutions")}
-                </h6>
+                </h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
@@ -102,14 +113,6 @@ export const Footer = ({
                   </li>
                   <li>
                     <Link
-                      href={getCanonicalLink(locale, "/landings/youtube")}
-                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                    >
-                      Deeplinks YouTube
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
                       href={getCanonicalLink(locale, "/landings/systemeio")}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
@@ -118,9 +121,9 @@ export const Footer = ({
                   </li>
                 </ul>
 
-                <h6 className="text-text-primary font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
+                <h3 className="text-text-primary font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
                   {t("footer.category.alternatives")}
-                </h6>
+                </h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
@@ -138,9 +141,9 @@ export const Footer = ({
 
               {/* Resources */}
               <div>
-                <h6 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">
+                <h3 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">
                   {t("footer.category.resources")}
-                </h6>
+                </h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
@@ -188,9 +191,9 @@ export const Footer = ({
                   </li>
                 </ul>
 
-                <h6 className="text-text-primary font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
+                <h3 className="text-text-primary font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
                   {t("footer.category.freetools")}
-                </h6>
+                </h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
@@ -205,7 +208,7 @@ export const Footer = ({
 
               {/* Legal */}
               <div>
-                <h6 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">Legal</h6>
+                <h3 className="text-text-primary font-semibold mb-4 text-sm uppercase tracking-wide">Legal</h3>
                 <ul className="space-y-3">
                   <li>
                     <Link
@@ -250,7 +253,7 @@ export const Footer = ({
               <div>
                 <p className="text-text-secondary text-sm mb-2">{t("footer.copyright")}</p>
                 {showRef && (
-                  <p className="text-text-secondary text-xs max-w-2xl leading-relaxed">
+                  <p className="text-text-secondary text-sm max-w-2xl leading-relaxed">
                     The PIMMS team builds powerful, privacy-conscious marketing tools — helping anyone grow online with
                     smart links and QR codes. &apos;QR Code&apos; is a registered trademark of DENSO WAVE INCORPORATED.
                     This project is based on <DubRef /> open-source software licensed under the AGPL.{" "}
@@ -258,7 +261,7 @@ export const Footer = ({
                       href="https://github.com/pimmsio/getpimms"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-brand-primary hover:underline"
+                      className="text-black underline underline-offset-2"
                     >
                       View source on GitHub
                     </Link>
@@ -280,6 +283,7 @@ export const Footer = ({
                       width={380}
                       height={36}
                       className="w-auto h-5 opacity-80"
+                      loading="lazy"
                     />
                   </Link>
                   <Link
@@ -294,6 +298,7 @@ export const Footer = ({
                       width={380}
                       height={36}
                       className="w-auto h-5 opacity-80"
+                      loading="lazy"
                     />
                   </Link>
                 </div>

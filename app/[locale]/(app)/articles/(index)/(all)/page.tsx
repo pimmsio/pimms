@@ -1,10 +1,11 @@
 import BlogCard from "@/components/blog/blog-card";
-import { useLocale } from "next-intl";
 import { getPages } from "@/lib/mdx";
-import { articleFolders } from "@/i18n/config";
+import { articleFolders, locales } from "@/i18n/config";
 import { THUMBNAIL } from "../../../../../constants";
 import { getCanonicalLink, getFullLink } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
+import { use } from "react";
 
 export async function generateMetadata({ params }: MetadataProps) {
   const locale = (await params).locale;
@@ -26,8 +27,21 @@ export async function generateMetadata({ params }: MetadataProps) {
   };
 }
 
-export default function BlogPage() {
-  const locale = useLocale();
+// Generate static params for all locales
+export async function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
+
+// Enable static generation with revalidation for blog index
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
+export default function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = use(params);
+
+  // Set locale for server components
+  setRequestLocale(locale);
+
   const posts = getPages(locale, articleFolders);
 
   const articles = posts
@@ -40,6 +54,6 @@ export default function BlogPage() {
     });
 
   return articles.map((article, idx) => (
-    <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} priority={idx <= 1} />
+    <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} locale={locale} priority={idx <= 1} />
   ));
 }

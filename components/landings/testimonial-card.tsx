@@ -1,10 +1,10 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Avatar } from "@/components/base/avatar";
-import { Star } from "lucide-react";
+import { Star } from "@/components/icons/custom-icons";
 import { Paragraph } from "../base/paragraph";
 
-export const TestimonialCard = ({ tkey }: { tkey: string }) => {
-  const t = useTranslations(tkey);
+export const TestimonialCard = async ({ tkey, locale }: { tkey: string; locale: string }) => {
+  const t = await getTranslations({ locale, namespace: tkey });
 
   return (
     <div className="bg-white rounded-xl border border-gray-200 p-6 h-full">

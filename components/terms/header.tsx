@@ -1,14 +1,13 @@
 import Logo from "@/components/logo";
 import NavLink from "@/components/NavLink";
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { APP_URL } from "@/app/constants";
 import { getCanonicalLink } from "@/lib/utils";
 
-export default function Header({ tkey }: { tkey: string }) {
-  const locale = useLocale();
-  const t = useTranslations(tkey);
+export default async function Header({ tkey, locale }: { tkey: string; locale: string }) {
+  const t = await getTranslations({ locale, namespace: tkey });
 
   return (
     <>

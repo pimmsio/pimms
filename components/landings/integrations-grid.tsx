@@ -1,9 +1,10 @@
 "use client";
 
 import React, { useRef, useState } from "react";
-import { motion } from "@/lib/framer-motion";
+import { motion } from "framer-motion";
 import { GridPattern } from "../magicui/grid-pattern";
 import { useInterval } from "ahooks";
+import Image from "next/image";
 
 type Logo = { src: string; alt: string; size?: "sm" | "md" | "lg" };
 
@@ -17,16 +18,16 @@ const logoPool: Logo[] = [
   { src: `${baseUrl}/make.svg`, alt: "Make", size: "md" },
   { src: `${baseUrl}/typeform.svg`, alt: "Typeform", size: "md" },
   { src: `${baseUrl}/tally.svg`, alt: "Tally", size: "sm" },
-  { src: `${baseUrl}/calcom.jpeg`, alt: "Cal.com", size: "sm" },
+  { src: `${baseUrl}/calcom.svg`, alt: "Cal.com", size: "sm" },
   { src: `${baseUrl}/calendly.svg`, alt: "Calendly", size: "md" },
-  { src: `${baseUrl}/systemeio.jpeg`, alt: "Systeme.io", size: "md" },
+  { src: `${baseUrl}/systemeio.webp`, alt: "Systeme.io", size: "md" },
   { src: `${deeplinksBaseUrl}/youtube.svg`, alt: "YouTube", size: "sm" },
   { src: `${baseUrl}/wordpress.svg`, alt: "WordPress", size: "sm" },
   { src: `${baseUrl}/webflow.svg`, alt: "Webflow", size: "md" },
   { src: `${baseUrl}/lovable.svg`, alt: "Lovable", size: "md" },
   { src: `${baseUrl}/lemlist.svg`, alt: "Lemlist", size: "sm" },
-  { src: `${baseUrl}/brevo.jpeg`, alt: "Brevo", size: "sm" },
-  { src: `${baseUrl}/clay.png`, alt: "Clay", size: "sm" },
+  { src: `${baseUrl}/brevo.svg`, alt: "Brevo", size: "sm" },
+  { src: `${baseUrl}/clay.webp`, alt: "Clay", size: "sm" },
   { src: `${baseUrl}/trigify.jpeg`, alt: "Trigify", size: "sm" },
   { src: `${baseUrl}/slack.svg`, alt: "Slack", size: "md" },
   { src: `${baseUrl}/framer.svg`, alt: "Framer", size: "md" }
@@ -85,7 +86,7 @@ export const IntegrationsGrid: React.FC = () => {
   );
 
   return (
-    <div ref={containerRef} className="relative w-full overflow-hidden rounded-3xl md:rounded-none" data-nosnippet>
+    <div ref={containerRef} className="relative w-full overflow-hidden rounded-3xl md:rounded-none" data-nosnippet data-noindex="true">
       <div className="relative" style={{ height: GRID_HEIGHT }}>
         <div
           className="absolute left-1/2 top-1/2 origin-center"
@@ -118,13 +119,33 @@ export const IntegrationsGrid: React.FC = () => {
                     width: CARD,
                     height: CARD,
                     top,
-                    left,
-                    backgroundImage: logo ? `url(${logo.src})` : "none",
-                    backgroundSize: cover ? "100%" : "70%",
-                    backgroundPosition: "center",
-                    backgroundRepeat: "no-repeat"
+                    left
                   }}
-                />
+                >
+                  {logo && (
+                    <div className="relative w-full h-full">
+                      {logo.src.endsWith(".svg") ? (
+                        <img
+                          src={logo.src}
+                          alt={logo.alt}
+                          width={CARD}
+                          height={CARD}
+                          className={`w-full h-full ${cover ? "object-cover" : "object-contain p-2"}`}
+                          loading="lazy"
+                        />
+                      ) : (
+                        <Image
+                          src={logo.src}
+                          alt={logo.alt}
+                          fill
+                          sizes={`${CARD}px`}
+                          className={cover ? "object-cover" : "object-contain p-2"}
+                          loading="lazy"
+                        />
+                      )}
+                    </div>
+                  )}
+                </motion.div>
               );
             })}
           </div>

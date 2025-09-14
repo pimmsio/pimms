@@ -1,6 +1,5 @@
 import { PageMetadata } from "../../lib/mdx";
 import { getCanonicalLinkWithDomain } from "../../lib/utils";
-import { useLocale } from "next-intl";
 import { WEB_URL } from "@/app/constants";
 
 const typeMap = {
@@ -13,15 +12,16 @@ const typeMap = {
 export const BlogStructuredData = ({
   metadata,
   path,
+  locale,
   author,
   type = "blog"
 }: {
   metadata: PageMetadata;
   path: string;
+  locale: string;
   author?: { name: string; image: string; slug?: string };
   type?: string;
 }) => {
-  const locale = useLocale();
 
   const url = `${WEB_URL}${path}`;
 
@@ -52,6 +52,10 @@ export const BlogStructuredData = ({
   };
 
   return (
-    <script id="blog-jsonld" type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+    <script
+      id="blog-jsonld"
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd, null, 0) }}
+    />
   );
 };

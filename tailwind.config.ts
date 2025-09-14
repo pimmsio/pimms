@@ -3,10 +3,16 @@ export default {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}"
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./content/**/*.{mdx}",
+    "./lib/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
+      fontFamily: {
+        jakarta: ["var(--font-jakarta)", "sans-serif"],
+        inter: ["var(--font-inter)", "sans-serif"]
+      },
       borderWidth: {
         "3": "3px"
       },

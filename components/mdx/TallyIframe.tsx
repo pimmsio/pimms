@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { ExternalLink, FileText } from "lucide-react";
+import { ExternalLink, FileText } from "@/components/icons/custom-icons";
 
 export default function TallyIframe({
   src = "https://tally.so/embed/3jo7Wx?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1",

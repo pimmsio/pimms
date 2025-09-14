@@ -1,14 +1,12 @@
 import Link from "next/link";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Button } from "@/components/ui/button";
-import { useLocale } from "next-intl";
 import { getCanonicalLink } from "../../lib/utils";
 import Logo from "../logo";
 import { APP_URL } from "../../app/constants";
 
-export default function BlogHeader() {
-  const t = useTranslations("blog.nav");
-  const locale = useLocale();
+export default async function BlogHeader({ locale }: { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "blog.nav" });
 
   return (
     <header className="w-full bg-white border-b border-gray-100">

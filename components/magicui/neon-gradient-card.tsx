@@ -77,24 +77,25 @@ export const NeonGradientCard: React.FC<NeonGradientCardProps> = ({
   useEffect(() => {
     const updateDimensions = () => {
       if (containerRef.current) {
-        const { offsetWidth, offsetHeight } = containerRef.current;
-        setDimensions({ width: offsetWidth, height: offsetHeight });
+        // Use ResizeObserver instead of direct DOM queries to reduce forced reflows
+        const resizeObserver = new ResizeObserver((entries) => {
+          for (const entry of entries) {
+            const { width, height } = entry.contentRect;
+            setDimensions({ width, height });
+          }
+        });
+
+        resizeObserver.observe(containerRef.current);
+
+        return () => {
+          resizeObserver.disconnect();
+        };
       }
     };
 
-    updateDimensions();
-    window.addEventListener("resize", updateDimensions);
+    const cleanup = updateDimensions();
 
-    return () => {
-      window.removeEventListener("resize", updateDimensions);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (containerRef.current) {
-      const { offsetWidth, offsetHeight } = containerRef.current;
-      setDimensions({ width: offsetWidth, height: offsetHeight });
-    }
+    return cleanup;
   }, [children]);
 
   return (

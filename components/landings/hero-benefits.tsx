@@ -1,12 +1,13 @@
-import { TrendingUp, DollarSign } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { TrendingUp, DollarSign } from "@/components/icons/custom-icons";
+import { getTranslations } from "next-intl/server";
 
 interface HeroBenefitsProps {
   className?: string;
+  locale: string;
 }
 
-export default function HeroBenefits({ className = "" }: HeroBenefitsProps) {
-  const t = useTranslations("landing.hero");
+export default async function HeroBenefits({ className = "", locale }: HeroBenefitsProps) {
+  const t = await getTranslations({ locale, namespace: "landing.hero" });
 
   const benefits = [
     {

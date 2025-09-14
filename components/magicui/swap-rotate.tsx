@@ -1,6 +1,6 @@
 "use client";
 
-import { AnimatePresence, motion, MotionProps } from "motion/react";
+import { AnimatePresence, motion, MotionProps } from "framer-motion";
 import { useState } from "react";
 import { useDebounceFn } from "ahooks";
 
@@ -38,8 +38,8 @@ export function SwapRotate({
   };
 
   return (
-    <div
-      className="relative flex w-full h-full items-center justify-center px-4 overflow-hidden"
+    <span
+      className="relative inline-flex w-full h-full items-center justify-center px-4 overflow-hidden"
       onMouseEnter={() => {
         // Cancel any pending "not hovering" action
         cancelNotHovering();
@@ -55,15 +55,15 @@ export function SwapRotate({
       }}
     >
       <AnimatePresence mode="wait">
-        <motion.div
+        <motion.span
           key={animationKey}
           className={cn("inline-block", className)}
           {...defaultMotionProps}
           {...motionProps}
         >
           {children}
-        </motion.div>
+        </motion.span>
       </AnimatePresence>
-    </div>
+    </span>
   );
 }

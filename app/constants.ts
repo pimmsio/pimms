@@ -59,13 +59,13 @@ export const AUTHORS: {
   {
     name: "Alexandre Sarfati",
     role: "Founder",
-    image: "https://assets.pimms.io/linkedin-profile-alex-pimms.webp",
+    image: "https://assets.pimms.io/linkedin-profile-alex.webp",
     slug: "alexandre"
   },
   {
     name: "Emma",
     role: "Page",
-    image: "https://assets.pimms.io/linkedin-profile-emma.jpg?v=3",
+    image: "https://assets.pimms.io/linkedin-profile-emma.webp",
     slug: "emma"
   }
 ];

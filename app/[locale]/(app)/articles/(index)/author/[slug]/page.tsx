@@ -1,11 +1,11 @@
 import { notFound } from "next/navigation";
-import { useLocale } from "next-intl";
 import { getPages } from "@/lib/mdx";
 import BlogCard from "@/components/blog/blog-card";
 import { use } from "react";
 import { AUTHORS } from "../../../../../../constants";
-import { articleFolders } from "@/i18n/config";
+import { articleFolders, locales } from "@/i18n/config";
 import { generateAuthorMetadata } from "@/lib/utils";
+import { setRequestLocale } from "next-intl/server";
 
 export async function generateMetadata({ params }: MetadataProps) {
   const { slug } = await params;
@@ -13,18 +13,33 @@ export async function generateMetadata({ params }: MetadataProps) {
 }
 
 export async function generateStaticParams() {
-  return AUTHORS.map((author) => ({
-    slug: author?.slug
-  }));
+  const allParams = [];
+
+  for (const locale of locales) {
+    for (const author of AUTHORS) {
+      allParams.push({
+        locale,
+        slug: author?.slug
+      });
+    }
+  }
+
+  return allParams;
 }
 
+// Enable static generation with revalidation for author pages
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ slug: string; locale: string }>;
 };
 
 export default function BlogCategory({ params }: Props) {
-  const { slug } = use(params);
-  const locale = useLocale();
+  const { slug, locale } = use(params);
+
+  // Set locale for server components
+  setRequestLocale(locale);
 
   const data = AUTHORS.find((author) => author?.slug === slug);
 
@@ -48,6 +63,6 @@ export default function BlogCategory({ params }: Props) {
   }
 
   return articles.map((article, idx) => (
-    <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} priority={idx <= 1} />
+    <BlogCard key={article.slug} slug={article.slug} metadata={article.metadata} locale={locale} priority={idx <= 1} />
   ));
 }

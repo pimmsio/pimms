@@ -3,7 +3,8 @@ import { getSharedSeeds } from "@/lib/avatarPool";
 
 export type Avatar = {
   id: string;
-  svg: string;
+  svg?: string; // Keep for backwards compatibility
+  seed?: string; // New: avatar seed for external URL
   delayMs: number;
   cycle?: number;
 };

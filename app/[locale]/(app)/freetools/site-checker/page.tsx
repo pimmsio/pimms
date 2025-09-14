@@ -11,6 +11,10 @@ export async function generateMetadata({ params }: MetadataProps) {
   return generateLandingMetadata({ params, lkey: "site-checker", pathname: "/freetools/site-checker" });
 }
 
+// Enable static generation with revalidation for tools
+export const revalidate = 3600; // Revalidate every hour
+export const dynamic = "force-static";
+
 export default function SiteCheckerPage() {
   return (
     <>

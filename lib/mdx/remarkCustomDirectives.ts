@@ -7,7 +7,7 @@ function extractAttributes(node: any) {
     return rawAttrs.map((attr) => ({
       type: "mdxJsxAttribute",
       name: attr.name,
-      value: attr.value,
+      value: attr.value
     }));
   }
 
@@ -16,7 +16,7 @@ function extractAttributes(node: any) {
     return Object.entries(rawAttrs).map(([name, value]) => ({
       type: "mdxJsxAttribute",
       name,
-      value,
+      value
     }));
   }
 
@@ -32,12 +32,6 @@ export function remarkCustomDirectives() {
           node.type = "mdxJsxFlowElement";
           node.name = "InfoSection";
           node.attributes = [];
-        }
-        // ::: callout type="tip|warn|note" title="..."  → <Callout />
-        if (node.name === "callout") {
-          node.type = "mdxJsxFlowElement";
-          node.name = "Callout";
-          node.attributes = extractAttributes(node);
         }
         if (node.name === "linkcards") {
           node.type = "mdxJsxFlowElement";

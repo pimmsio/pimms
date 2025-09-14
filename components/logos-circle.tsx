@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
-import { motion } from "@/lib/framer-motion";
+import { motion } from "framer-motion";
 import { H2 } from "./base/h2";
 import CtaButtonBig from "./cta/CtaButtonBig";
-import { Zap } from "lucide-react";
+import { Zap } from "@/components/icons/custom-icons";
 import { useTranslations } from "next-intl";
 import { Section } from "./base/section";
 import { Primary } from "./mdx/content";
@@ -28,13 +28,13 @@ const outerLogos = [
   { src: `${integrationsBaseUrl}/webflow.svg`, alt: "Webflow", guide: "/articles/how-to-track-webflow-leads" },
   { src: `${integrationsBaseUrl}/lovable.svg`, alt: "Lovable" },
   { src: `${integrationsBaseUrl}/lemlist.svg`, alt: "Lemlist" },
-  { src: `${integrationsBaseUrl}/brevo.jpeg`, alt: "Brevo" },
-  { src: `${integrationsBaseUrl}/clay.png`, alt: "Clay" },
+  { src: `${integrationsBaseUrl}/brevo.svg`, alt: "Brevo" },
+  { src: `${integrationsBaseUrl}/clay.webp`, alt: "Clay" },
   { src: `${integrationsBaseUrl}/trigify.jpeg`, alt: "Trigify" },
   { src: `${integrationsBaseUrl}/slack.svg`, alt: "Slack" },
   { src: `${integrationsBaseUrl}/framer.svg`, alt: "Framer", guide: "/articles/how-to-track-framer" },
   {
-    src: `${integrationsBaseUrl}/systemeio.jpeg`,
+    src: `${integrationsBaseUrl}/systemeio.webp`,
     alt: "Systeme.io",
     guide: "/articles/how-to-track-systemeio-sales-and-leads"
   }
@@ -42,7 +42,7 @@ const outerLogos = [
 
 const innerBaseUrl = "/static/symbols/integrations";
 const innerLogos = [
-  { src: `${innerBaseUrl}/calcom.jpeg`, alt: "Calcom", guide: "/articles/start-with-cal-com-and-zapier" },
+  { src: `${innerBaseUrl}/calcom.svg`, alt: "Calcom", guide: "/articles/start-with-cal-com-and-zapier" },
   { src: `${innerBaseUrl}/calendly.svg`, alt: "Calendly", guide: "/articles/how-to-track-calendly" },
   {
     src: `${innerBaseUrl}/make.svg`,
@@ -83,7 +83,7 @@ const LogosCircle: React.FC = () => {
   const innerPositions = generateRingPositions(innerCount, innerRadius);
 
   return (
-    <Section id="logos" className="overflow-hidden">
+    <Section id="logos" className="overflow-hidden" data-nosnippet>
       <div className="relative w-full h-[800px] flex items-center justify-center">
         <div
           className="absolute z-10 border border-gray-200 rounded-full touch-none pointer-events-none"
@@ -93,6 +93,7 @@ const LogosCircle: React.FC = () => {
             width: `${outerRadius * 2}px`,
             height: `${outerRadius * 2}px`
           }}
+          data-noindex="true"
         />
         <div
           className="absolute z-10 border border-gray-200 rounded-full touch-none pointer-events-none"
@@ -102,6 +103,7 @@ const LogosCircle: React.FC = () => {
             width: `${innerRadius * 2}px`,
             height: `${innerRadius * 2}px`
           }}
+          data-noindex="true"
         />
 
         <motion.div
@@ -118,9 +120,12 @@ const LogosCircle: React.FC = () => {
                 className="bg-white p-2 rounded-xl border border-gray-200 flex-shrink-0"
               >
                 <img
-                  src={logo?.src}
-                  alt={logo?.alt}
+                  src={logo?.src || "/static/logo.svg"}
+                  alt={logo?.alt || "Logo"}
+                  width={64}
+                  height={64}
                   className="grayscale hover:grayscale-0 w-16 h-16 min-w-16 max-w-16 object-contain p-2 transition-all duration-200"
+                  loading="lazy"
                 />
               </motion.div>
             );
@@ -133,6 +138,7 @@ const LogosCircle: React.FC = () => {
                   left: `calc(50% + ${pos.x}px - ${outerSize / 2}px)`,
                   top: `calc(50% + ${pos.y}px - ${outerSize / 2}px)`
                 }}
+                suppressHydrationWarning
               >
                 {logo?.guide ? (
                   <Link
@@ -164,9 +170,12 @@ const LogosCircle: React.FC = () => {
                 className="bg-white p-2 rounded-xl border border-gray-200 flex-shrink-0"
               >
                 <img
-                  src={logo?.src}
-                  alt={logo?.alt}
+                  src={logo?.src || "/static/logo.svg"}
+                  alt={logo?.alt || "Logo"}
+                  width={48}
+                  height={48}
                   className="grayscale hover:grayscale-0 w-12 h-12 min-w-12 max-w-12 object-contain p-1.5 transition-all duration-200"
+                  loading="lazy"
                 />
               </motion.div>
             );
@@ -179,6 +188,7 @@ const LogosCircle: React.FC = () => {
                   left: `calc(50% + ${pos.x}px - ${innerSize / 2}px)`,
                   top: `calc(50% + ${pos.y}px - ${innerSize / 2}px)`
                 }}
+                suppressHydrationWarning
               >
                 {logo?.guide ? (
                   <Link

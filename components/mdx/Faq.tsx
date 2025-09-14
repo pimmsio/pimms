@@ -1,17 +1,23 @@
-import { ChevronDown } from "lucide-react";
+import { ChevronDown } from "@/components/icons/custom-icons";
+import { slug } from "github-slugger";
 
 export function Faq({ question, answer, children }: { question: string; answer?: string; children?: React.ReactNode }) {
+  const questionId = slug(question);
+
   return (
-    <div className="mb-4 border border-gray-200 rounded-xl bg-white transition-colors hover:border-brand-primary/50">
+    <div
+      id={`faq-${questionId}`}
+      className="mb-3 border border-gray-100 rounded-lg bg-white transition-colors hover:border-gray-200 hover:shadow-sm"
+    >
       <details className="group" open={false}>
-        <summary className="cursor-pointer p-6 list-none [&::-webkit-details-marker]:hidden rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 hover:bg-gray-50 transition-colors">
-          <div className="flex items-center justify-between gap-4">
-            <h3 className="text-base md:text-lg font-semibold text-text-primary">{question}</h3>
-            <ChevronDown className="w-5 h-5 text-text-secondary transition-transform duration-200 group-open:rotate-180 flex-shrink-0" />
-          </div>
+        <summary className="cursor-pointer p-4 sm:p-5 list-none [&::-webkit-details-marker]:hidden rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 hover:bg-gray-50/50 transition-colors flex items-center justify-between gap-4">
+          <h4 id={questionId} className="text-sm sm:text-base font-medium text-text-primary leading-relaxed">
+            {question}
+          </h4>
+          <ChevronDown className="w-4 h-4 text-text-secondary transition-transform duration-200 group-open:rotate-180 flex-shrink-0" />
         </summary>
-        <div className="px-6 pb-6">
-          <div className="text-base text-text-secondary leading-relaxed">{children ?? <p>{answer}</p>}</div>
+        <div className="px-4 sm:px-5 pb-4 sm:pb-5">
+          <div className="text-sm sm:text-base text-text-secondary leading-relaxed">{children ?? <p>{answer}</p>}</div>
         </div>
       </details>
     </div>

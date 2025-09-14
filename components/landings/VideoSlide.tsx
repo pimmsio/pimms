@@ -1,6 +1,5 @@
 "use client";
 import React, { useState, useRef, useEffect } from "react";
-import Player from "@vimeo/player";
 import { Section } from "@/components/base/section";
 
 interface VideoSlideProps {
@@ -13,24 +12,28 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
-  const playerRef = useRef<Player | null>(null);
+  const playerRef = useRef<any>(null);
 
   useEffect(() => {
-    if (iframeRef.current) {
-      playerRef.current = new Player(iframeRef.current);
-      playerRef.current.on("loaded", () => setPlayerReady(true));
-      playerRef.current.on("play", () => {
-        setVideoPlaying(true);
-        setTimeout(() => setCoverVisible(false), 100);
-      });
-      playerRef.current.on("pause", () => {
-        setVideoPlaying(false);
-        setCoverVisible(true);
-      });
-    }
+    (async function () {
+      if (iframeRef.current) {
+        // Dynamic import Vimeo player to reduce bundle size
+        const { default: Player } = await import("@vimeo/player");
+        playerRef.current = new Player(iframeRef.current);
+        playerRef.current.on("loaded", () => setPlayerReady(true));
+        playerRef.current.on("play", () => {
+          setVideoPlaying(true);
+          setTimeout(() => setCoverVisible(false), 100);
+        });
+        playerRef.current.on("pause", () => {
+          setVideoPlaying(false);
+          setCoverVisible(true);
+        });
+      }
+    })();
     return () => {
       if (playerRef.current) {
-        playerRef.current.unload().catch(() => {});
+        playerRef.current.destroy();
         playerRef.current = null;
       }
     };
@@ -39,7 +42,7 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
   const handlePlay = (e: React.SyntheticEvent<HTMLButtonElement>) => {
     e.preventDefault();
     if (!coverVisible || !playerReady) return;
-    playerRef.current?.play().catch((err) => console.error("Erreur lors du lancement de la vidéo :", err));
+    playerRef.current?.play().catch((err: any) => console.error("Erreur lors du lancement de la vidéo :", err));
   };
 
   return (
@@ -55,6 +58,7 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
             frameBorder="0"
             allowFullScreen
             allow="autoplay; encrypted-media; fullscreen"
+            title="Video demonstration"
           ></iframe>
           <button
             onClick={handlePlay}

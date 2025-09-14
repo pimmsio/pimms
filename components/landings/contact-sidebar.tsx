@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl";
 import { BlurFade } from "@/components/magicui/blur-fade";
 import { getCalApi } from "@calcom/embed-react";
 import { useEffect } from "react";
-import { Calendar } from "lucide-react";
+import { Calendar } from "@/components/icons/custom-icons";
 
 interface ContactSidebarProps {
   className?: string;
@@ -40,6 +40,8 @@ export default function ContactSidebar({ className = "" }: ContactSidebarProps) 
                 <img
                   src="https://assets.pimms.io/alexandre-sarfati.jpeg"
                   alt="Photo de profil d'Alexandre Sarfati"
+                  width="64"
+                  height="64"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />

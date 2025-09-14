@@ -1,5 +1,5 @@
 import { createAvatar } from "@dicebear/core";
-import { avataaars } from "@dicebear/collection";
+import * as avataaars from "@dicebear/avataaars";
 
 const svgCache = new Map<string, string>();
 

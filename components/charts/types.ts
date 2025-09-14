@@ -1,8 +1,4 @@
-import { ScaleTypeToD3Scale } from "@visx/scale";
-import { TooltipWithBounds } from "@visx/tooltip";
-import { UseTooltipParams } from "@visx/tooltip/lib/hooks/useTooltip";
-import { TooltipInPortalProps } from "@visx/tooltip/lib/hooks/useTooltipInPortal";
-import { Dispatch, FC, ReactElement, SetStateAction } from "react";
+import { Dispatch, ReactElement, SetStateAction } from "react";
 
 export type Datum = Record<string, any>;
 
@@ -11,9 +7,7 @@ export type TimeSeriesDatum<T extends Datum = any> = {
   values: T;
 };
 
-export type AccessorFn<T extends Datum, TValue = number> = (
-  datum: TimeSeriesDatum<T>,
-) => TValue;
+export type AccessorFn<T extends Datum, TValue = number> = (datum: TimeSeriesDatum<T>) => TValue;
 
 export type Series<T extends Datum = any, TValue = number> = {
   id: string;
@@ -55,28 +49,20 @@ type ChartOptionalProps<T extends Datum = any> = {
   };
 };
 
-export type ChartProps<T extends Datum = any> = ChartRequiredProps<T> &
-  ChartOptionalProps<T>;
+export type ChartProps<T extends Datum = any> = ChartRequiredProps<T> & ChartOptionalProps<T>;
+
+// Lightweight scale types (replacing @visx/scale)
+export type ScaleFunction = (value: any) => number;
 
 export type ChartContext<T extends Datum = any> = Required<ChartProps<T>> & {
   width: number;
   height: number;
   startDate: Date;
   endDate: Date;
-  xScale:
-    | ScaleTypeToD3Scale<number>["utc"]
-    | ScaleTypeToD3Scale<number>["band"];
-  yScale: ScaleTypeToD3Scale<number>["linear"];
+  xScale: ScaleFunction;
+  yScale: ScaleFunction;
   minY: number;
   maxY: number;
   leftAxisMargin?: number;
   setLeftAxisMargin: Dispatch<SetStateAction<number | undefined>>;
 };
-
-export type ChartTooltipContext<T extends Datum = any> = {
-  handleTooltip: (
-    event: React.TouchEvent<SVGRectElement> | React.MouseEvent<SVGRectElement>,
-  ) => void;
-  TooltipWrapper: FC<TooltipInPortalProps> | typeof TooltipWithBounds;
-  containerRef: (element: SVGElement | HTMLElement | null) => void;
-} & UseTooltipParams<TimeSeriesDatum<T>>;

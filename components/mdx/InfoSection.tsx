@@ -32,14 +32,14 @@ export function InfoSection({ type = "info", title, children }: InfoSectionProps
   const style = styles[type];
 
   return (
-    <div className={`${style.bg} ${style.border} border rounded-xl p-6 my-8 sm:my-12`}>
+    <div className={`${style.bg} ${style.border} border rounded-lg p-4 sm:p-5 my-6 sm:my-8`}>
       {title && (
-        <h4 className={`${style.titleColor} font-semibold text-base sm:text-lg mb-4 flex items-center gap-3`}>
-          <span className="text-lg sm:text-xl">{style.icon}</span>
+        <h4 className={`${style.titleColor} font-medium text-base sm:text-lg mb-3 flex items-center gap-2`}>
+          <span className="text-base sm:text-lg">{style.icon}</span>
           {title}
         </h4>
       )}
-      <div className={`text-base ${style.contentColor} leading-relaxed`}>{children}</div>
+      <div className={`text-sm sm:text-base ${style.contentColor} leading-relaxed`}>{children}</div>
     </div>
   );
 }

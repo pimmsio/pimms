@@ -1,4 +1,4 @@
-import { Laptop, Tag, Tablet, SmartphoneCharging, Instagram, Calendar } from "lucide-react";
+import { Laptop, Tag, Tablet, SmartphoneCharging, Instagram, Calendar } from "@/components/icons/custom-icons";
 import React from "react";
 import { Label } from "../base/label";
 
@@ -226,27 +226,27 @@ export const FilterFeature = ({}: { tkey: string }) => {
     // Première rangée : Géolocalisation
     [
       {
-        icon: <img alt="France" src={getFlagUrl("FR")} className="rounded-md" />,
+        icon: <img alt="France" src={getFlagUrl("FR")} width="16" height="16" className="rounded-md" />,
         label: "Pays",
         value: "France"
       },
       {
-        icon: <img alt="CH" src={getFlagUrl("CH")} className="rounded-md" />,
+        icon: <img alt="CH" src={getFlagUrl("CH")} width="16" height="16" className="rounded-md" />,
         label: "Ville",
         value: "Zurich"
       },
       {
-        icon: <img alt="US" src={getFlagUrl("US")} className="rounded-md" />,
+        icon: <img alt="US" src={getFlagUrl("US")} width="16" height="16" className="rounded-md" />,
         label: "Ville",
         value: "New York"
       },
       {
-        icon: <img alt="FR" src={getFlagUrl("FR")} className="rounded-md" />,
+        icon: <img alt="FR" src={getFlagUrl("FR")} width="16" height="16" className="rounded-md" />,
         label: "Ville",
         value: "Lyon"
       },
       {
-        icon: <img alt="AU" src={getFlagUrl("AU")} className="rounded-md" />,
+        icon: <img alt="AU" src={getFlagUrl("AU")} width="16" height="16" className="rounded-md" />,
         label: "Ville",
         value: "Melbourne"
       }

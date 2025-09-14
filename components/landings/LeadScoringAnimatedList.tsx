@@ -18,8 +18,8 @@ export type LeadItem = {
 
 const sourceLogo: Record<LeadSource, string> = {
   shopify: "/static/symbols/integrations/shopify.svg",
-  calcom: "/static/symbols/integrations/calcom.jpeg",
-  brevo: "/static/symbols/integrations/brevo.jpeg",
+  calcom: "/static/symbols/integrations/calcom.svg",
+  brevo: "/static/symbols/integrations/brevo.svg",
   stripe: "/static/symbols/integrations/stripe.svg",
   zapier: "/static/symbols/integrations/zapier.jpeg",
   tally: "/static/symbols/integrations/tally.svg",
@@ -76,21 +76,37 @@ function LeadCard({ item }: { item: LeadItem }) {
         "relative mx-auto w-full max-w-[640px] cursor-pointer overflow-hidden md:rounded-l-2xl md:border-l border-y border-gray-200 bg-white px-3 py-2 sm:px-4 sm:py-3",
         "transition-all duration-200 ease-in-out hover:scale-[101%]"
       )}
+      data-noindex="true"
     >
       <div className="flex items-center gap-3">
         <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gray-50 ring-1 ring-gray-200">
-          <Image
-            src={sourceLogo[item.source]}
-            alt={item.source}
-            width={28}
-            height={28}
-            className="object-contain grayscale"
-          />
+          {sourceLogo[item.source].endsWith(".svg") ? (
+            <img
+              src={sourceLogo[item.source]}
+              alt={item.source}
+              width={28}
+              height={28}
+              className="object-contain grayscale"
+              style={{ maxWidth: "28px", maxHeight: "28px" }}
+              loading="lazy"
+            />
+          ) : (
+            <Image
+              src={sourceLogo[item.source]}
+              alt={item.source}
+              width={28}
+              height={28}
+              className="object-contain grayscale"
+              sizes="28px"
+              style={{ maxWidth: "28px", maxHeight: "28px" }}
+              loading="lazy"
+            />
+          )}
         </div>
         <div className="flex min-w-0 flex-1 flex-col">
-          <figcaption className="flex items-center gap-2 whitespace-pre text-sm sm:text-base font-semibold text-gray-900">
+          <div className="flex items-center gap-2 whitespace-pre text-sm sm:text-base font-semibold text-gray-900">
             <span className="truncate">{item.name}</span>
-          </figcaption>
+          </div>
           <div className="flex flex-col gap-0.5 text-[11px] text-gray-500">
             <span className="truncate w-full">{maskEmail(item.email)}</span>
             <span>{item.time}</span>
@@ -100,10 +116,7 @@ function LeadCard({ item }: { item: LeadItem }) {
           <div className="flex items-center rounded-full px-2.5 sm:py-1 ring-1 ring-gray-200 shrink-0" style={{}}>
             <span className="text-sm font-semibold text-gray-900">{item.score} %</span>
           </div>
-          <div
-            className={cn("flex items-center gap-1 rounded-full px-2 py-1 ring-1 shrink-0", meta.bg)}
-            aria-label={meta.label}
-          >
+          <div className={cn("flex items-center gap-1 rounded-full px-2 py-1 ring-1 shrink-0", meta.bg)}>
             <span className="text-sm" aria-hidden>
               {meta.emoji}
             </span>
@@ -111,6 +124,9 @@ function LeadCard({ item }: { item: LeadItem }) {
           </div>
         </div>
       </div>
+      <figcaption className="sr-only">
+        Lead from {item.source}: {item.name} with {item.score}% score
+      </figcaption>
     </figure>
   );
 }

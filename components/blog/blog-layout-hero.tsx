@@ -1,17 +1,15 @@
-import { BookOpen, Users, TrendingUp } from "lucide-react";
+import { BookOpen, Users, TrendingUp } from "@/components/icons/custom-icons";
 import Link from "next/link";
 import { twMerge } from "tailwind-merge";
 import { BLOG_CATEGORIES } from "../../app/constants";
 import { getCanonicalLink } from "../../lib/utils";
-import { useLocale } from "next-intl";
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { Section } from "../base/section";
 import { H2 } from "../base/h2";
 import { Paragraph } from "../base/paragraph";
 
-export default function BlogLayoutHero({ slug }: { slug?: string }) {
-  const t = useTranslations("blog");
-  const locale = useLocale();
+export default async function BlogLayoutHero({ slug, locale }: { slug?: string; locale: string }) {
+  const t = await getTranslations({ locale, namespace: "blog" });
 
   const allCategories = BLOG_CATEGORIES.filter((category) => category !== "legal");
   const category = slug && allCategories.includes(slug) ? slug : "overview";

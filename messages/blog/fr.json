@@ -30,6 +30,8 @@
       "tableOfContents": "Table des matières",
       "continueReading": "Continuer la lecture",
       "exploreMore": "Explorez plus d'insights et de stratégies",
+      "published": "Publié le",
+      "updated": "Mis à jour le",
       "breadcrumb": {
         "articles": "Articles"
       }

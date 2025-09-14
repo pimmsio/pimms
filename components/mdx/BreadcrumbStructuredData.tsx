@@ -1,19 +1,20 @@
 import { getCanonicalLinkWithDomain } from "@/lib/utils";
 import { PageMetadata } from "@/lib/mdx";
-import { useLocale, useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { WEB_URL } from "@/app/constants";
 
-export const BreadcrumbStructuredData = ({
+export const BreadcrumbStructuredData = async ({
   metadata,
   category,
-  slug
+  slug,
+  locale
 }: {
   metadata: PageMetadata;
   category: string;
   slug: string;
+  locale: string;
 }) => {
-  const locale = useLocale();
-  const t = useTranslations("blog");
+  const t = await getTranslations({ locale, namespace: "blog" });
 
   const urlParts = {
     root: "/articles",
@@ -57,7 +58,7 @@ export const BreadcrumbStructuredData = ({
     <script
       id="breadcrumb-jsonld"
       type="application/ld+json"
-      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd, null, 0) }}
     />
   );
 };

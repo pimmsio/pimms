@@ -1,6 +1,6 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import { BlurFade } from "@/components/magicui/blur-fade";
-import { Star } from "lucide-react";
+import { Star } from "@/components/icons/custom-icons";
 
 interface StylizedTestimonialsProps {
   className?: string;
@@ -16,8 +16,8 @@ interface Testimonial {
   rating: number;
 }
 
-export default function StylizedTestimonials({ className = "" }: StylizedTestimonialsProps) {
-  const t = useTranslations("landing.testimonials");
+export default async function StylizedTestimonials({ className = "", locale }: StylizedTestimonialsProps & { locale: string }) {
+  const t = await getTranslations({ locale, namespace: "landing.testimonials" });
 
   const testimonials: Testimonial[] = [
     {
@@ -75,6 +75,8 @@ export default function StylizedTestimonials({ className = "" }: StylizedTestimo
                 <img
                   src={testimonial.bannerImage}
                   alt={`Bannière LinkedIn de ${testimonial.name}`}
+                  width="400"
+                  height="128"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -89,6 +91,8 @@ export default function StylizedTestimonials({ className = "" }: StylizedTestimo
                       <img
                         src={testimonial.profileImage}
                         alt={`Photo de profil de ${testimonial.name}`}
+                        width="64"
+                        height="64"
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />

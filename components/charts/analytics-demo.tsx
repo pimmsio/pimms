@@ -2,9 +2,19 @@
 
 import { useMemo } from "react";
 import MixedAnalyticsChart from "./mixed-analytics-chart";
-import NumberFlow from "@number-flow/react";
-import { subDays } from "date-fns";
 import { useTranslations } from "next-intl";
+
+// Simple number formatting utility
+const formatNumber = (value: number, options?: Intl.NumberFormatOptions) => {
+  return new Intl.NumberFormat("en-US", options).format(value);
+};
+
+// Simple date utility to subtract days
+const subDays = (date: Date, days: number): Date => {
+  const result = new Date(date);
+  result.setDate(result.getDate() - days);
+  return result;
+};
 
 export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
   const tcommon = useTranslations("landing");
@@ -45,10 +55,9 @@ export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
             <span>Clics</span>
           </div>
           <div className="text-xl font-bold text-gray-800">
-            <NumberFlow
-              value={totalEvents.clicks}
-              format={{ notation: totalEvents.clicks > 999999 ? "compact" : "standard" }}
-            />
+            {formatNumber(totalEvents.clicks, {
+              notation: totalEvents.clicks > 999999 ? "compact" : "standard"
+            })}
           </div>
         </div>
 
@@ -58,10 +67,9 @@ export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
             <span>Leads</span>
           </div>
           <div className="text-xl font-bold text-gray-800">
-            <NumberFlow
-              value={totalEvents.leads}
-              format={{ notation: totalEvents.leads > 999999 ? "compact" : "standard" }}
-            />
+            {formatNumber(totalEvents.leads, {
+              notation: totalEvents.leads > 999999 ? "compact" : "standard"
+            })}
           </div>
         </div>
 
@@ -71,14 +79,12 @@ export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
             <span>Ventes</span>
           </div>
           <div className="text-xl font-bold text-gray-800">
-            <NumberFlow
-              value={totalEvents.sales}
-              format={{
-                style: "currency",
-                currency: tcommon("analytics_chart.currency"),
-                trailingZeroDisplay: "stripIfInteger"
-              }}
-            />
+            {formatNumber(totalEvents.sales, {
+              style: "currency",
+              currency: tcommon("analytics_chart.currency"),
+              minimumFractionDigits: 0,
+              maximumFractionDigits: 2
+            })}
           </div>
         </div>
       </div>
