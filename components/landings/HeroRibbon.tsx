@@ -1,6 +1,8 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
+import { useTranslations, useLocale } from "next-intl";
+import { HeroRibbonSkeleton } from "./HeroRibbonSkeleton";
 
 type Props = {
   seedNonce: string;
@@ -10,6 +12,9 @@ type Props = {
 const requestCache = new Map<string, Promise<string>>();
 
 export default function HeroRibbon({ seedNonce }: Props) {
+  const t = useTranslations("general.hero_ribbon");
+  const locale = useLocale();
+
   // Use deterministic uid based on seedNonce to ensure consistent caching
   const uid = `hero-ribbon-${seedNonce.replace(/[^a-zA-Z0-9-]/g, "-")}`;
   const [svgContent, setSvgContent] = useState<string>("");
@@ -18,7 +23,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
   useEffect(() => {
     const fetchSvg = async () => {
       try {
-        const url = `/api/animation-svg/hero-ribbon?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}`;
+        const url = `/api/animation-svg/hero-ribbon?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}&locale=${encodeURIComponent(locale)}`;
 
         // Check cache first
         if (requestCache.has(url)) {
@@ -44,7 +49,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
       } catch (error) {
         console.error("Error fetching hero ribbon SVG:", error);
         // Remove failed request from cache
-        const url = `/api/animation-svg/hero-ribbon?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}`;
+        const url = `/api/animation-svg/hero-ribbon?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}&locale=${encodeURIComponent(locale)}`;
         requestCache.delete(url);
       } finally {
         setIsLoading(false);
@@ -52,7 +57,12 @@ export default function HeroRibbon({ seedNonce }: Props) {
     };
 
     fetchSvg();
-  }, [uid, seedNonce]);
+  }, [uid, seedNonce, locale]);
+
+  // Show skeleton immediately while loading, then transition to actual content
+  if (isLoading || !svgContent) {
+    return <HeroRibbonSkeleton />;
+  }
 
   return (
     <div
@@ -62,17 +72,7 @@ export default function HeroRibbon({ seedNonce }: Props) {
       data-noindex="true"
     >
       <div className="relative w-full max-w-6xl scale-200 sm:scale-150 md:scale-125 xl:scale-100">
-        {isLoading ? (
-          <div className="w-full h-[420px] flex items-center justify-center bg-gray-50 rounded-lg">
-            <div className="text-gray-400 text-sm">Loading animation...</div>
-          </div>
-        ) : svgContent ? (
-          <div className="w-full h-auto" dangerouslySetInnerHTML={{ __html: svgContent }} />
-        ) : (
-          <div className="w-full h-[420px] flex items-center justify-center bg-gray-50 rounded-lg">
-            <div className="text-gray-400 text-sm">Animation failed to load</div>
-          </div>
-        )}
+        <div className="w-full h-auto" dangerouslySetInnerHTML={{ __html: svgContent }} />
       </div>
     </div>
   );

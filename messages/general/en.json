@@ -38,6 +38,18 @@
         "sdk-ts": "TypeScript SDK"
       },
       "copyright": "© 2025 PIMMS"
+    },
+    "hero_ribbon": {
+      "loading": "Loading animation...",
+      "error": "Animation failed to load",
+      "labels": {
+        "emailing": "emailing",
+        "form": "form",
+        "outreach": "outreach",
+        "shop": "shop",
+        "website": "website",
+        "funnel": "funnel"
+      }
     }
   }
 }

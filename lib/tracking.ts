@@ -1,11 +1,11 @@
-import { sendGTMEvent } from "@next/third-parties/google";
-import posthog from "posthog-js";
+// import { sendGTMEvent } from "@next/third-parties/google";
+// import posthog from "posthog-js";
 
 const userData = (email: string | undefined) => {
   return {
     customer_details: {
-      email,
-    },
+      email
+    }
   };
 };
 
@@ -33,33 +33,27 @@ const userData = (email: string | undefined) => {
 // };
 
 export const trackEvent = async (name: string, data: any, email?: string) => {
-  phEvent(name, email, data, {
-    send_instantly: true,
-  });
-
-  gtmEvent(name, email, data);
+  // phEvent(name, email, data, {
+  //   send_instantly: true
+  // });
+  // gtmEvent(name, email, data);
   // await trackClickCTA(name);
 };
 
-export const phEvent = (
-  event: string,
-  email?: string,
-  data: any = {},
-  options: any = {}
-) => {
-  posthog.capture(
-    event,
-    {
-      ...data,
-      ...(email ? { ...userData(email) } : {}),
-    },
-    { ...options }
-  );
-};
+// export const phEvent = (event: string, email?: string, data: any = {}, options: any = {}) => {
+//   posthog.capture(
+//     event,
+//     {
+//       ...data,
+//       ...(email ? { ...userData(email) } : {})
+//     },
+//     { ...options }
+//   );
+// };
 
-export const gtmEvent = (event: string, email?: string, data: any = {}) => {
-  sendGTMEvent({
-    event,
-    ...{ ...userData(email), ...data },
-  });
-};
+// export const gtmEvent = (event: string, email?: string, data: any = {}) => {
+//   sendGTMEvent({
+//     event,
+//     ...{ ...userData(email), ...data },
+//   });
+// };

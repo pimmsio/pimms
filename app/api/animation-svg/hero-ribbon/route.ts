@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getTranslations } from "next-intl/server";
 
 export const runtime = "nodejs";
 
@@ -115,6 +116,7 @@ export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const uid = searchParams.get("uid") || "ribbon";
   const seedNonce = searchParams.get("seed") || "default";
+  const locale = searchParams.get("locale") || "en";
 
   // EXACT original parameters from HeroRibbon.tsx
   const POOL_SIZE = 30;
@@ -175,16 +177,17 @@ export async function GET(request: NextRequest) {
     delayMs: 300 + i * 260 // EXACT original delays
   }));
 
-  // EXACT original labels from translations
+  // Get translated labels using proper i18n system
+  const t = await getTranslations({ locale, namespace: "general.hero_ribbon.labels" });
   const LABELS = [
-    { id: "brevo", text: "emailing", src: "/static/symbols/integrations/brevo.svg" },
-    { id: "linkedin", text: "form", src: "/static/symbols/integrations/framer.svg" },
-    { id: "lemlist", text: "outreach", src: "/static/symbols/integrations/lemlist.svg" },
-    { id: "shopify", text: "shop", src: "/static/symbols/integrations/shopify.svg" },
-    { id: "chrome", text: "website", src: "/static/symbols/integrations/wordpress.svg" },
-    { id: "systemeio", text: "funnel", src: "/static/symbols/integrations/systemeio.webp" },
-    { id: "calcom", text: "form", src: "/static/symbols/integrations/calcom.svg" },
-    { id: "calendly", text: "form", src: "/static/symbols/integrations/calendly.svg" }
+    { id: "brevo", text: t("emailing"), src: "/static/symbols/integrations/brevo.svg" },
+    { id: "linkedin", text: t("form"), src: "/static/symbols/integrations/framer.svg" },
+    { id: "lemlist", text: t("outreach"), src: "/static/symbols/integrations/lemlist.svg" },
+    { id: "shopify", text: t("shop"), src: "/static/symbols/integrations/shopify.svg" },
+    { id: "chrome", text: t("website"), src: "/static/symbols/integrations/wordpress.svg" },
+    { id: "systemeio", text: t("funnel"), src: "/static/symbols/integrations/systemeio.webp" },
+    { id: "calcom", text: t("form"), src: "/static/symbols/integrations/calcom.svg" },
+    { id: "calendly", text: t("form"), src: "/static/symbols/integrations/calendly.svg" }
   ];
 
   // Generate SVG with EXACT original structure and styling
@@ -387,7 +390,7 @@ export async function GET(request: NextRequest) {
     headers: {
       "Content-Type": "image/svg+xml",
       "Cache-Control": "public, max-age=3600",
-      "ETag": `"hero-ribbon-${uid}-${seedNonce}"`,
+      "ETag": `"hero-ribbon-${uid}-${seedNonce}-${locale}"`,
       "X-Content-Type-Options": "nosniff"
     }
   });

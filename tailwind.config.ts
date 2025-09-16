@@ -7,6 +7,23 @@ export default {
     "./content/**/*.{mdx}",
     "./lib/**/*.{js,ts,jsx,tsx}"
   ],
+  // Enable JIT mode for smaller CSS output
+  mode: 'jit',
+  // Safelist critical utilities to ensure they're always included
+  safelist: [
+    'container',
+    'section',
+    'btn',
+    'btn-primary',
+    'btn-secondary',
+    'flex',
+    'items-center',
+    'justify-center',
+    'text-center',
+    'relative',
+    'w-full',
+    'h-auto'
+  ],
   theme: {
     extend: {
       fontFamily: {

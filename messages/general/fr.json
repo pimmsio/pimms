@@ -38,6 +38,18 @@
         "sdk-ts": "SDK TypeScript"
       },
       "copyright": "© 2025 PIMMS"
+    },
+    "hero_ribbon": {
+      "loading": "Chargement de l'animation...",
+      "error": "Échec du chargement de l'animation",
+      "labels": {
+        "emailing": "emailing",
+        "form": "form",
+        "outreach": "outreach",
+        "shop": "boutique",
+        "website": "site web",
+        "funnel": "funnel"
+      }
     }
   }
 }

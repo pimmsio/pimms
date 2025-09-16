@@ -99,6 +99,24 @@ const nextConfig: NextConfig = {
             value: "public, max-age=31536000, immutable"
           }
         ]
+      },
+      {
+        source: "/manifest.json",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, s-maxage=86400"
+          }
+        ]
+      },
+      {
+        source: "/(.*)\\.(woff|woff2|eot|ttf|otf)",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable"
+          }
+        ]
       }
     ];
   },
@@ -123,22 +141,36 @@ const nextConfig: NextConfig = {
           ...config.optimization.splitChunks,
           cacheGroups: {
             ...config.optimization.splitChunks?.cacheGroups,
-            // Separate critical CSS for faster loading
+            // Separate critical CSS for above-the-fold content
             criticalStyles: {
               name: "critical-styles",
               test: /\.(css|scss|sass)$/,
               chunks: "initial",
-              priority: 25,
+              priority: 30,
               enforce: true,
-              minSize: 0
+              minSize: 0,
+              maxSize: 51200, // 50KB limit for critical CSS
+              reuseExistingChunk: true
             },
-            // Separate non-critical CSS
-            styles: {
-              name: "styles",
+            // Separate non-critical CSS for async loading
+            nonCriticalStyles: {
+              name: "non-critical-styles",
               test: /\.(css|scss|sass)$/,
               chunks: "async",
+              priority: 25,
+              enforce: true,
+              minSize: 10000, // Only chunk if > 10KB
+              reuseExistingChunk: true
+            },
+            // Separate component-specific CSS
+            componentStyles: {
+              name: "component-styles",
+              test: /\.(css|scss|sass)$/,
+              chunks: "all",
               priority: 20,
-              enforce: true
+              enforce: true,
+              minChunks: 2, // Only if used in 2+ components
+              reuseExistingChunk: true
             },
             // Separate Vimeo player into its own chunk
             vimeo: {
@@ -246,16 +278,31 @@ const nextConfig: NextConfig = {
   experimental: {
     // Use modern JavaScript features
     esmExternals: true,
-    // Re-enable CSS optimization with critters dependency installed
+    // Enhanced CSS optimization for better performance
     optimizeCss: {
-      // Enable critical CSS inlining and unused CSS removal
-      critters: true,
-      // Remove unused CSS to reduce HTML size
+      // Enable critical CSS inlining with optimized settings
+      critters: {
+        // Inline critical CSS up to 50KB to reduce render blocking
+        inlineThreshold: 51200,
+        // Minimize CSS output
+        minimumExternalSize: 0,
+        // Preload non-critical CSS
+        preload: "swap",
+        // Optimize font loading
+        fonts: true,
+        // Remove unused CSS selectors
+        pruneSource: true,
+        // Compress CSS
+        compress: true,
+        // Reduce HTML size
+        mergeStylesheets: true
+      },
+      // Remove unused CSS to reduce bundle size
       removeUnusedCss: true,
       // Inline critical CSS for faster rendering
       inlineCriticalCss: true,
-      // Preload non-critical CSS
-      preloadCss: true
+      // Preload non-critical CSS asynchronously
+      preloadCss: "swap"
     },
     // Enable CSS chunking for better loading
     cssChunking: true,
