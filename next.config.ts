@@ -258,6 +258,19 @@ const nextConfig: NextConfig = {
           ...config.resolve?.alias,
           // Use modern builds when available
           "core-js": false
+        },
+        fallback: {
+          ...config.resolve.fallback,
+          // Disable polyfills for features already supported by modern browsers
+          "process": false,
+          "buffer": false,
+          "util": false,
+          "assert": false,
+          "stream": false,
+          "crypto": false,
+          "path": false,
+          "fs": false,
+          "os": false
         }
       };
 
@@ -266,6 +279,15 @@ const nextConfig: NextConfig = {
         config.resolve.mainFields = ["module", "main"];
         config.resolve.conditionNames = ["import", "module", "require"];
       }
+
+      // Add plugin to exclude polyfills for modern browsers
+      const webpack = require("webpack");
+      config.plugins = config.plugins || [];
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          __NEXT_POLYFILL_NOMODULE__: false
+        })
+      );
     }
     return config;
   },
@@ -321,7 +343,10 @@ const nextConfig: NextConfig = {
       "tailwind-merge"
     ],
     // Minimize client-side JavaScript
-    optimizeServerReact: true
+    optimizeServerReact: true,
+
+    // Exclude polyfills for modern browsers to reduce bundle size
+    forceSwcTransforms: true
   },
   // Turbopack configuration (moved from experimental.turbo)
   turbopack: {

@@ -38,7 +38,7 @@ export function Pre({ children }: { children: ReactNode }) {
 
       {/* Code content - server rendered for SEO */}
       <div className="overflow-x-auto">
-        <pre id={id} className="p-0 text-sm text-gray-800 bg-white m-0 overflow-x-auto text-left">
+        <pre id={id} className="p-0 text-sm text-gray-800! bg-white! m-0! overflow-x-auto text-left">
           {children}
         </pre>
       </div>

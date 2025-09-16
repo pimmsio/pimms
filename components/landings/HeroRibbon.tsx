@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useEffect, useState } from "react";
-import { useTranslations, useLocale } from "next-intl";
+import { useLocale } from "next-intl";
 import { HeroRibbonSkeleton } from "./HeroRibbonSkeleton";
 
 type Props = {
@@ -12,7 +12,6 @@ type Props = {
 const requestCache = new Map<string, Promise<string>>();
 
 export default function HeroRibbon({ seedNonce }: Props) {
-  const t = useTranslations("general.hero_ribbon");
   const locale = useLocale();
 
   // Use deterministic uid based on seedNonce to ensure consistent caching

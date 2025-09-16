@@ -1,0 +1,26 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "useBuiltIns": false,
+          "modules": false,
+          "targets": {
+            "browsers": [
+              "> 1%",
+              "last 1 version",
+              "not dead",
+              "not ie 11",
+              "not op_mini all",
+              "not safari < 14",
+              "not chrome < 90",
+              "not firefox < 90",
+              "not edge < 90"
+            ]
+          }
+        }
+      }
+    ]
+  ]
+}

@@ -1,13 +1,13 @@
 // import { sendGTMEvent } from "@next/third-parties/google";
 // import posthog from "posthog-js";
 
-const userData = (email: string | undefined) => {
-  return {
-    customer_details: {
-      email
-    }
-  };
-};
+// const userData = (email: string | undefined) => {
+//   return {
+//     customer_details: {
+//       email
+//     }
+//   };
+// };
 
 // const trackClickCTA = async (eventName: string) => {
 //   try {
@@ -38,6 +38,11 @@ export const trackEvent = async (name: string, data: any, email?: string) => {
   // });
   // gtmEvent(name, email, data);
   // await trackClickCTA(name);
+
+  // Avoid unused parameter warnings by referencing them
+  void name;
+  void data;
+  void email;
 };
 
 // export const phEvent = (event: string, email?: string, data: any = {}, options: any = {}) => {

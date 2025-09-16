@@ -2,42 +2,42 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-16T15:41:54.259Z"
+    "lastmod": "2025-09-16T19:23:51.555Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-16T15:41:54.260Z"
+    "lastmod": "2025-09-16T19:23:51.556Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-09-16T15:41:54.260Z"
+    "lastmod": "2025-09-16T19:23:51.556Z"
   },
   "/landings/systemeio": {
     "en": "/solutions/systemeio-funnel-tracking-sales",
     "fr": "/solutions/tracking-systemeio-funnel-ventes",
-    "lastmod": "2025-09-16T15:41:54.260Z"
+    "lastmod": "2025-09-16T19:23:51.556Z"
   },
   "/landings/linkedin-tracker": {
     "en": "/solutions/linkedin-analytics-profile-visitor-tracking",
     "fr": "/solutions/analytics-profil-linkedin-visiteurs",
-    "lastmod": "2025-09-16T15:41:54.260Z"
+    "lastmod": "2025-09-16T19:23:51.556Z"
   },
   "/landings/landing-page-tracking": {
     "en": "/solutions/conversion-tracking-landing-page-analytics",
     "fr": "/solutions/suivi-conversions-analytics-landing-page",
-    "lastmod": "2025-09-16T15:41:54.260Z"
+    "lastmod": "2025-09-16T19:23:51.556Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-09-16T15:41:54.260Z"
+    "lastmod": "2025-09-16T19:23:51.556Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-16T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
@@ -52,7 +52,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-16T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -62,7 +62,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/guides": {
     "en": "/guides",
     "fr": "/guides",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-16T00:00:00.000Z"
   },
   "/articles/category/tutorials": {
     "en": "/tutorials",
@@ -391,9 +391,9 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
   "/articles/calcom-direct-webhook-integration": {
-    "en": "/guides/calcom-direct-webhook-integration-pimms",
-    "lastmod": "2025-09-14T00:00:00.000Z",
-    "fr": "/guides/integration-webhook-directe-calcom-pimms"
+    "en": "/guides/calcom-direct-webhook-integration",
+    "lastmod": "2025-09-16T00:00:00.000Z",
+    "fr": "/guides/calcom-direct-webhook-integration"
   },
   "/articles/how-to-track-calendly": {
     "en": "/guides/how-to-track-calendly-bookings-marketing-attribution",
@@ -447,7 +447,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/start-with-cal-com-and-zapier": {
     "en": "/guides/how-to-track-cal-com-bookings-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-09-16T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-cal-com-attribution-marketing"
   },
   "/articles/start-with-iclosed-and-zapier": {

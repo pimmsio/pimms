@@ -407,9 +407,7 @@ export default async function BlogPost({ params }: Props) {
                   // Images
                   "prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8",
                   // HR styling
-                  "prose-hr:my-12 prose-hr:border-gray-200",
-                  // Margin control for first/last elements
-                  "[&>*:first-child]:mt-0 [&>*:last-child]:mb-0"
+                  "prose-hr:my-12 prose-hr:border-gray-200"
                 )}
               >
                 <MDXRemote
