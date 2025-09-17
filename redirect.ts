@@ -16,6 +16,41 @@ const redirects = [
     permanent: true
   },
   {
+    source: "/fr/outils",
+    destination: "/fr/guides",
+    permanent: true
+  },
+  {
+    source: "/blog/track-email-campaign-revenue",
+    destination: "/blog/marketing",
+    permanent: true
+  },
+  {
+    source: "/blog/category/company",
+    destination: "/blog/marketing",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/utm-impact-conversion-paths",
+    destination: "/fr/blog/marketing",
+    permanent: true
+  },
+  {
+    source: "/blog/how-to-track-calendly-bookings-marketing-attribution",
+    destination: "/blog/marketing",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/origine-clic-referer-utm-fingerprint",
+    destination: "/fr/blog/marketing",
+    permanent: true
+  },
+  {
+    source: "/fr/blog/referrer-vs-fingerprinting-ou-vient-un-clic",
+    destination: "/fr/blog/marketing",
+    permanent: true
+  },
+  {
     source: "/blog/how-to-track-systemeio-sales-and-leads",
     destination: "/guides/how-to-track-systemeio-sales-and-leads-marketing-attribution",
     permanent: true

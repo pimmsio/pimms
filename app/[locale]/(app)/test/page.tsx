@@ -106,7 +106,7 @@ export default function TestPage() {
           Test 2 (iOS)
         </a>
       </div> */}
-      {/* <h1 className="mx-auto text-2xl font-bold">Whatsapp</h1>
+      <h1 className="mx-auto text-2xl font-bold">Whatsapp</h1>
       <div className="flex flex-row gap-4 mx-auto">
         <a
           className="text-center text-vibrant-blue block p-3 bg-gray-100"
@@ -114,13 +114,22 @@ export default function TestPage() {
         >
           Test 1 (Android)
         </a>
-        <a
-          className="text-center text-vibrant-blue block p-3 bg-gray-100"
-          href="whatsapp://wa.me/+33675044477"
-        >
+        <a className="text-center text-vibrant-blue block p-3 bg-gray-100" href="whatsapp://wa.me/+33675044477">
           Test 1 (iOS)
         </a>
-      </div> */}
+        <a
+          className="text-center text-vibrant-blue block p-3 bg-gray-100"
+          href="whatsapp://channel/0029VbB1o7qKQuJDmv0k9a3r"
+        >
+          Test 2 (iOS)
+        </a>
+        <a
+          className="text-center text-vibrant-blue block p-3 bg-gray-100"
+          href="whatsapp://whatsapp.com/channel/0029VbB1o7qKQuJDmv0k9a3r"
+        >
+          Test 3 (iOS)
+        </a>
+      </div>
       {/* <h1 className="mx-auto text-2xl font-bold">Google sheet</h1>
       https://docs.google.com/spreadsheets/d/1ZD3apzOubdoiIr0cLF5U-uAxnMi6LzByB4S5UNgbOtM/edit?usp=sharing
       <div className="flex flex-row gap-4 mx-auto">
