@@ -12,7 +12,11 @@ import {
   Share2,
   Target,
   DollarSign as DollarIcon,
-  TrendingUp
+  TrendingUp,
+  Youtube,
+  Users,
+  CreditCard,
+  CalendarCheck
 } from "@/components/icons/custom-icons";
 import Image from "next/image";
 import { cn } from "../../lib/utils";
@@ -196,19 +200,56 @@ export const FeatureText = ({ children }: { children: ReactNode }) => <>{childre
 
 export const FeatureCard = ({
   children,
-  variant = "simple"
+  variant = "simple",
+  color = "brand"
 }: {
   children: ReactNode;
   variant?: "simple" | "fancy";
+  color?: "brand" | "cyan" | "orange" | "green";
 }) => {
+  const colorConfig = {
+    brand: {
+      gradient: "from-brand-primary/5 via-brand-secondary/5 to-transparent",
+      border: "border-brand-primary/20 hover:border-brand-primary/40",
+      highlight: "from-brand-primary/10 to-transparent"
+    },
+    cyan: {
+      gradient: "from-brand-primary/8 via-brand-secondary/8 to-transparent",
+      border: "border-brand-primary/20 hover:border-brand-primary/40",
+      highlight: "from-brand-primary/15 to-transparent"
+    },
+    orange: {
+      gradient: "from-vibrant-orange/8 via-amber-400/8 to-transparent",
+      border: "border-vibrant-orange/20 hover:border-vibrant-orange/40",
+      highlight: "from-vibrant-orange/15 to-transparent"
+    },
+    green: {
+      gradient: "from-vibrant-green/8 via-teal-400/8 to-transparent",
+      border: "border-vibrant-green/20 hover:border-vibrant-green/40",
+      highlight: "from-vibrant-green/15 to-transparent"
+    }
+  };
+
+  const config = colorConfig[color];
+
   if (variant === "fancy") {
     return (
-      <div className="group relative text-center space-y-3 rounded-2xl p-6 bg-white/80 backdrop-blur-sm border border-brand-secondary/40 hover:border-brand-secondary/80 transition-all duration-200 hover:shadow-lg">
+      <div
+        className={`group/card relative text-center space-y-4 rounded-3xl p-8 bg-gradient-to-br ${config.gradient} backdrop-blur-sm border-2 ${config.border} transition-all duration-300 overflow-hidden`}
+      >
+        {/* Animated gradient overlay */}
         <div
-          className="m-0 pointer-events-none absolute -inset-px rounded-[1.05rem] bg-gradient-to-tr from-brand-secondary-light to-brand-secondary-light/5 opacity-70"
+          className={`absolute inset-0 bg-gradient-to-br ${config.highlight} opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 mb-0`}
           aria-hidden
         />
-        <div className="relative space-y-3">{children}</div>
+
+        {/* Top accent line */}
+        <div
+          className={`absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r ${config.border.replace("border-", "from-").replace("/20", "/60").replace("hover:", "").split(" ")[0]} to-transparent rounded-full`}
+          aria-hidden
+        />
+
+        <div className="relative space-y-4">{children}</div>
       </div>
     );
   }
@@ -217,7 +258,8 @@ export const FeatureCard = ({
 };
 
 export const IconBox = ({
-  icon
+  icon,
+  color = "brand"
 }: {
   icon:
     | "zap"
@@ -230,28 +272,71 @@ export const IconBox = ({
     | "integration"
     | "check"
     | "cash"
-    | "arrowUp";
+    | "arrowUp"
+    | "youtube"
+    | "users"
+    | "creditCard"
+    | "calendar"
+    | "rocket";
+  color?: "brand" | "cyan" | "orange" | "green";
 }) => {
+  // Color configurations with branded gradients
+  const colorConfig = {
+    brand: {
+      iconClass: "text-white drop-shadow-lg",
+      bgGradient: "to-brand-secondary from-brand-primary"
+    },
+    cyan: {
+      iconClass: "text-white drop-shadow-lg",
+      bgGradient: "to-brand-secondary from-brand-primary"
+    },
+    orange: {
+      iconClass: "text-white drop-shadow-lg",
+      bgGradient: "to-amber-400 from-vibrant-orange"
+    },
+    green: {
+      iconClass: "text-white drop-shadow-lg",
+      bgGradient: "to-teal-400 from-vibrant-green"
+    }
+  };
+
+  const config = colorConfig[color];
+
   const icons = {
-    zap: <BiSolidZap size={28} className="text-brand-primary" />,
-    arrowUp: <TrendingUp size={28} className="text-brand-primary" />,
-    cash: <DollarIcon size={28} className="text-brand-primary" />,
-    globe: <Share2 size={28} className="text-brand-primary" />, // fallback icon when globe not used often
-    share: <Share2 size={28} className="text-brand-primary" />,
-    target: <Target size={28} className="text-brand-primary" />,
-    mobile: <Share2 size={28} className="text-brand-primary" />, // placeholder
-    chart: <TrendingUp size={28} className="text-brand-primary" />,
-    link: <Share2 size={28} className="text-brand-primary" />,
-    integration: <Share2 size={28} className="text-brand-primary" />,
-    check: <Share2 size={28} className="text-brand-primary" />
+    zap: <BiSolidZap size={28} className={config.iconClass} />,
+    arrowUp: <TrendingUp size={28} className={config.iconClass} />,
+    cash: <DollarIcon size={28} className={config.iconClass} />,
+    globe: <Share2 size={28} className={config.iconClass} />,
+    share: <Share2 size={28} className={config.iconClass} />,
+    target: <Target size={28} className={config.iconClass} />,
+    mobile: <Share2 size={28} className={config.iconClass} />,
+    chart: <TrendingUp size={28} className={config.iconClass} />,
+    link: <Share2 size={28} className={config.iconClass} />,
+    integration: <Share2 size={28} className={config.iconClass} />,
+    check: <Share2 size={28} className={config.iconClass} />,
+    youtube: <Youtube size={28} className={config.iconClass} />,
+    users: <Users size={28} className={config.iconClass} />,
+    creditCard: <CreditCard size={28} className={config.iconClass} />,
+    calendar: <CalendarCheck size={28} className={config.iconClass} />,
+    rocket: <MdRocketLaunch size={28} className={config.iconClass} />
   } as const;
 
   return (
-    <div className="relative inline-grid place-items-center w-20 h-20 rounded-2xl mb-6 p-[1px] bg-gradient-to-tr from-brand-primary/30 to-cyan-300/30">
-      <div className="relative grid place-items-center w-full h-full rounded-[1rem] bg-white ring-1 ring-gray-200">
-        <div className="absolute inset-0 rounded-[1rem] bg-gradient-to-b from-white/60 to-white/20" aria-hidden />
-        <div className="relative z-[1]">{icons[icon]}</div>
-      </div>
+    <div
+      className={`relative inline-grid place-items-center w-20 h-20 rounded-2xl mb-6 transition-all duration-300 group-hover/card:scale-110 group-hover/card:rotate-3`}
+    >
+      {/* Gradient background with animation */}
+      <div
+        className={`absolute inset-0 rounded-2xl bg-gradient-to-tr ${config.bgGradient} group-hover/card:bg-gradient-to-br transition-all duration-500`}
+      />
+
+      {/* Shine effect */}
+      <div
+        className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/30 via-transparent to-transparent opacity-50 group-hover/card:opacity-70 transition-opacity"
+        aria-hidden
+      />
+
+      <div className="relative z-[1]">{icons[icon]}</div>
     </div>
   );
 };
@@ -594,7 +679,7 @@ export const TitleIcon = ({
   const sizeClasses =
     variant === "h2"
       ? "w-9 h-9 md:w-10 md:h-10 xl:w-12 xl:h-12 ml-1"
-      : "w-10 h-10 md:w-12 md:h-12 xl:w-14 xl:h-14 ml-1";
+      : "w-10 h-10 md:w-12 md:h-12 xl:w-14 xl:h-14 ml-3";
 
   const sizeIconClasses =
     variant === "h2" ? "w-5 h-5 md:w-6 md:h-6 xl:w-7 xl:h-7" : "w-8 h-8 md:w-10 md:h-10 xl:w-11 xl:h-11";

@@ -16,7 +16,10 @@ interface Testimonial {
   rating: number;
 }
 
-export default async function StylizedTestimonials({ className = "", locale }: StylizedTestimonialsProps & { locale: string }) {
+export default async function StylizedTestimonials({
+  className = "",
+  locale
+}: StylizedTestimonialsProps & { locale: string }) {
   const t = await getTranslations({ locale, namespace: "landing.testimonials" });
 
   const testimonials: Testimonial[] = [
@@ -59,9 +62,6 @@ export default async function StylizedTestimonials({ className = "", locale }: S
     <div className={`py-16 ${className}`}>
       <BlurFade direction="up" inView>
         <div className="text-center mb-12">
-          <div className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-purple-100 to-blue-100 rounded-full border border-purple-200 mb-6">
-            <span className="text-4xl font-bold text-gray-900">100%</span>
-          </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900">{t("title")}</h2>
         </div>
       </BlurFade>
@@ -69,14 +69,14 @@ export default async function StylizedTestimonials({ className = "", locale }: S
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {testimonials.map((testimonial, index) => (
           <BlurFade key={testimonial.id} direction="up" delay={0.1 * (index + 1)} inView>
-            <div className="relative bg-gradient-to-br from-white/80 to-purple-50/80 backdrop-blur-sm border border-white rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300">
+            <div className="group relative bg-white border-2 border-gray-200 rounded-3xl overflow-hidden hover:border-brand-primary/30 hover:shadow-xl transition-all duration-300">
               {/* Banner Image */}
-              <div className="relative h-32 overflow-hidden">
+              <div className="relative h-28 overflow-hidden">
                 <img
                   src={testimonial.bannerImage}
                   alt={`Bannière LinkedIn de ${testimonial.name}`}
                   width="400"
-                  height="128"
+                  height="112"
                   className="w-full h-full object-cover"
                   loading="lazy"
                 />
@@ -86,13 +86,13 @@ export default async function StylizedTestimonials({ className = "", locale }: S
               <div className="relative px-6 pt-6 pb-4">
                 <div className="flex items-start gap-4">
                   {/* Profile Image */}
-                  <div className="relative -mt-8 flex-shrink-0">
-                    <div className="w-16 h-16 rounded-full border-4 border-white shadow-lg overflow-hidden bg-white">
+                  <div className="relative -mt-10 flex-shrink-0">
+                    <div className="w-14 h-14 rounded-full border-3 border-white shadow-lg overflow-hidden bg-white">
                       <img
                         src={testimonial.profileImage}
                         alt={`Photo de profil de ${testimonial.name}`}
-                        width="64"
-                        height="64"
+                        width="56"
+                        height="56"
                         className="w-full h-full object-cover"
                         loading="lazy"
                       />
@@ -100,16 +100,16 @@ export default async function StylizedTestimonials({ className = "", locale }: S
                   </div>
 
                   {/* Name and Role */}
-                  <div className="flex-1 pt-2">
-                    <h3 className="text-lg font-semibold text-gray-900 leading-tight">{testimonial.name}</h3>
-                    <p className="text-sm text-gray-600 mt-1">{testimonial.role}</p>
+                  <div className="flex-1 pt-1">
+                    <h3 className="text-base font-bold text-gray-900 leading-tight">{testimonial.name}</h3>
+                    <p className="text-xs text-gray-600 mt-1">{testimonial.role}</p>
                   </div>
                 </div>
               </div>
 
               {/* Testimonial Content */}
               <div className="px-6 pb-6">
-                <p className="text-gray-800 leading-relaxed mb-4 text-sm">{testimonial.text}</p>
+                <p className="text-gray-800 leading-relaxed mb-4 text-sm font-medium">{testimonial.text}</p>
 
                 {/* Rating */}
                 <div className="flex gap-1">{renderStars(testimonial.rating)}</div>

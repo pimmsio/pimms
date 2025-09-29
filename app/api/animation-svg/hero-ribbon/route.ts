@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getTranslations } from "next-intl/server";
 
-export const runtime = "nodejs";
+export const runtime = "edge";
 
 // Exact copies of the original helper functions
 function getSharedSeeds(count: number, seedNonce: string): string[] {
@@ -389,7 +389,9 @@ export async function GET(request: NextRequest) {
     status: 200,
     headers: {
       "Content-Type": "image/svg+xml",
-      "Cache-Control": "public, max-age=3600",
+      "Cache-Control": "public, max-age=60",
+      "CDN-Cache-Control": "public, s-maxage=3600, stale-while-revalidate=86400",
+      "Vercel-CDN-Cache-Control": "public, s-maxage=86400",
       "ETag": `"hero-ribbon-${uid}-${seedNonce}-${locale}"`,
       "X-Content-Type-Options": "nosniff"
     }

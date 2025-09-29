@@ -27,7 +27,9 @@ export async function GET(request: NextRequest, { params }: { params: Promise<{ 
       status: 200,
       headers: {
         "Content-Type": "image/svg+xml",
-        "Cache-Control": "public, max-age=31536000, immutable", // Cache for 1 year
+        "Cache-Control": "public, max-age=31536000, immutable", // Cache for 1 year in browser
+        "CDN-Cache-Control": "public, s-maxage=31536000",
+        "Vercel-CDN-Cache-Control": "public, s-maxage=31536000",
         "Vary": "Accept-Encoding",
         "ETag": `"avatar-${seed}"`, // Enable conditional requests
         "Last-Modified": "Thu, 01 Jan 2024 00:00:00 GMT", // Static date for immutable content

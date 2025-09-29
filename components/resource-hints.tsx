@@ -7,12 +7,7 @@ export function ResourceHints() {
   return (
     <>
       {/* Critical preconnections only */}
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="" />
       <link rel="preconnect" href="https://assets.pimms.io" />
-
-      {/* Preload critical CSS to reduce dependency chain */}
-      <link rel="preload" href="/_next/static/css/app/globals.css" as="style" />
 
       {/* Non-critical resources use dns-prefetch to reduce HTML size */}
       <link rel="dns-prefetch" href="//eu.i.posthog.com" />

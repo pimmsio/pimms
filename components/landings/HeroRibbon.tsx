@@ -1,65 +1,40 @@
-"use client";
-
-import React, { useEffect, useState } from "react";
-import { useLocale } from "next-intl";
+import { getLocale } from "next-intl/server";
 import { HeroRibbonSkeleton } from "./HeroRibbonSkeleton";
+import { WEB_URL } from "../../app/constants";
 
 type Props = {
   seedNonce: string;
 };
 
-// Simple cache to prevent duplicate requests in development
-const requestCache = new Map<string, Promise<string>>();
+// Server-side function to fetch SVG content
+async function fetchHeroRibbonSvg(seedNonce: string, locale: string): Promise<string | null> {
+  try {
+    const uid = `hero-ribbon-${seedNonce.replace(/[^a-zA-Z0-9-]/g, "-")}`;
+    const url = `${WEB_URL}/api/animation-svg/hero-ribbon?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}&locale=${encodeURIComponent(locale)}`;
 
-export default function HeroRibbon({ seedNonce }: Props) {
-  const locale = useLocale();
+    const response = await fetch(url, {
+      // Cache for 1 hour
+      next: { revalidate: 3600 }
+    });
 
-  // Use deterministic uid based on seedNonce to ensure consistent caching
-  const uid = `hero-ribbon-${seedNonce.replace(/[^a-zA-Z0-9-]/g, "-")}`;
-  const [svgContent, setSvgContent] = useState<string>("");
-  const [isLoading, setIsLoading] = useState(true);
+    if (response.ok) {
+      return await response.text();
+    } else {
+      console.error("Failed to fetch hero ribbon SVG on server");
+      return null;
+    }
+  } catch (error) {
+    console.error("Error fetching hero ribbon SVG on server:", error);
+    return null;
+  }
+}
 
-  useEffect(() => {
-    const fetchSvg = async () => {
-      try {
-        const url = `/api/animation-svg/hero-ribbon?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}&locale=${encodeURIComponent(locale)}`;
+// Pure server component - no client-side JavaScript needed
+export default async function HeroRibbon({ seedNonce }: Props) {
+  const locale = await getLocale();
+  const svgContent = await fetchHeroRibbonSvg(seedNonce, locale);
 
-        // Check cache first
-        if (requestCache.has(url)) {
-          const svg = await requestCache.get(url)!;
-          setSvgContent(svg);
-          return;
-        }
-
-        // Create promise and cache it
-        const requestPromise = fetch(url).then(async (response) => {
-          if (response.ok) {
-            return response.text();
-          } else {
-            console.error("Failed to fetch hero ribbon SVG");
-            throw new Error("Failed to fetch SVG");
-          }
-        });
-
-        requestCache.set(url, requestPromise);
-
-        const svg = await requestPromise;
-        setSvgContent(svg);
-      } catch (error) {
-        console.error("Error fetching hero ribbon SVG:", error);
-        // Remove failed request from cache
-        const url = `/api/animation-svg/hero-ribbon?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}&locale=${encodeURIComponent(locale)}`;
-        requestCache.delete(url);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchSvg();
-  }, [uid, seedNonce, locale]);
-
-  // Show skeleton immediately while loading, then transition to actual content
-  if (isLoading || !svgContent) {
+  if (!svgContent) {
     return <HeroRibbonSkeleton />;
   }
 

@@ -12,6 +12,8 @@ export async function GET() {
     headers: {
       "Content-Type": "text/plain",
       "Cache-Control": "public, max-age=31536000, immutable",
+      "CDN-Cache-Control": "public, s-maxage=31536000",
+      "Vercel-CDN-Cache-Control": "public, s-maxage=31536000",
       "ETag": '"blur-jpeg-v1"',
       "Last-Modified": "Thu, 01 Jan 2024 00:00:00 GMT"
     }

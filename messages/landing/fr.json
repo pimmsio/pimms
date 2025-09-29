@@ -146,21 +146,21 @@
       }
     },
     "testimonials": {
-      "title": "de satisfaction",
+      "title": "Résultats Réels",
       "testimonial1": {
         "name": "Mathieu Visière",
         "role": "Consultant Marketing Digital",
-        "text": "Depuis que j'utilise PIMMS pour tracker mon profil LinkedIn, j'ai multiplié par 5 mes leads qualifiés. Je sais enfin quels posts génèrent vraiment du business et je peux suivre mes prospects automatiquement."
+        "text": "J'ai multiplié par 5 mes leads qualifiés. Je sais enfin quelles campagnes génèrent vraiment du business et je peux optimiser en temps réel. Game changer."
       },
       "testimonial2": {
         "name": "Ronan Jaffré",
         "role": "Coach Business",
-        "text": "Incroyable ! Je pensais que mes visiteurs LinkedIn étaient perdus à jamais. Maintenant je les identifie et je les convertis en clients. Mon taux de conversion a doublé en 30 jours."
+        "text": "Je pensais que mon trafic était perdu à jamais. Maintenant je les identifie et je les convertis en clients payants. Mon taux de conversion a doublé en 30 jours."
       },
       "testimonial3": {
         "name": "Jean Castets",
         "role": "Entrepreneur SaaS",
-        "text": "PIMMS a révolutionné ma prospection LinkedIn. Les workflows automatiques engagent mes visiteurs pendant que je dors. C'est comme avoir un commercial 24h/24 sur mon profil."
+        "text": "PIMMS track chaque vente jusqu'à sa source. Je vois exactement quelles campagnes génèrent du revenu et je scale ce qui marche. ROI qui explose."
       }
     },
     "contact": {

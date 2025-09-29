@@ -3,7 +3,6 @@ import Image from "next/image";
 import { Section } from "@/components/base/section";
 
 const ImageSlide = ({ locale }: { locale: string }) => {
-
   return (
     <Section id="video" className="max-w-7xl md:px-0 md:pt-4 md:pb-16">
       {/* Mobile: Simple card without padding border */}
@@ -33,8 +32,8 @@ const ImageSlide = ({ locale }: { locale: string }) => {
               width={1400}
               height={1050}
               className="grayscale w-full h-full object-cover"
-              priority
-              fetchPriority="high"
+              loading="lazy"
+              fetchPriority="low"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 1200px"
             />
           </div>

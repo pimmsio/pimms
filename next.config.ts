@@ -79,6 +79,10 @@ const nextConfig: NextConfig = {
           {
             key: "Referrer-Policy",
             value: "strict-origin-when-cross-origin"
+          },
+          {
+            key: "CDN-Cache-Control",
+            value: "s-maxage=60, stale-while-revalidate=300"
           }
         ]
       },

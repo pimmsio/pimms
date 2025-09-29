@@ -122,11 +122,7 @@ Tu devrais voir une **conversion** enregistrée automatiquement.
 - Vérifie que ton Zap est actif et bien publié  
 - Regarde l’**historique des tâches Zapier** en cas d’erreur
 
-## Comment partager ton calendrier Cal.com
-
-### Option A — Créer un lien court Pimms
-
-À utiliser si tu partages ton lien Cal.com dans des emails, posts, pubs ou QR codes.
+## Partager ton calendrier Cal.com
 
 1. Va sur [Pimms](https://app.pimms.io)  
 2. Crée un lien court vers ta page Cal.com  
@@ -139,54 +135,6 @@ https://pim.ms/ton-lien
 ```
 
 
-### Option B — Utiliser Cal.com sur ton site
-
-Ajoute ce script dans le `<head>` de ton site dans toutes les pages de ton site :  
-
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
-
-<LinkCard
-  href="/freetools/site-checker"
-  title="Vérifie que tout fonctionne"
-  description="Utilise notre outil gratuit pour vérifier que le script Pimms est correctement installé sur ton site."
-/>
-
-#### Cas 1 — Lien classique
-
-Tu n’as rien à faire, Pimms détectera automatiquement la réservation.
-
-#### Cas 2 — Calendrier intégré dans la page
-
-📘 [Voir comment intégrer Cal.com →](https://cal.com/help/embedding/adding-embed)
-
-**Pour les popups**  
-- Utilise l’attribut `data-cal-link`  
-- Ajoute `?pimms_id=1` à la fin du lien
-
-**Exemple** :  
-```html
-<button data-cal-link="tonnom/meeting?pimms_id=1">Réserver</button>
-```
-
-**Pour l’intégration inline (JavaScript)**  
-
-Ajoute ce script dans la page dans toutes les pages de ton site :  
-
-```html
-<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
-```
-
-Puis ajoute `?pimms_id=${window.pimms_id}` à ton lien Cal.com :
-
-Exemple :  
-```js
-Cal.ns["30min"]("inline", {
-  elementOrSelector: "...",
-  calLink: `alexandre/30min?pimms_id=${window.pimms_id}`
-});
-```
 
 ## FAQ
 

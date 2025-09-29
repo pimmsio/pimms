@@ -10,9 +10,9 @@ categories:
   - guides
 related:
   - calcom-direct-webhook-integration
+  - cal-com-webflow-integration-complete-setup-guide
   - start-with-iclosed-and-zapier
   - how-to-track-calendly
-  - no-code-guide-for-website
 ---
 
 **Cal.com booking tracking** lets you see exactly which marketing campaigns generate your most valuable meetings and appointments. This complete guide shows you how to connect **Cal.com to Pimms** via Zapier in 10-15 minutes with zero coding required.
@@ -174,11 +174,7 @@ You should see a new **conversion** tracked automatically.
 
 👉 [Try direct webhook integration](/articles/calcom-direct-webhook-integration)
 
-## 8. Best ways to share your Cal.com booking form
-
-### Option A — Create a Pimms short link
-
-Use this if you're sharing your Cal.com link via email, ads, QR codes, or YouTube.
+## 8. Share your Cal.com booking form
 
 1. Go to [Pimms](https://app.pimms.io)
 2. Create a short link pointing to your Cal.com booking page
@@ -190,55 +186,6 @@ Use this if you're sharing your Cal.com link via email, ads, QR codes, or YouTub
 https://pim.ms/your-link
 ```
 
-### Option B — Use Cal.com on your website
-
-Add this script in your site’s or page head in all the pages of your website:
-
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
-
-<LinkCard
-  href="/freetools/site-checker"
-  title="Verify your script installation"
-  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
-/>
-
-#### Case 1 — Simple link
-
-You have nothing to do, Pimms will automatically track the booking.
-
-#### Case 2 — Embedded calendar
-
-📘 [How to embed Cal.com →](https://cal.com/help/embedding/adding-embed)
-
-**For popup embeds**
-
-- Use the `data-cal-link` attribute
-- Add `?pimms_id=1` at the end of the link
-
-```html
-<button data-cal-link="yourname/meeting?pimms_id=1">Book now</button>
-```
-
-**For inline embeds**
-
-- Add this additional script to the page in all the pages of your website:
-
-```html
-<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
-```
-
-- Add `?pimms_id=${window.pimms_id}` to your calendar link
-
-Example:
-
-```js
-Cal.ns["30min"]("inline", {
-  elementOrSelector: "...",
-  calLink: `alexandre/30min?pimms_id=${window.pimms_id}`
-});
-```
 
 ## FAQs
 
