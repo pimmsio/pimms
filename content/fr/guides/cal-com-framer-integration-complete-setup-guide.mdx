@@ -48,6 +48,8 @@ D'abord, ajoute le script analytics Pimms à ton site Framer pour tracker les vi
 <script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
 ```
 
+![Code personnalisé Framer](https://assets.pimms.io/framer-custom-code.webp)
+
 3. **Publie** ton site
 
 <LinkCard
@@ -78,7 +80,7 @@ https://cal.com/tonnom/meeting?pimms_id=1
 
 Parfait pour afficher le calendrier directement sur ta page.
 
-![Exemple d'intégration calendrier dans Framer](https://assets.pimms.io/calcom-embed-framer-example.webp)
+![Exemple d'intégration calendrier dans Framer](https://assets.pimms.io/calcom-embed-webflow-example.webp)
 
 1. Ajoute le script expose dans le head de ton site Framer (en dessous du script detection) :
 
@@ -115,12 +117,24 @@ Parfait pour des boutons qui ouvrent un popup calendrier.
 ![Exemple de calendrier popup dans Framer](https://assets.pimms.io/calcom-popup-framer-example.webp)
 
 1. Dans Framer, ajoute un **Bouton**
-2. Ajoute ces **Custom Attributes** au bouton :
+2. Ajoute au bouton un "code override" avec la valeur suivante :
 
-- **Attribute Name** : `data-cal-link`
-- **Attribute Value** : `your-cal-link?pimms_id=1`
+```
+import { type ComponentType } from "react"
 
-![Exemple d'un bouton avec attribut data-cal-link](https://assets.pimms.io/calcom-embed-popup-button.webp)
+export const AddRel = (Component: ComponentType): ComponentType => {
+    return (props) => (
+        <Component
+            {...props}
+            data-cal-link="your/cal-link?pimms_id=1"
+            data-cal-namespace="cal-link"
+            data-cal-config='{"layout":"month_view"}'
+        />
+    )
+}
+```
+
+![Exemple d'un bouton avec code override](https://assets.pimms.io/calcom-button-code-override.webp)
 
 3. Copie/colle le code depuis **Embed** → **Popup via element click** → **HTML (iframe)** dans le head de ton site Framer
 

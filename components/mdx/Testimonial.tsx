@@ -1,6 +1,7 @@
 import { Star } from "@/components/icons/custom-icons";
 import { OptimizedImage } from "@/components/ui/optimized-image";
 import React from "react";
+import { getTranslations } from "next-intl/server";
 
 interface TestimonialProps {
   children: React.ReactNode;
@@ -11,7 +12,8 @@ interface TestimonialProps {
   rating?: number;
 }
 
-export function Testimonial({ children, name, role, profileImage, bannerImage, rating = 5 }: TestimonialProps) {
+export async function Testimonial({ children, name, role, profileImage, bannerImage, rating = 5 }: TestimonialProps) {
+  const t = await getTranslations("landing.testimonial");
   const renderStars = (count: number) => {
     return Array.from({ length: 5 }, (_, index) => (
       <Star key={index} className={`w-4 h-4 ${index < count ? "text-yellow-400 fill-current" : "text-gray-300"}`} />
@@ -24,7 +26,7 @@ export function Testimonial({ children, name, role, profileImage, bannerImage, r
       <div className="relative aspect-[4/1] overflow-hidden bg-gray-100">
         <OptimizedImage
           src={bannerImage}
-          alt={`Bannière LinkedIn de ${name}`}
+          alt={t("banner_alt", { name })}
           width={800}
           height={200}
           className="w-full h-full object-contain"
@@ -40,7 +42,7 @@ export function Testimonial({ children, name, role, profileImage, bannerImage, r
             <div className="w-22 h-22 rounded-full border-3 border-white shadow-lg overflow-hidden bg-white">
               <OptimizedImage
                 src={profileImage}
-                alt={`Photo de profil de ${name}`}
+                alt={t("profile_alt", { name })}
                 width={88}
                 height={88}
                 className="w-full h-full object-cover"

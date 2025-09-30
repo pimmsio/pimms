@@ -92,8 +92,7 @@ Perfect for dedicated booking pages or sections where you want the calendar dire
 
 - In your Cal.com dashboard, go to **Embed** → **Inline embed** → **HTML (iframe)**
 - Copy the script code
-- In Framer, add an **Embed** component where you want the calendar
-- Paste the Cal.com script code
+- In Framer, paste the Cal.com script into your site's head
 
 ![Cal.com inline embed dashboard](https://assets.pimms.io/calcom-embed-inline-dashboard.webp)
 
@@ -119,15 +118,27 @@ elementOrSelector: "#id-of-the-element",
 
 Perfect for booking buttons that open a popup calendar.
 
-![Example of popup calendar in Framer](https://assets.pimms.io/calcom-popup-webflow-example.webp)
+![Example of popup calendar in Framer](https://assets.pimms.io/calcom-popup-framer-example.webp)
 
-1. In Framer, add a **Button** element
-2. Add this code to the button's **Custom Attributes**:
+1. In Framer, add a **Button**
+2. Add a "code override" with the following value:
 
-- **Attribute Name**: `data-cal-link`
-- **Attribute Value**: `your-cal-link?pimms_id=1`
+```
+import { type ComponentType } from "react"
 
-![Example of a button with data-cal-link attribute](https://assets.pimms.io/calcom-framer-embed-popup-button.webp)
+export const AddRel = (Component: ComponentType): ComponentType => {
+    return (props) => (
+        <Component
+            {...props}
+            data-cal-link="your/cal-link?pimms_id=1"
+            data-cal-namespace="cal-link"
+            data-cal-config='{"layout":"month_view"}'
+        />
+    )
+}
+```
+
+![Example of a button with code override](https://assets.pimms.io/calcom-button-code-override.webp)
 
 3. Copy/paste the code from **Embed** → **Popup via element click** → **HTML (iframe)** in your Framer site head
 

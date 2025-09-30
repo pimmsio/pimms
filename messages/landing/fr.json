@@ -1,5 +1,12 @@
 {
   "landing": {
+    "badges": {
+      "reviews": "100+ avis"
+    },
+    "testimonial": {
+      "banner_alt": "Bannière LinkedIn de {name}",
+      "profile_alt": "Photo de profil de {name}"
+    },
     "nav": {
       "features": "Fonctionnalités",
       "onboarding": "Onboarding",

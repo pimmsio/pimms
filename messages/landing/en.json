@@ -1,5 +1,12 @@
 {
   "landing": {
+    "badges": {
+      "reviews": "100+ Reviews"
+    },
+    "testimonial": {
+      "banner_alt": "LinkedIn banner of {name}",
+      "profile_alt": "Profile photo of {name}"
+    },
     "nav": {
       "features": "Features",
       "onboarding": "Onboarding",

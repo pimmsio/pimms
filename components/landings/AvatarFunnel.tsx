@@ -41,7 +41,7 @@ export default async function AvatarFunnel({ seedNonce }: Props) {
   return (
     <div className="w-full grid place-items-center" aria-hidden="true" data-nosnippet>
       <div className="relative w-full sm:w-11/12">
-        <div className="w-full h-auto" dangerouslySetInnerHTML={{ __html: svgContent }} />;
+        <div className="w-full h-auto" dangerouslySetInnerHTML={{ __html: svgContent }} />
         <AvatarFunnelEvents />
       </div>
     </div>
