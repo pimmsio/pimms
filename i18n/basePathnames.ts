@@ -23,6 +23,10 @@ export const basePathnames = {
     en: "/solutions/conversion-tracking-landing-page-analytics",
     fr: "/solutions/suivi-conversions-analytics-landing-page"
   },
+  "/landings/2octobre": {
+    en: "/2october",
+    fr: "/2octobre"
+  },
   "/freetools/site-checker": {
     en: "/freetools/pimms-tracking-site-checker-install",
     fr: "/freetools/pimms-tracking-site-checker-installation"

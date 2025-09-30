@@ -2,37 +2,42 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-30T21:46:44.708Z"
+    "lastmod": "2025-10-02T13:23:43.652Z"
   },
   "/landings/home": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-09-30T21:46:44.708Z"
+    "lastmod": "2025-10-02T13:23:43.653Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",
     "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-09-30T21:46:44.708Z"
+    "lastmod": "2025-10-02T13:23:43.653Z"
   },
   "/landings/systemeio": {
     "en": "/solutions/systemeio-funnel-tracking-sales",
     "fr": "/solutions/tracking-systemeio-funnel-ventes",
-    "lastmod": "2025-09-30T21:46:44.708Z"
+    "lastmod": "2025-10-02T13:23:43.653Z"
   },
   "/landings/linkedin-tracker": {
     "en": "/solutions/linkedin-analytics-profile-visitor-tracking",
     "fr": "/solutions/analytics-profil-linkedin-visiteurs",
-    "lastmod": "2025-09-30T21:46:44.708Z"
+    "lastmod": "2025-10-02T13:23:43.653Z"
   },
   "/landings/landing-page-tracking": {
     "en": "/solutions/conversion-tracking-landing-page-analytics",
     "fr": "/solutions/suivi-conversions-analytics-landing-page",
-    "lastmod": "2025-09-30T21:46:44.708Z"
+    "lastmod": "2025-10-02T13:23:43.653Z"
+  },
+  "/landings/2octobre": {
+    "en": "/2october",
+    "fr": "/2octobre",
+    "lastmod": "2025-10-02T13:23:43.653Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-09-30T21:46:44.708Z"
+    "lastmod": "2025-10-02T13:23:43.653Z"
   },
   "/articles": {
     "en": "/articles",

@@ -57,6 +57,8 @@ import LeadScoringAnimatedList from "@/components/landings/LeadScoringAnimatedLi
 import ConversionFlipCard from "@/components/landings/ConversionFlipCard";
 import HeroBenefits from "@/components/landings/hero-benefits";
 import ContactSidebar from "@/components/landings/contact-sidebar";
+import { LinkedinTestimonialsRibbon } from "@/components/landings/LinkedinTestimonialsRibbon";
+import { LinkedinPost } from "@/components/linkedin-post";
 
 // Import generic content components
 import {
@@ -207,6 +209,8 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       // Testimonial components
       Testimonial,
       TestimonialsGrid,
+      LinkedinTestimonialsRibbon,
+      LinkedinPost: (props: any) => <LinkedinPost {...props} className="w-[380px] sm:w-[420px]" />,
 
       // CTA components
       CtaButton: async ({

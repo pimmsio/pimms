@@ -514,17 +514,11 @@ export const Section = ({
       style={getBackgroundStyle()}
     >
       {background !== "none" && (
-        <div className="pointer-events-none absolute inset-0 -z-10">
+        <div className="pointer-events-none absolute inset-0 -z-10 bg-white overflow-hidden">
           {background === "subtle" && (
             <>
               <div className="absolute -top-24 -left-32 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(57,112,255,0.16),transparent_60%)] blur-2xl" />
               <div className="absolute -bottom-24 -right-32 h-72 w-72 rounded-full bg-[radial-gradient(circle_at_center,rgba(47,205,250,0.14),transparent_60%)] blur-2xl" />
-            </>
-          )}
-          {background === "brandGlow" && (
-            <>
-              <div className="absolute -top-28 left-1/4 h-80 w-80 -translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(41,107,255,0.22),transparent_65%)] blur-2xl" />
-              <div className="absolute -bottom-28 right-1/4 h-80 w-80 translate-x-1/2 rounded-full bg-[radial-gradient(circle_at_center,rgba(47,205,250,0.18),transparent_65%)] blur-2xl" />
             </>
           )}
         </div>
