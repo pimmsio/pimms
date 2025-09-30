@@ -105,10 +105,10 @@ export const Footer = async ({
                   </li>
                   <li>
                     <Link
-                      href={getCanonicalLink(locale, "/landings/landing-page-tracking")}
+                      href={getCanonicalLink(locale, "/landings/youtube")}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >
-                      Landing Page Tracking
+                      YouTube Conversion Tracking
                     </Link>
                   </li>
                   <li>

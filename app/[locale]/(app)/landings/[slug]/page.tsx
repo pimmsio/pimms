@@ -37,6 +37,8 @@ import { Steps, Step, StepCompleted } from "@/components/mdx/Steps";
 import { FaqStructuredData } from "@/components/mdx/FaqStructuredData";
 import { AnimatedCentered } from "@/components/mdx/AnimatedCentered";
 import { BlurFade } from "@/components/magicui/blur-fade";
+import { Testimonial } from "@/components/mdx/Testimonial";
+import { TestimonialsGrid } from "@/components/mdx/TestimonialsGrid";
 
 // Import landing components
 import { Hero } from "@/components/landings/hero";
@@ -54,7 +56,6 @@ import IntegrationsGrid from "@/components/landings/integrations-grid";
 import LeadScoringAnimatedList from "@/components/landings/LeadScoringAnimatedList";
 import ConversionFlipCard from "@/components/landings/ConversionFlipCard";
 import HeroBenefits from "@/components/landings/hero-benefits";
-import StylizedTestimonials from "@/components/landings/stylized-testimonials";
 import ContactSidebar from "@/components/landings/contact-sidebar";
 
 // Import generic content components
@@ -198,11 +199,15 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       VideoSlide,
       HeroBenefits,
       SwapRotate,
-      StylizedTestimonials,
       ContactSidebar,
       ComparisonContainer,
       ComparisonHeader,
       ComparisonRow,
+
+      // Testimonial components
+      Testimonial,
+      TestimonialsGrid,
+
       // CTA components
       CtaButton: async ({
         children,

@@ -125,46 +125,9 @@
         "conversions": "+ conversions"
       }
     },
-    "onboarding": {
-      "title": "Simple. Fast.",
-      "step1": {
-        "title": "1-Click Setup",
-        "description": "Simply add our tracking link to your LinkedIn profile. Instant setup, no complex code required."
-      },
-      "step2": {
-        "title": "Identify Your Visitors",
-        "description": "Watch as anonymous profile visitors turn into identified leads with company data and behavioral insights."
-      },
-      "step3": {
-        "title": "Convert Automatically",
-        "description": "Set up automated workflows to engage hot prospects and book calls with your highest-value visitors."
-      },
-      "bonus": {
-        "title": "Unlimited Tracking",
-        "description": "No limits on tracked visitors. Data stored and analyzed continuously to maximize your conversions."
-      }
-    },
-    "testimonials": {
-      "title": "Real Results",
-      "testimonial1": {
-        "name": "Mathieu Visière",
-        "role": "Digital Marketing Consultant",
-        "text": "I've multiplied my qualified leads by 5. I finally know which campaigns actually generate business and can optimize in real-time. Game changer."
-      },
-      "testimonial2": {
-        "name": "Ronan Jaffré",
-        "role": "Business Coach",
-        "text": "I thought my traffic was lost forever. Now I identify them and convert them into paying clients. My conversion rate doubled in 30 days."
-      },
-      "testimonial3": {
-        "name": "Jean Castets",
-        "role": "SaaS Entrepreneur",
-        "text": "PIMMS tracks every sale back to its source. I see exactly which campaigns drive revenue and scale what works. ROI went through the roof."
-      }
-    },
     "contact": {
       "question": "Need help?",
-      "action": "Talk with Alexandre on Cal.com"
+      "action": "Book a call with Alexandre"
     },
     "free_offer": {
       "images": {

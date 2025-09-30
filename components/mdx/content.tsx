@@ -698,11 +698,11 @@ export const TitleIcon = ({
   const LucideIcon = iconMap[icon];
 
   return (
-    <div
+    <span
       className={`inline-flex items-center align-baseline justify-center bg-gradient-to-tr to-brand-secondary from-brand-primary rounded-lg rotate-7 -translate-x-0.5 -translate-y-0.5 md:-translate-y-1 shadow-md shadow-brand-primary/40 ${sizeClasses}`}
     >
       <LucideIcon className={`${sizeIconClasses} drop-shadow-lg drop-shadow-brand-primary text-white`} />
-    </div>
+    </span>
   );
 };
 

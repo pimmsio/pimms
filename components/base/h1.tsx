@@ -4,7 +4,7 @@ export const H1 = ({ children, className }: { children: React.ReactNode; classNa
   return (
     <h1
       className={twMerge(
-        "font-jakarta text-5xl md:text-6xl lg:text-7xl !leading-[1.1] font-bold !tracking-tighter text-text-primary mx-auto",
+        "font-jakarta text-5xl md:text-6xl lg:text-7xl !leading-[1.3] font-bold !tracking-tighter text-text-primary mx-auto",
         className
       )}
     >
@@ -17,7 +17,7 @@ export const H1Blog = ({ children, className }: { children: React.ReactNode; cla
   return (
     <h1
       className={twMerge(
-        "font-jakarta text-3xl md:text-4xl font-bold !leading-[1.1] !tracking-tighter text-text-primary text-center",
+        "font-jakarta text-3xl md:text-4xl font-bold !leading-[1.3] !tracking-tighter text-text-primary text-center",
         className
       )}
     >

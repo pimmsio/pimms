@@ -126,46 +126,9 @@
         "conversions": "+ de conversions"
       }
     },
-    "onboarding": {
-      "title": "Simple. Rapide.",
-      "step1": {
-        "title": "Configuration en 1 clic",
-        "description": "Ajoute simplement notre lien de tracking à ton profil LinkedIn. Configuration instantanée, pas de code complexe."
-      },
-      "step2": {
-        "title": "Identifie tes visiteurs",
-        "description": "Regarde les visiteurs anonymes de ton profil se transformer en leads identifiés avec données d'entreprise et insights comportementaux."
-      },
-      "step3": {
-        "title": "Convertis automatiquement",
-        "description": "Configure des workflows automatisés pour engager les prospects chauds et booker des appels avec tes visiteurs haute valeur."
-      },
-      "bonus": {
-        "title": "Suivi illimité",
-        "description": "Pas de limite sur le nombre de visiteurs trackés. Données stockées et analysées en continu pour maximiser tes conversions."
-      }
-    },
-    "testimonials": {
-      "title": "Résultats Réels",
-      "testimonial1": {
-        "name": "Mathieu Visière",
-        "role": "Consultant Marketing Digital",
-        "text": "J'ai multiplié par 5 mes leads qualifiés. Je sais enfin quelles campagnes génèrent vraiment du business et je peux optimiser en temps réel. Game changer."
-      },
-      "testimonial2": {
-        "name": "Ronan Jaffré",
-        "role": "Coach Business",
-        "text": "Je pensais que mon trafic était perdu à jamais. Maintenant je les identifie et je les convertis en clients payants. Mon taux de conversion a doublé en 30 jours."
-      },
-      "testimonial3": {
-        "name": "Jean Castets",
-        "role": "Entrepreneur SaaS",
-        "text": "PIMMS track chaque vente jusqu'à sa source. Je vois exactement quelles campagnes génèrent du revenu et je scale ce qui marche. ROI qui explose."
-      }
-    },
     "contact": {
       "question": "Besoin d'un renseignement ?",
-      "action": "Parle avec Alexandre sur Cal.com"
+      "action": "Réserve un call avec Alexandre"
     },
     "free_offer": {
       "images": {
