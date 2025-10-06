@@ -16,10 +16,11 @@ export type PageMetadata = {
   categories: string[];
   author?: string;
   related?: string[];
+  folder?: string;
 };
 
 type LoosePageMetadata = {
-  [K in keyof PageMetadata]: string | string[];
+  [K in keyof PageMetadata]: string | string[] | undefined;
 };
 
 export const parseFrontmatter = (fileContent: string) => {
@@ -79,11 +80,8 @@ export const parseFrontmatter = (fileContent: string) => {
       : metadata.categories
         ? [metadata.categories as string]
         : [],
-    related: Array.isArray(metadata.related)
-      ? metadata.related
-      : metadata.related
-        ? [metadata.related as string]
-        : [],
+    related: Array.isArray(metadata.related) ? metadata.related : metadata.related ? [metadata.related as string] : [],
+    folder: typeof metadata.folder === "string" ? metadata.folder : undefined
   };
 
   return { metadata: normalized, content };
@@ -104,17 +102,13 @@ export type Faq = {
 };
 
 export function extractFaqsFromMdxSync(content: string): Faq[] {
-  const processor = unified()
-    .use(remarkParse)
-    .use(remarkGfm)
-    .use(remarkDirective)
-    .use(remarkFaqDirective);
+  const processor = unified().use(remarkParse).use(remarkGfm).use(remarkDirective).use(remarkFaqDirective);
 
-  const file = { value: content, data: {} };
+  const file = { value: content, data: {} as { faqs?: Faq[] } };
   const tree = processor.parse(content);
   processor.runSync(tree, file);
 
-  return (file.data as any).faqs || [];
+  return file.data.faqs || [];
 }
 
 export const readMDXFile = (filePath: string) => {
@@ -123,10 +117,7 @@ export const readMDXFile = (filePath: string) => {
   // Normalize ::: directives (e.g., ::: faq → :::@faq)
   rawContent = rawContent.replace(/^:::\s?/gm, ":::");
   // Transform :::@iframe <url> into :::iframe\n<url>\n:::
-  rawContent = rawContent.replace(
-    /^:::@iframe\s+(.+)$/gm,
-    (_match, url) => `:::iframe\n${url.trim()}\n`
-  );
+  rawContent = rawContent.replace(/^:::@iframe\s+(.+)$/gm, (_match, url) => `:::iframe\n${url.trim()}\n`);
   // replace preview.pimms.io with app.pimms.io
   rawContent = rawContent.replace(/preview\.pimms\.io/g, "app.pimms.io");
 
@@ -143,31 +134,25 @@ export const getMDXData = (dir: string) => {
     return {
       metadata,
       slug,
-      content,
+      content
     };
   });
 };
 
-export const getPage = (
-  locale: string,
-  dirs: string | string[],
-  slug: string
-) => {
+export const getPage = (locale: string, dirs: string | string[], slug: string) => {
   const root = process.cwd();
   const dirList = Array.isArray(dirs) ? dirs : [dirs];
 
   // Build a prioritized list of paths to try (localized first, then fallback to "en")
   const possiblePaths = dirList.flatMap((dir) => [
     path.join(root, "content", locale, dir, `${slug}.mdx`),
-    path.join(root, "content", "en", dir, `${slug}.mdx`),
+    path.join(root, "content", "en", dir, `${slug}.mdx`)
   ]);
 
   const pathToUse = possiblePaths.find(fs.existsSync);
 
   if (!pathToUse) {
-    throw new Error(
-      `Page not found for slug "${slug}" in dirs [${dirList.join(", ")}]`
-    );
+    throw new Error(`Page not found for slug "${slug}" in dirs [${dirList.join(", ")}]`);
   }
 
   const { metadata, content } = readMDXFile(pathToUse);
@@ -180,7 +165,7 @@ export const getPage = (
     slug,
     content,
     faqs,
-    dir,
+    dir
   };
 };
 
@@ -192,9 +177,7 @@ export const getPages = (locale: string, dirs: string[]) => {
     const localizedPath = path.join(root, "content", locale, dir);
     const fallbackPath = path.join(root, "content", "en", dir);
 
-    const actualPath = fs.existsSync(localizedPath)
-      ? localizedPath
-      : fallbackPath;
+    const actualPath = fs.existsSync(localizedPath) ? localizedPath : fallbackPath;
 
     if (!fs.existsSync(actualPath)) {
       console.warn("Directory does not exist in any locale:", dir);
@@ -238,7 +221,7 @@ export const formatDate = (date: string, includeRelative = false) => {
   const fullDate = targetDate.toLocaleString("en-us", {
     month: "long",
     day: "numeric",
-    year: "numeric",
+    year: "numeric"
   });
 
   if (!includeRelative) {

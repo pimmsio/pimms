@@ -1,7 +1,7 @@
 import { writeFileSync } from "fs";
 import path from "path";
 import { getPages } from "@/lib/mdx";
-import { articleFolders, ArticleFolders, locales, translationFolders } from "@/i18n/config";
+import { articleFolders, ArticleFolders, landingFolders, locales, translationFolders } from "@/i18n/config";
 import { basePathnames } from "@/i18n/basePathnames";
 
 async function generatePathnames() {
@@ -69,7 +69,40 @@ async function generatePathnames() {
     }
   }
 
-  // 3. Patch lastmod for special routes
+  // 3. Add dynamic landing pages
+  for (const locale of locales) {
+    const pages = getPages(locale, landingFolders);
+
+    for (const page of pages) {
+      const sharedKey = `/landings/${page.slug}`;
+      const slug = page.metadata.slug;
+      const folder = page.metadata.folder;
+
+      if (!result[sharedKey]) {
+        result[sharedKey] = {};
+      }
+
+      // Build localized path using folder + slug
+      // If folder is undefined, default to "solutions"
+      // If folder is empty string "", map to root level
+      let localizedPath: string;
+      if (folder === "") {
+        // Special case: empty folder means root level (e.g., /home, /2october)
+        localizedPath = slug === "home" ? "/" : `/${slug}`;
+      } else {
+        // Default folder is "solutions"
+        const finalFolder = folder || "solutions";
+        localizedPath = `/${finalFolder}/${slug}`;
+      }
+
+      result[sharedKey][locale] = localizedPath;
+      result[sharedKey]["lastmod"] = page.metadata.updatedAt
+        ? new Date(page.metadata.updatedAt).toISOString()
+        : new Date().toISOString();
+    }
+  }
+
+  // 4. Patch lastmod for special routes
   for (const sharedKey in result) {
     // Articles root
     if (sharedKey === "/articles") {
@@ -94,7 +127,7 @@ async function generatePathnames() {
     }
   }
 
-  // 4. Write file
+  // 5. Write file
   const fileContent = `export const pathnames: Record<string, Record<string, string>> = ${JSON.stringify(
     result,
     null,

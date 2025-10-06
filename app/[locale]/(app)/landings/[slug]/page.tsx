@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { getPage } from "@/lib/mdx";
+import { getPage, getPages } from "@/lib/mdx";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import React from "react";
 import { twMerge } from "tailwind-merge";
@@ -15,8 +15,8 @@ import { remarkFaqDirective } from "@/lib/mdx/remarkFaqDirective";
 import { remarkCtaPlaceholder } from "@/lib/mdx/remarkCtaDirective";
 import { remarkCustomDirectives } from "@/lib/mdx/remarkCustomDirectives";
 import { remarkAtSyntax } from "@/lib/mdx/remark-at-syntax";
-import { cn, generateLandingMetadata, getCanonicalLink } from "@/lib/utils";
-import { landingFolders } from "@/i18n/config";
+import { cn, generatePagesMetadata, getCanonicalLink } from "@/lib/utils";
+import { landingFolders, locales } from "@/i18n/config";
 import { Zap } from "@/components/icons/custom-icons";
 import { notFound } from "next/navigation";
 import { FaCreditCard, FaLock } from "@/components/icons/custom-icons";
@@ -135,19 +135,36 @@ import HeroRibbon from "../../../../../components/landings/HeroRibbon";
 import { SwapRotate } from "../../../../../components/magicui/swap-rotate";
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
-  const { slug } = await params;
-  const pathname = slug === "home" ? "/" : `/landings/${slug}`;
-  return generateLandingMetadata({ params, lkey: slug, pathname });
+  const { slug, locale } = await params;
+
+  try {
+    const page = getPage(locale, landingFolders, slug);
+
+    return generatePagesMetadata({
+      params,
+      dir: "landings",
+      slug,
+      metadata: page.metadata
+    });
+  } catch {
+    notFound();
+  }
 }
 
 export async function generateStaticParams() {
-  return [
-    { slug: "home" },
-    { slug: "youtube" },
-    { slug: "linkedin-tracker" },
-    { slug: "systemeio" },
-    { slug: "landing-page-tracking" }
-  ];
+  const allParams = [];
+
+  for (const locale of locales) {
+    const pages = getPages(locale, landingFolders);
+    allParams.push(
+      ...pages.map((page) => ({
+        locale,
+        slug: page.slug
+      }))
+    );
+  }
+
+  return allParams;
 }
 
 // Enable static generation with revalidation

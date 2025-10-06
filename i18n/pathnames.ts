@@ -2,42 +2,12 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-10-06T10:12:59.934Z"
-  },
-  "/landings/home": {
-    "en": "/",
-    "fr": "/",
-    "lastmod": "2025-10-06T10:12:59.934Z"
-  },
-  "/landings/youtube": {
-    "en": "/solutions/deep-links-youtube-channel",
-    "fr": "/solutions/deep-links-chaine-youtube",
-    "lastmod": "2025-10-06T10:12:59.934Z"
-  },
-  "/landings/systemeio": {
-    "en": "/solutions/systemeio-funnel-tracking-sales",
-    "fr": "/solutions/tracking-systemeio-funnel-ventes",
-    "lastmod": "2025-10-06T10:12:59.934Z"
-  },
-  "/landings/linkedin-tracker": {
-    "en": "/solutions/linkedin-analytics-profile-visitor-tracking",
-    "fr": "/solutions/analytics-profil-linkedin-visiteurs",
-    "lastmod": "2025-10-06T10:12:59.934Z"
-  },
-  "/landings/landing-page-tracking": {
-    "en": "/solutions/conversion-tracking-landing-page-analytics",
-    "fr": "/solutions/suivi-conversions-analytics-landing-page",
-    "lastmod": "2025-10-06T10:12:59.934Z"
-  },
-  "/landings/2octobre": {
-    "en": "/2october",
-    "fr": "/2octobre",
-    "lastmod": "2025-10-06T10:12:59.934Z"
+    "lastmod": "2025-10-09T12:47:57.182Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-10-06T10:12:59.934Z"
+    "lastmod": "2025-10-09T12:47:57.183Z"
   },
   "/articles": {
     "en": "/articles",
@@ -495,5 +465,40 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/terms": {
     "en": "/legal/terms-of-service",
     "lastmod": "2025-09-14T00:00:00.000Z"
+  },
+  "/landings/2octobre": {
+    "en": "/2october",
+    "lastmod": "2025-10-02T00:00:00.000Z",
+    "fr": "/2octobre"
+  },
+  "/landings/home": {
+    "en": "/",
+    "lastmod": "2025-10-06T00:00:00.000Z",
+    "fr": "/"
+  },
+  "/landings/landing-page-tracking": {
+    "en": "/solutions/conversion-tracking-landing-page-analytics",
+    "lastmod": "2025-10-06T00:00:00.000Z",
+    "fr": "/solutions/suivi-conversions-analytics-landing-page"
+  },
+  "/landings/linkedin-tracker": {
+    "en": "/solutions/linkedin-analytics-profile-visitor-tracking",
+    "lastmod": "2025-10-06T00:00:00.000Z",
+    "fr": "/solutions/analytics-profil-linkedin-visiteurs"
+  },
+  "/landings/systemeio": {
+    "en": "/solutions/systemeio-funnel-tracking-sales",
+    "lastmod": "2025-10-06T00:00:00.000Z",
+    "fr": "/solutions/tracking-systemeio-funnel-ventes"
+  },
+  "/landings/tracking": {
+    "en": "/solutions/marketing-tracking-attribution-clicks-leads-revenue",
+    "lastmod": "2025-10-06T00:00:00.000Z",
+    "fr": "/solutions/marketing-tracking-attribution-clics-leads-revenus"
+  },
+  "/landings/youtube": {
+    "en": "/solutions/deep-links-youtube-channel",
+    "lastmod": "2025-10-06T00:00:00.000Z",
+    "fr": "/solutions/deep-links-chaine-youtube"
   }
 } as const;

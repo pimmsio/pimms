@@ -1,10 +1,26 @@
 import LandingPage from "./landings/[slug]/page";
-import { generateLandingMetadata } from "@/lib/utils";
+import { generatePagesMetadata } from "@/lib/utils";
 import { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
+import { getPage } from "@/lib/mdx";
+import { landingFolders } from "@/i18n/config";
+import { notFound } from "next/navigation";
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
-  return generateLandingMetadata({ params, lkey: "home", pathname: "/" });
+  const locale = (await params).locale;
+  
+  try {
+    const page = getPage(locale, landingFolders, "home");
+    
+    return generatePagesMetadata({
+      params,
+      dir: "landings",
+      slug: "home",
+      metadata: page.metadata
+    });
+  } catch {
+    notFound();
+  }
 }
 
 // Enable static generation with revalidation for the homepage

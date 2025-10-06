@@ -1,39 +1,9 @@
 {
   "metadata": {
-    "home": {
-      "title": "Turn more clicks into sales | Smart Links and Deeplinks | PIMMS",
-      "description": "For creators, growth experts and marketing teams who want to collect 1000+ leads weekly, book more meetings and grow their revenue.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
     "site-checker": {
       "title": "Scan PIMMS script tool checker  | Verify your tracking installation",
       "description": "Free tool to check if your website has the Pimms analytics script properly installed for conversion tracking.",
       "image": "https://assets.pimms.io/tracking-website-checker.webp"
-    },
-    "youtube": {
-      "title": "Grow your YouTube subscribers with deeplinks | PIMMS",
-      "description": "Send your viewers straight to the official YouTube app. Reduce friction, increase engagement, and track the impact of every link on your subscribers.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
-    "systemeio": {
-      "title": "PIMMS for Systeme.io: Track your funnels and sales",
-      "description": "Track your Systeme.io funnels and sales with smart links, deep links and real-time insights.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
-    "2octobre": {
-      "title": "October 2nd Manifesto - More Clicks and More Sales Now",
-      "description": "I'm joining the October 2nd strike. Discover the manifesto and our demands for a fairer, more trackable, and more profitable digital world. Join the movement for free.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
-    "linkedin-tracker": {
-      "title": "PIMMS for LinkedIn: Track your LinkedIn leads",
-      "description": "Track your LinkedIn leads with smart links, deep links and real-time insights.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
-    },
-    "landing-page-tracking": {
-      "title": "PIMMS for Landing Pages: Track your landing page conversions",
-      "description": "Track your landing page conversions with smart links, deep links and real-time insights.",
-      "image": "https://assets.pimms.io/thumbnail.jpg?v=7"
     },
     "abuse": {
       "title": "Report abuse"

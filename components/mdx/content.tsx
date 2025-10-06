@@ -554,7 +554,7 @@ export const TwoColumns = ({
   const alignClasses = ratio === "1-1-1" ? "items-stretch" : "items-start sm:items-center";
   const cardClasses =
     variant === "card"
-      ? `bg-white rounded-3xl border border-gray-200 ${noPadding ? "p-0 md:p-0" : "pt-12 md:py-12"}`
+      ? `bg-white rounded-3xl border border-gray-200 ${noPadding ? "p-0 md:p-0" : "pt-8 md:py-12"}`
       : "";
   const backgroundClasses = background === "subtle" ? "white" : "";
 

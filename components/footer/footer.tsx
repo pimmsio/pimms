@@ -97,6 +97,22 @@ export const Footer = async ({
                 <ul className="space-y-3">
                   <li>
                     <Link
+                      href={getCanonicalLink(locale, "/landings/tracking")}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Tracking & Attribution
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={getCanonicalLink(locale, "/landings/landing-page-tracking")}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      Landing Page Tracking
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href={getCanonicalLink(locale, "/landings/linkedin-tracker")}
                       className="text-sm text-muted-foreground hover:text-foreground transition-colors"
                     >

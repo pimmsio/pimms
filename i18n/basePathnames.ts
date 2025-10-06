@@ -3,30 +3,6 @@ export const basePathnames = {
     en: "/",
     fr: "/"
   },
-  "/landings/home": {
-    en: "/",
-    fr: "/"
-  },
-  "/landings/youtube": {
-    en: "/solutions/deep-links-youtube-channel",
-    fr: "/solutions/deep-links-chaine-youtube"
-  },
-  "/landings/systemeio": {
-    en: "/solutions/systemeio-funnel-tracking-sales",
-    fr: "/solutions/tracking-systemeio-funnel-ventes"
-  },
-  "/landings/linkedin-tracker": {
-    en: "/solutions/linkedin-analytics-profile-visitor-tracking",
-    fr: "/solutions/analytics-profil-linkedin-visiteurs"
-  },
-  "/landings/landing-page-tracking": {
-    en: "/solutions/conversion-tracking-landing-page-analytics",
-    fr: "/solutions/suivi-conversions-analytics-landing-page"
-  },
-  "/landings/2octobre": {
-    en: "/2october",
-    fr: "/2octobre"
-  },
   "/freetools/site-checker": {
     en: "/freetools/pimms-tracking-site-checker-install",
     fr: "/freetools/pimms-tracking-site-checker-installation"
