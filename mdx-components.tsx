@@ -16,12 +16,25 @@ import {
   PricingTitle,
   PricingSubtitle,
   PricingPrice,
+  PricingSuffix,
+  PriceDisplay,
   PricingCta,
   PricingFeatures,
   PricingFeature,
   PricingHeader,
-  PricingTitleGroup
-} from "@/components/mdx/PricingComponents";
+  PricingTitleGroup,
+  PricingTitleRow,
+  AbsoluteToggle,
+  PricingCommonFeatures,
+  CommonFeatureLabel,
+  PricingWrapper,
+  PricingSlider,
+  BillingToggle,
+  EventTooltip,
+  DynamicPrice,
+  DynamicValue,
+  DynamicDomains
+} from "@/components/mdx/pricing";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -59,10 +72,23 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     PricingTitle,
     PricingSubtitle,
     PricingPrice,
+    PricingSuffix,
+    PriceDisplay,
     PricingCta,
     PricingFeatures,
     PricingFeature,
     PricingHeader,
-    PricingTitleGroup
+    PricingTitleGroup,
+    PricingTitleRow,
+    AbsoluteToggle,
+    PricingCommonFeatures,
+    CommonFeatureLabel,
+    PricingWrapper,
+    PricingSlider,
+    BillingToggle,
+    EventTooltip,
+    DynamicPrice,
+    DynamicValue,
+    DynamicDomains
   };
 }

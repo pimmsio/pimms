@@ -410,7 +410,7 @@ export const CtaBottomText = ({
 }) => {
   const colorClass = variant === "white" ? "text-white/80" : "text-text-secondary";
   return (
-    <div className={`flex flex-row items-center justify-center lg:justify-start gap-2 mt-2 text-xs ${colorClass}`}>
+    <div className={`h-6 flex flex-row items-center justify-center lg:justify-start gap-2 mt-2 text-xs ${colorClass}`}>
       {children}
     </div>
   );
@@ -533,13 +533,15 @@ export const TwoColumns = ({
   ratio = "1-1",
   variant = "default",
   background = "none",
-  noPadding = false
+  noPadding = false,
+  className
 }: {
   children: ReactNode;
   ratio?: "1-1" | "1-2" | "2-1" | "1-1-1" | "5-7" | "7-5";
   variant?: "default" | "card";
   background?: "none" | "subtle";
   noPadding?: boolean;
+  className?: string;
 }) => {
   const ratioClasses = {
     "1-1": "flex flex-col md:flex-row", // 1:1 ratio (2 columns)
@@ -559,7 +561,9 @@ export const TwoColumns = ({
   const backgroundClasses = background === "subtle" ? "white" : "";
 
   return (
-    <div className={`${ratioClasses[ratio]} ${gapClasses} ${alignClasses} ${cardClasses} ${backgroundClasses}`}>
+    <div
+      className={`${ratioClasses[ratio]} ${gapClasses} ${alignClasses} ${cardClasses} ${backgroundClasses} ${className}`}
+    >
       {children}
     </div>
   );

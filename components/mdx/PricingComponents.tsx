@@ -3,6 +3,7 @@ import { ReactNode } from "react";
 import CalComButton from "@/components/landings/cal-com-button";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
 import { cn } from "../../lib/utils";
+import { Label } from "@/components/base/label";
 
 interface PricingCardProps {
   variant?: "starter" | "pro" | "business";
@@ -79,36 +80,43 @@ export const PricingSubtitle = ({
   </p>
 );
 
+// Price number only
 export const PricingPrice = ({
   children,
   variant = "starter"
 }: PricingPriceProps & { variant?: "starter" | "pro" | "business" }) => {
-  if (variant === "business") {
-    return (
-      <div className="text-left">
-        <span className="text-2xl font-medium leading-tight text-gray-300">{children}</span>
-      </div>
-    );
-  }
+  const isBusinessVariant = variant === "business";
+  const textColor = isBusinessVariant ? "text-white" : "text-foreground";
 
+  return <span className={`text-5xl font-bold leading-tight ${textColor}`}>{children}</span>;
+};
+
+// Price suffix (like /month or HT)
+export const PricingSuffix = ({
+  children,
+  variant = "starter"
+}: {
+  children: ReactNode;
+  variant?: "starter" | "pro" | "business";
+}) => {
+  const isBusinessVariant = variant === "business";
+  const subTextColor = isBusinessVariant ? "text-gray-300" : "text-muted-foreground";
+
+  return <span className={`text-lg ${subTextColor}`}>{children}</span>;
+};
+
+// Complete price display wrapper
+export const PriceDisplay = ({ children, className }: { children: ReactNode; className?: string }) => {
   return (
-    <div className="text-left flex flex-col gap-0">
-      <div className="flex items-baseline gap-1">
-        <span className="text-5xl font-bold leading-tight text-foreground">{children}</span>
-        <span className="text-lg text-muted-foreground">HT</span>
-      </div>
-      <p className="text-muted-foreground text-sm">One-time payment, no subscription</p>
+    <div className={cn("text-left flex flex-col gap-0", className)}>
+      <div className="flex items-baseline gap-1">{children}</div>
     </div>
   );
 };
 
 export const PricingCta = ({ href, variant = "starter", children }: PricingCtaProps) => {
   if (variant === "business") {
-    return (
-      <CalComButton variant="inverse" className="w-full">
-        {children}
-      </CalComButton>
-    );
+    return <CtaButtonBig type="pricing" variant="inverse" value={children} href={href} className="w-full" size="lg" />;
   }
 
   return <CtaButtonBig type="pricing" value={children} href={href} className="w-full" size="lg" />;
@@ -150,7 +158,7 @@ export const PricingFeatures = ({
 
   return (
     <div
-      className={`${getBackgroundClass()} rounded-b-2xl flex-1 ${getBorderClass()} lg:min-h-[520px] xl:min-h-[455px] p-6 sm:p-8`}
+      className={`${getBackgroundClass()} rounded-b-2xl flex-1 ${getBorderClass()} lg:min-h-[200px] xl:min-h-[200px] p-6 sm:p-8`}
     >
       <p className={`text-[11px] font-semibold uppercase tracking-wide ${getTitleClass()} mb-3`}>{title}</p>
       <ul className="space-y-3">{children}</ul>
@@ -198,4 +206,22 @@ export const PricingHeader = ({ children, className }: { children: ReactNode; cl
 // Wrapper for title and subtitle
 export const PricingTitleGroup = ({ children, className }: { children: ReactNode; className?: string }) => (
   <div className={cn("text-left flex flex-col gap-1", className)}>{children}</div>
+);
+
+// Title row with toggle on the right (absolute positioned)
+export const PricingTitleRow = ({ children }: { children: ReactNode }) => <div className="relative">{children}</div>;
+
+// Absolute positioned toggle wrapper
+export const AbsoluteToggle = ({ children }: { children: ReactNode }) => (
+  <div className="absolute top-0 right-0">{children}</div>
+);
+
+// Features common labels container
+export const PricingCommonFeatures = ({ children }: { children: ReactNode }) => (
+  <div className="flex flex-wrap gap-2 sm:gap-3 justify-center max-w-3xl mx-auto">{children}</div>
+);
+
+// Common feature label
+export const CommonFeatureLabel = ({ children }: { children: ReactNode }) => (
+  <Label className="bg-white border border-gray-200">{children}</Label>
 );

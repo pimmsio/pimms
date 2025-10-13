@@ -50,6 +50,23 @@
         "website": "website",
         "funnel": "funnel"
       }
+    },
+    "pricing": {
+      "slider": {
+        "label_5k": "Up to 5k monthly events",
+        "label_20k": "Up to 20k monthly events",
+        "label_40k": "Up to 40k monthly events",
+        "label_100k": "Up to 100k monthly events",
+        "label_200k": "Up to 200k+ monthly events"
+      },
+      "billing": {
+        "monthly": "Monthly",
+        "yearly": "Yearly",
+        "yearly_badge": "2 months free"
+      },
+      "tooltip": {
+        "events": "Events are clicks, conversion leads, payment. 1 event = 1 click = 1 lead collected = 10$ collected"
+      }
     }
   }
 }

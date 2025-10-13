@@ -50,6 +50,23 @@
         "website": "site web",
         "funnel": "funnel"
       }
+    },
+    "pricing": {
+      "slider": {
+        "label_5k": "Jusqu'à 5k évènements mensuels",
+        "label_20k": "Jusqu'à 20k évènements mensuels",
+        "label_40k": "Jusqu'à 40k évènements mensuels",
+        "label_100k": "Jusqu'à 100k évènements mensuels",
+        "label_200k": "Jusqu'à 200k+ évènements mensuels"
+      },
+      "billing": {
+        "monthly": "Mensuel",
+        "yearly": "Annuel",
+        "yearly_badge": "2 mois offerts"
+      },
+      "tooltip": {
+        "events": "Les évènements sont des clics, des leads de conversion, des paiements. 1 évènement = 1 clic = 1 lead collecté = 10$ collecté"
+      }
     }
   }
 }
