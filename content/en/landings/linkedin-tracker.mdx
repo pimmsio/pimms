@@ -267,82 +267,83 @@ And when I launch a new page, if the visitor is identified on one of my pages, t
 <Slide variant="secondary" id="pricing">
   <BlurFade direction="up" inView>
     <Centered>
-      <H2>Start tracking your <Primary icon="target">LinkedIn</Primary> today</H2>
-      <Text size="lg">Choose the plan that fits your business goals</Text>
+      <H2>Fair <Primary icon="pricing">Pricing</Primary></H2>
+      <Text size="lg">Traffic-based plans to match your growth</Text>
     </Centered>
   </BlurFade>
   
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Profile Tracker</PricingTitle>
-                <PricingSubtitle variant="starter">Perfect for solopreneurs</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Start tracking now</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Essential Profile Tracking" variant="starter">
-              <PricingFeature variant="starter">Track up to 1,000 profile visitors/month</PricingFeature>
-              <PricingFeature variant="starter">Basic visitor identification</PricingFeature>
-              <PricingFeature variant="starter">Content performance analytics</PricingFeature>
-              <PricingFeature variant="starter">Email notifications</PricingFeature>
-              <PricingFeature variant="starter">3 months data retention</PricingFeature>
-              <PricingFeature variant="starter">Email support</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Lead Generator</PricingTitle>
-                <PricingSubtitle variant="pro">For serious LinkedIn marketers</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Unlock lifetime access</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Profile Tracker, Plus:" variant="pro">
-              <PricingFeature variant="pro">Track up to 5,000 visitors/month</PricingFeature>
-              <PricingFeature variant="pro">Advanced visitor insights & company data</PricingFeature>
-              <PricingFeature variant="pro">AI lead scoring</PricingFeature>
-              <PricingFeature variant="pro">Automated follow-up sequences</PricingFeature>
-              <PricingFeature variant="pro">CRM integrations</PricingFeature>
-              <PricingFeature variant="pro">12 months data retention</PricingFeature>
-              <PricingFeature variant="pro">Priority support</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Agency Pro</PricingTitle>
-                <PricingSubtitle variant="business">For agencies & enterprises</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">On demand</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Contact sales</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Lead Generator, Plus:" variant="business">
-              <PricingFeature variant="business">Unlimited profile tracking</PricingFeature>
-              <PricingFeature variant="business">White-label dashboard</PricingFeature>
-              <PricingFeature variant="business">Multi-client management</PricingFeature>
-              <PricingFeature variant="business">Custom integrations</PricingFeature>
-              <PricingFeature variant="business">Dedicated account manager</PricingFeature>
-              <PricingFeature variant="business">Custom reporting</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <PricingWrapper>
+      <PricingSlider />
+      
+      <TwoColumns ratio="1-1" className="gap-8 md:gap-12 lg:gap-8 sm:items-start">
+        <Column span={1}>
+          <BlurFade direction="left" delay={0.1} inView className="h-full">
+            <PricingCard variant="pro">
+              <PricingHeader>
+                <PricingTitleRow>
+                  <PricingTitle variant="pro">Pro</PricingTitle>
+                  <AbsoluteToggle>
+                    <BillingToggle />
+                  </AbsoluteToggle>
+                </PricingTitleRow>
+                <DynamicPrice prices={[9, 19, 29, 49, 69]} variant="pro" />
+                <Text size="sm">0.00€ due today.</Text>
+                <AnimatedCentered noPadding>
+                  <PricingCta variant="pro"><SwapRotate>Start for free →</SwapRotate></PricingCta>
+                  <CtaBottomText>No credit card required.</CtaBottomText>
+                </AnimatedCentered>
+              </PricingHeader>
+              <PricingFeatures title="Everything included:" variant="pro">
+                <PricingFeature variant="pro"><DynamicValue values={[100, 200, 400, 1000, 2000]} /> smart links /month</PricingFeature>
+                <PricingFeature variant="pro"><EventTooltip><DynamicValue values={["5k", "20k", "40k", "100k", "200k"]} /> tracking events /month (click, lead, sale)</EventTooltip></PricingFeature>
+                <PricingFeature variant="pro"><DynamicDomains /> custom domains</PricingFeature>
+                <PricingFeature variant="pro">Unlimited team members</PricingFeature>
+                <PricingFeature variant="pro"><DynamicValue values={[6, 12, 12, 12, 12]} /> months of data</PricingFeature>
+              </PricingFeatures>
+            </PricingCard>
+          </BlurFade>
+        </Column>
+        
+        <Column span={1}>
+          <BlurFade direction="right" delay={0.2} inView className="h-full">
+            <PricingCard variant="business">
+              <PricingHeader>
+                <PricingTitleGroup>
+                  <PricingTitle variant="business">Lifetime</PricingTitle>
+                </PricingTitleGroup>
+                <DynamicPrice prices={[99, 199, 299, 499, 699]} variant="business" mode="lifetime" />
+                <Text size="sm" className="text-white">One-time payment, no subscription</Text>
+                <AnimatedCentered noPadding>
+                  <PricingCta href="/api/pay?id=lifetime" variant="business"><SwapRotate>Get lifetime access →</SwapRotate></PricingCta>
+                  <CtaBottomText variant="white"><FaCreditCard /> Paiement sécurisé via Stripe</CtaBottomText>
+                </AnimatedCentered>
+              </PricingHeader>
+              <PricingFeatures title="Same as Pro plan:" variant="business">
+                <PricingFeature variant="business"><DynamicValue values={[100, 200, 400, 1000, 2000]} /> smart links /month</PricingFeature>
+                <PricingFeature variant="business"><EventTooltip><DynamicValue values={["5k", "20k", "40k", "100k", "200k"]} /> tracking events /month (click, lead, sale)</EventTooltip></PricingFeature>
+                <PricingFeature variant="business"><DynamicDomains /> custom domains</PricingFeature>
+                <PricingFeature variant="business">Unlimited team members</PricingFeature>
+                <PricingFeature variant="business"><DynamicValue values={[6, 12, 12, 12, 12]} /> months of data</PricingFeature>
+              </PricingFeatures>
+            </PricingCard>
+          </BlurFade>
+        </Column>
+      </TwoColumns>
+    </PricingWrapper>
   </Section>
+
+   <Centered margin="none" className="!my-0 !py-0 !space-y-3">
+     <Text size="sm" className="text-muted-foreground !mb-3">All plans include all available features including:</Text>
+     <PricingCommonFeatures>
+       <CommonFeatureLabel>100+ integrations incl. Zapier</CommonFeatureLabel>
+       <CommonFeatureLabel>Support Stripe payments</CommonFeatureLabel>
+       <CommonFeatureLabel>A/B testing</CommonFeatureLabel>
+       <CommonFeatureLabel>Webhooks</CommonFeatureLabel>
+       <CommonFeatureLabel>Unlimited UTM</CommonFeatureLabel>
+       <CommonFeatureLabel>3 months priority support</CommonFeatureLabel>
+     </PricingCommonFeatures>
+   </Centered>
 </Slide>
 
 <Slide id="social-proof">

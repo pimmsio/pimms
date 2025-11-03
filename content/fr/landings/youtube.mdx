@@ -256,7 +256,7 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
       <ComparisonRow others={false} pimms={true}>CA et conversions en temps réel dans un tableau de bord unique</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>Insights clients & lead scoring (IA)</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>Contourne les ad blockers (tracking côté serveur)</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>A/B testing de funnel</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Tests A/B de funnel</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>Mise en place rapide (démarre en 10 minutes)</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>Redirection de trafic avancée (par appareil, pays, stores)</ComparisonRow>
       <ComparisonRow others={false} pimms={true}>Support dédié 24/7</ComparisonRow>
@@ -267,85 +267,86 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
 <Slide variant="secondary" id="pricing">
   <BlurFade direction="up" inView>
     <Centered>
-      <H2>Des <TitleIcon variant="h2" icon="pricing" /> <Primary>Tarifs</Primary> justes</H2>
-      <Text size="lg">Commence avec 10 liens gratuits. Upgrade quand tu veux.</Text>
+      <H2>Fair <Primary icon="pricing">Pricing</Primary></H2>
+      <Text size="lg">Des tarifs basés sur le trafic pour accompagner votre croissance</Text>
     </Centered>
   </BlurFade>
   
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Starter</PricingTitle>
-                <PricingSubtitle variant="starter">Parfait pour débuter</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Débloquer l'accès à vie</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans l'offre gratuite, plus :" variant="starter">
-              <PricingFeature variant="starter">200 liens /mois</PricingFeature>
-              <PricingFeature variant="starter">Suivi des clics illimité</PricingFeature>
-              <PricingFeature variant="starter">Suivi des leads</PricingFeature>
-              <PricingFeature variant="starter">100+ intégrations incl. Zapier</PricingFeature>
-              <PricingFeature variant="starter">3 domaines personnalisés</PricingFeature>
-              <PricingFeature variant="starter">3 membres d'équipe</PricingFeature>
-              <PricingFeature variant="starter">Données conservées 6 mois</PricingFeature>
-              <PricingFeature variant="starter">1 mois de support prioritaire</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="up" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Pro</PricingTitle>
-                <PricingSubtitle variant="pro">Le choix de 90% de nos clients</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Débloquer l'accès à vie</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans l'offre Starter, plus :" variant="pro">
-              <PricingFeature variant="pro">600 liens /mois</PricingFeature>
-              <PricingFeature variant="pro">Suivi des ventes limité</PricingFeature>
-              <PricingFeature variant="pro">Collecte via Stripe, Systeme.io, etc.</PricingFeature>
-              <PricingFeature variant="pro">A/B testing</PricingFeature>
-              <PricingFeature variant="pro">Webhooks</PricingFeature>
-              <PricingFeature variant="pro">5 membres d'équipe</PricingFeature>
-              <PricingFeature variant="pro">Données conservées 12 mois</PricingFeature>
-              <PricingFeature variant="pro">3 mois de support prioritaire</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Entreprise</PricingTitle>
-                <PricingSubtitle variant="business">Solution sur mesure</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">Sur demande</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Nous contacter</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Solution sur mesure" variant="business">
-              <PricingFeature variant="business">Liens courts illimités</PricingFeature>
-              <PricingFeature variant="business">Suivi des clics illimité</PricingFeature>
-              <PricingFeature variant="business">Suivi des ventes illimité</PricingFeature>
-              <PricingFeature variant="business">Membres d'équipe illimités</PricingFeature>
-              <PricingFeature variant="business">Domaines personnalisés illimités</PricingFeature>
-              <PricingFeature variant="business">Bulk actions</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <PricingWrapper>
+      <PricingSlider />
+      
+      <TwoColumns ratio="1-1" className="gap-8 md:gap-12 lg:gap-8 sm:items-start">
+        <Column span={1}>
+          <BlurFade direction="left" delay={0.1} inView className="h-full">
+            <PricingCard variant="pro">
+              <PricingHeader>
+                <PricingTitleRow>
+                  <PricingTitle variant="pro">Pro</PricingTitle>
+                  <AbsoluteToggle>
+                    <BillingToggle />
+                  </AbsoluteToggle>
+                </PricingTitleRow>
+                <PricingSubtitle variant="pro">Parfait pour les équipes en croissance</PricingSubtitle>
+                <DynamicPrice prices={[9, 19, 29, 49, 69]} variant="pro" />
+                <Text size="sm">0,00€ aujourd'hui.</Text>
+                <AnimatedCentered noPadding>
+                  <PricingCta variant="pro"><SwapRotate>Commencer gratuitement →</SwapRotate></PricingCta>
+                  <CtaBottomText>Aucune carte bancaire requise.</CtaBottomText>
+                </AnimatedCentered>
+              </PricingHeader>
+              <PricingFeatures title="Tout inclus:" variant="pro">
+                <PricingFeature variant="pro"><DynamicValue values={[100, 200, 400, 1000, 2000]} /> liens intelligents /mois</PricingFeature>
+                <PricingFeature variant="pro"><EventTooltip><DynamicValue values={["5k", "20k", "40k", "100k", "200k"]} /> évènements suivis /mois (clic, lead, vente)</EventTooltip></PricingFeature>
+                <PricingFeature variant="pro"><DynamicDomains /> domaines personnalisés</PricingFeature>
+                <PricingFeature variant="pro">Membres d'équipe illimités</PricingFeature>
+                <PricingFeature variant="pro"><DynamicValue values={[6, 12, 12, 12, 12]} /> mois de données</PricingFeature>
+              </PricingFeatures>
+            </PricingCard>
+          </BlurFade>
+        </Column>
+        
+        <Column span={1}>
+          <BlurFade direction="right" delay={0.2} inView className="h-full">
+            <PricingCard variant="business">
+              <PricingHeader>
+                <PricingTitleGroup>
+                </PricingTitleGroup>
+                <PricingSubtitle variant="business">Paiement unique, accès à vie</PricingSubtitle>
+                  <PricingTitle variant="business">Lifetime</PricingTitle>
+                </PricingTitleGroup>
+                <DynamicPrice prices={[99, 199, 299, 499, 699]} variant="business" mode="lifetime" />
+                <Text size="sm" className="text-white">Paiement unique, pas d'abonnement</Text>
+                <AnimatedCentered noPadding>
+                  <PricingCta href="/api/pay?id=lifetime" variant="business"><SwapRotate>Obtenir l'accès à vie →</SwapRotate></PricingCta>
+                  <CtaBottomText variant="white"><FaCreditCard /> Paiement sécurisé via Stripe</CtaBottomText>
+                </AnimatedCentered>
+              </PricingHeader>
+              <PricingFeatures title="Identique au plan Pro:" variant="business">
+                <PricingFeature variant="business"><DynamicValue values={[100, 200, 400, 1000, 2000]} /> liens intelligents /mois</PricingFeature>
+                <PricingFeature variant="business"><EventTooltip><DynamicValue values={["5k", "20k", "40k", "100k", "200k"]} /> évènements suivis /mois (clic, lead, vente)</EventTooltip></PricingFeature>
+                <PricingFeature variant="business"><DynamicDomains /> domaines personnalisés</PricingFeature>
+                <PricingFeature variant="business">Membres d'équipe illimités</PricingFeature>
+                <PricingFeature variant="business"><DynamicValue values={[6, 12, 12, 12, 12]} /> mois de données</PricingFeature>
+              </PricingFeatures>
+            </PricingCard>
+          </BlurFade>
+        </Column>
+      </TwoColumns>
+    </PricingWrapper>
   </Section>
+
+   <Centered margin="none" className="!my-0 !py-0 !space-y-3">
+     <Text size="sm" className="text-muted-foreground !mb-3">Tous les plans incluent toutes les fonctionnalités disponibles incluant:</Text>
+     <PricingCommonFeatures>
+       <CommonFeatureLabel>100+ intégrations incl. Zapier</CommonFeatureLabel>
+       <CommonFeatureLabel>Support des paiements Stripe</CommonFeatureLabel>
+       <CommonFeatureLabel>Tests A/B</CommonFeatureLabel>
+       <CommonFeatureLabel>Webhooks</CommonFeatureLabel>
+       <CommonFeatureLabel>UTM illimités</CommonFeatureLabel>
+       <CommonFeatureLabel>3 mois de support prioritaire</CommonFeatureLabel>
+     </PricingCommonFeatures>
+   </Centered>
 </Slide>
 
 <Slide id="onboarding">
