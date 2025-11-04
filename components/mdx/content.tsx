@@ -657,7 +657,7 @@ export const Primary = ({
 }: {
   children: React.ReactNode;
   variant?: "h1" | "h2";
-  icon?: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash";
+  icon?: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash" | "users" | "rocket" | "youtube";
 }) => {
   return (
     <span className="bg-gradient-to-r from-brand-secondary to-brand-primary bg-clip-text text-transparent pr-[2px] [-webkit-text-fill-color:transparent] inline-flex items-baseline gap-1">
@@ -671,7 +671,7 @@ export const TitleIcon = ({
   icon,
   variant = "h1"
 }: {
-  icon: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash";
+  icon: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash" | "users" | "rocket" | "youtube";
   variant?: "h1" | "h2";
 }) => {
   const sizeClasses =
@@ -690,7 +690,10 @@ export const TitleIcon = ({
     minutes: FaRegClock,
     questions: FaQuestion,
     target: Target,
-    cash: DollarIcon
+    cash: DollarIcon,
+    users: Users,
+    rocket: MdRocketLaunch,
+    youtube: Youtube
   } as const;
 
   const LucideIcon = iconMap[icon];

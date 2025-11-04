@@ -5,6 +5,11 @@
       "description": "Free tool to check if your website has the Pimms analytics script properly installed for conversion tracking.",
       "image": "https://assets.pimms.io/tracking-website-checker.webp"
     },
+    "utm-builder": {
+      "title": "Free UTM Builder Tool | Generate Google Analytics Tracking URLs with UTM Parameters",
+      "description": "Create UTM tracking codes for your marketing campaigns with our free UTM builder. Generate Google Analytics UTM parameters for links in seconds. Works with GA, Amplitude, Mixpanel & more.",
+      "image": "https://assets.pimms.io/utm-builder-tool.webp"
+    },
     "abuse": {
       "title": "Report abuse"
     },

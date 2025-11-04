@@ -65,6 +65,98 @@
         "title": "Comparaisons d'outils",
         "description": "Comparaisons détaillées d'outils marketing pour t'aider à choisir."
       }
+    },
+    "tags": {
+      "parametres-utm": {
+        "label": "Paramètres UTM",
+        "title": "Paramètres UTM - Guides Tracking & Attribution | PIMMS",
+        "description": "Découvre notre collection complète d'articles sur le tracking UTM. Apprends à implémenter les paramètres UTM, suivre tes campagnes et améliorer ton attribution marketing avec des insights d'experts et exemples concrets."
+      },
+      "stripe": {
+        "label": "Stripe",
+        "title": "Tracking Paiements Stripe & Analytics | PIMMS",
+        "description": "Guides complets pour suivre les paiements Stripe et l'attribution des revenus. Apprends à connecter Stripe à PIMMS, implémenter les webhooks et tracker chaque transaction du clic au paiement."
+      },
+      "calcom": {
+        "label": "Cal.com",
+        "title": "Tracking Réservations Cal.com & Analytics | PIMMS",
+        "description": "Apprends à suivre les réservations Cal.com avec attribution complète des rendez-vous. Guides étape par étape pour intégrer Cal.com avec PIMMS, tracker les campagnes et analyser quel marketing génère des rendez-vous."
+      },
+      "framer": {
+        "label": "Framer",
+        "title": "Tracking Formulaires Framer & Analytics | PIMMS",
+        "description": "Guides complets pour suivre les formulaires et conversions sur sites Framer. Apprends à configurer les analytics, tracker les soumissions et mesurer la performance des campagnes sur ton site Framer."
+      },
+      "webflow": {
+        "label": "Webflow",
+        "title": "Tracking Formulaires Webflow & Attribution Leads | PIMMS",
+        "description": "Maîtrise le tracking des formulaires Webflow avec attribution complète des leads. Guides étape par étape pour suivre les formulaires Webflow, analyser les conversions et connecter les leads aux campagnes marketing."
+      },
+      "calendly": {
+        "label": "Calendly",
+        "title": "Intégration Calendly",
+        "description": "Guides pour suivre les réservations Calendly et l'attribution des rendez-vous."
+      },
+      "zapier": {
+        "label": "Zapier",
+        "title": "Intégration Zapier",
+        "description": "Guides de configuration utilisant l'automatisation Zapier pour le suivi des conversions."
+      },
+      "iclosed": {
+        "label": "iClosed",
+        "title": "Intégration iClosed",
+        "description": "Guides pour suivre les réunions iClosed et l'attribution des rendez-vous."
+      },
+      "elementor": {
+        "label": "Elementor",
+        "title": "Suivi Elementor",
+        "description": "Guides pour suivre les formulaires WordPress Elementor et les leads."
+      },
+      "wordpress": {
+        "label": "WordPress",
+        "title": "Suivi WordPress",
+        "description": "Guides complets pour le suivi des conversions WordPress et l'analytics."
+      },
+      "tally": {
+        "label": "Tally",
+        "title": "Intégration Tally",
+        "description": "Guides pour suivre les formulaires Tally.so et l'attribution des leads."
+      },
+      "systemeio": {
+        "label": "Systeme.io",
+        "title": "Suivi Systeme.io",
+        "description": "Guides pour suivre les ventes Systeme.io et l'attribution des funnels."
+      },
+      "sans-code": {
+        "label": "Sans Code",
+        "title": "Solutions Tracking Sans Code & Analytics | PIMMS",
+        "description": "Apprends à tracker les conversions sur plateformes sans code sans coder. Guides complets pour Webflow, Framer, Bubble et constructeurs de sites IA avec configuration simple et attribution totale."
+      },
+      "developpeurs": {
+        "label": "Développeurs",
+        "title": "Guides Développeurs & Documentation API | PIMMS",
+        "description": "Guides techniques et documentation API pour développeurs. Apprends à implémenter le tracking PIMMS avec SDK JavaScript, webhooks et APIs pour une attribution conversion complète."
+      },
+      "suivi-paiements": {
+        "label": "Suivi des Paiements",
+        "title": "Suivi des Paiements",
+        "description": "Guides pour le suivi des paiements et l'attribution des revenus."
+      },
+      "suivi-reservations": {
+        "label": "Suivi des Réservations",
+        "title": "Suivi des Réservations",
+        "description": "Guides pour le suivi des réservations, réunions et rendez-vous."
+      },
+      "suivi-formulaires": {
+        "label": "Suivi des Formulaires",
+        "title": "Suivi des Formulaires",
+        "description": "Guides pour le suivi des soumissions de formulaires et la génération de leads."
+      },
+      "constructeur-site": {
+        "label": "Constructeur de Site",
+        "title": "Intégration Constructeur de Site",
+        "description": "Guides pour suivre les conversions sur les constructeurs de sites web."
+      }
     }
   }
 }

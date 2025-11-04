@@ -2,22 +2,27 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-11-03T16:02:11.854Z"
+    "lastmod": "2025-11-04T20:59:56.945Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-11-03T16:02:11.855Z"
+    "lastmod": "2025-11-04T20:59:56.945Z"
+  },
+  "/freetools/utm-builder": {
+    "en": "/freetools/utm-builder-google-analytics-tracking",
+    "fr": "/freetools/generateur-utm-google-analytics-tracking",
+    "lastmod": "2025-11-04T20:59:56.945Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2025-09-29T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -27,22 +32,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2025-09-29T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
     "fr": "/guides",
-    "lastmod": "2025-09-29T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/category/tutorials": {
     "en": "/tutorials",
     "fr": "/tutoriels",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/category/tool-comparison": {
     "en": "/tools",
@@ -147,7 +152,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/glossary-utms-tracking-attribution-conversions-deep-links-essential-terms-explained": {
     "en": "/blog/glossary-utms-tracking-attribution-conversions-deep-links",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/blog/glossaire-utms-tracking-attribution-conversions-deep-links"
   },
   "/articles/gradual-rollouts-how-to-ab-test-with-90-10-traffic-splits-to-mitigate-risk": {
@@ -187,7 +192,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-to-analyze-referral-sources-by-utm-tags": {
     "en": "/blog/how-to-analyze-referral-sources-by-utm-tags",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/blog/comment-analyser-les-sources-de-trafic-avec-des-balises-utm"
   },
   "/articles/how-to-attribute-sales-to-ab-test-variants": {
@@ -228,12 +233,12 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-to-track-stripe-sales-and-subscriptions-with-utm-links-without-writing-code": {
     "en": "/blog/how-to-track-stripe-sales-and-subscriptions-with-utm-links-without-writing-code",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/blog/comment-suivre-les-ventes-stripe-avec-des-liens-utm-sans-ecrire-de-code"
   },
   "/articles/how-utm-parameters-impact-conversion-paths": {
     "en": "/blog/how-utm-parameters-impact-conversion-paths",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/blog/comment-les-parametres-utm-influencent-les-parcours-de-conversion"
   },
   "/articles/is-bitly-good-for-conversion-tracking": {
@@ -263,7 +268,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/referrer-vs-utm-vs-fingerprinting-what-really-tells-you-where-a-click-came-from": {
     "en": "/blog/referrer-vs-utm-vs-fingerprinting-where-a-click-came-from",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/blog/referrer-vs-utm-vs-fingerprinting-ou-vient-un-clic"
   },
   "/articles/set-up-analytics-and-marketing-attribution-in-1-hour-for-your-mvp": {
@@ -315,19 +320,19 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/utm-and-deep-linking-how-to-easily-unify-web-and-mobile-attribution": {
     "en": "/blog/utm-and-deep-linking-how-to-easily-unify-web-and-mobile-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/utm-tracking-for-organic-social-media-posts": {
     "en": "/blog/utm-tracking-for-organic-social-media-posts",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/utm-tracking-for-social-media-campaigns-in-make": {
     "en": "/blog/utm-tracking-for-social-media-campaigns-in-make",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/utm-tracking-for-social-media-segments": {
     "en": "/blog/utm-tracking-for-social-media-segments",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-11-03T00:00:00.000Z"
   },
   "/articles/vibe-coding-meets-analytics-how-to-instrument-your-ai-generated-app-with-no-effort": {
     "en": "/blog/vibe-coding-meets-analytics-how-to-instrument-your-ai-generated-app-with-no-effort",
@@ -367,77 +372,77 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/cal-com-framer-integration-complete-setup-guide": {
     "en": "/guides/cal-com-framer-integration-complete-setup-guide",
-    "lastmod": "2025-09-29T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/cal-com-framer-integration-complete-setup-guide"
   },
   "/articles/cal-com-webflow-integration-complete-setup-guide": {
     "en": "/guides/cal-com-webflow-integration-complete-setup-guide",
-    "lastmod": "2025-09-29T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/cal-com-webflow-integration-complete-setup-guide"
   },
   "/articles/calcom-direct-webhook-integration": {
     "en": "/guides/calcom-direct-webhook-integration",
-    "lastmod": "2025-09-16T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/calcom-direct-webhook-integration"
   },
   "/articles/how-to-track-calendly": {
     "en": "/guides/how-to-track-calendly-bookings-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-calendly-attribution-marketing"
   },
   "/articles/how-to-track-elementor-form-leads": {
     "en": "/guides/how-to-track-elementor-form-leads-conversion-tracking",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-leads-formulaires-elementor-attribution-marketing"
   },
   "/articles/how-to-track-framer": {
     "en": "/guides/how-to-track-framer-form-submissions-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-framer-attribution-marketing"
   },
   "/articles/how-to-track-sales-with-stripe-checkout": {
     "en": "/guides/track-stripe-checkout-conversions-with-pimms",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/suivre-conversions-stripe-checkout-avec-pimms"
   },
   "/articles/how-to-track-systemeio-sales-and-leads": {
     "en": "/guides/how-to-track-systemeio-sales-and-leads-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-ventes-et-leads-systemeio-attribution-marketing"
   },
   "/articles/how-to-track-tally": {
     "en": "/guides/how-to-track-tally-form-submissions-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-tally-attribution-marketing"
   },
   "/articles/how-to-track-webflow-leads": {
     "en": "/guides/how-to-track-webflow-form-submissions-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-lead-webflow-attribution-marketing"
   },
   "/articles/introducing-conversion": {
     "en": "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/guide-developpeur-tracking-conversions"
   },
   "/articles/no-code-guide-for-website": {
     "en": "/guides/how-to-track-conversions-on-vibe-coding-ai-no-code-sites",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-conversions-sites-vibe-coding-no-code-ai"
   },
   "/articles/setup-stripe-for-website": {
     "en": "/guides/how-to-track-stripe-sales-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-ventes-stripe-attribution-marketing"
   },
   "/articles/start-with-cal-com-and-zapier": {
     "en": "/guides/how-to-track-cal-com-bookings-marketing-attribution",
-    "lastmod": "2025-09-16T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-cal-com-attribution-marketing"
   },
   "/articles/start-with-iclosed-and-zapier": {
     "en": "/guides/how-to-track-iclosed-bookings-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-iclosed-attribution-marketing"
   },
   "/articles/start-with-zapier": {
@@ -447,7 +452,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/utm-guide": {
     "en": "/tutorials/mastering-utm-tracking-with-deep-linking",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2025-11-03T00:00:00.000Z",
     "fr": "/tutoriels/maitriser-le-tracking-utm-et-le-deep-linking"
   },
   "/articles/abuse": {
@@ -495,6 +500,11 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/solutions/marketing-tracking-attribution-clicks-leads-revenue",
     "lastmod": "2025-10-06T00:00:00.000Z",
     "fr": "/solutions/marketing-tracking-attribution-clics-leads-revenus"
+  },
+  "/landings/utm-builder-campaign-tracking": {
+    "en": "/solutions/utm-campaign-tracking-builder",
+    "lastmod": "2025-11-03T00:00:00.000Z",
+    "fr": "/solutions/suivi-campagne-utm-builder"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",

@@ -17,6 +17,7 @@ export type PageMetadata = {
   author?: string;
   related?: string[];
   folder?: string;
+  tags?: string[];
 };
 
 type LoosePageMetadata = {
@@ -81,7 +82,8 @@ export const parseFrontmatter = (fileContent: string) => {
         ? [metadata.categories as string]
         : [],
     related: Array.isArray(metadata.related) ? metadata.related : metadata.related ? [metadata.related as string] : [],
-    folder: typeof metadata.folder === "string" ? metadata.folder : undefined
+    folder: typeof metadata.folder === "string" ? metadata.folder : undefined,
+    tags: Array.isArray(metadata.tags) ? metadata.tags : metadata.tags ? [metadata.tags as string] : []
   };
 
   return { metadata: normalized, content };

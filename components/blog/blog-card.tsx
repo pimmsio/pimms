@@ -3,7 +3,7 @@ import Link from "next/link";
 import { formatDate, PageMetadata } from "@/lib/mdx";
 import Author from "./author";
 import { notFound } from "next/navigation";
-import { getCanonicalLink } from "../../lib/utils";
+import { getCanonicalLink, getTagSlug, getTagLabel, getTagCanonicalLink } from "../../lib/utils";
 import { ArrowUpRight } from "@/components/icons/custom-icons";
 
 // Function to extract integration name from guide titles
@@ -61,41 +61,61 @@ export default async function BlogCard({
 
   const { title, summary, image, author, publishedAt, updatedAt } = metadata;
   const integrationName = extractIntegrationName(title, metadata.categories || []);
+  const articleUrl = getCanonicalLink(locale, `/articles/${slug}`);
 
   return (
-    <Link
-      href={getCanonicalLink(locale, `/articles/${slug}`)}
-      className="group block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-    >
-      <div className="relative overflow-hidden">
-        <Image
-          className="w-full h-full object-cover aspect-[16/7] group-hover:scale-105 transition-transform duration-500"
-          src={image}
-          alt={title}
-          width={1200}
-          height={630}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
-          priority={priority}
-          loading={priority ? "eager" : "lazy"}
-        />
-        <div className="absolute top-4 left-4 flex gap-2">
-          <div className="bg-brand-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full capitalize">
-            {metadata.categories[0].replace("-", " ")}
-          </div>
-          {integrationName && (
-            <div className="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
-              {integrationName}
+    <div className="group bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+      <Link href={articleUrl} className="block">
+        <div className="relative overflow-hidden">
+          <Image
+            className="w-full h-full object-cover aspect-[16/7] group-hover:scale-105 transition-transform duration-500"
+            src={image}
+            alt={title}
+            width={1200}
+            height={630}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px"
+            priority={priority}
+            loading={priority ? "eager" : "lazy"}
+          />
+          <div className="absolute top-4 left-4 flex gap-2">
+            <div className="bg-brand-primary text-white text-xs font-semibold px-3 py-1.5 rounded-full capitalize">
+              {metadata.categories[0].replace("-", " ")}
             </div>
-          )}
+            {integrationName && (
+              <div className="bg-blue-600 text-white text-xs font-semibold px-3 py-1.5 rounded-full flex items-center gap-1.5">
+                {integrationName}
+              </div>
+            )}
+          </div>
         </div>
-      </div>
+      </Link>
 
       <div className="p-6 pb-5">
-        <h3 className="font-bold text-xl text-gray-900 group-hover:text-brand-primary transition-colors mb-4 leading-tight line-clamp-3">
-          {title}
-        </h3>
+        <Link href={articleUrl}>
+          <h3 className="font-bold text-xl text-gray-900 group-hover:text-brand-primary transition-colors mb-4 leading-tight line-clamp-3">
+            {title}
+          </h3>
+        </Link>
 
         <p className="text-gray-600 line-clamp-3 mb-5 leading-relaxed text-base">{summary}</p>
+
+        {metadata.tags && metadata.tags.length > 0 && (
+          <div className="flex flex-wrap gap-2 mb-4">
+            {metadata.tags.map((tagKey) => {
+              const tagLabel = getTagLabel(tagKey, locale as "en" | "fr");
+              const tagLink = getTagCanonicalLink(tagKey, locale as "en" | "fr");
+              return (
+                <Link
+                  key={tagKey}
+                  href={tagLink}
+                  className="text-xs font-medium px-3 py-1 rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors"
+                >
+                  {tagLabel}
+                </Link>
+              );
+            })}
+          </div>
+        )}
 
         <div className="flex items-center justify-between">
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
@@ -107,6 +127,6 @@ export default async function BlogCard({
           <ArrowUpRight className="w-5 h-5 text-brand-primary opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex-shrink-0" />
         </div>
       </div>
-    </Link>
+    </div>
   );
 }

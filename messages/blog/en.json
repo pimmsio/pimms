@@ -72,6 +72,98 @@
         "title": "Tool Comparisons",
         "description": "Detailed comparisons of marketing tools to help you choose the right one."
       }
+    },
+    "tags": {
+      "utm-parameters": {
+        "label": "UTM Parameters",
+        "title": "UTM Parameters - Tracking & Attribution Articles | PIMMS",
+        "description": "Discover our comprehensive collection of UTM tracking articles. Learn how to implement UTM parameters, track campaigns, and improve your marketing attribution with expert insights and real-world examples."
+      },
+      "stripe": {
+        "label": "Stripe",
+        "title": "Stripe Payment Tracking & Analytics Guides | PIMMS",
+        "description": "Complete guides for tracking Stripe payments and revenue attribution. Learn how to connect Stripe to PIMMS, implement webhooks, and track every transaction from click to payment."
+      },
+      "calcom": {
+        "label": "Cal.com",
+        "title": "Cal.com Booking Tracking & Analytics Guides | PIMMS",
+        "description": "Learn how to track Cal.com bookings with complete meeting attribution. Step-by-step guides for integrating Cal.com with PIMMS, tracking campaigns, and analyzing which marketing drives appointments."
+      },
+      "framer": {
+        "label": "Framer",
+        "title": "Framer Form Tracking & Analytics Guides | PIMMS",
+        "description": "Complete guides for tracking forms and conversions on Framer websites. Learn how to set up analytics, track form submissions, and measure campaign performance on your Framer site."
+      },
+      "webflow": {
+        "label": "Webflow",
+        "title": "Webflow Form Tracking & Lead Attribution Guides | PIMMS",
+        "description": "Master Webflow form tracking with complete lead attribution. Step-by-step guides for tracking Webflow forms, analyzing conversions, and connecting leads to marketing campaigns."
+      },
+      "calendly": {
+        "label": "Calendly",
+        "title": "Calendly Integration",
+        "description": "Guides for tracking Calendly bookings and meeting attribution."
+      },
+      "zapier": {
+        "label": "Zapier",
+        "title": "Zapier Integration",
+        "description": "Setup guides using Zapier automation for conversion tracking."
+      },
+      "iclosed": {
+        "label": "iClosed",
+        "title": "iClosed Integration",
+        "description": "Guides for tracking iClosed meetings and appointment attribution."
+      },
+      "elementor": {
+        "label": "Elementor",
+        "title": "Elementor Tracking",
+        "description": "Guides for tracking WordPress Elementor forms and leads."
+      },
+      "wordpress": {
+        "label": "WordPress",
+        "title": "WordPress Tracking",
+        "description": "Complete guides for WordPress conversion tracking and analytics."
+      },
+      "tally": {
+        "label": "Tally",
+        "title": "Tally Integration",
+        "description": "Guides for tracking Tally.so forms and lead attribution."
+      },
+      "systemeio": {
+        "label": "Systeme.io",
+        "title": "Systeme.io Tracking",
+        "description": "Guides for tracking Systeme.io sales and funnel attribution."
+      },
+      "no-code": {
+        "label": "No-Code",
+        "title": "No-Code Tracking Solutions & Analytics Guides | PIMMS",
+        "description": "Learn how to track conversions on no-code platforms without coding. Complete guides for Webflow, Framer, Bubble, and AI website builders with simple setup and full attribution."
+      },
+      "developers": {
+        "label": "Developers",
+        "title": "Developer Guides & API Documentation | PIMMS",
+        "description": "Technical guides and API documentation for developers. Learn how to implement PIMMS tracking with JavaScript SDK, webhooks, and APIs for complete conversion attribution."
+      },
+      "payment-tracking": {
+        "label": "Payment Tracking",
+        "title": "Payment Tracking",
+        "description": "Guides for tracking payments and revenue attribution."
+      },
+      "booking-tracking": {
+        "label": "Booking Tracking",
+        "title": "Booking & Meeting Tracking",
+        "description": "Guides for tracking bookings, meetings, and appointments."
+      },
+      "form-tracking": {
+        "label": "Form Tracking",
+        "title": "Form Tracking",
+        "description": "Guides for tracking form submissions and lead generation."
+      },
+      "website-builder": {
+        "label": "Website Builder",
+        "title": "Website Builder Integration",
+        "description": "Guides for tracking conversions on website builders."
+      }
     }
   }
 }

@@ -7,6 +7,10 @@ export const basePathnames = {
     en: "/freetools/pimms-tracking-site-checker-install",
     fr: "/freetools/pimms-tracking-site-checker-installation"
   },
+  "/freetools/utm-builder": {
+    en: "/freetools/utm-builder-google-analytics-tracking",
+    fr: "/freetools/generateur-utm-google-analytics-tracking"
+  },
   "/articles": {
     en: "/articles",
     fr: "/articles"

@@ -2,7 +2,7 @@ import { clsx, type ClassValue } from "clsx";
 import { Metadata } from "next";
 import { PageMetadata } from "@/lib/mdx";
 import { twMerge } from "tailwind-merge";
-import { AUTHORS, BLOG_CATEGORIES, THUMBNAIL, WEB_URL } from "@/app/constants";
+import { AUTHORS, BLOG_CATEGORIES, BLOG_TAGS, THUMBNAIL, WEB_URL } from "@/app/constants";
 import { getTranslations } from "next-intl/server";
 import { AlternateLinkDescriptor, Languages } from "next/dist/lib/metadata/types/alternative-urls-types";
 import { pathnames } from "@/i18n/pathnames";
@@ -270,4 +270,104 @@ export function constructMetadata({
     alternates,
     ...(author && { other: { author } }) // ✅ Balise classique <meta name="author">
   };
+}
+
+// Tag utility functions
+export function getTagBySlug(slug: string, locale: "en" | "fr"): { key: string; slug: string; label: string } | null {
+  // Find tag by slug in the specified locale
+  for (const [key, value] of Object.entries(BLOG_TAGS)) {
+    if (value[locale].slug === slug) {
+      return {
+        key,
+        slug: value[locale].slug,
+        label: value[locale].label
+      };
+    }
+  }
+  return null;
+}
+
+export function getTagLabel(tagKey: string, locale: "en" | "fr"): string {
+  const tag = BLOG_TAGS[tagKey];
+  return tag ? tag[locale].label : tagKey;
+}
+
+export function getTagSlug(tagKey: string, locale: "en" | "fr"): string {
+  const tag = BLOG_TAGS[tagKey];
+  return tag ? tag[locale].slug : tagKey;
+}
+
+export async function generateTagMetadata({
+  params,
+  slug
+}: MetadataProps & {
+  slug: string;
+}) {
+  const locale = (await params).locale;
+  const t = await getTranslations({ locale, namespace: "blog" });
+
+  // Get tag by slug in current locale
+  const tag = getTagBySlug(slug, locale);
+
+  if (!tag) {
+    return;
+  }
+
+  // Get translations from messages
+  const title = t(`tags.${tag.slug}.title`);
+  const summary = t(`tags.${tag.slug}.description`);
+
+  // Construct canonical URL manually for dynamic tag routes
+  const canonicalPath = locale === "en" 
+    ? `/articles/tag/${tag.slug}` 
+    : `/fr/articles/tag/${tag.slug}`;
+
+  return constructMetadata({
+    title,
+    description: summary,
+    image: THUMBNAIL,
+    alternates: {
+      canonical: getFullLink(canonicalPath),
+      languages: {
+        en: getFullLink(`/articles/tag/${BLOG_TAGS[tag.key].en.slug}`),
+        fr: getFullLink(`/fr/articles/tag/${BLOG_TAGS[tag.key].fr.slug}`)
+      }
+    }
+  });
+}
+
+export function getRelevantTagsForCategory(category: string, locale: "en" | "fr"): string[] {
+  const tagMapping: Record<string, string[]> = {
+    "digital-marketing": ["utm-parameters"],
+    guides: [
+      "stripe",
+      "calcom",
+      "framer",
+      "webflow",
+      "calendly",
+      "zapier",
+      "iclosed",
+      "elementor",
+      "wordpress",
+      "tally",
+      "systemeio",
+      "no-code",
+      "developers",
+      "payment-tracking",
+      "booking-tracking",
+      "form-tracking",
+      "website-builder"
+    ],
+    overview: ["utm-parameters", "stripe", "calcom", "framer", "webflow", "no-code", "developers"]
+  };
+
+  return tagMapping[category] || [];
+}
+
+export function getTagCanonicalLink(tagKey: string, locale: "en" | "fr"): string {
+  const tag = BLOG_TAGS[tagKey];
+  if (!tag) return "";
+  
+  const slug = tag[locale].slug;
+  return locale === "en" ? `/articles/tag/${slug}` : `/fr/articles/tag/${slug}`;
 }

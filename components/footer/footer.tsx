@@ -135,6 +135,14 @@ export const Footer = async ({
                       Tracking funnels Systeme.io
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href={getCanonicalLink(locale, "/landings/utm-builder-campaign-tracking")}
+                      className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+                    >
+                      UTM Campaign Tracking
+                    </Link>
+                  </li>
                 </ul>
 
                 <h3 className="text-text-primary font-semibold mb-4 mt-8 text-sm uppercase tracking-wide">
@@ -217,6 +225,14 @@ export const Footer = async ({
                       className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
                     >
                       {t("footer.freetools.site-checker")}
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href={getCanonicalLink(locale, "/freetools/utm-builder")}
+                      className="text-text-secondary hover:text-brand-primary transition-colors duration-200 text-sm"
+                    >
+                      {t("footer.freetools.utm-builder")}
                     </Link>
                   </li>
                 </ul>
