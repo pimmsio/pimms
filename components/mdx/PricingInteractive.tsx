@@ -7,6 +7,15 @@ import { usePricingContext } from "./PricingWrapper";
 import { PricingPrice, PricingSuffix, PriceDisplay } from "./PricingComponents";
 import { Slider } from "@/components/ui/slider";
 import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import CtaButtonBig from "@/components/cta/CtaButtonBig";
+
+// Stripe payment IDs for lifetime plans (used with /api/pay endpoint)
+export const STRIPE_LIFETIME_PAYMENT_IDS = [
+  "14A00igMlcYqfBB3dUc7u0p", // 5k - €99
+  "14A00igMlcYqfBB3dUc7u0p", // 20k - €299
+  "14A00igMlcYqfBB3dUc7u0p", // 40k - €399
+  "14A00igMlcYqfBB3dUc7u0p" // 100k - €599
+];
 
 // Pricing Slider Component for tier selection
 export const PricingSlider = () => {
@@ -14,11 +23,11 @@ export const PricingSlider = () => {
   const t = useTranslations("general.pricing.slider");
 
   const tiers = [
-    { value: 0, label: "5k", fullLabel: t("label_5k") },
-    { value: 1, label: "20k", fullLabel: t("label_20k") },
-    { value: 2, label: "40k", fullLabel: t("label_40k") },
-    { value: 3, label: "100k", fullLabel: t("label_100k") },
-    { value: 4, label: "200k+", fullLabel: t("label_200k") }
+    { value: 0, label: "0k", fullLabel: "Free" },
+    { value: 1, label: "5k", fullLabel: t("label_5k") },
+    { value: 2, label: "20k", fullLabel: t("label_20k") },
+    { value: 3, label: "40k", fullLabel: t("label_40k") },
+    { value: 4, label: "100k", fullLabel: t("label_100k") }
   ];
 
   return (
@@ -30,27 +39,18 @@ export const PricingSlider = () => {
       <div className="relative">
         <Slider
           value={[tier]}
-          onValueChange={(value) => setTier(value[0])}
+          onValueChange={(value) => {
+            if (value[0] === 0) {
+              setTier(1);
+            } else {
+              setTier(value[0]);
+            }
+          }}
           min={0}
           max={4}
           step={1}
-          className="w-full mb-4 cursor-pointer"
+          className="w-full cursor-pointer"
         />
-
-        <div className="flex justify-between px-1">
-          {tiers.map((t) => (
-            <button
-              key={t.value}
-              onClick={() => setTier(t.value)}
-              className={cn(
-                "text-sm transition-colors cursor-pointer",
-                tier === t.value ? "text-foreground font-semibold" : "text-muted-foreground"
-              )}
-            >
-              {t.label}
-            </button>
-          ))}
-        </div>
       </div>
     </div>
   );
@@ -122,13 +122,13 @@ interface DynamicPriceProps {
 }
 
 export const DynamicPrice = ({ prices, variant = "pro", mode, suffix }: DynamicPriceProps) => {
-  const { tier, billing } = usePricingContext();
+  const { index, billing } = usePricingContext();
   const finalMode = mode || billing;
-  const monthlyPrice = prices[tier];
-  const yearlyPrice = monthlyPrice * 10;
-  const displayPrice = finalMode === "lifetime" ? prices[tier] : finalMode === "monthly" ? monthlyPrice : yearlyPrice;
+  const monthlyPrice = prices[index];
+  const yearlyPrice = monthlyPrice * 9;
+  const displayPrice = finalMode === "lifetime" ? prices[index] : finalMode === "monthly" ? monthlyPrice : yearlyPrice;
 
-  const defaultSuffix = finalMode === "monthly" || finalMode === "yearly" ? "/month" : "HT";
+  const defaultSuffix = finalMode === "yearly" ? "/year" : finalMode === "monthly" ? "/month" : "HT";
   const finalSuffix = suffix !== undefined ? suffix : defaultSuffix;
 
   return (
@@ -145,8 +145,8 @@ interface DynamicValueProps {
 }
 
 export const DynamicValue = ({ values }: DynamicValueProps) => {
-  const { tier } = usePricingContext();
-  return <>{values[tier]}</>;
+  const { index } = usePricingContext();
+  return <>{values[index]}</>;
 };
 
 // DynamicDomains - displays domain count or "Unlimited" from tier 2 (€29)
@@ -155,6 +155,57 @@ interface DynamicDomainsProps {
 }
 
 export const DynamicDomains = ({ values = [3, 6, "Unlimited", "Unlimited", "Unlimited"] }: DynamicDomainsProps) => {
-  const { tier } = usePricingContext();
-  return <>{values[tier]}</>;
+  const { index } = usePricingContext();
+  return <>{values[index]}</>;
+};
+
+// DynamicPricingCta - CTA button that uses dynamic Stripe payment link based on tier
+interface DynamicPricingCtaProps {
+  variant?: "starter" | "pro" | "business";
+  children: ReactNode;
+}
+
+export const DynamicPricingCta = ({ variant = "business", children }: DynamicPricingCtaProps) => {
+  const { index } = usePricingContext();
+  // tier starts at 1, array indices start at 0
+  const paymentId = STRIPE_LIFETIME_PAYMENT_IDS[index];
+  const paymentUrl = `/api/pay?id=${paymentId}`;
+
+  return (
+    <a
+      href={paymentUrl}
+      className={cn(
+        "inline-flex items-center justify-center px-6 py-3 rounded-lg font-semibold transition-all duration-200",
+        variant === "business" ? "bg-white text-gray-900 hover:bg-gray-100" : "bg-gray-900 text-white hover:bg-gray-800"
+      )}
+    >
+      {children}
+    </a>
+  );
+};
+
+// PricingCta - CTA button that uses tier-based payment link (for MDX usage)
+interface PricingCtaProps {
+  href?: string;
+  variant?: "starter" | "pro" | "business";
+  children: ReactNode;
+}
+
+export const PricingCta = ({ href, variant = "starter", children }: PricingCtaProps) => {
+  const { index } = usePricingContext();
+
+  // If href is not provided or is "lifetime", use tier-based payment ID
+  let finalHref = href;
+  if (!href || href === "/api/pay?id=lifetime") {
+    const paymentId = STRIPE_LIFETIME_PAYMENT_IDS[index];
+    finalHref = `/api/pay?id=${paymentId}`;
+  }
+
+  if (variant === "business") {
+    return (
+      <CtaButtonBig type="pricing" variant="inverse" value={children} href={finalHref} className="w-full" size="lg" />
+    );
+  }
+
+  return <CtaButtonBig type="pricing" value={children} href={finalHref} className="w-full" size="lg" />;
 };

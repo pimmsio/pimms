@@ -1,7 +1,5 @@
 import { Check } from "@/components/icons/custom-icons";
 import { ReactNode } from "react";
-import CalComButton from "@/components/landings/cal-com-button";
-import CtaButtonBig from "@/components/cta/CtaButtonBig";
 import { cn } from "../../lib/utils";
 import { Label } from "@/components/base/label";
 
@@ -19,12 +17,6 @@ interface PricingSubtitleProps {
 }
 
 interface PricingPriceProps {
-  children: ReactNode;
-}
-
-interface PricingCtaProps {
-  href: string;
-  variant?: "starter" | "pro" | "business";
   children: ReactNode;
 }
 
@@ -114,13 +106,6 @@ export const PriceDisplay = ({ children, className }: { children: ReactNode; cla
   );
 };
 
-export const PricingCta = ({ href, variant = "starter", children }: PricingCtaProps) => {
-  if (variant === "business") {
-    return <CtaButtonBig type="pricing" variant="inverse" value={children} href={href} className="w-full" size="lg" />;
-  }
-
-  return <CtaButtonBig type="pricing" value={children} href={href} className="w-full" size="lg" />;
-};
 
 export const PricingFeatures = ({
   children,

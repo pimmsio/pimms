@@ -497,8 +497,8 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
 <Slide variant="secondary" id="pricing">
   <BlurFade direction="up" inView>
     <Centered>
-      <H2>Tarifs <Primary icon="pricing">Équitables</Primary></H2>
-      <Text size="lg">Des plans basés sur le trafic pour correspondre à votre croissance</Text>
+      <H2>Des <Primary icon="pricing">Tarifs</Primary> justes</H2>
+      <Text size="lg">Des tarifs basés sur le trafic pour accompagner votre croissance</Text>
     </Centered>
   </BlurFade>
   
@@ -517,16 +517,17 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
                     <BillingToggle />
                   </AbsoluteToggle>
                 </PricingTitleRow>
-                <DynamicPrice prices={[9, 19, 29, 49, 69]} variant="pro" />
-                <Text size="sm">0,00€ à payer aujourd'hui.</Text>
+                <PricingSubtitle variant="pro">Parfait pour les équipes en croissance</PricingSubtitle>
+                <DynamicPrice prices={[9, 19, 29, 49]} variant="pro" />
+                <Text size="sm">0,00€ aujourd'hui.</Text>
                 <AnimatedCentered noPadding>
                   <PricingCta variant="pro"><SwapRotate>Commencer gratuitement →</SwapRotate></PricingCta>
                   <CtaBottomText>Aucune carte bancaire requise.</CtaBottomText>
                 </AnimatedCentered>
               </PricingHeader>
-              <PricingFeatures title="Tout inclus :" variant="pro">
-                <PricingFeature variant="pro"><DynamicValue values={[100, 200, 400, 1000, 2000]} /> smart links /mois</PricingFeature>
-                <PricingFeature variant="pro"><EventTooltip><DynamicValue values={["5k", "20k", "40k", "100k", "200k"]} /> événements de tracking /mois (clic, lead, vente)</EventTooltip></PricingFeature>
+              <PricingFeatures title="Tout inclus:" variant="pro">
+                <PricingFeature variant="pro"><DynamicValue values={[100, 200, 400, 1000, 2000]} /> liens intelligents /mois</PricingFeature>
+                <PricingFeature variant="pro"><EventTooltip><DynamicValue values={["5k", "20k", "40k", "100k", "200k"]} /> évènements suivis /mois (clic, lead, vente)</EventTooltip></PricingFeature>
                 <PricingFeature variant="pro"><DynamicDomains /> domaines personnalisés</PricingFeature>
                 <PricingFeature variant="pro">Membres d'équipe illimités</PricingFeature>
                 <PricingFeature variant="pro"><DynamicValue values={[6, 12, 12, 12, 12]} /> mois de données</PricingFeature>
@@ -539,19 +540,20 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
           <BlurFade direction="right" delay={0.2} inView className="h-full">
             <PricingCard variant="business">
               <PricingHeader>
-                <PricingTitleGroup>
+                <PricingTitleRow>
                   <PricingTitle variant="business">Lifetime</PricingTitle>
-                </PricingTitleGroup>
-                <DynamicPrice prices={[99, 199, 299, 499, 699]} variant="business" mode="lifetime" />
-                <Text size="sm" className="text-white">Paiement unique, sans abonnement</Text>
+                </PricingTitleRow>
+                <PricingSubtitle variant="business">Paiement unique, accès à vie</PricingSubtitle>
+                <DynamicPrice prices={[99, 249, 349, 599]} variant="business" mode="lifetime" />
+                <Text size="sm" className="text-white">Paiement unique, pas d'abonnement</Text>
                 <AnimatedCentered noPadding>
-                  <PricingCta href="/api/pay?id=lifetime" variant="business"><SwapRotate>Accès lifetime →</SwapRotate></PricingCta>
+                  <PricingCta href="/api/pay?id=lifetime" variant="business"><SwapRotate>Obtenir l'accès à vie →</SwapRotate></PricingCta>
                   <CtaBottomText variant="white"><FaCreditCard /> Paiement sécurisé via Stripe</CtaBottomText>
                 </AnimatedCentered>
               </PricingHeader>
-              <PricingFeatures title="Identique au plan Pro :" variant="business">
-                <PricingFeature variant="business"><DynamicValue values={[100, 200, 400, 1000, 2000]} /> smart links /mois</PricingFeature>
-                <PricingFeature variant="business"><EventTooltip><DynamicValue values={["5k", "20k", "40k", "100k", "200k"]} /> événements de tracking /mois (clic, lead, vente)</EventTooltip></PricingFeature>
+              <PricingFeatures title="Identique au plan Pro:" variant="business">
+                <PricingFeature variant="business"><DynamicValue values={[100, 200, 400, 1000, 2000]} /> liens intelligents /mois</PricingFeature>
+                <PricingFeature variant="business"><EventTooltip><DynamicValue values={["5k", "20k", "40k", "100k", "200k"]} /> évènements suivis /mois (clic, lead, vente)</EventTooltip></PricingFeature>
                 <PricingFeature variant="business"><DynamicDomains /> domaines personnalisés</PricingFeature>
                 <PricingFeature variant="business">Membres d'équipe illimités</PricingFeature>
                 <PricingFeature variant="business"><DynamicValue values={[6, 12, 12, 12, 12]} /> mois de données</PricingFeature>
@@ -564,16 +566,14 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
   </Section>
 
    <Centered margin="none" className="!my-0 !py-0 !space-y-3">
-     <Text size="sm" className="text-muted-foreground !mb-3">Tous les plans incluent toutes les fonctionnalités disponibles incluant :</Text>
+     <Text size="sm" className="text-muted-foreground !mb-3">Tous les plans incluent toutes les fonctionnalités disponibles incluant:</Text>
      <PricingCommonFeatures>
-       <CommonFeatureLabel>Liens UTM & modèles illimités</CommonFeatureLabel>
-       <CommonFeatureLabel>Création de liens en masse</CommonFeatureLabel>
-       <CommonFeatureLabel>Espaces de travail & permissions d'équipe</CommonFeatureLabel>
-       <CommonFeatureLabel>Suivi de revenus (Stripe, Shopify)</CommonFeatureLabel>
-       <CommonFeatureLabel>100+ intégrations dont Zapier</CommonFeatureLabel>
-       <CommonFeatureLabel>Extension Chrome</CommonFeatureLabel>
-       <CommonFeatureLabel>Tests A/B & webhooks</CommonFeatureLabel>
-       <CommonFeatureLabel>Support prioritaire</CommonFeatureLabel>
+       <CommonFeatureLabel>100+ intégrations incl. Zapier</CommonFeatureLabel>
+       <CommonFeatureLabel>Support des paiements Stripe</CommonFeatureLabel>
+       <CommonFeatureLabel>Tests A/B</CommonFeatureLabel>
+       <CommonFeatureLabel>Webhooks</CommonFeatureLabel>
+       <CommonFeatureLabel>UTM illimités</CommonFeatureLabel>
+       <CommonFeatureLabel>3 mois de support prioritaire</CommonFeatureLabel>
      </PricingCommonFeatures>
    </Centered>
 </Slide>

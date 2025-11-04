@@ -1,10 +1,12 @@
 import Image from "next/image";
 import { ReactNode } from "react";
 import { getTranslations } from "next-intl/server";
+
 interface AvatarsProps {
   children?: ReactNode;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Avatars = async ({ children }: AvatarsProps) => {
   // Always use home avatars since they're shared across all landing pages
   const t = await getTranslations("landing.hero");

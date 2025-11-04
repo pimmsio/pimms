@@ -2,17 +2,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-11-04T20:59:56.945Z"
+    "lastmod": "2025-11-04T22:52:07.365Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-11-04T20:59:56.945Z"
+    "lastmod": "2025-11-04T22:52:07.366Z"
   },
   "/freetools/utm-builder": {
     "en": "/freetools/utm-builder-google-analytics-tracking",
     "fr": "/freetools/generateur-utm-google-analytics-tracking",
-    "lastmod": "2025-11-04T20:59:56.945Z"
+    "lastmod": "2025-11-04T22:52:07.366Z"
   },
   "/articles": {
     "en": "/articles",

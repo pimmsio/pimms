@@ -6,7 +6,6 @@ export {
   PricingPrice,
   PricingSuffix,
   PriceDisplay,
-  PricingCta,
   PricingFeatures,
   PricingFeature,
   PricingHeader,
@@ -20,10 +19,13 @@ export {
 export { PricingWrapper } from "../PricingWrapper";
 
 export {
+  DynamicPricingCta,
+  PricingCta,
   PricingSlider,
   BillingToggle,
   EventTooltip,
   DynamicPrice,
   DynamicValue,
-  DynamicDomains
+  DynamicDomains,
+  STRIPE_LIFETIME_PAYMENT_IDS
 } from "../PricingInteractive";

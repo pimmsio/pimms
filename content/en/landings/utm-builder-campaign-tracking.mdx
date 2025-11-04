@@ -517,7 +517,7 @@ With PIMMS, you have a clear vision. Simple. Without complexity. And in digital,
                     <BillingToggle />
                   </AbsoluteToggle>
                 </PricingTitleRow>
-                <DynamicPrice prices={[9, 19, 29, 49, 69]} variant="pro" />
+                <DynamicPrice prices={[9, 19, 29, 49]} variant="pro" />
                 <Text size="sm">0.00€ due today.</Text>
                 <AnimatedCentered noPadding>
                   <PricingCta variant="pro"><SwapRotate>Start for free →</SwapRotate></PricingCta>
@@ -539,14 +539,14 @@ With PIMMS, you have a clear vision. Simple. Without complexity. And in digital,
           <BlurFade direction="right" delay={0.2} inView className="h-full">
             <PricingCard variant="business">
               <PricingHeader>
-                <PricingTitleGroup>
+                <PricingTitleRow>
                   <PricingTitle variant="business">Lifetime</PricingTitle>
-                </PricingTitleGroup>
-                <DynamicPrice prices={[99, 199, 299, 499, 699]} variant="business" mode="lifetime" />
+                </PricingTitleRow>
+                <DynamicPrice prices={[99, 249, 349, 599]} variant="business" mode="lifetime" />
                 <Text size="sm" className="text-white">One-time payment, no subscription</Text>
                 <AnimatedCentered noPadding>
                   <PricingCta href="/api/pay?id=lifetime" variant="business"><SwapRotate>Get lifetime access →</SwapRotate></PricingCta>
-                  <CtaBottomText variant="white"><FaCreditCard /> Secure payment via Stripe</CtaBottomText>
+                  <CtaBottomText variant="white"><FaCreditCard /> Paiement sécurisé via Stripe</CtaBottomText>
                 </AnimatedCentered>
               </PricingHeader>
               <PricingFeatures title="Same as Pro plan:" variant="business">
@@ -566,14 +566,12 @@ With PIMMS, you have a clear vision. Simple. Without complexity. And in digital,
    <Centered margin="none" className="!my-0 !py-0 !space-y-3">
      <Text size="sm" className="text-muted-foreground !mb-3">All plans include all available features including:</Text>
      <PricingCommonFeatures>
-       <CommonFeatureLabel>Unlimited UTM links & templates</CommonFeatureLabel>
-       <CommonFeatureLabel>Bulk link creation</CommonFeatureLabel>
-       <CommonFeatureLabel>Team workspaces & permissions</CommonFeatureLabel>
-       <CommonFeatureLabel>Revenue tracking (Stripe, Shopify)</CommonFeatureLabel>
        <CommonFeatureLabel>100+ integrations incl. Zapier</CommonFeatureLabel>
-       <CommonFeatureLabel>Chrome extension</CommonFeatureLabel>
-       <CommonFeatureLabel>A/B testing & webhooks</CommonFeatureLabel>
-       <CommonFeatureLabel>Priority support</CommonFeatureLabel>
+       <CommonFeatureLabel>Support Stripe payments</CommonFeatureLabel>
+       <CommonFeatureLabel>A/B testing</CommonFeatureLabel>
+       <CommonFeatureLabel>Webhooks</CommonFeatureLabel>
+       <CommonFeatureLabel>Unlimited UTM</CommonFeatureLabel>
+       <CommonFeatureLabel>3 months priority support</CommonFeatureLabel>
      </PricingCommonFeatures>
    </Centered>
 </Slide>

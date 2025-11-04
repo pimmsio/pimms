@@ -3,7 +3,7 @@ import Link from "next/link";
 import { formatDate, PageMetadata } from "@/lib/mdx";
 import Author from "./author";
 import { notFound } from "next/navigation";
-import { getCanonicalLink, getTagSlug, getTagLabel, getTagCanonicalLink } from "../../lib/utils";
+import { getCanonicalLink, getTagLabel, getTagCanonicalLink } from "../../lib/utils";
 import { ArrowUpRight } from "@/components/icons/custom-icons";
 
 // Function to extract integration name from guide titles

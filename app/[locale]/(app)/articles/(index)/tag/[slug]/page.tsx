@@ -16,7 +16,8 @@ export async function generateStaticParams() {
   const allParams = [];
 
   for (const locale of locales) {
-    for (const [tagKey, tagValue] of Object.entries(BLOG_TAGS)) {
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    for (const [_tagKey, tagValue] of Object.entries(BLOG_TAGS)) {
       allParams.push({
         locale,
         slug: tagValue[locale].slug

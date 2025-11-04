@@ -63,7 +63,7 @@
       "billing": {
         "monthly": "Monthly",
         "yearly": "Yearly",
-        "yearly_badge": "2 months free"
+        "yearly_badge": "3 months free"
       },
       "tooltip": {
         "events": "Events are clicks, conversion leads, payment. 1 event = 1 click = 1 lead collected = 10$ collected"

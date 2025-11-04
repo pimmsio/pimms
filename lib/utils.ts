@@ -336,7 +336,8 @@ export async function generateTagMetadata({
   });
 }
 
-export function getRelevantTagsForCategory(category: string, locale: "en" | "fr"): string[] {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export function getRelevantTagsForCategory(category: string, _locale: "en" | "fr"): string[] {
   const tagMapping: Record<string, string[]> = {
     "digital-marketing": ["utm-parameters"],
     guides: [

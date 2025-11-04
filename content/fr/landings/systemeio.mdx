@@ -310,7 +310,7 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
 <Slide variant="secondary" id="pricing">
   <BlurFade direction="up" inView>
     <Centered>
-      <H2>Fair <Primary icon="pricing">Pricing</Primary></H2>
+      <H2>Des <Primary icon="pricing">Tarifs</Primary> justes</H2>
       <Text size="lg">Des tarifs basés sur le trafic pour accompagner votre croissance</Text>
     </Centered>
   </BlurFade>
@@ -331,7 +331,7 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
                   </AbsoluteToggle>
                 </PricingTitleRow>
                 <PricingSubtitle variant="pro">Parfait pour les équipes en croissance</PricingSubtitle>
-                <DynamicPrice prices={[9, 19, 29, 49, 69]} variant="pro" />
+                <DynamicPrice prices={[9, 19, 29, 49]} variant="pro" />
                 <Text size="sm">0,00€ aujourd'hui.</Text>
                 <AnimatedCentered noPadding>
                   <PricingCta variant="pro"><SwapRotate>Commencer gratuitement →</SwapRotate></PricingCta>
@@ -353,12 +353,11 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
           <BlurFade direction="right" delay={0.2} inView className="h-full">
             <PricingCard variant="business">
               <PricingHeader>
-                <PricingTitleGroup>
-                </PricingTitleGroup>
-                <PricingSubtitle variant="business">Paiement unique, accès à vie</PricingSubtitle>
+                <PricingTitleRow>
                   <PricingTitle variant="business">Lifetime</PricingTitle>
-                </PricingTitleGroup>
-                <DynamicPrice prices={[99, 199, 299, 499, 699]} variant="business" mode="lifetime" />
+                </PricingTitleRow>
+                <PricingSubtitle variant="business">Paiement unique, accès à vie</PricingSubtitle>
+                <DynamicPrice prices={[99, 249, 349, 599]} variant="business" mode="lifetime" />
                 <Text size="sm" className="text-white">Paiement unique, pas d'abonnement</Text>
                 <AnimatedCentered noPadding>
                   <PricingCta href="/api/pay?id=lifetime" variant="business"><SwapRotate>Obtenir l'accès à vie →</SwapRotate></PricingCta>

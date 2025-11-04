@@ -284,7 +284,7 @@ To know where each click comes from and optimize what really works!
                     <BillingToggle />
                   </AbsoluteToggle>
                 </PricingTitleRow>
-                <DynamicPrice prices={[9, 19, 29, 49, 69]} variant="pro" />
+                <DynamicPrice prices={[9, 19, 29, 49]} variant="pro" />
                 <Text size="sm">0.00€ due today.</Text>
                 <AnimatedCentered noPadding>
                   <PricingCta variant="pro"><SwapRotate>Start for free →</SwapRotate></PricingCta>
@@ -306,10 +306,10 @@ To know where each click comes from and optimize what really works!
           <BlurFade direction="right" delay={0.2} inView className="h-full">
             <PricingCard variant="business">
               <PricingHeader>
-                <PricingTitleGroup>
+                <PricingTitleRow>
                   <PricingTitle variant="business">Lifetime</PricingTitle>
-                </PricingTitleGroup>
-                <DynamicPrice prices={[99, 199, 299, 499, 699]} variant="business" mode="lifetime" />
+                </PricingTitleRow>
+                <DynamicPrice prices={[99, 249, 349, 599]} variant="business" mode="lifetime" />
                 <Text size="sm" className="text-white">One-time payment, no subscription</Text>
                 <AnimatedCentered noPadding>
                   <PricingCta href="/api/pay?id=lifetime" variant="business"><SwapRotate>Get lifetime access →</SwapRotate></PricingCta>
