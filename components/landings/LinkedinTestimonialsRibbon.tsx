@@ -1,40 +1,84 @@
-import { Marquee } from "@/components/magicui/marquee";
-import React from "react";
+"use client";
 
-export function LinkedinTestimonialsRibbon({ children }: { children: React.ReactNode }) {
-  // Convert children to array and split into two rows
+import React, { useEffect, useMemo, useState } from "react";
+
+import type { CarouselApi } from "@/components/ui/carousel";
+import { Carousel, CarouselContent, CarouselItem } from "@/components/ui/carousel";
+
+type LinkedinTestimonialsRibbonProps = {
+  children: React.ReactNode;
+  /**
+   * Number of marquee rows to render.
+   * Defaults to 2 (current behavior).
+   */
+  rows?: 1 | 2;
+};
+
+export function LinkedinTestimonialsRibbon({ children, rows = 2 }: LinkedinTestimonialsRibbonProps) {
   const childrenArray = React.Children.toArray(children);
-  const midPoint = Math.ceil(childrenArray.length / 2);
-  const firstRow = childrenArray.slice(0, midPoint);
-  const secondRow = childrenArray.slice(midPoint);
+  const half = Math.ceil(childrenArray.length / 2);
+  const [rowOneApi, setRowOneApi] = useState<CarouselApi | null>(null);
+  const [rowTwoApi, setRowTwoApi] = useState<CarouselApi | null>(null);
+
+  const carouselOptions = {
+    loop: true,
+    dragFree: true,
+    align: "start"
+  } as const;
+
+  const [rowOne, rowTwo] = useMemo(() => {
+    return rows === 1 ? [childrenArray, []] : [childrenArray.slice(0, half), childrenArray.slice(half)];
+  }, [childrenArray, half, rows]);
+
+  useEffect(() => {
+    if (!rowOneApi) return;
+    const interval = window.setInterval(() => {
+      rowOneApi.scrollNext();
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [rowOneApi]);
+
+  useEffect(() => {
+    if (!rowTwoApi) return;
+    const interval = window.setInterval(() => {
+      rowTwoApi.scrollNext();
+    }, 5000);
+
+    return () => window.clearInterval(interval);
+  }, [rowTwoApi]);
+
+  const renderRow = (rowChildren: React.ReactNode[], setApi: (api: CarouselApi) => void) => (
+    <Carousel
+      opts={carouselOptions}
+      setApi={setApi}
+      className="w-full cursor-grab select-none active:cursor-grabbing"
+    >
+      <CarouselContent className="py-12 px-1">
+        {rowChildren.map((child, idx) => (
+          <CarouselItem key={getChildKey(child, idx)} className="basis-auto">
+            {child}
+          </CarouselItem>
+        ))}
+      </CarouselContent>
+    </Carousel>
+  );
 
   return (
-    <div className="relative w-full py-16 bg-gradient-to-b from-gray-50/50 to-transparent">
-      {/* First row - scrolling left */}
-      <div className="mb-8">
-        <Marquee reverse pauseOnHover className="py-6" style={{ "--duration": "80s" } as React.CSSProperties}>
-          {firstRow.map((child, idx) => (
-            <div key={idx} className="px-4">
-              {child}
-            </div>
-          ))}
-        </Marquee>
-      </div>
-
-      {/* Second row - scrolling right */}
-      <div>
-        <Marquee pauseOnHover className="py-6" style={{ "--duration": "80s" } as React.CSSProperties}>
-          {secondRow.map((child, idx) => (
-            <div key={idx} className="px-4">
-              {child}
-            </div>
-          ))}
-        </Marquee>
-      </div>
-
-      {/* Gradient overlays on left and right edges */}
-      <div className="hidden md:block pointer-events-none absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-white via-white/80 to-transparent z-10"></div>
-      <div className="hidden md:block pointer-events-none absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-white via-white/80 to-transparent z-10"></div>
+    <div className="relative w-full py-8">
+      {rows === 1 ? (
+        renderRow(rowOne, (api) => setRowOneApi(api))
+      ) : (
+        <>
+          <div className="mb-6">{renderRow(rowOne, (api) => setRowOneApi(api))}</div>
+          <div>{renderRow(rowTwo, (api) => setRowTwoApi(api))}</div>
+        </>
+      )}
     </div>
   );
+}
+
+function getChildKey(child: React.ReactNode, fallbackIdx: number) {
+  if (React.isValidElement(child) && child.key != null) return String(child.key);
+  return fallbackIdx;
 }

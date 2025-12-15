@@ -1,7 +1,7 @@
 "use client";
 
 import { AnimatePresence, motion, useInView, UseInViewOptions, Variants, MotionProps } from "framer-motion";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type MarginType = UseInViewOptions["margin"];
 
@@ -25,13 +25,13 @@ export function BlurFade({
   children,
   className,
   variant,
-  duration = 0.4,
+  duration = 0.28,
   delay = 0,
-  offset = 6,
+  offset = 2,
   direction = "down",
   inView = false,
   inViewMargin = "-50px",
-  blur = "6px",
+  blur = "1.5px",
   ...props
 }: BlurFadeProps) {
   const ref = useRef(null);

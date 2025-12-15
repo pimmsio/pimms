@@ -11,7 +11,7 @@ export default function CalComButton({
   className = ""
 }: {
   children: React.ReactNode;
-  variant?: "default" | "inverse";
+  variant?: "default";
   size?: "default" | "sm" | "lg";
   className?: string;
 }) {

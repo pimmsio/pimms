@@ -24,8 +24,8 @@ const ImageSlide = ({ locale }: { locale: string }) => {
 
       {/* Desktop: Enhanced design with backdrop effects */}
       <div className="hidden md:block">
-        <div className="pimms-image-backdrop relative p-6 rounded-3xl backdrop-blur-sm bg-gradient-to-br from-white/80 to-gray-50/60 shadow-[0_8px_32px_-12px_rgba(57,112,255,0.15),0_2px_8px_-2px_rgba(0,0,0,0.05)] border border-white/20">
-          <div className="bg-white/90 backdrop-blur-sm rounded-3xl border border-gray-100 overflow-hidden transition-all duration-300">
+        <div className="relative p-6 rounded-3xl border border-border bg-white">
+          <div className="bg-white rounded-3xl border border-border overflow-hidden">
             <Image
               src={`https://assets.pimms.io/landing-growth-insights-${locale}.webp?v=6`}
               alt="PIMMS Growth Insights Dashboard"

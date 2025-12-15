@@ -12,10 +12,15 @@ async function fetchHeroRibbonSvg(seedNonce: string, locale: string): Promise<st
     const uid = `hero-ribbon-${seedNonce.replace(/[^a-zA-Z0-9-]/g, "-")}`;
     const url = `${WEB_URL}/api/animation-svg/hero-ribbon?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}&locale=${encodeURIComponent(locale)}`;
 
-    const response = await fetch(url, {
-      // Cache for 1 hour
-      next: { revalidate: 3600 }
-    });
+    const response = await fetch(
+      url,
+      process.env.NODE_ENV === "development"
+        ? { cache: "no-store" }
+        : {
+          // Cache for 1 hour
+          next: { revalidate: 3600 }
+        }
+    );
 
     if (response.ok) {
       return await response.text();
@@ -40,7 +45,7 @@ export default async function HeroRibbon({ seedNonce }: Props) {
 
   return (
     <div
-      className="w-full grid place-items-center mb-28 sm:mb-12 mt-20 md:mt-6 md:mb-4"
+      className="w-full grid place-items-center pb-28 sm:pb-12 pt-20 md:pt-6 md:pb-4 overflow-hidden"
       aria-hidden="true"
       data-nosnippet
       data-noindex="true"

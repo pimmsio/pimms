@@ -56,7 +56,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
           <div className="pt-8 md:py-12">
-            <H3>Capture leads and <TextHighlight color="blue">conversion paths</TextHighlight></H3>
+            <H3>Capture leads and <TextHighlight color="blue">timelines</TextHighlight></H3>
             <Text>Collect leads from forms and calendar bookings with the true source attached <Stronger className="text-vibrant-blue">across all your channels</Stronger>.</Text>
             <Text>Each lead is enriched with campaign details, all the contents consulted and a complete history of its interactions.</Text>
           </div>
@@ -92,7 +92,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <TwoColumns ratio="1-1" variant="card" background="subtle">
       <Column span={1} order="text">
         <BlurFade direction="left" inView>
-          <H3>Decide and <TextHighlight color="green">analyze</TextHighlight> your conversions</H3>
+          <H3><TextHighlight color="green">Decide</TextHighlight> with conversions data</H3>
           <Text>Connect your payments. Attribute sales to the right campaign and creative — beyond last click.</Text>
           <Text>See revenue by source and payback at a glance. Make scaling decisions with confidence.</Text>
           <Text>Discover which combination of touchpoints drives more revenue <Stronger className="text-vibrant-green">and optimize your entire funnels</Stronger>.</Text>
@@ -312,22 +312,17 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
 </Slide>
 
 <Slide variant="secondary" id="free">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">It starts here</H2>
-          <Text size="lg" variant="white" className="text-balance">If you made it this far, it's time to grab 10 free links.</Text>
-          <CtaButton variant="inverse"><SwapRotate>Start for free</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">10 smart links included • No credit card</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+  <Section variant="card">
+    <Centered>
+      <H2>It starts here</H2>
+      <Text>If you made it this far, it's time to grab your free links.</Text>
+      <CtaButton><SwapRotate>Start for free</SwapRotate></CtaButton>
+      <CtaBottomText>Free smart links included • No credit card</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
   </Section>
 </Slide>
 
@@ -342,39 +337,60 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   <Section>
  
 ::: faq
-### Why do PIMMS links convert up to 30% more?
-PIMMS opens links in the official apps (Instagram, YouTube, LinkedIn, TikTok) instead of in‑app browsers. People stay signed in, payment details are available, and the journey has fewer steps — so signups and purchases happen more often.
+### How simple is the setup?
+Enable Link Magnet with one toggle for out-of-the-box tracking. For full-site tracking, add one script. Most setups take 10–15 minutes, no developer required.
 ::::
 
-::: faq
-### How fast will I see impact?
-Immediately for UX; usually within days for revenue. The dashboard shows conversions as they happen and attributes them to the exact post, email, or ad that drove the sale.
-::::
+
+
 
 ::: faq
-### Do I need developers to set it up?
-No. It’s 100% web, nothing to install. Basic setup takes 10–15 minutes: paste one script and start creating smart links. Follow the guide or book a call if you want help.
+### What can I track beyond clicks?
+Track clicks, leads, and revenue. Connect forms, calendars, and payments (Stripe, Tally, Typeform, Cal.com, Calendly, Shopify) to tie each conversion to its original link and UTM.
 ::::
+
+
+
+
+::: faq
+### How does UTM tracking work in PIMMS?
+Create UTM templates and parameters, enforce naming rules, bulk-generate links, and organize campaigns in folders. Filter and analyze by source, medium, campaign, term, and content.
+::::
+
+
+
+
+::: faq
+### Can I keep my current tools and workflow?
+Yes. Use native integrations plus Zapier, Make, webhooks, and API to plug into your CRM, email, and analytics stack.
+::::
+
+
+
 
 ::: faq
 ### Does PIMMS work across domains and subdomains?
-Yes. Install the script on your root domain (e.g., example.com) and subdomains (e.g., app.example.com, blog.example.com) to unify analytics. External domains are supported via link options.
+Yes. Install the script on each domain/subdomain you control to unify attribution. Links can point anywhere.
 ::::
 
-::: faq
-### Do you have an API and webhooks?
-Yes — a full REST API and webhooks for custom workflows and analytics exports. See the docs at https://pim.ms/api.
-::::
+
+
 
 ::: faq
 ### What’s included in the free plan?
-10 smart links, real‑time analytics, a custom domain, QR codes, and UTM campaign management. No credit card required — prove the value before you pay.
+5 smart links, 200 tracked events/month, 1 custom domain, 30-day analytics retention, 3 UTM templates, and 10 UTM parameters.
 ::::
 
+
+
+
 ::: faq
-### Is the lifetime deal really one‑time?
-Yes. Pro lifetime is €59 (one payment). You get unlimited links, full conversion tracking, team collaboration, and 6‑month data retention. No recurring fees.
+### What are the paid plans?
+Pro is €19/month or €129 lifetime. Business is €69/month or €690/year. Paid plans unlock higher limits, team seats, and bulk operations.
 ::::
+
+
+
 
   </Section>
 </Slide>

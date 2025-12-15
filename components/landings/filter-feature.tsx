@@ -371,8 +371,8 @@ const FilterBlock = ({
   highlight?: boolean;
 }) => (
   <div
-    className={`flex h-9 rounded-lg border-[2px] text-sm leading-none [&>*]:h-full transition-all duration-300 ${
-      highlight ? "border-neutral-100 bg-gradient-info text-brand-primary" : "border-neutral-100 text-neutral-800"
+    className={`flex h-9 rounded-lg border-[2px] text-sm leading-none [&>*]:h-full transition-colors duration-200 ${
+      highlight ? "border-brand-primary/30 bg-brand-primary/5 text-brand-primary" : "border-neutral-100 text-neutral-800"
     }`}
   >
     <div

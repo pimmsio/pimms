@@ -17,15 +17,18 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <Summary>Les clics flattent. Les revenus prouvent. On track chaque lien, identifie les leads et attribue chaque euro au bon canal, post et e-mail.</Summary>
   </Hero>
   <AnimatedCentered noPadding>
-    <CtaButton className="w-fit px-6"><SwapRotate>Démarre gratuitement<HideOnMobile> avec 10 liens</HideOnMobile></SwapRotate></CtaButton>
+    <CtaButton className="w-fit px-6"><SwapRotate>Démarre gratuitement</SwapRotate></CtaButton>
     <CtaBottomText>Aucune carte bancaire requise</CtaBottomText>
   </AnimatedCentered>
-  <BlurFade direction="top">
-    <HeroRibbon />
-  </BlurFade>
+
+  <YoutubeVideoSlide
+    title="Démo produit"
+    src="https://www.youtube-nocookie.com/embed/FuwKb6HQTm0?rel=0"
+    thumbnail="/static/minia_pimms_fr.webp"
+  />
 </Slide>
 
-<LinkedinTestimonialsRibbon>
+<LinkedinTestimonialsRibbon rows={1}>
   <LinkedinPost 
     name="Ramzi ₿" 
     profile="God of Feed ➜ L'extension commentaire IA pour gagner du temps" 
@@ -233,7 +236,7 @@ C'est devenu un incontournable dans mon workflow quotidien, notamment pour track
     showSolution={true}
     postUrl="https://www.linkedin.com/posts/ameliestarace_ce-carrousel-ma-pris-10-minutes-il-a-fait-activity-7378367648939646976-MMgb"
   >
-Ce carrousel m'a pris 10 minutes. Il a fait 19 000 impressions. 🔥 
+Ce carrousel m'a pris 10 minutes. Il a fait 19 000 impressions. 🔥
 
 masterclass ici ➜ https://pim.ms/c0NejOP
 
@@ -282,81 +285,80 @@ PIMMS est un de nos alliés du quotidien pour garder le cap et transformer notre
   <BlurFade direction="up" inView>
     <Centered>
       <Label variant="default">Fonctionnalités avancées</Label>
-      <H2>Un <Primary icon="sales">Tracking</Primary> simple du premier clic au paiement avec des Smart Links.</H2>
+      <H2>Un <Primary icon="sales">tracking</Primary> simple du clic à la conversion.</H2>
       <Text size="lg">(Et tellement facile à intégrer à ton workflow 😉)</Text>
     </Centered>
   </BlurFade>
 
-  <Section margin="sm">
-    <TwoColumns ratio="1-1" variant="card" background="subtle">
-      <Column span={1} order="text">
-        <BlurFade direction="left" delay={0.2} inView>
-          <H3>Des liens qui <TextHighlight color="green">convertissent</TextHighlight> plus</H3>
-          <Text>Crée des liens courts que tu partages dans tes campagnes d’outreach, des séquences d’emailing, ou sur les réseaux.</Text>
-          <Text>Les deeplinks PIMMS éliminent les mini‑navigateurs. Achats et inscriptions se font jusqu’à <Stronger className="text-vibrant-green">30 % plus souvent</Stronger>.</Text>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="visual">
-        <BlurFade direction="right" inView>
-          <ConversionFlipCard />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
-  </Section>
+<Section margin="sm">
+  <TwoColumns ratio="1-1" variant="card" background="subtle">
+    <Column span={1} order="text">
+      <BlurFade direction="left" delay={0.2} inView>
+        <H3>Des liens qui <TextHighlight color="green">convertissent</TextHighlight> plus</H3>
+        <Text>Crée des liens courts que tu partages dans tes campagnes d’outreach, des séquences d’emailing, ou sur les réseaux.</Text>
+        <Text>Les liens Pimms sont optimisés sur mobile. Achats et inscriptions se font jusqu’à <Stronger className="text-vibrant-green">30 % plus souvent</Stronger>.</Text>
+      </BlurFade>
+    </Column>
+    <Column span={1} order="visual">
+      <BlurFade direction="right" inView>
+        <ConversionFlipCard />
+      </BlurFade>
+    </Column>
+  </TwoColumns>
+</Section>
 
-  <Section margin="sm">
-    <TwoColumns ratio="1-1" variant="card" background="subtle" noPadding>
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <div className="pt-8 md:py-12">
-            <H3>Capture des leads et leurs <TextHighlight color="blue">parcours</TextHighlight></H3>
-            <Text>Collecte les prospects et les réservations calendrier avec la vraie source rattachée <Stronger className="text-vibrant-blue">sur tous tes canaux</Stronger>.</Text>
-            <Text>Chaque lead est enrichi avec la campagne, l'ensemble des contenus consultés et un historique complet de ses interactions.</Text>
-          </div>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="visual" noPadding position="start">
-        <BlurFade direction="right" delay={0.2} inView>
-          <AvatarFunnel />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
-  </Section>
+<Section margin="sm">
+  <TwoColumns ratio="1-1" variant="card" background="subtle" noPadding>
+    <Column span={1} order="text">
+      <BlurFade direction="left" inView>
+        <div className="pt-8 md:py-12">
+          <H3>Collecte des leads et la <TextHighlight color="blue">timeline</TextHighlight></H3>
+          <Text>Collecte des nouveaux contacts avec le tracking des formulaires, des calendriers en ligne et des pages de paiements.</Text>
+          <Text>Chaque contact est enrichi avec des UTMs, des informations de la campagne, et un historique complet de ses interactions passées.</Text>
+        </div>
+      </BlurFade>
+    </Column>
+    <Column span={1} order="visual" noPadding position="start">
+      <BlurFade direction="right" delay={0.2} inView>
+        <AvatarFunnel />
+      </BlurFade>
+    </Column>
+  </TwoColumns>
+</Section>
 
-  <Section margin="sm">
-    <TwoColumns ratio="1-1" variant="card" background="subtle">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H3>Priorise et augmente tes <TextHighlight color="orange">revenus</TextHighlight></H3>
-          <Text>Gère tes prospects avec un lead scoring intelligent IA et des signaux d’engagement actionnables.</Text>
-          <Text>Priorise ton pipeline et concentre l’effort <Stronger className="text-vibrant-orange">sur les deals à plus forte probabilité</Stronger>.</Text>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="visual">
-        <BlurFade direction="right" delay={0.2} inView>
-          <LeadScoringAnimatedList />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
-  </Section>
+<Section margin="sm">
+  <TwoColumns ratio="1-1" variant="card" background="subtle">
+    <Column span={1} order="text">
+      <BlurFade direction="left" inView>
+        <H3>Priorise tes <TextHighlight color="orange">actions</TextHighlight> grâce au scoring</H3>
+        <Text>PIMMS ne remplace pas ton CRM : il ajoute des signaux fiables à tes contacts.</Text>
+        <Text>Tu sais qui relancer, quand, et avec quel message <Stronger className="text-vibrant-orange">pour générer plus de revenus</Stronger>.</Text>
+      </BlurFade>
+    </Column>
+    <Column span={1} order="visual">
+      <BlurFade direction="right" delay={0.2} inView>
+        <LeadScoringAnimatedList />
+      </BlurFade>
+    </Column>
+  </TwoColumns>
+</Section>
 
-  <Section margin="sm">
-    <TwoColumns ratio="1-1" variant="card" background="subtle">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H3>Décide et <TextHighlight color="green">analyse</TextHighlight> tes conversions</H3>
-          <Text>Connecte tes paiements. Attribue les ventes à la bonne campagne et à la bonne créa, au bon post ou au bon e-mail.</Text>
-          <Text>Suis en temps réel l’engagement et la progression dans le funnel.</Text>
-          <Text>Identifie les touchpoints qui génèrent du revenu <Stronger className="text-vibrant-green">et optimise tes funnels de vente</Stronger> de bout en bout.</Text>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="visual">
-        <BlurFade direction="right" delay={0.2} inView>
-          <AnalyticsDemo />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
-  </Section>
+<Section margin="sm">
+  <TwoColumns ratio="1-1" variant="card" background="subtle">
+    <Column span={1} order="text">
+      <BlurFade direction="left" inView>
+        <H3>Comprends ce qui <TextHighlight color="green">convertit</TextHighlight> vraiment</H3>
+        <Text>Tu sais d’où viennent tes ventes : canal, campagne, contenu, et message.</Text>
+        <Text>Repère les meilleurs touchpoints et améliore ton funnel <Stronger className="text-vibrant-green">sans guesswork</Stronger>.</Text>
+      </BlurFade>
+    </Column>
+    <Column span={1} order="visual">
+      <BlurFade direction="right" delay={0.2} inView>
+        <AnalyticsDemo />
+      </BlurFade>
+    </Column>
+  </TwoColumns>
+</Section>
 
   <Section margin="sm">
     <TwoColumns ratio="1-1" variant="card" background="subtle">
@@ -405,83 +407,115 @@ PIMMS est un de nos alliés du quotidien pour garder le cap et transformer notre
   <BlurFade direction="up" inView>
     <Centered>
       <H2>Des <Primary icon="pricing">Tarifs</Primary> justes</H2>
-      <Text size="lg">Commence avec 10 liens gratuits. Upgrade quand tu veux.</Text>
+      <Text size="lg">Commence gratuitement. Upgrade quand tu veux.</Text>
     </Centered>
   </BlurFade>
-  
+
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Starter</PricingTitle>
-                <PricingSubtitle variant="starter">Parfait pour débuter</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Débloquer l'accès à vie</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans l'offre gratuite, plus :" variant="starter">
-              <PricingFeature variant="starter">200 liens /mois</PricingFeature>
-              <PricingFeature variant="starter">Suivi des clics illimité</PricingFeature>
-              <PricingFeature variant="starter">Suivi des leads</PricingFeature>
-              <PricingFeature variant="starter">100+ intégrations incl. Zapier</PricingFeature>
-              <PricingFeature variant="starter">3 domaines personnalisés</PricingFeature>
-              <PricingFeature variant="starter">3 membres d'équipe</PricingFeature>
-              <PricingFeature variant="starter">Données conservées 6 mois</PricingFeature>
-              <PricingFeature variant="starter">1 mois de support prioritaire</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="up" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Pro</PricingTitle>
-                <PricingSubtitle variant="pro">Le choix de 90% de nos clients</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Débloquer l'accès à vie</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans l'offre Starter, plus :" variant="pro">
-              <PricingFeature variant="pro">600 liens /mois</PricingFeature>
-              <PricingFeature variant="pro">Suivi des ventes limité</PricingFeature>
-              <PricingFeature variant="pro">Collecte via Stripe, Systeme.io, etc.</PricingFeature>
-              <PricingFeature variant="pro">A/B testing</PricingFeature>
-              <PricingFeature variant="pro">Webhooks</PricingFeature>
-              <PricingFeature variant="pro">5 membres d'équipe</PricingFeature>
-              <PricingFeature variant="pro">Données conservées 12 mois</PricingFeature>
-              <PricingFeature variant="pro">3 mois de support prioritaire</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Entreprise</PricingTitle>
-                <PricingSubtitle variant="business">Solution sur mesure</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">Sur demande</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Nous contacter</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Solution sur mesure" variant="business">
-              <PricingFeature variant="business">Liens courts illimités</PricingFeature>
-              <PricingFeature variant="business">Suivi des clics illimité</PricingFeature>
-              <PricingFeature variant="business">Suivi des ventes illimité</PricingFeature>
-              <PricingFeature variant="business">Membres d'équipe illimités</PricingFeature>
-              <PricingFeature variant="business">Domaines personnalisés illimités</PricingFeature>
-              <PricingFeature variant="business">Bulk actions</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <InlinePricing
+      currency="EUR"
+      locale="fr"
+      selectAriaLabel="Sélectionner un plan"
+      planOptions={{
+        pro: {
+          label: "Offre Pro",
+          description:
+            "Pour indépendants, micro-entreprises, créateurs et petites agences. Idéal pour démarrer vite et tracker précisément."
+        },
+        business: {
+          label: "Offre Business",
+          description:
+            "Pour PME et agences marketing qui scale. Plus de volume, plus de collaboration, et plus de data."
+        }
+      }}
+      includedInPlanTitle={
+        <>
+          Inclus dans le plan <InlinePricingPlanName businessLabel="entreprise" className="capitalize" />
+        </>
+      }
+      includedInPlan={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="links" /> nouveaux liens/mois
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="clicks" /> événements trackés/mois
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="folders" /> dossiers en plus
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="domains" /> domaines personnalisés
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="users" /> membres d’équipe
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanRetention map={{ "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="utmTemplates" /> templates UTM
+          </InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      includedInAllPaidTitle="Inclus dans tous les plans payants"
+      includedInAllPaid={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>100+ intégrations incl. Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Paiements Stripe</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Bulk (limité)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>QR code personnalisé</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Options avancées de lien</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Règles UTM, groupements & templates</InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      optionsCopy={{
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline"
+          },
+          right: {
+            period: "lifetime",
+            title: "À vie",
+            periodLabel: "",
+            badge: "Le plus populaire",
+            helperTop: "Paiement unique",
+            ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
+            ctaVariant: "default"
+          }
+        },
+        business: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline"
+          },
+          right: {
+            period: "yearly",
+            title: "Annuel",
+            periodLabel: "/an",
+            badge: "2 mois offerts",
+            helperTop: (
+              <>
+                <span className="line-through">69€ /mois</span> <span className="text-blue-600">2 mois offerts</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "default"
+          }
+        }
+      }}
+    />
   </Section>
 </Slide>
 
@@ -491,115 +525,136 @@ PIMMS est un de nos alliés du quotidien pour garder le cap et transformer notre
       <H2><Primary>100<small>%</small></Primary> Satisfaction</H2>
     </Centered>
   </BlurFade>
-  
+
   <TestimonialsGrid>
-    <Testimonial 
-      name="Mathieu Visière" 
+    <Testimonial
+      name="Mathieu Visière"
       role="Founder @Pixel Pop!"
       profileImage="/static/testimonials/mathieu-visiere.jpeg"
       bannerImage="/static/testimonials/mathieu-visiere-banner.jpeg"
     >
-      J'ai découvert PIMMS un peu par hasard, et j'ai été franchement impressionné par la simplicité et l'efficacité de l'outil. J'avais testé d'autres solutions avant, mais aucune ne me convenait vraiment à cause de leur interface, de leur tarification et de leurs limites techniques. PIMMS me permet de créer des liens propres et trackables qui redirigent exactement là où il faut—sans aucune friction. C'est devenu un incontournable dans mon workflow quotidien, particulièrement pour tracker mon contenu LinkedIn et mes campagnes clients.
+      J'ai découvert PIMMS un peu par hasard, et j'ai été franchement impressionné par la simplicité et l'efficacité de
+      l'outil. J'avais testé d'autres solutions avant, mais aucune ne me convenait vraiment à cause de leur interface,
+      de leur tarification et de leurs limites techniques. PIMMS me permet de créer des liens propres et trackables qui
+      redirigent exactement là où il faut—sans aucune friction. C'est devenu un incontournable dans mon workflow
+      quotidien, particulièrement pour tracker mon contenu LinkedIn et mes campagnes clients.
     </Testimonial>
-    
-    <Testimonial 
-      name="Gaetan Redin" 
+
+    <Testimonial
+      name="Gaetan Redin"
       role="Angular & Frontend Developer"
       profileImage="/static/testimonials/gaetan-redin.webp"
       bannerImage="/static/testimonials/gaetan-redin-banner.webp"
     >
-      J'ai découvert PIMMS un peu par hasard, et je dois dire que je ne suis pas déçu. La mission initiale, qui consiste à ouvrir les liens en direct, est pleinement réussie. Le tableau de bord est simple et efficace pour suivre tout cela. Je terminerai en disant qu'Alexandre est aux petits soins et très à l'écoute de nos besoins. Il est proactif et force de proposition, ce qui est très appréciable. Bref, je recommande PIMMS et son builder.
+      J'ai découvert PIMMS un peu par hasard, et je dois dire que je ne suis pas déçu. La mission initiale, qui consiste
+      à ouvrir les liens en direct, est pleinement réussie. Le tableau de bord est simple et efficace pour suivre tout
+      cela. Je terminerai en disant qu'Alexandre est aux petits soins et très à l'écoute de nos besoins. Il est proactif
+      et force de proposition, ce qui est très appréciable. Bref, je recommande PIMMS et son builder.
     </Testimonial>
-    
-    <Testimonial 
-      name="François Duval" 
+
+    <Testimonial
+      name="François Duval"
       role="Strategic Coach for CTOs"
       profileImage="/static/testimonials/francois-duval.jpeg"
       bannerImage="/static/testimonials/francois-duval-banner.jpeg"
     >
-      PIMMS est une excellente solution pour quiconque cherche à améliorer rapidement ses taux de conversion avec des smart links. L'outil offre une transparence totale sur les prix et est incroyablement facile à utiliser, sans aucune surcharge technique. Si vous êtes en phase de croissance, il est très probable que le coût se rentabilise en quelques mois seulement. J'envisageais de créer mon propre outil, mais PIMMS est si complet et efficace qu'il est bien plus logique de l'utiliser !
+      PIMMS est une excellente solution pour quiconque cherche à améliorer rapidement ses taux de conversion avec des
+      smart links. L'outil offre une transparence totale sur les prix et est incroyablement facile à utiliser, sans
+      aucune surcharge technique. Si vous êtes en phase de croissance, il est très probable que le coût se rentabilise
+      en quelques mois seulement. J'envisageais de créer mon propre outil, mais PIMMS est si complet et efficace qu'il
+      est bien plus logique de l'utiliser !
     </Testimonial>
-    
-    <Testimonial 
-      name="Lucas Chevalier" 
+
+    <Testimonial
+      name="Lucas Chevalier"
       role="CEO @ Just Dev — Framer Partner"
       profileImage="/static/testimonials/lucas-chevalier.jpeg"
       bannerImage="/static/testimonials/lucas-chevalier-banner.jpeg"
     >
-      Pimms m'aide au quotidien à savoir combien de personnes visitent mon site, consultent mon calendrier ou ont effectué une réservation. C'est un excellent outil, et je ne l'utilise qu'à 10 % de son plein potentiel !
+      Pimms m'aide au quotidien à savoir combien de personnes visitent mon site, consultent mon calendrier ou ont
+      effectué une réservation. C'est un excellent outil, et je ne l'utilise qu'à 10 % de son plein potentiel !
     </Testimonial>
-    
-    <Testimonial 
-      name="Keziah Nivelle" 
+
+    <Testimonial
+      name="Keziah Nivelle"
       role="WordPress Integrator & Co-founder"
       profileImage="/static/testimonials/keziah-nivelle.jpeg"
       bannerImage="/static/testimonials/keziah-nivelle-banner.jpeg"
     >
-      Pimms est un outil fantastique pour suivre nos conversions, nos liens et bien plus encore ! Il est devenu indispensable dans notre stratégie d'acquisition, pratiquement du jour au lendemain !
+      Pimms est un outil fantastique pour suivre nos conversions, nos liens et bien plus encore ! Il est devenu
+      indispensable dans notre stratégie d'acquisition, pratiquement du jour au lendemain !
     </Testimonial>
-    
-    <Testimonial 
-      name="Mirko Bozzetto" 
+
+    <Testimonial
+      name="Mirko Bozzetto"
       role="React, Node & Next Developer"
       profileImage="/static/testimonials/mirko-bozzetto.jpeg"
       bannerImage="/static/testimonials/mirko-bozzetto-banner.jpeg"
     >
-      Hyper pratique pour suivre mes rendez-vous sur Cal.com, analyser mes conversions et garder une vue claire sur mes métriques. Je recommande !
+      Hyper pratique pour suivre mes rendez-vous sur Cal.com, analyser mes conversions et garder une vue claire sur mes
+      métriques. Je recommande !
     </Testimonial>
-    
-    <Testimonial 
-      name="Martin Ferret" 
+
+    <Testimonial
+      name="Martin Ferret"
       role="Angular & Node Developer"
       profileImage="/static/testimonials/martin-ferret.jpeg"
       bannerImage="/static/testimonials/martin-ferret-banner.jpeg"
     >
-      Outil incroyable ! On peut suivre nos liens, savoir d'où viennent les gens, et ce, en toute simplicité. Je l'utilise au quotidien et avec un énorme plaisir.
+      Outil incroyable ! On peut suivre nos liens, savoir d'où viennent les gens, et ce, en toute simplicité. Je
+      l'utilise au quotidien et avec un énorme plaisir.
     </Testimonial>
-    
-    <Testimonial 
-      name="Tony Bano" 
+
+    <Testimonial
+      name="Tony Bano"
       role="Web Developer | React & Next.js"
       profileImage="/static/testimonials/tony-bano.jpeg"
       bannerImage="/static/testimonials/tony-bano-banner.jpeg"
     >
-      J'utilise PIMMS depuis quelques mois maintenant, et cela me permet d'avoir un suivi global sur tous mes liens et toutes mes conversions. C'est vraiment génial !
+      J'utilise PIMMS depuis quelques mois maintenant, et cela me permet d'avoir un suivi global sur tous mes liens et
+      toutes mes conversions. C'est vraiment génial !
     </Testimonial>
-    
-    <Testimonial 
-      name="Mathieu Dacheux" 
+
+    <Testimonial
+      name="Mathieu Dacheux"
       role="React & Next Developer"
       profileImage="/static/testimonials/mathieu-dacheux.webp"
       bannerImage="/static/testimonials/mathieu-dacheux-banner.webp"
     >
-      J'en avais assez que mes liens sur les réseaux sociaux ouvrent le navigateur interne des applications... Puis j'ai découvert Pimms ! C'est le meilleur moyen d'améliorer sa conversion sans rien changer à sa stratégie. Tout cela grâce au deeplink.
+      J'en avais assez que mes liens sur les réseaux sociaux ouvrent le navigateur interne des applications... Puis j'ai
+      découvert Pimms ! C'est le meilleur moyen d'améliorer sa conversion sans rien changer à sa stratégie. Tout cela
+      grâce au deeplink.
     </Testimonial>
-    
-    <Testimonial 
-      name="Nôam Biard" 
+
+    <Testimonial
+      name="Nôam Biard"
       role="Copywriter & Webdesigner"
       profileImage="/static/testimonials/noam-biard.jpeg"
       bannerImage="/static/testimonials/noam-biard-banner.jpeg"
     >
-      Pimms m'est d'une grande aide pour comprendre d'où viennent mes clients ! Grâce à cet outil, j'ai pu réaliser des tests pour déterminer quel lead magnet attirait le plus ma cible. Résultat : une augmentation de 65 % des leads !!! Merci pour cet outil de suivi incroyable ! Si l'on ne suit pas, on n'améliore rien.
+      Pimms m'est d'une grande aide pour comprendre d'où viennent mes clients ! Grâce à cet outil, j'ai pu réaliser des
+      tests pour déterminer quel lead magnet attirait le plus ma cible. Résultat : une augmentation de 65 % des leads
+      !!! Merci pour cet outil de suivi incroyable ! Si l'on ne suit pas, on n'améliore rien.
     </Testimonial>
-    
-    <Testimonial 
-      name="Karim" 
+
+    <Testimonial
+      name="Karim"
       role="AI Startup Founder"
       profileImage="/static/testimonials/karim.jpeg"
       bannerImage="/static/testimonials/karim-banner.jpeg"
     >
       Incroyable. Simple. ULTRA UTILE !! Pimms = le suivi OFFICIEL de GPTMoney. Fin de l'histoire. Merci à l'équipe !
     </Testimonial>
-    
-    <Testimonial 
-      name="Alexandre Zoonekynd" 
+
+    <Testimonial
+      name="Alexandre Zoonekynd"
       role="Breathwork Coach"
       profileImage="/static/testimonials/alexandre-zoonekynd.jpeg"
       bannerImage="/static/testimonials/alexandre-zoonekynd-banner.jpeg"
     >
       Cet outil est plus que parfait ; ses fonctionnalités sont étendues et offrent une vue complète des données !
     </Testimonial>
+
   </TestimonialsGrid>
 </Slide>
 
@@ -611,7 +666,7 @@ PIMMS est un de nos alliés du quotidien pour garder le cap et transformer notre
     </Centered>
   </BlurFade>
 
-  <Section variant="card" background="grid">
+  <Section background="grid">
     <List layout="horizontal">
       <BlurFade direction="up" delay={0.1} inView>
         <FeatureCard variant="fancy" color="cyan">
@@ -645,23 +700,21 @@ PIMMS est un de nos alliés du quotidien pour garder le cap et transformer notre
   </Section>
 </Slide>
 
-<Slide variant="primary" id="free">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">Ça commence ici</H2>
-          <Text size="lg" variant="white">Si tu es arrivé jusque‑là, c’est le moment de récupérer 10 liens gratuits.</Text>
-          <CtaButton variant="inverse" ><SwapRotate>Démarre gratuitement</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">10 liens intelligents inclus • Pas de carte bancaire</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+<Slide variant="secondary" id="free">
+  <Section variant="card">
+    <Centered>
+      <H2>Ça commence ici</H2>
+      <Text>Si tu es arrivé jusque‑là, c’est le moment de récupérer tes liens gratuits.</Text>
+      <CtaButton>
+        <SwapRotate>Démarre gratuitement</SwapRotate>
+      </CtaButton>
+      <CtaBottomText>Liens intelligents gratuits inclus • Pas de carte bancaire</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <HeroRibbon seedNonce="free" />
+    </BlurFade>
+
   </Section>
 </Slide>
 
@@ -676,48 +729,64 @@ PIMMS est un de nos alliés du quotidien pour garder le cap et transformer notre
   <Section>
  
 ::: faq
-### Pourquoi les liens PIMMS convertissent jusqu’à +30 % ?
-PIMMS ouvre les liens dans les apps officielles (Instagram, YouTube, LinkedIn, TikTok) plutôt que dans des mini‑navigateurs. Les gens restent connectés, leurs paiements sont enregistrés, et il y a moins d’étapes — donc plus d’inscriptions et d’achats.
+### La mise en place est-elle simple ?
+Active Link Magnet en un toggle pour un tracking out-of-the-box. Pour un tracking complet, ajoute un seul script. La plupart des setups prennent 10–15 minutes, sans dev.
 :::
 
 ::: faq
-### En combien de temps je vois un impact ?
-Immédiatement côté UX ; souvent en quelques jours côté chiffre. Le dashboard attribue chaque conversion au post, email ou pub qui l’a déclenchée.
+
+### Puis-je tracker autre chose que les clics ?
+
+Oui. Track clics, leads et revenus. Connecte formulaires, calendriers et paiements (Stripe, Tally, Typeform, Cal.com, Calendly, Shopify) pour relier chaque conversion au lien et aux UTM.
 :::
 
 ::: faq
-### Est‑ce que j’ai besoin de devs pour l’installer ?
-Non. 100 % web, rien à installer. Mise en place en 10–15 minutes : colle un script et commence à créer des smart links. Suis le guide ou réserve un call si tu veux de l’aide.
+
+### Comment fonctionne le tracking UTM sur PIMMS ?
+
+Crée des templates et paramètres UTM, impose des règles de nommage, génère en bulk, et organise les campagnes par dossiers. Filtre et analyse par source, medium, campagne, term et content.
 :::
 
 ::: faq
-### Est‑ce que ça contourne les ad blockers et les limites des cookies ?
-Oui. Le tracking côté serveur n’est pas bloqué par les ad blockers et continue même si les cookies sont supprimés. Aucun cookie tiers.
+
+### Puis-je garder mes outils et mon workflow ?
+
+Oui. Intégrations natives + Zapier, Make, webhooks et API pour brancher ton CRM, email et analytics.
 :::
 
 ::: faq
-### Est‑ce que ça marche avec mon workflow ?
-Oui. 100+ outils : Stripe, Shopify, Cal.com, Tally, Beehiiv, WordPress… Connexion via intégrations natives, Zapier, Make ou webhooks.
+
+### Est-ce que PIMMS fonctionne sur domaines et sous-domaines ?
+
+Oui. Installe le script sur chaque domaine/sous-domaine que tu contrôles pour unifier l’attribution. Les liens peuvent pointer n’importe où.
 :::
 
 ::: faq
-### Est‑ce que PIMMS fonctionne sur les domaines et sous‑domaines ?
-Oui. Installe le script sur le domaine racine et les sous‑domaines pour unifier les analytics. Les domaines externes sont pris en charge via des options de lien.
+
+### Qu’est-ce qui est inclus dans le plan gratuit ?
+
+5 liens intelligents, 200 événements trackés/mois, 1 domaine personnalisé, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM.
 :::
 
 ::: faq
-### Y a‑t‑il une API et des webhooks ?
-Oui — API REST complète et webhooks pour des workflows sur‑mesure et des exports analytics. Voir pim.ms/api.
+
+### Quels sont les plans payants ?
+
+Pro : 19 €/mois ou 129 € en lifetime. Business : 69 €/mois ou 690 €/an. Les plans payants augmentent les limites, les seats et le bulk.
 :::
 
 ::: faq
-### Qu’est‑ce qui est inclus dans le plan gratuit ?
-10 smart links, analytics temps réel, domaine personnalisé, QR codes, gestion UTM. Pas de carte bancaire — prouve la valeur avant de payer.
+
+### Avez-vous une API et des webhooks ?
+
+Oui — une API REST complète et des webhooks pour des workflows sur-mesure et des exports analytics.
 :::
 
 ::: faq
-### L’offre à vie, c’est vraiment un paiement unique ?
-Oui. Pro à vie : 59 € (paiement unique). Liens illimités, tracking complet, collaboration d’équipe et 6 mois de rétention. Zéro récurrence.
+
+### Est-ce privacy-friendly et conforme RGPD ?
+
+Oui. Tracking first-party, pas de cookies tiers, et rétention configurable pour rester conforme.
 :::
 
   </Section>
@@ -730,4 +799,4 @@ Oui. Pro à vie : 59 € (paiement unique). Liens illimités, tracking complet, 
   </BlurFade>
 </Slide>
 
-<Footer /> 
+<Footer />

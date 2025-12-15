@@ -12,7 +12,7 @@ export default function CtaDemo({
   className
 }: {
   children?: string | React.ReactNode;
-  variant?: "default" | "secondary" | "outline" | "inverse";
+  variant?: "default" | "secondary" | "outline";
   size?: "default" | "sm" | "lg" | "xl";
   className?: string;
 }) {

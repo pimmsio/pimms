@@ -58,7 +58,7 @@ export const Footer = async ({
                   className="group"
                   aria-label="Follow us on GitHub"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
+                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-colors duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary">
                     <GithubIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
                   </div>
                 </Link>
@@ -69,7 +69,7 @@ export const Footer = async ({
                   className="group"
                   aria-label="Follow us on LinkedIn"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
+                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-colors duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary">
                     <LinkedInIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
                   </div>
                 </Link>
@@ -80,7 +80,7 @@ export const Footer = async ({
                   className="group"
                   aria-label="Follow us on Instagram"
                 >
-                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-all duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary group-hover:shadow-sm">
+                  <div className="w-9 h-9 rounded-lg bg-white border border-gray-200 flex items-center justify-center transition-colors duration-200 group-hover:border-brand-primary group-hover:bg-brand-primary">
                     <InstagramIcon className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
                   </div>
                 </Link>
@@ -291,7 +291,7 @@ export const Footer = async ({
                     href="https://zapier.com/apps/pimms/integrations"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-brand-primary hover:shadow-sm transition-all duration-200"
+                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-brand-primary transition-colors duration-200"
                   >
                     <Image
                       src="/static/zapier-apps.svg"
@@ -306,7 +306,7 @@ export const Footer = async ({
                     href="https://marketplace.stripe.com/apps/pimms"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-brand-primary hover:shadow-sm transition-all duration-200"
+                    className="bg-white border border-gray-200 rounded-lg px-4 py-2 hover:border-brand-primary transition-colors duration-200"
                   >
                     <Image
                       src="/static/stripe-apps.svg"

@@ -25,7 +25,7 @@ image: https://assets.pimms.io/landing-page-tracking-dashboard.webp
   </BlurFade>
 </Slide>
 
-<LinkedinTestimonialsRibbon>
+<LinkedinTestimonialsRibbon rows={1}>
   <LinkedinPost 
     name="Celian Baudet" 
     profile="We instantly map and improve company processes with AI" 
@@ -384,75 +384,111 @@ Simple, propre, efficace. PS : C'est mieux que la concurrence.
   </BlurFade>
   
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Starter</PricingTitle>
-                <PricingSubtitle variant="starter">Parfait pour débuter</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">49€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Commence maintenant</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tracking Essentiel" variant="starter">
-              <PricingFeature variant="starter">Jusqu'à 10 000 vues/mois</PricingFeature>
-              <PricingFeature variant="starter">Analytics en temps réel</PricingFeature>
-              <PricingFeature variant="starter">Heatmaps basiques</PricingFeature>
-              <PricingFeature variant="starter">5 objectifs de conversion</PricingFeature>
-              <PricingFeature variant="starter">Rapports hebdomadaires</PricingFeature>
-              <PricingFeature variant="starter">Support email</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Pro</PricingTitle>
-                <PricingSubtitle variant="pro">Le choix des pros</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Accès à vie</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans Starter, Plus :" variant="pro">
-              <PricingFeature variant="pro">Jusqu'à 100 000 vues/mois</PricingFeature>
-              <PricingFeature variant="pro">Session replay complet</PricingFeature>
-              <PricingFeature variant="pro">A/B testing intelligent</PricingFeature>
-              <PricingFeature variant="pro">Attribution multi-touch</PricingFeature>
-              <PricingFeature variant="pro">Alertes temps réel</PricingFeature>
-              <PricingFeature variant="pro">Intégrations premium</PricingFeature>
-              <PricingFeature variant="pro">Support prioritaire</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Agency</PricingTitle>
-                <PricingSubtitle variant="business">Pour agences & entreprises</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">Sur mesure</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Nous contacter</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans Pro, Plus :" variant="business">
-              <PricingFeature variant="business">Trafic illimité</PricingFeature>
-              <PricingFeature variant="business">Tableau de bord white-label</PricingFeature>
-              <PricingFeature variant="business">Gestion multi-clients</PricingFeature>
-              <PricingFeature variant="business">API personnalisée</PricingFeature>
-              <PricingFeature variant="business">Account manager dédié</PricingFeature>
-              <PricingFeature variant="business">Formation équipe incluse</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <InlinePricing
+      currency="EUR"
+      locale="fr"
+      selectAriaLabel="Sélectionner un plan"
+      planOptions={{
+        pro: {
+          label: "Offre Pro",
+          description:
+            "Pour fondateurs et petites équipes qui veulent optimiser leurs pages (UTM, tracking, attribution).",
+        },
+        business: {
+          label: "Offre Business",
+          description:
+            "Pour équipes et agences qui scale : plus de volume, plus de tests, et plus de rétention analytics.",
+        },
+      }}
+      includedInPlanTitle={
+        <>
+          Inclus dans le plan <InlinePricingPlanName businessLabel="entreprise" className="capitalize" />
+        </>
+      }
+      includedInPlan={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="links" /> nouveaux liens/mois
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="clicks" /> événements trackés/mois
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="folders" /> dossiers en plus
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="domains" /> domaines personnalisés
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="users" /> membres d’équipe
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanRetention map={{ "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="utmTemplates" /> templates UTM
+          </InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      includedInAllPaidTitle="Inclus dans tous les plans payants"
+      includedInAllPaid={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>100+ intégrations incl. Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Paiements Stripe</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Bulk (limité)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>QR code personnalisé</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Options avancées de lien</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Règles UTM, groupements & templates</InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      optionsCopy={{
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "À vie",
+            periodLabel: "",
+            badge: "Le plus populaire",
+            helperTop: "Paiement unique",
+            ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        business: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Annuel",
+            periodLabel: "/an",
+            badge: "2 mois offerts",
+            helperTop: (
+              <>
+                <span className="line-through">69€ /mois</span>{" "}
+                <span className="text-blue-600">2 mois offerts</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+      }}
+    />
   </Section>
 </Slide>
 
@@ -467,65 +503,68 @@ Simple, propre, efficace. PS : C'est mieux que la concurrence.
   <Section>
 
 ::: faq
-### Est-ce compatible avec mon site actuel ?
-Oui, 100% ! Notre script fonctionne avec tous les builders : WordPress, Webflow, Shopify, Squarespace, Systeme.io, sites custom, etc. Installation en 2 minutes.
+### La mise en place est-elle simple ?
+Active Link Magnet en un toggle pour un tracking out-of-the-box. Pour un tracking complet, ajoute un seul script. La plupart des setups prennent 10–15 minutes, sans dev.
 :::
 
-::: faq
-### Ça va ralentir ma landing page ?
-Au contraire ! Notre script ultra-léger (< 15kb) se charge de manière asynchrone. Aucun impact sur les performances, et on optimise même ton Core Web Vitals.
-:::
 
 ::: faq
-### C'est conforme RGPD ?
-Absolument. Tracking first-party uniquement, pas de cookies tiers, consentement géré automatiquement. Tu restes 100% compliant.
+### Puis-je tracker autre chose que les clics ?
+Oui. Track clics, leads et revenus. Connecte formulaires, calendriers et paiements (Stripe, Tally, Typeform, Cal.com, Calendly, Shopify) pour relier chaque conversion au lien et aux UTM.
 :::
 
-::: faq
-### Je peux tracker plusieurs landing pages ?
-Bien sûr ! Avec un seul compte, tracke autant de pages que tu veux. Tableaux de bord séparés ou vue consolidée, à toi de voir.
-:::
 
 ::: faq
-### Ça marche avec mes pubs Facebook/Google ?
-Parfaitement ! Intégration native avec Facebook Ads, Google Ads, TikTok Ads. Attribution précise pour optimiser tes campagnes.
+### Comment fonctionne le tracking UTM sur PIMMS ?
+Crée des templates et paramètres UTM, impose des règles de nommage, génère en bulk, et organise les campagnes par dossiers. Filtre et analyse par source, medium, campagne, term et content.
 :::
 
-::: faq
-### J'ai déjà Google Analytics, pourquoi Pimms ?
-GA te donne des stats générales. Pimms te montre EXACTEMENT ce qui se passe : où tes visiteurs cliquent, pourquoi ils abandonnent, comment optimiser. C'est complémentaire !
-:::
 
 ::: faq
-### Combien de temps pour voir des résultats ?
-Les premiers insights arrivent en quelques heures. Les premières optimisations peuvent être testées dès le lendemain. Nos clients voient en moyenne +47% de conversions en 30 jours.
+### Puis-je garder mes outils et mon workflow ?
+Oui. Intégrations natives + Zapier, Make, webhooks et API pour brancher ton CRM, email et analytics.
 :::
 
+
 ::: faq
-### Et si je ne suis pas satisfait ?
-Garantie remboursé 30 jours, sans condition. Si Pimms n'améliore pas tes conversions, on te rembourse intégralement.
+### Est-ce que PIMMS fonctionne sur domaines et sous-domaines ?
+Oui. Installe le script sur chaque domaine/sous-domaine que tu contrôles pour unifier l’attribution. Les liens peuvent pointer n’importe où.
 :::
+
+
+::: faq
+### Qu’est-ce qui est inclus dans le plan gratuit ?
+5 liens intelligents, 200 événements trackés/mois, 1 domaine personnalisé, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM.
+:::
+
+
+::: faq
+### Quels sont les plans payants ?
+Pro : 19 €/mois ou 129 € en lifetime. Business : 69 €/mois ou 690 €/an. Les plans payants augmentent les limites, les seats et le bulk.
+:::
+
+
+::: faq
+### Avez-vous une API et des webhooks ?
+Oui — une API REST complète et des webhooks pour des workflows sur-mesure et des exports analytics.
+:::
+
 
   </Section>
 </Slide>
 
-<Slide variant="primary" id="cta">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">Arrête de perdre de l'argent</H2>
-          <Text size="lg" variant="white">Chaque jour sans tracking proper, c'est de l'argent qui part en fumée. Tes concurrents optimisent déjà, et toi ?</Text>
-          <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="inverse"><SwapRotate>Je veux tracker ma landing page</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">Configuration en 5 minutes • Résultats garantis • Remboursé si pas satisfait</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+<Slide variant="secondary" id="cta">
+  <Section variant="card">
+    <Centered>
+      <H2>Arrête de perdre de l'argent</H2>
+      <Text>Chaque jour sans tracking proper, c'est de l'argent qui part en fumée. Tes concurrents optimisent déjà, et toi ?</Text>
+      <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07"><SwapRotate>Je veux tracker ma landing page</SwapRotate></CtaButton>
+      <CtaBottomText>Configuration en 5 minutes • Résultats garantis • Remboursé si pas satisfait</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
   </Section>
 </Slide>
 

@@ -40,7 +40,7 @@ export default async function BlogLayoutHero({ slug, locale }: { slug?: string; 
 
       {/* Category navigation */}
       <nav className="flex justify-center mb-12 sm:mb-16 px-4">
-        <div className="inline-flex items-center bg-white rounded-xl sm:rounded-2xl border border-gray-100 shadow-sm p-1.5 sm:p-2 overflow-x-auto max-w-full">
+        <div className="inline-flex items-center bg-white rounded-xl sm:rounded-2xl border border-gray-100 p-1.5 sm:p-2 overflow-x-auto max-w-full">
           <div className="flex gap-1 sm:gap-1.5">
             <CategoryLink
               title={t("category.overview.title")}
@@ -81,7 +81,7 @@ const CategoryLink = ({
         className={twMerge(
           "rounded-lg sm:rounded-xl px-3.5 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition-all duration-200 flex items-center gap-1.5 sm:gap-2 whitespace-nowrap",
           active
-            ? "bg-brand-primary text-white shadow-sm"
+            ? "bg-brand-primary text-white"
             : "text-text-secondary hover:bg-gray-50 hover:text-text-primary"
         )}
       >

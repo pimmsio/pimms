@@ -1,13 +1,15 @@
 "use client";
-import React, { useState, useRef, useEffect } from "react";
+
+import React, { useEffect, useRef, useState } from "react";
 import { Section } from "@/components/base/section";
 
-interface VideoSlideProps {
+interface VimeoVideoSlideProps {
   src: string;
-  cover: string;
+  cover?: string;
+  title?: string;
 }
 
-const VideoSlide = ({ src, cover }: VideoSlideProps) => {
+export const VimeoVideoSlide = ({ src, cover, title }: VimeoVideoSlideProps) => {
   const [coverVisible, setCoverVisible] = useState(true);
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [playerReady, setPlayerReady] = useState(false);
@@ -16,21 +18,23 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
 
   useEffect(() => {
     (async function () {
-      if (iframeRef.current) {
-        // Dynamic import Vimeo player to reduce bundle size
-        const { default: Player } = await import("@vimeo/player");
-        playerRef.current = new Player(iframeRef.current);
-        playerRef.current.on("loaded", () => setPlayerReady(true));
-        playerRef.current.on("play", () => {
-          setVideoPlaying(true);
-          setTimeout(() => setCoverVisible(false), 100);
-        });
-        playerRef.current.on("pause", () => {
-          setVideoPlaying(false);
-          setCoverVisible(true);
-        });
-      }
+      if (!iframeRef.current) return;
+
+      // Dynamic import Vimeo player to reduce bundle size
+      const { default: Player } = await import("@vimeo/player");
+      playerRef.current = new Player(iframeRef.current);
+
+      playerRef.current.on("loaded", () => setPlayerReady(true));
+      playerRef.current.on("play", () => {
+        setVideoPlaying(true);
+        setTimeout(() => setCoverVisible(false), 100);
+      });
+      playerRef.current.on("pause", () => {
+        setVideoPlaying(false);
+        setCoverVisible(true);
+      });
     })();
+
     return () => {
       if (playerRef.current) {
         playerRef.current.destroy();
@@ -45,6 +49,27 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
     playerRef.current?.play().catch((err: any) => console.error("Erreur lors du lancement de la vidéo :", err));
   };
 
+  // If no cover is provided, render the iframe directly without the cover-play interaction.
+  if (!cover) {
+    return (
+      <Section id="video">
+        <div className="relative overflow-hidden border-2 border-brand-primary rounded-3xl bg-black">
+          <div className="w-full aspect-video">
+            <iframe
+              ref={iframeRef}
+              src={src}
+              className="w-full h-full"
+              frameBorder="0"
+              allowFullScreen
+              allow="autoplay; encrypted-media; fullscreen"
+              title={title ?? "Video demonstration"}
+            />
+          </div>
+        </div>
+      </Section>
+    );
+  }
+
   return (
     <Section id="video">
       <div className="relative overflow-hidden border-2 border-brand-primary rounded-3xl">
@@ -58,7 +83,7 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
             frameBorder="0"
             allowFullScreen
             allow="autoplay; encrypted-media; fullscreen"
-            title="Video demonstration"
+            title={title ?? "Video demonstration"}
           ></iframe>
           <button
             onClick={handlePlay}
@@ -96,4 +121,4 @@ const VideoSlide = ({ src, cover }: VideoSlideProps) => {
   );
 };
 
-export default VideoSlide;
+export default VimeoVideoSlide;

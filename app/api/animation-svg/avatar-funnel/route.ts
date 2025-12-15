@@ -283,12 +283,12 @@ export async function GET(request: NextRequest) {
         <circle r="${CENTER_RADIUS}" fill="url(#${uid}-pimmsBlueGradient)" />
         <circle r="${CENTER_RADIUS}" fill="url(#${uid}-pimmsHighlight)" />
       </g>
-      ${(() => {
-        const LOGO_SIZE = 512;
+    ${(() => {
+      const LOGO_SIZE = 512;
         const scale = (CENTER_RADIUS * 2) / LOGO_SIZE;
-        const tx = -LOGO_SIZE / 2;
-        const ty = -LOGO_SIZE / 2;
-        return `
+      const tx = -LOGO_SIZE / 2;
+      const ty = -LOGO_SIZE / 2;
+      return `
       <g transform="scale(${scale}) translate(${tx} ${ty})">
         <path
           fill-rule="evenodd"
@@ -302,8 +302,8 @@ export async function GET(request: NextRequest) {
           d="M198.645 248.357C202.081 249.878 204.297 253.282 204.297 257.039V291.219C200.902 287.39 197.85 283.236 195.139 278.76C191.088 271.826 188.288 264.556 186.74 256.944C185.372 250.216 192.368 245.577 198.645 248.357Z"
           fill="#ffffff"
         />
-      </g>`;
-      })()}
+    </g>`;
+    })()}
     </g>
 
   </g>

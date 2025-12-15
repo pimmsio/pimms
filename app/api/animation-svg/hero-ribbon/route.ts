@@ -139,8 +139,8 @@ export async function GET(request: NextRequest) {
   const LABEL_MAX_WIDTH = 220;
   const LABEL_MAX_HEIGHT = 36;
   const LABEL_GAP = 4;
-  const LABEL_FONT_SIZE = 14;
-  const LABEL_FONT_WEIGHT = 600;
+  const LABEL_FONT_SIZE = 13;
+  const LABEL_FONT_WEIGHT = 500;
   const P_LOGO_RADIUS = 24;
   const P_LOGO_GAP = 10;
   const DEAL_RATIO = 0.2;
@@ -197,12 +197,12 @@ export async function GET(request: NextRequest) {
       <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1" />
     </filter>
     <linearGradient id="${uid}-ribbonFill" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff" />
-      <stop offset="100%" stop-color="#ffffff" />
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f8fafc" />
     </linearGradient>
     <linearGradient id="${uid}-blueBar" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#2fcdfa" />
-      <stop offset="100%" stop-color="#3970ff" />
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#cbd5e1" />
     </linearGradient>
     <clipPath id="${uid}-ribbonClip">
       <path d="${ribbonPath}" />
@@ -245,12 +245,12 @@ export async function GET(request: NextRequest) {
             <g clipPath="url(#${uid}-avatarClip)">
               <circle cx="0" cy="0" r="${AVATAR_RADIUS}" fill="#f3f4f6" />
               <g opacity="1">
-                <g transform="translate(-16 -16)">
+              <g transform="translate(-16 -16)">
                   <!-- User icon SVG (simplified) -->
                   <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
-                  </svg>
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="12" cy="7" r="4"></circle>
+                </svg>
                 </g>
                 <animate attributeName="opacity" begin="${begin}" dur="${duration}ms" repeatCount="indefinite" keyTimes="0;0.5;0.5001;1" values="1;1;0;0" />
               </g>
@@ -318,14 +318,14 @@ export async function GET(request: NextRequest) {
                     (b, i) => `
                   <g transform="translate(${baseX + i * (BADGE_R * 2 + GAP)} ${baseY})">
                     <circle r="${BADGE_R}" cx="0" cy="0" fill="#ffffff" stroke="#f3f4f6" />
-                    ${
+              ${
                       b === "email"
                         ? `<g transform="translate(-7 -7)">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                           <circle cx="12" cy="12" r="4"></circle>
                           <path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-4 8"></path>
                         </svg>
-                      </g>`
+              </g>`
                         : b === "phone"
                           ? `<g transform="translate(-7 -7)">
                         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#0f172a" stroke-width="2">
@@ -360,8 +360,8 @@ export async function GET(request: NextRequest) {
     const ty = -LOGO_SIZE / 2;
     return `
   <g transform="translate(${centerX} ${y})">
-    <g filter="url(#softShadow)">
-      <circle r="${P_LOGO_RADIUS}" fill="url(#${uid}-blueBar)" />
+    <g>
+      <circle r="${P_LOGO_RADIUS}" fill="#3b82f6" />
     </g>
     <g transform="scale(${scale}) translate(${tx} ${ty})">
       <path
@@ -380,8 +380,8 @@ export async function GET(request: NextRequest) {
   </g>`;
   })()}
 
-  <g filter="url(#softShadow)">
-    <rect x="${centerX - BLUE_BAR_WIDTH / 2}" y="${centerY - (THICKNESS_CENTER + BLUE_BAR_EXTRA) / 2}" width="${BLUE_BAR_WIDTH}" height="${THICKNESS_CENTER + BLUE_BAR_EXTRA}" rx="${BLUE_BAR_WIDTH / 2}" fill="url(#${uid}-blueBar)" />
+  <g>
+    <rect x="${centerX - BLUE_BAR_WIDTH / 2}" y="${centerY - (THICKNESS_CENTER + BLUE_BAR_EXTRA) / 2}" width="${BLUE_BAR_WIDTH}" height="${THICKNESS_CENTER + BLUE_BAR_EXTRA}" rx="${BLUE_BAR_WIDTH / 2}" fill="#3b82f6" />
   </g>
 </svg>`;
 

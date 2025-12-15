@@ -46,7 +46,8 @@ import { Avatars } from "@/components/landings/avatars";
 import { Problem } from "@/components/landings/problem";
 import Header from "@/components/landings/header";
 import ImageSlide from "@/components/landings/Image-slide";
-import VideoSlide from "@/components/landings/VideoSlide";
+import VimeoVideoSlide from "@/components/landings/VimeoVideoSlide";
+import YoutubeVideoSlide from "@/components/landings/YoutubeVideoSlide";
 
 import Footer from "@/components/footer/footer";
 import LogosCircle from "@/components/logos-circle";
@@ -128,6 +129,15 @@ import {
   PricingTitleGroup
 } from "@/components/mdx/PricingComponents";
 
+import {
+  InlinePricing,
+  InlinePricingFeatureItem,
+  InlinePricingFeatureList,
+  InlinePricingPlanLimit,
+  InlinePricingPlanName,
+  InlinePricingPlanRetention
+} from "@/components/pricing/InlinePricing";
+
 import CtaDemo from "@/components/cta/CtaDemo";
 import { ComparisonContainer, ComparisonHeader, ComparisonRow } from "@/components/landings/ComparisonTable";
 import AvatarFunnel from "../../../../../components/landings/AvatarFunnel";
@@ -208,6 +218,12 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       PricingFeature,
       PricingHeader,
       PricingTitleGroup,
+      InlinePricing,
+      InlinePricingFeatureList,
+      InlinePricingFeatureItem,
+      InlinePricingPlanName,
+      InlinePricingPlanLimit,
+      InlinePricingPlanRetention,
       BouncingImages: () => <BouncingImages tkey="landing" />,
       LogosCircle,
       IntegrationsGrid,
@@ -215,7 +231,8 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       AvatarFunnel: (props: any) => <AvatarFunnel seedNonce={seedNonce} {...props} />,
       ConversionFlipCard,
       ImageSlide,
-      VideoSlide,
+      VimeoVideoSlide,
+      YoutubeVideoSlide,
       HeroBenefits,
       SwapRotate,
       ContactSidebar,
@@ -237,7 +254,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
         className
       }: {
         children?: React.ReactNode;
-        variant?: "default" | "secondary" | "outline" | "inverse";
+        variant?: "default" | "secondary" | "outline";
         href?: string;
         className?: string;
       }) => {

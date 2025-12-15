@@ -25,7 +25,7 @@ image: https://assets.pimms.io/systemeio-integration-with-pimms.webp
   </BlurFade>
 </Slide>
 
-<LinkedinTestimonialsRibbon>
+<LinkedinTestimonialsRibbon rows={1}>
   <LinkedinPost 
     name="Mathieu Dacheux" 
     profile="React.js Developer" 
@@ -314,78 +314,109 @@ With PIMMS, you have a clear vision. Simple. Without complexity. And in digital,
   </BlurFade>
   
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Starter</PricingTitle>
-                <PricingSubtitle variant="starter">Perfect for solo funnel builders</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Get Starter Plan</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Essential Funnel Tracking" variant="starter">
-              <PricingFeature variant="starter">200 smart links /month</PricingFeature>
-              <PricingFeature variant="starter">Unlimited Leads tracking</PricingFeature>
-              <PricingFeature variant="starter">Support Systeme.io Forms & Emails</PricingFeature>
-              <PricingFeature variant="starter">Support 100+ integrations</PricingFeature>
-              <PricingFeature variant="starter">3 custom domains</PricingFeature>
-              <PricingFeature variant="starter">3 team members</PricingFeature>
-              <PricingFeature variant="starter">6 months of data retention</PricingFeature>
-              <PricingFeature variant="starter">1 month priority support</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Pro</PricingTitle>
-                <PricingSubtitle variant="pro">For serious funnel optimizers</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Unlock lifetime access</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Starter, Plus:" variant="pro">
-              <PricingFeature variant="pro">600 smart links /month</PricingFeature>
-              <PricingFeature variant="pro">Limited Sales tracking</PricingFeature>
-              <PricingFeature variant="pro">Support Systeme.io Payments</PricingFeature>
-              <PricingFeature variant="pro">A/B testing</PricingFeature>
-              <PricingFeature variant="pro">Webhooks</PricingFeature>
-              <PricingFeature variant="pro">5 team members</PricingFeature>
-              <PricingFeature variant="pro">12 months of data</PricingFeature>
-              <PricingFeature variant="pro">3 months priority support included</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Business</PricingTitle>
-                <PricingSubtitle variant="business">Everything in Pro, Plus:</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">On demand</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Contact sales</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Pro, Plus:" variant="business">
-              <PricingFeature variant="business">Unlimited smart links</PricingFeature>
-              <PricingFeature variant="business">Unlimited Leads tracking</PricingFeature>
-              <PricingFeature variant="business">Unlimited Sales tracking</PricingFeature>
-              <PricingFeature variant="business">Unlimited team</PricingFeature>
-              <PricingFeature variant="business">Unlimited custom domains</PricingFeature>
-              <PricingFeature variant="business">Bulk operations</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <InlinePricing
+      currency="EUR"
+      locale="en"
+      selectAriaLabel="Select a plan"
+      planOptions={{
+        pro: {
+          label: "Pro plan",
+          description: "For solo funnel builders, creators, and small teams getting started with attribution.",
+        },
+        business: {
+          label: "Business plan",
+          description: "For growing funnels, SMEs, and marketing agencies scaling volume and collaboration.",
+        },
+      }}
+      includedInPlanTitle={
+        <>
+          Included in the <InlinePricingPlanName className="capitalize" /> plan
+        </>
+      }
+      includedInPlan={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="links" /> new links/month
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="clicks" /> events tracked/month
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="folders" /> extra folders
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="domains" /> custom domains
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="users" /> team members
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanRetention map={{ "1-year": "1 year", "2-year": "2 years" }} /> analytics retention
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="utmTemplates" /> UTM templates
+          </InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      includedInAllPaidTitle="Included in all paid plans"
+      includedInAllPaid={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>100+ integrations incl. Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Stripe payments</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Bulk (limited)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Custom QR code</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Advanced link options</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>UTM rules, groupings & templates</InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      optionsCopy={{
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "Lifetime",
+            periodLabel: "",
+            badge: "Most popular",
+            helperTop: "One-time payment",
+            ctaLabel: <SwapRotate>Unlock lifetime access</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        business: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Yearly",
+            periodLabel: "/year",
+            badge: "2 months free",
+            helperTop: (
+              <>
+                <span className="line-through">€69/month</span>{" "}
+                <span className="text-blue-600">2 months free</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+      }}
+    />
   </Section>
 </Slide>
 
@@ -400,70 +431,67 @@ With PIMMS, you have a clear vision. Simple. Without complexity. And in digital,
   <Section>
 
 ::: faq
-### How does PIMMS integrate with Systeme.io?
-PIMMS connects via webhooks to track every opt-in, sale, and upsell in your Systeme.io funnels. You'll see which campaigns drive revenue in real-time, with full attribution from first click to final purchase.
+### How simple is the setup?
+Enable Link Magnet with one toggle for out-of-the-box tracking. For full-site tracking, add one script. Most setups take 10–15 minutes, no developer required.
 :::
 
 ::: faq
-### Can I track email sequences individually?
-Yes. Generate unique smart links for each email in your sequences. See which emails drive the most conversions and optimize your messaging based on real revenue data.
+### What can I track beyond clicks?
+Track clicks, leads, and revenue. Connect forms, calendars, and payments (Stripe, Tally, Typeform, Cal.com, Calendly, Shopify) to tie each conversion to its original link and UTM.
 :::
 
 ::: faq
-### Does it work with Systeme.io's built-in email marketing?
-Absolutely. Whether you use Systeme.io's email builder or integrate with external tools like Brevo or Mailchimp, PIMMS tracks all touchpoints that lead to funnel conversions.
+### How does UTM tracking work in PIMMS?
+Create UTM templates and parameters, enforce naming rules, bulk-generate links, and organize campaigns in folders. Filter and analyze by source, medium, campaign, term, and content.
 :::
 
 ::: faq
-### How accurate is the attribution for mobile traffic?
-Extremely accurate. PIMMS uses server-side tracking with privacy-safe IDs that work across domains and apps. Attribution remains consistent even on iOS and with ad blockers enabled.
+### Can I keep my current tools and workflow?
+Yes. Use native integrations plus Zapier, Make, webhooks, and API to plug into your CRM, email, and analytics stack.
 :::
 
 ::: faq
-### Can I A/B test my Systeme.io funnels?
-Yes. Create multiple versions of your landing pages or email sequences, and PIMMS will show you which variants generate more revenue. Perfect for optimizing conversion rates.
+### Does PIMMS work across domains and subdomains?
+Yes. Install the script on each domain/subdomain you control to unify attribution. Links can point anywhere.
 :::
 
 ::: faq
-### What about GDPR compliance?
-PIMMS is privacy-first by design. No third-party cookies, only first-party tracking. You control data retention and integrations. Fully compliant with GDPR and privacy regulations.
+### What’s included in the free plan?
+5 smart links, 200 tracked events/month, 1 custom domain, 30-day analytics retention, 3 UTM templates, and 10 UTM parameters.
 :::
 
 ::: faq
-### How long does setup take?
-10-15 minutes total. Paste one script into your Systeme.io settings, create a webhook, and start using smart links. No developers needed, no complex configuration.
+### What are the paid plans?
+Pro is €19/month or €129 lifetime. Business is €69/month or €690/year. Paid plans unlock higher limits, team seats, and bulk operations.
 :::
 
 ::: faq
-### Can I track affiliate campaigns through Systeme.io?
-Yes. PIMMS tracks affiliate referrals, influencer campaigns, and partner promotions. See which affiliates drive the most valuable customers to your Systeme.io funnels.
+### Do you have an API and webhooks?
+Yes — a full REST API and webhooks for custom workflows and analytics exports.
 :::
 
 ::: faq
-### What happens to my existing Systeme.io analytics?
-Nothing changes. PIMMS adds attribution on top of your existing setup. You keep all your current Systeme.io reports while gaining deeper insights into what's driving your revenue.
+### Is it privacy-friendly and GDPR compliant?
+Yes. First-party tracking, no third-party cookies, and configurable data retention to fit your compliance needs.
 :::
+
+
 
   </Section>
 </Slide>
 
-<Slide variant="primary" id="free">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">It starts here</H2>
-          <Text size="lg" variant="white">If you made it this far, it's time to connect your funnel to Pimms.</Text>
-          <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="inverse"><SwapRotate>Start tracking funnels</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">Secure payment via Stripe • 10-minute setup</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+<Slide variant="secondary" id="free">
+  <Section variant="card">
+    <Centered>
+      <H2>It starts here</H2>
+      <Text>If you made it this far, it's time to connect your funnel to Pimms.</Text>
+      <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07"><SwapRotate>Start tracking funnels</SwapRotate></CtaButton>
+      <CtaBottomText>Secure payment via Stripe • 10-minute setup</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
   </Section>
 </Slide>
 

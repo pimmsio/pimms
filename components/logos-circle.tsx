@@ -85,46 +85,25 @@ const LogosCircle: React.FC = () => {
   return (
     <Section id="logos" className="overflow-hidden" data-nosnippet>
       <div className="relative w-full h-[800px] flex items-center justify-center">
-        <div
-          className="absolute z-10 border border-gray-200 rounded-full touch-none pointer-events-none"
-          style={{
-            left: `calc(50% - ${outerRadius}px)`,
-            top: `calc(50% - ${outerRadius}px)`,
-            width: `${outerRadius * 2}px`,
-            height: `${outerRadius * 2}px`
-          }}
-          data-noindex="true"
-        />
-        <div
-          className="absolute z-10 border border-gray-200 rounded-full touch-none pointer-events-none"
-          style={{
-            left: `calc(50% - ${innerRadius}px)`,
-            top: `calc(50% - ${innerRadius}px)`,
-            width: `${innerRadius * 2}px`,
-            height: `${innerRadius * 2}px`
-          }}
-          data-noindex="true"
-        />
-
         <motion.div
           className="absolute inset-0 z-15"
           animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 160, ease: "linear" }}
         >
           {outerPositions.map((pos, index) => {
             const logo = outerLogos[index];
             const logoContent = (
               <motion.div
                 animate={{ rotate: -360 }}
-                transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
-                className="bg-white p-2 rounded-xl border border-gray-200 flex-shrink-0"
+                transition={{ repeat: Infinity, duration: 160, ease: "linear" }}
+                className="bg-card p-2 rounded-2xl flex-shrink-0"
               >
                 <img
                   src={logo?.src || "/static/logo.svg"}
                   alt={logo?.alt || "Logo"}
                   width={64}
                   height={64}
-                  className="grayscale hover:grayscale-0 w-16 h-16 min-w-16 max-w-16 object-contain p-2 transition-all duration-200"
+                  className="grayscale w-16 h-16 min-w-16 max-w-16 object-contain p-2"
                   loading="lazy"
                 />
               </motion.div>
@@ -143,7 +122,7 @@ const LogosCircle: React.FC = () => {
                 {logo?.guide ? (
                   <Link
                     href={getCanonicalLink(locale, logo.guide)}
-                    className="block hover:scale-105 transition-transform duration-200"
+                    className="block"
                     title={`Learn how to track ${logo.alt}`}
                   >
                     {logoContent}
@@ -159,22 +138,22 @@ const LogosCircle: React.FC = () => {
         <motion.div
           className="absolute inset-0 z-15"
           animate={{ rotate: -360 }}
-          transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
+          transition={{ repeat: Infinity, duration: 160, ease: "linear" }}
         >
           {innerPositions.map((pos, index) => {
             const logo = innerLogos[index];
             const logoContent = (
               <motion.div
                 animate={{ rotate: 360 }}
-                transition={{ repeat: Infinity, duration: 100, ease: "linear" }}
-                className="bg-white p-2 rounded-xl border border-gray-200 flex-shrink-0"
+                transition={{ repeat: Infinity, duration: 160, ease: "linear" }}
+                className="bg-card p-2 rounded-2xl flex-shrink-0"
               >
                 <img
                   src={logo?.src || "/static/logo.svg"}
                   alt={logo?.alt || "Logo"}
                   width={48}
                   height={48}
-                  className="grayscale hover:grayscale-0 w-12 h-12 min-w-12 max-w-12 object-contain p-1.5 transition-all duration-200"
+                  className="grayscale w-12 h-12 min-w-12 max-w-12 object-contain p-1.5"
                   loading="lazy"
                 />
               </motion.div>
@@ -193,7 +172,7 @@ const LogosCircle: React.FC = () => {
                 {logo?.guide ? (
                   <Link
                     href={getCanonicalLink(locale, logo.guide)}
-                    className="block hover:scale-105 transition-transform duration-200"
+                    className="block"
                     title={`Learn how to track ${logo.alt}`}
                   >
                     {logoContent}

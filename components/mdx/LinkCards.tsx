@@ -31,7 +31,7 @@ export function LinkCard({
     <Link
       href={external ? href : getCanonicalLink(locale, href)}
       {...linkProps}
-      className="group not-prose block border border-gray-200 bg-white rounded-xl p-6 transition-all hover:border-brand-primary hover:bg-brand-primary-light no-underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 hover:shadow-sm"
+      className="group not-prose block border border-gray-200 bg-white rounded-xl p-6 transition-colors hover:border-brand-primary no-underline hover:no-underline focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2"
     >
       <h3 className="text-lg sm:text-xl font-semibold text-text-primary group-hover:text-brand-primary transition-colors mb-3 relative">
         {title}

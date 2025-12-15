@@ -10,10 +10,15 @@ async function fetchAvatarFunnelSvg(seedNonce: string): Promise<string | null> {
     const uid = `avatar-funnel-${seedNonce.replace(/[^a-zA-Z0-9-]/g, "-")}`;
     const url = `${WEB_URL}/api/animation-svg/avatar-funnel?uid=${encodeURIComponent(uid)}&seed=${encodeURIComponent(seedNonce)}`;
 
-    const response = await fetch(url, {
-      // Cache for 1 hour
-      next: { revalidate: 3600 }
-    });
+    const response = await fetch(
+      url,
+      process.env.NODE_ENV === "development"
+        ? { cache: "no-store" }
+        : {
+            // Cache for 1 hour
+            next: { revalidate: 3600 }
+          }
+    );
 
     if (response.ok) {
       return await response.text();

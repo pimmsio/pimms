@@ -5,7 +5,7 @@ interface AvatarsProps {
   children?: ReactNode;
 }
 
-export const Avatars = async ({ children }: AvatarsProps) => {
+export const Avatars = async ({}: AvatarsProps) => {
   // Always use home avatars since they're shared across all landing pages
   const t = await getTranslations("landing.hero");
 

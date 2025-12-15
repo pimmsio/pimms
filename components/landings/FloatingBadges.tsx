@@ -20,15 +20,12 @@ export const FloatingStars = () => {
   const t = useTranslations("landing.badges");
   return (
     <div
-      className="hidden lg:block absolute top-[360px] right-4 xl:right-8 z-10"
+      className="hidden lg:block absolute top-[360px] right-4 xl:right-8 z-100"
       style={{
         animation: "floatingBadgeDelay 3.5s ease-in-out infinite"
       }}
     >
       <div className="relative group">
-        {/* Enhanced glow effect */}
-        <div className="absolute inset-0 bg-gradient-to-r from-vibrant-green/30 via-vibrant-green/50 to-vibrant-green/70 rounded-3xl blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-500" />
-
         {/* Badge content */}
         <div className="relative bg-gradient-to-br from-white rounded-3xl px-6 py-4 shadow-sm shadow-vibrant-green/50 transition-all duration-300">
           <div className="flex flex-col items-center gap-2">

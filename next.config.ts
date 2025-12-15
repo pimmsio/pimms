@@ -1,32 +1,11 @@
-const createNextIntlPlugin = require("next-intl/plugin");
-const withBundleAnalyzer = require("@next/bundle-analyzer")({
-  enabled: process.env.ANALYZE === "true"
-});
+import createNextIntlPlugin from "next-intl/plugin";
+import bundleAnalyzer from "@next/bundle-analyzer";
 import type { NextConfig } from "next";
-import createMDX from "@next/mdx";
-import remarkGfm from "remark-gfm";
-import rehypeSlug from "rehype-slug";
-import rehypeAutolinkHeadings from "rehype-autolink-headings";
-import rehypePrettyCode from "rehype-pretty-code";
 import redirects from "./redirect";
-import { remarkAtSyntax } from "./lib/mdx/remark-at-syntax";
-const withNextIntl = createNextIntlPlugin();
 
-const withMDX = createMDX({
-  extension: /\.mdx?$/,
-  options: {
-    remarkPlugins: [remarkGfm, remarkAtSyntax],
-    rehypePlugins: [
-      rehypeSlug,
-      [rehypeAutolinkHeadings, { behavior: "wrap" }],
-      [
-        rehypePrettyCode,
-        {
-          theme: "one-light"
-        }
-      ]
-    ]
-  }
+const withNextIntl = createNextIntlPlugin();
+const withBundleAnalyzer = bundleAnalyzer({
+  enabled: process.env.ANALYZE === "true"
 });
 
 const nextConfig: NextConfig = {
@@ -91,7 +70,9 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable"
+            value: process.env.NODE_ENV === "production" 
+              ? "public, max-age=31536000, immutable"
+              : "no-cache, no-store, must-revalidate"
           }
         ]
       },
@@ -100,7 +81,9 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable"
+            value: process.env.NODE_ENV === "production"
+              ? "public, max-age=31536000, immutable"
+              : "no-cache, no-store, must-revalidate"
           }
         ]
       },
@@ -347,10 +330,7 @@ const nextConfig: NextConfig = {
       "tailwind-merge"
     ],
     // Minimize client-side JavaScript
-    optimizeServerReact: true,
-
-    // Exclude polyfills for modern browsers to reduce bundle size
-    forceSwcTransforms: true
+    optimizeServerReact: true
   },
   // Turbopack configuration (moved from experimental.turbo)
   turbopack: {
@@ -412,4 +392,4 @@ const nextConfig: NextConfig = {
   }
 };
 
-export default withBundleAnalyzer(withNextIntl(withMDX(nextConfig)));
+export default withBundleAnalyzer(withNextIntl(nextConfig));

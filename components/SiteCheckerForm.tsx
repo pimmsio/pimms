@@ -89,7 +89,7 @@ export default function SiteCheckerForm() {
   return (
     <div className="space-y-12 md:space-y-16">
       {/* Form Section */}
-      <div className="bg-white rounded-3xl border border-gray-200 p-6 md:p-8 shadow-sm">
+      <div className="bg-white rounded-3xl border border-gray-200 p-6 md:p-8">
         <form onSubmit={handleSubmit} className="space-y-8">
           <div>
             <label htmlFor="url" className="block text-base md:text-lg font-semibold text-gray-800 mb-4">
@@ -131,7 +131,7 @@ export default function SiteCheckerForm() {
 
       {/* Results Section */}
       {result && (
-        <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-8 shadow-sm">
+        <div className="bg-white rounded-2xl border border-gray-200 p-4 md:p-8">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 space-y-3 sm:space-y-0">
             <H2>Check Results</H2>
             <div className="flex flex-col sm:flex-row sm:items-center space-y-2 sm:space-y-0 sm:space-x-3">

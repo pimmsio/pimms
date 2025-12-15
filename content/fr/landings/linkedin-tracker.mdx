@@ -25,7 +25,7 @@ image: https://assets.pimms.io/linkedin-profile-tracking-dashboard.webp
   </BlurFade>
 </Slide>
 
-<LinkedinTestimonialsRibbon>
+<LinkedinTestimonialsRibbon rows={1}>
   <LinkedinPost 
     name="Mathieu Visière" 
     profile="Fondateur @Pixel Pop! | Landing Pages & Funnels" 
@@ -153,7 +153,7 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
         <BlurFade direction="left" delay={0.2} inView>
           <H3>Partage des liens qui <TextHighlight color="green">collectent plus</TextHighlight></H3>
           <Text>Ajoute des liens de profil vers ton funnel, lance des campagnes d’outreach via les DM, crée des séquences de posts, en bref partage des liens sur les réseaux.</Text>
-          <Text>Les deeplinks PIMMS éliminent les mini‑navigateurs. Achats et inscriptions se font jusqu’à <Stronger className="text-vibrant-green">30 % plus souvent</Stronger>.</Text>
+          <Text>Les liens Pimms sont optimisés sur mobile. Achats et inscriptions se font jusqu’à <Stronger className="text-vibrant-green">30 % plus souvent</Stronger>.</Text>
         </BlurFade>
       </Column>
       <Column span={1} order="visual">
@@ -270,75 +270,111 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
   </BlurFade>
   
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Profile Tracker</PricingTitle>
-                <PricingSubtitle variant="starter">Parfait pour les solopreneurs</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Commence à tracker</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tracking de Profil Essentiel" variant="starter">
-              <PricingFeature variant="starter">Tracke jusqu'à 1 000 visiteurs de profil/mois</PricingFeature>
-              <PricingFeature variant="starter">Identification basique des visiteurs</PricingFeature>
-              <PricingFeature variant="starter">Analytics de performance du contenu</PricingFeature>
-              <PricingFeature variant="starter">Notifications email</PricingFeature>
-              <PricingFeature variant="starter">Rétention des données 3 mois</PricingFeature>
-              <PricingFeature variant="starter">Support email</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Lead Generator</PricingTitle>
-                <PricingSubtitle variant="pro">Pour les marketeurs LinkedIn sérieux</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Accès à vie</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans Profile Tracker, Plus :" variant="pro">
-              <PricingFeature variant="pro">Tracke jusqu'à 5 000 visiteurs/mois</PricingFeature>
-              <PricingFeature variant="pro">Insights avancés des visiteurs & données d'entreprise</PricingFeature>
-              <PricingFeature variant="pro">Scoring de leads par IA</PricingFeature>
-              <PricingFeature variant="pro">Séquences de suivi automatisées</PricingFeature>
-              <PricingFeature variant="pro">Intégrations CRM</PricingFeature>
-              <PricingFeature variant="pro">Rétention des données 12 mois</PricingFeature>
-              <PricingFeature variant="pro">Support prioritaire</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Agency Pro</PricingTitle>
-                <PricingSubtitle variant="business">Pour agences & entreprises</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">Sur demande</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Contacter les ventes</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans Lead Generator, Plus :" variant="business">
-              <PricingFeature variant="business">Tracking de profil illimité</PricingFeature>
-              <PricingFeature variant="business">Dashboard en marque blanche</PricingFeature>
-              <PricingFeature variant="business">Gestion multi-clients</PricingFeature>
-              <PricingFeature variant="business">Intégrations personnalisées</PricingFeature>
-              <PricingFeature variant="business">Account manager dédié</PricingFeature>
-              <PricingFeature variant="business">Reporting personnalisé</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <InlinePricing
+      currency="EUR"
+      locale="fr"
+      selectAriaLabel="Sélectionner un plan"
+      planOptions={{
+        pro: {
+          label: "Offre Pro",
+          description:
+            "Pour indépendants, créateurs et petites équipes qui veulent mesurer ce qui convertit (posts, DM, outreach).",
+        },
+        business: {
+          label: "Offre Business",
+          description:
+            "Pour PME et agences marketing : plus de volume, collaboration d’équipe, et rétention analytics.",
+        },
+      }}
+      includedInPlanTitle={
+        <>
+          Inclus dans le plan <InlinePricingPlanName businessLabel="entreprise" className="capitalize" />
+        </>
+      }
+      includedInPlan={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="links" /> nouveaux liens/mois
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="clicks" /> événements trackés/mois
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="folders" /> dossiers en plus
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="domains" /> domaines personnalisés
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="users" /> membres d’équipe
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanRetention map={{ "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="utmTemplates" /> templates UTM
+          </InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      includedInAllPaidTitle="Inclus dans tous les plans payants"
+      includedInAllPaid={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>100+ intégrations incl. Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Paiements Stripe</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Bulk (limité)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>QR code personnalisé</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Options avancées de lien</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Règles UTM, groupements & templates</InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      optionsCopy={{
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "À vie",
+            periodLabel: "",
+            badge: "Le plus populaire",
+            helperTop: "Paiement unique",
+            ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        business: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Annuel",
+            periodLabel: "/an",
+            badge: "2 mois offerts",
+            helperTop: (
+              <>
+                <span className="line-through">69€ /mois</span>{" "}
+                <span className="text-blue-600">2 mois offerts</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+      }}
+    />
   </Section>
 </Slide>
 
@@ -477,66 +513,69 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
     <div className="mt-8">
 
 ::: faq
-### Est-ce conforme aux conditions d'utilisation de LinkedIn ?
-Oui, absolument. On tracke seulement les visiteurs qui cliquent sur les liens que tu partages, pas le trafic interne de LinkedIn. C'est complètement conforme aux CGU de LinkedIn et aux réglementations sur la confidentialité comme le RGPD.
+### La mise en place est-elle simple ?
+Active Link Magnet en un toggle pour un tracking out-of-the-box. Pour un tracking complet, ajoute un seul script. La plupart des setups prennent 10–15 minutes, sans dev.
 :::
 
-::: faq
-### Puis-je tracker quels posts génèrent les visiteurs les plus précieux ?
-Oui ! Tu verras exactement quels posts, articles, ou contenus t'apportent les visiteurs de profil de la plus haute qualité et les clients potentiels.
-:::
 
 ::: faq
-### Est-ce que ça marche avec LinkedIn Sales Navigator ?
-Bien qu'on ne s'intègre pas directement avec Sales Navigator, notre tracking fonctionne parfaitement à côté. Tu peux utiliser nos insights pour améliorer ton outreach Sales Navigator.
+### Puis-je tracker autre chose que les clics ?
+Oui. Track clics, leads et revenus. Connecte formulaires, calendriers et paiements (Stripe, Tally, Typeform, Cal.com, Calendly, Shopify) pour relier chaque conversion au lien et aux UTM.
 :::
 
-::: faq
-### À quelle vitesse vais-je voir des résultats ?
-La plupart des utilisateurs voient des visiteurs identifiés dans les 24h après la configuration. Les améliorations de conversion se montrent typiquement dans la première semaine quand tu commences à engager avec les prospects identifiés.
-:::
 
 ::: faq
-### Puis-je automatiser le suivi avec les visiteurs ?
-Oui, avec notre plan Pro tu peux configurer des séquences email automatisées, des demandes de connexion LinkedIn, et même déclencher des webhooks vers ton CRM quand des visiteurs haute valeur sont identifiés.
+### Comment fonctionne le tracking UTM sur PIMMS ?
+Crée des templates et paramètres UTM, impose des règles de nommage, génère en bulk, et organise les campagnes par dossiers. Filtre et analyse par source, medium, campagne, term et content.
 :::
 
-::: faq
-### Quelles intégrations supportez-vous ?
-On s'intègre avec les site internet (WordPress, Lovable, Shopify, etc.), calendriers en ligne (Cal.com, Calendly) et générateurs de formulaires (Tally.so, iClosed), les outils email (Mailchimp, ConvertKit), ou encore les plateformes d'automatisation (Zapier, Make). Notre équipe produit expédie de nouvelles intégrations en continu toutes les semaines.
-:::
 
 ::: faq
-### Quelle différence avec LinkedIn Premium ?
-LinkedIn Premium te montre seulement qui a visité ton profil dans les derniers 90 jours, sans données d'entreprise détaillées. Pimms va plus loin : identification complète avec emails, scoring IA, attribution des sources, et workflows automatisés. C'est complémentaire !
+### Puis-je garder mes outils et mon workflow ?
+Oui. Intégrations natives + Zapier, Make, webhooks et API pour brancher ton CRM, email et analytics.
 :::
 
+
 ::: faq
-### Combien de temps prend la configuration ?
-La configuration prend moins de 5 minutes. Ajoute simplement notre lien de tracking à ton profil LinkedIn et commence à voir les données de visiteurs immédiatement. Aucune compétence technique requise.
+### Est-ce que PIMMS fonctionne sur domaines et sous-domaines ?
+Oui. Installe le script sur chaque domaine/sous-domaine que tu contrôles pour unifier l’attribution. Les liens peuvent pointer n’importe où.
 :::
+
+
+::: faq
+### Qu’est-ce qui est inclus dans le plan gratuit ?
+5 liens intelligents, 200 événements trackés/mois, 1 domaine personnalisé, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM.
+:::
+
+
+::: faq
+### Quels sont les plans payants ?
+Pro : 19 €/mois ou 129 € en lifetime. Business : 69 €/mois ou 690 €/an. Les plans payants augmentent les limites, les seats et le bulk.
+:::
+
+
+::: faq
+### Avez-vous une API et des webhooks ?
+Oui — une API REST complète et des webhooks pour des workflows sur-mesure et des exports analytics.
+:::
+
 
     </div>
   </Section>
 </Slide>
 
-<Slide variant="primary" id="cta">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">Ça commence ici</H2>
-          <Text size="lg" variant="white">Si tu es arrivé jusque‑là, c’est le moment de 10x ton profil LinkedIn. Toi aussi, rejoins le Top 1% de Linkedin</Text>
-          <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="inverse"><SwapRotate>Commence à tracker ton profil</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">Paiement sécurisé via Stripe • Configuration 5 minutes</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+<Slide variant="secondary" id="cta">
+  <Section variant="card">
+    <Centered>
+      <H2>Ça commence ici</H2>
+      <Text>Si tu es arrivé jusque‑là, c’est le moment de 10x ton profil LinkedIn. Toi aussi, rejoins le Top 1% de Linkedin</Text>
+      <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07"><SwapRotate>Commence à tracker ton profil</SwapRotate></CtaButton>
+      <CtaBottomText>Paiement sécurisé via Stripe • Configuration 5 minutes</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
   </Section>
 </Slide>
 
