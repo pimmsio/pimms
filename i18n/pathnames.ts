@@ -2,12 +2,12 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2025-10-09T12:47:57.182Z"
+    "lastmod": "2025-12-15T21:51:36.308Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2025-10-09T12:47:57.183Z"
+    "lastmod": "2025-12-15T21:51:36.309Z"
   },
   "/articles": {
     "en": "/articles",
