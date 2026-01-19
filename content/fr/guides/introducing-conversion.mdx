@@ -2,7 +2,7 @@
 title: Suivi Conversion Développeur: Guide API Complet 2025
 summary: Implémente le suivi conversion complet avec SDK JavaScript Pimms et API. Suis leads, réservations, et ventes avec attribution totale du clic à la conversion — documentation développeur compréhensive.
 publishedAt: 2025-05-19
-updatedAt: 2025-09-14
+updatedAt: 2026-01-19
 slug: guide-developpeur-tracking-conversions
 image: https://assets.pimms.io/javascript-guide-pimms.webp
 author: alexandre
@@ -26,8 +26,7 @@ Tu implémenteras un **suivi de conversion en temps réel** pour leads, réserva
 Chaque lien Pimms génère un identifiant unique `pimms_id` qui suit l’utilisateur tout au long du tunnel. Tu dois simplement :
 
 1. Installer le script ou SDK Pimms pour capter le `pimms_id`  
-2. Activer le suivi des conversions sur tes liens  
-3. Envoyer les événements de conversion à Pimms (via API, Zapier ou npm)
+2. Envoyer les événements de conversion à Pimms (via API, Zapier ou npm)
 
 ## 1. Configure le tracking côté client (obligatoire)
 
@@ -58,21 +57,9 @@ Plus d'informations sur les options de tracking côté client dans le [Pimms Ana
   description="Utilisez notre outil gratuit pour vérifier automatiquement si le script analytics Pimms est correctement installé sur votre site web."
 />
 
-### Active le tracking des conversions sur tes liens
+### Le suivi des conversions est activé par défaut
 
-Une fois le script installé, tu dois activer le suivi pour chaque lien.
-
-#### Option 1 — À l’échelle du workspace
-
-1. Va dans les **Paramètres du workspace** → **Analytics**  
-2. Active **Tracking des conversions au niveau du workspace**
-
-#### Option 2 — Lien par lien
-
-1. Ouvre le **Link Builder**  
-2. Active le toggle  **Conversion Tracking**  
-
-✅ Les tests A/B ont toujours le suivi activé par défaut.
+Si le script (ou le SDK) Pimms est installé, tes liens sont déjà prêts pour l’attribution — aucun toggle supplémentaire à activer.
 
 ## 2. Envoie les événements de conversion à Pimms (Zapier, API ou SDK)
 

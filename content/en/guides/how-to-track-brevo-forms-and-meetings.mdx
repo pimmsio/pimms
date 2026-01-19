@@ -1,0 +1,128 @@
+---
+title: Track Brevo Forms + Meetings: Webhook Setup Guide 2026
+summary: Track Brevo form submissions and meeting bookings with full attribution using Pimms. Set up Brevo webhooks for event data and use a Pimms thank-you link as the Brevo redirect so Pimms can attribute the conversion.
+publishedAt: 2026-01-19
+updatedAt: 2026-01-20
+slug: how-to-track-brevo-forms-and-meetings-webhook-integration
+image: https://assets.pimms.io/brevo-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - no-code-guide-for-website
+---
+
+Brevo gives you the **events** (form submitted, meeting booked). Pimms gives you the **attribution** (which link/campaign brought the conversion).
+
+To connect both, you’ll use a **Pimms thank-you link** as the redirect after the form submission or meeting booking.
+
+**What you’ll set up:** Brevo webhooks (Forms + Meetings) + two Pimms links (entry + thank-you) so every submission/booking is tracked with full attribution.
+
+## 1. Find your Workspace ID
+
+1. Log in to your [Pimms dashboard](https://app.pimms.io)
+2. Go to **Settings** → **Workspace ID**
+3. Copy your ID (e.g. `ws_abc123xyz`)
+
+You’ll use it for both the webhook configuration and authentication.
+
+## 2. Create your entry link
+
+This is the link you share in ads, emails, LinkedIn, etc.
+
+1. Go to your [Pimms dashboard](https://app.pimms.io)
+2. Create a short link pointing to your **Brevo Form page** or **Brevo Meeting booking page**
+
+**Example**:
+```
+https://pim.ms/brevo-form
+```
+
+## 3. Create your thank-you link
+
+This is the redirect Brevo sends users to after a submission/booking. It lets Pimms record the conversion and attribute it to the entry link.
+
+1. Go to your [Pimms dashboard](https://app.pimms.io)
+2. Create a short link whose key ends with `/thankyou`
+3. Set the destination to **any** thank-you URL you want
+
+**Example**:
+```
+https://pim.ms/abc/thankyou
+```
+
+Tip: you can use the same thank-you link for both Forms and Meetings, or create one per flow.
+
+## 4. Set up Brevo webhooks
+
+You’ll configure Brevo webhooks in:
+**Integrations → Webhooks**
+
+### Webhook URL
+
+Use this URL pattern:
+```
+https://app.pimms.io/api/webhook/brevo?workspace_id=your-id
+```
+
+Replace `your-id` with your Workspace ID from step 1.
+
+### Authentication token
+
+In the Brevo webhook configuration, paste your **Workspace ID** in the **Authentication token** field.
+
+### Webhook 1 — Brevo Meetings
+
+1. In Brevo, go to **Conversations → Meetings**
+2. Then go to **Integrations → Webhooks**
+3. Create a new webhook:
+   - **Name**: choose any
+   - **URL**: Pimms Brevo webhook URL (above)
+   - **Authentication token**: your Workspace ID
+   - **Marketing events**: Meetings → enable **only** **Meeting booked**
+
+### Webhook 2 — Brevo Forms
+
+1. In Brevo, go to **Marketing → Forms**
+2. Then go to **Integrations → Webhooks**
+3. Create a new webhook:
+   - **Name**: choose any
+   - **URL**: Pimms Brevo webhook URL (above)
+   - **Authentication token**: your Workspace ID
+   - **Marketing events**: Forms → enable **only** **Form submitted**
+
+## 5. Set the thank-you URL
+
+This is what connects attribution (session) to the conversion (submission/booking).
+
+- **Brevo Forms**: set the form **thank-you URL** to your Pimms thank-you link (step 3)
+- **Brevo Meetings**: set the meeting **confirmation/thank-you redirect URL** to your Pimms thank-you link (step 3)
+
+## 6. Test your setup
+
+1. Open your **entry Pimms link** in an incognito tab
+2. Submit the Brevo form or book a Brevo meeting with a test email
+3. Ensure you land on the final thank-you page (via your Pimms thank-you link)
+4. Check your [Pimms dashboard](https://app.pimms.io)
+
+You should see a new conversion with attribution.
+
+## 7. Troubleshooting
+
+### I see webhooks in Brevo, but no conversions in Pimms
+- Make sure Brevo redirects to your **Pimms thank-you link** (not directly to the thank-you page)
+- Make sure you start the session via the **entry Pimms link**
+
+### The webhook works, but I’m missing email/name
+- Make sure your Brevo form / meeting collects the right fields:
+  - An email field whose name contains `email`
+  - A name field whose name contains `name`, or two fields: `firstname` + `lastname`
+- If you renamed fields, keep these keywords in the field names so Pimms can map them.
+
+## You’re all set
+
+Brevo now sends you the conversion events, and Pimms attributes them correctly through your thank-you link.
+
+👉 [Create your first Pimms link](https://app.pimms.io)
+
+<CallToAction />

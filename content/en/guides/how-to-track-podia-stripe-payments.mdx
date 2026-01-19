@@ -1,0 +1,92 @@
+---
+title: Track Podia Payments (Stripe): Setup Guide 2026
+summary: Track Podia checkout payments with full attribution using Pimms + Stripe. Create a Pimms thank-you link, paste one script in Podia Analytics, and Pimms will connect Podia purchases to the right campaign and link.
+publishedAt: 2026-01-20
+updatedAt: 2026-01-20
+slug: how-to-track-podia-stripe-payments
+image: https://assets.pimms.io/podia-stripe-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - setup-stripe-for-website
+  - no-code-guide-for-website
+---
+
+If your Podia checkout is paid via **Stripe**, you can track purchases in Pimms with full attribution.
+
+**What you’ll set up:** Pimms Stripe integration + a Pimms “thank-you” link + one Podia script.
+
+## 1. Enable the Pimms × Stripe integration
+
+Before you start: in that Stripe guide, only do **Step 1**. Skip the other steps (not relevant for Podia) — Podia handles Stripe Checkout.
+
+<LinkCard
+  locale="en"
+  title="Track Stripe Payments: Complete Setup Guide"
+  description="Enable the Pimms × Stripe integration so Pimms can record Podia payments."
+  href="/articles/setup-stripe-for-website"
+/>
+
+## 2. Create your entry link (traffic → Podia)
+
+This is the link you share in ads, emails, YouTube, LinkedIn, etc.
+
+1. Go to your [Pimms dashboard](https://app.pimms.io)
+2. Create a short link that points to your Podia sales page / checkout page
+
+## 3. Create your thank-you link
+
+This link is not a page your buyer visits. It’s a tracking URL the Podia script will call after checkout.
+
+Create a short link like:
+
+```
+https://pim.ms/Z8qLLtm/thankyou
+```
+
+## 4. Add the Podia tracking script
+
+In Podia, go to:
+**Settings → Analytics → Third-party code → Website tracking code**
+
+Paste this exact snippet (replace the `url=` value with your own Pimms thank-you link):
+
+```html
+<script
+  src="https://assets.pimms.io/detect-podia.min.v1.0.1.js?url=https://pim.ms/Z8qLLtm/thankyou"
+  async>
+</script>
+```
+
+Podia will add it to every page of your site, just before the closing `</body>` tag. See Podia docs:
+- [Installing advanced analytics](https://help.podia.com/en/articles/11371032-installing-advanced-analytics)
+- [Using a “Thank you” page for conversion purposes](https://help.podia.com/en/articles/11370947-using-a-thank-you-page-for-conversion-purposes)
+
+## 5. Test your setup
+
+1. Open your **entry Pimms link** in an incognito window (disable ad blockers)
+2. Complete a test purchase in Podia
+3. Confirm you land on Podia’s built-in thank-you page (`/thanks/...`)
+4. Check your [Pimms dashboard](https://app.pimms.io)
+
+You should see the purchase tracked via Stripe, attributed to your original entry link.
+
+## Troubleshooting
+
+### I see Stripe payments, but no attribution
+- Make sure the buyer started from your **entry Pimms link** (step 2)
+
+### Nothing is tracked after checkout
+- Make sure the script is installed under **Website tracking code** in Podia Analytics
+- Make sure the script `url=` query param points to your **Pimms thank-you link**
+- The Podia script triggers only on Podia thank-you pages that start with `/thanks/`
+
+## You’re all set
+
+Podia purchases paid via Stripe are now tracked in Pimms with attribution.
+
+👉 [Create your first Pimms link](https://app.pimms.io)
+
+<CallToAction />
+

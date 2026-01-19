@@ -37,11 +37,23 @@ export const YoutubeVideoSlide = ({ src, title, thumbnail }: YoutubeVideoSlidePr
                 type="button"
                 aria-label="Play video"
                 onClick={() => setIsPlaying(true)}
-                className="absolute cursor-pointer inset-0 flex items-center justify-center"
+                className="absolute cursor-pointer inset-0 flex items-center justify-center focus-visible:outline-none"
               >
-                <span className="inline-flex h-16 w-16 items-center justify-center rounded-full border-2 border-white/90 bg-brand-primary text-white">
-                  <svg viewBox="0 0 24 24" className="h-8 w-8" aria-hidden="true" fill="currentColor">
-                    <path d="M8 5v14l11-7z" />
+                <span
+                  className="inline-flex items-center justify-center bg-linear-to-tr to-brand-secondary from-brand-primary rounded-full shadow-md shadow-brand-primary/40 w-14 h-14 md:w-16 md:h-16 transition-transform hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-white/80"
+                >
+                  <svg
+                    viewBox="0 0 24 24"
+                    className="w-9 h-9 md:w-10 md:h-10 drop-shadow-lg drop-shadow-brand-primary text-white"
+                    aria-hidden="true"
+                    fill="currentColor"
+                  >
+                    <path
+                      d="M10 8.5v7l6.5-3.5L10 8.5z"
+                      stroke="currentColor"
+                      strokeWidth="0.75"
+                      strokeLinejoin="round"
+                    />
                   </svg>
                 </span>
               </button>

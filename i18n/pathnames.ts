@@ -2,17 +2,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-01-19T17:56:56.627Z"
+    "lastmod": "2026-01-19T22:27:59.241Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-01-19T17:56:56.627Z"
+    "lastmod": "2026-01-19T22:27:59.242Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2025-09-29T00:00:00.000Z"
+    "lastmod": "2026-01-20T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2025-09-29T00:00:00.000Z"
+    "lastmod": "2026-01-20T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -37,7 +37,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/guides": {
     "en": "/guides",
     "fr": "/guides",
-    "lastmod": "2025-09-29T00:00:00.000Z"
+    "lastmod": "2026-01-20T00:00:00.000Z"
   },
   "/articles/category/tutorials": {
     "en": "/tutorials",
@@ -380,6 +380,11 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-09-16T00:00:00.000Z",
     "fr": "/guides/calcom-direct-webhook-integration"
   },
+  "/articles/how-to-track-brevo-forms-and-meetings": {
+    "en": "/guides/how-to-track-brevo-forms-and-meetings-webhook-integration",
+    "lastmod": "2026-01-20T00:00:00.000Z",
+    "fr": "/guides/how-to-track-brevo-forms-and-meetings-webhook-integration"
+  },
   "/articles/how-to-track-calendly": {
     "en": "/guides/how-to-track-calendly-bookings-marketing-attribution",
     "lastmod": "2025-09-14T00:00:00.000Z",
@@ -387,13 +392,18 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-to-track-elementor-form-leads": {
     "en": "/guides/how-to-track-elementor-form-leads-conversion-tracking",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/comment-suivre-leads-formulaires-elementor-attribution-marketing"
   },
   "/articles/how-to-track-framer": {
     "en": "/guides/how-to-track-framer-form-submissions-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-framer-attribution-marketing"
+  },
+  "/articles/how-to-track-podia-stripe-payments": {
+    "en": "/guides/how-to-track-podia-stripe-payments",
+    "lastmod": "2026-01-20T00:00:00.000Z",
+    "fr": "/guides/how-to-track-podia-stripe-payments"
   },
   "/articles/how-to-track-sales-with-stripe-checkout": {
     "en": "/guides/track-stripe-checkout-conversions-with-pimms",
@@ -405,19 +415,24 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-09-14T00:00:00.000Z",
     "fr": "/guides/comment-suivre-ventes-et-leads-systemeio-attribution-marketing"
   },
+  "/articles/how-to-track-tally-webhook": {
+    "en": "/guides/tally-direct-webhook-integration",
+    "lastmod": "2026-01-19T00:00:00.000Z",
+    "fr": "/guides/tally-direct-webhook-integration"
+  },
   "/articles/how-to-track-tally": {
     "en": "/guides/how-to-track-tally-form-submissions-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-tally-attribution-marketing"
   },
   "/articles/how-to-track-webflow-leads": {
     "en": "/guides/how-to-track-webflow-form-submissions-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-lead-webflow-attribution-marketing"
   },
   "/articles/introducing-conversion": {
     "en": "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/guide-developpeur-tracking-conversions"
   },
   "/articles/no-code-guide-for-website": {
@@ -427,17 +442,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/setup-stripe-for-website": {
     "en": "/guides/how-to-track-stripe-sales-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/comment-suivre-ventes-stripe-attribution-marketing"
   },
   "/articles/start-with-cal-com-and-zapier": {
     "en": "/guides/how-to-track-cal-com-bookings-marketing-attribution",
-    "lastmod": "2025-09-16T00:00:00.000Z",
+    "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-cal-com-attribution-marketing"
   },
   "/articles/start-with-iclosed-and-zapier": {
     "en": "/guides/how-to-track-iclosed-bookings-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
+    "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/comment-suivre-reservations-iclosed-attribution-marketing"
   },
   "/articles/start-with-zapier": {

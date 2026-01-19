@@ -20,7 +20,7 @@ export const FloatingStars = () => {
   const t = useTranslations("landing.badges");
   return (
     <div
-      className="hidden lg:block absolute top-[360px] right-4 xl:right-8 z-100"
+      className="hidden lg:block absolute top-[360px] right-4 xl:right-8 z-10"
       style={{
         animation: "floatingBadgeDelay 3.5s ease-in-out infinite"
       }}

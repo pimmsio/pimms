@@ -2,7 +2,7 @@
 title: Developer Conversion Tracking: Complete API Guide 2025
 summary: Implement complete conversion tracking with Pimms JavaScript SDK and API. Track leads, bookings, and sales with full attribution from click to conversion — comprehensive developer documentation.
 publishedAt: 2025-05-19
-updatedAt: 2025-09-14
+updatedAt: 2026-01-19
 slug: step-by-step-guide-for-developers-to-set-conversion-tracking
 image: https://assets.pimms.io/javascript-guide-pimms.webp
 author: alexandre
@@ -26,8 +26,7 @@ You'll implement **real-time conversion tracking** for leads, bookings, and sale
 Every Pimms link generates a unique `pimms_id` that travels through the entire funnel. You just need to:
 
 1. Install the Pimms script or SDK to assign the `pimms_id`  
-2. Enable conversion tracking on your links  
-3. Send the conversion event to Pimms (via API, Zapier, or npm)
+2. Send the conversion event to Pimms (via API, Zapier, or npm)
 
 ## 1. Set up client-side tracking (required)
 
@@ -58,21 +57,9 @@ More information about the client-side tracking options in the [Pimms Analytics 
   description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
 />
 
-### Enable conversion tracking on your links
+### Conversion tracking is enabled by default
 
-Once the tracking script is in place, you need to ensure that each link is tagged for conversion tracking.
-
-#### Option 1 — Enable for the whole workspace
-
-1. Go to your **Workspace settings** → **Analytics**  
-2. Toggle on **Workspace-level Conversion Tracking**
-
-#### Option 2 — Enable per link
-
-1. Open the **Link Builder**  
-2. Toggle the **Conversion Tracking** switch  
-
-✅ A/B test links always have tracking enabled by default.
+If your Pimms script (or SDK) is installed, your links are already ready to attribute conversions — there’s no extra toggle to enable.
 
 ## 2. Send conversion events to Pimms (Zapier, API, or SDK)
 

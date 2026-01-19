@@ -1,0 +1,203 @@
+---
+title: Track Tally.so Forms: Complete Webhook Setup Guide 2026
+summary: Connect Pimms to Tally.so forms via direct webhooks with instant attribution. Track every form submission with real-time analytics showing which campaigns generate your best leads.
+publishedAt: 2026-01-19
+updatedAt: 2026-01-19
+slug: tally-direct-webhook-integration
+image: https://assets.pimms.io/tally-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-tally
+  - no-code-guide-for-website
+---
+
+Track Tally form submissions with full attribution (which link/campaign drove the lead) using **Tally webhooks + Pimms**.
+
+**What you’ll set up:** a `pimms_id` hidden field, one Tally webhook, and one Pimms link to share your form.
+
+<LinkCard 
+  title="Tally.so + Zapier Integration Guide" 
+  description="Use Zapier automation tool to connect Tally.so with Pimms. Perfect for users who prefer automation workflows without webhook setup."
+  href="/articles/how-to-track-tally"
+/>
+
+## 1. Add a hidden `pimms_id` field in Tally
+
+1. Log in to your **Tally.so dashboard**
+2. Open the form → **Edit**
+3. Add a **hidden field**
+
+![Tally form add hidden field](https://assets.pimms.io/tally-form-add-hidden-field.webp)
+
+4. Name it `pimms_id` and publish your form
+
+![Tally form add field name](https://assets.pimms.io/tally-form-add-field-name.webp)
+
+## 2. Get your Workspace ID
+
+1. Log in to your [Pimms dashboard](https://app.pimms.io)
+2. Go to **Settings** → **Workspace ID**
+3. Copy your ID (e.g. `ws_abc123xyz`)
+
+You’ll use it in the webhook URL and as the signing secret.
+
+## 3. Add the webhook in Tally
+
+1. In your Tally.so form editor, go to **Integrations** → **Webhooks**
+2. Click **Connect** or **Add Webhook**
+3. Configure it like this:
+
+> If you’re new to Tally webhooks, see the [official Tally webhook documentation](https://tally.so/help/webhooks).
+
+**Webhook URL**:
+```
+https://app.pimms.io/api/webhook/tally?workspace_id=your-id
+```
+
+*(Replace `your-id` with your actual Workspace ID from step 2)*
+
+**Signing Secret** (required):
+```
+your-workspace-id
+```
+
+**Custom Headers** (Optional): Leave empty
+
+4. Click **Save** or **Create Webhook** to save
+
+Replace `your-id` and `your-workspace-id` with your actual workspace ID from step 2.
+
+## 4. Create your Pimms link (the one you share)
+
+1. Go to your [Pimms dashboard](https://app.pimms.io)
+2. Create a short link pointing to your **Tally form URL**
+
+**Example**:  
+```
+https://pim.ms/my-form
+```
+
+![Pimms tracking link tally](https://assets.pimms.io/pimms-tracking-link-tally.webp)
+
+Use this link everywhere you share your form (ads, emails, LinkedIn, etc.).
+
+## 5. Test end-to-end
+
+1. Open your Pimms link in an **incognito tab**
+2. Submit the form with a test email (e.g. `test+webhook@yourdomain.com`)
+3. Check your [Pimms dashboard](https://app.pimms.io)
+
+You should see a new **conversion** tracked automatically within seconds.
+
+## 6. Troubleshooting
+
+### Webhook not receiving data
+- Verify the webhook URL includes your workspace ID: `https://app.pimms.io/api/webhook/tally?workspace_id=your-workspace-id`
+- Ensure the webhook is **Active** in Tally.so
+- Check Tally.so webhook logs for delivery errors
+- Make sure your form is **published**
+
+### No conversions showing in Pimms
+- Confirm the form includes the hidden field `pimms_id`
+- Make sure you opened the form via your **Pimms link** (not the raw Tally URL)
+- Test again in **incognito** with a new email
+
+### Multiple submissions from same email
+- Only the **first submission** per email is counted as a conversion
+- This prevents duplicate conversion tracking
+
+## Best ways to share your Tally form
+
+### Option A — Share a Pimms short link
+
+Perfect for socials, ads, QR codes, or newsletters.
+
+1. Go to [Pimms](https://app.pimms.io)
+2. Create a short link for your form
+3. Share it everywhere
+
+**Example**:  
+```
+https://pim.ms/feedback
+```
+
+### Option B — Embed your Tally form on your website
+
+Add this script to your site `<head>` in all the pages of your website :
+
+```html
+<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
+```
+
+<LinkCard
+  href="/freetools/site-checker"
+  title="Verify your script installation"
+  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
+/>
+
+Then make sure to **append the `pimms_id`** to the Tally form URL.
+
+**Example**:  
+```
+https://tally.so/r/nAbCdE?pimms_id=1
+```
+
+If you embed it using an iframe, make sure to use the full URL with `?pimms_id=...`
+
+## FAQs
+
+::: faq
+
+### Do I need paid plans for Tally.so webhook integration?
+
+No! Tally.so webhook integration works with Tally.so's free plan. You can set up webhook integration without any paid subscriptions, making it perfect for small businesses and startups testing lead generation campaigns.
+
+:::
+
+::: faq
+
+### How is webhook integration different from Zapier?
+
+Webhook integration sends form submissions directly from Tally.so to Pimms in real-time without any third-party intermediary. This means:
+- **Faster tracking**: Instant notifications (vs Zapier polling delays)
+- **No external dependency**: Direct connection without Zapier account
+- **More reliable**: Direct webhook delivery with automatic retries
+- **Better for production**: Lower latency, fewer points of failure
+
+Zapier is great if you need complex workflows or integrations with multiple apps. For direct Tally.so → Pimms tracking, webhooks are the recommended approach.
+
+:::
+
+::: faq
+
+### Can I track multiple Tally forms with one webhook?
+
+Yes! One webhook can track submissions across all your Tally forms. As long as each form has the `pimms_id` hidden field configured, all submissions will be tracked automatically with complete attribution data.
+
+:::
+
+::: faq
+
+### What happens if the webhook fails?
+
+Tally.so will automatically retry failed webhook deliveries. The retry schedule is: first retry after 5 minutes, then 30 minutes, then 1 hour, and continues with longer intervals. If there are persistent issues, you'll see delivery failures in Tally.so's webhook logs. Check your webhook URL and ensure it's accessible publicly.
+
+:::
+
+::: faq
+
+### Does webhook integration work with complex Tally forms?
+
+Yes! Tally.so webhook integration works with any form complexity including conditional logic, multiple pages, file uploads, and payment collection. As long as the hidden `pimms_id` field is included, Pimms captures every submission with complete campaign attribution data via the webhook.
+
+:::
+
+## You're all set 🎉
+
+Every submission on your Tally form shared via a Pimms link will now be tracked instantly with complete conversion analytics and attribution data. No delays, no third-party dependencies, just direct real-time tracking.
+
+👉 [Create your first Pimms link](https://app.pimms.io)
+
+<CallToAction />

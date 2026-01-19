@@ -91,7 +91,7 @@ export const VimeoVideoSlide = ({ src, cover, title }: VimeoVideoSlideProps) => 
             onPointerDown={handlePlay}
             className={`row-start-1 col-start-1 transition-opacity duration-500 ${
               coverVisible ? "opacity-100" : "opacity-0 pointer-events-none"
-            } grid place-items-end sm:place-items-center relative cursor-pointer`}
+            } grid place-items-end sm:place-items-center relative cursor-pointer focus-visible:outline-none`}
             style={{
               WebkitTouchCallout: "none",
               WebkitUserSelect: "none",
@@ -101,19 +101,23 @@ export const VimeoVideoSlide = ({ src, cover, title }: VimeoVideoSlideProps) => 
             <video autoPlay loop muted playsInline className="w-full h-full object-cover z-0 pointer-events-none">
               <source src={cover} type="video/mp4" />
             </video>
-            <div className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto rounded-full z-10 flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-brand-primary ring-4 ring-brand-primary-100">
+            <span
+              className="absolute top-[10%] right-[10%] sm:top-auto sm:right-auto z-10 inline-flex items-center justify-center bg-linear-to-tr to-brand-secondary from-brand-primary rounded-full shadow-md shadow-brand-primary/40 w-11 h-11 sm:w-14 sm:h-14 transition-transform hover:scale-105 active:scale-95"
+            >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="32"
-                height="32"
+                viewBox="0 0 24 24"
+                className="w-7 h-7 sm:w-9 sm:h-9 drop-shadow-lg drop-shadow-brand-primary text-white"
+                aria-hidden="true"
                 fill="currentColor"
-                stroke="currentColor"
-                viewBox="0 0 16 16"
-                className="text-white"
               >
-                <path d="M6.271 4.055c-.45-.275-.771-.079-.771.438v7.015c0 .516.321.713.771.438l5.394-3.503c.449-.276.449-.6 0-.877l-5.394-3.511z" />
+                <path
+                  d="M10 8.5v7l6.5-3.5L10 8.5z"
+                  stroke="currentColor"
+                  strokeWidth="0.75"
+                  strokeLinejoin="round"
+                />
               </svg>
-            </div>
+            </span>
           </button>
         </div>
       </div>

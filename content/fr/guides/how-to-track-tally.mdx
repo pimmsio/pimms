@@ -1,8 +1,8 @@
 ---
 title: Suivi Formulaires Tally.so: Configuration Zapier 2025
-summary: Connecte Pimms aux formulaires Tally.so via Zapier sans codage requis. Suis chaque soumission avec analytics complètes montrant quelles campagnes génèrent tes meilleurs leads.
+summary: Connecte Pimms aux formulaires Tally.so via Zapier sans codage requis. Suis chaque envoi avec des analytics complètes montrant quelles campagnes génèrent tes meilleurs leads.
 publishedAt: 2025-05-15
-updatedAt: 2025-09-14
+updatedAt: 2026-01-19
 slug: comment-suivre-formulaires-tally-attribution-marketing
 image: https://assets.pimms.io/tally-guide-pimms.webp
 author: alexandre
@@ -12,11 +12,17 @@ related:
   - no-code-guide-for-website
 ---
 
-Le **suivi formulaires Tally.so** te permet de voir exactement quelles campagnes marketing génèrent tes meilleures soumissions de formulaires et leads. Ce guide complet montre comment connecter **Tally.so à Pimms** via Zapier en 10-15 minutes sans aucun codage requis.
+Le **suivi formulaires Tally.so** te permet de voir exactement quelles campagnes marketing génèrent tes meilleurs envois de formulaires et leads. Ce guide complet montre comment connecter **Tally.so à Pimms** via Zapier en 10-15 minutes sans aucun codage requis.
 
-Tu obtiendras des **analytics de formulaire en temps réel** montrant quelles publicités, campagnes email, ou posts réseaux sociaux génèrent vraiment des soumissions. Parfait pour le **suivi génération de leads** avec **attribution formulaire** complète du clic à la soumission.
+Tu obtiendras des **analytics de formulaire en temps réel** montrant quelles publicités, campagnes email, ou posts réseaux sociaux génèrent vraiment des envois. Parfait pour le **suivi génération de leads** avec **attribution formulaire** complète du clic à l’envoi.
 
-**Ce que tu vas accomplir :** Intégration Tally.so complète via Zapier, configuration suivi formulaire, et attribution leads pour chaque soumission sur tous tes formulaires.
+**Ce que tu vas accomplir :** Intégration Tally.so complète via Zapier, configuration suivi formulaire, et attribution leads pour chaque envoi sur tous tes formulaires.
+
+<LinkCard 
+  title="Guide Intégration Webhook Directe Tally.so" 
+  description="Configure l'intégration webhook directe pour un tracking instantané en temps réel sans dépendances tierces. Parfait pour la production avec des temps de réponse plus rapides."
+  href="/articles/tally-direct-webhook-integration"
+/>
 
 ## 1. Ajoute un champ caché dans ton formulaire
 
@@ -36,7 +42,6 @@ Tu obtiendras des **analytics de formulaire en temps réel** montrant quelles pu
 
 1. Va sur ton [dashboard Pimms](https://app.pimms.io)
 2. Crée un lien court qui pointe vers l’URL de ton formulaire Tally
-3. Active le **suivi des conversions**
 
 **Exemple** :  
 ```
@@ -101,7 +106,7 @@ Tu devrais voir une nouvelle **conversion** avec attribution complète.
 
 - Le champ `pimms_id` doit être présent dans l’URL quand les utilisateurs ouvrent le formulaire
 - Utilise **l’historique des tâches Zapier** pour déboguer
-- Seule **la première soumission** par adresse email est comptée comme conversion
+- Seul **le premier envoi** par adresse email est compté comme conversion
 - Vérifie que ton Zap est bien **publié et activé**
 
 ## Meilleures façons de partager ton formulaire Tally
@@ -112,8 +117,7 @@ Parfait pour les réseaux sociaux, les pubs, les QR codes ou les newsletters.
 
 1. Va sur [Pimms](https://app.pimms.io)
 2. Crée un lien court vers ton formulaire
-3. Active le **suivi des conversions**
-4. Partage-le partout
+3. Partage-le partout
 
 **Exemple** :  
 ```
@@ -149,7 +153,7 @@ Si tu l’intègres via une iframe, utilise bien l’URL complète avec `?pimms_
 
 ### Ai-je besoin de plans payants pour le suivi formulaires Tally.so ?
 
-Non ! Le suivi formulaires Tally.so fonctionne avec le plan gratuit Tally.so et le niveau gratuit de Zapier. Tu peux suivre jusqu'à 100 soumissions de formulaires par mois sans abonnements payants, parfait pour les petites entreprises et startups testant des campagnes de génération de leads.
+Non ! Le suivi formulaires Tally.so fonctionne avec le plan gratuit Tally.so et le niveau gratuit de Zapier. Tu peux suivre jusqu'à 100 envois de formulaires par mois sans abonnements payants, parfait pour les petites entreprises et startups testant des campagnes de génération de leads.
 
 :::
 
@@ -157,7 +161,7 @@ Non ! Le suivi formulaires Tally.so fonctionne avec le plan gratuit Tally.so et 
 
 ### Combien de formulaires Tally puis-je suivre avec cette configuration ?
 
-Tu devras créer des workflows Zapier séparés pour chaque formulaire Tally que tu veux suivre. Avec le plan gratuit Zapier, tu peux configurer le suivi pour plusieurs formulaires, chacun avec son propre Zap envoyant les données de soumission à Pimms pour une attribution de leads complète.
+Tu devras créer des workflows Zapier séparés pour chaque formulaire Tally que tu veux suivre. Avec le plan gratuit Zapier, tu peux configurer le suivi pour plusieurs formulaires, chacun avec son propre Zap envoyant les données d’envoi à Pimms pour une attribution de leads complète.
 
 :::
 
@@ -165,13 +169,13 @@ Tu devras créer des workflows Zapier séparés pour chaque formulaire Tally que
 
 ### Le suivi formulaires Tally fonctionne-t-il avec des formulaires complexes ?
 
-Oui ! Le suivi formulaires Tally.so fonctionne avec toute complexité de formulaire incluant logique conditionnelle, pages multiples, téléchargements de fichiers, et collecte de paiements. Tant que le champ caché `pimms_id` est inclus, Pimms capture chaque soumission avec des données d'attribution campagne complètes.
+Oui ! Le suivi formulaires Tally.so fonctionne avec toute complexité de formulaire incluant logique conditionnelle, pages multiples, téléchargements de fichiers, et collecte de paiements. Tant que le champ caché `pimms_id` est inclus, Pimms capture chaque envoi avec des données d'attribution campagne complètes.
 
 :::
 
 ## Tout est prêt 🎉
 
-Chaque soumission de ton formulaire Tally partagé via un lien Pimms sera désormais suivie — avec analytics de conversion complètes et données d'attribution.
+Chaque envoi de ton formulaire Tally partagé via un lien Pimms sera désormais suivi — avec analytics de conversion complètes et données d'attribution.
 
 👉 [Crée ton premier lien Pimms](https://app.pimms.io)
 
