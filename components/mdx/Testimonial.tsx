@@ -16,14 +16,17 @@ export async function Testimonial({ children, name, role, profileImage, bannerIm
   const t = await getTranslations("landing.testimonial");
   const renderStars = (count: number) => {
     return Array.from({ length: 5 }, (_, index) => (
-      <Star key={index} className={`w-4 h-4 ${index < count ? "text-yellow-400 fill-current" : "text-gray-300"}`} />
+      <Star
+        key={index}
+        className={`w-4 h-4 ${index < count ? "text-brand-primary fill-current" : "text-muted-foreground"}`}
+      />
     ));
   };
 
   return (
-    <div className="group relative bg-white border-2 border-gray-200 rounded-xl overflow-hidden hover:border-brand-primary/30 hover:shadow-xl transition-all duration-300 w-full">
+    <div className="relative bg-card rounded-2xl overflow-hidden w-full">
       {/* Banner Image */}
-      <div className="relative aspect-[4/1] overflow-hidden bg-gray-100">
+      <div className="relative aspect-[4/1] overflow-hidden bg-muted/70">
         <OptimizedImage
           src={bannerImage}
           alt={t("banner_alt", { name })}
@@ -35,11 +38,11 @@ export async function Testimonial({ children, name, role, profileImage, bannerIm
       </div>
 
       {/* Profile Section */}
-      <div className="relative px-6 pt-6 pb-4">
+      <div className="relative px-5 pt-5 pb-3">
         <div className="flex items-start gap-4">
           {/* Profile Image */}
           <div className="relative -mt-10 flex-shrink-0">
-            <div className="w-22 h-22 rounded-full border-3 border-white shadow-lg overflow-hidden bg-white">
+            <div className="w-20 h-20 rounded-full overflow-hidden bg-muted/60">
               <OptimizedImage
                 src={profileImage}
                 alt={t("profile_alt", { name })}
@@ -53,15 +56,15 @@ export async function Testimonial({ children, name, role, profileImage, bannerIm
 
           {/* Name and Role */}
           <div className="flex-1">
-            <h3 className="text-base font-bold text-gray-900 leading-tight">{name}</h3>
-            <p className="text-sm text-gray-600 mt-1">{role}</p>
+            <h3 className="text-base font-semibold text-foreground leading-tight">{name}</h3>
+            <p className="text-sm text-muted-foreground mt-1">{role}</p>
           </div>
         </div>
       </div>
 
       {/* Testimonial Content */}
-      <div className="px-6 pb-6">
-        <div className="text-gray-800 leading-relaxed mb-4 text-base [&>p]:text-base [&>p]:leading-relaxed [&>p]:m-0">
+      <div className="px-5 pb-5">
+        <div className="text-foreground leading-relaxed mb-4 text-base [&>p]:text-base [&>p]:leading-relaxed [&>p]:m-0 line-clamp-6">
           {children}
         </div>
 

@@ -57,3 +57,16 @@ With PIMMS, you can:
 1. **Define and monitor custom conversions** such as form submissions, registrations, purchases, and downloads.
 2. **Trace customer journeys clearly** across channels, including social media, email, and QR codes.
 3. **Optimize in real-time** by identifying top-performing links, campaigns, and marketing channels instantly.
+
+---
+
+## SEO Content Factory (Cursor long-run)
+
+This repo uses a **Cursor agent loop** (no scripts) to generate and improve MDX content.
+
+### How it works
+
+- Rules live in `.cursor/rules/long_run_content_factory.mdc`.
+- The agent reads only the `_meta` artifacts and `content/_sources`.
+- It creates and executes tasks in `apps/site/content/_meta/task_queue.jsonl`.
+- Stop condition: create `apps/site/content/_meta/STOP`.

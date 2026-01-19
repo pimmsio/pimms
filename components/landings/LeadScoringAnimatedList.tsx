@@ -48,21 +48,21 @@ function useScoreLabel() {
       return {
         label: t("very_warm"),
         emoji: "🔥",
-        color: "text-vibrant-red/80",
-        bg: "bg-vibrant-red/5 ring-vibrant-red/30"
+        color: "text-brand-primary",
+        bg: "bg-muted/60"
       };
     if (score >= 50)
       return {
         label: t("warm"),
         emoji: "🔥",
-        color: "text-vibrant-orange",
-        bg: "bg-vibrant-orange/10 ring-vibrant-orange/30"
+        color: "text-brand-primary",
+        bg: "bg-muted/60"
       };
     return {
       label: t("cold"),
       emoji: "❄️",
       color: "text-brand-primary",
-      bg: "bg-brand-primary/5 ring-brand-primary/30"
+      bg: "bg-muted/60"
     };
   };
 }
@@ -73,13 +73,13 @@ function LeadCard({ item }: { item: LeadItem }) {
   return (
     <figure
       className={cn(
-        "relative mx-auto w-full max-w-[640px] cursor-pointer overflow-hidden md:rounded-l-2xl md:border-l border-y border-gray-200 bg-white px-3 py-2 sm:px-4 sm:py-3",
-        "transition-all duration-200 ease-in-out hover:scale-[101%]"
+        "relative mx-auto w-full max-w-[640px] cursor-pointer overflow-hidden md:rounded-l-2xl bg-card/70 px-3 py-2 sm:px-4 sm:py-3",
+        "transition-colors duration-200"
       )}
       data-noindex="true"
     >
       <div className="flex items-center gap-3">
-        <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-gray-50 ring-1 ring-gray-200">
+        <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-muted/70">
           {sourceLogo[item.source].endsWith(".svg") ? (
             <img
               src={sourceLogo[item.source]}
@@ -104,19 +104,19 @@ function LeadCard({ item }: { item: LeadItem }) {
           )}
         </div>
         <div className="flex min-w-0 flex-1 flex-col">
-          <div className="flex items-center gap-2 whitespace-pre text-sm sm:text-base font-semibold text-gray-900">
+          <div className="flex items-center gap-2 whitespace-pre text-sm sm:text-base font-semibold text-foreground">
             <span className="truncate">{item.name}</span>
           </div>
-          <div className="flex flex-col gap-0.5 text-[11px] text-gray-500">
+          <div className="flex flex-col gap-0.5 text-[11px] text-muted-foreground">
             <span className="truncate w-full">{maskEmail(item.email)}</span>
             <span>{item.time}</span>
           </div>
         </div>
         <div className="flex items-end sm:items-center flex-col sm:flex-row gap-1.5">
-          <div className="flex items-center rounded-full px-2.5 sm:py-1 ring-1 ring-gray-200 shrink-0" style={{}}>
-            <span className="text-sm font-semibold text-gray-900">{item.score} %</span>
+          <div className="flex items-center rounded-full px-2.5 sm:py-1 bg-muted/70 shrink-0">
+            <span className="text-sm font-semibold text-foreground">{item.score} %</span>
           </div>
-          <div className={cn("flex items-center gap-1 rounded-full px-2 py-1 ring-1 shrink-0", meta.bg)}>
+          <div className={cn("flex items-center gap-1 rounded-full px-2 py-1 shrink-0", meta.bg)}>
             <span className="text-sm" aria-hidden>
               {meta.emoji}
             </span>
@@ -218,7 +218,6 @@ export default function LeadScoringAnimatedList({
           <LeadCard key={lead.id} item={{ ...lead, name: t(lead.name as any), time: t(lead.time as any) }} />
         ))}
       </AnimatedList>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-white" />
     </div>
   );
 }

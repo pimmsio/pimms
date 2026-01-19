@@ -70,7 +70,9 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable"
+            value: process.env.NODE_ENV === "production" 
+              ? "public, max-age=31536000, immutable"
+              : "no-cache, no-store, must-revalidate"
           }
         ]
       },
@@ -79,7 +81,9 @@ const nextConfig: NextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "public, max-age=31536000, immutable"
+            value: process.env.NODE_ENV === "production"
+              ? "public, max-age=31536000, immutable"
+              : "no-cache, no-store, must-revalidate"
           }
         ]
       },
@@ -262,6 +266,15 @@ const nextConfig: NextConfig = {
         config.resolve.mainFields = ["module", "main"];
         config.resolve.conditionNames = ["import", "module", "require"];
       }
+
+      // Add plugin to exclude polyfills for modern browsers
+      const webpack = require("webpack");
+      config.plugins = config.plugins || [];
+      config.plugins.push(
+        new webpack.DefinePlugin({
+          __NEXT_POLYFILL_NOMODULE__: false
+        })
+      );
     }
     return config;
   },

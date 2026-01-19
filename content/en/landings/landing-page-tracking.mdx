@@ -25,7 +25,7 @@ image: https://assets.pimms.io/landing-page-tracking-dashboard.webp
   </BlurFade>
 </Slide>
 
-<LinkedinTestimonialsRibbon>
+<LinkedinTestimonialsRibbon rows={1}>
   <LinkedinPost 
     name="Celian Baudet" 
     profile="We instantly map and improve company processes with AI" 
@@ -271,95 +271,124 @@ To know where each click comes from and optimize what really works!
   </BlurFade>
   
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Starter</PricingTitle>
-                <PricingSubtitle variant="starter">Perfect to get started</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">49€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Start now</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Essential Tracking" variant="starter">
-              <PricingFeature variant="starter">Up to 10,000 views/month</PricingFeature>
-              <PricingFeature variant="starter">Real-time analytics</PricingFeature>
-              <PricingFeature variant="starter">Basic heatmaps</PricingFeature>
-              <PricingFeature variant="starter">5 conversion goals</PricingFeature>
-              <PricingFeature variant="starter">Weekly reports</PricingFeature>
-              <PricingFeature variant="starter">Email support</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Pro</PricingTitle>
-                <PricingSubtitle variant="pro">The choice of pros</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Lifetime access</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Starter, Plus:" variant="pro">
-              <PricingFeature variant="pro">Up to 100,000 views/month</PricingFeature>
-              <PricingFeature variant="pro">Full session replay</PricingFeature>
-              <PricingFeature variant="pro">Smart A/B testing</PricingFeature>
-              <PricingFeature variant="pro">Multi-touch attribution</PricingFeature>
-              <PricingFeature variant="pro">Real-time alerts</PricingFeature>
-              <PricingFeature variant="pro">Premium integrations</PricingFeature>
-              <PricingFeature variant="pro">Priority support</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Agency</PricingTitle>
-                <PricingSubtitle variant="business">For agencies & enterprises</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">Custom</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Contact us</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Pro, Plus:" variant="business">
-              <PricingFeature variant="business">Unlimited traffic</PricingFeature>
-              <PricingFeature variant="business">White-label dashboard</PricingFeature>
-              <PricingFeature variant="business">Multi-client management</PricingFeature>
-              <PricingFeature variant="business">Custom API</PricingFeature>
-              <PricingFeature variant="business">Dedicated account manager</PricingFeature>
-              <PricingFeature variant="business">Team training included</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <InlinePricing
+      currency="EUR"
+      locale="en"
+      selectAriaLabel="Select a plan"
+      planOptions={{
+        pro: {
+          label: "Pro plan",
+          description: "For founders and small teams optimizing landing pages with UTMs and conversion tracking.",
+        },
+        business: {
+          label: "Business plan",
+          description: "For teams and agencies scaling traffic, experiments, and analytics retention.",
+        },
+      }}
+      includedInPlanTitle={
+        <>
+          Included in the <InlinePricingPlanName className="capitalize" /> plan
+        </>
+      }
+      includedInPlan={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="links" /> new links/month
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="clicks" /> events tracked/month
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="folders" /> extra folders
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="domains" /> custom domains
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="users" /> team members
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanRetention map={{ "1-year": "1 year", "2-year": "2 years" }} /> analytics retention
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="utmTemplates" /> UTM templates
+          </InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      includedInAllPaidTitle="Included in all paid plans"
+      includedInAllPaid={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>100+ integrations incl. Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Stripe payments</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Bulk (limited)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Custom QR code</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Advanced link options</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>UTM rules, groupings & templates</InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      optionsCopy={{
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "Lifetime",
+            periodLabel: "",
+            badge: "Most popular",
+            helperTop: "One-time payment",
+            ctaLabel: <SwapRotate>Unlock lifetime access</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        business: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Yearly",
+            periodLabel: "/year",
+            badge: "2 months free",
+            helperTop: (
+              <>
+                <span className="line-through">€69/month</span>{" "}
+                <span className="text-blue-600">2 months free</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+      }}
+    />
   </Section>
 </Slide>
 
-<Slide variant="primary" id="cta">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">Stop losing money</H2>
-          <Text size="lg" variant="white">Every day without proper tracking is money going up in smoke. Your competitors are already optimizing, what about you?</Text>
-          <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="inverse"><SwapRotate>I want to track my landing page</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">5-minute setup • Guaranteed results • Money back if not satisfied</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+<Slide variant="secondary" id="cta">
+  <Section variant="card">
+    <Centered>
+      <H2>Stop losing money</H2>
+      <Text>Every day without proper tracking is money going up in smoke. Your competitors are already optimizing, what about you?</Text>
+      <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07"><SwapRotate>I want to track my landing page</SwapRotate></CtaButton>
+      <CtaBottomText>5-minute setup • Guaranteed results • Money back if not satisfied</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
   </Section>
 </Slide>
 

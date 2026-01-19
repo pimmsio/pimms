@@ -25,7 +25,7 @@ image: https://assets.pimms.io/systemeio-integration-with-pimms.webp
   </BlurFade>
 </Slide>
 
-<LinkedinTestimonialsRibbon>
+<LinkedinTestimonialsRibbon rows={1}>
   <LinkedinPost 
     name="Mathieu Dacheux" 
     profile="Développeur React.js" 
@@ -158,7 +158,7 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
         <BlurFade direction="left" delay={0.2} inView>
           <H3>Partages des liens qui <TextHighlight color="green">collectent plus</TextHighlight></H3>
           <Text>Lance des campagnes d’outreach qui redirigent vers ton funnel, des séquences d’emailing, partage des liens vers ton funnel Systeme.io sur les réseaux.</Text>
-          <Text>Les deeplinks PIMMS éliminent les mini‑navigateurs. Achats et inscriptions se font jusqu’à <Stronger className="text-vibrant-green">30 % plus souvent</Stronger> de manière automatique.</Text>
+          <Text>Les liens Pimms sont optimisés sur mobile. Achats et inscriptions se font jusqu’à <Stronger className="text-vibrant-green">30 % plus souvent</Stronger> de manière automatique.</Text>
         </BlurFade>
       </Column>
       <Column span={1} order="visual">
@@ -317,98 +317,126 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
   </BlurFade>
   
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Starter</PricingTitle>
-                <PricingSubtitle variant="starter">Parfait pour les créateurs solo</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Prendre le plan Starter</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Suivi de Funnels Essentiel" variant="starter">
-              <PricingFeature variant="starter">200 liens intelligents /mois</PricingFeature>
-              <PricingFeature variant="starter">Suivi des leads illimité</PricingFeature>
-              <PricingFeature variant="starter">Compatible formulaires & emails Systeme.io</PricingFeature>
-              <PricingFeature variant="starter">Compatible 100+ intégrations</PricingFeature>
-              <PricingFeature variant="starter">3 domaines personnalisés</PricingFeature>
-              <PricingFeature variant="starter">3 membres d'équipe</PricingFeature>
-              <PricingFeature variant="starter">6 mois d'historique</PricingFeature>
-              <PricingFeature variant="starter">1 mois de support prioritaire</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Pro</PricingTitle>
-                <PricingSubtitle variant="pro">Pour les créateurs exigeants</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Débloquer l'accès à vie</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans Starter, en plus :" variant="pro">
-              <PricingFeature variant="pro">600 liens intelligents /mois</PricingFeature>
-              <PricingFeature variant="pro">Suivi des ventes limité</PricingFeature>
-              <PricingFeature variant="pro">Compatible paiements Systeme.io</PricingFeature>
-              <PricingFeature variant="pro">A/B testing</PricingFeature>
-              <PricingFeature variant="pro">Webhooks</PricingFeature>
-              <PricingFeature variant="pro">5 membres d'équipe</PricingFeature>
-              <PricingFeature variant="pro">12 mois d'historique</PricingFeature>
-              <PricingFeature variant="pro">3 mois de support prioritaire inclus</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Business</PricingTitle>
-                <PricingSubtitle variant="business">Tout dans Pro, Plus:</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">Sur demande</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Contacter les ventes</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Tout dans Pro, en plus :" variant="business">
-              <PricingFeature variant="business">Liens intelligents illimités</PricingFeature>
-              <PricingFeature variant="business">Suivi des leads illimité</PricingFeature>
-              <PricingFeature variant="business">Suivi des ventes illimité</PricingFeature>
-              <PricingFeature variant="business">Équipe illimitée</PricingFeature>
-              <PricingFeature variant="business">Domaines personnalisés illimités</PricingFeature>
-              <PricingFeature variant="business">Opérations en vrac</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <InlinePricing
+      currency="EUR"
+      locale="fr"
+      selectAriaLabel="Sélectionner un plan"
+      planOptions={{
+        pro: {
+          label: "Offre Pro",
+          description:
+            "Pour créateurs et petites équipes qui veulent attribuer les conversions de leurs funnels sans complexité.",
+        },
+        business: {
+          label: "Offre Business",
+          description:
+            "Pour PME et agences marketing en croissance : plus de volume, plus de data, et plus de collaboration.",
+        },
+      }}
+      includedInPlanTitle={
+        <>
+          Inclus dans le plan <InlinePricingPlanName businessLabel="entreprise" className="capitalize" />
+        </>
+      }
+      includedInPlan={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="links" /> nouveaux liens/mois
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="clicks" /> événements trackés/mois
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="folders" /> dossiers en plus
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="domains" /> domaines personnalisés
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="users" /> membres d’équipe
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanRetention map={{ "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="utmTemplates" /> templates UTM
+          </InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      includedInAllPaidTitle="Inclus dans tous les plans payants"
+      includedInAllPaid={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>100+ intégrations incl. Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Paiements Stripe</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Bulk (limité)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>QR code personnalisé</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Options avancées de lien</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Règles UTM, groupements & templates</InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      optionsCopy={{
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "À vie",
+            periodLabel: "",
+            badge: "Le plus populaire",
+            helperTop: "Paiement unique",
+            ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        business: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Annuel",
+            periodLabel: "/an",
+            badge: "2 mois offerts",
+            helperTop: (
+              <>
+                <span className="line-through">69€ /mois</span>{" "}
+                <span className="text-blue-600">2 mois offerts</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+      }}
+    />
   </Section>
 </Slide>
 
-<Slide variant="primary" id="free">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">Ça commence ici</H2>
-          <Text size="lg" variant="white">Si tu es arrivé jusque-là, c'est le moment de connecter ton funnel à Pimms.</Text>
-          <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="inverse"><SwapRotate>Commence le tracking</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">Paiement sécurisé via Stripe • Configuration en 10 minutes</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+<Slide variant="secondary" id="free">
+  <Section variant="card">
+    <Centered>
+      <H2>Ça commence ici</H2>
+      <Text>Si tu es arrivé jusque-là, c'est le moment de connecter ton funnel à Pimms.</Text>
+      <CtaButton href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07"><SwapRotate>Commence le tracking</SwapRotate></CtaButton>
+      <CtaBottomText>Paiement sécurisé via Stripe • Configuration en 10 minutes</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
   </Section>
 </Slide>
 
@@ -423,48 +451,48 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
   <Section>
 
 ::: faq
-### Comment PIMMS s’intègre avec Systeme.io ?
-PIMMS se connecte via webhook pour suivre chaque opt‑in, vente et upsell dans tes funnels Systeme.io. Tu vois quelles campagnes génèrent du chiffre en temps réel, avec attribution du premier clic jusqu’à l’achat.
+### La mise en place est-elle simple ?
+Active Link Magnet en un toggle pour un tracking out-of-the-box. Pour un tracking complet, ajoute un seul script. La plupart des setups prennent 10–15 minutes, sans dev.
 :::
 
 ::: faq
-### Puis‑je suivre mes séquences email individuellement ?
-Oui. Crée des liens uniques pour chaque email. Vois lesquels rapportent le plus et optimise tes messages en fonction des ventes.
+### Puis-je tracker autre chose que les clics ?
+Oui. Track clics, leads et revenus. Connecte formulaires, calendriers et paiements (Stripe, Tally, Typeform, Cal.com, Calendly, Shopify) pour relier chaque conversion au lien et aux UTM.
 :::
 
 ::: faq
-### Est‑ce compatible avec l’email marketing Systeme.io ?
-Oui. Que tu utilises l’outil email de Systeme.io ou des services comme Brevo ou Mailchimp, PIMMS suit tous les points de contact qui mènent aux ventes.
+### Comment fonctionne le tracking UTM sur PIMMS ?
+Crée des templates et paramètres UTM, impose des règles de nommage, génère en bulk, et organise les campagnes par dossiers. Filtre et analyse par source, medium, campagne, term et content.
 :::
 
 ::: faq
-### C’est fiable sur mobile ?
-Oui. Le suivi côté serveur reste précis même sur iOS et avec les bloqueurs de pub.
+### Puis-je garder mes outils et mon workflow ?
+Oui. Intégrations natives + Zapier, Make, webhooks et API pour brancher ton CRM, email et analytics.
 :::
 
 ::: faq
-### Puis‑je A/B tester mes funnels Systeme.io ?
-Oui. Teste plusieurs versions de tes pages ou emails, PIMMS te montre lesquelles rapportent le plus.
+### Est-ce que PIMMS fonctionne sur domaines et sous-domaines ?
+Oui. Installe le script sur chaque domaine/sous-domaine que tu contrôles pour unifier l’attribution. Les liens peuvent pointer n’importe où.
 :::
 
 ::: faq
-### C’est conforme RGPD ?
-Oui. Pas de cookies tiers, seulement du suivi first‑party. Tu contrôles la rétention et les intégrations.
+### Qu’est-ce qui est inclus dans le plan gratuit ?
+5 liens intelligents, 200 événements trackés/mois, 1 domaine personnalisé, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM.
 :::
 
 ::: faq
-### Combien de temps pour installer ?
-10 à 15 minutes. Colle un script dans Systeme.io, crée un webhook et c’est parti. Pas besoin d’être technique.
+### Quels sont les plans payants ?
+Pro : 19 €/mois ou 129 € en lifetime. Business : 69 €/mois ou 690 €/an. Les plans payants augmentent les limites, les seats et le bulk.
 :::
 
 ::: faq
-### Puis‑je suivre mes affiliés avec Systeme.io ?
-Oui. PIMMS suit les ventes par affilié, influenceur ou partenaire pour te montrer ceux qui t’apportent les meilleurs clients.
+### Avez-vous une API et des webhooks ?
+Oui — une API REST complète et des webhooks pour des workflows sur-mesure et des exports analytics.
 :::
 
 ::: faq
-### Et mes statistiques Systeme.io actuelles ?
-Elles restent. PIMMS s’ajoute par‑dessus et t’apporte plus de détails sur ce qui génère tes ventes.
+### Est-ce privacy-friendly et conforme RGPD ?
+Oui. Tracking first-party, pas de cookies tiers, et rétention configurable pour rester conforme.
 :::
 
   </Section>

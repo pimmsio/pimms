@@ -65,11 +65,11 @@ export default async function BlogCard({
   return (
     <Link
       href={getCanonicalLink(locale, `/articles/${slug}`)}
-      className="group block bg-white border border-gray-200 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+      className="group block bg-white border border-gray-200 rounded-2xl overflow-hidden transition-colors duration-200"
     >
       <div className="relative overflow-hidden">
         <Image
-          className="w-full h-full object-cover aspect-[16/7] group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover aspect-[16/7]"
           src={image}
           alt={title}
           width={1200}

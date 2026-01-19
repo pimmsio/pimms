@@ -75,9 +75,9 @@ export function LineItem({
             position: "absolute",
             inset: 0
           }}
-          className="h-full origin-left rounded-lg bg-gradient-to-r from-data-clicks/30 to-data-clicks/15"
-          transition={{ ease: "easeOut", duration: 0.3 }}
-          initial={{ transform: "scaleX(0)" }}
+          className="h-full origin-left rounded-lg bg-data-clicks/15"
+          transition={{ ease: "easeOut", duration: 0.25 }}
+          initial={{ transform: "scaleX(0.98)" }}
           animate={{ transform: "scaleX(1)" }}
         />
         <div className="rounded-md relative z-10 flex h-8 w-full min-w-0 max-w-[calc(100%-2rem)] items-center transition-[max-width] duration-300 ease-in-out group-hover:max-w-[calc(100%-5rem)]">

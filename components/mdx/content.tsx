@@ -117,10 +117,10 @@ export const Label = ({
   };
 
   const variantClasses: Record<string, string> = {
-    default: "bg-white text-primary border border-gray-200",
-    problem: "bg-gray-50 text-gray-900 border border-gray-200",
-    solution: "bg-success-light/20 text-success border border-success-border/50",
-    why: "bg-info-light/20 text-info border border-info-border/50",
+    default: "bg-white text-primary",
+    problem: "bg-gray-50 text-gray-900",
+    solution: "bg-success-light/20 text-success",
+    why: "bg-info-light/20 text-info",
     none: "bg-transparent text-gray-900"
   };
 
@@ -207,51 +207,8 @@ export const FeatureCard = ({
   variant?: "simple" | "fancy";
   color?: "brand" | "cyan" | "orange" | "green";
 }) => {
-  const colorConfig = {
-    brand: {
-      gradient: "from-brand-primary/5 via-brand-secondary/5 to-transparent",
-      border: "border-brand-primary/20 hover:border-brand-primary/40",
-      highlight: "from-brand-primary/10 to-transparent"
-    },
-    cyan: {
-      gradient: "from-brand-primary/8 via-brand-secondary/8 to-transparent",
-      border: "border-brand-primary/20 hover:border-brand-primary/40",
-      highlight: "from-brand-primary/15 to-transparent"
-    },
-    orange: {
-      gradient: "from-vibrant-orange/8 via-amber-400/8 to-transparent",
-      border: "border-vibrant-orange/20 hover:border-vibrant-orange/40",
-      highlight: "from-vibrant-orange/15 to-transparent"
-    },
-    green: {
-      gradient: "from-vibrant-green/8 via-teal-400/8 to-transparent",
-      border: "border-vibrant-green/20 hover:border-vibrant-green/40",
-      highlight: "from-vibrant-green/15 to-transparent"
-    }
-  };
-
-  const config = colorConfig[color];
-
   if (variant === "fancy") {
-    return (
-      <div
-        className={`group/card relative text-center space-y-4 rounded-3xl p-8 bg-gradient-to-br ${config.gradient} backdrop-blur-sm border-2 ${config.border} transition-all duration-300 overflow-hidden`}
-      >
-        {/* Animated gradient overlay */}
-        <div
-          className={`absolute inset-0 bg-gradient-to-br ${config.highlight} opacity-0 group-hover/card:opacity-100 transition-opacity duration-300 mb-0`}
-          aria-hidden
-        />
-
-        {/* Top accent line */}
-        <div
-          className={`absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-gradient-to-r ${config.border.replace("border-", "from-").replace("/20", "/60").replace("hover:", "").split(" ")[0]} to-transparent rounded-full`}
-          aria-hidden
-        />
-
-        <div className="relative space-y-4">{children}</div>
-      </div>
-    );
+    return <div className="text-center space-y-4 rounded-2xl p-7 sm:p-8 bg-card">{children}</div>;
   }
 
   return <div className="text-center space-y-4 p-6">{children}</div>;
@@ -262,41 +219,40 @@ export const IconBox = ({
   color = "brand"
 }: {
   icon:
-    | "zap"
-    | "globe"
-    | "share"
-    | "target"
-    | "mobile"
-    | "chart"
-    | "link"
-    | "integration"
-    | "check"
-    | "cash"
-    | "arrowUp"
-    | "youtube"
-    | "users"
-    | "creditCard"
-    | "calendar"
-    | "rocket";
+  | "zap"
+  | "globe"
+  | "share"
+  | "target"
+  | "mobile"
+  | "chart"
+  | "link"
+  | "integration"
+  | "check"
+  | "cash"
+  | "arrowUp"
+  | "youtube"
+  | "users"
+  | "creditCard"
+  | "calendar"
+  | "rocket";
   color?: "brand" | "cyan" | "orange" | "green";
 }) => {
-  // Color configurations with branded gradients
   const colorConfig = {
     brand: {
-      iconClass: "text-white drop-shadow-lg",
-      bgGradient: "to-brand-secondary from-brand-primary"
+      iconClass: "text-brand-primary",
+      bgClass: "bg-brand-primary/10"
     },
     cyan: {
-      iconClass: "text-white drop-shadow-lg",
-      bgGradient: "to-brand-secondary from-brand-primary"
+      iconClass: "text-brand-primary",
+      bgClass: "bg-brand-primary/10"
     },
     orange: {
-      iconClass: "text-white drop-shadow-lg",
-      bgGradient: "to-amber-400 from-vibrant-orange"
+      iconClass: "text-brand-primary",
+      bgClass: "bg-brand-primary/10"
     },
     green: {
-      iconClass: "text-white drop-shadow-lg",
-      bgGradient: "to-teal-400 from-vibrant-green"
+      iconClass: "text-brand-primary",
+      bgClass: "bg-brand-primary/10"
     }
   };
 
@@ -322,22 +278,7 @@ export const IconBox = ({
   } as const;
 
   return (
-    <div
-      className={`relative inline-grid place-items-center w-20 h-20 rounded-2xl mb-6 transition-all duration-300 group-hover/card:scale-110 group-hover/card:rotate-3`}
-    >
-      {/* Gradient background with animation */}
-      <div
-        className={`absolute inset-0 rounded-2xl bg-gradient-to-tr ${config.bgGradient} group-hover/card:bg-gradient-to-br transition-all duration-500`}
-      />
-
-      {/* Shine effect */}
-      <div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-white/30 via-transparent to-transparent opacity-50 group-hover/card:opacity-70 transition-opacity"
-        aria-hidden
-      />
-
-      <div className="relative z-[1]">{icons[icon]}</div>
-    </div>
+    <div className={`inline-grid place-items-center w-14 h-14 rounded-2xl mb-5 ${config.bgClass}`}>{icons[icon]}</div>
   );
 };
 
@@ -376,18 +317,17 @@ export const CtaButton = ({
     <div className="flex items-center justify-center lg:justify-start mb-4">
       <button
         onClick={handleClick}
-        className={`relative overflow-hidden inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap font-semibold leading-tight transition-transform duration-200 h-12 px-8 text-base hover:scale-105 ${
-          variant === "inverse"
+        className={`relative overflow-hidden inline-flex items-center justify-center cursor-pointer gap-2 whitespace-nowrap font-semibold leading-tight transition-transform duration-200 h-12 px-8 text-base hover:scale-105 ${variant === "inverse"
             ? "rounded-full bg-white text-brand-primary hover:bg-gray-50 shadow-lg hover:shadow-xl border border-white/20"
             : "rounded-2xl text-white bg-gradient-to-r from-brand-primary-400 to-brand-primary"
-        }`}
+          }`}
         style={
           variant === "inverse"
             ? undefined
             : {
-                boxShadow:
-                  "rgba(255, 255, 255, 0.25) 0px 2.4px 1.2px 0px inset, rgba(0, 0, 0, 0.1) 0px 1.2px 1.2px 0px inset, rgba(0, 0, 0, 0.1) 0px -2.4px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 9.6px 4.8px inset, rgba(0, 0, 0, 0.2) 0px 8px 20px -4px"
-              }
+              boxShadow:
+                "rgba(255, 255, 255, 0.25) 0px 2.4px 1.2px 0px inset, rgba(0, 0, 0, 0.1) 0px 1.2px 1.2px 0px inset, rgba(0, 0, 0, 0.1) 0px -2.4px 0px 0px inset, rgba(255, 255, 255, 0.16) 0px 0px 9.6px 4.8px inset, rgba(0, 0, 0, 0.2) 0px 8px 20px -4px"
+            }
         }
       >
         {variant !== "inverse" && (
@@ -488,9 +428,6 @@ export const Section = ({
   };
 
   const getBackgroundStyle = () => {
-    if (variant === "branded") {
-      return { backgroundColor: "#3970ff" };
-    }
     return undefined;
   };
 
@@ -552,11 +489,8 @@ export const TwoColumns = ({
 
   const gapClasses = ratio === "1-1-1" ? "gap-8 md:gap-12 lg:gap-8" : "gap-8 sm:gap-0";
   const alignClasses = ratio === "1-1-1" ? "items-stretch" : "items-start sm:items-center";
-  const cardClasses =
-    variant === "card"
-      ? `bg-white rounded-3xl border border-gray-200 ${noPadding ? "p-0 md:p-0" : "pt-8 md:py-12"}`
-      : "";
-  const backgroundClasses = background === "subtle" ? "white" : "";
+  const cardClasses = variant === "card" ? `bg-card rounded-2xl ${noPadding ? "p-0 md:p-0" : "pt-8 md:py-12"}` : "";
+  const backgroundClasses = background === "subtle" ? "bg-background" : "";
 
   return (
     <div className={`${ratioClasses[ratio]} ${gapClasses} ${alignClasses} ${cardClasses} ${backgroundClasses}`}>
@@ -609,23 +543,17 @@ export const WithoutPimms = async ({ locale }: { locale: string }) => {
   const t = await getTranslations({ locale, namespace: "general" });
 
   return (
-    <div className="inline-flex items-center gap-2 text-gray-600 font-semibold text-xs uppercase tracking-wider mb-4">
-      <div className="w-8 h-[2px] bg-gray-300"></div>
+    <div className="inline-flex items-center gap-2 text-muted-foreground font-semibold text-xs uppercase tracking-wider mb-4">
+      <div className="w-8 h-[2px] bg-border"></div>
       {t("without_pimms")}
-      <div className="w-8 h-[2px] bg-gray-300"></div>
+      <div className="w-8 h-[2px] bg-border"></div>
     </div>
   );
 };
 
 // Media components
 export const Video = ({ src }: { src: string }) => (
-  <video
-    autoPlay
-    loop
-    muted
-    playsInline
-    className="w-full h-auto object-contain md:object-cover border border-gray-200 rounded-3xl"
-  >
+  <video autoPlay loop muted playsInline className="w-full h-auto object-contain md:object-cover rounded-2xl">
     <source src={src} type="video/mp4" />
   </video>
 );

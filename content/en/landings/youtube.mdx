@@ -20,10 +20,13 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <CtaButton className="w-fit px-6"><SwapRotate>Start for free</SwapRotate></CtaButton>
     <CtaBottomText>No credit card required • Just more subscribers</CtaBottomText>
   </Centered>
-  <VideoSlide src="https://player.vimeo.com/video/1069612678?badge=0&playsinline=0" cover="https://assets.pimms.io/video-pimms-intro-en-preview.mp4?v=3" />
+  <VimeoVideoSlide
+    src="https://player.vimeo.com/video/1069612678?badge=0&playsinline=0"
+    cover="https://assets.pimms.io/video-pimms-intro-en-preview.mp4?v=3"
+  />
 </Slide>
 
-<LinkedinTestimonialsRibbon>
+<LinkedinTestimonialsRibbon rows={1}>
   <LinkedinPost 
     name="Marie-Rose Perret 🦩" 
     profile="Brand yourself & become irreplaceable | Personal branding • Website • Landing page | Palmsquare 🌴" 
@@ -321,83 +324,114 @@ And when I launch a new page, if the visitor is identified on one of my pages, t
   <BlurFade direction="up" inView>
     <Centered>
       <H2>Fair <TitleIcon variant="h2" icon="pricing" /> <Primary>Pricing</Primary></H2>
-      <Text size="lg">Start with 10 free links. Upgrade when you need to.</Text>
+      <Text size="lg">Start for free. Upgrade when you need to.</Text>
     </Centered>
   </BlurFade>
   
   <Section>
-    <TwoColumns ratio="1-1-1">
-      <Column span={1}>
-        <BlurFade direction="left" delay={0.1} inView>
-          <PricingCard variant="starter">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="starter">Starter</PricingTitle>
-                <PricingSubtitle variant="starter">Perfect to get started</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="starter">59€</PricingPrice>
-              <PricingCta href="/api/pay?id=5kAeWJ8Q2f0O1e8dQS" variant="starter"><SwapRotate>Unlock lifetime access</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Free, plus:" variant="starter">
-              <PricingFeature variant="starter">200 smart links /month</PricingFeature>
-              <PricingFeature variant="starter">Unlimited Leads tracking</PricingFeature>
-              <PricingFeature variant="starter">100+ integrations incl. Zapier</PricingFeature>
-              <PricingFeature variant="starter">Unlimited UTM</PricingFeature>
-              <PricingFeature variant="starter">3 custom domains</PricingFeature>
-              <PricingFeature variant="starter">3 team members</PricingFeature>
-              <PricingFeature variant="starter">6 months of data</PricingFeature>
-              <PricingFeature variant="starter">1 month priority support included</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="up" delay={0.2} inView>
-          <PricingCard variant="pro">
-            <PricingHeader>
-              <PricingTitleGroup>
-                <PricingTitle variant="pro">Pro</PricingTitle>
-                <PricingSubtitle variant="pro">The choice of 90% of our customers</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="pro">99€</PricingPrice>
-              <PricingCta href="/api/pay?id=9B66oG2VvcYq3STaGmc7u07" variant="pro"><SwapRotate>Unlock lifetime access</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Starter, plus:" variant="pro">
-              <PricingFeature variant="pro">600 smart links /month</PricingFeature>
-              <PricingFeature variant="pro">Limited sales tracking</PricingFeature>
-              <PricingFeature variant="pro">Support Stripe payments</PricingFeature>
-              <PricingFeature variant="pro">A/B testing</PricingFeature>
-              <PricingFeature variant="pro">Webhooks</PricingFeature>
-              <PricingFeature variant="pro">5 team members</PricingFeature>
-              <PricingFeature variant="pro">12 months of data</PricingFeature>
-              <PricingFeature variant="pro">3 months priority support included</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-      <Column span={1}>
-        <BlurFade direction="right" delay={0.3} inView>
-          <PricingCard variant="business">
-            <PricingHeader>
-              <PricingTitleGroup className="lg:min-h-[144px] xl:min-h-[101px]">
-                <PricingTitle variant="business">Business</PricingTitle>
-                <PricingSubtitle variant="business">Everything in Pro and more:</PricingSubtitle>
-              </PricingTitleGroup>
-              <PricingPrice variant="business">On-demand</PricingPrice>
-              <PricingCta variant="business"><SwapRotate>Book a demo</SwapRotate></PricingCta>
-            </PricingHeader>
-            <PricingFeatures title="Everything in Pro and more:" variant="business">
-              <PricingFeature variant="business">Unlimited short links</PricingFeature>
-              <PricingFeature variant="business">Unlimited Leads tracking</PricingFeature>
-              <PricingFeature variant="business">Unlimited Sales tracking</PricingFeature>
-              <PricingFeature variant="business">Unlimited team members</PricingFeature>
-              <PricingFeature variant="business">Unlimited custom domains</PricingFeature>
-              <PricingFeature variant="business">Bulk link operations</PricingFeature>
-            </PricingFeatures>
-          </PricingCard>
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+    <InlinePricing
+      currency="EUR"
+      locale="en"
+      selectAriaLabel="Select a plan"
+      planOptions={{
+        pro: {
+          label: "Pro plan",
+          description: "For creators and small teams who want clean links, UTMs, and accurate tracking without complexity.",
+        },
+        business: {
+          label: "Business plan",
+          description: "For marketing teams and agencies scaling campaigns, data retention, and collaboration.",
+        },
+      }}
+      includedInPlanTitle={
+        <>
+          Included in the <InlinePricingPlanName className="capitalize" /> plan
+        </>
+      }
+      includedInPlan={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="links" /> new links/month
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="clicks" /> events tracked/month
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="folders" /> extra folders
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="domains" /> custom domains
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="users" /> team members
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanRetention map={{ "1-year": "1 year", "2-year": "2 years" }} /> analytics retention
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="utmTemplates" /> UTM templates
+          </InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      includedInAllPaidTitle="Included in all paid plans"
+      includedInAllPaid={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>100+ integrations incl. Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Stripe payments</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Bulk (limited)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Custom QR code</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Advanced link options</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>UTM rules, groupings & templates</InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      optionsCopy={{
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "Lifetime",
+            periodLabel: "",
+            badge: "Most popular",
+            helperTop: "One-time payment",
+            ctaLabel: <SwapRotate>Unlock lifetime access</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        business: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Yearly",
+            periodLabel: "/year",
+            badge: "2 months free",
+            helperTop: (
+              <>
+                <span className="line-through">€69/month</span>{" "}
+                <span className="text-blue-600">2 months free</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+      }}
+    />
   </Section>
 </Slide>
 
@@ -454,54 +488,56 @@ And when I launch a new page, if the visitor is identified on one of my pages, t
   <Section>
  
 ::: faq
-### How is PIMMS different from a regular YouTube link?
-Most YouTube links open inside an in‑app browser (Instagram, LinkedIn…). PIMMS sends people straight to the YouTube app, so they’re logged in and can subscribe or engage instantly — smoother UX, more views, more subscribers.
+### How simple is the setup?
+Enable Link Magnet with one toggle for out-of-the-box tracking. For full-site tracking, add one script. Most setups take 10–15 minutes, no developer required.
 :::
 
 ::: faq
-### Can I track who clicks on my YouTube links?
-Yes. See clicks, sources, device and country breakdowns. Even on the free plan, you get clear insights to understand your audience.
+### What can I track beyond clicks?
+Track clicks, leads, and revenue. Connect forms, calendars, and payments (Stripe, Tally, Typeform, Cal.com, Calendly, Shopify) to tie each conversion to its original link and UTM.
 :::
 
 ::: faq
-### Can PIMMS help me get more subscribers?
-Yes. Opening the video in the YouTube app removes friction. People are already signed in, so subscribing is one tap.
+### How does UTM tracking work in PIMMS?
+Create UTM templates and parameters, enforce naming rules, bulk-generate links, and organize campaigns in folders. Filter and analyze by source, medium, campaign, term, and content.
 :::
 
 ::: faq
-### Can I create a link for each video or playlist?
-Yes. Create smart links for videos, Shorts, playlists, livestreams, or your channel homepage — as many as you need.
+### Can I keep my current tools and workflow?
+Yes. Use native integrations plus Zapier, Make, webhooks, and API to plug into your CRM, email, and analytics stack.
 :::
 
 ::: faq
-### Can I see which links perform best?
-Yes. Compare clicks and sources (platform, device, country). While PIMMS doesn’t track YouTube subscriptions directly, this data shows what actually drives engagement.
+### Does PIMMS work across domains and subdomains?
+Yes. Install the script on each domain/subdomain you control to unify attribution. Links can point anywhere.
 :::
 
 ::: faq
-### Does PIMMS work with other platforms?
-Yes. Share PIMMS links across Instagram, TikTok, X, LinkedIn, newsletters — the link adapts and sends people to the right place automatically.
+### What’s included in the free plan?
+5 smart links, 200 tracked events/month, 1 custom domain, 30-day analytics retention, 3 UTM templates, and 10 UTM parameters.
 :::
 
 ::: faq
-### Do I need to connect my YouTube account or install anything?
-No. No account connection, no install. Create a link, share it, and PIMMS handles the rest.
+### What are the paid plans?
+Pro is €19/month or €129 lifetime. Business is €69/month or €690/year. Paid plans unlock higher limits, team seats, and bulk operations.
 :::
 
 ::: faq
-### Is it safe for me and my audience?
-Yes. Privacy‑first and secure. We don’t collect unnecessary personal data or resell information.
+### Do you have an API and webhooks?
+Yes — a full REST API and webhooks for custom workflows and analytics exports.
 :::
 
 ::: faq
-### How is PIMMS different from a simple link shortener?
-PIMMS doesn’t just shorten. It detects platform and device to open the YouTube app directly, and gives you click analytics to optimize.
+### Is it privacy-friendly and GDPR compliant?
+Yes. First-party tracking, no third-party cookies, and configurable data retention to fit your compliance needs.
 :::
 
 ::: faq
-### How is this different from YouTube Analytics?
-YouTube Analytics shows what happens inside YouTube. PIMMS shows what happens before — who clicked, from where, and which link drove the view. It’s 100% complementary.
+### Is PIMMS a replacement for Google Analytics?
+No — it’s complementary. Google Analytics shows audience and behavior, while PIMMS ties clicks and UTMs to leads, conversions, and revenue.
 :::
+
+
 
   </Section>
 </Slide>
@@ -512,23 +548,18 @@ YouTube Analytics shows what happens inside YouTube. PIMMS shows what happens be
   </BlurFade>
 </Slide>
 
-<Slide variant="primary" id="free">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">It starts here</H2>
-          <Text size="lg" variant="white" className="text-balance">If you made it this far, it's time to grab 10 free links.</Text>
-          <CtaButton variant="inverse"><SwapRotate>Start for free</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">10 smart links included • No credit card</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+<Slide variant="secondary" id="free">
+  <Section variant="card">
+    <Centered>
+      <H2>It starts here</H2>
+      <Text>If you made it this far, it's time to grab your free links.</Text>
+      <CtaButton><SwapRotate>Start for free</SwapRotate></CtaButton>
+      <CtaBottomText>Free smart links included • No credit card</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
   </Section>
 </Slide>
 

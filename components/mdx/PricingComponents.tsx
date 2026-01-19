@@ -41,7 +41,7 @@ export const PricingCard = ({ variant = "starter", children }: PricingCardProps)
       case "pro":
         return "";
       case "business":
-        return "bg-gradient-to-br from-gray-900 to-gray-800 outline-gray-700";
+        return "bg-brand-primary/5 border-brand-primary/20";
       default:
         return "";
     }
@@ -50,7 +50,7 @@ export const PricingCard = ({ variant = "starter", children }: PricingCardProps)
   return (
     <div
       className={cn(
-        "bg-white rounded-2xl outline outline-border h-full shadow-sm hover:shadow-md transition-all duration-300",
+        "bg-white rounded-2xl border border-border h-full",
         getCardStyles()
       )}
     >
@@ -105,7 +105,7 @@ export const PricingPrice = ({
 export const PricingCta = ({ href, variant = "starter", children }: PricingCtaProps) => {
   if (variant === "business") {
     return (
-      <CalComButton variant="inverse" className="w-full">
+      <CalComButton className="w-full">
         {children}
       </CalComButton>
     );

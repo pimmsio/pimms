@@ -26,7 +26,7 @@ export default function ConversionFlipCard({
   failures,
   successes,
   className,
-  duration = "15s"
+  duration = "20s"
 }: ConversionFlipCardProps) {
   const t = useTranslations("landing.conversion");
   const cardGap = "gap-3";
@@ -60,26 +60,22 @@ export default function ConversionFlipCard({
     const isSuccess = type === "success";
     const providerIcon = getProviderIcon(text);
     return (
-      <div className="mx-auto w-[94%] overflow-hidden">
-        <div className="w-full rounded-2xl border border-gray-200 bg-white px-4 py-3">
-          <div className={cn("flex items-center justify-between space-x-1 w-full", cardGap)}>
-            <div
-              className={cn(
-                "mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full ring-1 shadow-sm",
-                isSuccess
-                  ? "bg-gradient-to-br from-vibrant-green/20 to-vibrant-green/5 text-vibrant-green ring-vibrant-green/30"
-                  : "bg-gradient-to-br from-vibrant-red/20 to-vibrant-red/5 text-vibrant-red/80 ring-vibrant-red/40"
-              )}
-            >
-              {isSuccess ? <CircleCheck className="h-5 w-5" /> : <CircleX className="h-5 w-5" />}
-            </div>
-            <div className="min-w-0 flex-1 w-full">
-              <div className="truncate font-medium w-full text-sm">{text}</div>
-              <div className="text-xs text-gray-500">{time}</div>
-            </div>
-            <div className="ml-3 hidden sm:flex h-8 w-8 items-center justify-center rounded-lg bg-gray-50 ring-1 ring-gray-200">
-              <div className="text-gray-400">{providerIcon}</div>
-            </div>
+      <div className="mx-auto w-[94%] rounded-2xl bg-muted/40 px-4 py-3">
+        <div className={cn("flex items-center justify-between space-x-1 w-full", cardGap)}>
+          <div
+            className={cn(
+              "mt-0.5 inline-flex h-9 w-9 items-center justify-center rounded-full bg-background",
+              isSuccess ? "text-success" : "text-error"
+            )}
+          >
+            {isSuccess ? <CircleCheck className="h-5 w-5" /> : <CircleX className="h-5 w-5" />}
+          </div>
+          <div className="min-w-0 flex-1 w-full">
+            <div className="truncate font-medium w-full text-sm">{text}</div>
+            <div className="text-xs text-muted-foreground">{time}</div>
+          </div>
+          <div className="ml-3 hidden sm:flex h-8 w-8 items-center justify-center rounded-full bg-background">
+            <div className="text-muted-foreground">{providerIcon}</div>
           </div>
         </div>
       </div>
@@ -99,7 +95,7 @@ export default function ConversionFlipCard({
   return (
     <div
       className={cn(
-        "relative mx-auto flex h-[380px] w-full flex-col overflow-auto rounded-3xl backdrop-blur px-4",
+        "relative mx-auto flex h-[380px] w-full flex-col overflow-auto rounded-2xl bg-card px-4",
         className
       )}
       data-nosnippet
@@ -120,7 +116,6 @@ export default function ConversionFlipCard({
               <StatusCard key={`fail-${idx}`} type="fail" text={text} time={timeLabels[idx % timeLabels.length]} />
             ))}
         </Marquee>
-        <div className="pointer-events-none absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-white" />
       </div>
 
       <div className="relative h-1/2">
@@ -138,7 +133,6 @@ export default function ConversionFlipCard({
               <StatusCard key={`ok-${idx}`} type="success" text={text} time={timeLabels[idx % timeLabels.length]} />
             ))}
         </Marquee>
-        <div className="pointer-events-none absolute inset-x-0 bottom-0 h-10 bg-gradient-to-t from-white" />
       </div>
 
       <div className="pointer-events-none absolute inset-x-4 top-1/2 -translate-y-1/2">

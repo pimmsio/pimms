@@ -27,14 +27,13 @@ export default function ContactSidebar({ className = "" }: ContactSidebarProps) 
   return (
     <div className={`max-w-4xl mx-auto ${className}`}>
       <div
-        className="relative flex flex-row items-center bg-gradient-to-tr from-brand-primary to-brand-secondary p-6 rounded-3xl cursor-pointer group overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-brand-primary/30"
+        className="relative flex flex-row items-center bg-white border border-border p-6 rounded-2xl cursor-pointer"
         data-cal-link="alexandre-sarfati/30-minutes-demo?pimms_id=1"
       >
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
         <div className="relative flex items-center gap-4 sm:gap-5">
           <div className="flex-shrink-0">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border-4 border-white shadow-xl overflow-hidden bg-white">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full border border-border overflow-hidden bg-white">
               <img
                 src="https://assets.pimms.io/linkedin-profile-alex.webp"
                 alt="Alexandre Sarfati"
@@ -47,7 +46,7 @@ export default function ContactSidebar({ className = "" }: ContactSidebarProps) 
           </div>
 
           <div className="flex-shrink-0">
-            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white shadow-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-white border border-border flex items-center justify-center">
               <Image
                 src="/static/symbols/integrations/calcom.svg"
                 alt="Cal.com"
@@ -64,8 +63,8 @@ export default function ContactSidebar({ className = "" }: ContactSidebarProps) 
 
         {/* Text Content */}
         <div className="space-y-1">
-          <p className="text-sm sm:text-base font-medium text-white/95">{t("question")}</p>
-          <p className="text-lg sm:text-xl font-bold text-white">{t("action")}</p>
+          <p className="text-sm sm:text-base font-medium text-text-secondary">{t("question")}</p>
+          <p className="text-lg sm:text-xl font-semibold text-text-primary">{t("action")}</p>
         </div>
       </div>
     </div>

@@ -169,21 +169,14 @@ export async function GET(request: NextRequest) {
   // Generate SVG with EXACT original structure
   const svg = `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false">
   <defs>
-    <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.25" />
-    </filter>
     <linearGradient id="${uid}-tunnelGradient" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#e7eeff" />
-      <stop offset="100%" stop-color="#ffffff" />
+      <stop offset="0%" stop-color="#f8fafc" />
+      <stop offset="100%" stop-color="#f8fafc" />
     </linearGradient>
     <linearGradient id="${uid}-pimmsBlueGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#2fcdfa" />
-      <stop offset="100%" stop-color="#3970ff" />
+      <stop offset="0%" stop-color="#e2e8f0" />
+      <stop offset="100%" stop-color="#cbd5e1" />
     </linearGradient>
-    <radialGradient id="${uid}-pimmsHighlight" cx="35%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.25" />
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-    </radialGradient>
     <clipPath id="${uid}-avatarClip">
       <circle r="${AVATAR_RADIUS}" cx="0" cy="0" />
     </clipPath>
@@ -199,8 +192,8 @@ export async function GET(request: NextRequest) {
   
   <g mask="url(#${uid}-topEdgeFadeMask)">
     <!-- Funnel background -->
-    <g opacity="0.9">
-      <path d="${funnelPath}" fill="url(#${uid}-tunnelGradient)" stroke="#e5e7eb" stroke-width="1.25" />
+    <g>
+      <path d="${funnelPath}" fill="url(#${uid}-tunnelGradient)" stroke="#e2e8f0" stroke-width="1.25" />
     </g>
 
     <!-- Lane hints -->
@@ -209,28 +202,8 @@ export async function GET(request: NextRequest) {
         (_, idx) => `
     <path
       d="${lanePathAt(randomStarts[idx] ?? idx / Math.max(1, VISIBLE_COUNT - 1), centerY - 60)}"
-      stroke="#eef2ff"
-      stroke-width="3"
-      opacity="0.6"
-      fill="none"
-    />`
-      )
-      .join("")}
-
-    <!-- Duplicate funnel background -->
-    <g opacity="0.9">
-      <path d="${funnelPath}" fill="url(#${uid}-tunnelGradient)" stroke="#e5e7eb" stroke-width="1.25" />
-    </g>
-
-    <!-- Duplicate lane hints -->
-    ${Array.from({ length: VISIBLE_COUNT })
-      .map(
-        (_, idx) => `
-    <path
-      d="${lanePathAt(randomStarts[idx] ?? idx / Math.max(1, VISIBLE_COUNT - 1), centerY - 60)}"
-      stroke="#eef2ff"
-      stroke-width="3"
-      opacity="0.6"
+      stroke="#e2e8f0"
+      stroke-width="1.5"
       fill="none"
     />`
       )
@@ -245,7 +218,23 @@ export async function GET(request: NextRequest) {
 
         return `
     <g>
-      <g filter="url(#softShadow)">
+      <!-- Anonymous (top half) -->
+      <g>
+        <animate attributeName="visibility" begin="${begin}" dur="${duration}ms" repeatCount="indefinite" values="visible;hidden;hidden" keyTimes="0;0.5;1" />
+        <g clipPath="url(#${uid}-avatarClip)">
+          <circle cx="0" cy="0" r="${AVATAR_RADIUS}" fill="#ffffff" />
+          <g transform="translate(-12 -12)">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </g>
+        </g>
+        <circle cx="0" cy="0" r="${AVATAR_RADIUS}" fill="none" stroke="#e2e8f0" stroke-width="0.5" />
+      </g>
+      <!-- Identified (bottom half) -->
+      <g>
+        <animate attributeName="visibility" begin="${begin}" dur="${duration}ms" repeatCount="indefinite" values="hidden;visible;visible" keyTimes="0;0.5;1" />
         <g clipPath="url(#${uid}-avatarClip)">
           <circle cx="0" cy="0" r="${AVATAR_RADIUS}" fill="#ffffff" />
           <foreignObject
@@ -257,12 +246,12 @@ export async function GET(request: NextRequest) {
             <img
               src="/api/avatar/${encodeURIComponent(a.seed || "default")}"
               alt=""
-              style="width: ${AVATAR_SIZE}px; height: ${AVATAR_SIZE}px;"
+              style="width: ${AVATAR_SIZE}px; height: ${AVATAR_SIZE}px; filter: saturate(0.85);"
               loading="lazy"
             />
           </foreignObject>
         </g>
-        <circle cx="0" cy="0" r="${AVATAR_RADIUS}" fill="none" stroke="#e5e7eb" stroke-width="1" />
+        <circle cx="0" cy="0" r="${AVATAR_RADIUS}" fill="none" stroke="#e2e8f0" stroke-width="0.5" />
       </g>
       <animateMotion
         begin="${begin}"
@@ -278,17 +267,16 @@ export async function GET(request: NextRequest) {
       .join("")}
 
     <!-- Center Pimms logo -->
-    <g transform="translate(${centerX} ${centerY - 60})">
-      <g filter="url(#softShadow)">
-        <circle r="${CENTER_RADIUS}" fill="url(#${uid}-pimmsBlueGradient)" />
-        <circle r="${CENTER_RADIUS}" fill="url(#${uid}-pimmsHighlight)" />
-      </g>
-      ${(() => {
-        const LOGO_SIZE = 512;
-        const scale = (CENTER_RADIUS * 2) / LOGO_SIZE;
-        const tx = -LOGO_SIZE / 2;
-        const ty = -LOGO_SIZE / 2;
-        return `
+    ${(() => {
+      const logoY = centerY - 20;
+      const logoRadius = Math.max(18, Math.round(CENTER_RADIUS * 0.5));
+      const LOGO_SIZE = 512;
+      const scale = (logoRadius * 2) / LOGO_SIZE;
+      const tx = -LOGO_SIZE / 2;
+      const ty = -LOGO_SIZE / 2;
+      return `
+    <g transform="translate(${centerX} ${logoY})">
+      <circle r="${logoRadius}" fill="#3b82f6" />
       <g transform="scale(${scale}) translate(${tx} ${ty})">
         <path
           fill-rule="evenodd"
@@ -302,9 +290,9 @@ export async function GET(request: NextRequest) {
           d="M198.645 248.357C202.081 249.878 204.297 253.282 204.297 257.039V291.219C200.902 287.39 197.85 283.236 195.139 278.76C191.088 271.826 188.288 264.556 186.74 256.944C185.372 250.216 192.368 245.577 198.645 248.357Z"
           fill="#ffffff"
         />
-      </g>`;
-      })()}
-    </g>
+      </g>
+    </g>`;
+    })()}
 
   </g>
 </svg>`;

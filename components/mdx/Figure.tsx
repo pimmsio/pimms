@@ -12,7 +12,7 @@ export function Figure(props: FigureProps) {
         alt={props.alt || ""}
         width={props.width || 1200}
         height={props.height || 630}
-        className="w-full rounded-none sm:rounded-xl shadow-sm"
+        className="w-full rounded-none sm:rounded-xl"
       />
     ) : (
       props.children

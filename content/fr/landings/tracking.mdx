@@ -17,7 +17,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
     <Summary>Les clics flattent. Les revenus prouvent. On track chaque lien, identifie les leads et attribue chaque euro au bon canal, post et e-mail.</Summary>
   </Hero>
   <AnimatedCentered noPadding>
-    <CtaButton className="w-fit px-6"><SwapRotate>Démarre gratuitement<HideOnMobile> avec 10 liens</HideOnMobile></SwapRotate></CtaButton>
+    <CtaButton className="w-fit px-6"><SwapRotate>Démarre gratuitement</SwapRotate></CtaButton>
     <CtaBottomText>Aucune carte bancaire requise</CtaBottomText>
   </AnimatedCentered>
   <BlurFade direction="top">
@@ -40,7 +40,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
         <BlurFade direction="left" delay={0.2} inView>
           <H3>Des liens qui <TextHighlight color="green">convertissent</TextHighlight> plus</H3>
           <Text>Crée des liens courts que tu partages dans tes campagnes d’outreach, des séquences d’emailing, ou sur les réseaux.</Text>
-          <Text>Les deeplinks PIMMS éliminent les mini‑navigateurs. Achats et inscriptions se font jusqu’à <Stronger className="text-vibrant-green">30 % plus souvent</Stronger>.</Text>
+          <Text>Les liens Pimms sont optimisés sur mobile. Achats et inscriptions se font jusqu’à <Stronger className="text-vibrant-green">30 % plus souvent</Stronger>.</Text>
         </BlurFade>
       </Column>
       <Column span={1} order="visual">
@@ -309,23 +309,18 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   </TestimonialsGrid>
 </Slide>
 
-<Slide variant="primary" id="free">
-  <Section variant="branded">
-    <TwoColumns ratio="1-1">
-      <Column span={1} order="text">
-        <BlurFade direction="left" inView>
-          <H2 align="left" variant="white">Ça commence ici</H2>
-          <Text size="lg" variant="white">Si tu es arrivé jusque‑là, c’est le moment de récupérer 10 liens gratuits.</Text>
-          <CtaButton variant="inverse" ><SwapRotate>Démarre gratuitement</SwapRotate></CtaButton>
-          <CtaBottomText variant="white">10 liens intelligents inclus • Pas de carte bancaire</CtaBottomText>
-        </BlurFade>
-      </Column>
-      <Column span={1} order="text">
-        <BlurFade direction="right" delay={0.2} inView>
-          <BouncingImages />
-        </BlurFade>
-      </Column>
-    </TwoColumns>
+<Slide variant="secondary" id="free">
+  <Section variant="card">
+    <Centered>
+      <H2>Ça commence ici</H2>
+      <Text>Si tu es arrivé jusque‑là, c’est le moment de récupérer tes liens gratuits.</Text>
+      <CtaButton><SwapRotate>Démarre gratuitement</SwapRotate></CtaButton>
+      <CtaBottomText>Liens intelligents gratuits inclus • Pas de carte bancaire</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
   </Section>
 </Slide>
 
@@ -340,49 +335,51 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   <Section>
  
 ::: faq
-### Pourquoi les liens PIMMS convertissent jusqu’à +30 % ?
-PIMMS ouvre les liens dans les apps officielles (Instagram, YouTube, LinkedIn, TikTok) plutôt que dans des mini‑navigateurs. Les gens restent connectés, leurs paiements sont enregistrés, et il y a moins d’étapes — donc plus d’inscriptions et d’achats.
+### La mise en place est-elle simple ?
+Active Link Magnet en un toggle pour un tracking out-of-the-box. Pour un tracking complet, ajoute un seul script. La plupart des setups prennent 10–15 minutes, sans dev.
 :::
 
 ::: faq
-### En combien de temps je vois un impact ?
-Immédiatement côté UX ; souvent en quelques jours côté chiffre. Le dashboard attribue chaque conversion au post, email ou pub qui l’a déclenchée.
+### Puis-je tracker autre chose que les clics ?
+Oui. Track clics, leads et revenus. Connecte formulaires, calendriers et paiements (Stripe, Tally, Typeform, Cal.com, Calendly, Shopify) pour relier chaque conversion au lien et aux UTM.
 :::
 
 ::: faq
-### Est‑ce que j’ai besoin de devs pour l’installer ?
-Non. 100 % web, rien à installer. Mise en place en 10–15 minutes : colle un script et commence à créer des smart links. Suis le guide ou réserve un call si tu veux de l’aide.
+### Comment fonctionne le tracking UTM sur PIMMS ?
+Crée des templates et paramètres UTM, impose des règles de nommage, génère en bulk, et organise les campagnes par dossiers. Filtre et analyse par source, medium, campagne, term et content.
 :::
 
 ::: faq
-### Est‑ce que ça contourne les ad blockers et les limites des cookies ?
-Oui. Le tracking côté serveur n’est pas bloqué par les ad blockers et continue même si les cookies sont supprimés. Aucun cookie tiers.
+### Puis-je garder mes outils et mon workflow ?
+Oui. Intégrations natives + Zapier, Make, webhooks et API pour brancher ton CRM, email et analytics.
 :::
 
 ::: faq
-### Est‑ce que ça marche avec mon workflow ?
-Oui. 100+ outils : Stripe, Shopify, Cal.com, Tally, Beehiiv, WordPress… Connexion via intégrations natives, Zapier, Make ou webhooks.
+### Est-ce que PIMMS fonctionne sur domaines et sous-domaines ?
+Oui. Installe le script sur chaque domaine/sous-domaine que tu contrôles pour unifier l’attribution. Les liens peuvent pointer n’importe où.
 :::
 
 ::: faq
-### Est‑ce que PIMMS fonctionne sur les domaines et sous‑domaines ?
-Oui. Installe le script sur le domaine racine et les sous‑domaines pour unifier les analytics. Les domaines externes sont pris en charge via des options de lien.
+### Qu’est-ce qui est inclus dans le plan gratuit ?
+5 liens intelligents, 200 événements trackés/mois, 1 domaine personnalisé, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM.
 :::
 
 ::: faq
-### Y a‑t‑il une API et des webhooks ?
-Oui — API REST complète et webhooks pour des workflows sur‑mesure et des exports analytics. Voir pim.ms/api.
+### Quels sont les plans payants ?
+Pro : 19 €/mois ou 129 € en lifetime. Business : 69 €/mois ou 690 €/an. Les plans payants augmentent les limites, les seats et le bulk.
 :::
 
 ::: faq
-### Qu’est‑ce qui est inclus dans le plan gratuit ?
-10 smart links, analytics temps réel, domaine personnalisé, QR codes, gestion UTM. Pas de carte bancaire — prouve la valeur avant de payer.
+### Avez-vous une API et des webhooks ?
+Oui — une API REST complète et des webhooks pour des workflows sur-mesure et des exports analytics.
 :::
 
 ::: faq
-### L’offre à vie, c’est vraiment un paiement unique ?
-Oui. Pro à vie : 59 € (paiement unique). Liens illimités, tracking complet, collaboration d’équipe et 6 mois de rétention. Zéro récurrence.
+### Est-ce privacy-friendly et conforme RGPD ?
+Oui. Tracking first-party, pas de cookies tiers, et rétention configurable pour rester conforme.
 :::
+
+
 
   </Section>
 </Slide>

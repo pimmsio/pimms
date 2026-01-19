@@ -47,38 +47,38 @@ export const AnalyticsDemo = ({ tkey }: { tkey: string }) => {
   };
 
   return (
-    <div className="overflow-hidden rounded-3xl md:rounded-l-xl md:rounded-r-none">
-      <div className="grid gap-2 sm:gap-4 grid-cols-3 mx-4">
-        <div className="rounded-lg bg-brand-secondary-light py-2 px-4">
-          <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
-            <div className="w-2 h-2 bg-data-clicks rounded-full"></div>
+    <div className="overflow-hidden rounded-2xl bg-card">
+      <div className="grid gap-2 sm:gap-4 grid-cols-3 mx-4 pt-4">
+        <div className="rounded-2xl bg-muted/50 py-2 px-4">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+            <div className="w-2 h-2 bg-data-clicks rounded-full" />
             <span>Clics</span>
           </div>
-          <div className="text-xl font-bold text-gray-800">
+          <div className="text-xl font-semibold text-foreground">
             {formatNumber(totalEvents.clicks, {
               notation: totalEvents.clicks > 999999 ? "compact" : "standard"
             })}
           </div>
         </div>
 
-        <div className="rounded-lg bg-data-leads/20 py-2 px-4">
-          <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
-            <div className="w-2 h-2 bg-data-leads rounded-full"></div>
+        <div className="rounded-2xl bg-muted/50 py-2 px-4">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+            <div className="w-2 h-2 bg-data-leads rounded-full" />
             <span>Leads</span>
           </div>
-          <div className="text-xl font-bold text-gray-800">
+          <div className="text-xl font-semibold text-foreground">
             {formatNumber(totalEvents.leads, {
               notation: totalEvents.leads > 999999 ? "compact" : "standard"
             })}
           </div>
         </div>
 
-        <div className="rounded-lg bg-data-sales/20 py-2 px-4">
-          <div className="flex items-center gap-2 text-sm text-neutral-600 mb-3">
-            <div className="w-2 h-2 bg-data-sales rounded-full"></div>
+        <div className="rounded-2xl bg-muted/50 py-2 px-4">
+          <div className="flex items-center gap-2 text-sm text-muted-foreground mb-3">
+            <div className="w-2 h-2 bg-data-sales rounded-full" />
             <span>Ventes</span>
           </div>
-          <div className="text-xl font-bold text-gray-800">
+          <div className="text-xl font-semibold text-foreground">
             {formatNumber(totalEvents.sales, {
               style: "currency",
               currency: tcommon("analytics_chart.currency"),
