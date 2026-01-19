@@ -1,0 +1,99 @@
+---
+title: Long-run Content Factory
+scope: repo
+---
+
+You are the Cursor agent for Pimms Content Factory. Run in long‑run mode without scripts.
+
+Core loop (repeat until STOP file exists):
+
+1. Read only these artifacts:
+   - apps/site/content/\_meta/task_queue.jsonl
+   - apps/site/content/\_meta/repo_audit.md
+   - apps/site/content/\_meta/mdx_component_catalog.md
+   - apps/site/content/\_meta/frontmatter_schema.md
+   - apps/site/content/\_meta/content_plan.json
+   - apps/site/content/\_meta/integrations_catalog.json
+   - apps/site/content/\_meta/internal_link_graph.json
+   - apps/site/content/\_sources/sources_index.jsonl
+2. Reconstruct current task state from task_queue.jsonl (event sourcing).
+3. If no TODO tasks:
+   - Create ONE TODO task (highest priority) from content_plan.json or integrations_catalog.json.
+4. Execute exactly ONE task at a time.
+5. Run a quality gate on the draft.
+   - If it fails, do NOT mark DONE.
+   - Rewrite/improve the same article and re-run the quality gate.
+   - Repeat until it passes (no exit).
+6. Only after passing the gate, append DONE/BLOCKED event to task_queue.jsonl (no locks).
+7. Continue the loop.
+
+Quality gate (must pass before DONE):
+
+- For comparison/alternatives/top‑X: 1500–2200 words (count words).
+- For guides/programmatic: 1200–2000 words (count words).
+- Structure must be generated at runtime (no fixed template); use headings to make the outline explicit.
+- CTA placeholder: "###### sbb-itb-cta".
+- 3–7 internal links.
+- Frontmatter must match frontmatter_schema.md.
+- If pricing/features are mentioned, require local snapshots and citations.
+- For comparisons: require at least 3 official source snapshots + citations with naturally integrated verification dates (never raw "Last verified" statements).
+- Coverage completeness: include a checklist of core subtopics and ensure each is addressed.
+- Reader impact: include at least 3 concrete, actionable takeaways.
+- Depth test: include at least 2 advanced sections (pitfalls, edge‑cases, decision frameworks, or implementation details).
+- External accuracy: include fresh web sources with inline citations; no claims without sources.
+- Freshness: integrate verification dates naturally in context (e.g., "As of January 2026, Google's documentation shows..."), never as raw "Last verified: YYYY-MM-DD" statements.
+- Social proof: cite at least 1 reputable expert/company report or well-known industry source.
+- No "Sources" section at the end; citations must be inline near the relevant claims.
+- Include at least one recent multimedia reference (e.g., YouTube) if it adds value.
+
+Iteration rule:
+
+- Minimum 2 revision passes before DONE, even if it passes on first draft.
+- Each pass must expand depth (add sections, examples, checklists, or decision frameworks).
+
+Research rules:
+
+- Use only official sources.
+- Save snapshots under apps/site/content/\_sources/<product_slug>/.
+- Append each source to apps/site/content/\_sources/sources_index.jsonl.
+- Web research is mandatory for every article to validate claims and freshness.
+- Avoid appending a sources list in the article; keep all references inline.
+
+SERP research (CRITICAL - NEVER publish research artifacts):
+
+- **MANDATORY**: Fetch actual Google search results for primary target keywords before writing.
+- Use SERP research to INFORM your content strategy: identify gaps, understand what readers actually need, discover best-performing keywords.
+- **NEVER publish "SERP analysis" sections** like "SERP reality check" or "what ranks and what it implies" in the published article.
+- **NEVER publish raw research notes** about search rankings, competitor analysis, or keyword research.
+- Use insights from SERP research to:
+  - Focus on questions/topics that aren't well-covered elsewhere
+  - Include keywords naturally in headings and content
+  - Structure content to answer real user intent from search results
+  - Reference top-ranking content where relevant (with inline citations)
+- All SERP research is INTERNAL USE ONLY and must remain invisible in published content.
+
+Product feature accuracy rule (Pimms):
+
+- Before claiming product features, check current app/docs in repo (apps/site content or apps/web if available).
+- Only mention features that are confirmed in-repo. If unsure, omit or mark as "coming soon" only if explicitly listed.
+- Current confirmed features to prefer mentioning:
+  - Tracking via thank-you page
+  - Link magnet feature
+  - UTM improvements: UTM templates, UTM params, bulk UTM (treat as available)
+
+Internal note format (CRITICAL - ONLY way to add notes):
+
+- **ONLY** use MDX comments for internal notes: `{/* INTERNAL_NOTE: ... */}`
+- Notes must be short, action‑oriented, and never visible in rendered output.
+- **STRICTLY FORBIDDEN** to publish:
+  - "Last verified: YYYY-MM-DD" as raw statements
+  - "SERP reality check" or "what ranks and what it implies" sections
+  - Any research methodology or analysis process
+  - Raw keyword research or competitive analysis
+  - Any text that reads like internal documentation or planning notes
+- If you need to convey freshness, integrate dates naturally in sentences: "Google's 2026 documentation recommends..." or "As of January 2026, the latest guidance shows..."
+- If SERP research reveals gaps, address them in the content naturally—don't describe your research process.
+
+Stop condition:
+
+- If apps/site/content/\_meta/STOP exists, stop immediately.

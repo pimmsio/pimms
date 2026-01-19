@@ -2,12 +2,12 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-01-19T22:27:59.241Z"
+    "lastmod": "2026-01-21T18:22:04.832Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-01-19T22:27:59.242Z"
+    "lastmod": "2026-01-21T18:22:04.832Z"
   },
   "/articles": {
     "en": "/articles",
@@ -17,7 +17,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-01-19T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -32,7 +32,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-01-19T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -317,6 +317,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/utm-and-deep-linking-how-to-easily-unify-web-and-mobile-attribution",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
+  "/articles/utm-generator-vs-manual-tagging": {
+    "en": "/blog/utm-generator-vs-manual-tagging",
+    "lastmod": "2026-01-19T00:00:00.000Z"
+  },
+  "/articles/utm-tagging-system-that-scales-2026": {
+    "en": "/blog/utm-tagging-system-that-scales-2026",
+    "lastmod": "2026-01-19T00:00:00.000Z"
+  },
   "/articles/utm-tracking-for-organic-social-media-posts": {
     "en": "/blog/utm-tracking-for-organic-social-media-posts",
     "lastmod": "2025-09-14T00:00:00.000Z"
@@ -510,6 +518,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/solutions/marketing-tracking-attribution-clicks-leads-revenue",
     "lastmod": "2025-10-06T00:00:00.000Z",
     "fr": "/solutions/marketing-tracking-attribution-clics-leads-revenus"
+  },
+  "/landings/utm": {
+    "en": "/solutions/get-rid-of-google-sheets-for-your-utms",
+    "lastmod": "2026-01-19T00:00:00.000Z"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",

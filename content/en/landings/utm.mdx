@@ -1,0 +1,621 @@
+---
+title: Get rid of Google Sheets for your UTMs
+summary: Stop wasting hours cleaning UTM parameters. Create clean, consistent tracking links with templates and rules — then measure what works.
+publishedAt: 2026-01-19
+updatedAt: 2026-01-19
+slug: get-rid-of-google-sheets-for-your-utms
+folder: solutions
+image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
+---
+
+<Header />
+
+<Slide size="xs" noPadding noOverflow>
+  <Avatars>UTM governance for fast-moving teams</Avatars>
+
+  <Hero>
+    <H1>Get rid of Google Sheets <br />for your <Primary variant="h1">UTMs</Primary></H1>
+    <Summary>Stop wasting hours cleaning UTM data. Build clean, consistent tracking links with templates, rules, bulk creation, and branded short links — then double down on what actually works.</Summary>
+  </Hero>
+
+  <AnimatedCentered noPadding>
+    <CtaButton className="w-fit px-6">
+      <SwapRotate>Start tracking UTMs</SwapRotate>
+    </CtaButton>
+    <CtaBottomText>No credit card required</CtaBottomText>
+  </AnimatedCentered>
+
+  <BlurFade direction="top">
+    <HeroRibbon />
+  </BlurFade>
+</Slide>
+
+<Slide id="proof">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Trusted by teams who ship fast</Label>
+      <H2>More campaigns, fewer mistakes</H2>
+      <Text size="lg">
+        Fueled the success of <strong>1,730,619+</strong> marketing campaigns and trusted by <strong>36,568+</strong> marketers worldwide — because
+        templates and rules remove human error.
+      </Text>
+    </Centered>
+  </BlurFade>
+
+  <Section margin="sm">
+    <List layout="horizontal">
+      <FeatureCard variant="fancy" color="cyan">
+        <IconBox icon="link" color="cyan" />
+        <H3>UTM templates</H3>
+        <Text>Create combinations of UTM parameters and reuse them every time.</Text>
+      </FeatureCard>
+      <FeatureCard variant="fancy" color="orange">
+        <IconBox icon="rocket" color="orange" />
+        <H3>Bulk link builder</H3>
+        <Text>Generate multiple campaign links in seconds (perfect for launches and agencies).</Text>
+      </FeatureCard>
+      <FeatureCard variant="fancy" color="green">
+        <IconBox icon="chart" color="green" />
+        <H3>Campaign tracking</H3>
+        <Text>Know what’s working, cut what’s failing, and optimize ROI with clean data.</Text>
+      </FeatureCard>
+      <FeatureCard variant="fancy" color="cyan">
+        <IconBox icon="target" color="cyan" />
+        <H3>Branded domains</H3>
+        <Text>Shorter, more trustworthy links (custom domains can increase clicks by 34%).</Text>
+      </FeatureCard>
+    </List>
+  </Section>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <H3>Stop cleaning. Start <TextHighlight color="green">trusting</TextHighlight> your data.</H3>
+          <Text>Most UTM mess comes from tiny inconsistencies: <code>email</code> vs <code>Email</code>, spaces vs hyphens, a missing parameter, or a teammate copying the wrong cell.</Text>
+          <Text>UTM templates and conventions make every link follow the same playbook — automatically.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <ConversionFlipCard
+            failures={[
+              "Spreadsheet typo: utm_campaign=Spring Sale",
+              "Missing utm_medium (reporting breaks)",
+              "Reporting split: email vs Email vs e-mail",
+              "Wrong link copy/pasted into an ad",
+              "Campaign name changes mid-launch"
+            ]}
+            successes={[
+              "Template applied: newsletter_launch",
+              "Rules enforced: lowercase + hyphens",
+              "Bulk links generated (50) in one pass",
+              "Branded short link created",
+              "Campaign grouped correctly in the dashboard"
+            ]}
+          />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+:::: faq
+### Do you support QR codes and offline campaigns?
+Yes. Generate QR codes for tracked links so offline-to-online campaigns (events, print, posters) still land with the right UTM context.
+::::
+
+:::: faq
+### What if my team can’t agree on naming?
+Start small: enforce lowercase + separators, define a short list of allowed mediums/sources, and use templates for the top 5 recurring campaigns. Iterate from there.
+::::
+
+  </Section>
+</Slide>
+
+<Slide variant="secondary" id="problem">
+  <Centered>
+    <Label variant="problem">The Problem</Label>
+    <H2>Your UTM spreadsheet is <Primary>silently breaking</Primary> attribution</H2>
+  </Centered>
+
+  <Section variant="card">
+    <Text size="lg">Spreadsheets help you “store” UTMs — but they don’t enforce consistency. That’s why teams lose hours fixing dashboards after the campaign shipped.</Text>
+    <List>
+      <Item variant="problem"><strong>Inconsistent naming</strong> splits your analytics: <code>utm_source=linkedin</code> and <code>utm_source=LinkedIn</code> become two different sources.</Item>
+      <Item variant="problem"><strong>Manual entry causes errors</strong> (typos, missing parameters, wrong destination URL).</Item>
+      <Item variant="problem"><strong>Scaling becomes painful</strong>: the more campaigns and people, the more “cleanup work” you do after launch.</Item>
+      <Item variant="problem"><strong>Broken governance</strong>: no rules, no validation, no “allowed values”, no shared templates.</Item>
+    </List>
+  </Section>
+</Slide>
+
+<Slide id="solution">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">The Solution</Label>
+      <H2>A <Primary>UTM system</Primary> you can trust</H2>
+      <Text size="lg">Templates + conventions + short links + dashboards — built for teams.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <H3>Create UTMs in <TextHighlight color="green">seconds</TextHighlight> with templates</H3>
+          <Text>Create combinations of UTM parameters once. Reuse them for every launch, newsletter, partner drop, or ad set.</Text>
+          <Text>Build in bulk (paste many URLs or import CSV) and apply one or multiple templates at once.</Text>
+          <Text>Bonus: auto-generate QR codes and attach extra attributes to each link without bloating the URL.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <Referer />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <H3>Enforce naming rules with <TextHighlight color="blue">UTM conventions</TextHighlight></H3>
+          <Text>Lock formats (lowercase, separators, forbidden characters), require key parameters, and keep your team consistent.</Text>
+          <Text>Require, lock, hide, and validate specific parameters so nobody can “free-style” your taxonomy.</Text>
+          <Text>Use dynamic variables populated from attributes (or a dynamic library) to add richer context to reporting.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <ConversionFlipCard
+            failures={["New teammate creates utm_medium=Social", "Spaces in campaigns (Spring Launch)", "Random abbreviations (li / linkedin / lnkdn)"]}
+            successes={["Allowed values only (dropdown)", "Auto-normalized naming", "Same conventions across the whole workspace"]}
+            duration="18s"
+          />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <H3>Short, branded links that <TextHighlight color="orange">get clicked</TextHighlight></H3>
+          <Text>Shorten long UTM URLs with your own domain so links look professional and stay readable.</Text>
+          <Text>Share tracked links everywhere — emails, posts, ads, and QR codes — without the “ugly URL” problem.</Text>
+          <Text>And when a destination changes mid-campaign, update it behind the short link instead of resharing everywhere.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <ConversionFlipCard
+            failures={[
+              "Long URL breaks in email clients",
+              "UTM URL looks spammy in social posts",
+              "Campaign link changes (needs resharing)",
+              "QR code points to the wrong destination"
+            ]}
+            successes={[
+              "Branded short link (your domain)",
+              "QR generated automatically",
+              "Destination updated behind the short link",
+              "Clean link shared everywhere"
+            ]}
+            duration="18s"
+          />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <H3>Build links from anywhere with the <TextHighlight color="green">Chrome extension</TextHighlight></H3>
+          <Text>Generate UTMs without leaving your browser. Pick values from your workspace and keep everything consistent.</Text>
+          <Text>Perfect for fast-moving teams who publish content daily.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <HeroRibbon />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <H3>Works with your analytics stack</H3>
+          <Text>Measure campaign performance in Google Analytics, Mixpanel, Kissmetrics, Amplitude — or any analytics tool that reads UTMs.</Text>
+          <Text>Because the real win isn’t “more links”… it’s reliable, decision-grade attribution.</Text>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" delay={0.2} inView>
+          <Referer />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+</Slide>
+
+<Slide variant="secondary" id="explore">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Everything you need for UTMs</Label>
+      <H2>One workflow, five building blocks</H2>
+      <Text size="lg">Templates, conventions, a builder, a shortener, and campaign tracking — designed to work together.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+    <Section variant="card" background="grid">
+      <List layout="horizontal">
+        <FeatureCard variant="fancy" color="cyan">
+          <IconBox icon="link" color="cyan" />
+          <H3>Link Builder</H3>
+          <Text>Pick values quickly, attach attributes, auto-generate QR codes, and build links without manual typing.</Text>
+        </FeatureCard>
+        <FeatureCard variant="fancy" color="orange">
+          <IconBox icon="rocket" color="orange" />
+          <H3>Bulk Builder</H3>
+          <Text>Paste many URLs (or import CSV), apply one or multiple templates, and generate dozens of links in seconds.</Text>
+        </FeatureCard>
+        <FeatureCard variant="fancy" color="green">
+          <IconBox icon="users" color="green" />
+          <H3>Templates</H3>
+          <Text>Save your common UTM combinations and reuse them across campaigns and teammates.</Text>
+        </FeatureCard>
+        <FeatureCard variant="fancy" color="cyan">
+          <IconBox icon="target" color="cyan" />
+          <H3>Conventions</H3>
+          <Text>Require, lock, hide, and validate parameters so everyone follows the same taxonomy.</Text>
+        </FeatureCard>
+        <FeatureCard variant="fancy" color="orange">
+          <IconBox icon="globe" color="orange" />
+          <H3>Branded Short Links</H3>
+          <Text>Use your domain for clean, trustworthy links — and update destinations without resharing.</Text>
+        </FeatureCard>
+        <FeatureCard variant="fancy" color="green">
+          <IconBox icon="chart" color="green" />
+          <H3>Campaign Tracking</H3>
+          <Text>Reliable UTMs = reliable reporting. Know what’s working and scale with confidence.</Text>
+        </FeatureCard>
+      </List>
+    </Section>
+  </Section>
+</Slide>
+
+<Slide id="playbook">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">The UTM playbook</Label>
+      <H2>How teams stop the mess (for good)</H2>
+      <Text size="lg">UTM success isn’t “more tracking”. It’s governance + speed + repeatability.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section variant="card">
+    <Steps>
+      <Step number={1}>
+        <strong>Define your taxonomy once.</strong> Decide what “source”, “medium”, and “campaign” mean in your org. Keep it simple. Consistency beats
+        perfection.
+      </Step>
+      <Step number={2}>
+        <strong>Turn it into templates.</strong> Create reusable combinations of parameters (and attributes) for newsletters, paid social, partners,
+        affiliates, and launches.
+      </Step>
+      <Step number={3}>
+        <strong>Add conventions and rules.</strong> Enforce lowercase, separators, allowed values, and required parameters. Lock fields that should never
+        change.
+      </Step>
+      <Step number={4}>
+        <strong>Scale with bulk creation + extension.</strong> Bulk-create tracked links for every destination URL (or import CSV). Use the Chrome
+        extension to build links without context-switching.
+      </Step>
+      <Step number={5}>
+        <strong>Analyze and double down.</strong> Once UTMs are consistent, reporting becomes obvious: what to scale, what to kill, and where you’re
+        wasting spend.
+      </Step>
+    </Steps>
+  </Section>
+</Slide>
+
+<Slide variant="secondary" id="examples">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Examples</Label>
+      <H2>What “clean UTMs” look like</H2>
+      <Text size="lg">Use this as inspiration for your own convention (lowercase + hyphens + consistent meaning).</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section variant="card">
+    <H3>Example taxonomy</H3>
+    <List>
+      <Item>Use <strong>lowercase</strong> everywhere.</Item>
+      <Item>Use <strong>hyphens</strong> instead of spaces.</Item>
+      <Item>Keep <strong>utm_campaign</strong> stable (it’s your roll-up), use <strong>utm_content</strong> for creatives/variants.</Item>
+      <Item>Don’t invent new “mediums” every week — enforce allowed values.</Item>
+    </List>
+
+```txt
+Destination:
+https://pimms.io/solutions/utm-link-builder
+
+UTM (clean + consistent):
+utm_source=linkedin
+utm_medium=organic
+utm_campaign=utm-system-launch
+utm_content=post-1
+
+Another example (newsletter):
+utm_source=beehiiv
+utm_medium=email
+utm_campaign=utm-system-launch
+utm_content=issue-47
+```
+  </Section>
+</Slide>
+
+<Slide id="spreadsheet-vs-system">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Spreadsheet vs UTM System</Label>
+      <H2>Same work, wildly different outcomes</H2>
+      <Text size="lg">The difference is enforcement and reuse.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <Label variant="problem">Spreadsheet workflow</Label>
+          <H3>Looks fine… until you scale</H3>
+          <List>
+            <Item variant="problem">Copy/paste + manual typing for every link</Item>
+            <Item variant="problem">Naming depends on memory and “tribal knowledge”</Item>
+            <Item variant="problem">Bulk launches become a bottleneck</Item>
+            <Item variant="problem">Destination changes require resharing</Item>
+            <Item variant="problem">Reporting needs cleanup (split sources/mediums)</Item>
+          </List>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="text">
+        <BlurFade direction="right" delay={0.2} inView>
+          <Label variant="default">UTM system workflow</Label>
+          <H3>Clean by default</H3>
+          <List>
+            <Item>Pick values + apply templates (fast)</Item>
+            <Item>Rules enforce naming (reliable)</Item>
+            <Item>Bulk builder + extension (scales)</Item>
+            <Item>Update destination behind the short link</Item>
+            <Item>Reporting rolls up correctly without cleanup</Item>
+          </List>
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+
+  <Section>
+    <Quote>Your UTMs are only as good as your <strong>governance</strong>. When conventions and templates exist, speed and accuracy come for free.</Quote>
+  </Section>
+</Slide>
+
+<Slide id="how-it-works">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>From spreadsheet chaos to clean UTMs — <Primary icon="minutes">in minutes</Primary></H2>
+      <Text size="lg">Set it once. Reuse forever.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section variant="card" background="grid">
+    <List layout="horizontal">
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard variant="fancy" color="cyan">
+          <IconBox icon="link" color="cyan" />
+          <H3>Create templates</H3>
+          <Text>Save your usual source/medium/campaign patterns once — and stop retyping them.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard variant="fancy" color="orange">
+          <IconBox icon="users" color="orange" />
+          <H3>Enforce rules</H3>
+          <Text>Keep UTMs consistent across the team with conventions, required fields, and allowed values.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard variant="fancy" color="green">
+          <IconBox icon="rocket" color="green" />
+          <H3>Launch faster</H3>
+          <Text>Bulk-generate tracked links for ads, posts, emails, and partners in one go.</Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.4} inView>
+        <FeatureCard variant="fancy" color="cyan">
+          <IconBox icon="chart" color="cyan" />
+          <H3>Measure what works</H3>
+          <Text>Filter by source, medium, campaign, term, and content — and double down on winners.</Text>
+        </FeatureCard>
+      </BlurFade>
+    </List>
+  </Section>
+</Slide>
+
+<Slide variant="secondary" id="pricing">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Fair <Primary icon="pricing">Pricing</Primary></H2>
+      <Text size="lg">Start for free. Upgrade when you scale campaigns and team usage.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+    <InlinePricing
+      currency="EUR"
+      locale="en"
+      selectAriaLabel="Select a plan"
+      planOptions={{
+        pro: {
+          label: "Pro plan",
+          description: "For founders and marketers who want clean UTMs, branded links, and reliable campaign reporting."
+        },
+        business: {
+          label: "Business plan",
+          description: "For teams and agencies that need higher volume, collaboration, and longer analytics retention."
+        }
+      }}
+      includedInPlanTitle={
+        <>
+          Included in the <InlinePricingPlanName className="capitalize" /> plan
+        </>
+      }
+      includedInPlan={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="links" /> new links/month
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="clicks" /> events tracked/month
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="folders" /> extra folders
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="domains" /> custom domains
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="users" /> team members
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanRetention map={{ "1-year": "1 year", "2-year": "2 years" }} /> analytics retention
+          </InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>
+            <InlinePricingPlanLimit limit="utmTemplates" /> UTM templates
+          </InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      includedInAllPaidTitle="Included in all paid plans"
+      includedInAllPaid={
+        <InlinePricingFeatureList>
+          <InlinePricingFeatureItem>Bulk (limited)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Custom QR code</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Advanced link options</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>UTM rules, groupings & templates</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
+        </InlinePricingFeatureList>
+      }
+      optionsCopy={{
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline"
+          },
+          right: {
+            period: "lifetime",
+            title: "Lifetime",
+            periodLabel: "",
+            badge: "Most popular",
+            helperTop: "One-time payment",
+            ctaLabel: <SwapRotate>Unlock lifetime access</SwapRotate>,
+            ctaVariant: "default"
+          }
+        },
+        business: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline"
+          },
+          right: {
+            period: "yearly",
+            title: "Yearly",
+            periodLabel: "/year",
+            badge: "2 months free",
+            helperTop: (
+              <>
+                <span className="line-through">€69/month</span> <span className="text-blue-600">2 months free</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "default"
+          }
+        }
+      }}
+    />
+  </Section>
+</Slide>
+
+<Slide variant="secondary" id="free">
+  <Section variant="card">
+    <Centered>
+      <H2>Ship campaigns faster</H2>
+      <Text>Replace spreadsheet chaos with templates and rules — and get clean UTMs by default.</Text>
+      <CtaButton>
+        <SwapRotate>Start for free</SwapRotate>
+      </CtaButton>
+      <CtaBottomText>Free smart links included • No credit card</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
+  </Section>
+</Slide>
+
+<Slide>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Curated <Primary icon="questions">Questions</Primary></H2>
+      <Text size="lg">Everything you need to know before you ditch the spreadsheet.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+
+::: faq
+### Do I still need Google Sheets for UTMs?
+No. Use templates for speed, and conventions for governance (case, separators, allowed values, required fields). You keep consistency even when many people create links.
+:::
+
+::: faq
+### What’s the best practice for UTM naming?
+Pick a taxonomy once (source, medium, campaign), keep it consistent (lowercase, hyphens), and prevent “free-form” naming. Consistency matters more than perfection.
+:::
+
+::: faq
+### Can I create UTMs in bulk?
+Yes. Apply one or multiple templates across a list of destination URLs to generate many tracked links at once — perfect for product launches and agency work.
+:::
+
+::: faq
+### Can I keep my current analytics tools?
+Yes. UTMs are compatible with Google Analytics and most analytics stacks. PIMMS helps you create clean UTMs and track performance without spreadsheet cleanup.
+:::
+
+  </Section>
+</Slide>
+
+<Slide variant="secondary" size="xs" noPadding>
+  <h2 className="sr-only">Partner Logos</h2>
+  <BlurFade direction="up" inView>
+    <LogosCircle />
+  </BlurFade>
+</Slide>
+
+<Footer />
+

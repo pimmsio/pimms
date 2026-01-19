@@ -43,12 +43,14 @@ https://pim.ms/brevo-form
 C’est l’URL de redirection Brevo après un envoi de formulaire ou une réservation. Ça permet à Pimms d’enregistrer la conversion et de l’attribuer au lien d’entrée.
 
 1. Va sur ton [dashboard Pimms](https://app.pimms.io)
-2. Crée un lien court dont la clé se termine par `/thankyou`
+2. Crée un lien court, puis ajoute `/thankyou` **juste après la clé générée**
 3. Choisis **n’importe quelle** page de remerciement comme destination
+
+Par exemple, si Pimms génère `x9ezAc`, utilise `x9ezAc/thankyou` (pas `thankyou` tout seul).
 
 **Exemple** :
 ```
-https://pim.ms/abc/thankyou
+https://pim.ms/x9ezAc/thankyou
 ```
 
 Astuce : tu peux utiliser le même lien thank-you pour Forms et Meetings, ou en créer un par flow.
@@ -60,9 +62,16 @@ Tu configures les webhooks dans :
 
 ### Webhook URL
 
-Utilise ce format :
+Utilise **deux URL de webhook différentes** (une pour Meetings, une pour Forms) :
+
+Meetings :
 ```
-https://app.pimms.io/api/webhook/brevo?workspace_id=your-id
+https://app.pimms.io/api/webhook/brevo?workspace_id=your-id&type=meeting
+```
+
+Forms :
+```
+https://app.pimms.io/api/webhook/brevo?workspace_id=your-id&type=form
 ```
 
 Remplace `your-id` par ton Workspace ID de l’étape 1.
@@ -77,7 +86,7 @@ Dans la configuration du webhook Brevo, colle ton **Workspace ID** dans le champ
 2. Puis **Integrations → Webhooks**
 3. Crée un webhook :
    - **Name** : ce que tu veux
-   - **URL** : l’URL webhook Pimms (ci-dessus)
+   - **URL** : l’URL webhook Pimms Brevo Meetings (ci-dessus)
    - **Authentication token** : ton Workspace ID
    - **Marketing events** : Meetings → active **uniquement** **Meeting booked**
 
@@ -87,7 +96,7 @@ Dans la configuration du webhook Brevo, colle ton **Workspace ID** dans le champ
 2. Puis **Integrations → Webhooks**
 3. Crée un webhook :
    - **Name** : ce que tu veux
-   - **URL** : l’URL webhook Pimms (ci-dessus)
+   - **URL** : l’URL webhook Pimms Brevo Forms (ci-dessus)
    - **Authentication token** : ton Workspace ID
    - **Marketing events** : Forms → active **uniquement** **Form submitted**
 
