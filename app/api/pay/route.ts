@@ -26,11 +26,6 @@ export async function GET(request: NextRequest) {
     return new Response("Missing plan or period", { status: 400 });
   }
 
-  const priceId = getPriceIdForCheckout({ plan, period: period as any });
-  if (!priceId) {
-    return new Response("Invalid plan/period", { status: 400 });
-  }
-
   const apiKey = process.env.STRIPE_SECRET_KEY;
   if (!apiKey) {
     return new Response("STRIPE_SECRET_KEY is not set", { status: 500 });
@@ -39,6 +34,15 @@ export async function GET(request: NextRequest) {
   const stripe = new Stripe(apiKey, {
     // Use Stripe SDK default API version (kept in sync by the installed Stripe package types).
   });
+
+  const priceId = await getPriceIdForCheckout({
+    plan,
+    period: period as any,
+    stripe
+  });
+  if (!priceId) {
+    return new Response(`Price not found for ${plan}_${period}`, { status: 404 });
+  }
 
   const isLifetime = period === "lifetime";
 
@@ -51,6 +55,7 @@ export async function GET(request: NextRequest) {
     success_url: `${request.nextUrl.origin}/?checkout=success`,
     cancel_url: `${request.nextUrl.origin}${request.nextUrl.pathname.replace(/\/api\/pay$/, "")}`,
     ...(clickId ? { client_reference_id: `pimms_id_${clickId}` } : {}),
+    ...(isLifetime ? { customer_creation: "always" } : {})
   });
 
   if (!session.url) {

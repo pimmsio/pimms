@@ -1,3 +1,5 @@
+import Stripe from "stripe";
+
 export type PlanFeature = {
   id?: string;
   text: string;
@@ -74,8 +76,12 @@ export const PLANS: Plan[] = [
     price: {
       monthly: 19,
       lifetime: 129,
-      // Pro: [monthly, lifetime]
-      ids: ["price_1SQBYHBN5sOoOmBUxCM8iTy8", "price_1SQBYHBN5sOoOmBUs2reZG2N"]
+      ids: [
+        "price_1SQBYHBN5sOoOmBUxCM8iTy8", // prod monthly
+        "price_1SQBYHBN5sOoOmBUs2reZG2N", // prod lifetime
+        "price_1SshGGBL7DFxjjSQ50AZD1Ta", // staging monthly
+        "price_1SshGGBL7DFxjjSQY8rBy8K7" // staging lifetime
+      ]
     },
     limits: {
       links: 500,
@@ -109,8 +115,12 @@ export const PLANS: Plan[] = [
     price: {
       monthly: 69,
       yearly: 690,
-      // Business: [monthly, yearly]
-      ids: ["price_1SQBqRBN5sOoOmBUMXE1IUA8", "price_1SQBqRBN5sOoOmBUkOtzh1lV"]
+      ids: [
+        "price_1SQBqRBN5sOoOmBUMXE1IUA8", // prod monthly
+        "price_1SQBqRBN5sOoOmBUkOtzh1lV", // prod yearly
+        "price_1SshGgBL7DFxjjSQoiz9zKmZ", // staging monthly
+        "price_1SshH5BL7DFxjjSQUthdqQQY" // staging yearly
+      ]
     },
     limits: {
       links: 2000,
@@ -159,23 +169,31 @@ export function getCurrentPlan(plan: string) {
   return PLANS.find((p) => p.name.toLowerCase() === plan) || FREE_PLAN;
 }
 
-export function getPriceIdForCheckout({
+export async function getPriceIdForCheckout({
   plan,
-  period
+  period,
+  stripe
 }: {
   plan: PaidPlanId;
   period: Exclude<BillingPeriod, "yearly"> | "yearly";
+  stripe: Stripe;
 }) {
-  const p = getPlanDetails(plan);
-
-  if (plan === "pro") {
-    if (period === "monthly") return p.price.ids?.[0] ?? null;
-    if (period === "lifetime") return p.price.ids?.[1] ?? null;
+  if (!plan || !period) {
     return null;
   }
 
-  // business
-  if (period === "monthly") return p.price.ids?.[0] ?? null;
-  if (period === "yearly") return p.price.ids?.[1] ?? null;
-  return null;
+  // Normalize plan name (replace spaces with +)
+  const normalizedPlan = plan.replace(/\s+/g, "+");
+  const lookupKey = `${normalizedPlan}_${period}`;
+
+  // Use Stripe lookup_keys to find the price dynamically
+  const prices = await stripe.prices.list({
+    lookup_keys: [lookupKey]
+  });
+
+  if (!prices.data || prices.data.length === 0) {
+    return null;
+  }
+
+  return prices.data[0].id;
 }
