@@ -1,6 +1,7 @@
 export default {
   plugins: {
     "@tailwindcss/postcss": {},
+    "@csstools/postcss-oklab-function": { preserve: true },
     // Add CSS optimization for production
     ...(process.env.NODE_ENV === "production" && {
       cssnano: {
