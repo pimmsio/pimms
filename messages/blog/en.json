@@ -3,7 +3,8 @@
     "nav": {
       "dashboard": "Sign in",
       "solutions": "Solutions",
-      "articles": "Articles"
+      "articles": "Articles",
+      "contact": "Contact Sales"
     },
     "cta": {
       "headline": "Turn more clicks into revenue",

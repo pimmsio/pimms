@@ -1,5 +1,6 @@
 import { AvatarFunnelEvents } from "./AvatarFunnelEvents";
 import { WEB_URL } from "../../app/constants";
+import { getTranslations } from "next-intl/server";
 
 type Props = {
   seedNonce: string;
@@ -33,7 +34,10 @@ async function fetchAvatarFunnelSvg(seedNonce: string): Promise<string | null> {
 }
 
 export default async function AvatarFunnel({ seedNonce }: Props) {
-  const svgContent = await fetchAvatarFunnelSvg(seedNonce);
+  const [svgContent, t] = await Promise.all([
+    fetchAvatarFunnelSvg(seedNonce),
+    getTranslations("landing.funnel.event")
+  ]);
 
   if (!svgContent) {
     return (
@@ -43,11 +47,18 @@ export default async function AvatarFunnel({ seedNonce }: Props) {
     );
   }
 
+  const events = [
+    { label: t("meeting_booked"), iconKey: "calendar" as const },
+    { label: t("subscriber"), iconKey: "mail" as const },
+    { label: t("lead"), iconKey: "user" as const },
+    { label: t("follower"), iconKey: "user" as const }
+  ];
+
   return (
     <div className="w-full grid place-items-center" aria-hidden="true" data-nosnippet>
       <div className="relative w-full sm:w-11/12">
         <div className="w-full h-auto" dangerouslySetInnerHTML={{ __html: svgContent }} />
-        <AvatarFunnelEvents />
+        <AvatarFunnelEvents events={events} />
       </div>
     </div>
   );

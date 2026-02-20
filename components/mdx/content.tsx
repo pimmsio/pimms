@@ -417,7 +417,7 @@ export const Section = ({
     if (variant === "branded") {
       return "rounded-3xl border border-brand-primary/20 px-2 py-8 sm:p-8 lg:p-12 mb-16";
     }
-    return `${marginClasses[margin]} ${noPadding ? "p-0 m-0" : "py-8 mb-0"}`;
+    return `${marginClasses[margin]} ${noPadding ? "p-0 m-0" : "space-y-16 py-8 px-4 md:px-6 mb-0"}`;
   };
 
   const widthClasses = {

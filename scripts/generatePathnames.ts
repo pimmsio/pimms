@@ -11,8 +11,9 @@ async function generatePathnames() {
   const latestByCategory: Record<string, Date> = {};
   const latestByAuthor: Record<string, Date> = {};
   let latestArticleDate = new Date(0);
+  let latestOverallDate = new Date(0);
 
-  // 1. Start by adding static basePathnames
+  // 1. Start by adding static basePathnames (lastmod is set in step 4)
   for (const sharedKey in basePathnames) {
     result[sharedKey] = {};
 
@@ -20,9 +21,6 @@ async function generatePathnames() {
       const baseEntry = basePathnames[sharedKey as keyof typeof basePathnames];
       result[sharedKey][locale] = (baseEntry as Record<string, string>)?.[locale] || sharedKey;
     }
-
-    // Default lastmod (can be overwritten later)
-    result[sharedKey]["lastmod"] = new Date().toISOString();
   }
 
   // 2. Add dynamic pages (blog, guides, tutorials)
@@ -42,28 +40,25 @@ async function generatePathnames() {
       }
 
       result[sharedKey][locale] = localizedPath;
-      result[sharedKey]["lastmod"] = page.metadata.updatedAt
-        ? new Date(page.metadata.updatedAt).toISOString()
-        : new Date().toISOString();
 
-      // Track latest article date
-      const updatedAt = page.metadata.updatedAt ? new Date(page.metadata.updatedAt) : new Date();
-      if (updatedAt > latestArticleDate) {
-        latestArticleDate = updatedAt;
-      }
+      const updatedAt = page.metadata.updatedAt ? new Date(page.metadata.updatedAt) : null;
+      if (updatedAt) {
+        result[sharedKey]["lastmod"] = updatedAt.toISOString();
+        if (updatedAt > latestArticleDate) latestArticleDate = updatedAt;
+        if (updatedAt > latestOverallDate) latestOverallDate = updatedAt;
 
-      // Track latest per category
-      for (const cat of page.metadata.categories) {
-        if (!latestByCategory[cat] || updatedAt > latestByCategory[cat]) {
-          latestByCategory[cat] = updatedAt;
+        for (const cat of page.metadata.categories) {
+          if (!latestByCategory[cat] || updatedAt > latestByCategory[cat]) {
+            latestByCategory[cat] = updatedAt;
+          }
         }
-      }
 
-      // Track latest per author
-      const author = page.metadata.author;
-      if (author) {
-        if (!latestByAuthor[author] || updatedAt > latestByAuthor[author]) {
-          latestByAuthor[author] = updatedAt;
+        // Track latest per author
+        const author = page.metadata.author;
+        if (author) {
+          if (!latestByAuthor[author] || updatedAt > latestByAuthor[author]) {
+            latestByAuthor[author] = updatedAt;
+          }
         }
       }
     }
@@ -96,34 +91,44 @@ async function generatePathnames() {
       }
 
       result[sharedKey][locale] = localizedPath;
-      result[sharedKey]["lastmod"] = page.metadata.updatedAt
-        ? new Date(page.metadata.updatedAt).toISOString()
-        : new Date().toISOString();
+      const landingUpdatedAt = page.metadata.updatedAt ? new Date(page.metadata.updatedAt) : null;
+      if (landingUpdatedAt) {
+        result[sharedKey]["lastmod"] = landingUpdatedAt.toISOString();
+        if (landingUpdatedAt > latestOverallDate) latestOverallDate = landingUpdatedAt;
+      }
     }
   }
 
-  // 4. Patch lastmod for special routes
+  // 4. Patch lastmod for special routes and fill missing lastmod
   for (const sharedKey in result) {
-    // Articles root
     if (sharedKey === "/articles") {
       result[sharedKey]["lastmod"] = latestArticleDate.toISOString();
       continue;
     }
 
-    // Category pages
     if (sharedKey.startsWith("/articles/category/")) {
       const cat = sharedKey.split("/").pop();
       if (cat && latestByCategory[cat]) {
         result[sharedKey]["lastmod"] = latestByCategory[cat].toISOString();
+      } else if (latestArticleDate.getTime() > 0) {
+        result[sharedKey]["lastmod"] = latestArticleDate.toISOString();
       }
+      continue;
     }
 
-    // Author pages
     if (sharedKey.startsWith("/articles/author/")) {
       const author = sharedKey.split("/").pop();
       if (author && latestByAuthor[author]) {
         result[sharedKey]["lastmod"] = latestByAuthor[author].toISOString();
+      } else if (latestArticleDate.getTime() > 0) {
+        result[sharedKey]["lastmod"] = latestArticleDate.toISOString();
       }
+      continue;
+    }
+
+    // Static routes without lastmod inherit the latest overall content date
+    if (!result[sharedKey]["lastmod"] && latestOverallDate.getTime() > 0) {
+      result[sharedKey]["lastmod"] = latestOverallDate.toISOString();
     }
   }
 

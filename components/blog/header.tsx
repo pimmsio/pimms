@@ -23,6 +23,14 @@ export default async function BlogHeader({ locale }: { locale: string }) {
               {t("articles")}
             </Button>
           </Link>
+          <Link href={getCanonicalLink(locale, "/landings/contact-sales")}>
+            <Button
+              variant="link"
+              className="text-xs sm:text-sm font-medium text-gray-600 hover:text-gray-900 px-2 sm:px-3"
+            >
+              {t("contact")}
+            </Button>
+          </Link>
           <Link href={`${APP_URL}/login`}>
             <Button
               variant="link"

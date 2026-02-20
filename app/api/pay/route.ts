@@ -13,6 +13,7 @@ export async function GET(request: NextRequest) {
   const id = searchParams.get("id");
   const plan = searchParams.get("plan") as PaidPlanId | null;
   const period = searchParams.get("period") as BillingPeriod | null;
+  const currency = searchParams.get("currency") ?? "eur";
 
   const clickId = pimmsId || dclid;
 
@@ -38,10 +39,11 @@ export async function GET(request: NextRequest) {
   const priceId = await getPriceIdForCheckout({
     plan,
     period: period as any,
+    currency,
     stripe
   });
   if (!priceId) {
-    return new Response(`Price not found for ${plan}_${period}`, { status: 404 });
+    return new Response(`Price not found for ${plan}_${period}_${currency}`, { status: 404 });
   }
 
   const isLifetime = period === "lifetime";

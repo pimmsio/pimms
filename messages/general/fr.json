@@ -15,9 +15,21 @@
       "category": {
         "help": "Aide",
         "solutions": "Solutions",
+        "usecases": "Cas d'usage",
         "resources": "Ressources",
         "alternatives": "Alternatives",
-        "freetools": "Outils gratuits"
+        "compare": "Comparer",
+        "integrations": "Intégrations",
+        "freetools": "Outils gratuits",
+        "company": "Entreprise",
+        "legal": "Légal"
+      },
+      "usecases": {
+        "tracking": "Tracking & Attribution",
+        "landing-page": "Suivi de landing pages",
+        "linkedin": "Analytics LinkedIn",
+        "youtube": "Suivi YouTube",
+        "systemeio": "Funnels Systeme.io"
       },
       "solutions": {
         "youtube": "Créateurs de contenu YouTube",
@@ -25,10 +37,28 @@
         "ab-testing": "Optimisation A/B Testing"
       },
       "alternatives": {
-        "bitly": "Alternatives à Bitly"
+        "bitly": "PIMMS vs Bitly",
+        "dubco": "PIMMS vs Dub.co",
+        "rebrandly": "PIMMS vs Rebrandly",
+        "short-io": "PIMMS vs Short.io",
+        "linktree": "PIMMS vs Linktree",
+        "tinyurl": "PIMMS vs TinyURL",
+        "switchy": "PIMMS vs Switchy",
+        "pixelme": "PIMMS vs PixelMe",
+        "blink": "PIMMS vs BL.INK",
+        "sniply": "PIMMS vs Sniply",
+        "prettylinks": "PIMMS vs Pretty Links",
+        "cuttly": "PIMMS vs Cutt.ly",
+        "tly": "PIMMS vs T.ly",
+        "replug": "PIMMS vs Replug",
+        "taapit": "PIMMS vs Taap.it"
       },
       "freetools": {
-        "site-checker": "Scan Site PIMMS (tag)"
+        "site-checker": "Scan Site PIMMS"
+      },
+      "company": {
+        "pricing": "Tarifs",
+        "contact-sales": "Nous contacter"
       },
       "resources": {
         "blog": "Blog",
@@ -37,7 +67,7 @@
         "api": "Documentation API",
         "sdk-ts": "SDK TypeScript"
       },
-      "copyright": "© 2025 PIMMS"
+      "copyright": "© 2026 PIMMS"
     },
     "hero_ribbon": {
       "loading": "Chargement de l'animation...",

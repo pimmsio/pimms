@@ -143,6 +143,28 @@ import { ComparisonContainer, ComparisonHeader, ComparisonRow } from "@/componen
 import AvatarFunnel from "../../../../../components/landings/AvatarFunnel";
 import HeroRibbon from "../../../../../components/landings/HeroRibbon";
 import { SwapRotate } from "../../../../../components/magicui/swap-rotate";
+import { H1 as BaseH1, H1Subtitle } from "@/components/base/h1";
+import {
+  CompareTable,
+  CompareCategory,
+  CompareFeatureValue,
+  CompareFeatureCheck,
+  CompareFeatureSupport
+} from "@/components/pricing/CompareTable";
+import { CurrencyToggle } from "@/components/pricing/CurrencyToggle";
+import {
+  PricingHero,
+  PricingPlanTabs,
+  PricingPlanTab,
+  PricingPlanPanel,
+  PricingPlanDescription,
+  PricingPlanCards,
+  PricingPlanFeatureListTitle,
+  PricingPlanFeatureList,
+  PricingPlanFeature
+} from "@/components/pricing/pricing-hero";
+import { ContactSalesForm } from "@/components/contact-sales/ContactSalesForm";
+import { CheckList, CheckListItem } from "@/components/contact-sales/CheckList";
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
   const { slug, locale } = await params;
@@ -200,6 +222,26 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       Section,
       Header,
       Footer: () => <Footer showRef={true} showApps={true} />,
+      H1: BaseH1,
+      H1Subtitle,
+      CurrencyToggle,
+      PricingHero: (props: React.ComponentProps<typeof PricingHero>) => <PricingHero locale={locale} {...props} />,
+      PricingPlanTabs,
+      PricingPlanTab,
+      PricingPlanPanel,
+      PricingPlanDescription,
+      PricingPlanCards,
+      PricingPlanFeatureListTitle,
+      PricingPlanFeatureList,
+      PricingPlanFeature,
+      CompareTable: (props: React.ComponentProps<typeof CompareTable>) => <CompareTable locale={locale} {...props} />,
+      CompareCategory,
+      CompareFeatureValue,
+      CompareFeatureCheck,
+      CompareFeatureSupport,
+      ContactSalesForm,
+      CheckList,
+      CheckListItem,
 
       // Landing page specific components
       Avatars: ({ children }: { children?: React.ReactNode }) => {
@@ -306,8 +348,7 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
       TwoColumns,
       Column,
 
-      // Generic content components
-      H1,
+      // Generic content components (H1 from base is set above)
       H2,
       H3,
       H4,

@@ -11,7 +11,8 @@
       "features": "Features",
       "onboarding": "Onboarding",
       "dashboard": "Sign in",
-      "pricing": "Pricing"
+      "pricing": "Pricing",
+      "contact": "Contact Sales"
     },
     "conversion": {
       "fail": {

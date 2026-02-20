@@ -249,18 +249,21 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
   </BlurFade>
 
   <Section>
+    <Text size="sm" className="text-center text-muted-foreground mb-4">Comparé à Bitly, Dub.co, Rebrandly, Short.io, Linktree, TinyURL, Switchy et Replug</Text>
     <ComparisonContainer>
       <ComparisonHeader />
-      <ComparisonRow others={true} pimms={true}>Liens courts / QR codes</ComparisonRow>
-      <ComparisonRow others={true} pimms={true}>Domaines personnalisés pour une délivrabilité maximale</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Intégration webhook native Systeme.io</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Deep links pour +30% de conversions</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Attribution des ventes en temps réel</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Suivi des revenus par post, email, campagne</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Analyse des prospects & scoring IA</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Fonctionne même avec les bloqueurs de pub</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>A/B testing des emails et pages</ComparisonRow>
-      <ComparisonRow others={false} pimms={true}>Installation rapide (10 minutes)</ComparisonRow>
+      <ComparisonRow others={true} pimms={true}>Liens courts & QR codes</ComparisonRow>
+      <ComparisonRow others={true} pimms={true}>Domaines personnalisés</ComparisonRow>
+      <ComparisonRow others={true} pimms={true}>Analyse de clics basique</ComparisonRow>
+      <ComparisonRow others={true} pimms={true}>Générateur de liens UTM</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Templates UTM pro, conventions & opérations en masse</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Suivi natif des funnels Systeme.io</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Suivi des conversions Stripe & Shopify (incl. plan gratuit)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Deep links contournant les navigateurs in-app (+30% conversions)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Tracking côté serveur (anti-bloqueurs de pubs)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>Lead scoring IA & parcours client détaillé</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>10+ intégrations natives (Brevo, Cal.com, Tally, Webflow...)</ComparisonRow>
+      <ComparisonRow others={false} pimms={true}>RGPD natif, aucun cookie tiers</ComparisonRow>
     </ComparisonContainer>
   </Section>
 </Slide>
@@ -318,20 +321,30 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
   
   <Section>
     <InlinePricing
-      currency="EUR"
       locale="fr"
+      defaultPlan="tiny"
       selectAriaLabel="Sélectionner un plan"
       planOptions={{
+        tiny: {
+          label: "Offre Tiny",
+          description:
+            "Pour les créateurs solo et les side-projects qui démarrent avec les liens intelligents."
+        },
+        solo: {
+          label: "Offre Solo",
+          description:
+            "Pour créateurs et petites équipes qui veulent attribuer les conversions de leurs funnels sans complexité."
+        },
         pro: {
           label: "Offre Pro",
           description:
-            "Pour créateurs et petites équipes qui veulent attribuer les conversions de leurs funnels sans complexité.",
+            "Pour les équipes en croissance et les marketeurs qui ont besoin de plus de volume et d'analyses approfondies."
         },
         business: {
           label: "Offre Business",
           description:
-            "Pour PME et agences marketing en croissance : plus de volume, plus de data, et plus de collaboration.",
-        },
+            "Pour PME et agences marketing en croissance : plus de volume, plus de data, et plus de collaboration."
+        }
       }}
       includedInPlanTitle={
         <>
@@ -346,8 +359,8 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="clicks" /> événements trackés/mois
           </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanLimit limit="folders" /> dossiers en plus
+          <InlinePricingFeatureItem limitKey="folders">
+            <InlinePricingPlanLimit limit="folders" zeroLabel="Pas de" /> dossiers en plus
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="domains" /> domaines personnalisés
@@ -356,28 +369,28 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
             <InlinePricingPlanLimit limit="users" /> membres d’équipe
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
-            <InlinePricingPlanRetention map={{ "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
+            <InlinePricingPlanRetention map={{ "30-day": "30 jours", "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="utmTemplates" /> templates UTM
           </InlinePricingFeatureItem>
         </InlinePricingFeatureList>
       }
-      includedInAllPaidTitle="Inclus dans tous les plans payants"
+      includedInAllPaidTitle="Inclus dans tous les plans — même le gratuit"
       includedInAllPaid={
         <InlinePricingFeatureList>
-          <InlinePricingFeatureItem>100+ intégrations incl. Zapier</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Paiements Stripe</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Bulk (limité)</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>QR code personnalisé</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Options avancées de lien</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Règles UTM, groupements & templates</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Suivi des conversions & ventes (illimité)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Intégration Stripe & Shopify</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>10+ intégrations natives + 100 via Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Tracking côté serveur (anti-bloqueurs de pubs)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Deep links (contourne les navigateurs in-app)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Capture d'email & formulaires opt-in</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Constructeur de liens UTM & templates</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>RGPD natif, aucun cookie tiers</InlinePricingFeatureItem>
         </InlinePricingFeatureList>
       }
       optionsCopy={{
-        pro: {
+        tiny: {
           left: {
             period: "monthly",
             title: "Mensuel",
@@ -393,6 +406,49 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
             badge: "Le plus populaire",
             helperTop: "Paiement unique",
             ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        solo: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "À vie",
+            periodLabel: "",
+            badge: "Le plus populaire",
+            helperTop: "Paiement unique",
+            ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Annuel",
+            periodLabel: "/an",
+            badge: "2 mois offerts",
+            helperTop: (
+              <>
+                <span className="line-through">39€/mois</span>{" "}
+                <span className="text-blue-600">2 mois offerts</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
             ctaVariant: "default",
           },
         },
@@ -421,6 +477,7 @@ Avec PIMMS, tu as une vision claire. Simple. Sans complexité. Et en digital, ç
           },
         },
       }}
+      comparePlansLabel="Comparer tous les plans en détail →"
     />
   </Section>
 </Slide>
@@ -477,12 +534,17 @@ Oui. Installe le script sur chaque domaine/sous-domaine que tu contrôles pour u
 
 ::: faq
 ### Qu’est-ce qui est inclus dans le plan gratuit ?
-5 liens intelligents, 200 événements trackés/mois, 1 domaine personnalisé, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM.
+5 liens intelligents, 200 événements trackés/mois, suivi des conversions illimité (y compris Stripe & Shopify), deep links, tracking côté serveur, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM sauvegardés. Aucune carte bancaire requise. La plupart des concurrents facturent 75$/mois et plus pour des fonctionnalités que PIMMS inclut gratuitement.
+:::
+
+::: faq
+### Comment PIMMS se compare à Bitly, Dub.co ou Rebrandly ?
+Contrairement aux raccourcisseurs de liens classiques, PIMMS est une plateforme complète de suivi des conversions. Là où Bitly (10–199$/mois) et Rebrandly (8–499$/mois) ne suivent que les clics, PIMMS inclut le suivi des revenus Stripe & Shopify, le tracking de formulaires opt-in pour 10+ outils (Brevo, Cal.com, Tally, Webflow...), les deep links, le tracking côté serveur et le lead scoring IA. Dub.co propose du tracking de conversion mais seulement à partir de 75$/mois — PIMMS l'inclut dès 0€/mois.
 :::
 
 ::: faq
 ### Quels sont les plans payants ?
-Pro : 19 €/mois ou 129 € en lifetime. Business : 69 €/mois ou 690 €/an. Les plans payants augmentent les limites, les seats et le bulk.
+Tiny : 9 €/mois ou 79 € en lifetime. Solo : 19 €/mois ou 129 € en lifetime. Pro : 39 €/mois ou 390 €/an. Business : 69 €/mois ou 690 €/an. Chaque palier augmente les liens, domaines, membres d'équipe et fonctionnalités.
 :::
 
 ::: faq
