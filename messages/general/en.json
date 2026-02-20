@@ -15,9 +15,21 @@
       "category": {
         "help": "Help",
         "solutions": "Solutions",
+        "usecases": "Use Cases",
         "resources": "Resources",
         "alternatives": "Alternatives",
-        "freetools": "Free tools"
+        "compare": "Compare",
+        "integrations": "Integrations",
+        "freetools": "Free Tools",
+        "company": "Company",
+        "legal": "Legal"
+      },
+      "usecases": {
+        "tracking": "Tracking & Attribution",
+        "landing-page": "Landing Page Tracking",
+        "linkedin": "LinkedIn Analytics",
+        "youtube": "YouTube Tracking",
+        "systemeio": "Systeme.io Funnels"
       },
       "solutions": {
         "youtube": "YouTube content creators",
@@ -25,19 +37,37 @@
         "ab-testing": "A/B Testing optimization"
       },
       "alternatives": {
-        "bitly": "Bitly Alternatives"
+        "bitly": "PIMMS vs Bitly",
+        "dubco": "PIMMS vs Dub.co",
+        "rebrandly": "PIMMS vs Rebrandly",
+        "short-io": "PIMMS vs Short.io",
+        "linktree": "PIMMS vs Linktree",
+        "tinyurl": "PIMMS vs TinyURL",
+        "switchy": "PIMMS vs Switchy",
+        "pixelme": "PIMMS vs PixelMe",
+        "blink": "PIMMS vs BL.INK",
+        "sniply": "PIMMS vs Sniply",
+        "prettylinks": "PIMMS vs Pretty Links",
+        "cuttly": "PIMMS vs Cutt.ly",
+        "tly": "PIMMS vs T.ly",
+        "replug": "PIMMS vs Replug",
+        "taapit": "PIMMS vs Taap.it"
       },
       "freetools": {
-        "site-checker": "PIMMS Site Checker (tag)"
+        "site-checker": "PIMMS Site Checker"
+      },
+      "company": {
+        "pricing": "Pricing",
+        "contact-sales": "Contact Sales"
       },
       "resources": {
         "blog": "Blog",
-        "guides": "Step-by-step guides",
+        "guides": "Step-by-step Guides",
         "tutorials": "Tutorials",
         "api": "API Documentation",
         "sdk-ts": "TypeScript SDK"
       },
-      "copyright": "© 2025 PIMMS"
+      "copyright": "© 2026 PIMMS"
     },
     "hero_ribbon": {
       "loading": "Loading animation...",

@@ -274,13 +274,21 @@ And when I launch a new page, if the visitor is identified on one of my pages, t
   
   <Section>
     <InlinePricing
-      currency="EUR"
       locale="en"
       selectAriaLabel="Select a plan"
+      defaultPlan="tiny"
       planOptions={{
+        tiny: {
+          label: "Tiny plan",
+          description: "For solo creators and side-projects getting started with smart links.",
+        },
+        solo: {
+          label: "Solo plan",
+          description: "For solopreneurs, creators, and small teams tracking content performance and leads.",
+        },
         pro: {
           label: "Pro plan",
-          description: "For solopreneurs, creators, and small teams tracking content performance and leads.",
+          description: "For growing teams and marketers who need higher volume and deeper analytics.",
         },
         business: {
           label: "Business plan",
@@ -300,8 +308,8 @@ And when I launch a new page, if the visitor is identified on one of my pages, t
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="clicks" /> events tracked/month
           </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanLimit limit="folders" /> extra folders
+          <InlinePricingFeatureItem limitKey="folders">
+            <InlinePricingPlanLimit limit="folders" zeroLabel="No" /> extra folders
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="domains" /> custom domains
@@ -310,28 +318,28 @@ And when I launch a new page, if the visitor is identified on one of my pages, t
             <InlinePricingPlanLimit limit="users" /> team members
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
-            <InlinePricingPlanRetention map={{ "1-year": "1 year", "2-year": "2 years" }} /> analytics retention
+            <InlinePricingPlanRetention map={{ "30-day": "30 days", "1-year": "1 year", "2-year": "2 years" }} /> analytics retention
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="utmTemplates" /> UTM templates
           </InlinePricingFeatureItem>
         </InlinePricingFeatureList>
       }
-      includedInAllPaidTitle="Included in all paid plans"
+      includedInAllPaidTitle="Included in all plans — even free"
       includedInAllPaid={
         <InlinePricingFeatureList>
-          <InlinePricingFeatureItem>100+ integrations incl. Zapier</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Stripe payments</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Bulk (limited)</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Custom QR code</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Advanced link options</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>UTM rules, groupings & templates</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Conversion & sales tracking (unlimited)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Stripe & Shopify integration</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>10+ native integrations + 100 via Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Server-side tracking (ad blocker-proof)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Deep links (bypass in-app browsers)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Email capture & opt-in forms</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>UTM link builder & templates</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>GDPR-first, no third-party cookies</InlinePricingFeatureItem>
         </InlinePricingFeatureList>
       }
       optionsCopy={{
-        pro: {
+        tiny: {
           left: {
             period: "monthly",
             title: "Monthly",
@@ -347,6 +355,49 @@ And when I launch a new page, if the visitor is identified on one of my pages, t
             badge: "Most popular",
             helperTop: "One-time payment",
             ctaLabel: <SwapRotate>Unlock lifetime access</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        solo: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "Lifetime",
+            periodLabel: "",
+            badge: "Most popular",
+            helperTop: "One-time payment",
+            ctaLabel: <SwapRotate>Unlock lifetime access</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Monthly",
+            periodLabel: "/month",
+            helperTop: "Cancel anytime",
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Yearly",
+            periodLabel: "/year",
+            badge: "2 months free",
+            helperTop: (
+              <>
+                <span className="line-through">€39/month</span>{" "}
+                <span className="text-blue-600">2 months free</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>Subscribe</SwapRotate>,
             ctaVariant: "default",
           },
         },
@@ -375,6 +426,7 @@ And when I launch a new page, if the visitor is identified on one of my pages, t
           },
         },
       }}
+      comparePlansLabel="Compare all plans in detail →"
     />
   </Section>
 </Slide>
@@ -539,12 +591,12 @@ Yes. Install the script on each domain/subdomain you control to unify attributio
 
 ::: faq
 ### What’s included in the free plan?
-5 smart links, 200 tracked events/month, 1 custom domain, 30-day analytics retention, 3 UTM templates, and 10 UTM parameters.
+5 smart links, 200 tracked events/month, 30-day analytics retention, 3 UTM templates, and 10 saved UTM parameters. No credit card required.
 :::
 
 ::: faq
 ### What are the paid plans?
-Pro is €19/month or €129 lifetime. Business is €69/month or €690/year. Paid plans unlock higher limits, team seats, and bulk operations.
+Tiny is €9/month or €79 lifetime. Solo is €19/month or €129 lifetime. Pro is €39/month or €390/year. Business is €69/month or €690/year. Each tier unlocks more links, domains, team seats, and advanced features.
 :::
 
 ::: faq

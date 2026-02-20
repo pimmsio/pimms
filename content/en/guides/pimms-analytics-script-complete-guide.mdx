@@ -1,0 +1,399 @@
+---
+title: Pimms Analytics Script: Complete Reference Guide 2026
+summary: Complete reference for the @getpimms/analytics script. Learn about all CDN bundles, domain configuration, auto-detection, attribution models, cookie options, reverse proxy setup, and React/Next.js integration.
+publishedAt: 2026-02-19
+updatedAt: 2026-02-19
+slug: pimms-analytics-script-complete-reference
+image: https://assets.pimms.io/analytics-script-guide-pimms.webp?v=2
+author: alexandre
+categories:
+  - guides
+related:
+  - introducing-conversion
+  - no-code-guide-for-website
+  - setup-stripe-for-website
+---
+
+**Pimms analytics script** is a lightweight (~1kb), open-source client-side tracking library that handles conversion attribution automatically. It detects click IDs, injects tracking parameters into third-party embeds, and stores attribution cookies — all with a single script tag.
+
+This guide covers **every configuration option** available in `@getpimms/analytics`, from basic setup to advanced reverse proxy configurations for ad-blocker bypass.
+
+## 1. Quick start
+
+Add this single script tag to your site's `<head>`:
+
+```html
+<script
+  defer
+  src="https://cdn.pimms.io/analytics/script.detection.js"
+  data-domains='{"outbound": "tally.so,cal.com"}'>
+</script>
+```
+
+Replace the `outbound` domains with the third-party services you use (e.g. `tally.so`, `cal.com`, `buy.stripe.com`).
+
+**Using a custom PIMMS domain?** Add it to the list:
+
+```html
+<script
+  defer
+  src="https://cdn.pimms.io/analytics/script.detection.js"
+  data-domains='{"refer": "go.yourdomain.com", "outbound": "tally.so,cal.com"}'>
+</script>
+```
+
+## 2. Available script bundles
+
+All scripts are available via CDN at `https://cdn.pimms.io/analytics/`.
+
+| Script | Includes | Best for |
+|--------|----------|----------|
+| `script.js` | Base tracking | Minimal click tracking only |
+| `script.site-visit.js` | Base + site visits | Track anonymous site visits |
+| `script.outbound-domains.js` | Base + outbound domains | Cross-domain `pimms_id` on outbound links |
+| `script.site-visit.outbound-domains.js` | Base + site visits + outbound | Both visit tracking and outbound links |
+| **`script.detection.js`** | **Base + outbound + detect IDs + embed + thank-you** | **Recommended for most use cases** |
+| `script.expose.js` | Expose IDs only (standalone) | Sets `window.pimms_id` from cookie/URL |
+| `script.inject-form.js` | Form injection only (standalone) | Injects hidden `pimms_id` into all `<form>` elements |
+
+For most integrations, use `script.detection.js`. It gives you everything in one script tag.
+
+## 3. Domain configuration (`data-domains`)
+
+Configure domains and features via a single JSON object passed as `data-domains`:
+
+```html
+<script
+  defer
+  src="https://cdn.pimms.io/analytics/script.detection.js"
+  data-domains='{
+    "refer": "go.example.com",
+    "site": "site.example.com",
+    "outbound": "tally.so,cal.com,buy.stripe.com",
+    "embed": {
+      "attributes": ["data-tally-src", "data-cal-link"]
+    },
+    "thank-you": "https://pim.ms/your-thank-you-link"
+  }'>
+</script>
+```
+
+| Key | Type | Description |
+|-----|------|-------------|
+| `refer` | string | Your PIMMS short domain for referral click tracking (e.g. `go.example.com`) |
+| `site` | string | Your PIMMS short domain for anonymous site visit tracking |
+| `outbound` | string | Comma-separated list of third-party domains. `pimms_id` is auto-appended to all outbound `<a>` links matching these domains |
+| `embed` | object | Embed support configuration — auto-appends `pimms_id` to widget attributes |
+| `thank-you` | string | PIMMS short link to fetch on `/thanks/` pages for server-side conversion tracking |
+
+### Outbound domains
+
+When `outbound` is configured, all `<a>` links whose `href` matches one of the listed domains automatically get `?pimms_id=...` appended. This enables cross-domain tracking without manual URL changes.
+
+### Embed support
+
+The embed extension auto-appends `pimms_id` to embed widget attributes and inside `<iframe srcdoc="...">` content, for any URL matching an outbound domain.
+
+**Default target attributes:** `data-cal-link` and `data-tally-src`
+
+To add custom attributes:
+
+```html
+<script
+  defer
+  src="https://cdn.pimms.io/analytics/script.detection.js"
+  data-domains='{
+    "outbound": "tally.so,cal.com",
+    "embed": {
+      "attributes": ["data-tally-src", "data-cal-link", "data-custom-src"]
+    }
+  }'>
+</script>
+```
+
+### Thank-you page tracking
+
+When enabled, the script fires a one-time `GET` fetch to a PIMMS short link on pages under `/thanks/`. This triggers a conversion event server-side.
+
+The fetch fires once per `/thanks/*` path per browser session (deduplicated via `sessionStorage`).
+
+## 4. Automatic ID detection
+
+The detection bundle automatically replaces placeholder values in links to official integrations:
+
+| Integration | Domain pattern | What it adds |
+|------------|---------------|--------------|
+| **Cal.com** | `*.cal.com` | `pimms_id` |
+| **Stripe Checkout** | `buy.stripe.com` | `client_reference_id` |
+| **iClosed** | `*.iclosed.io` | `utm_term` |
+
+It also replaces any existing `pimms_id=1` placeholders in links with the real `pimms_id` value.
+
+### Forward to same-domain links
+
+To append `pimms_id` to all same-domain links as well:
+
+```html
+<script
+  defer
+  src="https://cdn.pimms.io/analytics/script.detection.js"
+  data-forward-all="true">
+</script>
+```
+
+## 5. Attribution model
+
+Choose which touchpoint receives conversion credit:
+
+| Model | Description |
+|-------|-------------|
+| `last-click` (default) | Credits the **last** touchpoint before conversion |
+| `first-click` | Credits the **first** touchpoint in the customer journey |
+
+```html
+<script
+  defer
+  src="https://cdn.pimms.io/analytics/script.detection.js"
+  data-attribution-model="first-click">
+</script>
+```
+
+## 6. Cookie options
+
+Customize the cookie behavior for tracking:
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| `domain` | `null` | Domain scope of the cookie (e.g. `.example.com` for cross-subdomain) |
+| `expiresInDays` | `90` | Number of days before the cookie expires |
+| `expires` | 90 days from now | Explicit expiry date |
+| `path` | `/` | URL path the cookie applies to |
+
+```html
+<script
+  defer
+  src="https://cdn.pimms.io/analytics/script.detection.js"
+  data-cookie-options='{"expiresInDays": 60}'>
+</script>
+```
+
+## 7. Anti ad-blocker: reverse proxy setup
+
+Ad-blockers may block requests to `cdn.pimms.io` or `api.pimms.io`. Set up a reverse proxy to route tracking through your own domain.
+
+### Step 1: Proxy the script
+
+Route the script through your domain so it's not blocked.
+
+**Next.js** (`next.config.js`):
+```javascript
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: "/_proxy/pimms/script.js",
+        destination: "https://cdn.pimms.io/analytics/script.detection.js",
+      },
+    ];
+  },
+};
+```
+
+**Vercel** (`vercel.json`):
+```json
+{
+  "rewrites": [
+    {
+      "source": "/_proxy/pimms/script.js",
+      "destination": "https://cdn.pimms.io/analytics/script.detection.js"
+    }
+  ]
+}
+```
+
+### Step 2: Proxy the API
+
+Route tracking API calls through your domain:
+
+**Next.js** (`next.config.js`):
+```javascript
+module.exports = {
+  async rewrites() {
+    return [
+      {
+        source: "/_proxy/pimms/script.js",
+        destination: "https://cdn.pimms.io/analytics/script.detection.js",
+      },
+      {
+        source: "/_proxy/pimms/track/:path",
+        destination: "https://api.pimms.io/track/:path",
+      },
+    ];
+  },
+};
+```
+
+**Vercel** (`vercel.json`):
+```json
+{
+  "rewrites": [
+    {
+      "source": "/_proxy/pimms/script.js",
+      "destination": "https://cdn.pimms.io/analytics/script.detection.js"
+    },
+    {
+      "source": "/_proxy/pimms/track/:path",
+      "destination": "https://api.pimms.io/track/:path"
+    }
+  ]
+}
+```
+
+### Step 3: Update the script tag
+
+Point to your proxy instead of the CDN:
+
+```html
+<script
+  defer
+  src="/_proxy/pimms/script.js"
+  data-api-host="/_proxy/pimms">
+</script>
+```
+
+## 8. React / Next.js integration
+
+Install the npm package as an alternative to the CDN script tag:
+
+```bash
+npm install @getpimms/analytics
+```
+
+**Basic setup:**
+
+```tsx
+import { Analytics as PimmsAnalytics } from "@getpimms/analytics/react";
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en">
+      <body>{children}</body>
+      <PimmsAnalytics
+        domainsConfig={{
+          refer: "go.example.com",
+          outbound: "tally.so,cal.com",
+        }}
+      />
+    </html>
+  );
+}
+```
+
+**With reverse proxy:**
+
+```tsx
+<PimmsAnalytics
+  apiHost="/_proxy/pimms"
+  scriptProps={{ src: "/_proxy/pimms/script.js" }}
+  domainsConfig={{
+    refer: "go.example.com",
+    outbound: "tally.so,cal.com",
+  }}
+/>
+```
+
+**With custom options:**
+
+```tsx
+<PimmsAnalytics
+  attributionModel="first-click"
+  cookieOptions={{ expiresInDays: 60 }}
+  domainsConfig={{
+    refer: "go.example.com",
+    outbound: "tally.so,cal.com",
+  }}
+/>
+```
+
+## 9. Standalone scripts
+
+These scripts work independently (no base tracking required):
+
+### `script.expose.js`
+
+Reads `pimms_id` from cookies or URL and exposes it as `window.pimms_id`. Useful for server-side integrations or custom tracking code.
+
+```html
+<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
+<script>
+  console.log(window.pimms_id);
+</script>
+```
+
+### `script.inject-form.js`
+
+Injects a hidden `<input name="pimms_id">` into all `<form>` elements on the page. Watches for dynamically added forms via MutationObserver.
+
+```html
+<script src="https://cdn.pimms.io/analytics/script.inject-form.js"></script>
+```
+
+Use this alongside `script.detection.js` on sites with native forms (Framer, Webflow, WordPress/Elementor) to automatically capture `pimms_id` in form submissions.
+
+## 10. Full example
+
+A complete script tag with detection, outbound domains, embed support, thank-you page, custom attribution, and cookie settings:
+
+```html
+<script
+  defer
+  src="https://cdn.pimms.io/analytics/script.detection.js"
+  data-domains='{
+    "refer": "go.example.com",
+    "site": "site.example.com",
+    "outbound": "tally.so,cal.com,buy.stripe.com",
+    "thank-you": "https://pim.ms/your-thank-you-link"
+  }'
+  data-attribution-model="last-click"
+  data-cookie-options='{"expiresInDays": 60}'
+  data-query-param="via">
+</script>
+```
+
+This single tag enables: click tracking, outbound link tracking, embed support for Tally/Cal.com, automatic ID detection for Stripe/Cal.com/iClosed, thank-you page conversion callbacks, and custom attribution settings.
+
+## FAQs
+
+::: faq
+
+### Is the Pimms analytics script open source?
+
+Yes! The script is fully open source and available on [GitHub](https://github.com/pimmsio/analytics). You can audit the code, contribute, or fork it for your own use.
+
+:::
+
+::: faq
+
+### How large is the script?
+
+The script is approximately 1kb gzipped, making it one of the lightest analytics scripts available. It has zero impact on your site's performance.
+
+:::
+
+::: faq
+
+### Does the script work with Single Page Applications (SPAs)?
+
+Yes. The script handles route changes in SPAs automatically. For React/Next.js apps, use the npm package for the best integration experience.
+
+:::
+
+::: faq
+
+### Can I use multiple script bundles together?
+
+Yes! `script.expose.js` and `script.inject-form.js` are standalone and can be used alongside `script.detection.js`. For example, use `script.detection.js` for tracking and `script.inject-form.js` for form field injection on the same page.
+
+:::
+
+<CallToAction />

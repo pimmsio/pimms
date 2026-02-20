@@ -271,20 +271,30 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
   
   <Section>
     <InlinePricing
-      currency="EUR"
       locale="fr"
+      defaultPlan="tiny"
       selectAriaLabel="Sélectionner un plan"
       planOptions={{
+        tiny: {
+          label: "Offre Tiny",
+          description:
+            "Pour les créateurs solo et les side-projects qui démarrent avec les liens intelligents."
+        },
+        solo: {
+          label: "Offre Solo",
+          description:
+            "Pour indépendants, créateurs et petites équipes qui veulent mesurer ce qui convertit (posts, DM, outreach)."
+        },
         pro: {
           label: "Offre Pro",
           description:
-            "Pour indépendants, créateurs et petites équipes qui veulent mesurer ce qui convertit (posts, DM, outreach).",
+            "Pour les équipes en croissance et les marketeurs qui ont besoin de plus de volume et d’analyses approfondies."
         },
         business: {
           label: "Offre Business",
           description:
-            "Pour PME et agences marketing : plus de volume, collaboration d’équipe, et rétention analytics.",
-        },
+            "Pour PME et agences marketing : plus de volume, collaboration d’équipe, et rétention analytics."
+        }
       }}
       includedInPlanTitle={
         <>
@@ -299,8 +309,8 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="clicks" /> événements trackés/mois
           </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanLimit limit="folders" /> dossiers en plus
+          <InlinePricingFeatureItem limitKey="folders">
+            <InlinePricingPlanLimit limit="folders" zeroLabel="Pas de" /> dossiers en plus
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="domains" /> domaines personnalisés
@@ -309,28 +319,28 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
             <InlinePricingPlanLimit limit="users" /> membres d’équipe
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
-            <InlinePricingPlanRetention map={{ "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
+            <InlinePricingPlanRetention map={{ "30-day": "30 jours", "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
           </InlinePricingFeatureItem>
           <InlinePricingFeatureItem>
             <InlinePricingPlanLimit limit="utmTemplates" /> templates UTM
           </InlinePricingFeatureItem>
         </InlinePricingFeatureList>
       }
-      includedInAllPaidTitle="Inclus dans tous les plans payants"
+      includedInAllPaidTitle="Inclus dans tous les plans — même le gratuit"
       includedInAllPaid={
         <InlinePricingFeatureList>
-          <InlinePricingFeatureItem>100+ intégrations incl. Zapier</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Paiements Stripe</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>A/B testing</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Webhooks & API</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Bulk (limité)</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>QR code personnalisé</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Options avancées de lien</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Règles UTM, groupements & templates</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Suivi des conversions & ventes (illimité)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Intégration Stripe & Shopify</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>10+ intégrations natives + 100 via Zapier</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Tracking côté serveur (anti-bloqueurs de pubs)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Deep links (contourne les navigateurs in-app)</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Capture d'email & formulaires opt-in</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>Constructeur de liens UTM & templates</InlinePricingFeatureItem>
+          <InlinePricingFeatureItem>RGPD natif, aucun cookie tiers</InlinePricingFeatureItem>
         </InlinePricingFeatureList>
       }
       optionsCopy={{
-        pro: {
+        tiny: {
           left: {
             period: "monthly",
             title: "Mensuel",
@@ -346,6 +356,49 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
             badge: "Le plus populaire",
             helperTop: "Paiement unique",
             ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        solo: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "lifetime",
+            title: "À vie",
+            periodLabel: "",
+            badge: "Le plus populaire",
+            helperTop: "Paiement unique",
+            ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
+            ctaVariant: "default",
+          },
+        },
+        pro: {
+          left: {
+            period: "monthly",
+            title: "Mensuel",
+            periodLabel: "/mois",
+            helperTop: "Annulation à tout moment",
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
+            ctaVariant: "outline",
+          },
+          right: {
+            period: "yearly",
+            title: "Annuel",
+            periodLabel: "/an",
+            badge: "2 mois offerts",
+            helperTop: (
+              <>
+                <span className="line-through">39€/mois</span>{" "}
+                <span className="text-blue-600">2 mois offerts</span>
+              </>
+            ),
+            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
             ctaVariant: "default",
           },
         },
@@ -374,6 +427,7 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
           },
         },
       }}
+      comparePlansLabel="Comparer tous les plans en détail →"
     />
   </Section>
 </Slide>
@@ -544,13 +598,13 @@ Oui. Installe le script sur chaque domaine/sous-domaine que tu contrôles pour u
 
 ::: faq
 ### Qu’est-ce qui est inclus dans le plan gratuit ?
-5 liens intelligents, 200 événements trackés/mois, 1 domaine personnalisé, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM.
+5 liens intelligents, 200 événements trackés/mois, 30 jours de rétention analytics, 3 templates UTM et 10 paramètres UTM sauvegardés. Aucune carte bancaire requise.
 :::
 
 
 ::: faq
 ### Quels sont les plans payants ?
-Pro : 19 €/mois ou 129 € en lifetime. Business : 69 €/mois ou 690 €/an. Les plans payants augmentent les limites, les seats et le bulk.
+Tiny : 9 €/mois ou 79 € en lifetime. Solo : 19 €/mois ou 129 € en lifetime. Pro : 39 €/mois ou 390 €/an. Business : 69 €/mois ou 690 €/an. Chaque palier augmente les liens, domaines, membres d'équipe et fonctionnalités.
 :::
 
 

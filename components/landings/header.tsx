@@ -1,13 +1,14 @@
 import Logo from "@/components/logo";
 import CtaDemo from "@/components/cta/CtaDemo";
-import NavLink from "./NavLink";
-import { getTranslations } from "next-intl/server";
+import { getTranslations, getLocale } from "next-intl/server";
 import Link from "next/link";
 import { APP_URL } from "../../app/constants";
 import { SwapRotate } from "../magicui/swap-rotate";
+import { getCanonicalLink } from "@/lib/utils";
 
 export default async function Header() {
   const tcommon = await getTranslations("landing");
+  const locale = await getLocale();
 
   return (
     <header className="w-full sticky top-3 xl:top-0 z-50 bg-transparent xl:bg-white/90 xl:border-b xl:border-gray-100/50">
@@ -18,8 +19,18 @@ export default async function Header() {
           </div>
           <nav className="flex items-center justify-end gap-3 md:gap-4 flex-1">
             <div className="hidden lg:flex gap-4 md:gap-6">
-              <NavLink id="features" text={tcommon("nav.features")} />
-              <NavLink id="pricing" text={tcommon("nav.pricing")} />
+              <Link
+                href={getCanonicalLink(locale, "/landings/pricing")}
+                className="text-sm px-3 py-2 font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {tcommon("nav.pricing")}
+              </Link>
+              <Link
+                href={getCanonicalLink(locale, "/landings/contact-sales")}
+                className="text-sm px-3 py-2 font-medium text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {tcommon("nav.contact")}
+              </Link>
             </div>
             <div className="w-fit flex items-center gap-8">
               <Link

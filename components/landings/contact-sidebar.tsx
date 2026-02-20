@@ -28,7 +28,7 @@ export default function ContactSidebar({ className = "" }: ContactSidebarProps) 
     <div className={`max-w-4xl mx-auto ${className}`}>
       <div
         className="relative flex flex-row items-center bg-white border border-border p-6 rounded-2xl cursor-pointer"
-        data-cal-link="alexandre-sarfati/30-minutes-demo?pimms_id=1"
+        data-cal-link="alexandre-sarfati/30-minutes-demo"
       >
 
         <div className="relative flex items-center gap-4 sm:gap-5">

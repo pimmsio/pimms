@@ -1,5 +1,15 @@
 {
   "metadata": {
+    "pricing": {
+      "title": "Pricing | PIMMS - Marketing Attribution & Smart Links",
+      "description": "Compare PIMMS plans: Tiny, Solo, Pro, and Business. Start for free, upgrade when you need to.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
+    },
+    "contact-sales": {
+      "title": "Contact Sales | PIMMS - Marketing Attribution & Smart Links",
+      "description": "Get in touch with the PIMMS sales team for custom pricing, enterprise plans, partnerships, and personalized demos.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
+    },
     "site-checker": {
       "title": "Scan PIMMS script tool checker  | Verify your tracking installation",
       "description": "Free tool to check if your website has the Pimms analytics script properly installed for conversion tracking.",

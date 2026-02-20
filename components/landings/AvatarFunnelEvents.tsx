@@ -3,18 +3,23 @@
 import React, { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { CalendarCheck, MailPlus, UserPlus } from "@/components/icons/custom-icons";
-import { useTranslations } from "next-intl";
 
-export function AvatarFunnelEvents() {
-  const t = useTranslations("landing.funnel.event");
+const iconMap = {
+  calendar: CalendarCheck,
+  mail: MailPlus,
+  user: UserPlus
+} as const;
 
-  const events = [
-    { label: t("meeting_booked"), icon: CalendarCheck },
-    { label: t("subscriber"), icon: MailPlus },
-    { label: t("lead"), icon: UserPlus },
-    { label: t("follower"), icon: UserPlus }
-  ] as const;
+type Event = {
+  label: string;
+  iconKey: keyof typeof iconMap;
+};
 
+type Props = {
+  events: Event[];
+};
+
+export function AvatarFunnelEvents({ events }: Props) {
   const [eventIndex, setEventIndex] = useState(0);
 
   useEffect(() => {
@@ -40,7 +45,7 @@ export function AvatarFunnelEvents() {
         >
           {(() => {
             const e = events[eventIndex];
-            const Icon = e.icon;
+            const Icon = iconMap[e.iconKey];
             return (
               <>
                 <span className="inline-grid min-w-9 min-h-9 place-items-center w-9 h-9 rounded-full text-primary bg-gradient-to-r from-brand-secondary-light to-brand-primary-100">

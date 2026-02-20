@@ -1,11 +1,13 @@
 import * as React from "react";
 
-import { Check } from "@/components/icons/custom-icons";
+import { Check, X as XIcon } from "@/components/icons/custom-icons";
 import { buttonVariants } from "@/components/ui/button";
-import { getPlanDetails, type BillingPeriod, type PaidPlanId } from "@/lib/pricing";
-import { cn } from "@/lib/utils";
+import { getPlanDetails, getPlanDisplayName, type BillingPeriod, type PaidPlanId } from "@/lib/pricing";
+import { cn, getCanonicalLink } from "@/lib/utils";
 
 import { InlinePricingSwitch } from "./InlinePricingSwitch";
+
+const ALL_PAID_PLANS: PaidPlanId[] = ["tiny", "solo", "pro", "business"];
 
 type OptionCopy = {
   title: React.ReactNode;
@@ -44,12 +46,11 @@ function injectPlanIdIntoNode(node: React.ReactNode, planId: PaidPlanId): React.
 
     const el = child as React.ReactElement<any>;
     const shouldInject =
-      el.type === InlinePricingPlanName || el.type === InlinePricingPlanLimit || el.type === InlinePricingPlanRetention;
+      el.type === InlinePricingPlanName || el.type === InlinePricingPlanLimit || el.type === InlinePricingPlanRetention || el.type === InlinePricingFeatureItem;
 
     const nextProps: Record<string, unknown> = {};
     if (shouldInject && el.props?.planId == null) nextProps.planId = planId;
 
-    // Recurse through children (covers fragments and nested markup)
     const hasChildrenProp = el.props && "children" in el.props;
     if (hasChildrenProp) {
       nextProps.children = walk(el.props.children);
@@ -134,10 +135,10 @@ function PricingOptionCard({
 }
 
 export function InlinePricing({
-  defaultPlan = "pro",
+  defaultPlan = "tiny",
   className,
-  currency,
-  locale,
+  currency = "EUR",
+  locale = "en",
   selectAriaLabel,
   planOptions,
   optionsCopy,
@@ -145,12 +146,13 @@ export function InlinePricing({
   includedInAllPaidTitle,
   includedInPlan,
   includedInAllPaid,
-  ctaType = "pricing"
+  ctaType = "pricing",
+  comparePlansLabel,
 }: {
   defaultPlan?: PaidPlanId;
   className?: string;
-  currency: string;
-  locale: string;
+  currency?: string;
+  locale?: string;
   selectAriaLabel: string;
   planOptions: Record<PaidPlanId, { label: React.ReactNode; description?: React.ReactNode }>;
   optionsCopy: Record<PaidPlanId, PlanCopy>;
@@ -159,11 +161,13 @@ export function InlinePricing({
   includedInPlan?: React.ReactNode;
   includedInAllPaid?: React.ReactNode;
   ctaType?: string;
+  comparePlansLabel?: React.ReactNode;
 }) {
   const rootId = React.useId();
-  const formatter = new Intl.NumberFormat(locale, {
+  const currencyCode = currency || "EUR";
+  const formatter = new Intl.NumberFormat(locale || "en", {
     style: "currency",
-    currency,
+    currency: currencyCode,
     maximumFractionDigits: 0
   });
 
@@ -176,7 +180,7 @@ export function InlinePricing({
         planOptions={planOptions}
       />
 
-      {(["pro", "business"] as const).map((planId) => {
+      {ALL_PAID_PLANS.map((planId) => {
         const plan = getPlanDetails(planId);
         const copy = optionsCopy[planId];
         const meta = planOptions[planId];
@@ -262,6 +266,17 @@ export function InlinePricing({
           </div>
         );
       })}
+
+      {comparePlansLabel ? (
+        <div className="mt-8 text-center">
+          <a
+            href={getCanonicalLink(locale, "/landings/pricing")}
+            className="text-sm font-medium text-muted-foreground underline underline-offset-4 hover:text-foreground transition-colors"
+          >
+            {comparePlansLabel}
+          </a>
+        </div>
+      ) : null}
     </section>
   );
 }
@@ -272,10 +287,25 @@ export function InlinePricingFeatureList({ children, className }: { children: Re
   );
 }
 
-export function InlinePricingFeatureItem({ children, className }: { children: React.ReactNode; className?: string }) {
+export function InlinePricingFeatureItem({
+  children,
+  className,
+  planId,
+  limitKey
+}: {
+  children: React.ReactNode;
+  className?: string;
+  planId?: PaidPlanId;
+  limitKey?: keyof ReturnType<typeof getPlanDetails>["limits"];
+}) {
+  const isZero = limitKey && planId ? getPlanDetails(planId).limits[limitKey] === 0 : false;
   return (
     <li className={cn("flex items-start gap-2 text-sm text-muted-foreground", className)}>
-      <Check className="mt-0.5 size-4 text-brand-primary" />
+      {isZero ? (
+        <XIcon className="mt-0.5 size-4 text-muted-foreground/50" />
+      ) : (
+        <Check className="mt-0.5 size-4 text-brand-primary" />
+      )}
       <span>{children}</span>
     </li>
   );
@@ -289,19 +319,23 @@ export function InlinePricingPlanName({
   if (!planId) {
     throw new Error("InlinePricingPlanName is missing `planId`. Use it inside <InlinePricing />.");
   }
-  const text = planId === "business" ? (businessLabel ?? "business") : planId;
+  const plan = getPlanDetails(planId);
+  const text = getPlanDisplayName(plan);
   return <span className={className}>{text}</span>;
 }
 
 export function InlinePricingPlanLimit({
   planId,
-  limit
-}: InlinePricingInjectedPlanProps & { limit: keyof ReturnType<typeof getPlanDetails>["limits"] }) {
+  limit,
+  zeroLabel
+}: InlinePricingInjectedPlanProps & { limit: keyof ReturnType<typeof getPlanDetails>["limits"]; zeroLabel?: string }) {
   if (!planId) {
     throw new Error("InlinePricingPlanLimit is missing `planId`. Use it inside <InlinePricing />.");
   }
   const plan = getPlanDetails(planId);
-  return <>{plan.limits[limit]}</>;
+  const value = plan.limits[limit];
+  if (value === 0 && zeroLabel) return <>{zeroLabel}</>;
+  return <>{value}</>;
 }
 
 export function InlinePricingPlanRetention({

@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-03T11:59:01.656Z"
+    "lastmod": "2026-02-20T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-03T11:59:01.657Z"
+    "lastmod": "2026-02-20T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-01-20T00:00:00.000Z"
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-01-19T00:00:00.000Z"
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2026-01-20T00:00:00.000Z"
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -37,7 +37,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/guides": {
     "en": "/guides",
     "fr": "/guides",
-    "lastmod": "2026-01-20T00:00:00.000Z"
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/category/tutorials": {
     "en": "/tutorials",
@@ -47,7 +47,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/tool-comparison": {
     "en": "/tools",
     "fr": "/outils",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/5-dynamic-link-personalization-tips-for-higher-conversions": {
     "en": "/blog/5-dynamic-link-personalization-tips-for-higher-conversions",
@@ -106,6 +106,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-09-14T00:00:00.000Z",
     "fr": "/blog/bitly-vs-pimms-ce-qu-une-startup-a-vraiment-besoin-au-dela-du-suivi-des-clics"
   },
+  "/articles/blink-vs-pimms-comparison-2026": {
+    "en": "/blog/blink-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
   "/articles/branded-short-links-vs-generic-does-it-impact-your-conversion-rate": {
     "en": "/blog/branded-short-links-vs-generic-does-it-impact-your-conversion-rate",
     "lastmod": "2025-09-14T00:00:00.000Z"
@@ -122,6 +126,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/can-you-test-more-than-one-change-at-a-time-and-other-ab-testing-faqs",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
+  "/articles/cuttly-vs-pimms-comparison-2026": {
+    "en": "/blog/cuttly-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
   "/articles/deep-linking-for-influencer-campaigns-basics": {
     "en": "/blog/deep-linking-for-influencer-campaigns-basics",
     "lastmod": "2025-09-14T00:00:00.000Z",
@@ -134,7 +142,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/dubco-alternatives-comparison-2025": {
     "en": "/blog/dubco-alternatives-comparison-2025",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/first-article": {
     "en": "/blog/what-is-pimms",
@@ -241,6 +249,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-09-14T00:00:00.000Z",
     "fr": "/blog/est-ce-que-bitly-est-adapte-au-suivi-des-conversions"
   },
+  "/articles/linktree-vs-pimms-comparison-2026": {
+    "en": "/blog/linktree-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
   "/articles/measure-click-performance-and-track-link-conversions-easily": {
     "en": "/blog/measure-click-performance-and-track-link-conversions-easily",
     "lastmod": "2025-09-14T00:00:00.000Z"
@@ -253,22 +265,50 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/no-code-analytics-guide-for-saas",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
+  "/articles/pixelme-vs-pimms-comparison-2026": {
+    "en": "/blog/pixelme-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
+  "/articles/pretty-links-vs-pimms-comparison-2026": {
+    "en": "/blog/pretty-links-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
   "/articles/prompt-first-development-how-to-set-up-attribution-with-one-prompt": {
     "en": "/blog/prompt-first-development-how-to-set-up-attribution-with-one-prompt",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
   "/articles/rebrandly-alternatives-comparison-2025": {
     "en": "/blog/rebrandly-alternatives-comparison-2025",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/referrer-vs-utm-vs-fingerprinting-what-really-tells-you-where-a-click-came-from": {
     "en": "/blog/referrer-vs-utm-vs-fingerprinting-where-a-click-came-from",
     "lastmod": "2025-09-14T00:00:00.000Z",
     "fr": "/blog/referrer-vs-utm-vs-fingerprinting-ou-vient-un-clic"
   },
+  "/articles/replug-vs-pimms-comparison-2026": {
+    "en": "/blog/replug-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
   "/articles/set-up-analytics-and-marketing-attribution-in-1-hour-for-your-mvp": {
     "en": "/blog/set-up-analytics-and-marketing-attribution-in-1-hour-for-your-mvp",
     "lastmod": "2025-09-14T00:00:00.000Z"
+  },
+  "/articles/short-io-vs-pimms-comparison-2026": {
+    "en": "/blog/short-io-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
+  "/articles/sniply-vs-pimms-comparison-2026": {
+    "en": "/blog/sniply-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
+  "/articles/switchy-vs-pimms-comparison-2026": {
+    "en": "/blog/switchy-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
+  "/articles/taapit-vs-pimms-comparison-2026": {
+    "en": "/blog/taapit-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/the-best-way-to-get-utm-parameters-into-stripe": {
     "en": "/blog/the-best-way-to-get-utm-parameters-into-stripe",
@@ -277,6 +317,14 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/the-complete-guide-to-marketing-attribution-for-saas-founders": {
     "en": "/blog/the-complete-guide-to-marketing-attribution-for-saas-founders",
     "lastmod": "2025-09-14T00:00:00.000Z"
+  },
+  "/articles/tinyurl-vs-pimms-comparison-2026": {
+    "en": "/blog/tinyurl-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
+  },
+  "/articles/tly-vs-pimms-comparison-2026": {
+    "en": "/blog/tly-vs-pimms-comparison-2026",
+    "lastmod": "2026-02-19T00:00:00.000Z"
   },
   "/articles/top-10-marketing-attribution-tools-you-need-in-2025": {
     "en": "/blog/top-10-marketing-attribution-tools-you-need-in-2025",
@@ -448,6 +496,11 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-09-14T00:00:00.000Z",
     "fr": "/guides/comment-suivre-conversions-sites-vibe-coding-no-code-ai"
   },
+  "/articles/pimms-analytics-script-complete-guide": {
+    "en": "/guides/pimms-analytics-script-complete-reference",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/guides/guide-complet-script-analytics-pimms"
+  },
   "/articles/setup-stripe-for-website": {
     "en": "/guides/how-to-track-stripe-sales-marketing-attribution",
     "lastmod": "2026-01-19T00:00:00.000Z",
@@ -494,10 +547,45 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-10-02T00:00:00.000Z",
     "fr": "/2octobre"
   },
+  "/landings/brevo": {
+    "en": "/solutions/brevo-email-marketing-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-brevo-email-marketing"
+  },
+  "/landings/calcom": {
+    "en": "/solutions/calcom-booking-conversion-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-calcom-reservations-conversions"
+  },
+  "/landings/calendly": {
+    "en": "/solutions/calendly-booking-conversion-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-calendly-reservations-conversions"
+  },
+  "/landings/contact-sales": {
+    "en": "/contact-sales",
+    "lastmod": "2026-02-20T00:00:00.000Z",
+    "fr": "/contact-sales"
+  },
+  "/landings/elementor": {
+    "en": "/solutions/elementor-form-lead-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-elementor-formulaires-leads"
+  },
+  "/landings/framer": {
+    "en": "/solutions/framer-website-conversion-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-framer-conversions-site"
+  },
   "/landings/home": {
     "en": "/",
     "lastmod": "2025-10-06T00:00:00.000Z",
     "fr": "/"
+  },
+  "/landings/iclosed": {
+    "en": "/solutions/iclosed-sales-meeting-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-iclosed-meetings-ventes"
   },
   "/landings/landing-page-tracking": {
     "en": "/solutions/conversion-tracking-landing-page-analytics",
@@ -509,10 +597,30 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-10-06T00:00:00.000Z",
     "fr": "/solutions/analytics-profil-linkedin-visiteurs"
   },
+  "/landings/podia": {
+    "en": "/solutions/podia-course-sales-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-podia-ventes-cours"
+  },
+  "/landings/pricing": {
+    "en": "/pricing",
+    "lastmod": "2026-02-20T00:00:00.000Z",
+    "fr": "/pricing"
+  },
+  "/landings/stripe": {
+    "en": "/solutions/stripe-payment-revenue-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-stripe-paiements-revenus"
+  },
   "/landings/systemeio": {
     "en": "/solutions/systemeio-funnel-tracking-sales",
     "lastmod": "2025-10-06T00:00:00.000Z",
     "fr": "/solutions/tracking-systemeio-funnel-ventes"
+  },
+  "/landings/tally": {
+    "en": "/solutions/tally-form-conversion-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-tally-formulaires-conversions"
   },
   "/landings/tracking": {
     "en": "/solutions/marketing-tracking-attribution-clicks-leads-revenue",
@@ -522,6 +630,11 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/landings/utm": {
     "en": "/solutions/get-rid-of-google-sheets-for-your-utms",
     "lastmod": "2026-01-19T00:00:00.000Z"
+  },
+  "/landings/webflow": {
+    "en": "/solutions/webflow-form-lead-tracking",
+    "lastmod": "2026-02-19T00:00:00.000Z",
+    "fr": "/solutions/tracking-webflow-formulaires-leads"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",

@@ -1,5 +1,15 @@
 {
   "metadata": {
+    "pricing": {
+      "title": "Tarification | PIMMS - Attribution Marketing & Liens Intelligents",
+      "description": "Compare les plans PIMMS : Tiny, Solo, Pro et Business. Commence gratuitement, passe au niveau supérieur quand tu en as besoin.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
+    },
+    "contact-sales": {
+      "title": "Nous contacter | PIMMS - Attribution Marketing & Liens Intelligents",
+      "description": "Contacte l'équipe commerciale PIMMS pour un tarif personnalisé, un plan entreprise, un partenariat ou une démo.",
+      "image": "https://assets.pimms.io/thumbnail.jpg?v=3"
+    },
     "site-checker": {
       "title": "Outil Gratuit de Vérification Script Pimms | Vérifier l'Installation de PimmsAnalytics",
       "description": "Outil gratuit pour vérifier si ton site web a correctement installé le script analytics Pimms pour le suivi des conversions. Vérification instantanée avec guide d'installation.",
