@@ -2,7 +2,8 @@ import { H1, H1Subtitle } from "@/components/base/h1";
 import { HeroSection } from "@/components/base/hero-section";
 import { ReactNode } from "react";
 import { parseChildren } from "@/lib/mdx/parseChildren";
-import { H1 as MDXH1, Summary } from "@/components/mdx/content";
+import { Summary } from "@/components/mdx/content";
+
 interface HeroProps {
   children?: ReactNode;
 }
@@ -13,9 +14,9 @@ type HeroContent = {
 };
 
 export const Hero = ({ children }: HeroProps) => {
-  // Parse children using the utility
+  // Parse children: use same H1 as landings page (base/h1) so component reference matches
   const parsed = parseChildren<HeroContent>(children, {
-    title: { component: MDXH1, key: "title" },
+    title: { component: H1, key: "title" },
     subtitle: { component: Summary, key: "subtitle" }
   });
 

@@ -28,7 +28,6 @@ export default async function BlogLayoutHero({ slug, locale }: { slug?: string; 
     }
   };
 
-  console.log(category, slug);
   return (
     <Section className="py-12 sm:py-16 md:py-20 lg:py-28 px-4 md:px-6 lg:px-8 bg-gradient-background-soft">
       <div className="text-center mb-12 sm:mb-16">

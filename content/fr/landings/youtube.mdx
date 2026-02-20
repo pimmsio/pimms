@@ -26,7 +26,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   />
 </Slide>
 
-<LinkedinTestimonialsRibbon rows={1}>
+<LinkedinTestimonialsRibbon>
   <LinkedinPost 
     name="Marie-Rose Perret 🦩" 
     profile="Fais-toi remarquer et deviens irremplaçable | Personal branding • Site web • Landing page | Palmsquare 🌴" 
@@ -273,169 +273,90 @@ Et quand je mets en ligne une nouvelle page, si le visiteur est identifié dans 
     <Centered>
       <H2>Des <TitleIcon variant="h2" icon="pricing" /> <Primary>Tarifs</Primary> justes</H2>
       <Text size="lg">Commence gratuitement. Upgrade quand tu veux.</Text>
+    
+      <CurrencyToggle className="mx-auto mt-4" />
     </Centered>
   </BlurFade>
   
   <Section>
-    <InlinePricing
-      locale="fr"
-      defaultPlan="tiny"
-      selectAriaLabel="Sélectionner un plan"
-      planOptions={{
-        tiny: {
-          label: "Offre Tiny",
-          description:
-            "Pour les créateurs solo et les side-projects qui démarrent avec les liens intelligents."
-        },
-        solo: {
-          label: "Offre Solo",
-          description:
-            "Pour indépendants, micro-entreprises, créateurs et petites agences. Idéal pour démarrer vite et tracker précisément."
-        },
-        pro: {
-          label: "Offre Pro",
-          description:
-            "Pour les équipes en croissance et les marketeurs qui ont besoin de plus de volume et d'analyses approfondies."
-        },
-        business: {
-          label: "Offre Business",
-          description:
-            "Pour PME et agences marketing qui scale. Plus de volume, plus de collaboration, et plus de data."
-        }
-      }}
-      includedInPlanTitle={
-        <>
-          Inclus dans le plan <InlinePricingPlanName businessLabel="entreprise" className="capitalize" />
-        </>
-      }
-      includedInPlan={
-        <InlinePricingFeatureList>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanLimit limit="links" /> nouveaux liens/mois
-          </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanLimit limit="clicks" /> événements trackés/mois
-          </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem limitKey="folders">
-            <InlinePricingPlanLimit limit="folders" zeroLabel="Pas de" /> dossiers en plus
-          </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanLimit limit="domains" /> domaines personnalisés
-          </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanLimit limit="users" /> membres d’équipe
-          </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanRetention map={{ "30-day": "30 jours", "1-year": "1 an", "2-year": "2 ans" }} /> de rétention analytics
-          </InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>
-            <InlinePricingPlanLimit limit="utmTemplates" /> templates UTM
-          </InlinePricingFeatureItem>
-        </InlinePricingFeatureList>
-      }
-      includedInAllPaidTitle="Inclus dans tous les plans — même le gratuit"
-      includedInAllPaid={
-        <InlinePricingFeatureList>
-          <InlinePricingFeatureItem>Suivi des conversions & ventes (illimité)</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Intégration Stripe & Shopify</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>10+ intégrations natives + 100 via Zapier</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Tracking côté serveur (anti-bloqueurs de pubs)</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Deep links (contourne les navigateurs in-app)</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Capture d'email & formulaires opt-in</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>Constructeur de liens UTM & templates</InlinePricingFeatureItem>
-          <InlinePricingFeatureItem>RGPD natif, aucun cookie tiers</InlinePricingFeatureItem>
-        </InlinePricingFeatureList>
-      }
-      optionsCopy={{
-        tiny: {
-          left: {
-            period: "monthly",
-            title: "Mensuel",
-            periodLabel: "/mois",
-            helperTop: "Annulation à tout moment",
-            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
-            ctaVariant: "outline",
-          },
-          right: {
-            period: "lifetime",
-            title: "À vie",
-            periodLabel: "",
-            badge: "Le plus populaire",
-            helperTop: "Paiement unique",
-            ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
-            ctaVariant: "default",
-          },
-        },
-        solo: {
-          left: {
-            period: "monthly",
-            title: "Mensuel",
-            periodLabel: "/mois",
-            helperTop: "Annulation à tout moment",
-            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
-            ctaVariant: "outline",
-          },
-          right: {
-            period: "lifetime",
-            title: "À vie",
-            periodLabel: "",
-            badge: "Le plus populaire",
-            helperTop: "Paiement unique",
-            ctaLabel: <SwapRotate>Débloquer l’accès à vie</SwapRotate>,
-            ctaVariant: "default",
-          },
-        },
-        pro: {
-          left: {
-            period: "monthly",
-            title: "Mensuel",
-            periodLabel: "/mois",
-            helperTop: "Annulation à tout moment",
-            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
-            ctaVariant: "outline",
-          },
-          right: {
-            period: "yearly",
-            title: "Annuel",
-            periodLabel: "/an",
-            badge: "2 mois offerts",
-            helperTop: (
-              <>
-                <span className="line-through">39€/mois</span>{" "}
-                <span className="text-blue-600">2 mois offerts</span>
-              </>
-            ),
-            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
-            ctaVariant: "default",
-          },
-        },
-        business: {
-          left: {
-            period: "monthly",
-            title: "Mensuel",
-            periodLabel: "/mois",
-            helperTop: "Annulation à tout moment",
-            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
-            ctaVariant: "outline",
-          },
-          right: {
-            period: "yearly",
-            title: "Annuel",
-            periodLabel: "/an",
-            badge: "2 mois offerts",
-            helperTop: (
-              <>
-                <span className="line-through">69€ /mois</span>{" "}
-                <span className="text-blue-600">2 mois offerts</span>
-              </>
-            ),
-            ctaLabel: <SwapRotate>S’abonner</SwapRotate>,
-            ctaVariant: "default",
-          },
-        },
-      }}
-      comparePlansLabel="Comparer tous les plans en détail →"
-    />
+    <PricingHero
+      monthlyLabel="Mensuel"
+      perMonthLabel="/mois"
+      perYearLabel="/an"
+      cancelAnytimeLabel="Annulable à tout moment"
+      subscribeLabel="S'abonner"
+      lifetimeLabel="À vie"
+      mostPopularLabel="Le plus populaire"
+      oneTimePaymentLabel="Paiement unique"
+      unlockLifetimeLabel="Accès à vie"
+      yearlyLabel="Annuel"
+      twoMonthsFreeLabel="2 mois offerts"
+      subscribeYearlyLabel="S'abonner à l'année"
+    >
+      <PricingPlanTabs>
+        <PricingPlanTab planId="tiny">Tiny</PricingPlanTab>
+        <PricingPlanTab planId="solo">Solo</PricingPlanTab>
+        <PricingPlanTab planId="pro">Pro</PricingPlanTab>
+        <PricingPlanTab planId="business">Business</PricingPlanTab>
+      </PricingPlanTabs>
+      <PricingPlanPanel planId="tiny">
+        <PricingPlanDescription>Pour les créateurs solo et projets annexes qui commencent avec les liens intelligents.</PricingPlanDescription>
+        <PricingPlanCards />
+        <PricingPlanFeatureListTitle>Tout du Gratuit, plus :</PricingPlanFeatureListTitle>
+        <PricingPlanFeatureList>
+          <PricingPlanFeature>100 liens /mois</PricingPlanFeature>
+          <PricingPlanFeature>Jusqu'à 1 500 clics /mois</PricingPlanFeature>
+          <PricingPlanFeature>1 domaine personnalisé</PricingPlanFeature>
+          <PricingPlanFeature>QR codes personnalisés</PricingPlanFeature>
+          <PricingPlanFeature>1 an de données</PricingPlanFeature>
+          <PricingPlanFeature>Support email</PricingPlanFeature>
+        </PricingPlanFeatureList>
+      </PricingPlanPanel>
+      <PricingPlanPanel planId="solo">
+        <PricingPlanDescription>Pour les fondateurs solo, créateurs, freelances et petites agences qui commencent avec le tracking.</PricingPlanDescription>
+        <PricingPlanCards />
+        <PricingPlanFeatureListTitle>Tout de Tiny, plus :</PricingPlanFeatureListTitle>
+        <PricingPlanFeatureList>
+          <PricingPlanFeature>500 liens /mois</PricingPlanFeature>
+          <PricingPlanFeature>Suivi des ventes illimité</PricingPlanFeature>
+          <PricingPlanFeature>Intégration paiements Stripe</PricingPlanFeature>
+          <PricingPlanFeature>Tests A/B</PricingPlanFeature>
+          <PricingPlanFeature>Webhooks &amp; API</PricingPlanFeature>
+          <PricingPlanFeature>5 membres d'équipe</PricingPlanFeature>
+          <PricingPlanFeature>12 mois de données</PricingPlanFeature>
+          <PricingPlanFeature>3 mois de support prioritaire inclus</PricingPlanFeature>
+        </PricingPlanFeatureList>
+      </PricingPlanPanel>
+      <PricingPlanPanel planId="pro">
+        <PricingPlanDescription>Pour les équipes en croissance et les marketeurs qui ont besoin de plus de volume et d'analytics approfondis.</PricingPlanDescription>
+        <PricingPlanCards />
+        <PricingPlanFeatureListTitle>Tout de Solo, plus :</PricingPlanFeatureListTitle>
+        <PricingPlanFeatureList>
+          <PricingPlanFeature>1 000 liens /mois</PricingPlanFeature>
+          <PricingPlanFeature>10k événements suivis /mois</PricingPlanFeature>
+          <PricingPlanFeature>Suivi des ventes illimité</PricingPlanFeature>
+          <PricingPlanFeature>5 domaines personnalisés</PricingPlanFeature>
+          <PricingPlanFeature>Création de liens en masse</PricingPlanFeature>
+          <PricingPlanFeature>12 mois de données</PricingPlanFeature>
+          <PricingPlanFeature>Support prioritaire</PricingPlanFeature>
+        </PricingPlanFeatureList>
+      </PricingPlanPanel>
+      <PricingPlanPanel planId="business">
+        <PricingPlanDescription>Pour les équipes en croissance et agences marketing qui ont besoin de volume, collaboration et rétention.</PricingPlanDescription>
+        <PricingPlanCards />
+        <PricingPlanFeatureListTitle>Tout de Pro et plus :</PricingPlanFeatureListTitle>
+        <PricingPlanFeatureList>
+          <PricingPlanFeature>2 000 liens /mois</PricingPlanFeature>
+          <PricingPlanFeature>20k événements suivis /mois</PricingPlanFeature>
+          <PricingPlanFeature>Suivi des ventes illimité</PricingPlanFeature>
+          <PricingPlanFeature>10 membres d'équipe</PricingPlanFeature>
+          <PricingPlanFeature>10 domaines personnalisés</PricingPlanFeature>
+          <PricingPlanFeature>Création de liens en masse</PricingPlanFeature>
+          <PricingPlanFeature>2 ans de données</PricingPlanFeature>
+          <PricingPlanFeature>Support prioritaire</PricingPlanFeature>
+        </PricingPlanFeatureList>
+      </PricingPlanPanel>
+    </PricingHero>
   </Section>
 </Slide>
 
