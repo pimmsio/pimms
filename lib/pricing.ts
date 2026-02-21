@@ -93,7 +93,7 @@ export const PLANS: Plan[] = [
     },
     limits: {
       links: 100,
-      clicks: 4_000,
+      clicks: 1_500,
       sales: INFINITY_NUMBER,
       domains: 1,
       tags: 25,
@@ -109,7 +109,7 @@ export const PLANS: Plan[] = [
     featureTitle: "Everything in Free, plus:",
     features: [
       { id: "links", text: "100 links /month" },
-      { id: "clicks", text: "4,000 events tracked /month" },
+      { id: "clicks", text: "1,500 events tracked /month" },
       { id: "domain", text: "1 custom domain" },
       { id: "qr", text: "Custom QR codes" },
       { id: "retention", text: "1 year of data" },
