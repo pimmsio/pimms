@@ -5,6 +5,8 @@ import RootProviders from "../app/providers";
 import LinkedInInsight from "./linkedin-insight";
 import { ResourceHints } from "./resource-hints";
 import { getMessages } from "next-intl/server";
+import { OrganizationSchema } from "./seo/OrganizationSchema";
+import { WebSiteSchema } from "./seo/WebSiteSchema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -46,6 +48,10 @@ export default async function BaseLayout({ children, locale }: Props) {
         <LinkedInInsight />
       </Head>
       <body className={`${inter.variable} ${jakarta.variable}`}>
+        {/* Global structured data for SEO and AI search engines */}
+        <OrganizationSchema locale={locale} />
+        <WebSiteSchema locale={locale} />
+        
         <RootProviders>
           <NextIntlClientProvider locale={locale} messages={messages} timeZone="Europe/Paris">
             {children}
