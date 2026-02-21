@@ -261,6 +261,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/minimum-viable-analytics-the-ideal-tracking-stack-for-your-mvp",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
+  "/articles/multi-touch-attribution-models-complete-comparison-2026": {
+    "en": "/blog/multi-touch-attribution-models-complete-comparison-2026",
+    "lastmod": "2026-02-21T00:00:00.000Z"
+  },
   "/articles/no-code-analytics-guide-for-saas": {
     "en": "/blog/no-code-analytics-guide-for-saas",
     "lastmod": "2025-09-14T00:00:00.000Z"
