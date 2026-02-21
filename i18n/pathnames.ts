@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-20T00:00:00.000Z"
+    "lastmod": "2026-02-21T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-20T00:00:00.000Z"
+    "lastmod": "2026-02-21T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-19T00:00:00.000Z"
+    "lastmod": "2026-02-21T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-02-19T00:00:00.000Z"
+    "lastmod": "2026-02-21T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2026-02-19T00:00:00.000Z"
+    "lastmod": "2026-02-21T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -260,6 +260,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/minimum-viable-analytics-the-ideal-tracking-stack-for-your-mvp": {
     "en": "/blog/minimum-viable-analytics-the-ideal-tracking-stack-for-your-mvp",
     "lastmod": "2025-09-14T00:00:00.000Z"
+  },
+  "/articles/multi-touch-attribution-models-complete-comparison-2026": {
+    "en": "/blog/multi-touch-attribution-models-complete-comparison-2026",
+    "lastmod": "2026-02-21T00:00:00.000Z"
   },
   "/articles/no-code-analytics-guide-for-saas": {
     "en": "/blog/no-code-analytics-guide-for-saas",
@@ -528,19 +532,23 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/abuse": {
     "en": "/legal/report-abuse",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/report-abuse"
   },
   "/articles/imprint": {
     "en": "/legal/imprint",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/imprint"
   },
   "/articles/privacy": {
     "en": "/legal/privacy-policy",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/privacy-policy"
   },
   "/articles/terms": {
     "en": "/legal/terms-of-service",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/terms-of-service"
   },
   "/landings/2octobre": {
     "en": "/2october",
