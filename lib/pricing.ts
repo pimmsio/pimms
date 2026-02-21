@@ -93,7 +93,7 @@ export const PLANS: Plan[] = [
     },
     limits: {
       links: 100,
-      clicks: 1_500,
+      clicks: 4_000,
       sales: INFINITY_NUMBER,
       domains: 1,
       tags: 25,
@@ -109,7 +109,7 @@ export const PLANS: Plan[] = [
     featureTitle: "Everything in Free, plus:",
     features: [
       { id: "links", text: "100 links /month" },
-      { id: "clicks", text: "Up to 1,500 clicks /month" },
+      { id: "clicks", text: "4,000 events tracked /month" },
       { id: "domain", text: "1 custom domain" },
       { id: "qr", text: "Custom QR codes" },
       { id: "retention", text: "1 year of data" },
@@ -151,8 +151,6 @@ export const PLANS: Plan[] = [
     featureTitle: "Everything in Tiny, plus:",
     features: [
       { id: "links", text: "500 links /month" },
-      { id: "sales", text: "Unlimited sales tracking" },
-      { id: "stripe", text: "Stripe payments integration" },
       { id: "testing", text: "A/B testing" },
       { id: "webhooks", text: "Webhooks & API" },
       { id: "users", text: "5 team members" },
@@ -194,7 +192,6 @@ export const PLANS: Plan[] = [
     features: [
       { id: "links", text: "1,000 links /month" },
       { id: "tracking", text: "10k events tracked /month" },
-      { id: "sales", text: "Unlimited sales tracking" },
       { id: "domains", text: "5 custom domains" },
       { id: "bulk", text: "Bulk link operations" },
       { id: "retention", text: "12 months of data" },
@@ -237,7 +234,6 @@ export const PLANS: Plan[] = [
     features: [
       { id: "links", text: "2,000 links /month" },
       { id: "tracking", text: "20k events tracked /month" },
-      { id: "sales", text: "Unlimited sales tracking" },
       { id: "users", text: "10 team members" },
       { id: "domains", text: "10 custom domains" },
       { id: "bulk", text: "Bulk link operations" },
