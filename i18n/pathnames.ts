@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -248,6 +248,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/is-bitly-good-for-conversion-tracking",
     "lastmod": "2025-09-14T00:00:00.000Z",
     "fr": "/blog/est-ce-que-bitly-est-adapte-au-suivi-des-conversions"
+  },
+  "/articles/link-rotation-ab-testing-landing-pages": {
+    "en": "/blog/link-rotation-ab-testing-landing-pages",
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/linktree-vs-pimms-comparison-2026": {
     "en": "/blog/linktree-vs-pimms-comparison-2026",
