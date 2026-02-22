@@ -285,6 +285,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/prompt-first-development-how-to-set-up-attribution-with-one-prompt",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
+  "/articles/qr-code-tracking-attribution-marketing": {
+    "en": "/blog/qr-code-tracking-attribution-marketing",
+    "lastmod": "2026-02-22T00:00:00.000Z"
+  },
   "/articles/rebrandly-alternatives-comparison-2025": {
     "en": "/blog/rebrandly-alternatives-comparison-2025",
     "lastmod": "2026-02-19T00:00:00.000Z"
