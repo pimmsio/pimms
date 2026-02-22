@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -348,6 +348,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/track-conversions-from-webflow-tally-or-typeform-in-under-3-minutes": {
     "en": "/blog/track-conversions-from-webflow-tally-or-typeform-in-under-3-minutes",
     "lastmod": "2025-09-14T00:00:00.000Z"
+  },
+  "/articles/track-marketing-roi-campaign-cost-attribution": {
+    "en": "/blog/track-marketing-roi-campaign-cost-attribution",
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/track-stripe-payments-with-utm-parameters": {
     "en": "/blog/track-stripe-payments-with-utm-parameters",
