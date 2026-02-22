@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -280,6 +280,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/prompt-first-development-how-to-set-up-attribution-with-one-prompt": {
     "en": "/blog/prompt-first-development-how-to-set-up-attribution-with-one-prompt",
     "lastmod": "2025-09-14T00:00:00.000Z"
+  },
+  "/articles/qr-code-tracking-attribution-marketing": {
+    "en": "/blog/qr-code-tracking-attribution-marketing",
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/rebrandly-alternatives-comparison-2025": {
     "en": "/blog/rebrandly-alternatives-comparison-2025",
