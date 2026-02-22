@@ -44,6 +44,14 @@ function Pill({ value, rounded = true }: { value: boolean; rounded?: boolean }) 
   );
 }
 
+/** Coerce prop to boolean (MDX may pass string "true"/"false") */
+function toBool(v: unknown): boolean {
+  if (typeof v === "boolean") return v;
+  if (v === "true") return true;
+  if (v === "false") return false;
+  return false;
+}
+
 export function ComparisonRow({
   icon,
   children,
@@ -52,9 +60,11 @@ export function ComparisonRow({
 }: {
   icon?: ReactNode;
   children: ReactNode;
-  others?: boolean;
-  pimms?: boolean;
+  others?: boolean | string;
+  pimms?: boolean | string;
 }) {
+  const othersChecked = toBool(others);
+  const pimmsChecked = toBool(pimms);
   return (
     <div className="grid grid-cols-[1fr_60px_80px] md:grid-cols-[1fr_160px_160px]">
       <div className="bg-card px-2 md:px-6 py-4">
@@ -64,10 +74,10 @@ export function ComparisonRow({
         </div>
       </div>
       <div className="bg-card flex items-center justify-center">
-        <Pill value={others} rounded={false} />
+        <Pill value={othersChecked} rounded={false} />
       </div>
       <div className="bg-card flex items-center justify-center">
-        <Pill value={pimms} />
+        <Pill value={pimmsChecked} />
       </div>
     </div>
   );
