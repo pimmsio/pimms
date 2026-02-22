@@ -249,6 +249,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2025-09-14T00:00:00.000Z",
     "fr": "/blog/est-ce-que-bitly-est-adapte-au-suivi-des-conversions"
   },
+  "/articles/link-rotation-ab-testing-landing-pages": {
+    "en": "/blog/link-rotation-ab-testing-landing-pages",
+    "lastmod": "2026-02-22T00:00:00.000Z"
+  },
   "/articles/linktree-vs-pimms-comparison-2026": {
     "en": "/blog/linktree-vs-pimms-comparison-2026",
     "lastmod": "2026-02-19T00:00:00.000Z"
