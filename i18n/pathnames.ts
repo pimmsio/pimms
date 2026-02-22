@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-02-21T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -32,7 +32,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2026-01-19T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -66,7 +66,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/a-b-testing-for-smart-links-step-by-step-guide": {
     "en": "/blog/a-b-testing-for-smart-links-step-by-step-guide",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-02-22T00:00:00.000Z"
   },
   "/articles/a-comprehensive-guide-to-essential-vibe-coding-tools": {
     "en": "/blog/a-comprehensive-guide-to-essential-vibe-coding-tools",
