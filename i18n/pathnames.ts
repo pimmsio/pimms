@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -125,6 +125,10 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/can-you-test-more-than-one-change-at-a-time-and-other-ab-testing-faqs": {
     "en": "/blog/can-you-test-more-than-one-change-at-a-time-and-other-ab-testing-faqs",
     "lastmod": "2025-09-14T00:00:00.000Z"
+  },
+  "/articles/common-utm-tracking-mistakes-how-to-fix": {
+    "en": "/blog/common-utm-tracking-mistakes-how-to-fix",
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/cuttly-vs-pimms-comparison-2026": {
     "en": "/blog/cuttly-vs-pimms-comparison-2026",
@@ -545,19 +549,23 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/abuse": {
     "en": "/legal/report-abuse",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/report-abuse"
   },
   "/articles/imprint": {
     "en": "/legal/imprint",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/imprint"
   },
   "/articles/privacy": {
     "en": "/legal/privacy-policy",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/privacy-policy"
   },
   "/articles/terms": {
     "en": "/legal/terms-of-service",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/terms-of-service"
   },
   "/landings/2octobre": {
     "en": "/2october",
