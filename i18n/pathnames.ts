@@ -402,6 +402,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/utm-tracking-for-organic-social-media-posts",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
+  "/articles/utm-tracking-for-paid-ads-google-meta-linkedin": {
+    "en": "/blog/utm-tracking-for-paid-ads-google-meta-linkedin",
+    "lastmod": "2026-02-23T00:00:00.000Z"
+  },
   "/articles/utm-tracking-for-social-media-campaigns-in-make": {
     "en": "/blog/utm-tracking-for-social-media-campaigns-in-make",
     "lastmod": "2025-09-14T00:00:00.000Z"
