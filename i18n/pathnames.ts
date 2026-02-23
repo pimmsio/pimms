@@ -126,6 +126,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/can-you-test-more-than-one-change-at-a-time-and-other-ab-testing-faqs",
     "lastmod": "2025-09-14T00:00:00.000Z"
   },
+  "/articles/common-utm-tracking-mistakes-how-to-fix": {
+    "en": "/blog/common-utm-tracking-mistakes-how-to-fix",
+    "lastmod": "2026-02-23T00:00:00.000Z"
+  },
   "/articles/cuttly-vs-pimms-comparison-2026": {
     "en": "/blog/cuttly-vs-pimms-comparison-2026",
     "lastmod": "2026-02-19T00:00:00.000Z"
