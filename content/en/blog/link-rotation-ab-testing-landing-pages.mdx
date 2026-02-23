@@ -421,27 +421,47 @@ Unlike basic URL shorteners that only track clicks, PIMMS tracks complete conver
 
 ---
 
-## Frequently Asked Questions
+::: faq
 
 ### What's the difference between link rotation and A/B testing?
 
 Link rotation is a URL-level traffic distribution technique that automatically sends visitors to different landing pages from a single link, while A/B testing is the broader concept of comparing two or more variants to determine which performs better. Link rotation serves as the mechanism for implementing landing page A/B tests without requiring developer implementation or complex analytics setup. Traditional A/B testing tools require JavaScript installation and weeks of setup; link rotation works immediately through smart URL technology.
 
+:::
+
+::: faq
+
 ### How much traffic do I need for link rotation to be effective?
 
 For statistically significant results at 95% confidence with a 5% margin of error, you need approximately 1,500-3,000 visitors per variant depending on your baseline conversion rate. If you convert at 10%, you need about 2,300 visitors per variant. With lower traffic, use weighted distribution (70/30 or 80/20) to gather data while minimizing risk. Even with limited traffic (100-200 visits/week), link rotation remains valuable for gradual winner identification over longer time periods.
+
+:::
+
+::: faq
 
 ### Can I change rotation settings after distributing the link?
 
 Yes — this is link rotation's core advantage over traditional A/B testing. Since rotation operates at the smart link level, you can update traffic distribution, add new variants, remove underperformers, or shift 100% traffic to winners without changing the distributed URL. This flexibility enables real-time optimization that traditional A/B testing cannot provide.
 
+:::
+
+::: faq
+
 ### How do I attribute conversions to specific landing page variants?
 
 Smart link platforms automatically append variant identifiers to destination URLs (e.g., `?variant=a` or `?variant=b`), which get captured by tracking scripts, form tools, or payment platforms. This variant parameter flows through your conversion funnel, allowing attribution of form submissions, purchases, or bookings back to the specific landing page that drove them. Platforms like PIMMS automate this entire attribution flow without requiring manual UTM configuration.
 
+:::
+
+::: faq
+
 ### Should I use 50/50 or weighted traffic distribution?
 
 Use 50/50 distribution when both variants represent acceptable experiences, you have sufficient traffic (1,000+ visits/week), and you want fastest statistical significance. Use weighted distribution (70/30 or 80/20) when testing risky changes, you have limited traffic, or you're gradually rolling out new experiences. Weighted distribution minimizes downside risk while still gathering actionable data about variant performance.
+
+:::
+
+::: faq
 
 ### How long should I run a link rotation test?
 
@@ -449,6 +469,7 @@ Run tests until you achieve statistical significance (typically 95% confidence) 
 
 ---
 
+:::
 ## Start Rotating Links to Optimize Conversions
 
 Link rotation transforms static URLs into dynamic testing instruments that continuously optimize for conversions. By distributing traffic across landing page variants, tracking conversion performance, and reallocating traffic toward winners, marketers achieve 20-30% conversion improvements without technical dependencies.
