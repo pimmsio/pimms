@@ -32,7 +32,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -78,7 +78,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/ab-testing-for-startups-with-low-traffic-strategies-that-work": {
     "en": "/blog/ab-testing-for-startups-with-low-traffic-strategies-that-work",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/ab-testing-steps-for-funnel-optimization": {
     "en": "/blog/ab-testing-steps-for-funnel-optimization",
