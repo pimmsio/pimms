@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -390,6 +390,10 @@ export const pathnames: Record<string, Record<string, string>> = {
     "en": "/blog/utm-tagging-system-that-scales-2026",
     "lastmod": "2026-01-19T00:00:00.000Z"
   },
+  "/articles/utm-tracking-for-email-marketing-campaigns": {
+    "en": "/blog/utm-tracking-for-email-marketing-campaigns",
+    "lastmod": "2026-02-23T00:00:00.000Z"
+  },
   "/articles/utm-tracking-for-organic-social-media-posts": {
     "en": "/blog/utm-tracking-for-organic-social-media-posts",
     "lastmod": "2025-09-14T00:00:00.000Z"
@@ -545,19 +549,23 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/abuse": {
     "en": "/legal/report-abuse",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/report-abuse"
   },
   "/articles/imprint": {
     "en": "/legal/imprint",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/imprint"
   },
   "/articles/privacy": {
     "en": "/legal/privacy-policy",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/privacy-policy"
   },
   "/articles/terms": {
     "en": "/legal/terms-of-service",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/terms-of-service"
   },
   "/landings/2octobre": {
     "en": "/2october",
