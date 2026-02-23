@@ -350,27 +350,47 @@ For workflow integration, see our guide on [cross-channel automation](/articles/
 
 ---
 
-## Frequently Asked Questions
+::: faq
 
 ### What's the difference between static and dynamic QR codes?
 
 Static QR codes encode the destination URL directly into the QR pattern itself. Once printed, the URL cannot be changed without generating a new code. Dynamic QR codes contain a short redirect URL that points to a smart link platform, which then redirects to your target URL. This allows you to update the destination, track scans, and gather analytics after printing. For marketing campaigns, dynamic QR codes are essential — they provide tracking data and flexibility that static codes cannot offer.
 
+:::
+
+::: faq
+
 ### How do I track conversions from QR code scans?
 
 To track conversions from QR scans, embed UTM parameters in the QR destination URL, install tracking scripts on landing pages, and integrate conversion events from forms (Tally, Typeform, Webflow), payment platforms (Stripe, Shopify), or booking tools (Cal.com, Calendly). Smart link platforms like PIMMS automate this process by capturing the QR scan parameters, passing them through the conversion funnel, and attributing final purchases or signups back to the original QR campaign.
+
+:::
+
+::: faq
 
 ### Can I change where a QR code points after printing it?
 
 Yes, if you use dynamic QR codes. Dynamic codes point to an intermediary short URL that redirects to your target destination. You can change this target destination at any time through your QR management platform without reprinting materials. This is essential for fixing broken links, updating expired offers, or A/B testing different landing pages from the same printed QR code.
 
+:::
+
+::: faq
+
 ### What UTM parameters should I use for QR codes?
 
 For QR codes, use this UTM structure: `utm_source` for the specific placement (magazine-name, packaging, event-name), `utm_medium=qr` or `utm_medium=qr-print` to identify the channel, `utm_campaign` for the campaign name, and `utm_content` for placement-specific details (page-number, batch-code, booth-location). This granularity lets you track performance by publication, product, event, or retail location — revealing exactly which placements justify their costs.
 
+:::
+
+::: faq
+
 ### How do I measure ROI from QR code campaigns?
 
 Calculate QR campaign ROI by dividing net revenue by campaign cost. Track total campaign expenses (design, printing, distribution), measure QR scans, count conversions from those scans, and connect conversions to actual revenue through payment integration. Formula: ROI = ((Revenue - Cost) / Cost) × 100. Smart attribution platforms automatically calculate this by connecting QR scan data to Stripe or Shopify transactions, showing per-campaign profitability in real-time dashboards.
+
+:::
+
+::: faq
 
 ### Do QR codes work for offline-to-online attribution?
 
@@ -378,6 +398,7 @@ Yes, QR codes are the most effective bridge for offline-to-online attribution. T
 
 ---
 
+:::
 ## Start Tracking QR Code Attribution Today
 
 QR codes have evolved from simple redirects to sophisticated attribution tools. By implementing trackable QR codes with UTM parameters, dynamic link technology, and conversion integration, you transform offline marketing into a measurable, optimizable revenue channel.
