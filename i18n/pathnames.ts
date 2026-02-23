@@ -2,22 +2,22 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
     "fr": "/blog/marketing",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/category/legal": {
     "en": "/legal",
@@ -32,7 +32,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/emma": {
     "en": "/articles/author/emma",
     "fr": "/articles/auteur/emma",
-    "lastmod": "2026-02-22T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/category/guides": {
     "en": "/guides",
@@ -78,7 +78,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/ab-testing-for-startups-with-low-traffic-strategies-that-work": {
     "en": "/blog/ab-testing-for-startups-with-low-traffic-strategies-that-work",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/ab-testing-steps-for-funnel-optimization": {
     "en": "/blog/ab-testing-steps-for-funnel-optimization",
@@ -545,19 +545,23 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/abuse": {
     "en": "/legal/report-abuse",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/report-abuse"
   },
   "/articles/imprint": {
     "en": "/legal/imprint",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/imprint"
   },
   "/articles/privacy": {
     "en": "/legal/privacy-policy",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/privacy-policy"
   },
   "/articles/terms": {
     "en": "/legal/terms-of-service",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2025-09-14T00:00:00.000Z",
+    "fr": "/legal/terms-of-service"
   },
   "/landings/2octobre": {
     "en": "/2october",
