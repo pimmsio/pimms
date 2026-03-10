@@ -2,7 +2,7 @@
 title: Track WordPress Elementor Forms: Complete Guide 2025
 summary: Set up complete WordPress Elementor form tracking in minutes. Track every lead with full campaign attribution. Step-by-step guide with screenshots showing which campaigns generate conversions.
 publishedAt: 2025-09-01
-updatedAt: 2026-01-19
+updatedAt: 2026-03-09
 slug: how-to-track-elementor-form-leads-conversion-tracking
 image: https://assets.pimms.io/wordpress-guide-pimms.webp
 author: alexandre
@@ -14,135 +14,68 @@ related:
   - no-code-guide-for-website
 ---
 
-**WordPress Elementor form tracking** lets you see exactly which marketing campaigns generate your best leads. This complete guide shows you how to set up **Elementor form conversion tracking** in 10-15 minutes using Pimms.
+**WordPress Elementor form tracking** lets you see exactly which marketing campaigns generate your best leads. The Pimms dashboard has an **interactive setup wizard** that handles all technical details for you.
 
 You'll get **real-time lead attribution** showing which ads, YouTube posts, or email campaigns drive actual form submissions. Perfect for **WordPress lead tracking** with full **marketing attribution** across all your Elementor Pro forms.
 
-**What you'll accomplish:** Complete form analytics setup, webhook integration, and campaign tracking for every Elementor form on your WordPress site.
+WordPress powers millions of business websites, and Elementor Pro is one of the most popular page builders for creating lead generation forms. With Pimms, you can track every form submission and attribute it to the exact campaign that brought the visitor.
 
-## 1. Install the tracking script
+## Why track Elementor forms with Pimms?
 
-**Requirements**
+- **Know which ads actually generate leads, not just clicks.** You spend $2,000/month on Google Ads driving traffic to your WordPress site. Without Pimms, you see ad clicks and form submissions separately. With Pimms, every form submission is linked to the specific ad and keyword that brought the visitor.
 
-Make sure you have **Elementor Pro** installed (forms require the Pro version).
+- **Measure your SEO efforts in real leads.** Your WordPress blog ranks for several keywords. Visitors read articles and fill out contact forms. Pimms connects each submission to the original page and traffic source, showing you which content generates actual leads.
 
-**Add the script in WordPress**
+- **Compare landing page performance.** You built multiple Elementor landing pages for different campaigns. Pimms shows you which page generates the most form submissions and from which traffic source — helping you optimize your funnel.
 
-1. Go to your **WordPress Dashboard**
-2. Navigate to: **Elementor** → **Custom Code** → **Add New Code**
+## Prerequisites
 
-![Elementor Custom Code Menu](https://assets.pimms.io/elementor-custom-code-menu.webp)
+- **WordPress** with **Elementor Pro** installed (required for webhook actions and advanced form features)
+- A **Pimms account** ([sign up here](https://app.pimms.io))
+- At least one Elementor form on your WordPress site
 
-3. Paste the following script:
+## What you'll track
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js" data-forward-all="true"></script>
-```
+- **Elementor form submissions** — Every form fill across your entire WordPress site, with visitor details
+- **Lead attribution by campaign** — Which ad, email, social post, or SEO keyword drove each submission
+- **Campaign performance** — Conversion rates and lead counts broken down by traffic source
+- **Multi-form analytics** — Track forms across all pages from one dashboard
 
-4. Set the **Location** to `<head>`
+## How to set it up
 
-![Set Location to Head](https://assets.pimms.io/elementor-set-location-head.webp)
+Go to your [Pimms dashboard](https://app.pimms.io), open **Integrations → WordPress / Elementor**, and launch the setup wizard. It walks you through adding two scripts to your WordPress site's head, building a compatible Elementor form, configuring the webhook action, and verifying with a test submission. Setup takes about 5 minutes.
 
-5. Click **Publish**
-6. Choose where to display the code (select **Entire Site** — recommended)
+## What the setup wizard covers
 
-![Choose Entire Site](https://assets.pimms.io/elementor-choose-entire-site.webp)
+The WordPress / Elementor wizard has 6 steps:
 
-7. Click **Save & Close**
+1. **Install tracking scripts** — Detection script and form injection script added to your WordPress head
+2. **Verify script installation** — Confirm both scripts are loading correctly on your site
+3. **Build a Pimms-compatible form** — Follow the form field requirements for Elementor forms
+4. **Configure Elementor webhook** — Add the webhook action to your Elementor form's "Actions After Submit"
+5. **Create a test link** — Generate a tracking link to your WordPress page
+6. **Verify tracking works** — Submit a test form to confirm everything is connected
 
-**Check** if the script is properly installed
+## How it works
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Verify your script installation"
-  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
-/>
+1. **Install the Pimms scripts** on your WordPress site — the detection script identifies visitors from Pimms links, and the form injection script adds a hidden tracking field to your Elementor forms
+2. **Create a Pimms link** pointing to your WordPress page (e.g. `pim.ms/free-consultation`)
+3. **A visitor clicks your link**, lands on your WordPress site, and fills out an Elementor form
+4. **Elementor fires a webhook** to Pimms with the form data and tracking ID, and Pimms attributes the lead to the original campaign
 
-## 2. Build a Pimms-compatible form
+The form injection script works automatically with Elementor Pro forms — it adds a hidden `pimms_id` field that captures the visitor's attribution data.
 
-Pimms auto-detects your fields — just follow this:
+## Best ways to share your tracking links
 
-**Add Elementor Form Widget**
+- **Google Ads** — Use Pimms links as your ad destination to see which keywords and ads generate actual form submissions
+- **Facebook/Meta Ads** — Track which ad creative drives the most leads on your WordPress site
+- **Email campaigns** — Replace raw URLs with Pimms links in your newsletters and drip sequences
+- **LinkedIn posts** — Share your landing page via Pimms to track social-driven leads
+- **Guest blogging** — Include tracked links in guest posts to measure referral lead generation
 
-1. Open your **Form Widget** in Elementor
-2. Add name and email field 
-3. Go to the field you want to configure:
-   - **Form Field** → **Select Field** → **Advanced**
-4. Check that the **ID** is correct
+## What you'll see in your dashboard
 
-![Check Field ID](https://assets.pimms.io/elementor-check-field-id.webp)
-
-**Capture the `pimms_id` parameter**
-
-1. Add a new **Form Field**
-2. Configure it as follows:
-   - **Type**: Hidden
-   - **Label**: pimms_id
-   - **Advanced → Default Value**: Click the **Dynamic Tags** icon → select **Request Parameter**
-   - **In Advanced → ID, make sure not to use: `pimms_id`**
-
-![Configure Hidden Field](https://assets.pimms.io/elementor-configure-hidden-field.webp?v=2)
-
-3. In the settings:
-   - **Method**: GET
-   - **Parameter Name**: `pimms_id`
-
-## 3. Add the Elementor webhook for form submissions
-
-To setup a new form: [Elementor Forms Builder](https://elementor.com/pages/form-builder/)
-
-**Configure Form Submission**
-
-1. In the Form Widget settings, go to the tab: **Actions After Submit**
-
-![Actions After Submit Tab](https://assets.pimms.io/elementor-actions-after-submit.webp)
-
-2. Add **Webhook** as an action
-
-![Add Webhook Action](https://assets.pimms.io/elementor-add-webhook-action.webp)
-
-Use the following webhook URL:
-
-```
-https://app.pimms.io/api/elementor/webhook?workspace_id=your-id
-```
-
-Replace `your-id` with your **Workspace ID**
-
-Example:  
-
-```
-https://app.pimms.io/api/elementor/webhook?workspace_id=ws_abc123xyz
-```
-
-## 4. Create a tracking link in Pimms
-
-1. Go to [Pimms](https://app.pimms.io)
-2. Create a new short link pointing to your **Elementor page** with the form
-
-**Example**:  
-```
-https://pim.ms/my-landing-page
-```
-
-Use this link in your ads, outreach campaigns, emailing or social channels — everywhere you get traffic.
-
-## 5. Test your setup
-
-1. Open your Pimms link in an **incognito tab**
-2. Fill out your Elementor form (use a test email like `test+pimms@yourdomain.com`)
-3. Submit the form
-4. Check your [Pimms dashboard](https://app.pimms.io)
-
-You should see a new lead with full attribution showing exactly where it came from.
-
-## 6. Troubleshooting tips
-
-- Make sure you have **Elementor Pro** (free version doesn't include webhooks)
-- Confirm that the Pimms script is properly installed (use our free tool to verify)
-- Double-check that your **Workspace ID** is correct in both the webhook URL
-- Test filling the form and submitting in **incognito mode** with a fresh email address
-- Make sure you enter your page via your **Pimms link**, not directly
+Your Pimms dashboard shows every Elementor form submission in real time with full campaign attribution. For each lead, you'll see the form data (name, email, phone, message), which Pimms link they clicked, from which platform, and which campaign. Filter by date, traffic source, or form to identify your best-performing channels.
 
 ## FAQs
 
@@ -150,7 +83,7 @@ You should see a new lead with full attribution showing exactly where it came fr
 
 ### How long does WordPress Elementor form tracking take to set up?
 
-Complete WordPress Elementor form tracking setup takes 10-15 minutes following our step-by-step guide. You'll install the tracking script, configure webhook integration, and test the connection. Most users complete the setup in one session with immediate results.
+Complete WordPress Elementor form tracking setup takes a few minutes using the interactive wizard in the Pimms dashboard. The wizard handles script installation, webhook configuration, and verification. Most users complete the setup in one session with immediate results.
 
 :::
 
@@ -170,10 +103,12 @@ Yes! Once you configure Pimms tracking, Elementor forms across your entire WordP
 
 :::
 
-## You're all set 🎉
+::: faq
 
-Every WordPress Elementor form lead collected via your Pimms links will now be tracked — with full attribution showing exactly which campaign, ad, or channel generated each lead.
+### Does it work with other WordPress form plugins?
 
-👉 [Create your first Pimms link](https://pimms.io)
+The setup wizard is specifically designed for Elementor Pro forms. If you use other form plugins (Contact Form 7, WPForms, Gravity Forms), the detection script will still work, but you'll need to configure the webhook action differently. Contact support for help with non-Elementor form plugins.
+
+:::
 
 <CallToAction />

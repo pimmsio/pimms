@@ -2,17 +2,17 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/": {
     "en": "/",
     "fr": "/",
-    "lastmod": "2026-02-23T00:00:00.000Z"
+    "lastmod": "2026-03-09T00:00:00.000Z"
   },
   "/freetools/site-checker": {
     "en": "/freetools/pimms-tracking-site-checker-install",
     "fr": "/freetools/pimms-tracking-site-checker-installation",
-    "lastmod": "2026-02-23T00:00:00.000Z"
+    "lastmod": "2026-03-09T00:00:00.000Z"
   },
   "/articles": {
     "en": "/articles",
     "fr": "/articles",
-    "lastmod": "2026-02-23T00:00:00.000Z"
+    "lastmod": "2026-03-09T00:00:00.000Z"
   },
   "/articles/category/digital-marketing": {
     "en": "/blog/marketing",
@@ -27,7 +27,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/author/alexandre": {
     "en": "/articles/author/alexandre",
     "fr": "/articles/auteur/alexandre",
-    "lastmod": "2026-02-23T00:00:00.000Z"
+    "lastmod": "2026-03-09T00:00:00.000Z"
   },
   "/articles/author/emma": {
     "en": "/articles/author/emma",
@@ -37,7 +37,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   "/articles/category/guides": {
     "en": "/guides",
     "fr": "/guides",
-    "lastmod": "2026-02-19T00:00:00.000Z"
+    "lastmod": "2026-03-09T00:00:00.000Z"
   },
   "/articles/category/tutorials": {
     "en": "/tutorials",
@@ -87,7 +87,7 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/affiliate-revenue-tracking-with-utm-parameters": {
     "en": "/blog/affiliate-revenue-tracking-with-utm-parameters",
-    "lastmod": "2025-09-14T00:00:00.000Z"
+    "lastmod": "2026-02-23T00:00:00.000Z"
   },
   "/articles/ai-powered-marketing-attribution-what-you-need-to-know": {
     "en": "/blog/ai-powered-marketing-attribution-what-you-need-to-know",
@@ -452,42 +452,52 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/cal-com-framer-integration-complete-setup-guide": {
     "en": "/guides/cal-com-framer-integration-complete-setup-guide",
-    "lastmod": "2025-09-29T00:00:00.000Z",
+    "lastmod": "2026-03-09T00:00:00.000Z",
     "fr": "/guides/cal-com-framer-integration-complete-setup-guide"
   },
   "/articles/cal-com-webflow-integration-complete-setup-guide": {
     "en": "/guides/cal-com-webflow-integration-complete-setup-guide",
-    "lastmod": "2025-09-29T00:00:00.000Z",
+    "lastmod": "2026-03-09T00:00:00.000Z",
     "fr": "/guides/cal-com-webflow-integration-complete-setup-guide"
   },
   "/articles/calcom-direct-webhook-integration": {
     "en": "/guides/calcom-direct-webhook-integration",
-    "lastmod": "2025-09-16T00:00:00.000Z",
+    "lastmod": "2026-03-09T00:00:00.000Z",
     "fr": "/guides/calcom-direct-webhook-integration"
   },
   "/articles/how-to-track-brevo-forms-and-meetings": {
     "en": "/guides/how-to-track-brevo-forms-and-meetings-webhook-integration",
-    "lastmod": "2026-01-20T00:00:00.000Z",
+    "lastmod": "2026-03-09T00:00:00.000Z",
     "fr": "/guides/how-to-track-brevo-forms-and-meetings-webhook-integration"
   },
   "/articles/how-to-track-calendly": {
     "en": "/guides/how-to-track-calendly-bookings-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
-    "fr": "/guides/comment-suivre-reservations-calendly-attribution-marketing"
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-calendly-bookings-marketing-attribution"
+  },
+  "/articles/how-to-track-carrd": {
+    "en": "/guides/how-to-track-carrd-conversions-marketing-attribution",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-carrd-conversions-marketing-attribution"
   },
   "/articles/how-to-track-elementor-form-leads": {
     "en": "/guides/how-to-track-elementor-form-leads-conversion-tracking",
-    "lastmod": "2026-01-19T00:00:00.000Z",
-    "fr": "/guides/comment-suivre-leads-formulaires-elementor-attribution-marketing"
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-elementor-form-leads-conversion-tracking"
   },
   "/articles/how-to-track-framer": {
     "en": "/guides/how-to-track-framer-form-submissions-marketing-attribution",
-    "lastmod": "2026-01-19T00:00:00.000Z",
-    "fr": "/guides/comment-suivre-formulaires-framer-attribution-marketing"
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-framer-form-submissions-marketing-attribution"
+  },
+  "/articles/how-to-track-jotform": {
+    "en": "/guides/how-to-track-jotform-form-submissions-marketing-attribution",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-jotform-form-submissions-marketing-attribution"
   },
   "/articles/how-to-track-podia-stripe-payments": {
     "en": "/guides/how-to-track-podia-stripe-payments",
-    "lastmod": "2026-01-20T00:00:00.000Z",
+    "lastmod": "2026-03-09T00:00:00.000Z",
     "fr": "/guides/how-to-track-podia-stripe-payments"
   },
   "/articles/how-to-track-sales-with-stripe-checkout": {
@@ -497,12 +507,12 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/how-to-track-systemeio-sales-and-leads": {
     "en": "/guides/how-to-track-systemeio-sales-and-leads-marketing-attribution",
-    "lastmod": "2025-09-14T00:00:00.000Z",
-    "fr": "/guides/comment-suivre-ventes-et-leads-systemeio-attribution-marketing"
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-systemeio-sales-and-leads-marketing-attribution"
   },
   "/articles/how-to-track-tally-webhook": {
     "en": "/guides/tally-direct-webhook-integration",
-    "lastmod": "2026-01-19T00:00:00.000Z",
+    "lastmod": "2026-03-09T00:00:00.000Z",
     "fr": "/guides/tally-direct-webhook-integration"
   },
   "/articles/how-to-track-tally": {
@@ -510,10 +520,15 @@ export const pathnames: Record<string, Record<string, string>> = {
     "lastmod": "2026-01-19T00:00:00.000Z",
     "fr": "/guides/comment-suivre-formulaires-tally-attribution-marketing"
   },
+  "/articles/how-to-track-typeform": {
+    "en": "/guides/how-to-track-typeform-form-submissions-marketing-attribution",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-typeform-form-submissions-marketing-attribution"
+  },
   "/articles/how-to-track-webflow-leads": {
     "en": "/guides/how-to-track-webflow-form-submissions-marketing-attribution",
-    "lastmod": "2026-01-19T00:00:00.000Z",
-    "fr": "/guides/comment-suivre-formulaires-lead-webflow-attribution-marketing"
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-webflow-form-submissions-marketing-attribution"
   },
   "/articles/introducing-conversion": {
     "en": "/guides/step-by-step-guide-for-developers-to-set-conversion-tracking",
@@ -522,8 +537,8 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/no-code-guide-for-website": {
     "en": "/guides/how-to-track-conversions-on-vibe-coding-ai-no-code-sites",
-    "lastmod": "2025-09-14T00:00:00.000Z",
-    "fr": "/guides/comment-suivre-conversions-sites-vibe-coding-no-code-ai"
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-conversions-on-vibe-coding-ai-no-code-sites"
   },
   "/articles/pimms-analytics-script-complete-guide": {
     "en": "/guides/pimms-analytics-script-complete-reference",
@@ -532,8 +547,8 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/setup-stripe-for-website": {
     "en": "/guides/how-to-track-stripe-sales-marketing-attribution",
-    "lastmod": "2026-01-19T00:00:00.000Z",
-    "fr": "/guides/comment-suivre-ventes-stripe-attribution-marketing"
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/guides/how-to-track-stripe-sales-marketing-attribution"
   },
   "/articles/start-with-cal-com-and-zapier": {
     "en": "/guides/how-to-track-cal-com-bookings-marketing-attribution",
@@ -557,43 +572,49 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/articles/abuse": {
     "en": "/legal/report-abuse",
-    "lastmod": "2025-09-14T00:00:00.000Z",
-    "fr": "/legal/report-abuse"
+    "lastmod": "2025-09-14T00:00:00.000Z"
   },
   "/articles/imprint": {
     "en": "/legal/imprint",
-    "lastmod": "2025-09-14T00:00:00.000Z",
-    "fr": "/legal/imprint"
+    "lastmod": "2025-09-14T00:00:00.000Z"
   },
   "/articles/privacy": {
     "en": "/legal/privacy-policy",
-    "lastmod": "2025-09-14T00:00:00.000Z",
-    "fr": "/legal/privacy-policy"
+    "lastmod": "2025-09-14T00:00:00.000Z"
   },
   "/articles/terms": {
     "en": "/legal/terms-of-service",
-    "lastmod": "2025-09-14T00:00:00.000Z",
-    "fr": "/legal/terms-of-service"
+    "lastmod": "2025-09-14T00:00:00.000Z"
   },
   "/landings/2octobre": {
     "en": "/2october",
     "lastmod": "2025-10-02T00:00:00.000Z",
     "fr": "/2octobre"
   },
+  "/landings/analytics": {
+    "en": "/products/analytics-attribution-track-clicks-leads-revenue",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/products/analytics-attribution-track-clicks-leads-revenue"
+  },
   "/landings/brevo": {
-    "en": "/solutions/brevo-email-marketing-tracking",
+    "en": "/integrations/brevo-email-marketing-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-brevo-email-marketing"
+    "fr": "/integrations/tracking-brevo-email-marketing"
+  },
+  "/landings/bulk-links": {
+    "en": "/products/bulk-link-management-folders-csv-import",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/products/bulk-link-management-folders-csv-import"
   },
   "/landings/calcom": {
-    "en": "/solutions/calcom-booking-conversion-tracking",
+    "en": "/integrations/calcom-booking-conversion-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-calcom-reservations-conversions"
+    "fr": "/integrations/tracking-calcom-reservations-conversions"
   },
   "/landings/calendly": {
-    "en": "/solutions/calendly-booking-conversion-tracking",
+    "en": "/integrations/calendly-booking-conversion-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-calendly-reservations-conversions"
+    "fr": "/integrations/tracking-calendly-reservations-conversions"
   },
   "/landings/contact-sales": {
     "en": "/contact-sales",
@@ -601,14 +622,24 @@ export const pathnames: Record<string, Record<string, string>> = {
     "fr": "/contact-sales"
   },
   "/landings/elementor": {
-    "en": "/solutions/elementor-form-lead-tracking",
+    "en": "/integrations/elementor-form-lead-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-elementor-formulaires-leads"
+    "fr": "/integrations/tracking-elementor-formulaires-leads"
+  },
+  "/landings/for-agencies": {
+    "en": "/solutions/pimms-for-marketing-agencies",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/solutions/pimms-pour-agences-marketing"
+  },
+  "/landings/for-freelancers": {
+    "en": "/solutions/pimms-for-freelancers-solopreneurs",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/solutions/pimms-pour-independants-solopreneurs"
   },
   "/landings/framer": {
-    "en": "/solutions/framer-website-conversion-tracking",
+    "en": "/integrations/framer-website-conversion-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-framer-conversions-site"
+    "fr": "/integrations/tracking-framer-conversions-site"
   },
   "/landings/home": {
     "en": "/",
@@ -616,9 +647,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     "fr": "/"
   },
   "/landings/iclosed": {
-    "en": "/solutions/iclosed-sales-meeting-tracking",
+    "en": "/integrations/iclosed-sales-meeting-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-iclosed-meetings-ventes"
+    "fr": "/integrations/tracking-iclosed-meetings-ventes"
+  },
+  "/landings/integrations": {
+    "en": "/products/integrations-connect-your-tools",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/products/integrations-connect-your-tools"
   },
   "/landings/landing-page-tracking": {
     "en": "/solutions/conversion-tracking-landing-page-analytics",
@@ -631,14 +667,29 @@ export const pathnames: Record<string, Record<string, string>> = {
     "fr": "/solutions/analytics-profil-linkedin-visiteurs"
   },
   "/landings/podia": {
-    "en": "/solutions/podia-course-sales-tracking",
+    "en": "/integrations/podia-course-sales-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-podia-ventes-cours"
+    "fr": "/integrations/tracking-podia-ventes-cours"
   },
   "/landings/pricing": {
     "en": "/pricing",
     "lastmod": "2026-02-20T00:00:00.000Z",
     "fr": "/pricing"
+  },
+  "/landings/qr-codes": {
+    "en": "/products/dynamic-qr-codes-tracking-marketing",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/products/dynamic-qr-codes-tracking-marketing"
+  },
+  "/landings/shopify": {
+    "en": "/solutions/shopify-ecommerce-sales-tracking",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/solutions/shopify-ecommerce-sales-tracking"
+  },
+  "/landings/smart-links": {
+    "en": "/products/smart-links-branded-short-links-deep-links-qr-codes",
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/products/smart-links-branded-short-links-deep-links-qr-codes"
   },
   "/landings/stripe": {
     "en": "/solutions/stripe-payment-revenue-tracking",
@@ -646,14 +697,14 @@ export const pathnames: Record<string, Record<string, string>> = {
     "fr": "/solutions/tracking-stripe-paiements-revenus"
   },
   "/landings/systemeio": {
-    "en": "/solutions/systemeio-funnel-tracking-sales",
+    "en": "/integrations/systemeio-funnel-tracking-sales",
     "lastmod": "2025-10-06T00:00:00.000Z",
-    "fr": "/solutions/tracking-systemeio-funnel-ventes"
+    "fr": "/integrations/tracking-systemeio-funnel-ventes"
   },
   "/landings/tally": {
-    "en": "/solutions/tally-form-conversion-tracking",
+    "en": "/integrations/tally-form-conversion-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-tally-formulaires-conversions"
+    "fr": "/integrations/tracking-tally-formulaires-conversions"
   },
   "/landings/tracking": {
     "en": "/solutions/marketing-tracking-attribution-clicks-leads-revenue",
@@ -662,12 +713,13 @@ export const pathnames: Record<string, Record<string, string>> = {
   },
   "/landings/utm": {
     "en": "/solutions/get-rid-of-google-sheets-for-your-utms",
-    "lastmod": "2026-01-19T00:00:00.000Z"
+    "lastmod": "2026-03-09T00:00:00.000Z",
+    "fr": "/solutions/remplace-google-sheets-pour-tes-utms"
   },
   "/landings/webflow": {
-    "en": "/solutions/webflow-form-lead-tracking",
+    "en": "/integrations/webflow-form-lead-tracking",
     "lastmod": "2026-02-19T00:00:00.000Z",
-    "fr": "/solutions/tracking-webflow-formulaires-leads"
+    "fr": "/integrations/tracking-webflow-formulaires-leads"
   },
   "/landings/youtube": {
     "en": "/solutions/deep-links-youtube-channel",

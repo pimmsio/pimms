@@ -1,0 +1,123 @@
+---
+title: Suivi Typeform : Guide Complet d'Attribution Marketing 2026
+summary: Connecte Pimms à Typeform en quelques minutes avec l'intégration webhook. Suis chaque soumission avec des analytics complètes montrant quelles campagnes génèrent tes meilleurs leads.
+publishedAt: 2026-03-09
+updatedAt: 2026-03-09
+slug: how-to-track-typeform-form-submissions-marketing-attribution
+image: https://assets.pimms.io/typeform-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-tally-webhook
+  - how-to-track-framer
+  - how-to-track-webflow-leads
+  - no-code-guide-for-website
+---
+
+Le **suivi formulaires Typeform** te permet de voir exactement quelles campagnes marketing génèrent tes meilleurs leads et soumissions. Le dashboard Pimms inclut un **assistant de configuration interactif** qui gère tous les détails techniques pour toi.
+
+Tu obtiendras des **analytics formulaire en temps réel** montrant quelles publicités, campagnes email, ou posts LinkedIn génèrent de vraies soumissions. Parfait pour le **suivi de génération de leads** avec une **attribution formulaire** complète du clic à la soumission.
+
+Typeform est l'un des constructeurs de formulaires les plus populaires, reconnu pour son interface conversationnelle et ses taux de complétion élevés. Avec Pimms, chaque réponse Typeform est attribuée à la campagne, publicité ou post social qui a amené le visiteur — sans code requis.
+
+## Pourquoi suivre les soumissions Typeform avec Pimms ?
+
+- **Sache quelles campagnes génèrent de vraies soumissions, pas juste des vues.** Tu intègres un Typeform sur ta landing page et tu drives du trafic depuis Google Ads et LinkedIn. Sans Pimms, tu vois 50 soumissions sans savoir quel canal les a générées. Avec Pimms, chaque soumission montre la campagne exacte, la publicité et la plateforme.
+
+- **Mesure le ROI de ton content marketing avec des vrais leads.** Tu écris des articles avec des sondages Typeform et des lead magnets intégrés. Pimms connecte chaque soumission à l'article qui a amené le lecteur, pour que tu saches quel contenu génère vraiment des leads — pas juste des vues de page.
+
+- **Optimise ton funnel avec l'attribution par soumission.** Tu utilises un Typeform multi-étapes pour qualifier tes leads. Pimms traque quelle source de trafic génère les soumissions de meilleure qualité, t'aidant à allouer ton budget aux canaux qui livrent de vrais résultats.
+
+## Prérequis
+
+- Un **compte Typeform** (gratuit ou payant — les webhooks sont disponibles sur tous les plans)
+- Un **compte Pimms** ([inscris-toi ici](https://app.pimms.io))
+- Un site web ou landing page où ton Typeform est intégré
+
+## Ce que tu vas suivre
+
+- **Soumissions Typeform** — Chaque réponse complétée avec les données du répondant et la campagne qui l'a amené
+- **Attribution leads par campagne** — Quelle publicité, email, post social ou contenu a généré chaque soumission
+- **Performance campagne** — Taux de complétion et nombre de soumissions ventilés par source de trafic
+- **Données champs cachés** — Paramètres d'attribution transmis via les champs cachés Typeform
+
+## Comment configurer
+
+Rends-toi sur ton [dashboard Pimms](https://app.pimms.io), ouvre **Intégrations → Typeform** et lance l'assistant de configuration. Il te guide pour installer le script de détection, ajouter un champ caché de suivi à ton Typeform, configurer le webhook et vérifier avec une soumission test. La configuration prend environ 5 minutes.
+
+## Ce que l'assistant de configuration couvre
+
+L'assistant Typeform a 6 étapes :
+
+1. **Installer le script de détection** — Ajoute le script Pimms sur la page où ton Typeform est intégré
+2. **Vérifier l'installation du script** — Confirme que le script se charge et détecte le domaine typeform.com
+3. **Ajouter le champ caché pimms_id** — Ajoute un champ caché à ton Typeform qui capture l'identifiant de suivi
+4. **Configurer le webhook dans Typeform** — Configure le webhook Typeform pour envoyer les soumissions à Pimms
+5. **Créer un lien test** — Génère un lien de suivi vers la page avec ton Typeform
+6. **Vérifier le fonctionnement** — Soumets un formulaire test pour confirmer que l'attribution est connectée
+
+## Comment ça marche
+
+1. **Installe le script de détection Pimms** sur la page où ton Typeform est intégré — il détecte les visiteurs venant de liens Pimms et configure le suivi sortant pour le domaine typeform.com
+2. **Quand un visiteur arrive via un lien Pimms**, le script passe automatiquement l'identifiant de clic au Typeform via un champ caché
+3. **Le visiteur remplit le formulaire** — la soumission inclut l'identifiant de suivi Pimms
+4. **Typeform envoie un webhook** à Pimms avec les données du formulaire et l'identifiant de suivi, et Pimms attribue le lead à la campagne d'origine
+
+Le webhook se déclenche instantanément quand un formulaire est complété, donc les données d'attribution apparaissent dans ton dashboard en quelques secondes.
+
+## Meilleures façons de partager tes liens de suivi
+
+- **Landing pages** — Intègre ton Typeform sur une landing page et drive du trafic avec des liens Pimms pour mesurer les conversions par campagne
+- **Posts LinkedIn** — Partage ton quiz ou sondage Typeform via un lien Pimms pour suivre quels posts génèrent le plus de réponses
+- **Campagnes email** — Utilise des liens Pimms dans tes newsletters pour voir quels emails génèrent des soumissions
+- **Publicités payantes** — Pointe tes publicités Google ou Meta vers un lien Pimms pour mesurer la conversion pub-à-soumission
+- **YouTube et podcasts** — Ajoute un lien tracké dans tes descriptions de vidéos pour mesurer les leads générés par ton contenu
+
+## Ce que tu verras dans ton dashboard
+
+Ton dashboard Pimms affiche chaque soumission Typeform en temps réel avec l'attribution complète. Pour chaque lead, tu verras les données du formulaire, quel lien Pimms ils ont cliqué, depuis quelle plateforme, et quelle campagne. Filtre par date, source de trafic ou formulaire pour identifier tes canaux les plus performants.
+
+## FAQs
+
+::: faq
+
+### Typeform supporte-t-il les webhooks sur les plans gratuits ?
+
+Oui ! Les webhooks Typeform sont disponibles sur tous les plans, y compris le plan gratuit. Tu peux configurer les webhooks dans les paramètres de ton Typeform sous Connect > Webhooks. Chaque formulaire peut avoir plusieurs endpoints webhook.
+
+:::
+
+::: faq
+
+### Que sont les champs cachés Typeform et comment aident-ils le suivi ?
+
+Les champs cachés sont des champs invisibles pré-remplis à partir des paramètres URL. Quand un visiteur arrive via un lien Pimms, le script de détection passe le `pimms_id` dans le champ caché. Typeform inclut ces données dans le payload du webhook, permettant à Pimms d'attribuer la soumission à la campagne d'origine.
+
+:::
+
+::: faq
+
+### Puis-je suivre plusieurs formulaires Typeform avec une seule configuration ?
+
+Oui ! Chaque Typeform a sa propre configuration webhook. Tant que chaque formulaire a le champ caché `pimms_id` et un webhook pointant vers Pimms, toutes les soumissions de tous tes formulaires seront suivies avec l'attribution complète.
+
+:::
+
+::: faq
+
+### Est-ce que ça marche avec les quiz et sondages Typeform ?
+
+Oui ! Tout type de Typeform — quiz, sondages, formulaires de génération de leads, formulaires de commande — peut être suivi avec Pimms. Tant que le champ caché est configuré, toutes les réponses sont attribuées à la campagne qui a amené le répondant.
+
+:::
+
+::: faq
+
+### Puis-je utiliser le suivi Typeform avec Stripe ou Cal.com ?
+
+Oui. Si tu lies un checkout Stripe ou intègres Cal.com en plus de ton Typeform, tu peux configurer plusieurs intégrations. Le script de détection fonctionne avec toutes les intégrations Pimms — il suffit de suivre l'assistant de chaque intégration dans le dashboard.
+
+:::
+
+<CallToAction />

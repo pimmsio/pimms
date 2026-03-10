@@ -14,6 +14,7 @@
       },
       "category": {
         "help": "Help",
+        "product": "Product",
         "solutions": "Solutions",
         "usecases": "Use Cases",
         "resources": "Resources",
@@ -24,12 +25,21 @@
         "company": "Company",
         "legal": "Legal"
       },
+      "product": {
+        "smart-links": "Smart Links",
+        "analytics": "Analytics & Attribution",
+        "utm": "UTM Management",
+        "qr-codes": "QR Codes",
+        "integrations": "Integrations"
+      },
       "usecases": {
         "tracking": "Tracking & Attribution",
         "landing-page": "Landing Page Tracking",
         "linkedin": "LinkedIn Analytics",
         "youtube": "YouTube Tracking",
-        "systemeio": "Systeme.io Funnels"
+        "systemeio": "Systeme.io Funnels",
+        "freelancers": "For Freelancers",
+        "agencies": "For Agencies"
       },
       "solutions": {
         "youtube": "YouTube content creators",

@@ -1,0 +1,216 @@
+---
+title: Analytics & Attribution — Track Clics, Leads et Revenus en Temps Réel
+summary: Analytics full-funnel du premier clic à la conversion payée. Track la performance de tes liens, capture des leads avec attribution source et attribue le revenu à la bonne campagne.
+publishedAt: 2026-03-09
+updatedAt: 2026-03-09
+slug: analytics-attribution-track-clicks-leads-revenue
+folder: products
+image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
+---
+
+<Header />
+
+<Slide size="xs" noPadding noOverflow>
+  <Avatars>La confiance des marketeurs data-driven</Avatars>
+  <Hero>
+    <H1>Vois chaque <Primary icon="sales" variant="h1">clic, lead et vente</Primary></H1>
+    <Summary>Attribution full-funnel du premier touch à la conversion payée. Comprends exactement quelles campagnes génèrent du revenu — sans approximation, sans tableurs, sans trous noirs de data.</Summary>
+  </Hero>
+  <AnimatedCentered noPadding>
+    <CtaButton className="w-fit px-6"><SwapRotate>Commence à tracker</SwapRotate></CtaButton>
+    <CtaBottomText>Aucune carte bancaire requise</CtaBottomText>
+  </AnimatedCentered>
+</Slide>
+
+
+<Slide id="real-time">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Données live</Label>
+      <H2>Regarde les conversions en <Primary>direct</Primary></H2>
+      <Text size="lg">Vois chaque clic, soumission de formulaire et achat au moment où ça arrive. Ton flux d'événements se met à jour en temps réel — pas de refresh, pas de délai, plus de doute sur ton tracking.</Text>
+    </Centered>
+  </BlurFade>
+</Slide>
+
+
+<Slide variant="secondary" id="dashboard">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Dashboard</Label>
+      <H2>Ton <Primary>centre de commande</Primary> analytics complet</H2>
+      <Text size="lg">Un dashboard pour les clics, leads et revenus. Filtre par source, medium, campagne, appareil, pays ou plage de dates. Exporte en CSV ou pousse les événements vers ton warehouse via API.</Text>
+    </Centered>
+  </BlurFade>
+</Slide>
+
+
+<Slide id="attribution">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Attribution</Label>
+      <H2>Attribution <Primary>multi-touch</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <Text size="lg">La plupart des outils montrent seulement l'attribution last-click — le dernier touch avant conversion. Mais tes acheteurs convertissent rarement au premier clic.</Text>
+          <Text>PIMMS track le parcours complet : premier clic, chaque touchpoint et dernier clic. Vois quelles sources amènent tes meilleurs clients et lesquelles concluent la vente. Alloue ton budget selon ce qui génère vraiment du revenu.</Text>
+          <List layout="vertical">
+            <Item variant="solution">Attribution premier clic — quelle campagne les a amenés</Item>
+            <Item variant="solution">Attribution dernier clic — ce qui a clos la vente</Item>
+            <Item variant="solution">Timeline parcours complet — chaque lien, page et formulaire</Item>
+          </List>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" inView>
+          <AnalyticsDemo />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+</Slide>
+
+
+<Slide variant="secondary" id="sources">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Canaux</Label>
+      <H2>Sache quels canaux <Primary>génèrent du revenu</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="visual">
+        <BlurFade direction="left" inView>
+          <Referer />
+        </BlurFade>
+      </Column>
+      <Column span={1} order="text">
+        <BlurFade direction="right" delay={0.1} inView>
+          <Text size="lg">Décompose les perfs par UTM source, medium, campaign et content. Vois quel post LinkedIn, email blast ou créatif ad a généré le plus d'inscriptions et de ventes.</Text>
+          <List layout="vertical">
+            <Item variant="solution">Canaux payants — Google Ads, Meta, LinkedIn Ads</Item>
+            <Item variant="solution">Organique — LinkedIn, X, Instagram, YouTube</Item>
+            <Item variant="solution">Email — newsletters, séquences, nurture</Item>
+            <Item variant="solution">Direct — referrals, bouche-à-oreille</Item>
+          </List>
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+</Slide>
+
+
+<Slide id="api">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">API</Label>
+      <H2>Requête tes analytics <Primary>via API</Primary></H2>
+      <Text size="lg">Récupère les événements, leads et revenus dans tes outils BI, dashboards custom ou data warehouse. API REST avec webhooks pour le streaming temps réel.</Text>
+    </Centered>
+  </BlurFade>
+</Slide>
+
+
+<Slide id="comparison">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">PIMMS vs les autres</Label>
+      <H2>Des analytics qui <Primary icon="why">attribuent vraiment</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+    <ComparisonContainer>
+      <ComparisonHeader />
+      <ComparisonCategory>Analytics de clics</ComparisonCategory>
+      <ComparisonRow others="true" pimms="true">Comptage de clics basique</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Tracking server-side (anti-bloqueurs pub)</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Ventilation géo, appareil, referrer</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Filtrage UTM & templates</ComparisonRow>
+      <ComparisonCategory>Attribution leads & revenus</ComparisonCategory>
+      <ComparisonRow others="false" pimms="true">Tracking leads formulaires & calendriers</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Tracking conversions Stripe & Shopify</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Attribution multi-touch</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Lead scoring IA</ComparisonRow>
+      <ComparisonCategory>Plateforme</ComparisonCategory>
+      <ComparisonRow others="false" pimms="true">Flux d'événements temps réel</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Webhooks & accès API</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">RGPD-first, aucun cookie tiers</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Plan gratuit inclut le tracking conversions</ComparisonRow>
+    </ComparisonContainer>
+  </Section>
+</Slide>
+
+
+<Slide id="cta">
+  <Section variant="card">
+    <Centered>
+      <H2>Commence à tracker les conversions</H2>
+      <Text>Tracking conversions Stripe & Shopify inclus dès le plan gratuit. Installe une fois, track tout.</Text>
+      <CtaButton>
+        <SwapRotate>Commencer gratuitement</SwapRotate>
+      </CtaButton>
+      <CtaBottomText>Tracking conversions gratuit • Aucune carte bancaire</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
+  </Section>
+</Slide>
+
+<TrackingGuideSection />
+
+<Slide>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2><Primary icon="questions">Questions</Primary> fréquentes</H2>
+      <Text size="lg">Tout ce que tu dois savoir sur les analytics PIMMS.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+
+::: faq
+### Que puis-je tracker au-delà des clics ?
+PIMMS track trois niveaux : les clics (avec ventilation géo, appareil, UTM), les leads (depuis les formulaires et calendriers avec attribution source) et le revenu (paiements Stripe et Shopify attribués aux campagnes).
+:::
+
+::: faq
+### Le tracking de conversions est-il vraiment gratuit ?
+Oui. Le tracking de conversions Stripe et Shopify est inclus dans le plan gratuit. La plupart des concurrents facturent 75 €+/mois pour des fonctionnalités similaires.
+:::
+
+::: faq
+### Comment fonctionne le tracking server-side ?
+PIMMS capture les événements côté serveur, donc les bloqueurs de pubs et les restrictions de cookies n'affectent pas tes données. Chaque clic, lead et vente est enregistré avec précision.
+:::
+
+::: faq
+### Quels outils de formulaires et calendriers sont supportés ?
+Brevo, Tally, Typeform, Cal.com, Calendly, formulaires Webflow, formulaires Framer, formulaires Elementor, Podia, iClosed et plus. Chaque soumission est automatiquement liée à sa source UTM d'origine.
+:::
+
+::: faq
+### Puis-je exporter mes données ?
+Oui. Utilise les webhooks pour pousser les événements en temps réel, l'API pour des requêtes personnalisées, ou intègre avec Zapier pour te connecter à 5 000+ apps.
+:::
+
+  </Section>
+</Slide>
+
+<Slide variant="secondary" size="xs" noPadding>
+  <h2 className="sr-only">Logos partenaires</h2>
+  <BlurFade direction="up" inView>
+    <LogosCircle />
+  </BlurFade>
+</Slide>
+
+<Footer />

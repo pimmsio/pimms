@@ -2,7 +2,7 @@
 title: Track Framer Forms: Complete Website Analytics 2025
 summary: Connect Pimms to Framer sites in minutes with simple script setup. Track every form submission with complete analytics showing which campaigns generate your best leads.
 publishedAt: 2025-05-14
-updatedAt: 2026-01-19
+updatedAt: 2026-03-09
 slug: how-to-track-framer-form-submissions-marketing-attribution
 image: https://assets.pimms.io/framer-guide-pimms.webp
 author: alexandre
@@ -10,116 +10,73 @@ categories:
   - guides
 related:
   - how-to-track-webflow-leads
+  - cal-com-framer-integration-complete-setup-guide
+  - how-to-track-elementor-form-leads
   - no-code-guide-for-website
 ---
 
-**Framer form tracking** lets you see exactly which marketing campaigns generate your best leads and form submissions from your Framer website. This complete guide shows you how to set up **Framer analytics** and **form conversion tracking** in 5-10 minutes using Pimms.
+**Framer form tracking** lets you see exactly which marketing campaigns generate your best leads and form submissions from your Framer website. The Pimms dashboard has an **interactive setup wizard** that handles all technical details for you.
 
 You'll get **real-time form analytics** showing which ads, YouTube posts, or email campaigns drive actual form submissions. Perfect for **Framer lead generation** with complete **website analytics** from click to conversion.
 
-**What you'll accomplish:** Complete Framer integration, form tracking setup, and campaign attribution for every form submission on your website.
+Framer is one of the most popular website builders for startups and solo founders. With Pimms, you can track every form submission on your Framer site and know exactly where each lead came from — no developer needed.
 
-<LinkCard
-  href="/articles/no-code-guide-for-website"
-  title="Looking to track external tools?"
-  description="Read this other guide if your site links to external tools like Cal.com, Tally, Stripe, etc."
-/>
+## Why track Framer forms with Pimms?
 
-## 1. Add the Pimms tracking script
+- **Find out which landing page converts best.** You built three landing pages in Framer, each targeting a different audience. Pimms shows you which page generates the most form submissions — and from which traffic source — so you can focus on what works.
 
-1. In Framer, go to your **site settings** → **Custom Code**
-2. Paste the following script in the **Head** section:
+- **Prove that your content marketing drives leads.** You share blog posts and guides that link to your Framer site. Without Pimms, you see form submissions but can't connect them to specific content. With Pimms, every form fill is attributed to the article or post that brought the visitor.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
+- **Measure paid vs organic lead quality.** You run Google Ads and also get organic traffic from SEO. Both generate form submissions. Pimms shows you which source produces more leads — and you can see the visitor's full journey from click to form submission.
 
-In addition, paste the following script in all the pages where you have a form:
+## Prerequisites
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.inject-form.js"></script>
-```
+- A **Framer paid plan** (required for custom code access)
+- A **Pimms account** ([sign up here](https://app.pimms.io))
+- At least one form on your Framer site
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Verify your script installation"
-  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
-/>
+## What you'll track
 
-![Framer custom code](https://assets.pimms.io/framer-custom-code.webp)
+- **Framer form submissions** — Every form fill across your entire Framer site, with the visitor's details
+- **Lead attribution by campaign** — Which ad, email, social post, or content piece drove each form submission
+- **Campaign performance** — Conversion rates and lead counts broken down by traffic source
+- **Multi-form analytics** — Track all forms across all pages from one dashboard
 
-3. Publish your site
+## How to set it up
 
-## 2. Build a Pimms-compatible form
+Go to your [Pimms dashboard](https://app.pimms.io), open **Integrations → Framer**, and launch the setup wizard. It walks you through adding two scripts to your Framer site, building a compatible form, configuring the webhook, and verifying with a test submission. Setup takes about 5 minutes.
 
-Pimms auto-detects your fields — just follow this:
+## What the setup wizard covers
 
-Add a **required email field**
-- The field name must start with `email` (like `Email`, `email 1`, `e-mail perso`, etc.)
+The Framer wizard has 6 steps:
 
-To track names:
-- Use one field named `fullname`, `name`, etc.
-- Or two fields: `firstname` and `lastname`
+1. **Install tracking scripts** — Detection script (site-wide) and form injection script (on pages with forms)
+2. **Verify script installation** — Confirm both scripts are loading correctly
+3. **Build a Pimms-compatible form** — Follow the form field requirements to ensure tracking works
+4. **Configure Framer webhook** — Connect form submissions to Pimms
+5. **Create a test link** — Generate a tracking link to your Framer page
+6. **Verify tracking works** — Submit a test form to confirm everything is connected
 
-👉 Check it by selecting the Input → **Name**.
+## How it works
 
-![Framer form field Name](https://assets.pimms.io/framer-form-field-name.webp)
+1. **Install the Pimms scripts** on your Framer site — the detection script identifies visitors from Pimms links, and the form injection script adds a hidden tracking field to your forms
+2. **Create a Pimms link** pointing to your Framer page (e.g. `pim.ms/get-started`)
+3. **A visitor clicks your link**, lands on your Framer site, and fills out a form
+4. **Framer sends a webhook** to Pimms with the form data and tracking ID, and Pimms attributes the lead to the original campaign
 
-## 3. Get your Workspace ID
+The form injection script works automatically with Framer's native form components — no manual field configuration needed.
 
-1. Log in to your [Pimms dashboard](https://app.pimms.io)
-2. Go to **Settings** → **Workspace ID**
-3. Copy your ID (e.g. `ws_abc123xyz`)
+## Best ways to share your tracking links
 
-## 3. Add the Framer webhook for form submissions
+- **Product Hunt launches** — Use a Pimms link for your Product Hunt listing to track how many leads come from launch day
+- **LinkedIn posts** — Share your Framer site's contact page via Pimms to measure which posts drive form fills
+- **Paid ads** — Point your Google or Meta ads to a Pimms link to see which ad creative generates the most leads
+- **Email campaigns** — Replace raw URLs with Pimms links in your newsletters to track email-driven leads
+- **Twitter/X threads** — Add a tracked CTA link at the end of threads to measure content-driven conversions
 
-To setup a new form: [Framer Forms Guide](https://www.framer.com/features/forms/)
+## What you'll see in your dashboard
 
-1. In Framer, select your form
-2. Go to **Form** → **Send to**
-3. Choose **"Webhook"**
-4. Use the following webhook URL:
-
-```
-https://app.pimms.io/api/framer/webhook?workspace_id=your-id
-```
-
-Replace `your-id` with your **Workspace ID**
-
-Example:  
-
-```
-https://app.pimms.io/api/framer/webhook?workspace_id=ws_abc123xyz
-```
-
-![Framer form webhook](https://assets.pimms.io/framer-form-webhook.webp?v=2)
-
-## 4. Create your Pimms tracking link
-
-1. Go to [Pimms](https://app.pimms.io)
-2. Create a new short link pointing to your **Framer page**
-
-**Example**:  
-
-```
-https://pim.ms/my-framer-site
-```
-
-Use this link in your ads, socials, emails, etc.
-
-## 5. Test your setup
-
-1. Open your Pimms link in an **incognito tab**
-2. Submit your Framer form
-3. Check your [Pimms dashboard](https://app.pimms.io)
-4. You should see a new lead with full attribution
-
-## 6. Troubleshooting tips
-
-- Make sure the **script** is in the Head
-- Double-check the **webhook URL** (including `workspace_id`)
-- Use **incognito mode** and a new email to test
-- Always use your **Pimms link** to start the session — that’s how attribution works
+Your Pimms dashboard shows every Framer form submission in real time with full campaign attribution. For each lead, you'll see the form data (name, email, message), which Pimms link they clicked, from which platform, and which campaign. Filter by date, traffic source, or form to understand which channels and pages generate the most leads.
 
 ## FAQs
 
@@ -147,10 +104,12 @@ Absolutely! Framer form tracking works seamlessly with all of Framer's native fo
 
 :::
 
-## You're all set 🎉
+::: faq
 
-Every Framer lead collected via your Pimms links will now be tracked — with complete conversion analytics and attribution data.
+### Can I use Framer form tracking together with Cal.com or Stripe?
 
-👉 [Create your first Pimms link](https://app.pimms.io)
+Yes. If you embed Cal.com on your Framer site or link to Stripe checkout, you can set up multiple integrations. The detection script works with all Pimms integrations — just make sure to follow each integration's wizard in the dashboard.
+
+:::
 
 <CallToAction />

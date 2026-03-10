@@ -164,101 +164,27 @@ export default function SiteCheckerForm() {
                 <CheckCircle className="w-6 h-6 md:w-8 md:h-8 text-brand-primary flex-shrink-0 mt-1" />
                 <div className="flex-1">
                   <h3 className="text-base md:text-lg font-semibold text-text-primary mb-2">Pimms Script Found!</h3>
-                  <p className="text-sm md:text-base text-text-secondary mb-3 leading-relaxed">
-                    Your site is using Pimms analytics script. Great job! You&apos;re all set to track your important
-                    conversions and marketing campaigns.
+                  <p className="text-sm md:text-base text-text-secondary leading-relaxed">
+                    Your site is set up to track conversions from your Pimms links. You&apos;re good to go!
                   </p>
-                  <div className="text-xs md:text-sm text-brand-primary mb-2">
-                    Script URL:
-                    <code className="bg-brand-primary/10 px-2 py-1 rounded text-xs break-all">{result.scriptUrl}</code>
-                  </div>
                 </div>
               </div>
 
-              {/* Benefits Section */}
-              <div className="mt-6 space-y-4 md:space-y-6">
-                <div className="bg-brand-primary/5 border border-brand-primary/20 rounded-xl p-4 md:p-6">
-                  <h4 className="text-base md:text-lg font-semibold text-text-primary mb-3 md:mb-4">
-                    What this means for your conversions:
-                  </h4>
-                  <ul className="text-text-secondary space-y-2 text-xs md:text-sm">
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>
-                        Automatically captures the <code className="bg-brand-primary/10 px-1 rounded">pimms_id</code>{" "}
-                        from Pimms links
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>Tracks conversions when users complete important actions on your site</span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>
-                        Records events like checkouts, sign-ups, and payments with the associated Pimms link campaign
-                      </span>
-                    </li>
-                    <li className="flex items-start">
-                      <span className="w-2 h-2 bg-brand-primary rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                      <span>
-                        No additional setup required - the script handles everything automatically when implemented
-                        correctly
-                      </span>
-                    </li>
-                  </ul>
-                </div>
-
-                {/* Optional Scripts Section */}
-                <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-6">
-                  <h4 className="text-base md:text-lg font-semibold text-text-primary mb-3 md:mb-4">
-                    Optional Scripts
-                  </h4>
-                  <div className="space-y-3">
-                    <div className="flex items-start">
-                      {result.injectFormScriptFound ? (
-                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-brand-primary mt-0.5 mr-3 flex-shrink-0" />
-                      ) : (
-                        <XCircle className="w-4 h-4 md:w-5 md:h-5 text-gray-400 mt-0.5 mr-3 flex-shrink-0" />
-                      )}
-                      <div className="min-w-0 flex-1">
-                        <p className="text-xs md:text-sm font-medium text-text-primary">
-                          Inject Form Script {result.injectFormScriptFound ? "(Found)" : "(Not Found)"}
-                        </p>
-                        <p className="text-xs text-text-secondary leading-relaxed">
-                          Automatically injects tracking ID into forms
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="flex items-start">
-                      {result.exposeScriptFound ? (
-                        <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-brand-primary mt-0.5 mr-3 flex-shrink-0" />
-                      ) : (
-                        <XCircle className="w-4 h-4 md:w-5 md:h-5 text-gray-400 mt-0.5 mr-3 flex-shrink-0" />
-                      )}
-                      <div className="min-w-0 flex-1">
-                        <p className="text-xs md:text-sm font-medium text-text-primary">
-                          Expose Script {result.exposeScriptFound ? "(Found)" : "(Not Found)"}
-                        </p>
-                        <p className="text-xs text-text-secondary leading-relaxed">
-                          Exposes tracking ID to all your urls (for systeme.io funnel tracking)
-                        </p>
-                      </div>
-                    </div>
+              <div className="rounded-xl border border-gray-200 bg-white divide-y divide-gray-100">
+                {[
+                  { label: "Detection script", found: result.scriptFound },
+                  { label: "Form injection script (optional)", found: result.injectFormScriptFound },
+                  { label: "Expose script (optional)", found: result.exposeScriptFound },
+                ].map((check) => (
+                  <div key={check.label} className="flex items-center justify-between gap-3 px-4 md:px-6 py-3 md:py-4">
+                    <span className="text-sm md:text-base font-medium text-text-primary">{check.label}</span>
+                    {check.found ? (
+                      <CheckCircle className="w-5 h-5 text-brand-primary flex-shrink-0" />
+                    ) : (
+                      <XCircle className="w-5 h-5 text-gray-300 flex-shrink-0" />
+                    )}
                   </div>
-                </div>
-
-                {/* Testing Note */}
-                <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 md:p-6">
-                  <h4 className="text-base md:text-lg font-semibold text-gray-900 mb-3">💡 Manual Testing</h4>
-                  <p className="text-gray-700 text-xs md:text-sm leading-relaxed">
-                    To verify the analytics object is working, visit your website and open the browser console. Type{" "}
-                    <code className="bg-gray-200 px-2 py-1 rounded text-xs break-all">!!window._pimmsAnalytics</code>{" "}
-                    and press Enter. It should return <code className="bg-gray-200 px-1 rounded text-xs">true</code> if
-                    the script is working correctly.
-                  </p>
-                </div>
+                ))}
               </div>
             </div>
           ) : (
@@ -312,18 +238,6 @@ import { Analytics as PimmsAnalytics } from "@getpimms/analytics"
 <PimmsAnalytics />`}
                       </code>
                     </div>
-                  </div>
-
-                  <div className="bg-gray-50 border border-gray-200 rounded-lg p-4 md:p-6">
-                    <h6 className="text-base md:text-lg font-semibold text-text-primary mb-3">
-                      💡 Testing Your Installation
-                    </h6>
-                    <p className="text-text-secondary text-xs md:text-sm leading-relaxed">
-                      After installing, you can use this tool to automatically verify your setup, or manually check by
-                      opening your browser console and typing{" "}
-                      <code className="bg-gray-200 px-2 py-1 rounded text-xs break-all">window._pimmsAnalytics</code>.
-                      You should see configuration values if everything is working correctly.
-                    </p>
                   </div>
 
                   <div className="text-center pt-4">

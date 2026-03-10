@@ -163,10 +163,11 @@ export function InlinePricing({
   ctaType?: string;
   comparePlansLabel?: React.ReactNode;
 }) {
+  const rootId = React.useId();
+
   if (!planOptions || !optionsCopy) {
     return null;
   }
-  const rootId = React.useId();
   const currencyCode = currency || "EUR";
   const formatter = new Intl.NumberFormat(locale || "en", {
     style: "currency",

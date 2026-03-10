@@ -12,7 +12,39 @@
       "onboarding": "Onboarding",
       "dashboard": "Sign in",
       "pricing": "Pricing",
-      "contact": "Contact Sales"
+      "contact": "Contact Sales",
+      "product": {
+        "_label": "Product",
+        "smart-links": "Smart Links",
+        "smart-links_desc": "Branded short links, deep links, QR codes & A/B testing",
+        "analytics": "Analytics & Attribution",
+        "analytics_desc": "Track clicks, leads, and revenue in real time",
+        "utm": "UTM Management",
+        "utm_desc": "Templates, conventions, and governance for your UTMs",
+        "qr-codes": "QR Codes",
+        "qr-codes_desc": "Dynamic, trackable QR codes with built-in analytics",
+        "bulk-links": "Bulk Links",
+        "bulk-links_desc": "Folders, CSV import, and bulk UTM management"
+      },
+      "integrations": {
+        "_label": "Integrations",
+        "stripe": "Stripe",
+        "calcom": "Cal.com",
+        "brevo": "Brevo",
+        "webflow": "Webflow",
+        "framer": "Framer",
+        "calendly": "Calendly",
+        "view-all": "View all integrations"
+      },
+      "resources": {
+        "_label": "Resources",
+        "blog": "Blog",
+        "guides": "Guides",
+        "tutorials": "Tutorials",
+        "api": "API Documentation",
+        "sdk": "TypeScript SDK",
+        "site-checker": "Site Checker"
+      }
     },
     "conversion": {
       "fail": {
@@ -136,6 +168,36 @@
     "contact": {
       "question": "Need help?",
       "action": "Book a call with Alexandre"
+    },
+    "askAi": {
+      "heading": "Still not sure PIMMS is right for you?",
+      "subtitle": "Let ChatGPT, Claude, Perplexity or Grok think for you. Click a button and find out what your favorite AI says about PIMMS.",
+      "askButton": "Ask {service}"
+    },
+    "lead_magnet": {
+      "banner_badge": "Free guide",
+      "banner_title": "The Complete Tracking Plan",
+      "banner_subtitle": "The exact framework used to set up real tracking systems behind real revenue. Stop guessing which channel drives results.",
+      "banner_benefit_1": "The 5 growth layers every business needs to track",
+      "banner_benefit_2": "The golden rule of UTM architecture",
+      "banner_benefit_3": "Free Google Sheet templates included",
+      "banner_cta": "Get your free guide",
+      "modal_title": "Get the free tracking plan",
+      "modal_subtitle": "Enter your email and we'll send you the complete guide with templates.",
+      "modal_email_placeholder": "you@company.com",
+      "modal_submit": "Send me the guide",
+      "modal_sending": "Sending...",
+      "modal_success_title": "Check your inbox!",
+      "modal_success_message": "The tracking plan is on its way to your email.",
+      "modal_no_spam": "No spam. Unsubscribe anytime.",
+      "modal_image_alt": "The Complete Tracking Plan 2026",
+      "section_title": "Stop guessing. Start tracking.",
+      "section_subtitle": "Get the exact UTM framework used in dozens of real growth campaigns — SaaS launches, LinkedIn outreach, paid acquisition, and more.",
+      "section_benefit_1": "The 5 growth layers every business needs to track",
+      "section_benefit_2": "The golden rule of UTM architecture",
+      "section_benefit_3": "Free Google Sheet templates (SaaS + LinkedIn Creator)",
+      "section_benefit_4": "From traffic noise to structured revenue data",
+      "section_social_proof": "Downloaded by 500+ marketers and founders"
     },
     "free_offer": {
       "images": {

@@ -37,11 +37,12 @@ export function InlinePricingSwitch({
   }, [defaultPlan]);
 
   return (
-    <div aria-label={selectAriaLabel} className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+    <div role="tablist" aria-label={selectAriaLabel} className="grid grid-cols-2 gap-3 sm:grid-cols-4">
       {ALL_PAID_PLANS.map((id) => (
         <button
           key={id}
           type="button"
+          role="tab"
           aria-controls={`${rootId}-panel-${id}`}
           aria-selected={plan === id}
           onClick={() => show(id)}

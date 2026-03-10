@@ -8,6 +8,7 @@ import { GithubIcon } from "../icons/github-icon";
 import Image from "next/image";
 import { DubRef } from "./dub-ref";
 import { OptimizedImage } from "../ui/optimized-image";
+import { LocaleSwitcher } from "../nav/locale-switcher";
 
 const linkClass = "text-sm text-gray-500 hover:text-gray-900 transition-colors duration-200";
 
@@ -46,7 +47,7 @@ export const Footer = async ({
 
       <div className="px-4 sm:px-6 lg:px-8 py-16 lg:py-20 relative z-10">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 lg:gap-8">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-10 lg:gap-8">
             {/* Logo and description */}
             <div className="col-span-2 md:col-span-3 lg:col-span-2 space-y-6">
               <Logo />
@@ -88,6 +89,40 @@ export const Footer = async ({
               </div>
             </div>
 
+            {/* Product */}
+            <div>
+              <h3 className="text-gray-900 font-semibold text-xs uppercase tracking-wider mb-4">
+                {t("footer.category.product")}
+              </h3>
+              <ul className="space-y-2.5">
+                <li>
+                  <Link href={getCanonicalLink(locale, "/landings/smart-links")} className={linkClass}>
+                    {t("footer.product.smart-links")}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={getCanonicalLink(locale, "/landings/analytics")} className={linkClass}>
+                    {t("footer.product.analytics")}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={getCanonicalLink(locale, "/landings/utm")} className={linkClass}>
+                    {t("footer.product.utm")}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={getCanonicalLink(locale, "/landings/qr-codes")} className={linkClass}>
+                    {t("footer.product.qr-codes")}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={getCanonicalLink(locale, "/landings/integrations")} className={linkClass}>
+                    {t("footer.product.integrations")}
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
             {/* Use Cases */}
             <div>
               <h3 className="text-gray-900 font-semibold text-xs uppercase tracking-wider mb-4">
@@ -115,8 +150,13 @@ export const Footer = async ({
                   </Link>
                 </li>
                 <li>
-                  <Link href={getCanonicalLink(locale, "/landings/systemeio")} className={linkClass}>
-                    {t("footer.usecases.systemeio")}
+                  <Link href={getCanonicalLink(locale, "/landings/for-freelancers")} className={linkClass}>
+                    {t("footer.usecases.freelancers")}
+                  </Link>
+                </li>
+                <li>
+                  <Link href={getCanonicalLink(locale, "/landings/for-agencies")} className={linkClass}>
+                    {t("footer.usecases.agencies")}
                   </Link>
                 </li>
               </ul>
@@ -418,6 +458,9 @@ export const Footer = async ({
           <div className="border-t border-gray-200 pt-8">
             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
               <div>
+                <div className="mb-3">
+                  <LocaleSwitcher />
+                </div>
                 <p className="text-gray-400 text-sm mb-2">{t("footer.copyright")}</p>
                 {showRef && (
                   <p className="text-gray-400 text-sm max-w-2xl leading-relaxed">

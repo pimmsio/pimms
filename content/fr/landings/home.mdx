@@ -126,6 +126,45 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   </Section>
 </Slide>
 
+<Slide id="use-cases">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Fait pour toi</Label>
+      <H2>Comment les <Primary icon="users">vrais utilisateurs</Primary> grandissent avec PIMMS</H2>
+      <Text size="lg">De l'indépendant à l'agence — découvre comment ils suivent ce qui compte.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section margin="sm">
+    <List layout="horizontal">
+      <BlurFade direction="up" delay={0.1} inView>
+        <FeatureCard variant="fancy" color="cyan">
+          <IconBox icon="users" color="cyan" />
+          <H3>Solopreneur</H3>
+          <Text>"Je partage des liens sur LinkedIn et Twitter. PIMMS me montre exactement quel post a généré chaque paiement Stripe. Fini les devinettes."</Text>
+          <Text><a href="/fr/solutions/pour-independants" className="text-brand-primary font-medium hover:underline text-sm">Voir comment les indépendants utilisent PIMMS →</a></Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.2} inView>
+        <FeatureCard variant="fancy" color="orange">
+          <IconBox icon="rocket" color="orange" />
+          <H3>Responsable Agence</H3>
+          <Text>"On gère des campagnes pour 12 clients. Avec les dossiers de liens, les domaines personnalisés par client et les templates UTM, le reporting est passé de pénible à automatique."</Text>
+          <Text><a href="/fr/solutions/pour-agences" className="text-brand-primary font-medium hover:underline text-sm">Voir comment les agences utilisent PIMMS →</a></Text>
+        </FeatureCard>
+      </BlurFade>
+      <BlurFade direction="up" delay={0.3} inView>
+        <FeatureCard variant="fancy" color="green">
+          <IconBox icon="chart" color="green" />
+          <H3>Growth Marketer</H3>
+          <Text>"Je lance des campagnes sur email, paid et organique. PIMMS me donne l'attribution multi-touch pour savoir quelle combinaison de canaux convertit vraiment."</Text>
+          <Text><a href="/fr/solutions/marketing-tracking-attribution-clics-leads-revenus" className="text-brand-primary font-medium hover:underline text-sm">Voir toutes les capacités de tracking →</a></Text>
+        </FeatureCard>
+      </BlurFade>
+    </List>
+  </Section>
+</Slide>
+
 <Slide id="why-pimms">
   <BlurFade direction="up" inView>
     <Centered>
@@ -137,19 +176,36 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   <Section>
     <ComparisonContainer>
       <ComparisonHeader />
+      <ComparisonCategory>Liens & Partage</ComparisonCategory>
       <ComparisonRow others="true" pimms="true">Liens courts & QR codes</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">QR codes dynamiques (modifiables après création)</ComparisonRow>
       <ComparisonRow others="true" pimms="true">Domaines personnalisés</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Deep links contournant les navigateurs in-app (+30% conversions)</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Dossiers & classeurs de liens</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Import de liens en masse & upload CSV</ComparisonRow>
+      <ComparisonCategory>Tracking & Analytics</ComparisonCategory>
       <ComparisonRow others="true" pimms="true">Analyse de clics basique</ComparisonRow>
       <ComparisonRow others="false" pimms="true">Générateur de liens UTM</ComparisonRow>
       <ComparisonRow others="false" pimms="true">Templates UTM pro, conventions & opérations en masse</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Tracking côté serveur (anti-bloqueurs de pubs)</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Attribution multi-touch</ComparisonRow>
+      <ComparisonCategory>Conversions & Revenus</ComparisonCategory>
       <ComparisonRow others="false" pimms="true">Suivi des formulaires opt-in (Brevo, Tally, Cal.com, Webflow...)</ComparisonRow>
       <ComparisonRow others="false" pimms="true">Suivi des conversions Stripe & Shopify (incl. plan gratuit)</ComparisonRow>
-      <ComparisonRow others="false" pimms="true">Deep links contournant les navigateurs in-app (+30% conversions)</ComparisonRow>
-      <ComparisonRow others="false" pimms="true">Tracking côté serveur (anti-bloqueurs de pubs)</ComparisonRow>
       <ComparisonRow others="false" pimms="true">Lead scoring IA & parcours client détaillé</ComparisonRow>
-      <ComparisonRow others="false" pimms="true">10+ intégrations natives prêtes à l'emploi</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">A/B testing intégré</ComparisonRow>
+      <ComparisonCategory>Plateforme</ComparisonCategory>
+      <ComparisonRow others="false" pimms="true">100+ intégrations prêtes à l'emploi</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Webhooks & API</ComparisonRow>
       <ComparisonRow others="false" pimms="true">RGPD natif, aucun cookie tiers</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Tarification à vie disponible</ComparisonRow>
     </ComparisonContainer>
+
+    <div className="mt-6 text-center">
+      <a href="/fr/outils" className="text-sm font-medium text-brand-primary hover:underline">
+        Voir tous les comparatifs →
+      </a>
+    </div>
   </Section>
 </Slide>
 
@@ -164,7 +220,7 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
   </BlurFade>
 
   <Section>
-    <PricingHero
+    <PricingAllPlansGrid
       monthlyLabel="Mensuel"
       perMonthLabel="/mois"
       perYearLabel="/an"
@@ -177,72 +233,24 @@ image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
       yearlyLabel="Annuel"
       twoMonthsFreeLabel="2 mois offerts"
       subscribeYearlyLabel="S'abonner à l'année"
-    >
-      <PricingPlanTabs>
-        <PricingPlanTab planId="tiny">Tiny</PricingPlanTab>
-        <PricingPlanTab planId="solo">Solo</PricingPlanTab>
-        <PricingPlanTab planId="pro">Pro</PricingPlanTab>
-        <PricingPlanTab planId="business">Business</PricingPlanTab>
-      </PricingPlanTabs>
-      <PricingPlanPanel planId="tiny">
-        <PricingPlanDescription>Pour les créateurs solo et projets annexes qui commencent avec les liens intelligents.</PricingPlanDescription>
-        <PricingPlanCards />
-        <PricingPlanFeatureListTitle>Tout du Gratuit, plus :</PricingPlanFeatureListTitle>
-        <PricingPlanFeatureList>
-          <PricingPlanFeature>100 liens /mois</PricingPlanFeature>
-          <PricingPlanFeature>1 500 événements trackés /mois</PricingPlanFeature>
-          <PricingPlanFeature>1 domaine personnalisé</PricingPlanFeature>
-          <PricingPlanFeature>QR codes personnalisés</PricingPlanFeature>
-          <PricingPlanFeature>1 an de données</PricingPlanFeature>
-          <PricingPlanFeature>Support email</PricingPlanFeature>
-        </PricingPlanFeatureList>
-      </PricingPlanPanel>
-      <PricingPlanPanel planId="solo">
-        <PricingPlanDescription>Pour les fondateurs solo, créateurs, freelances et petites agences qui commencent avec le tracking.</PricingPlanDescription>
-        <PricingPlanCards />
-        <PricingPlanFeatureListTitle>Tout de Tiny, plus :</PricingPlanFeatureListTitle>
-        <PricingPlanFeatureList>
-          <PricingPlanFeature>500 liens /mois</PricingPlanFeature>
-          <PricingPlanFeature>Tests A/B</PricingPlanFeature>
-          <PricingPlanFeature>Webhooks &amp; API</PricingPlanFeature>
-          <PricingPlanFeature>5 membres d'équipe</PricingPlanFeature>
-          <PricingPlanFeature>12 mois de données</PricingPlanFeature>
-          <PricingPlanFeature>3 mois de support prioritaire inclus</PricingPlanFeature>
-        </PricingPlanFeatureList>
-      </PricingPlanPanel>
-      <PricingPlanPanel planId="pro">
-        <PricingPlanDescription>Pour les équipes en croissance et les marketeurs qui ont besoin de plus de volume et d'analytics approfondis.</PricingPlanDescription>
-        <PricingPlanCards />
-        <PricingPlanFeatureListTitle>Tout de Solo, plus :</PricingPlanFeatureListTitle>
-        <PricingPlanFeatureList>
-          <PricingPlanFeature>1 000 liens /mois</PricingPlanFeature>
-          <PricingPlanFeature>10k événements suivis /mois</PricingPlanFeature>
-          <PricingPlanFeature>5 domaines personnalisés</PricingPlanFeature>
-          <PricingPlanFeature>Création de liens en masse</PricingPlanFeature>
-          <PricingPlanFeature>12 mois de données</PricingPlanFeature>
-          <PricingPlanFeature>Support prioritaire</PricingPlanFeature>
-        </PricingPlanFeatureList>
-      </PricingPlanPanel>
-      <PricingPlanPanel planId="business">
-        <PricingPlanDescription>Pour les équipes en croissance et agences marketing qui ont besoin de volume, collaboration et rétention.</PricingPlanDescription>
-        <PricingPlanCards />
-        <PricingPlanFeatureListTitle>Tout de Pro et plus :</PricingPlanFeatureListTitle>
-        <PricingPlanFeatureList>
-          <PricingPlanFeature>2 000 liens /mois</PricingPlanFeature>
-          <PricingPlanFeature>20k événements suivis /mois</PricingPlanFeature>
-          <PricingPlanFeature>10 membres d'équipe</PricingPlanFeature>
-          <PricingPlanFeature>10 domaines personnalisés</PricingPlanFeature>
-          <PricingPlanFeature>Création de liens en masse</PricingPlanFeature>
-          <PricingPlanFeature>2 ans de données</PricingPlanFeature>
-          <PricingPlanFeature>Support prioritaire</PricingPlanFeature>
-        </PricingPlanFeatureList>
-      </PricingPlanPanel>
-    </PricingHero>
+    />
 
     <Text size="sm" className="text-center mt-4"><a href="/fr/pricing#compare" className="underline text-muted-foreground hover:text-foreground">Comparatif des plans</a></Text>
   </Section>
 </Slide>
 
+<Slide id="delegate">
+  <Section>
+    <BlurFade direction="up" inView>
+      <DelegateTrackingCTA
+        title="On s'occupe de ton tracking"
+        description="Privacy-first, aucun cookie tiers, conforme RGPD par défaut. Notre équipe met en place ton tracking en moins de 48h — pour que tu puisses te concentrer sur ta croissance."
+        buttonText="Déléguer mon tracking"
+        features={["Installation & vérification du script", "Tracking des revenus Stripe / Shopify", "Intégrations formulaires & outils de réservation", "Templates UTM & conventions"]}
+      />
+    </BlurFade>
+  </Section>
+</Slide>
 
 <Slide id="onboarding">
   <BlurFade direction="up" inView>

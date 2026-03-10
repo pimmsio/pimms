@@ -1,0 +1,123 @@
+---
+title: Track Jotform Submissions: Complete Attribution Guide 2026
+summary: Connect Pimms to Jotform in minutes with webhook integration. Track every form submission with complete analytics showing which campaigns generate your best leads across all your forms.
+publishedAt: 2026-03-09
+updatedAt: 2026-03-09
+slug: how-to-track-jotform-form-submissions-marketing-attribution
+image: https://assets.pimms.io/jotform-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-tally-webhook
+  - how-to-track-typeform
+  - how-to-track-webflow-leads
+  - no-code-guide-for-website
+---
+
+**Jotform submission tracking** lets you see exactly which marketing campaigns generate your best leads across all your Jotform forms. The Pimms dashboard has an **interactive setup wizard** that handles all technical details for you.
+
+You'll get **real-time form analytics** showing which ads, email campaigns, or social posts drive actual form submissions. Perfect for **lead generation tracking** with complete **form attribution** from click to submission.
+
+Jotform is one of the world's most popular form builders with over 25 million users. With Pimms, every form response is attributed to the specific campaign, ad, or social post that brought the visitor — no developer needed.
+
+## Why track Jotform submissions with Pimms?
+
+- **See which ads generate actual leads, not just form views.** You embed a Jotform on your website and run Google Ads and Facebook Ads. Both platforms show clicks, but Pimms shows you which ad generated the 15 form submissions that turned into real business opportunities.
+
+- **Measure event registration ROI.** You promote your webinar registration form on LinkedIn, in newsletters, and through partner emails. Pimms shows you which channel drives the most registrations — so you know where to focus promotion for your next event.
+
+- **Track lead quality by source.** You collect leads through Jotform across multiple campaigns. Pimms lets you see not just which campaign generates the most submissions, but which source brings the most complete, high-quality responses.
+
+## Prerequisites
+
+- A **Jotform account** (free or paid — webhooks are available on all plans)
+- A **Pimms account** ([sign up here](https://app.pimms.io))
+- A website where your Jotform is embedded, or a standalone Jotform link
+
+## What you'll track
+
+- **Jotform submissions** — Every completed form response with all field data and the campaign that brought the visitor
+- **Lead attribution by campaign** — Which ad, email, social post, or content piece drove each submission
+- **Campaign performance** — Submission counts and conversion rates broken down by traffic source
+- **Multi-form analytics** — Track all your Jotform forms from one dashboard
+
+## How to set it up
+
+Go to your [Pimms dashboard](https://app.pimms.io), open **Integrations → Jotform**, and launch the setup wizard. It walks you through installing the detection script, adding a hidden tracking field to your Jotform, configuring the webhook, and verifying with a test submission. Setup takes about 5 minutes.
+
+## What the setup wizard covers
+
+The Jotform wizard has 6 steps:
+
+1. **Install the detection script** — Add the Pimms script to the page where your Jotform is embedded
+2. **Verify script installation** — Confirm the script is loading and detecting the jotform.com domain
+3. **Add pimms_id hidden field** — Add a hidden field to your Jotform that captures the tracking ID
+4. **Set up webhook in Jotform** — Configure Jotform's webhook to send submissions to Pimms
+5. **Create a test link** — Generate a tracking link to the page with your Jotform
+6. **Verify tracking works** — Submit a test form to confirm attribution is connected
+
+## How it works
+
+1. **Install the Pimms detection script** on the page where your Jotform is embedded — it detects visitors from Pimms links and sets up outbound tracking for the jotform.com domain
+2. **When a visitor arrives via a Pimms link**, the script automatically passes the click ID to the Jotform through a hidden field
+3. **The visitor fills out the form** — the submission includes the Pimms tracking ID
+4. **Jotform fires a webhook** to Pimms with the form data and tracking ID, and Pimms attributes the lead to the original campaign
+
+Jotform supports multiple webhook endpoints per form, so you can send data to Pimms alongside your CRM or email marketing tool.
+
+## Best ways to share your tracking links
+
+- **Website CTAs** — Embed Jotform on your website and drive traffic with Pimms links to track form submissions per campaign
+- **Event promotions** — Share your Jotform registration link via Pimms to see which channels drive the most signups
+- **Email campaigns** — Replace raw Jotform links with Pimms links in newsletters to measure email-driven leads
+- **Social media** — Post tracked links to your Jotform on LinkedIn, Twitter, and Facebook
+- **Paid ads** — Point Google or Meta ads to a Pimms link for your Jotform page to measure cost per lead
+
+## What you'll see in your dashboard
+
+Your Pimms dashboard shows every Jotform submission in real time with full campaign attribution. For each lead, you'll see the submitted form data, which Pimms link they clicked, from which platform, and which campaign. Filter by date, traffic source, or form to optimize your lead generation strategy.
+
+## FAQs
+
+::: faq
+
+### Does Jotform support webhooks on free plans?
+
+Yes! Jotform webhooks are available on all plans including free. You can configure webhooks in your form's Integrations settings. Each form can have multiple webhook endpoints for sending data to different services simultaneously.
+
+:::
+
+::: faq
+
+### Can I track multiple Jotform forms with Pimms?
+
+Yes! Each Jotform form gets its own webhook configuration. As long as each form has the `pimms_id` hidden field and a webhook pointing to Pimms, all submissions across all your forms will be tracked with full attribution.
+
+:::
+
+::: faq
+
+### Does this work with Jotform's conditional logic and multi-page forms?
+
+Yes. Jotform webhook integration works with any form complexity — conditional logic, multi-page forms, file uploads, and payment collection. As long as the hidden `pimms_id` field is included, Pimms captures every submission regardless of form structure.
+
+:::
+
+::: faq
+
+### Can I use Jotform tracking with Jotform's payment integrations?
+
+Yes! If you use Jotform's built-in payment features (Square, PayPal, Stripe), the webhook still fires with the full submission data including the `pimms_id`. This means you can attribute payment form completions to specific campaigns.
+
+:::
+
+::: faq
+
+### How is this different from using Zapier with Jotform?
+
+The direct webhook approach sends form submissions from Jotform to Pimms in real time — no third-party middleware needed. This means faster tracking, fewer moving parts, and no Zapier subscription required. If you prefer Zapier for more complex workflows, see our [Zapier guide](/articles/start-with-cal-com-and-zapier).
+
+:::
+
+<CallToAction />

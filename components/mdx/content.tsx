@@ -149,6 +149,18 @@ export const List = ({
   return <div className={layoutClasses}>{children}</div>;
 };
 
+const ItemXIcon = () => (
+  <svg className="w-5 h-5 text-vibrant-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+  </svg>
+);
+
+const ItemCheckIcon = () => (
+  <svg className="w-5 h-5 text-vibrant-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+  </svg>
+);
+
 export const Item = ({
   children,
   variant = "default"
@@ -157,16 +169,10 @@ export const Item = ({
   variant?: "default" | "problem" | "solution";
 }) => {
   if (variant === "problem") {
-    const X = () => (
-      <svg className="w-5 h-5 text-vibrant-red" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-      </svg>
-    );
-
     return (
       <div className="rounded-xl flex items-start gap-4 p-6 bg-gray-50 border border-gray-200">
         <div className="rounded-full flex-shrink-0 w-6 h-6 bg-gray-100 flex items-center justify-center mt-0.5">
-          <X />
+          <ItemXIcon />
         </div>
         <p className="text-gray-900 font-medium flex-1 leading-relaxed">{children}</p>
       </div>
@@ -174,16 +180,10 @@ export const Item = ({
   }
 
   if (variant === "solution") {
-    const Check = () => (
-      <svg className="w-5 h-5 text-vibrant-green" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-      </svg>
-    );
-
     return (
       <div className="rounded-xl flex items-start gap-4 p-6 bg-success-light border border-success-border">
         <div className="rounded-full flex-shrink-0 w-6 h-6 bg-success-light flex items-center justify-center mt-0.5">
-          <Check />
+          <ItemCheckIcon />
         </div>
         <p className="text-gray-900 font-medium flex-1 leading-relaxed">{children}</p>
       </div>
@@ -581,7 +581,7 @@ export const Primary = ({
 }: {
   children: React.ReactNode;
   variant?: "h1" | "h2";
-  icon?: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash";
+  icon?: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash" | "users" | "chart";
 }) => {
   return (
     <span className="bg-gradient-to-r from-brand-secondary to-brand-primary bg-clip-text text-transparent pr-[2px] [-webkit-text-fill-color:transparent] inline-flex items-baseline gap-1">
@@ -595,7 +595,7 @@ export const TitleIcon = ({
   icon,
   variant = "h1"
 }: {
-  icon: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash";
+  icon: "sales" | "growth" | "why" | "pricing" | "minutes" | "questions" | "target" | "cash" | "users" | "chart";
   variant?: "h1" | "h2";
 }) => {
   const sizeClasses =
@@ -614,7 +614,9 @@ export const TitleIcon = ({
     minutes: FaRegClock,
     questions: FaQuestion,
     target: Target,
-    cash: DollarIcon
+    cash: DollarIcon,
+    users: Users,
+    chart: TrendingUp
   } as const;
 
   const LucideIcon = iconMap[icon];

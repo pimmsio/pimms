@@ -50,6 +50,7 @@ import VimeoVideoSlide from "@/components/landings/VimeoVideoSlide";
 import YoutubeVideoSlide from "@/components/landings/YoutubeVideoSlide";
 
 import Footer from "@/components/footer/footer";
+import { AskAI } from "@/components/cta/AskAI";
 import LogosCircle from "@/components/logos-circle";
 import CtaButtonBig from "@/components/cta/CtaButtonBig";
 import BouncingImages from "@/components/landings/BouncingImages";
@@ -139,7 +140,13 @@ import {
 } from "@/components/pricing/InlinePricing";
 
 import CtaDemo from "@/components/cta/CtaDemo";
-import { ComparisonContainer, ComparisonHeader, ComparisonRow } from "@/components/landings/ComparisonTable";
+import DelegateTrackingCTA from "@/components/cta/DelegateTrackingCTA";
+import {
+  ComparisonContainer,
+  ComparisonHeader,
+  ComparisonRow,
+  ComparisonCategory
+} from "@/components/landings/ComparisonTable";
 import AvatarFunnel from "../../../../../components/landings/AvatarFunnel";
 import HeroRibbon from "../../../../../components/landings/HeroRibbon";
 import { SwapRotate } from "../../../../../components/magicui/swap-rotate";
@@ -161,10 +168,13 @@ import {
   PricingPlanCards,
   PricingPlanFeatureListTitle,
   PricingPlanFeatureList,
-  PricingPlanFeature
+  PricingPlanFeature,
+  PricingAllPlansGrid
 } from "@/components/pricing/pricing-hero";
 import { ContactSalesForm } from "@/components/contact-sales/ContactSalesForm";
 import { CheckList, CheckListItem } from "@/components/contact-sales/CheckList";
+import { LeadMagnetProvider } from "@/components/lead-magnet/LeadMagnetProvider";
+import { TrackingGuideSection } from "@/components/lead-magnet/TrackingGuideSection";
 
 export async function generateMetadata({ params }: MetadataProps): Promise<Metadata> {
   const { slug, locale } = await params;
@@ -209,266 +219,278 @@ export default async function LandingPage({ params }: { params: Promise<{ slug: 
   // Set locale for server components - CRITICAL for static generation with next-intl
   setRequestLocale(locale);
 
-  // Use page-specific seed that changes every hour for fresh animations
-  const currentHour = Math.floor(Date.now() / (1000 * 60 * 60)); // Changes every hour
-  const seedNonce = `${slug}-${locale}-h${currentHour}`;
+  const seedNonce = `${slug}-${locale}`;
 
+  let page;
   try {
-    const page = getPage(locale, landingFolders, slug);
+    page = getPage(locale, landingFolders, slug);
+  } catch {
+    notFound();
+  }
 
-    const components = {
-      // Layout components
-      Slide,
-      Section,
-      Header,
-      Footer: () => <Footer showRef={true} showApps={true} />,
-      H1: BaseH1,
-      H1Subtitle,
-      CurrencyToggle,
-      PricingHero: (props: React.ComponentProps<typeof PricingHero>) => <PricingHero locale={locale} {...props} />,
-      PricingPlanTabs,
-      PricingPlanTab,
-      PricingPlanPanel,
-      PricingPlanDescription,
-      PricingPlanCards,
-      PricingPlanFeatureListTitle,
-      PricingPlanFeatureList,
-      PricingPlanFeature,
-      CompareTable: (props: React.ComponentProps<typeof CompareTable>) => <CompareTable locale={locale} {...props} />,
-      CompareCategory,
-      CompareFeatureValue,
-      CompareFeatureCheck,
-      CompareFeatureSupport,
-      ContactSalesForm,
-      CheckList,
-      CheckListItem,
+  const components = {
+    // Layout components
+    Slide,
+    Section,
+    Header,
+    Footer: () => (
+      <>
+        <AskAI locale={locale} />
+        <Footer showRef={true} showApps={true} />
+      </>
+    ),
+    H1: BaseH1,
+    H1Subtitle,
+    CurrencyToggle,
+    PricingHero: (props: React.ComponentProps<typeof PricingHero>) => <PricingHero locale={locale} {...props} />,
+    PricingPlanTabs,
+    PricingPlanTab,
+    PricingPlanPanel,
+    PricingPlanDescription,
+    PricingPlanCards,
+    PricingPlanFeatureListTitle,
+    PricingPlanFeatureList,
+    PricingPlanFeature,
+    PricingAllPlansGrid: (props: React.ComponentProps<typeof PricingAllPlansGrid>) => (
+      <PricingAllPlansGrid locale={locale} {...props} />
+    ),
+    CompareTable: (props: React.ComponentProps<typeof CompareTable>) => <CompareTable locale={locale} {...props} />,
+    CompareCategory,
+    CompareFeatureValue,
+    CompareFeatureCheck,
+    CompareFeatureSupport,
+    ContactSalesForm,
+    CheckList,
+    CheckListItem,
 
-      // Landing page specific components
-      Avatars: ({ children }: { children?: React.ReactNode }) => {
-        return <Avatars>{children || null}</Avatars>;
-      },
-      Hero,
-      Problem,
+    // Landing page specific components
+    Avatars: ({ children }: { children?: React.ReactNode }) => {
+      return <Avatars>{children || null}</Avatars>;
+    },
+    Hero,
+    Problem,
 
-      // Composable pricing components
-      PricingCard,
-      PricingTitle,
-      PricingSubtitle,
-      PricingPrice,
-      PricingCta,
-      PricingFeatures,
-      PricingFeature,
-      PricingHeader,
-      PricingTitleGroup,
-      InlinePricing,
-      InlinePricingFeatureList,
-      InlinePricingFeatureItem,
-      InlinePricingPlanName,
-      InlinePricingPlanLimit,
-      InlinePricingPlanRetention,
-      BouncingImages: () => <BouncingImages tkey="landing" />,
-      LogosCircle,
-      IntegrationsGrid,
-      HeroRibbon: (props: any) => <HeroRibbon seedNonce={seedNonce} {...props} />,
-      AvatarFunnel: (props: any) => <AvatarFunnel seedNonce={seedNonce} {...props} />,
-      ConversionFlipCard,
-      ImageSlide,
-      VimeoVideoSlide,
-      YoutubeVideoSlide,
-      HeroBenefits,
-      SwapRotate,
-      ContactSidebar,
-      ComparisonContainer,
-      ComparisonHeader,
-      ComparisonRow,
+    // Composable pricing components
+    PricingCard,
+    PricingTitle,
+    PricingSubtitle,
+    PricingPrice,
+    PricingCta,
+    PricingFeatures,
+    PricingFeature,
+    PricingHeader,
+    PricingTitleGroup,
+    InlinePricing,
+    InlinePricingFeatureList,
+    InlinePricingFeatureItem,
+    InlinePricingPlanName,
+    InlinePricingPlanLimit,
+    InlinePricingPlanRetention,
+    BouncingImages: () => <BouncingImages tkey="landing" />,
+    LogosCircle,
+    IntegrationsGrid,
+    HeroRibbon: (props: any) => <HeroRibbon seedNonce={seedNonce} {...props} />,
+    AvatarFunnel: (props: any) => <AvatarFunnel seedNonce={seedNonce} {...props} />,
+    ConversionFlipCard,
+    ImageSlide,
+    VimeoVideoSlide,
+    YoutubeVideoSlide,
+    HeroBenefits,
+    SwapRotate,
+    ContactSidebar,
+    ComparisonContainer,
+    ComparisonHeader,
+    ComparisonRow,
+    ComparisonCategory,
 
-      // Testimonial components
-      Testimonial,
-      TestimonialsGrid,
-      LinkedinTestimonialsRibbon,
-      LinkedinPost: (props: any) => <LinkedinPost {...props} className="w-[380px] sm:w-[420px]" />,
+    // Testimonial components
+    Testimonial,
+    TestimonialsGrid,
+    LinkedinTestimonialsRibbon,
+    LinkedinPost: (props: any) => <LinkedinPost {...props} className="w-[380px] sm:w-[420px]" />,
 
-      // CTA components
-      CtaButton: async ({
-        children,
-        variant = "default",
-        href,
-        className
-      }: {
-        children?: React.ReactNode;
-        variant?: "default" | "secondary" | "outline";
-        href?: string;
-        className?: string;
-      }) => {
-        const t = await getTranslations({ locale, namespace: "landing" });
-        // If children is provided, use it directly
-        if (children) {
-          return (
-            <CtaButtonBig
-              type="sales"
-              size="xl"
-              variant={variant}
-              className={cn("my-2 gap-1 w-full sm:w-fit mx-auto sm:min-w-[380px]", className)}
-              value={children}
-              href={href}
-            />
-          );
-        }
-        // Otherwise use the default translation
+    // CTA components
+    CtaButton: async ({
+      children,
+      variant = "default",
+      href,
+      className
+    }: {
+      children?: React.ReactNode;
+      variant?: "default" | "secondary" | "outline";
+      href?: string;
+      className?: string;
+    }) => {
+      const t = await getTranslations({ locale, namespace: "landing" });
+      // If children is provided, use it directly
+      if (children) {
         return (
           <CtaButtonBig
             type="sales"
             size="xl"
             variant={variant}
-            className="py-3 my-2 w-full md:w-fit mx-auto"
-            value={t.rich("cta.main", {
-              fast: () => <Zap size={32} fill="currentColor" />,
-              large: (chunks: any) => <span className="hidden md:block">{chunks}</span>
-            })}
+            className={cn("my-2 gap-1 w-full sm:w-fit mx-auto sm:min-w-[380px]", className)}
+            value={children}
             href={href}
           />
         );
-      },
-      CtaDemo,
-      // Content components
-      Primary,
-      TitleIcon,
-      HideOnMobile,
-      HideOnDesktop,
-      Fast,
-      CtaBottomText,
-      InlineLogo,
-
-      // Animated components
-      AnimatedCentered,
-      BlurFade,
-      WithoutPimms,
-      Video,
-      Centered,
-      TwoColumns,
-      Column,
-
-      // Generic content components (H1 from base is set above)
-      H2,
-      H3,
-      H4,
-      Highlight,
-      TextHighlight,
-      Summary,
-      Text,
-      Stronger: ({ children, className }: { children: React.ReactNode; className?: string }) => (
-        <strong className={cn("font-bold text-lg", className)}>{children}</strong>
-      ),
-      SmallText,
-      Label,
-      List,
-      Item,
-      Feature,
-      FeatureTitle,
-      FeatureText,
-      FeatureCard,
-      IconBox,
-      Group,
-      Features,
-      CTA,
-
-      // Map markdown elements to custom components
-      h1: H1,
-      h2: H2,
-      h3: H3,
-      h4: H4,
-      p: Text,
-
-      // MDX components
-      CallToAction,
-      Faq,
-      InfoSection,
-      LinkCards,
-      LinkCard,
-      Figure,
-      Quote,
-      Steps,
-      Step,
-      StepCompleted,
-      code: Highlight,
-      pre: Pre,
-      TallyIframe,
-      LeadScoringAnimatedList,
-      // Ordered list mapping to respect start numbering when lists are split
-      ol: ({ children, className, style, start, ...rest }: React.OlHTMLAttributes<HTMLOListElement>) => {
-        const styleObj: React.CSSProperties = typeof style === "object" && style !== null ? style : {};
-        let startNum = typeof start === "number" ? start : start ? Number(start) : undefined;
-        if (!startNum) {
-          const maybeDataStart = (rest as any)["data-start"] as any;
-          if (maybeDataStart) {
-            const n = Number(maybeDataStart);
-            if (!Number.isNaN(n)) startNum = n;
-          }
-        }
-        const computedStyle: React.CSSProperties = {
-          ...styleObj,
-          ...(startNum && startNum > 1 ? { counterReset: `list-counter ${startNum - 1}` } : {})
-        };
-        return (
-          <ol
-            {...rest}
-            start={startNum}
-            style={computedStyle}
-            className={twMerge("prose-list-ol my-5 sm:my-6 space-y-2.5 text-gray-600 text-base pl-1", className)}
-          >
-            {children}
-          </ol>
-        );
-      },
-
-      // Chart components
-      AnalyticsDemo: () => <AnalyticsDemo tkey="landing" />,
-      Referer: () => <Referer />,
-      FilterFeature: () => <FilterFeature tkey="landing" />,
-      // React Icons
-      FaCreditCard,
-      FaLock
-    };
-
-    const pathname = slug === "home" ? "/" : `/landings/${slug}`;
-    const path = getCanonicalLink(locale, pathname);
-
-    return (
-      <>
-        <MDXRemote
-          source={page.content}
-          components={components}
-          options={{
-            mdxOptions: {
-              remarkPlugins: [
-                remarkGfm,
-                remarkDirective,
-                remarkAtSyntax,
-                remarkIframeDirective,
-                remarkFaqDirective,
-                remarkCtaPlaceholder,
-                remarkCustomDirectives
-              ],
-              rehypePlugins: [
-                rehypeSlug,
-                rehypeAutolinkHeadings,
-                rehypeOlStartCounter,
-                [
-                  rehypePrettyCode,
-                  {
-                    theme: "github-light",
-                    keepBackground: false
-                  }
-                ]
-              ]
-            }
-          }}
+      }
+      // Otherwise use the default translation
+      return (
+        <CtaButtonBig
+          type="sales"
+          size="xl"
+          variant={variant}
+          className="py-3 my-2 w-full md:w-fit mx-auto"
+          value={t.rich("cta.main", {
+            fast: () => <Zap size={32} fill="currentColor" />,
+            large: (chunks: any) => <span className="hidden md:block">{chunks}</span>
+          })}
+          href={href}
         />
+      );
+    },
+    CtaDemo,
+    DelegateTrackingCTA,
+    // Content components
+    Primary,
+    TitleIcon,
+    HideOnMobile,
+    HideOnDesktop,
+    Fast,
+    CtaBottomText,
+    InlineLogo,
 
-        <FaqStructuredData path={path} faqs={page.faqs} locale={locale} />
-      </>
-    );
-  } catch {
-    notFound();
-  }
+    // Animated components
+    AnimatedCentered,
+    BlurFade,
+    WithoutPimms,
+    Video,
+    Centered,
+    TwoColumns,
+    Column,
+
+    // Generic content components (H1 from base is set above)
+    H2,
+    H3,
+    H4,
+    Highlight,
+    TextHighlight,
+    Summary,
+    Text,
+    Stronger: ({ children, className }: { children: React.ReactNode; className?: string }) => (
+      <strong className={cn("font-bold text-lg", className)}>{children}</strong>
+    ),
+    SmallText,
+    Label,
+    List,
+    Item,
+    Feature,
+    FeatureTitle,
+    FeatureText,
+    FeatureCard,
+    IconBox,
+    Group,
+    Features,
+    CTA,
+
+    // Map markdown elements to custom components
+    h1: H1,
+    h2: H2,
+    h3: H3,
+    h4: H4,
+    p: Text,
+
+    // MDX components
+    CallToAction,
+    Faq,
+    InfoSection,
+    LinkCards,
+    LinkCard: (props: React.ComponentProps<typeof LinkCard>) => <LinkCard {...props} locale={locale} />,
+    Figure,
+    Quote,
+    Steps,
+    Step,
+    StepCompleted,
+    code: Highlight,
+    pre: Pre,
+    TallyIframe,
+    LeadScoringAnimatedList,
+    // Ordered list mapping to respect start numbering when lists are split
+    ol: ({ children, className, style, start, ...rest }: React.OlHTMLAttributes<HTMLOListElement>) => {
+      const styleObj: React.CSSProperties = typeof style === "object" && style !== null ? style : {};
+      let startNum = typeof start === "number" ? start : start ? Number(start) : undefined;
+      if (!startNum) {
+        const maybeDataStart = (rest as any)["data-start"] as any;
+        if (maybeDataStart) {
+          const n = Number(maybeDataStart);
+          if (!Number.isNaN(n)) startNum = n;
+        }
+      }
+      const computedStyle: React.CSSProperties = {
+        ...styleObj,
+        ...(startNum && startNum > 1 ? { counterReset: `list-counter ${startNum - 1}` } : {})
+      };
+      return (
+        <ol
+          {...rest}
+          start={startNum}
+          style={computedStyle}
+          className={twMerge("prose-list-ol my-5 sm:my-6 space-y-2.5 text-gray-600 text-base pl-1", className)}
+        >
+          {children}
+        </ol>
+      );
+    },
+
+    // Chart components
+    AnalyticsDemo: () => <AnalyticsDemo tkey="landing" />,
+    Referer: () => <Referer />,
+    FilterFeature: () => <FilterFeature tkey="landing" />,
+    // Lead magnet
+    TrackingGuideSection: () => <TrackingGuideSection locale={locale} />,
+    // React Icons
+    FaCreditCard,
+    FaLock
+  };
+
+  const pathname = slug === "home" ? "/" : `/landings/${slug}`;
+  const path = getCanonicalLink(locale, pathname);
+  const skipLeadMagnet = ["pricing", "contact-sales"].includes(slug);
+
+  return (
+    <LeadMagnetProvider locale={locale} disabled={skipLeadMagnet}>
+      <MDXRemote
+        source={page.content}
+        components={components}
+        options={{
+          mdxOptions: {
+            remarkPlugins: [
+              remarkGfm,
+              remarkDirective,
+              remarkAtSyntax,
+              remarkIframeDirective,
+              remarkFaqDirective,
+              remarkCtaPlaceholder,
+              remarkCustomDirectives
+            ],
+            rehypePlugins: [
+              rehypeSlug,
+              rehypeAutolinkHeadings,
+              rehypeOlStartCounter,
+              [
+                rehypePrettyCode,
+                {
+                  theme: "github-light",
+                  keepBackground: false
+                }
+              ]
+            ]
+          }
+        }}
+      />
+
+      <FaqStructuredData path={path} faqs={page.faqs} locale={locale} />
+    </LeadMagnetProvider>
+  );
 }

@@ -359,3 +359,148 @@ export function PricingPlanFeature({
     </li>
   );
 }
+
+export function PricingAllPlansGrid({
+  locale = "en",
+  monthlyLabel = "Monthly",
+  perMonthLabel = "/month",
+  lifetimeLabel = "Lifetime",
+  yearlyLabel = "Yearly",
+  perYearLabel = "/year",
+  mostPopularLabel = "Most popular",
+  oneTimePaymentLabel = "One-time payment",
+  subscribeLabel = "Subscribe",
+  unlockLifetimeLabel = "Unlock lifetime access",
+  subscribeYearlyLabel = "Subscribe yearly",
+  twoMonthsFreeLabel = "2 months free",
+}: PricingHeroLabels & { locale?: string }) {
+  const currency = useCurrency();
+
+  const formatter = new Intl.NumberFormat(locale, {
+    style: "currency",
+    currency,
+    maximumFractionDigits: 0,
+  });
+
+  const orLabel = locale === "fr" ? "ou" : "or";
+
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {ALL_PAID_PLANS.map((planId) => {
+        const plan = SELF_SERVE_PAID_PLANS.find(
+          (p) => p.name.toLowerCase() === planId,
+        )!;
+        const monthly = getPlanPrice(planId, "monthly", currency);
+        const isPopular = planId === "solo";
+        const isLifetime = hasLifetime(planId);
+        const secondaryPrice = isLifetime
+          ? getPlanPrice(planId, "lifetime", currency)
+          : getPlanPrice(planId, "yearly", currency);
+        const secondaryLabel = isLifetime ? lifetimeLabel : yearlyLabel;
+        const secondaryPeriod = isLifetime ? "lifetime" : "yearly";
+        const secondaryCtaLabel = isLifetime
+          ? unlockLifetimeLabel
+          : subscribeYearlyLabel;
+
+        return (
+          <div
+            key={planId}
+            className={cn(
+              "relative flex flex-col rounded-2xl bg-card p-5 transition-shadow",
+              isPopular
+                ? "ring-2 ring-brand-primary shadow-lg"
+                : "border border-gray-200",
+            )}
+          >
+            {isPopular && (
+              <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-primary px-3 py-1 text-xs font-bold text-white whitespace-nowrap">
+                {mostPopularLabel}
+              </span>
+            )}
+
+            <div className="mb-4">
+              <h3 className="text-lg font-bold text-foreground">
+                {plan.displayName}
+              </h3>
+            </div>
+
+            <div className="flex items-baseline gap-1 mb-1">
+              <span className="tabular-nums text-3xl font-bold text-foreground">
+                {formatter.format(monthly)}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {perMonthLabel}
+              </span>
+            </div>
+
+            {isLifetime ? (
+              <p className="text-sm text-muted-foreground mb-4">
+                {orLabel}{" "}
+                <span className="font-semibold text-foreground">
+                  {formatter.format(secondaryPrice)}
+                </span>{" "}
+                {secondaryLabel.toLowerCase()}
+              </p>
+            ) : (
+              <p className="text-sm text-muted-foreground mb-4">
+                {orLabel}{" "}
+                <span className="font-semibold text-foreground">
+                  {formatter.format(secondaryPrice)}
+                </span>
+                {perYearLabel}{" "}
+                <span className="text-blue-600 font-medium">
+                  ({twoMonthsFreeLabel})
+                </span>
+              </p>
+            )}
+
+            <a
+              href={`/api/pay?plan=${planId}&period=${secondaryPeriod}&currency=${currency.toLowerCase()}`}
+              className={cn(
+                buttonVariants({
+                  variant: isPopular ? "default" : "outline",
+                  size: "lg",
+                }),
+                "w-full mb-5",
+              )}
+            >
+              {secondaryCtaLabel}
+            </a>
+
+            {plan.featureTitle && (
+              <p className="text-xs font-semibold text-foreground mb-2">
+                {plan.featureTitle}
+              </p>
+            )}
+
+            {plan.features && (
+              <ul className="space-y-1.5 mt-auto">
+                {plan.features.map((feature) => (
+                  <li
+                    key={feature.id || feature.text}
+                    className="flex items-start gap-2 text-sm text-muted-foreground"
+                  >
+                    <svg
+                      className="mt-0.5 size-3.5 shrink-0 text-green-600"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2.5}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    <span className="text-xs">{feature.text}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}

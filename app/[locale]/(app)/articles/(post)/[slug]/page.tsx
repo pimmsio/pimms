@@ -38,6 +38,10 @@ import TallyIframe from "@/components/mdx/TallyIframe";
 import { BreadcrumbStructuredData } from "@/components/mdx/BreadcrumbStructuredData";
 import { Clock, ChevronRight, Edit3, ArrowUpRight } from "@/components/icons/custom-icons";
 import Author from "@/components/blog/author";
+import { AISummarize } from "@/components/blog/AISummarize";
+import { WEB_URL } from "@/app/constants";
+import { LeadMagnetProvider } from "@/components/lead-magnet/LeadMagnetProvider";
+import { TrackingGuideBanner } from "@/components/lead-magnet/TrackingGuideBanner";
 
 // Function to extract integration name from guide titles
 function extractIntegrationName(title: string, categories: string[]): string | null {
@@ -293,9 +297,10 @@ export default async function BlogPost({ params }: Props) {
   }
 
   const author = AUTHORS.find((author) => author.slug === post.metadata.author);
+  const isLegalPage = post.metadata.categories.includes("legal");
 
   return (
-    <>
+    <LeadMagnetProvider locale={locale} disabled={isLegalPage}>
       {/* Header section */}
       <Section className="py-8 sm:py-12 md:py-16 px-4 md:px-6 lg:px-8 bg-gradient-background-soft">
         {/* Breadcrumb */}
@@ -353,6 +358,15 @@ export default async function BlogPost({ params }: Props) {
               </span>
             </div>
           )}
+        </div>
+
+        <div className="mt-4 sm:mt-5">
+          <AISummarize
+            title={post.metadata.title}
+            url={`${WEB_URL}${getCanonicalLink(locale, `/articles/${slug}`)}`}
+            variant="inline"
+            summarizeLabel={t("summarizeWithAI")}
+          />
         </div>
       </Section>
 
@@ -476,10 +490,25 @@ export default async function BlogPost({ params }: Props) {
                 </h3>
                 <TableOfContents content={post.content} />
               </div>
+
+              <hr className="border-gray-100 my-5 sm:my-6" />
+              <AISummarize
+                title={post.metadata.title}
+                url={`${WEB_URL}${getCanonicalLink(locale, `/articles/${slug}`)}`}
+                summarizeLabel={t("summarizeWithAI")}
+              />
             </div>
           </aside>
         </div>
       </Section>
+
+      {!isLegalPage && (
+        <Section className="py-0 sm:py-0 md:py-0 px-4 md:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto">
+            <TrackingGuideBanner locale={locale} />
+          </div>
+        </Section>
+      )}
 
       {relatedArticles.length > 0 && (
         <Section className="py-10 sm:py-14 md:py-20 px-4 md:px-6 lg:px-8 bg-gradient-background-reverse">
@@ -561,6 +590,6 @@ export default async function BlogPost({ params }: Props) {
         locale={locale}
       />
       <FaqStructuredData path={getCanonicalLink(locale, `/articles/${slug}`)} faqs={post.faqs} locale={locale} />
-    </>
+    </LeadMagnetProvider>
   );
 }

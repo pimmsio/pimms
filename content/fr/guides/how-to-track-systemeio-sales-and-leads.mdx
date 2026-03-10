@@ -1,115 +1,81 @@
 ---
-title: Suivi Ventes Systeme.io: Analytics Tunnel Complet 2025
+title: Suivi ventes Systeme.io : analytics tunnel complet 2025
 summary: Configure le suivi complet des ventes Systeme.io en minutes. Suis chaque vente sur tunnels multi-étapes avec attribution complète montrant quelles campagnes génèrent du chiffre d'affaires.
 publishedAt: 2025-05-06
-updatedAt: 2025-09-14
-slug: comment-suivre-ventes-et-leads-systemeio-attribution-marketing
+updatedAt: 2026-03-09
+slug: how-to-track-systemeio-sales-and-leads-marketing-attribution
 image: https://assets.pimms.io/systemeio-guide-pimms.webp
 author: alexandre
 categories:
   - guides
 related:
   - unlock-systemeio-attribution-with-pimms
-  - how-to-track-webflow-leads
+  - setup-stripe-for-website
+  - how-to-track-podia-stripe-payments
   - no-code-guide-for-website
 ---
 
-Le **suivi ventes Systeme.io** te permet de voir exactement quelles campagnes marketing génèrent du chiffre d'affaires réel sur l'ensemble de ton système de tunnels. Ce guide complet montre comment configurer les **analytics tunnel Systeme.io** et le **tracking de conversion** en 10-15 minutes avec Pimms.
+Le **suivi ventes Systeme.io** te permet de voir exactement quelles campagnes marketing génèrent du chiffre d'affaires réel sur l'ensemble de ton système de tunnels. Le tableau de bord Pimms inclut un assistant de configuration Systeme.io interactif qui gère tous les détails techniques pour toi.
 
-Tu obtiendras une **attribution des ventes en temps réel** montrant quelles publicités, campagnes email, ou posts réseaux sociaux génèrent vraiment des achats à travers tes tunnels multi-étapes. Parfait pour les **analytics revenus Systeme.io** avec un **suivi parcours client** complet du premier clic à la vente finale.
+Que tu vendes des formations en ligne, du coaching ou des produits numériques, connecter Systeme.io à Pimms te donne une **attribution de tunnel complète** — du premier clic sur ta pub ou ton post social jusqu'à l'achat finalisé.
 
-**Ce que tu vas accomplir :** Configuration suivi ventes complète, intégration webhook, et attribution revenus pour chaque tunnel de ton compte Systeme.io.
+Systeme.io est une plateforme tout-en-un utilisée par des milliers d'entrepreneurs et petites entreprises. Avec Pimms, tu obtiens enfin les données d'attribution que les analytics intégrées de Systeme.io ne fournissent pas : **quelle campagne spécifique a amené chaque client**.
 
-## 1. Installer le script de suivi
+## Pourquoi suivre Systeme.io avec Pimms ?
 
-1. Va dans ton **tableau de bord Systeme.io**
+- **Trouve quelle source de trafic vend vraiment.** Tu promeus ton tunnel sur YouTube, dans des groupes Facebook et par email. Sans Pimms, tu vois les opt-ins et les ventes dans Systeme.io mais tu ne sais pas quel canal les a générés. Avec Pimms, chaque vente et opt-in est lié à la campagne exacte qui l'a généré.
 
-![Paramètres Systeme.io — section tracking](https://assets.pimms.io/systemeio-footer-code-settings.webp?v=2)
+- **Mesure la performance des affiliés avec de vraies données.** Tu as 10 affiliés qui promeuvent tes produits Systeme.io. Donne à chacun un lien Pimms unique et vois exactement qui génère des opt-ins et qui génère des ventes réelles — pas juste qui envoie le plus de clics.
 
-2. Ouvre les **paramètres du profil** (Profile Settings)
-3. Dans le menu de gauche, sélectionne **Sales funnels**
-4. Colle ce script dans le champ **Tracking code** :
+- **Optimise les tunnels multi-étapes.** Tu fais tourner un tunnel webinaire : pub → opt-in → replay → page de vente. Pimms suit tout le parcours, pour que tu puisses voir quel créatif publicitaire génère non seulement des opt-ins mais de vrais achats en fin de tunnel.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js" data-forward-all="true"></script>
-```
+## Prérequis
 
-5. Clique sur **Enregistrer**
+- Un **compte Systeme.io** (gratuit ou payant)
+- Un **compte Pimms** ([inscris-toi ici](https://app.pimms.io))
+- Au moins une page de tunnel prête dans Systeme.io
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Vérifie que tout fonctionne"
-  description="Utilise notre outil gratuit pour vérifier que le script Pimms est correctement installé sur ton site."
-/>
+## Ce que tu vas suivre
 
+- **Ventes Systeme.io** — Chaque achat complété avec nom du produit, montant et email client
+- **Opt-ins** — Chaque inscription email depuis tes pages d'opt-in de tunnel
+- **Attribution des leads par campagne** — Quelle pub, email, post social ou affilié a généré chaque conversion
+- **Analytics de tunnel** — Suis la performance de tous tes tunnels Systeme.io depuis un seul tableau de bord
 
-## 2. Trouver ton Workspace ID
+## Comment configurer
 
-1. Connecte-toi à ton [dashboard Pimms](https://app.pimms.io)  
-2. Va dans **Settings → Workspace ID**  
-3. Copie ton ID (exemple : `ws_abc123xyz`)
+Va sur ton [tableau de bord Pimms](https://app.pimms.io), ouvre **Intégrations → Systeme.io**, et lance l'assistant de configuration. Il te guide à travers l'ajout du script de tracking dans les paramètres Systeme.io, la configuration du webhook pour les événements opt-in et vente, et la vérification avec une soumission test. La configuration prend environ 5 minutes.
 
-## 3. Ajouter le webhook
+## Ce que couvre l'assistant de configuration
 
-1. Dans Systeme.io, clique sur ta photo → **Paramètres**  
-2. Descends jusqu’à la section **Webhooks**  
-3. Clique sur **Créer un webhook**  
-4. Configure-le ainsi :
+L'assistant Systeme.io comporte 5 étapes :
 
-- **Nom** : Pimms Webhook  
-- **URL du webhook** :  
+1. **Installe le script de tracking** — Ajoute le script de détection Pimms dans les paramètres de code de tracking de Systeme.io
+2. **Vérifie l'installation du script** — Confirme que le script se charge sur tes pages de tunnel
+3. **Configure le webhook** — Paramètre les webhooks pour les événements opt-in et nouvelle vente
+4. **Crée un lien de test** — Génère un lien de tracking vers ta page de tunnel Systeme.io
+5. **Vérifie que le tracking fonctionne** — Complète un opt-in test pour confirmer que l'attribution est connectée
 
-```
-https://app.pimms.io/api/systemeio/webhook?workspace_id=ton-id
-```
+## Comment ça fonctionne
 
-*(remplace `ton-id` par ton Workspace ID)*  
-- **Secret** : ton Workspace ID  
-- **Événements à activer** :  
-  ✅ `Opt-in`  
-  ✅ `New sale`
+1. **Installe le script de détection Pimms** dans les paramètres de code de tracking global de Systeme.io — il s'exécute sur toutes tes pages de tunnel et transmet les données d'attribution à travers chaque étape
+2. **Crée un lien Pimms** pointant vers ta page de tunnel Systeme.io (ex : `pim.ms/webinar-inscription`)
+3. **Un visiteur clique ton lien**, entre dans ton tunnel, fait un opt-in, et potentiellement fait un achat
+4. **Systeme.io envoie un webhook** à Pimms pour chaque événement (opt-in et vente), et Pimms attribue chaque conversion à la campagne originale
 
-![Paramètres du webhook](https://assets.pimms.io/systemeio-webhook-settings.webp)
+L'attribut `data-forward-all` du script garantit que les données d'attribution circulent à travers chaque page de ton tunnel multi-étapes — de la landing page à l'opt-in jusqu'au checkout.
 
-⚠️ L’URL et le secret doivent **absolument contenir le même Workspace ID**.
+## Meilleures façons de partager tes liens de tracking
 
-## 4. Créer un lien de suivi dans Pimms
+- **Descriptions de vidéos YouTube** — Ajoute un lien Pimms vers ton tunnel Systeme.io sous tes vidéos de formation et démos produit
+- **Posts dans les groupes Facebook** — Partage des liens trackés dans les communautés où ton audience est présente
+- **Campagnes email** — Utilise des liens Pimms dans tes cold outreach et newsletters pour mesurer la conversion email-to-vente
+- **Partenariats d'affiliation** — Donne à chaque affilié un lien Pimms unique pour une attribution transparente des ventes
+- **Bio Instagram et stories** — Amène du trafic social via des liens trackés vers tes tunnels Systeme.io
 
-1. Connecte-toi à [Pimms](https://app.pimms.io)  
-2. Crée un nouveau **lien court** vers la **première étape** de ton funnel Systeme.io  
-3. Active l’option **Conversion tracking**
+## Ce que tu verras dans ton tableau de bord
 
-### Exemple de lien court
-
-```
-https://pim.ms/mon-funnel
-```
-
-👉 Utilise ce lien dans toutes tes sources de trafic : publicités, emails, réseaux sociaux…
-
-![Lien court dans Pimms](https://assets.pimms.io/systemeio-create-short-link.webp)
-
-## 5. Tester ta configuration
-
-1. Ouvre ton lien Pimms en **navigation privée**  
-2. Suis toutes les étapes de ton funnel (opt-in + vente)  
-3. Utilise un email de test (ex : `test+pimms@tondomaine.com`)  
-4. Vérifie ton [dashboard Pimms](https://app.pimms.io)
-
-Tu dois voir apparaître :
-
-- ✅ Un **lead**
-- ✅ Une **vente** (si applicable)
-
-![Dashboard Pimms avec lead et vente](https://assets.pimms.io/systemeio-dashboard-lead-sale.webp)
-
-## 6. Conseils en cas de problème
-
-- Assure‑toi que le script Pimms est bien enregistré dans les paramètres du funnel
-- Vérifie que le **Workspace ID** est identique dans l’URL et dans le secret du webhook
-- Refais un test en **navigation privée** avec une nouvelle adresse email
-- Consulte les logs des webhooks dans Systeme.io pour vérifier que les événements ont bien été déclenchés
-- Assure‑toi que les visiteurs passent bien par ton **lien Pimms** (et pas directement)
+Ton tableau de bord Pimms montre chaque opt-in et vente Systeme.io en temps réel avec attribution complète. Pour chaque conversion, tu verras l'email du client, le type d'événement (opt-in ou vente), le produit et montant (pour les ventes), et le parcours complet — quel lien Pimms ils ont cliqué, depuis quelle plateforme, et quelle campagne. Filtre par date, canal ou tunnel pour comparer les performances.
 
 ## FAQ
 
@@ -125,7 +91,7 @@ Le suivi ventes Systeme.io avec Pimms fonctionne automatiquement sur tous tes tu
 
 ### Le suivi ventes Systeme.io fonctionne-t-il avec les programmes d'affiliation ?
 
-Oui ! Le suivi ventes Systeme.io fonctionne parfaitement avec les programmes d'affiliation. Tu peux créer des liens Pimms uniques pour chaque affilié, et quand ils génèrent des ventes via tes tunnels, tu verras exactement quel affilié a généré le chiffre d'affaires. Cela te donne des analytics de performance d'affiliés complètes au-delà du simple suivi de clics.
+Oui ! Le suivi ventes Systeme.io fonctionne parfaitement avec les programmes d'affiliation. Tu peux créer des liens Pimms uniques pour chaque affilié, et quand ils génèrent des ventes via tes tunnels, tu verras exactement quel affilié a généré le chiffre d'affaires.
 
 :::
 
@@ -133,14 +99,16 @@ Oui ! Le suivi ventes Systeme.io fonctionne parfaitement avec les programmes d'a
 
 ### Combien de temps avant de voir les données de ventes dans mon tableau de bord ?
 
-Les données de ventes apparaissent dans ton tableau de bord Pimms en 1-2 minutes après le déclenchement du webhook Systeme.io. Tu verras l'attribution revenus en temps réel incluant le montant de la vente, le produit acheté, les détails client, et le parcours campagne complet qui a mené à l'achat.
+Les données de ventes apparaissent dans ton tableau de bord Pimms en 1-2 minutes après le déclenchement du webhook Systeme.io. Tu verras l'attribution revenus en temps réel incluant le montant de la vente, le produit acheté, les détails client, et le parcours campagne complet.
 
 :::
 
-## Tout est prêt 🎉
+::: faq
 
-Chaque lead et chaque vente collectés via ton funnel Systeme.io seront désormais suivis avec des analytics de conversion de tunnel complètes et une attribution précise.
+### Le tracking fonctionne-t-il sur les tunnels multi-étapes ?
 
-👉 [Crée ton premier lien Pimms dès maintenant](https://pimms.io/fr)
+Oui. Le script de détection Pimms utilise un attribut spécial `data-forward-all` qui transporte les données d'attribution à travers chaque page de ton tunnel Systeme.io. Que ton tunnel ait 2 étapes ou 10 étapes, la source de trafic originale est préservée jusqu'à la conversion finale.
+
+:::
 
 <CallToAction />

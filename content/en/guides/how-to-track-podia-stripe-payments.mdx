@@ -2,7 +2,7 @@
 title: Track Podia Payments (Stripe): Setup Guide 2026
 summary: Track Podia checkout payments with full attribution using Pimms + Stripe. Create a Pimms thank-you link, paste one script in Podia Analytics, and Pimms will connect Podia purchases to the right campaign and link.
 publishedAt: 2026-01-20
-updatedAt: 2026-01-20
+updatedAt: 2026-03-09
 slug: how-to-track-podia-stripe-payments
 image: https://assets.pimms.io/podia-stripe-guide-pimms.webp
 author: alexandre
@@ -10,83 +10,107 @@ categories:
   - guides
 related:
   - setup-stripe-for-website
+  - how-to-track-systemeio-sales-and-leads
   - no-code-guide-for-website
 ---
 
-If your Podia checkout is paid via **Stripe**, you can track purchases in Pimms with full attribution.
+If your Podia checkout is paid via **Stripe**, you can track every purchase in Pimms with full attribution — no coding required.
 
-**What you’ll set up:** Pimms Stripe integration + a Pimms “thank-you” link + one Podia script.
+The Pimms dashboard has an **interactive setup wizard** that guides the full Podia + Stripe configuration — Stripe connection, detection script, settings, and verification. You'll see exactly which campaigns generate actual revenue from your Podia store.
 
-## 1. Enable the Pimms × Stripe integration
+Whether you sell online courses, digital downloads, or memberships, connecting Podia to Pimms lets you stop guessing which marketing efforts bring in paying customers and start **measuring real revenue per campaign**.
 
-Before you start: in that Stripe guide, only do **Step 1**. Skip the other steps (not relevant for Podia) — Podia handles Stripe Checkout.
+## Why track Podia payments with Pimms?
 
-<LinkCard
-  locale="en"
-  title="Track Stripe Payments: Complete Setup Guide"
-  description="Enable the Pimms × Stripe integration so Pimms can record Podia payments."
-  href="/articles/setup-stripe-for-website"
-/>
+- **Know which launch campaign actually sells.** You promoted your new course on Twitter, in your newsletter, and through an affiliate. Pimms shows you that the newsletter drove 12 sales while Twitter only brought 2 — so you know what to prioritize for your next launch.
 
-## 2. Create your entry link (traffic → Podia)
+- **Measure affiliate performance with real revenue data.** Give each affiliate a unique Pimms link. Instead of relying on self-reported numbers, you'll see exactly how many purchases each partner generated and the total revenue they brought in.
 
-This is the link you share in ads, emails, YouTube, LinkedIn, etc.
+- **Compare free vs paid traffic.** You write blog posts and also run Instagram ads pointing to your Podia store. Pimms shows you not just which channel gets more clicks, but which one generates actual purchases — helping you allocate your budget where it counts.
 
-1. Go to your [Pimms dashboard](https://app.pimms.io)
-2. Create a short link that points to your Podia sales page / checkout page
+## Prerequisites
 
-## 3. Create your thank-you link
+- A **Podia account** with Stripe payments enabled
+- A **Stripe account** connected to Podia
+- A **Pimms account** ([sign up here](https://app.pimms.io))
+- At least one Podia product page ready
 
-This link is not a page your buyer visits. It’s a tracking URL the Podia script will call after checkout.
+## What you'll track
 
-Create a short link, then append `/thankyou` **right after the generated key** (example: `Z8qLLtm/thankyou`).
+- **Podia purchases** — Every completed payment through Podia's Stripe checkout, including product name, amount, and customer email
+- **Sales attribution by campaign** — Which ad, email, social post, or partner link drove each sale
+- **Revenue per campaign** — Total revenue broken down by traffic source for clear ROI calculations
+- **Customer journey** — The full path from the first Pimms link click to the completed purchase
 
-```
-https://pim.ms/Z8qLLtm/thankyou
-```
+## How to set it up
 
-## 4. Add the Podia tracking script
+Go to your [Pimms dashboard](https://app.pimms.io), open **Integrations → Podia**, and launch the setup wizard. It starts by ensuring your Stripe account is connected, then walks you through adding a tracking script to your Podia site and verifying the connection. Setup takes about 5 minutes.
 
-In Podia, go to:
-**Settings → Analytics → Third-party code → Website tracking code**
+## What the setup wizard covers
 
-Paste this exact snippet (replace the `url=` value with your own Pimms thank-you link):
+The Podia wizard has 7 steps:
 
-```html
-<script
-  src="https://assets.pimms.io/detect-podia.min.v1.0.1.js?url=https://pim.ms/Z8qLLtm/thankyou"
-  async>
-</script>
-```
+1. **Connect Stripe** — Prerequisite (the wizard will guide you if not yet connected)
+2. **Pick a tracking domain** — Select which domain to use for your tracking links
+3. **Install detection script** — Add the Pimms script to Podia's tracking code section
+4. **Verify script installation** — Confirm the script is loading on your Podia site
+5. **Enable "Require account setup before checkout"** — Ensures the buyer's email is captured before payment
+6. **Create a test link** — Generate a test tracking link to your Podia product page
+7. **Verify tracking works** — Make a test purchase to confirm attribution is working
 
-Podia will add it to every page of your site, just before the closing `</body>` tag. See Podia docs:
-- [Installing advanced analytics](https://help.podia.com/en/articles/11371032-installing-advanced-analytics)
-- [Using a “Thank you” page for conversion purposes](https://help.podia.com/en/articles/11370947-using-a-thank-you-page-for-conversion-purposes)
+## How it works
 
-## 5. Test your setup
+1. **Create a Pimms link** pointing to your Podia product or sales page
+2. **Share that link** in your campaigns — emails, ads, social posts, affiliate partnerships
+3. **A visitor clicks**, browses your Podia page, and completes a purchase through Stripe checkout
+4. **Pimms attributes the sale** — The detection script on your Podia thank-you page connects the purchase to the original campaign that brought the buyer
 
-1. Open your **entry Pimms link** in an incognito window (disable ad blockers)
-2. Complete a test purchase in Podia
-3. Confirm you land on Podia’s built-in thank-you page (`/thanks/...`)
-4. Check your [Pimms dashboard](https://app.pimms.io)
+The Stripe integration handles payment detection server-side, while the Podia detection script bridges the attribution from the visitor's click to the checkout completion.
 
-You should see the purchase tracked via Stripe, attributed to your original entry link.
+## Best ways to share your tracking links
 
-## Troubleshooting
+- **Product launch emails** — Replace your raw Podia links with Pimms links to track which emails convert
+- **Social media posts** — Share tracked links on Twitter, LinkedIn, or Instagram to see which platform sells best
+- **YouTube video descriptions** — Add a Pimms link below your course or product demos
+- **Affiliate partnerships** — Give each affiliate a unique Pimms link for transparent revenue tracking
+- **Blog posts and guest articles** — Embed tracked links in your content marketing to measure content ROI
 
-### I see Stripe payments, but no attribution
-- Make sure the buyer started from your **entry Pimms link** (step 2)
+## What you'll see in your dashboard
 
-### Nothing is tracked after checkout
-- Make sure the script is installed under **Website tracking code** in Podia Analytics
-- Make sure the script `url=` query param points to your **Pimms thank-you link**
-- The Podia script triggers only on Podia thank-you pages that start with `/thanks/`
+Your Pimms dashboard shows every Podia sale in real time with full campaign attribution. For each purchase, you'll see the product name, sale amount, customer email, and the complete trail — which Pimms link they clicked, from which platform, and which campaign. Filter by date or traffic source to compare how different channels perform.
 
-## You’re all set
+## FAQs
 
-Podia purchases paid via Stripe are now tracked in Pimms with attribution.
+::: faq
 
-👉 [Create your first Pimms link](https://app.pimms.io)
+### Do I need a Stripe account for Podia tracking?
+
+Yes, Podia uses Stripe for payments. The wizard will guide you to connect Stripe first if you haven't already, then configure Podia tracking.
+
+:::
+
+::: faq
+
+### Does it work with all Podia products?
+
+Yes, any Podia product that uses Stripe checkout is tracked automatically. Courses, digital products, memberships — all purchases are attributed to the campaign that brought the buyer.
+
+:::
+
+::: faq
+
+### How does Podia tracking differ from direct Stripe tracking?
+
+Podia tracking uses a detection script on the Podia thank-you page to connect purchases to the original campaign. Direct Stripe tracking works with standalone Payment Links and Stripe Checkout pages. If you sell exclusively on Podia, use the Podia integration. If you also use Stripe outside of Podia, you can set up both.
+
+:::
+
+::: faq
+
+### Why do I need to enable "Require account setup before checkout"?
+
+This Podia setting ensures the buyer enters their email before reaching Stripe checkout. Without it, Pimms can't match the payment to the buyer, and attribution may not work reliably. The wizard reminds you to enable this setting during setup.
+
+:::
 
 <CallToAction />
-

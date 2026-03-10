@@ -1,0 +1,216 @@
+---
+title: Analytics & Attribution — Track Clicks, Leads, and Revenue in Real Time
+summary: Full-funnel analytics from first click to paid conversion. Track link performance, capture leads with source attribution, and attribute revenue to the right campaign.
+publishedAt: 2026-03-09
+updatedAt: 2026-03-09
+slug: analytics-attribution-track-clicks-leads-revenue
+folder: products
+image: https://assets.pimms.io/dashboard-links-screenshot-1.webp?v=7
+---
+
+<Header />
+
+<Slide size="xs" noPadding noOverflow>
+  <Avatars>Trusted by data-driven marketers</Avatars>
+  <Hero>
+    <H1>See every <Primary icon="sales" variant="h1">click, lead, and sale</Primary></H1>
+    <Summary>Full-funnel attribution from first touch to paid conversion. Understand exactly which campaigns drive revenue — no guesswork, no spreadsheets, no data black holes.</Summary>
+  </Hero>
+  <AnimatedCentered noPadding>
+    <CtaButton className="w-fit px-6"><SwapRotate>Start tracking now</SwapRotate></CtaButton>
+    <CtaBottomText>No credit card required</CtaBottomText>
+  </AnimatedCentered>
+</Slide>
+
+
+<Slide id="real-time">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Live Data</Label>
+      <H2>Watch conversions happen <Primary>live</Primary></H2>
+      <Text size="lg">See every click, form submission, and purchase as it happens. Your event stream updates in real time — no refresh, no delay, no wondering if your tracking works.</Text>
+    </Centered>
+  </BlurFade>
+</Slide>
+
+
+<Slide variant="secondary" id="dashboard">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Dashboard</Label>
+      <H2>Your complete analytics <Primary>command center</Primary></H2>
+      <Text size="lg">One dashboard for clicks, leads, and revenue. Filter by source, medium, campaign, device, country, or date range. Export to CSV or push events to your warehouse via API.</Text>
+    </Centered>
+  </BlurFade>
+</Slide>
+
+
+<Slide id="attribution">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Attribution</Label>
+      <H2>Multi-touch <Primary>attribution</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="text">
+        <BlurFade direction="left" delay={0.1} inView>
+          <Text size="lg">Most tools only show last-click attribution — the final touch before conversion. But your buyers rarely convert on the first click.</Text>
+          <Text>PIMMS tracks the full journey: first click, every touchpoint, and last click. See which sources introduce your best customers and which close the deal. Allocate budget based on what actually drives revenue.</Text>
+          <List layout="vertical">
+            <Item variant="solution">First-click attribution — which campaign brought them in</Item>
+            <Item variant="solution">Last-click attribution — what closed the sale</Item>
+            <Item variant="solution">Full journey timeline — every link, page, and form</Item>
+          </List>
+        </BlurFade>
+      </Column>
+      <Column span={1} order="visual">
+        <BlurFade direction="right" inView>
+          <AnalyticsDemo />
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+</Slide>
+
+
+<Slide variant="secondary" id="sources">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">Channels</Label>
+      <H2>Know which channels <Primary>drive revenue</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section margin="sm">
+    <TwoColumns ratio="1-1" variant="card" background="subtle">
+      <Column span={1} order="visual">
+        <BlurFade direction="left" inView>
+          <Referer />
+        </BlurFade>
+      </Column>
+      <Column span={1} order="text">
+        <BlurFade direction="right" delay={0.1} inView>
+          <Text size="lg">Break down performance by UTM source, medium, campaign, and content. See which LinkedIn post, email blast, or ad creative drove the most signups and sales.</Text>
+          <List layout="vertical">
+            <Item variant="solution">Paid channels — Google Ads, Meta, LinkedIn Ads</Item>
+            <Item variant="solution">Organic — LinkedIn, X, Instagram, YouTube</Item>
+            <Item variant="solution">Email — newsletters, sequences, nurture</Item>
+            <Item variant="solution">Direct — referrals, word of mouth</Item>
+          </List>
+        </BlurFade>
+      </Column>
+    </TwoColumns>
+  </Section>
+</Slide>
+
+
+<Slide id="api">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">API</Label>
+      <H2>Query your analytics <Primary>via API</Primary></H2>
+      <Text size="lg">Pull events, leads, and revenue data into your BI tools, custom dashboards, or data warehouse. REST API with webhooks for real-time streaming.</Text>
+    </Centered>
+  </BlurFade>
+</Slide>
+
+
+<Slide id="comparison">
+  <BlurFade direction="up" inView>
+    <Centered>
+      <Label variant="default">PIMMS vs Others</Label>
+      <H2>Analytics that <Primary icon="why">actually attribute</Primary></H2>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+    <ComparisonContainer>
+      <ComparisonHeader />
+      <ComparisonCategory>Click Analytics</ComparisonCategory>
+      <ComparisonRow others="true" pimms="true">Basic click counts</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Server-side tracking (ad blocker-proof)</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Geo, device, referrer breakdowns</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">UTM filtering & templates</ComparisonRow>
+      <ComparisonCategory>Lead & Revenue Attribution</ComparisonCategory>
+      <ComparisonRow others="false" pimms="true">Form & calendar lead tracking</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Stripe & Shopify conversion tracking</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Multi-touch attribution</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">AI lead scoring</ComparisonRow>
+      <ComparisonCategory>Platform</ComparisonCategory>
+      <ComparisonRow others="false" pimms="true">Real-time event stream</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Webhooks & API access</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">GDPR-first, no third-party cookies</ComparisonRow>
+      <ComparisonRow others="false" pimms="true">Free plan includes conversion tracking</ComparisonRow>
+    </ComparisonContainer>
+  </Section>
+</Slide>
+
+
+<Slide id="cta">
+  <Section variant="card">
+    <Centered>
+      <H2>Start tracking conversions</H2>
+      <Text>Stripe & Shopify conversion tracking included from the free plan. Install once, track everything.</Text>
+      <CtaButton>
+        <SwapRotate>Start for free</SwapRotate>
+      </CtaButton>
+      <CtaBottomText>Free conversion tracking included • No credit card</CtaBottomText>
+    </Centered>
+
+    <BlurFade direction="top">
+      <BouncingImages />
+    </BlurFade>
+  </Section>
+</Slide>
+
+<TrackingGuideSection />
+
+<Slide>
+  <BlurFade direction="up" inView>
+    <Centered>
+      <H2>Curated <Primary icon="questions">Questions</Primary></H2>
+      <Text size="lg">Everything you need to know about PIMMS analytics.</Text>
+    </Centered>
+  </BlurFade>
+
+  <Section>
+
+::: faq
+### What can I track beyond clicks?
+PIMMS tracks three layers: clicks (with geo, device, UTM breakdowns), leads (from forms and calendars with source attribution), and revenue (Stripe and Shopify payments attributed to campaigns).
+:::
+
+::: faq
+### Is conversion tracking really free?
+Yes. Stripe and Shopify conversion tracking is included in the free plan. Most competitors charge $75+/month for similar features.
+:::
+
+::: faq
+### How does server-side tracking work?
+PIMMS captures events server-side, so ad blockers and cookie restrictions don't affect your data. Every click, lead, and sale is recorded accurately.
+:::
+
+::: faq
+### Which form and calendar tools are supported?
+Brevo, Tally, Typeform, Cal.com, Calendly, Webflow forms, Framer forms, Elementor forms, Podia, iClosed, and more. Each submission is automatically linked to its original UTM source.
+:::
+
+::: faq
+### Can I export my data?
+Yes. Use webhooks to push events in real time, the API for custom queries, or integrate with Zapier to connect to 5,000+ apps.
+:::
+
+  </Section>
+</Slide>
+
+<Slide variant="secondary" size="xs" noPadding>
+  <h2 className="sr-only">Partner Logos</h2>
+  <BlurFade direction="up" inView>
+    <LogosCircle />
+  </BlurFade>
+</Slide>
+
+<Footer />

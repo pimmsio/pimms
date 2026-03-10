@@ -1,8 +1,8 @@
 ---
-title: Cal.com + Webflow : Guide Configuration Complète 2025
-summary: Intègre Cal.com sur ton site Webflow avec un tracking parfait. Découvre exactement quelles pages et campagnes te rapportent des rendez-vous avec une attribution complète des réservations.
+title: Cal.com + Webflow : guide complet d'intégration 2026
+summary: Intègre Cal.com avec Webflow pour un suivi fluide des réservations. Configure Cal.com sur ton site Webflow avec une attribution correcte grâce aux analytics Pimms pour un suivi complet des conversions en réunions.
 publishedAt: 2025-09-29
-updatedAt: 2025-09-29
+updatedAt: 2026-03-09
 slug: cal-com-webflow-integration-complete-setup-guide
 image: https://assets.pimms.io/calcom-webflow-guide-pimms.webp
 author: alexandre
@@ -15,201 +15,131 @@ related:
   - no-code-guide-for-website
 ---
 
-Tu veux savoir **exactement** quelles campagnes marketing te rapportent des rendez-vous via ton site Webflow ? Cette intégration entre Cal.com et Webflow + Pimms te donne la réponse en temps réel.
+L'**intégration Cal.com + Webflow** te permet d'intégrer Cal.com directement sur ton site Webflow avec une attribution complète des réservations. Le dashboard Pimms inclut des assistants de configuration interactifs pour Cal.com et Webflow — deux assistants rapides et tu suis les réunions de bout en bout.
 
-En 10 minutes, tu auras un système qui te montre instantanément quand quelqu'un réserve un rendez-vous via tes publicités, emails, posts LinkedIn ou vidéos YouTube - avec l'attribution parfaite du clic jusqu'au rendez-vous réservé.
+C'est la configuration idéale pour les agences, consultants et entreprises de services qui utilisent Webflow pour construire leur site marketing et Cal.com pour planifier les appels clients. Tu verras exactement quelles campagnes génèrent de vraies réunions réservées via tes pages Webflow.
 
-**Ce que tu vas accomplir :** Intégration Cal.com complète avec Webflow, configuration suivi réservations, et attribution campagne complète montrant quelles campagnes génèrent tes meilleurs rendez-vous.
+Webflow est idéal pour construire des sites marketing professionnels avec des widgets de réservation intégrés. Pimms ajoute la pièce manquante : **l'attribution**. Tu sais maintenant quelle page, campagne ou pub a amené chaque prospect qui a réservé une réunion.
 
-<LinkCard 
-  title="Configuration Webhook Cal.com (Prérequis)" 
-  description="Configure d'abord les webhooks Cal.com pour le tracking en temps réel avec Pimms."
-  href="/articles/calcom-direct-webhook-integration"
-/>
+## Pourquoi suivre les réservations Cal.com sur ton site Webflow ?
+
+- **Sache quelle page de service génère le plus de consultations.** Tu as des pages Webflow séparées pour chaque service que tu proposes, chacune avec un widget de réservation Cal.com intégré. Pimms te montre quelles pages génèrent le plus de réservations et depuis quelle source de trafic.
+
+- **Prouve le ROI à tes clients.** Si tu es une agence qui mène des campagnes générant du trafic vers un site Webflow avec réservation Cal.com, Pimms te donne des données claires à montrer aux clients : « Ta campagne LinkedIn a généré 14 réservations de démo ce mois-ci. »
+
+- **Compare le SEO vs le trafic payant pour la génération de réunions.** Ton site Webflow se positionne bien en organique et tu lances aussi des pubs payantes. Les deux génèrent du trafic vers ta page de réservation. Pimms te montre quelle source génère plus de réunions — tu sais ainsi où investir.
 
 ## Prérequis
 
-Avant de commencer, assure-toi d'avoir :
+- Un **compte Cal.com** (gratuit ou payant — les webhooks fonctionnent sur tous les plans)
+- Un **site Webflow** avec Cal.com intégré (plan payant recommandé pour le code personnalisé)
+- Un **compte Pimms** ([inscription ici](https://app.pimms.io))
 
-✅ Un compte Cal.com avec l'intégration webhook configurée
+## Ce que tu vas suivre
 
-✅ Un site Webflow (plan gratuit ou payant)
+- **Les réservations Cal.com depuis ton site Webflow** — Chaque réunion réservée via ton widget Cal.com intégré
+- **L'attribution des réunions par campagne** — Quelle pub, email, post social ou source de référence a généré chaque réservation
+- **La performance au niveau des pages** — Vois quelles pages Webflow génèrent le plus de réunions
+- **La comparaison des canaux** — Compare comment les différentes sources de trafic performent pour générer des réservations
 
-✅ Un compte Pimms pour le tracking
+## Comment configurer
 
-## 1. Ajoute le script Pimms Analytics à Webflow
+Cette intégration combine deux assistants de configuration dans ton [dashboard Pimms](https://app.pimms.io) :
 
-D'abord, ajoute le script analytics Pimms à ton site Webflow pour tracker les visites :
+1. **Termine d'abord l'assistant Cal.com** — Cela configure le webhook qui envoie les événements de réservation à Pimms et ajoute le champ de tracking à tes formulaires Cal.com
+2. **Puis termine l'assistant Webflow** — Cela ajoute le script de détection à ton site Webflow pour identifier les visiteurs venant des liens Pimms
 
-1. Dans ton **Webflow Designer**, va dans **Project Settings** → **Custom Code**
-2. Ajoute ce script dans la section **Head Code** :
+Les deux assistants guident étape par étape. Le temps de configuration total est d'environ 10 minutes pour les deux.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
+## Ce que couvrent les assistants de configuration
 
-3. **Publie** ton site
+**Assistant Cal.com (6 étapes) :**
+1. Installer le script de détection sur ton site Webflow
+2. Vérifier l'installation du script
+3. Ajouter le champ de tracking pimms_id aux questions de réservation Cal.com
+4. Configurer le webhook Cal.com
+5. Créer un lien de test
+6. Vérifier que le tracking fonctionne
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Vérifier l'installation de ton script"
-  description="Utilise notre outil gratuit pour vérifier automatiquement si le script analytics Pimms est correctement installé sur ton site."
-/>
+**Assistant Webflow (6 étapes) :**
+1. Installer les scripts de tracking (détection + injection de formulaire)
+2. Vérifier l'installation des scripts
+3. Construire un formulaire compatible Pimms (si applicable)
+4. Configurer le webhook Webflow (pour le tracking des formulaires)
+5. Créer un lien de test
+6. Vérifier que le tracking fonctionne
 
-## 2. Méthodes d'intégration
+Si tu as seulement besoin du suivi des réservations Cal.com (pas de formulaires Webflow), l'assistant Cal.com seul suffit.
 
-Choisis la méthode qui colle le mieux à ton design Webflow :
+## Comment ça fonctionne
 
-### Méthode 1 : Lien ou Bouton Calendrier
+1. **Le script de détection Pimms** est installé sur ton site Webflow — quand un visiteur arrive via un lien Pimms, le script détecte l'ID de clic
+2. **Le script injecte automatiquement l'ID de tracking** dans les intégrations Cal.com de la page via le champ caché `pimms_id`
+3. **Le visiteur réserve une réunion** via ton widget Cal.com intégré — la réservation inclut l'ID de clic Pimms
+4. **Cal.com déclenche un webhook** vers Pimms avec les données de réservation et l'ID de tracking
+5. **Pimms attribue la réunion** à la campagne d'origine, visible dans ton dashboard
 
-Le calendrier s'ouvre dans un onglet plein écran. Parfait pour des boutons de réservation simples.
+Le script de détection gère automatiquement la passation entre Webflow et Cal.com — pas besoin de passer manuellement les paramètres d'URL.
 
-1. Dans Webflow, ajoute un **Bouton** ou un **Lien**
-2. Mets le **Lien** vers ton URL Cal.com avec `?pimms_id=1`
+## Meilleures façons de partager tes liens de tracking
 
-**Exemple** :
-```
-https://cal.com/tonnom/meeting?pimms_id=1
-```
+- **Google Ads** — Pointe les pubs search vers des liens Pimms pour tes pages de réservation Webflow pour mesurer la conversion mot-clé → réunion
+- **LinkedIn** — Partage ta page de consultation via Pimms pour suivre quelle activité LinkedIn génère le plus de réservations
+- **Prospection email** — Utilise des liens Pimms dans tes cold emails pour mesurer quelles séquences génèrent des réservations
+- **Articles invités** — Inclus des liens trackés dans les articles invités qui génèrent du trafic vers ton site Webflow
+- **Annuaires et listings** — Ajoute des liens Pimms dans les annuaires business pour suivre les réunions générées par référence
 
-> **Tu peux aussi :** Créer un lien court Pimms au lieu d'utiliser `?pimms_id=1`, mais ça casse l'attribution - tout sera attribué au clic du bouton au lieu de la vraie source. [Voir la FAQ pour les détails](#peux-tu-utiliser-des-liens-courts-pimms-pour-la-methode-calendrier-plein-ecran-au-lieu-dajouter-pimms_id1)
+## Ce que tu verras dans ton dashboard
 
-### Méthode 2 : Calendrier Inline
-
-Parfait pour afficher le calendrier directement sur ta page.
-
-![Exemple d'intégration calendrier dans Webflow](https://assets.pimms.io/calcom-embed-webflow-example.webp)
-
-1. Ajoute le script expose dans le head de ton site Webflow (en dessous du script detection) :
-
-```html
-<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
-```
-
-2. Copie le code HTML depuis ton dashboard Cal.com dans **Embed** → **Inline embed** → **HTML (iframe)**
-
-![Dashboard intégration inline Cal.com](https://assets.pimms.io/calcom-embed-inline-dashboard.webp)
-
-3. Colle le code script dans le head de ton site Webflow
-
-- Change le paramètre `calLink` avec ton vrai lien Cal.com :
-
-```
-calLink: `your/cal-link?pimms_id=${window.pimms_id}`
-```
-
-Attention : remplace les guillemets doubles par \` (accent grave) dans le paramètre calLink.
-
-- et change `id-of-the-element` avec l'ID de l'élément où tu veux le calendrier :
-
-```
-elementOrSelector: "#id-of-the-element",
-```
-
-4. **Publie** ton site
-
-### Méthode 3 : Popup Calendrier
-
-Parfait pour des boutons qui ouvrent un popup calendrier.
-
-![Exemple de calendrier popup dans Webflow](https://assets.pimms.io/calcom-popup-webflow-example.webp)
-
-1. Dans Webflow, ajoute un **Bouton**
-2. Ajoute ces **Custom Attributes** au bouton :
-
-- **Attribute Name** : `data-cal-link`
-- **Attribute Value** : `your-cal-link?pimms_id=1`
-
-![Exemple d'un bouton avec attribut data-cal-link](https://assets.pimms.io/calcom-embed-popup-button.webp)
-
-3. Copie/colle le code depuis **Embed** → **Popup via element click** → **HTML (iframe)** dans le head de ton site Webflow
-
-![Dashboard intégration popup Cal.com](https://assets.pimms.io/calcom-embed-popup-dashboard.webp)
-
-4. Publie ton site
-
-## 4. Teste que ça marche
-
-1. Crée un lien Pimms qui redirige vers ton site Webflow
-2. Ouvre ton lien dans un **onglet incognito**
-3. Clique sur ton bouton de réservation
-4. Réserve un rendez-vous bidon avec un email de test
-5. Va voir ton [dashboard Pimms](https://app.pimms.io)
-
-Tu devrais voir une nouvelle **conversion** qui apparaît automatiquement.
-
-## 5. Si ça marche pas
-
-### Je vois aucune conversion dans Pimms
-- Le script analytics Pimms est bien installé ?
-- Tu utilises bien le bon format de lien Cal.com ?
-- Teste en **mode incognito** avec un nouvel email
-- Ton webhook Cal.com est bien configuré ?
-
-### Le calendrier se charge pas
-- Ton lien Cal.com est bon ?
-- Le script d'intégration se charge bien ?
-- Ton site Webflow est publié ?
-- Essaie de vider le cache de ton navigateur
-
-### Le popup s'ouvre pas
-- L'attribut `data-cal-link` est bien défini ?
-- Le script d'intégration Cal.com est chargé ?
-- Ton bouton est bien configuré ?
+Ton dashboard Pimms affiche chaque réservation Cal.com depuis ton site Webflow en temps réel avec une attribution complète par campagne. Pour chaque réunion, tu verras le nom et l'email du participant, le type d'événement, et la piste complète — quel lien Pimms ils ont cliqué, depuis quelle plateforme, et quelle campagne. Filtre par date, canal ou page pour comparer quelles campagnes génèrent le plus de réunions.
 
 ## FAQs
 
 ::: faq
 
-### J'ai besoin d'un plan Webflow payant pour Cal.com ?
+### Ai-je besoin d'un plan Webflow payant pour l'intégration Cal.com ?
 
-Non ! Ça marche avec le plan gratuit de Webflow. Tu dois juste ajouter le code custom dans le head de ton site.
-
-:::
-
-::: faq
-
-### Je peux personnaliser l'apparence de Cal.com ?
-
-Oui ! Cal.com a plein d'options pour changer les couleurs, le branding et les champs de formulaire. Tu peux tout customizer dans ton dashboard Cal.com sous Event Types → Advanced → Booking Questions.
+Ça dépend de ta configuration. Le plan gratuit Webflow autorise du code personnalisé limité, mais un plan payant donne un accès complet à l'injection de code head et aux scripts site-wide. La plupart des utilisateurs ont un plan Webflow payant et peuvent ajouter le script de tracking facilement.
 
 :::
 
 ::: faq
 
-### Ça marche avec le CMS Webflow ?
+### Puis-je personnaliser l'apparence du formulaire de réservation Cal.com ?
 
-Oui ! Tu peux utiliser le CMS Webflow pour créer des pages de réservation dynamiques avec différents liens Cal.com pour différents membres d'équipe ou services.
+Oui ! Cal.com propose des options de personnalisation étendues pour les couleurs, la marque et les champs du formulaire. Tu peux les personnaliser dans ton dashboard Cal.com sous Event Types → Advanced → Booking Questions.
 
 :::
 
 ::: faq
 
-### Peux-tu utiliser des liens courts Pimms pour la méthode calendrier plein écran au lieu d'ajouter ?pimms_id=1 ?
+### Est-ce que ça fonctionne avec le CMS Webflow ?
 
-Tu peux, mais ça casse l'attribution. Avec un lien court Pimms, toutes les réservations seront attribuées au clic du bouton au lieu de la vraie source de trafic. Tu perdras la visibilité sur quelles campagnes ou pages génèrent vraiment des réservations.
+Oui ! Tu peux utiliser le CMS Webflow pour créer des pages de réservation dynamiques avec différents liens Cal.com pour différents membres d'équipe ou services. Le script de détection fonctionne sur toutes les pages, y compris les pages de collections CMS.
 
-**Utilise les liens courts Pimms seulement pour :**
-- Tests A/B à court terme (max 1 mois)
+:::
+
+::: faq
+
+### Puis-je utiliser les liens courts Pimms pour la méthode calendrier plein écran au lieu d'ajouter ?pimms_id=1 ?
+
+Oui, mais cette approche casse le tracking d'attribution. Quand tu utilises un lien court Pimms directement vers Cal.com, toutes les réservations seront attribuées au clic sur le bouton plutôt qu'à la vraie source de trafic.
+
+**Utilise les liens courts Pimms uniquement pour :**
+- Des tests A/B à court terme (max 1 mois)
 - Tester quel design de bouton convertit le mieux
-- Configuration rapide quand tu as besoin d'un suivi immédiat
+- Une configuration rapide quand tu as besoin de tracking immédiat
 
-Pour un suivi long terme et une attribution correcte, utilise toujours le lien Cal.com avec `?pimms_id=1`.
+Pour un suivi à long terme et une attribution correcte, utilise toujours le lien Cal.com avec le paramètre `?pimms_id=1`.
 
 :::
 
 ::: faq
 
-### Je peux tracker plusieurs calendriers Cal.com sur le même site Webflow ?
+### Puis-je suivre à la fois les soumissions de formulaires Webflow ET les réservations Cal.com ?
 
-Oui ! Tu peux intégrer plusieurs calendriers Cal.com et tous les tracker avec Pimms. Assure-toi juste que chaque lien de calendrier a le bon paramètre `pimms_id`.
+Oui ! Si tu as à la fois des formulaires Webflow et des widgets de réservation Cal.com sur ton site, configurer les deux assistants permettra de suivre toutes les conversions. Les soumissions de formulaires et les réservations de réunions apparaîtront toutes deux dans ton dashboard Pimms avec une attribution complète.
 
 :::
-
-## C'est parti ! 🎉
-
-Maintenant, chaque fois que quelqu'un réserve un rendez-vous via ton site Webflow, tu le sauras instantanément avec toutes les infos d'attribution. Plus besoin de deviner quelle campagne marche vraiment !
-
-👉 [Crée ton premier lien Pimms](https://app.pimms.io)
 
 <CallToAction />

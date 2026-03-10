@@ -1,5 +1,41 @@
 import { NextRequest, NextResponse } from "next/server";
 
+function scanHtml(html: string) {
+  const scriptRegex =
+    /<script[^>]*(?:src=["']([^"']*)["'][^>]*)?[^>]*>([\s\S]*?)<\/script>/gi;
+  const matches = html.match(scriptRegex) || [];
+
+  let scriptFound = false;
+  let scriptUrl: string | undefined;
+  let exposeScriptFound = false;
+  let injectFormScriptFound = false;
+
+  for (const m of matches) {
+    const srcMatch = m.match(/src=["']([^"']*)["']/);
+    const src = srcMatch ? srcMatch[1] : "";
+
+    if (src.includes("cdn.pimms.io/analytics/script.detection.js")) {
+      scriptFound = true;
+      scriptUrl = src;
+    }
+    if (src.includes("cdn.pimms.io/analytics/script.expose.js")) {
+      exposeScriptFound = true;
+    }
+    if (src.includes("cdn.pimms.io/analytics/script.inject-form.js")) {
+      injectFormScriptFound = true;
+    }
+
+    if (m.includes("@getpimms/analytics")) scriptFound = true;
+  }
+
+  const metaFound =
+    /<meta[^>]+name=["']pimms-sdk["'][^>]+content=["']true["'][^>]*>/i.test(html) ||
+    /<meta[^>]+content=["']true["'][^>]+name=["']pimms-sdk["'][^>]*>/i.test(html);
+  if (metaFound) scriptFound = true;
+
+  return { scriptFound, scriptUrl, exposeScriptFound, injectFormScriptFound };
+}
+
 export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
   const url = searchParams.get("url");
@@ -15,7 +51,6 @@ export async function GET(request: NextRequest) {
     }
 
     const parsedUrl = new URL(normalizedUrl);
-    console.log(`Checking script for URL: ${parsedUrl.toString()}`);
 
     const response = await fetch(parsedUrl, {
       headers: {
@@ -33,52 +68,8 @@ export async function GET(request: NextRequest) {
     }
 
     const html = await response.text();
+    let { scriptFound, scriptUrl, exposeScriptFound, injectFormScriptFound } = scanHtml(html);
 
-    // Extract all script tags and their sources
-    const scriptRegex = /<script[^>]*(?:src=["']([^"']*)["'][^>]*)?[^>]*>(.*?)<\/script>/gi;
-    const scripts: { src?: string; content: string }[] = [];
-
-    const scriptMatches = html.match(scriptRegex) || [];
-
-    for (const scriptMatch of scriptMatches) {
-      const srcMatch = scriptMatch.match(/src=["']([^"']*)["']/);
-      const contentMatch = scriptMatch.match(/<script[^>]*>(.*?)<\/script>/i);
-
-      scripts.push({
-        src: srcMatch ? srcMatch[1] : undefined,
-        content: contentMatch ? contentMatch[1] : ""
-      });
-    }
-
-    let scriptFound = false;
-    let scriptUrl = undefined;
-    let exposeScriptFound = false;
-    let injectFormScriptFound = false;
-
-    for (const script of scripts) {
-      if (script.src) {
-        if (script.src.includes("cdn.pimms.io/analytics/script.detection.js")) {
-          scriptFound = true;
-          scriptUrl = script.src;
-        }
-        if (script.src.includes("cdn.pimms.io/analytics/script.expose.js")) {
-          exposeScriptFound = true;
-        }
-        if (script.src.includes("cdn.pimms.io/analytics/script.inject-form.js")) {
-          injectFormScriptFound = true;
-        }
-      }
-
-      if (script.content && script.content.includes("@getpimms/analytics")) {
-        scriptFound = true;
-      }
-    }
-
-    const metaTagFound = /<meta\s+name=["']pimms-sdk["']\s+content=["']true["']\s*\/?>/i.test(html);
-    if (metaTagFound) scriptFound = true;
-
-    // Fallback: Use Browserless if not found
-    // Si le script n'est pas trouvé, utilisation de Browserless
     if (!scriptFound) {
       const wsApiKey = process.env.WEBSCRAPINGAI_API_KEY;
       if (!wsApiKey) throw new Error("WEBSCRAPINGAI_API_KEY not set");
@@ -99,8 +90,11 @@ export async function GET(request: NextRequest) {
       }
 
       const renderedHtml = await wsResponse.text();
-      const metaTagFound = /<meta\s+name=["']pimms-sdk["']\s+content=["']true["']\s*\/?>/i.test(renderedHtml);
-      if (metaTagFound) scriptFound = true;
+      const fallback = scanHtml(renderedHtml);
+      scriptFound = scriptFound || fallback.scriptFound;
+      scriptUrl = scriptUrl || fallback.scriptUrl;
+      exposeScriptFound = exposeScriptFound || fallback.exposeScriptFound;
+      injectFormScriptFound = injectFormScriptFound || fallback.injectFormScriptFound;
     }
 
     return NextResponse.json({

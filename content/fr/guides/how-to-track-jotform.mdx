@@ -1,0 +1,123 @@
+---
+title: Suivi Jotform : Guide Complet d'Attribution Marketing 2026
+summary: Connecte Pimms à Jotform en quelques minutes avec l'intégration webhook. Suis chaque soumission avec des analytics complètes montrant quelles campagnes génèrent tes meilleurs leads.
+publishedAt: 2026-03-09
+updatedAt: 2026-03-09
+slug: how-to-track-jotform-form-submissions-marketing-attribution
+image: https://assets.pimms.io/jotform-guide-pimms.webp
+author: alexandre
+categories:
+  - guides
+related:
+  - how-to-track-tally-webhook
+  - how-to-track-typeform
+  - how-to-track-webflow-leads
+  - no-code-guide-for-website
+---
+
+Le **suivi soumissions Jotform** te permet de voir exactement quelles campagnes marketing génèrent tes meilleurs leads sur tous tes formulaires Jotform. Le dashboard Pimms inclut un **assistant de configuration interactif** qui gère tous les détails techniques pour toi.
+
+Tu obtiendras des **analytics formulaire en temps réel** montrant quelles publicités, campagnes email ou posts sociaux génèrent de vraies soumissions. Parfait pour le **suivi de génération de leads** avec une **attribution formulaire** complète du clic à la soumission.
+
+Jotform est l'un des constructeurs de formulaires les plus populaires au monde avec plus de 25 millions d'utilisateurs. Avec Pimms, chaque réponse est attribuée à la campagne, publicité ou post social qui a amené le visiteur — sans développeur requis.
+
+## Pourquoi suivre les soumissions Jotform avec Pimms ?
+
+- **Vois quelles publicités génèrent de vrais leads, pas juste des vues.** Tu intègres un Jotform sur ton site et tu lances des Google Ads et Facebook Ads. Les deux plateformes montrent des clics, mais Pimms te montre quelle publicité a généré les 15 soumissions qui sont devenues de vraies opportunités business.
+
+- **Mesure le ROI de tes inscriptions événements.** Tu promeus ton formulaire d'inscription webinaire sur LinkedIn, dans des newsletters et via des emails partenaires. Pimms te montre quel canal génère le plus d'inscriptions — pour concentrer ta promotion sur le bon canal pour ton prochain événement.
+
+- **Suis la qualité des leads par source.** Tu collectes des leads via Jotform sur plusieurs campagnes. Pimms te permet de voir non seulement quelle campagne génère le plus de soumissions, mais quelle source amène les réponses les plus complètes et de meilleure qualité.
+
+## Prérequis
+
+- Un **compte Jotform** (gratuit ou payant — les webhooks sont disponibles sur tous les plans)
+- Un **compte Pimms** ([inscris-toi ici](https://app.pimms.io))
+- Un site web où ton Jotform est intégré, ou un lien Jotform standalone
+
+## Ce que tu vas suivre
+
+- **Soumissions Jotform** — Chaque réponse complétée avec toutes les données et la campagne qui a amené le visiteur
+- **Attribution leads par campagne** — Quelle publicité, email, post social ou contenu a généré chaque soumission
+- **Performance campagne** — Nombre de soumissions et taux de conversion ventilés par source de trafic
+- **Analytics multi-formulaires** — Suis tous tes formulaires Jotform depuis un seul dashboard
+
+## Comment configurer
+
+Rends-toi sur ton [dashboard Pimms](https://app.pimms.io), ouvre **Intégrations → Jotform** et lance l'assistant de configuration. Il te guide pour installer le script de détection, ajouter un champ caché de suivi à ton Jotform, configurer le webhook et vérifier avec une soumission test. La configuration prend environ 5 minutes.
+
+## Ce que l'assistant de configuration couvre
+
+L'assistant Jotform a 6 étapes :
+
+1. **Installer le script de détection** — Ajoute le script Pimms sur la page où ton Jotform est intégré
+2. **Vérifier l'installation du script** — Confirme que le script se charge et détecte le domaine jotform.com
+3. **Ajouter le champ caché pimms_id** — Ajoute un champ caché à ton Jotform qui capture l'identifiant de suivi
+4. **Configurer le webhook dans Jotform** — Configure le webhook Jotform pour envoyer les soumissions à Pimms
+5. **Créer un lien test** — Génère un lien de suivi vers la page avec ton Jotform
+6. **Vérifier le fonctionnement** — Soumets un formulaire test pour confirmer que l'attribution est connectée
+
+## Comment ça marche
+
+1. **Installe le script de détection Pimms** sur la page où ton Jotform est intégré — il détecte les visiteurs venant de liens Pimms et configure le suivi sortant pour le domaine jotform.com
+2. **Quand un visiteur arrive via un lien Pimms**, le script passe automatiquement l'identifiant de clic au Jotform via un champ caché
+3. **Le visiteur remplit le formulaire** — la soumission inclut l'identifiant de suivi Pimms
+4. **Jotform envoie un webhook** à Pimms avec les données du formulaire et l'identifiant de suivi, et Pimms attribue le lead à la campagne d'origine
+
+Jotform supporte plusieurs endpoints webhook par formulaire, donc tu peux envoyer les données à Pimms en parallèle de ton CRM ou outil d'email marketing.
+
+## Meilleures façons de partager tes liens de suivi
+
+- **CTAs site web** — Intègre Jotform sur ton site et drive du trafic avec des liens Pimms pour suivre les soumissions par campagne
+- **Promotions événements** — Partage ton lien d'inscription Jotform via Pimms pour voir quels canaux génèrent le plus d'inscriptions
+- **Campagnes email** — Remplace tes liens Jotform bruts par des liens Pimms dans tes newsletters pour mesurer les leads générés par email
+- **Réseaux sociaux** — Poste des liens trackés vers ton Jotform sur LinkedIn, Twitter et Facebook
+- **Publicités payantes** — Pointe tes pubs Google ou Meta vers un lien Pimms de ton Jotform pour mesurer le coût par lead
+
+## Ce que tu verras dans ton dashboard
+
+Ton dashboard Pimms affiche chaque soumission Jotform en temps réel avec l'attribution complète. Pour chaque lead, tu verras les données soumises, quel lien Pimms ils ont cliqué, depuis quelle plateforme, et quelle campagne. Filtre par date, source de trafic ou formulaire pour optimiser ta stratégie de génération de leads.
+
+## FAQs
+
+::: faq
+
+### Jotform supporte-t-il les webhooks sur les plans gratuits ?
+
+Oui ! Les webhooks Jotform sont disponibles sur tous les plans y compris le gratuit. Tu peux configurer les webhooks dans les paramètres Intégrations de ton formulaire. Chaque formulaire peut avoir plusieurs endpoints webhook pour envoyer les données à différents services simultanément.
+
+:::
+
+::: faq
+
+### Puis-je suivre plusieurs formulaires Jotform avec Pimms ?
+
+Oui ! Chaque formulaire Jotform a sa propre configuration webhook. Tant que chaque formulaire a le champ caché `pimms_id` et un webhook pointant vers Pimms, toutes les soumissions de tous tes formulaires seront suivies avec l'attribution complète.
+
+:::
+
+::: faq
+
+### Est-ce que ça marche avec la logique conditionnelle et les formulaires multi-pages ?
+
+Oui. L'intégration webhook Jotform fonctionne avec toute complexité de formulaire — logique conditionnelle, multi-pages, upload de fichiers et collecte de paiements. Tant que le champ caché `pimms_id` est inclus, Pimms capture chaque soumission quelle que soit la structure du formulaire.
+
+:::
+
+::: faq
+
+### Puis-je utiliser le suivi Jotform avec les intégrations paiement de Jotform ?
+
+Oui ! Si tu utilises les fonctionnalités de paiement intégrées de Jotform (Square, PayPal, Stripe), le webhook se déclenche toujours avec les données complètes incluant le `pimms_id`. Tu peux donc attribuer les paiements par formulaire à des campagnes spécifiques.
+
+:::
+
+::: faq
+
+### Quelle est la différence avec Zapier pour Jotform ?
+
+L'approche webhook directe envoie les soumissions de Jotform à Pimms en temps réel — sans intermédiaire tiers. Cela signifie un suivi plus rapide, moins de composants à gérer, et aucun abonnement Zapier requis. Si tu préfères Zapier pour des workflows plus complexes, consulte notre [guide Zapier](/articles/start-with-cal-com-and-zapier).
+
+:::
+
+<CallToAction />

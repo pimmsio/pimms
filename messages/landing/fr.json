@@ -12,7 +12,39 @@
       "onboarding": "Onboarding",
       "dashboard": "Se connecter",
       "pricing": "Tarification",
-      "contact": "Nous contacter"
+      "contact": "Nous contacter",
+      "product": {
+        "_label": "Produit",
+        "smart-links": "Smart Links",
+        "smart-links_desc": "Liens courts brandés, deep links, QR codes & A/B testing",
+        "analytics": "Analytics & Attribution",
+        "analytics_desc": "Track clics, leads et revenus en temps réel",
+        "utm": "Gestion UTM",
+        "utm_desc": "Modèles, conventions et gouvernance pour vos UTMs",
+        "qr-codes": "QR Codes",
+        "qr-codes_desc": "QR codes dynamiques et trackables avec analytics intégrés",
+        "bulk-links": "Liens en masse",
+        "bulk-links_desc": "Dossiers, import CSV et gestion UTM en masse"
+      },
+      "integrations": {
+        "_label": "Intégrations",
+        "stripe": "Stripe",
+        "calcom": "Cal.com",
+        "brevo": "Brevo",
+        "webflow": "Webflow",
+        "framer": "Framer",
+        "calendly": "Calendly",
+        "view-all": "Voir toutes les intégrations"
+      },
+      "resources": {
+        "_label": "Ressources",
+        "blog": "Blog",
+        "guides": "Guides",
+        "tutorials": "Tutoriels",
+        "api": "Documentation API",
+        "sdk": "SDK TypeScript",
+        "site-checker": "Scan Site"
+      }
     },
     "conversion": {
       "fail": {
@@ -137,6 +169,36 @@
     "contact": {
       "question": "Besoin d'un renseignement ?",
       "action": "Réserve un call avec Alexandre"
+    },
+    "askAi": {
+      "heading": "Toujours pas sûr que PIMMS soit fait pour vous ?",
+      "subtitle": "Laissez ChatGPT, Claude, Perplexity ou Grok réfléchir pour vous. Cliquez sur un bouton et découvrez ce que votre IA préférée dit à propos de PIMMS.",
+      "askButton": "Demander à {service}"
+    },
+    "lead_magnet": {
+      "banner_badge": "Guide gratuit",
+      "banner_title": "Le plan de tracking complet",
+      "banner_subtitle": "Le framework exact utilisé pour mettre en place de vrais systèmes de tracking derrière de vrais revenus. Arrêtez de deviner quel canal génère des résultats.",
+      "banner_benefit_1": "Les 5 couches de croissance à suivre",
+      "banner_benefit_2": "La règle d'or de l'architecture UTM",
+      "banner_benefit_3": "Templates Google Sheet gratuits inclus",
+      "banner_cta": "Obtenir le guide gratuit",
+      "modal_title": "Recevez le plan de tracking gratuit",
+      "modal_subtitle": "Entrez votre email et nous vous enverrons le guide complet avec les templates.",
+      "modal_email_placeholder": "vous@entreprise.com",
+      "modal_submit": "Envoyer le guide",
+      "modal_sending": "Envoi en cours...",
+      "modal_success_title": "Vérifiez votre boîte mail !",
+      "modal_success_message": "Le plan de tracking est en route vers votre email.",
+      "modal_no_spam": "Pas de spam. Désabonnement à tout moment.",
+      "modal_image_alt": "Le plan de tracking complet 2026",
+      "section_title": "Arrêtez de deviner. Commencez à tracker.",
+      "section_subtitle": "Obtenez le framework UTM exact utilisé dans des dizaines de vraies campagnes de croissance — lancements SaaS, outreach LinkedIn, acquisition payante, et plus.",
+      "section_benefit_1": "Les 5 couches de croissance à suivre",
+      "section_benefit_2": "La règle d'or de l'architecture UTM",
+      "section_benefit_3": "Templates Google Sheet gratuits (SaaS + LinkedIn Creator)",
+      "section_benefit_4": "Du bruit de trafic aux données de revenus structurées",
+      "section_social_proof": "Téléchargé par plus de 500 marketeurs et fondateurs"
     },
     "free_offer": {
       "images": {

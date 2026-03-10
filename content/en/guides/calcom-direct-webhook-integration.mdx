@@ -2,7 +2,7 @@
 title: Track Cal.com Bookings: Complete Setup Guide 2026
 summary: Set up Cal.com webhooks to track bookings with instant attribution. Get real-time meeting data showing which campaigns generate your best appointments using Cal.com's built-in webhook functionality.
 publishedAt: 2025-09-13
-updatedAt: 2026-01-19
+updatedAt: 2026-03-09
 slug: calcom-direct-webhook-integration
 image: https://assets.pimms.io/calcom-guide-pimms-native.webp
 author: alexandre
@@ -15,118 +15,68 @@ related:
   - no-code-guide-for-website
 ---
 
-**Cal.com webhook integration** gives you instant, real-time booking tracking directly from Cal.com to Pimms. This guide shows you how to set up **direct Cal.com webhooks** with Pimms in 15 minutes for complete **meeting attribution** using Cal.com's built-in webhook functionality.
+**Cal.com webhook integration** gives you instant, real-time booking tracking directly from Cal.com to Pimms. The Pimms dashboard includes an interactive setup wizard that handles the full configuration — script installation, webhook setup, and verification.
 
-You'll get **instant booking notifications** and **real-time conversion tracking** showing exactly which marketing campaigns, ads, or YouTube posts drive actual appointment bookings.
+You'll see exactly which campaigns, ads, and outreach efforts drive actual meeting bookings. Because Cal.com's webhook delivers events in real time, you get **instant attribution** with no polling delays or third-party middleware.
 
-**What you'll accomplish:** Cal.com webhook setup, real-time booking tracking, and complete meeting attribution for every appointment.
+Cal.com is open-source and offers webhooks on every plan, including free. This makes it one of the most flexible booking integrations available with Pimms.
 
-<LinkCard 
-  title="Cal.com + Zapier Integration Guide" 
-  description="Use Zapier automation tool to connect Cal.com with Pimms. Perfect for users who prefer automation workflows."
-  href="/articles/start-with-cal-com-and-zapier"
-/>
+## Why track Cal.com bookings with Pimms?
 
-## 1. Add the pimms_id field to your Cal.com form
+- **Attribute every demo booking to a campaign.** You embed Cal.com on your website and share it in outreach. Without Pimms, you see bookings in Cal.com but have no idea if they came from your landing page, a LinkedIn post, or a cold email. With Pimms, each booking shows exactly where the prospect came from.
 
-1. Log in to your **Cal.com dashboard**
-2. Open the **event type** you want to track and click **Edit**
-3. Go to **Advanced → Booking Questions**
+- **Measure content-driven meeting generation.** You write blog posts with embedded Cal.com booking widgets. Pimms shows you which blog posts actually generate meetings — not just page views — so you can double down on topics that convert readers into prospects.
 
-![Cal.com edit form](https://assets.pimms.io/cal-edit-form.webp)
+- **Track team performance across channels.** Using Cal.com teams? Each team member's bookings are tracked with full attribution. See which reps generate the most meetings and from which channels, making performance tracking data-driven.
 
-4. Click **Add a question** and configure:
-- **Type**: Short text
-- **Identifier**: `pimms_id`
-- **Label**: `pimms_id`
-- **Required**: No
-- **Enable**: "Disable input if URL identifier is prefilled"
-- **Disable**: "Show on booking page"
+## Prerequisites
 
-![Cal.com form setup](https://assets.pimms.io/cal-fill-the-question-for-the-pimms_id.webp)
+- A **Cal.com account** (free or paid — webhooks work on all plans)
+- A **Pimms account** ([sign up here](https://app.pimms.io))
+- A website or landing page where your Cal.com booking is embedded
 
-5. **Save** the form
+## What you'll track
 
-## 2. Find your Workspace ID
+- **Cal.com bookings** — Every scheduled meeting from all your event types, with attendee details
+- **Meeting attribution by campaign** — Which ad, email, social post, or outreach message drove each booking
+- **Campaign performance** — Booking counts and conversion rates broken down by traffic source
+- **Team-level analytics** — If using Cal.com teams, see attribution per team member
 
-1. Log in to your [Pimms dashboard](https://app.pimms.io)
-2. Go to **Settings** → **Workspace ID**
-3. Copy your ID (e.g. `ws_abc123xyz`)
+## How to set it up
 
-You'll need this ID for the webhook configuration in the next step.
+Go to your [Pimms dashboard](https://app.pimms.io), open **Integrations → Cal.com**, and launch the setup wizard. It walks you through installing the detection script on your website, adding the tracking field to your Cal.com form, configuring the webhook, and verifying with a test booking. Setup takes about 5 minutes.
 
-## 3. Set up the webhook in Cal.com
+## What the setup wizard covers
 
-1. In your Cal.com dashboard, go to **Settings → Developer → Webhooks**
-2. Click **New Webhook** or **Add Webhook**
-3. Configure the webhook exactly as shown:
+The Cal.com setup wizard walks you through 6 steps:
 
-> **Need help with Cal.com webhook basics?** Check out the [official Cal.com webhook documentation](https://cal.com/help/webhooks) for detailed information on webhook functionality and security.
+1. **Install the detection script** — Add the Pimms script to the page where Cal.com is embedded
+2. **Verify script installation** — Confirm the script is loading correctly on your site
+3. **Add pimms_id field** — Add a hidden tracking field to your Cal.com booking questions
+4. **Set up webhook** — Configure the Cal.com webhook to send bookings to Pimms
+5. **Create a test link** — Generate your first Pimms tracking link
+6. **Verify tracking works** — Book a test meeting to confirm attribution is connected
 
-**Subscriber URL**:
-```
-https://app.pimms.io/api/calcom/webhook?workspace_id=your-id
-```
+## How it works
 
-**Enable Webhook**: Make sure the toggle is **ON** (blue)
+1. **Install the Pimms detection script** on the page where your Cal.com booking widget is embedded
+2. **When a visitor arrives via a Pimms link**, the script detects the click ID and automatically passes it to Cal.com through a hidden form field
+3. **The visitor books a meeting** on Cal.com — the booking includes the Pimms click ID
+4. **Cal.com fires a webhook** to Pimms with the booking data and click ID, and Pimms attributes the meeting to the original campaign
 
-**Event Triggers**:
-- ✅ Select **Booking Created** (you can add more events later if needed)
+The webhook fires instantly when a booking is confirmed, so attribution data appears in your dashboard within seconds.
 
-**Secret**: 
-```
-your-workspace-id
-```
+## Best ways to share your tracking links
 
-**Payload Template**: Leave as **Default**
+- **LinkedIn posts and DMs** — Share your Cal.com booking page via a Pimms link to track which LinkedIn activity books meetings
+- **Email outreach** — Use a Pimms link in cold emails and follow-ups to measure which sequences convert to meetings
+- **Landing page CTAs** — Drive traffic to your landing page (with embedded Cal.com) through tracked Pimms links
+- **Paid ads** — Use Pimms links in your ad campaigns to see which ads generate the most booked meetings
+- **Blog posts** — Add tracked links in relevant blog content where you embed or link to your Cal.com booking
 
-![Cal.com webhook configuration](https://assets.pimms.io/calcom-guide-webhook.webp)
+## What you'll see in your dashboard
 
-4. Click **Create Webhook** to save
-
-Replace `your-id` and `your-workspace-id` with your actual workspace ID from step 2.
-
-## 4. Create your Pimms tracking link
-
-1. Go to your [Pimms dashboard](https://app.pimms.io)
-2. Create a short link pointing to your **Cal.com booking URL**
-
-**Example**:
-```
-https://pim.ms/my-booking-page
-```
-
-Use this link in your ads, emails, LinkedIn outreach, and social posts.
-
-![Pimms tracking link](https://assets.pimms.io/pimms-tracking-link.webp?v=2)
-
-## 5. Test your setup
-
-1. Open your Pimms link in an **incognito tab**
-2. Book a test meeting with a test email
-
-![Test booking Cal.com](https://assets.pimms.io/cal-dummy-booking.webp)
-
-3. Check your [Pimms dashboard](https://app.pimms.io)
-
-You should see a new **conversion** tracked automatically within seconds.
-
-## 6. Troubleshooting
-
-### Webhook not receiving data
-- Verify the webhook URL includes your workspace ID: `https://app.pimms.io/api/calcom/webhook?workspace_id=your-workspace-id`
-- Check that `Booking Created` event is selected
-- Ensure the **Secret** field contains your workspace ID
-- Confirm the webhook is **Active** in Cal.com settings
-
-### No conversions showing in Pimms
-- Confirm the `pimms_id` field is correctly added to your Cal.com form
-- Make sure visitors use your **Pimms link** to access the booking page
-- Test in **incognito mode** with a fresh email address
-
-### Multiple bookings from same email
-- Only the first booking from each email is counted as a conversion
-- This prevents duplicate conversion tracking
+Your Pimms dashboard shows every Cal.com booking in real time with full campaign attribution. For each meeting, you'll see the attendee's name and email, the event type, and the full trail — which Pimms link they clicked, from which platform, and which campaign. Filter by date, channel, or team member to compare performance across campaigns.
 
 ## FAQs
 
@@ -161,11 +111,5 @@ Cal.com will retry failed webhook deliveries automatically. If there are persist
 Yes! The webhook integration works perfectly with Cal.com teams and organizations. Each team member's bookings will be tracked with full attribution data, giving you complete visibility across your entire team's scheduling activity.
 
 :::
-
-## You're all set 🎉
-
-Every Cal.com booking will now be tracked instantly with complete attribution data. No delays, no third-party dependencies, just direct real-time tracking.
-
-👉 [Create your first Pimms link](https://app.pimms.io)
 
 <CallToAction />

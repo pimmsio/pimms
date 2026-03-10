@@ -1,8 +1,8 @@
 ---
-title: Suivi Paiements Podia (Stripe) : Guide 2026
-summary: Suis les paiements Podia (via Stripe) avec attribution complète grâce à Pimms. Crée un lien Pimms “thank-you”, colle un script dans Podia Analytics, et Pimms relie chaque achat à la bonne campagne et au bon lien.
+title: Suivi paiements Podia (Stripe) : guide 2026
+summary: Suis les paiements Podia (via Stripe) avec attribution complète grâce à Pimms. Crée un lien Pimms thank-you, colle un script dans Podia Analytics, et Pimms relie chaque achat à la bonne campagne et au bon lien.
 publishedAt: 2026-01-20
-updatedAt: 2026-01-20
+updatedAt: 2026-03-09
 slug: how-to-track-podia-stripe-payments
 image: https://assets.pimms.io/podia-stripe-guide-pimms.webp
 author: alexandre
@@ -10,83 +10,107 @@ categories:
   - guides
 related:
   - setup-stripe-for-website
+  - how-to-track-systemeio-sales-and-leads
   - no-code-guide-for-website
 ---
 
-Si ton checkout Podia est payé via **Stripe**, tu peux suivre les achats dans Pimms avec attribution complète.
+Si ton checkout Podia est payé via **Stripe**, tu peux suivre chaque achat dans Pimms avec attribution complète — sans code requis.
 
-**Ce que tu vas configurer :** intégration Pimms × Stripe + un lien Pimms “thank-you” + un script Podia.
+Le tableau de bord Pimms propose un **assistant de configuration interactif** qui guide toute la configuration Podia + Stripe — connexion Stripe, script de détection, paramètres et vérification. Tu verras exactement quelles campagnes génèrent du chiffre d'affaires réel depuis ta boutique Podia.
 
-## 1. Active l’intégration Pimms × Stripe
+Que tu vendes des formations en ligne, des produits numériques ou des abonnements, connecter Podia à Pimms te permet d'arrêter de deviner quels efforts marketing amènent des clients payants et de commencer à **mesurer le revenu réel par campagne**.
 
-Avant de commencer : dans ce guide Stripe, fais uniquement **l’étape 1**. Ignore le reste (pas pertinent pour Podia) — Podia gère Stripe Checkout.
+## Pourquoi suivre les paiements Podia avec Pimms ?
 
-<LinkCard
-  locale="fr"
-  title="Suivi Paiements Stripe : Guide 2026"
-  description="Active l’intégration Pimms × Stripe pour que Pimms enregistre les paiements Podia."
-  href="/articles/setup-stripe-for-website"
-/>
+- **Sache quelle campagne de lancement vend vraiment.** Tu as promu ta nouvelle formation sur Twitter, dans ta newsletter et via un affilié. Pimms te montre que la newsletter a généré 12 ventes alors que Twitter n'en a apporté que 2 — tu sais quoi prioriser pour ton prochain lancement.
 
-## 2. Crée ton lien d’entrée (trafic → Podia)
+- **Mesure la performance des affiliés avec de vraies données de revenu.** Donne à chaque affilié un lien Pimms unique. Au lieu de te fier à des chiffres auto-déclarés, tu verras exactement combien d'achats chaque partenaire a générés et le revenu total qu'il a apporté.
 
-C’est le lien que tu partages dans tes pubs, emails, YouTube, LinkedIn, etc.
+- **Compare trafic gratuit vs payant.** Tu écris des articles de blog et tu fais aussi des pubs Instagram qui pointent vers ta boutique Podia. Pimms te montre non seulement quel canal génère le plus de clics, mais lequel génère de vrais achats — pour allouer ton budget là où ça compte.
 
-1. Va sur ton [dashboard Pimms](https://app.pimms.io)
-2. Crée un lien court qui pointe vers ta page de vente Podia / page de checkout
+## Prérequis
 
-## 3. Crée ton lien thank-you
+- Un **compte Podia** avec paiements Stripe activés
+- Un **compte Stripe** connecté à Podia
+- Un **compte Pimms** ([inscris-toi ici](https://app.pimms.io))
+- Au moins une page produit Podia prête
 
-Ce lien n’est pas une page visitée par l’acheteur. C’est une URL de tracking que le script Podia va appeler après le checkout.
+## Ce que tu vas suivre
 
-Crée un lien court, puis ajoute `/thankyou` **juste après la clé générée** (exemple : `Z8qLLtm/thankyou`).
+- **Achats Podia** — Chaque paiement complété via le checkout Stripe de Podia, incluant nom du produit, montant et email client
+- **Attribution des ventes par campagne** — Quelle pub, email, post social ou lien partenaire a généré chaque vente
+- **Revenu par campagne** — Revenu total ventilé par source de trafic pour des calculs de ROI clairs
+- **Parcours client** — Le chemin complet du premier clic sur le lien Pimms jusqu'à l'achat complété
 
-```
-https://pim.ms/Z8qLLtm/thankyou
-```
+## Comment configurer
 
-## 4. Ajoute le script de tracking Podia
+Va sur ton [tableau de bord Pimms](https://app.pimms.io), ouvre **Intégrations → Podia**, et lance l'assistant de configuration. Il commence par vérifier que ton compte Stripe est connecté, puis te guide pour ajouter un script de tracking à ton site Podia et vérifier la connexion. La configuration prend environ 5 minutes.
 
-Dans Podia, va dans :
-**Settings → Analytics → Third-party code → Website tracking code**
+## Ce que couvre l'assistant de configuration
 
-Colle ce snippet exact (remplace la valeur du paramètre `url=` par ton propre lien Pimms thank-you) :
+L'assistant Podia comporte 7 étapes :
 
-```html
-<script
-  src="https://assets.pimms.io/detect-podia.min.v1.0.1.js?url=https://pim.ms/Z8qLLtm/thankyou"
-  async>
-</script>
-```
+1. **Connecte Stripe** — Prérequis (l'assistant te guide si ce n'est pas encore fait)
+2. **Choisis un domaine de tracking** — Sélectionne quel domaine utiliser pour tes liens de tracking
+3. **Installe le script de détection** — Ajoute le script Pimms dans la section code de tracking de Podia
+4. **Vérifie l'installation du script** — Confirme que le script se charge sur ton site Podia
+5. **Active "Require account setup before checkout"** — Assure que l'email de l'acheteur est capturé avant le paiement
+6. **Crée un lien de test** — Génère un lien de tracking de test vers ta page produit Podia
+7. **Vérifie que le tracking fonctionne** — Fais un achat test pour confirmer que l'attribution marche
 
-Podia l’ajoute sur toutes les pages de ton site, juste avant la balise `</body>`. Références Podia :
-- [Installing advanced analytics](https://help.podia.com/en/articles/11371032-installing-advanced-analytics)
-- [Using a “Thank you” page for conversion purposes](https://help.podia.com/en/articles/11370947-using-a-thank-you-page-for-conversion-purposes)
+## Comment ça fonctionne
 
-## 5. Teste ton setup
+1. **Crée un lien Pimms** pointant vers ta page produit ou de vente Podia
+2. **Partage ce lien** dans tes campagnes — emails, pubs, posts sociaux, partenariats d'affiliation
+3. **Un visiteur clique**, parcourt ta page Podia et complète un achat via le checkout Stripe
+4. **Pimms attribue la vente** — Le script de détection sur la page de remerciement Podia connecte l'achat à la campagne originale qui a amené l'acheteur
 
-1. Ouvre ton **lien d’entrée Pimms** en navigation privée (désactive les ad blockers)
-2. Fais un achat test sur Podia
-3. Vérifie que tu arrives sur la page de remerciement Podia (`/thanks/...`)
-4. Va voir ton [dashboard Pimms](https://app.pimms.io)
+L'intégration Stripe gère la détection de paiement côté serveur, tandis que le script de détection Podia fait le lien entre le clic du visiteur et la complétion du checkout.
 
-Tu devrais voir l’achat tracké via Stripe, attribué à ton lien d’entrée.
+## Meilleures façons de partager tes liens de tracking
 
-## Dépannage
+- **Emails de lancement produit** — Remplace tes liens Podia bruts par des liens Pimms pour savoir quels emails convertissent
+- **Posts sur les réseaux sociaux** — Partage des liens trackés sur Twitter, LinkedIn ou Instagram pour voir quelle plateforme vend le mieux
+- **Descriptions de vidéos YouTube** — Ajoute un lien Pimms sous tes démos de formation ou produit
+- **Partenariats d'affiliation** — Donne à chaque affilié un lien Pimms unique pour un suivi transparent des revenus
+- **Articles de blog et guest posts** — Intègre des liens trackés dans ton content marketing pour mesurer le ROI du contenu
 
-### Je vois les paiements Stripe, mais pas d’attribution
-- Vérifie que l’acheteur a démarré via ton **lien d’entrée Pimms** (étape 2)
+## Ce que tu verras dans ton tableau de bord
 
-### Rien n’est tracké après le checkout
-- Vérifie que le script est bien installé dans **Website tracking code** (Podia Analytics)
-- Vérifie que le paramètre `url=` pointe vers ton **lien Pimms thank-you**
-- Le script Podia ne se déclenche que sur les pages de remerciement Podia qui commencent par `/thanks/`
+Ton tableau de bord Pimms montre chaque vente Podia en temps réel avec attribution complète. Pour chaque achat, tu verras le nom du produit, le montant, l'email client, et le parcours complet — quel lien Pimms ils ont cliqué, depuis quelle plateforme, et quelle campagne. Filtre par date ou source de trafic pour comparer les performances des différents canaux.
 
-## C’est prêt
+## FAQ
 
-Les achats Podia payés via Stripe sont maintenant trackés dans Pimms avec attribution.
+::: faq
 
-👉 [Crée ton premier lien Pimms](https://app.pimms.io)
+### Ai-je besoin d'un compte Stripe pour le suivi Podia ?
+
+Oui, Podia utilise Stripe pour les paiements. L'assistant te guidera pour connecter Stripe en premier si tu ne l'as pas encore fait, puis pour configurer le suivi Podia.
+
+:::
+
+::: faq
+
+### Est-ce que ça fonctionne avec tous les produits Podia ?
+
+Oui, tout produit Podia qui utilise le checkout Stripe est suivi automatiquement. Formations, produits numériques, abonnements — tous les achats sont attribués à la campagne qui a amené l'acheteur.
+
+:::
+
+::: faq
+
+### En quoi le suivi Podia diffère-t-il du suivi Stripe direct ?
+
+Le suivi Podia utilise un script de détection sur la page de remerciement Podia pour connecter les achats à la campagne originale. Le suivi Stripe direct fonctionne avec les Payment Links et pages Stripe Checkout autonomes. Si tu vends exclusivement sur Podia, utilise l'intégration Podia. Si tu utilises aussi Stripe en dehors de Podia, tu peux configurer les deux.
+
+:::
+
+::: faq
+
+### Pourquoi dois-je activer "Require account setup before checkout" ?
+
+Ce paramètre Podia garantit que l'acheteur entre son email avant d'atteindre le checkout Stripe. Sans ça, Pimms ne peut pas relier le paiement à l'acheteur, et l'attribution risque de ne pas fonctionner correctement. L'assistant te rappelle d'activer ce paramètre pendant la configuration.
+
+:::
 
 <CallToAction />
-

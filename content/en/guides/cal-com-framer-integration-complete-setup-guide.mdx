@@ -2,7 +2,7 @@
 title: Cal.com + Framer Integration: Complete Setup Guide 2026
 summary: Integrate Cal.com with Framer for seamless booking tracking. Set up Cal.com on your Framer site with proper attribution using Pimms analytics for complete meeting conversion tracking.
 publishedAt: 2025-09-29
-updatedAt: 2026-01-19
+updatedAt: 2026-03-09
 slug: cal-com-framer-integration-complete-setup-guide
 image: https://assets.pimms.io/calcom-framer-guide-pimms.webp
 author: alexandre
@@ -15,171 +15,83 @@ related:
   - how-to-track-calendly
 ---
 
-**Cal.com + Framer integration** lets you embed Cal.com directly into your Framer site with complete booking attribution. This guide shows you how to set up **Cal.com on Framer** with Pimms tracking in 10 minutes for seamless **meeting conversion tracking**.
+**Cal.com + Framer integration** lets you embed Cal.com directly into your Framer site with complete booking attribution. The Pimms dashboard includes interactive setup wizards that handle both Cal.com webhooks and Framer script installation — two quick wizards and you're tracking meetings end-to-end.
 
-You'll get **real-time booking analytics** showing exactly which marketing campaigns, ads, or YouTube posts drive actual appointment bookings through your Framer site - with perfect attribution from click to booked meeting.
+This is the ideal setup for founders and teams who use Framer to build their website and Cal.com to schedule demos, consultations, or sales calls. You'll see exactly which campaigns drive actual booked meetings through your Framer site.
 
-**What you'll accomplish:** Cal.com Framer integration, booking tracking setup, and complete meeting attribution for every appointment showing which campaigns generate your best appointments.
+Framer makes it easy to embed Cal.com booking widgets. Pimms adds the missing piece: **attribution**. Now you know not just how many meetings were booked, but which LinkedIn post, ad, or email campaign brought each prospect.
 
-<LinkCard 
-  title="Cal.com Webhook Setup (Prerequisite)" 
-  description="Set up Cal.com webhooks first to enable real-time booking tracking with Pimms."
-  href="/articles/calcom-direct-webhook-integration"
-/>
+## Why track Cal.com bookings on your Framer site?
 
-<LinkCard
-  href="/solutions/marketing-tracking-attribution-clicks-leads-revenue"
-  title="Clicks → Leads → Revenue Tracking"
-  description="End-to-end tracking and attribution across links, bookings and payments."
-/>
+- **Attribute demo bookings to specific campaigns.** You drive traffic to your Framer site from multiple sources — LinkedIn, Product Hunt, Google Ads. Without Pimms, you see bookings in Cal.com but don't know which source generated them. With Pimms, every booking shows the exact campaign that brought the visitor.
+
+- **Measure your landing page effectiveness.** You built multiple Framer landing pages for different audiences (agencies, startups, enterprise). Each page has an embedded Cal.com widget. Pimms shows you which page generates the most meetings from each traffic source.
+
+- **Track the full funnel from click to booked meeting.** A visitor clicks your Pimms link, lands on your Framer site, browses your features page, and books a call. Pimms tracks the entire journey — so you know which first touchpoint started the path to a meeting.
 
 ## Prerequisites
 
-Before starting, make sure you have:
+- A **Cal.com account** (free or paid — webhooks work on all plans)
+- A **Framer site** with Cal.com embedded (paid plan recommended for custom code)
+- A **Pimms account** ([sign up here](https://app.pimms.io))
 
-✅ A Cal.com account with webhook integration set up
+## What you'll track
 
-✅ A Framer site (free or paid plan)
+- **Cal.com bookings from your Framer site** — Every meeting booked through your embedded Cal.com widget
+- **Meeting attribution by campaign** — Which ad, email, social post, or referral source drove each booking
+- **Landing page performance** — See which Framer pages generate the most meetings
+- **Channel comparison** — Compare how LinkedIn, ads, email, and organic traffic perform at generating meetings
 
-✅ A Pimms account for tracking
+## How to set it up
 
-## 1. Add Pimms Analytics Script to Framer
+This integration combines two setup wizards in your [Pimms dashboard](https://app.pimms.io):
 
-First, add the Pimms analytics script to your Framer site to enable tracking:
+1. **Complete the Cal.com wizard first** — This configures the webhook that sends booking events to Pimms and adds the tracking field to your Cal.com forms
+2. **Then complete the Framer wizard** — This adds the detection script to your Framer site so visitors from Pimms links are identified
 
-1. In Framer, go to your **site settings** → **Custom Code**
-2. Paste the following script in the **Head** section:
+Both wizards are guided step-by-step. Total setup time is about 10 minutes for both.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
+## What the setup wizards cover
 
-![Framer custom code](https://assets.pimms.io/framer-custom-code.webp)
+**Cal.com wizard (6 steps):**
+1. Install the detection script on your Framer site
+2. Verify script installation
+3. Add the pimms_id tracking field to Cal.com booking questions
+4. Configure the Cal.com webhook
+5. Create a test link
+6. Verify tracking works
 
-3. **Publish** your site
+**Framer wizard (6 steps):**
+1. Install tracking scripts (detection + form injection)
+2. Verify script installation
+3. Build a Pimms-compatible form (if applicable)
+4. Configure the Framer webhook (for form tracking)
+5. Create a test link
+6. Verify tracking works
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Verify your script installation"
-  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
-/>
+If you only need Cal.com booking tracking (no Framer forms), the Cal.com wizard alone is sufficient.
 
-## 2. Integration Methods
+## How it works
 
-Choose the integration method that best fits your Framer site design:
+1. **The Pimms detection script** is installed on your Framer site — when a visitor arrives via a Pimms link, the script detects the click ID
+2. **The script auto-injects the tracking ID** into Cal.com embeds on the page via the hidden `pimms_id` field
+3. **The visitor books a meeting** through your embedded Cal.com widget — the booking includes the Pimms click ID
+4. **Cal.com fires a webhook** to Pimms with the booking data and tracking ID
+5. **Pimms attributes the meeting** to the original campaign, visible in your dashboard
 
-### Method 1: Calendar Link or Button
+The key advantage of this approach is that the detection script handles the handoff between Framer and Cal.com automatically — no manual URL parameter passing needed.
 
-Calendar opens in a fullscreen tab. Perfect for simple booking buttons or call-to-action sections.
+## Best ways to share your tracking links
 
-1. In Framer, add a **Button** or **Link** element
-2. Set the **Link** to your Cal.com URL with `?pimms_id=1` parameter
+- **LinkedIn** — Share your Framer landing page via Pimms to track which posts and articles book the most demos
+- **Paid ads** — Point Google or Meta ads to Pimms links for your Framer site to measure ad-to-meeting conversion
+- **Email outreach** — Use Pimms links in cold emails and sequences to see which messages drive meeting bookings
+- **Product Hunt and communities** — Track how many demo bookings come from launch-day traffic
+- **Blog content** — Add tracked links in guest posts and articles that link to your Framer booking page
 
-**Example**:
-```
-https://cal.com/yourname/meeting?pimms_id=1
-```
+## What you'll see in your dashboard
 
-> **Alternative approach:** Instead of using `?pimms_id=1`, you can create a Pimms short link pointing to your Cal.com page. However, this breaks attribution tracking - all bookings will be attributed to the button click instead of the actual traffic source. [See FAQ for details](#can-i-use-pimms-short-links-for-the-fullscreen-calendar-method-instead-of-adding-pimms_id1)
-
-### Method 2: Inline Calendar Embed
-
-Perfect for dedicated booking pages or sections where you want the calendar directly embedded.
-
-![Example of embedded calendar in Framer](https://assets.pimms.io/calcom-embed-webflow-example.webp)
-
-1. Add the expose script to your Framer site head (below the detection script):
-
-```html
-<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
-```
-
-2. Get the Cal.com embed code:
-
-- In your Cal.com dashboard, go to **Embed** → **Inline embed** → **HTML (iframe)**
-- Copy the script code
-- In Framer, paste the Cal.com script into your site's head
-
-![Cal.com inline embed dashboard](https://assets.pimms.io/calcom-embed-inline-dashboard.webp)
-
-3. Update the embed code:
-
-- Change the `calLink` parameter with your actual Cal.com link:
-
-```
-calLink: `your/cal-link?pimms_id=${window.pimms_id}`
-```
-
-Warning: replace double quotes with \` (grave accent) in the calLink parameter.
-
-- and change `id-of-the-element` with the ID of the element where you want the calendar:
-
-```
-elementOrSelector: "#id-of-the-element",
-```
-
-4. **Publish** your site
-
-### Method 3: Popup Calendar
-
-Perfect for booking buttons that open a popup calendar.
-
-![Example of popup calendar in Framer](https://assets.pimms.io/calcom-popup-framer-example.webp)
-
-1. In Framer, add a **Button**
-2. Add a "code override" with the following value:
-
-```
-import { type ComponentType } from "react"
-
-export const AddRel = (Component: ComponentType): ComponentType => {
-    return (props) => (
-        <Component
-            {...props}
-            data-cal-link="your/cal-link?pimms_id=1"
-            data-cal-namespace="cal-link"
-            data-cal-config='{"layout":"month_view"}'
-        />
-    )
-}
-```
-
-![Example of a button with code override](https://assets.pimms.io/calcom-button-code-override.webp)
-
-3. Copy/paste the code from **Embed** → **Popup via element click** → **HTML (iframe)** in your Framer site head
-
-![Cal.com popup embed dashboard](https://assets.pimms.io/calcom-embed-popup-dashboard.webp)
-
-4. Publish your site
-
-## 4. Test Your Integration
-
-1. Create a Pimms link that redirects to your Framer site
-2. Open your link in an **incognito tab**
-3. Click your booking button
-4. Book a test meeting with a new test email
-5. Check your [Pimms dashboard](https://app.pimms.io)
-
-You should see a new **conversion** tracked automatically.
-
-## 5. Troubleshooting
-
-### No conversions showing in Pimms
-- Verify the Pimms analytics script is correctly installed
-- Make sure you're using the correct Cal.com link format
-- Test in **incognito mode** with a fresh email address
-- Check that your Cal.com webhook is properly configured
-
-### Calendar not loading
-- Verify your Cal.com link is correct
-- Check that the embed script is loading properly
-- Ensure your Framer site is published
-- Try clearing your browser cache
-
-### Popup not opening
-- Verify the `data-cal-link` attribute is set correctly
-- Check that the Cal.com embed script is loaded
-- Ensure the button element is properly configured
+Your Pimms dashboard shows every Cal.com booking from your Framer site in real time with full campaign attribution. For each meeting, you'll see the attendee's name and email, the event type, and the complete trail — which Pimms link they clicked, from which platform, and which campaign. Filter by date, channel, or landing page to compare which campaigns generate the most meetings.
 
 ## FAQs
 
@@ -187,7 +99,7 @@ You should see a new **conversion** tracked automatically.
 
 ### Do I need a paid Framer plan for Cal.com integration?
 
-No! Cal.com integration works with Framer's free plan. You just need to add the custom code to your site's head section.
+It depends on how you add the script. Framer's free plan allows custom code in site settings, but a paid plan gives more flexibility. Most users have a paid Framer plan for other features and can add the tracking script easily.
 
 :::
 
@@ -203,7 +115,7 @@ Yes! Cal.com offers extensive customization options for colors, branding, and fo
 
 ### Will this work with Framer's CMS?
 
-Yes! You can use Framer's CMS to create dynamic booking pages with different Cal.com links for different team members or services.
+Yes! You can use Framer's CMS to create dynamic booking pages with different Cal.com links for different team members or services. The detection script works across all pages.
 
 :::
 
@@ -211,7 +123,7 @@ Yes! You can use Framer's CMS to create dynamic booking pages with different Cal
 
 ### Can I use Pimms short links for the fullscreen calendar method instead of adding ?pimms_id=1?
 
-Yes, but this approach breaks attribution tracking. When you use a Pimms short link, all bookings will be attributed to the button click rather than the actual traffic source. You'll lose visibility into which campaigns, ads, or pages drive real bookings.
+Yes, but this approach breaks attribution tracking. When you use a Pimms short link directly to Cal.com, all bookings will be attributed to the button click rather than the actual traffic source.
 
 **Use Pimms short links only for:**
 - Short-term A/B testing (max 1 month)
@@ -226,14 +138,8 @@ For long-term tracking and proper attribution, always use the Cal.com link with 
 
 ### Can I track multiple Cal.com calendars on the same Framer site?
 
-Yes! You can embed multiple Cal.com calendars and track them all with Pimms. Just make sure each calendar link includes the proper `pimms_id` parameter.
+Yes! You can embed multiple Cal.com calendars and track them all with Pimms. Each calendar's bookings will be attributed to the specific campaign and page that drove the visitor.
 
 :::
-
-## You're all set 🎉
-
-Your Cal.com integration with Framer is now complete! Every booking through your Framer site will be tracked with complete attribution data.
-
-👉 [Create your first Pimms link](https://app.pimms.io)
 
 <CallToAction />

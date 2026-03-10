@@ -1,8 +1,8 @@
 ---
-title: Cal.com + Framer : Guide Configuration Complète 2025
-summary: Intègre Cal.com sur ton site Framer avec un suivi parfait. Découvre exactement quelles campagnes te rapportent des rendez-vous avec une attribution complète des réservations.
+title: Cal.com + Framer : guide complet d'intégration 2026
+summary: Intègre Cal.com avec Framer pour un suivi fluide des réservations. Configure Cal.com sur ton site Framer avec une attribution correcte grâce aux analytics Pimms pour un suivi complet des conversions en réunions.
 publishedAt: 2025-09-29
-updatedAt: 2025-09-29
+updatedAt: 2026-03-09
 slug: cal-com-framer-integration-complete-setup-guide
 image: https://assets.pimms.io/calcom-framer-guide-pimms.webp
 author: alexandre
@@ -15,215 +15,131 @@ related:
   - how-to-track-calendly
 ---
 
-Tu veux savoir **exactement** quelles campagnes marketing te rapportent des rendez-vous via ton site Framer ? Cette intégration entre Cal.com et Framer + Pimms te donne la réponse en temps réel.
+L'**intégration Cal.com + Framer** te permet d'intégrer Cal.com directement sur ton site Framer avec une attribution complète des réservations. Le dashboard Pimms inclut des assistants de configuration interactifs qui gèrent à la fois les webhooks Cal.com et l'installation du script Framer — deux assistants rapides et tu suis les réunions de bout en bout.
 
-En 10 minutes, tu auras un système qui te montre instantanément quand quelqu'un réserve un rendez-vous via tes publicités, emails, posts LinkedIn ou vidéos YouTube - avec l'attribution parfaite du clic jusqu'au rendez-vous réservé.
+C'est la configuration idéale pour les fondateurs et équipes qui utilisent Framer pour construire leur site web et Cal.com pour planifier des démos, consultations ou appels commerciaux. Tu verras exactement quelles campagnes génèrent de vraies réunions réservées via ton site Framer.
 
-**Ce que tu vas accomplir :** Intégration Cal.com complète avec Framer, configuration suivi réservations, et attribution campagne complète montrant quelles campagnes génèrent tes meilleurs rendez-vous.
+Framer facilite l'intégration des widgets de réservation Cal.com. Pimms ajoute la pièce manquante : **l'attribution**. Tu sais maintenant non seulement combien de réunions ont été réservées, mais aussi quel post LinkedIn, pub ou campagne email a amené chaque prospect.
 
-<LinkCard 
-  title="Configuration Webhook Cal.com (Prérequis)" 
-  description="Configure d'abord les webhooks Cal.com pour le suivi en temps réel avec Pimms."
-  href="/articles/calcom-direct-webhook-integration"
-/>
+## Pourquoi suivre les réservations Cal.com sur ton site Framer ?
+
+- **Attribue les réservations de démo à des campagnes spécifiques.** Tu génères du trafic vers ton site Framer depuis plusieurs sources — LinkedIn, Product Hunt, Google Ads. Sans Pimms, tu vois les réservations dans Cal.com mais tu ne sais pas quelle source les a générées. Avec Pimms, chaque réservation affiche la campagne exacte qui a amené le visiteur.
+
+- **Mesure l'efficacité de tes landing pages.** Tu as créé plusieurs landing pages Framer pour différentes audiences (agences, startups, entreprise). Chaque page a un widget Cal.com intégré. Pimms te montre quelle page génère le plus de réunions pour chaque source de trafic.
+
+- **Suis le funnel complet du clic à la réunion réservée.** Un visiteur clique sur ton lien Pimms, atterrit sur ton site Framer, parcourt ta page fonctionnalités et réserve un appel. Pimms suit tout le parcours — tu sais ainsi quel premier point de contact a initié le chemin vers une réunion.
 
 ## Prérequis
 
-Avant de commencer, assure-toi d'avoir :
+- Un **compte Cal.com** (gratuit ou payant — les webhooks fonctionnent sur tous les plans)
+- Un **site Framer** avec Cal.com intégré (plan payant recommandé pour le code personnalisé)
+- Un **compte Pimms** ([inscription ici](https://app.pimms.io))
 
-✅ Un compte Cal.com avec l'intégration webhook configurée
+## Ce que tu vas suivre
 
-✅ Un site Framer (plan gratuit ou payant)
+- **Les réservations Cal.com depuis ton site Framer** — Chaque réunion réservée via ton widget Cal.com intégré
+- **L'attribution des réunions par campagne** — Quelle pub, email, post social ou source de référence a généré chaque réservation
+- **La performance des landing pages** — Vois quelles pages Framer génèrent le plus de réunions
+- **La comparaison des canaux** — Compare comment LinkedIn, les pubs, l'email et le trafic organique performent pour générer des réunions
 
-✅ Un compte Pimms pour le suivi
+## Comment configurer
 
-## 1. Ajoute le script Pimms Analytics à Framer
+Cette intégration combine deux assistants de configuration dans ton [dashboard Pimms](https://app.pimms.io) :
 
-D'abord, ajoute le script analytics Pimms à ton site Framer pour tracker les visites :
+1. **Termine d'abord l'assistant Cal.com** — Cela configure le webhook qui envoie les événements de réservation à Pimms et ajoute le champ de tracking à tes formulaires Cal.com
+2. **Puis termine l'assistant Framer** — Cela ajoute le script de détection à ton site Framer pour identifier les visiteurs venant des liens Pimms
 
-1. Dans ton **projet Framer**, va dans **Settings** → **General** → **Custom Code**
-2. Ajoute ce script dans la section **Start of \<head\> tag** :
+Les deux assistants guident étape par étape. Le temps de configuration total est d'environ 10 minutes pour les deux.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
+## Ce que couvrent les assistants de configuration
 
-![Code personnalisé Framer](https://assets.pimms.io/framer-custom-code.webp)
+**Assistant Cal.com (6 étapes) :**
+1. Installer le script de détection sur ton site Framer
+2. Vérifier l'installation du script
+3. Ajouter le champ de tracking pimms_id aux questions de réservation Cal.com
+4. Configurer le webhook Cal.com
+5. Créer un lien de test
+6. Vérifier que le tracking fonctionne
 
-3. **Publie** ton site
+**Assistant Framer (6 étapes) :**
+1. Installer les scripts de tracking (détection + injection de formulaire)
+2. Vérifier l'installation des scripts
+3. Construire un formulaire compatible Pimms (si applicable)
+4. Configurer le webhook Framer (pour le tracking des formulaires)
+5. Créer un lien de test
+6. Vérifier que le tracking fonctionne
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Vérifier l'installation de ton script"
-  description="Utilise notre outil gratuit pour vérifier automatiquement si le script analytics Pimms est correctement installé sur ton site."
-/>
+Si tu as seulement besoin du suivi des réservations Cal.com (pas de formulaires Framer), l'assistant Cal.com seul suffit.
 
-## 2. Méthodes d'intégration
+## Comment ça fonctionne
 
-Choisis la méthode qui colle le mieux à ton design Framer :
+1. **Le script de détection Pimms** est installé sur ton site Framer — quand un visiteur arrive via un lien Pimms, le script détecte l'ID de clic
+2. **Le script injecte automatiquement l'ID de tracking** dans les intégrations Cal.com de la page via le champ caché `pimms_id`
+3. **Le visiteur réserve une réunion** via ton widget Cal.com intégré — la réservation inclut l'ID de clic Pimms
+4. **Cal.com déclenche un webhook** vers Pimms avec les données de réservation et l'ID de tracking
+5. **Pimms attribue la réunion** à la campagne d'origine, visible dans ton dashboard
 
-### Méthode 1 : Lien ou Bouton Calendrier
+L'avantage clé de cette approche est que le script de détection gère automatiquement la passation entre Framer et Cal.com — pas besoin de passer manuellement les paramètres d'URL.
 
-Le calendrier s'ouvre dans un onglet plein écran. Parfait pour des boutons de réservation simples.
+## Meilleures façons de partager tes liens de tracking
 
-1. Dans Framer, ajoute un **Bouton** ou un **Lien**
-2. Mets le **Lien** vers ton URL Cal.com avec `?pimms_id=1`
+- **LinkedIn** — Partage ta landing page Framer via Pimms pour suivre quels posts et articles réservent le plus de démos
+- **Pubs payantes** — Pointe les pubs Google ou Meta vers des liens Pimms pour ton site Framer pour mesurer la conversion pub → réunion
+- **Prospection email** — Utilise des liens Pimms dans tes cold emails et séquences pour voir quels messages génèrent des réservations
+- **Product Hunt et communautés** — Suis combien de réservations de démo viennent du trafic du jour de lancement
+- **Contenu blog** — Ajoute des liens trackés dans les articles invités qui pointent vers ta page de réservation Framer
 
-**Exemple** :
-```
-https://cal.com/tonnom/meeting?pimms_id=1
-```
+## Ce que tu verras dans ton dashboard
 
-> **Tu peux aussi :** Créer un lien court Pimms au lieu d'utiliser `?pimms_id=1`, mais ça casse l'attribution - tout sera attribué au clic du bouton au lieu de la vraie source. [Voir la FAQ pour les détails](#peux-tu-utiliser-des-liens-courts-pimms-pour-la-m%C3%A9thode-calendrier-plein-%C3%A9cran-au-lieu-dajouter-pimms_id1-)
-
-### Méthode 2 : Calendrier Inline
-
-Parfait pour afficher le calendrier directement sur ta page.
-
-![Exemple d'intégration calendrier dans Framer](https://assets.pimms.io/calcom-embed-webflow-example.webp)
-
-1. Ajoute le script expose dans le head de ton site Framer (en dessous du script detection) :
-
-```html
-<script src="https://cdn.pimms.io/analytics/script.expose.js"></script>
-```
-
-2. Copie le code HTML depuis ton dashboard Cal.com dans **Embed** → **Inline embed** → **HTML (iframe)**
-
-![Dashboard intégration inline Cal.com](https://assets.pimms.io/calcom-embed-inline-dashboard.webp)
-
-3. Colle le code script dans le head de ton site Framer
-
-- Change le paramètre `calLink` avec ton vrai lien Cal.com :
-
-```
-calLink: `your/cal-link?pimms_id=${window.pimms_id}`
-```
-
-Attention : remplace les guillemets doubles par \` (accent grave) dans le paramètre calLink.
-
-- et change `id-of-the-element` avec l'ID de l'élément où tu veux le calendrier :
-
-```
-elementOrSelector: "#id-of-the-element",
-```
-
-4. **Publie** ton site
-
-### Méthode 3 : Popup Calendrier
-
-Parfait pour des boutons qui ouvrent un popup calendrier.
-
-![Exemple de calendrier popup dans Framer](https://assets.pimms.io/calcom-popup-framer-example.webp)
-
-1. Dans Framer, ajoute un **Bouton**
-2. Ajoute au bouton un "code override" avec la valeur suivante :
-
-```
-import { type ComponentType } from "react"
-
-export const AddRel = (Component: ComponentType): ComponentType => {
-    return (props) => (
-        <Component
-            {...props}
-            data-cal-link="your/cal-link?pimms_id=1"
-            data-cal-namespace="cal-link"
-            data-cal-config='{"layout":"month_view"}'
-        />
-    )
-}
-```
-
-![Exemple d'un bouton avec code override](https://assets.pimms.io/calcom-button-code-override.webp)
-
-3. Copie/colle le code depuis **Embed** → **Popup via element click** → **HTML (iframe)** dans le head de ton site Framer
-
-![Dashboard intégration popup Cal.com](https://assets.pimms.io/calcom-embed-popup-dashboard.webp)
-
-4. Publie ton site
-
-## 4. Teste que ça marche
-
-1. Crée un lien Pimms qui redirige vers ton site Framer
-2. Ouvre ton lien dans un **onglet incognito**
-3. Clique sur ton bouton de réservation
-4. Réserve un rendez-vous bidon avec un email de test
-5. Va voir ton [dashboard Pimms](https://app.pimms.io)
-
-Tu devrais voir une nouvelle **conversion** qui apparaît automatiquement.
-
-## 5. Si ça marche pas
-
-### Je vois aucune conversion dans Pimms
-- Le script analytics Pimms est bien installé ?
-- Tu utilises bien le bon format de lien Cal.com ?
-- Teste en **mode incognito** avec un nouvel email
-- Ton webhook Cal.com est bien configuré ?
-
-### Le calendrier se charge pas
-- Ton lien Cal.com est bon ?
-- Le script d'intégration se charge bien ?
-- Ton site Framer est publié ?
-- Essaie de vider le cache de ton navigateur
-
-### Le popup s'ouvre pas
-- L'attribut `data-cal-link` est bien défini ?
-- Le script d'intégration Cal.com est chargé ?
-- Ton bouton est bien configuré ?
+Ton dashboard Pimms affiche chaque réservation Cal.com depuis ton site Framer en temps réel avec une attribution complète par campagne. Pour chaque réunion, tu verras le nom et l'email du participant, le type d'événement, et la piste complète — quel lien Pimms ils ont cliqué, depuis quelle plateforme, et quelle campagne. Filtre par date, canal ou landing page pour comparer quelles campagnes génèrent le plus de réunions.
 
 ## FAQs
 
 ::: faq
 
-### J'ai besoin d'un plan Framer payant pour Cal.com ?
+### Ai-je besoin d'un plan Framer payant pour l'intégration Cal.com ?
 
-Non ! Ça marche avec le plan gratuit de Framer. Tu dois juste ajouter le code custom dans le head de ton site.
-
-:::
-
-::: faq
-
-### Je peux personnaliser l'apparence de Cal.com ?
-
-Oui ! Cal.com a plein d'options pour changer les couleurs, le branding et les champs de formulaire. Tu peux tout customizer dans ton dashboard Cal.com sous Event Types → Advanced → Booking Questions.
+Ça dépend de comment tu ajoutes le script. Le plan gratuit Framer autorise le code personnalisé dans les paramètres du site, mais un plan payant offre plus de flexibilité. La plupart des utilisateurs ont un plan Framer payant pour d'autres fonctionnalités et peuvent ajouter le script de tracking facilement.
 
 :::
 
 ::: faq
 
-### Ça marche avec le CMS Framer ?
+### Puis-je personnaliser l'apparence du formulaire de réservation Cal.com ?
 
-Oui ! Tu peux utiliser le CMS Framer pour créer des pages de réservation dynamiques avec différents liens Cal.com pour différents membres d'équipe ou services.
+Oui ! Cal.com propose des options de personnalisation étendues pour les couleurs, la marque et les champs du formulaire. Tu peux les personnaliser dans ton dashboard Cal.com sous Event Types → Advanced → Booking Questions.
 
 :::
 
 ::: faq
 
-### Peux-tu utiliser des liens courts Pimms pour la méthode calendrier plein écran au lieu d'ajouter ?pimms_id=1 ?
+### Est-ce que ça fonctionne avec le CMS Framer ?
 
-Tu peux, mais ça casse l'attribution. Avec un lien court Pimms, toutes les réservations seront attribuées au clic du bouton au lieu de la vraie source de trafic. Tu perdras la visibilité sur quelles campagnes ou pages génèrent vraiment des réservations.
+Oui ! Tu peux utiliser le CMS Framer pour créer des pages de réservation dynamiques avec différents liens Cal.com pour différents membres d'équipe ou services. Le script de détection fonctionne sur toutes les pages.
 
-**Utilise les liens courts Pimms seulement pour :**
-- Tests A/B à court terme (max 1 mois)
+:::
+
+::: faq
+
+### Puis-je utiliser les liens courts Pimms pour la méthode calendrier plein écran au lieu d'ajouter ?pimms_id=1 ?
+
+Oui, mais cette approche casse le tracking d'attribution. Quand tu utilises un lien court Pimms directement vers Cal.com, toutes les réservations seront attribuées au clic sur le bouton plutôt qu'à la vraie source de trafic.
+
+**Utilise les liens courts Pimms uniquement pour :**
+- Des tests A/B à court terme (max 1 mois)
 - Tester quel design de bouton convertit le mieux
-- Configuration rapide quand tu as besoin d'un suivi immédiat
+- Une configuration rapide quand tu as besoin de tracking immédiat
 
-Pour un suivi long terme et une attribution correcte, utilise toujours le lien Cal.com avec `?pimms_id=1`.
+Pour un suivi à long terme et une attribution correcte, utilise toujours le lien Cal.com avec le paramètre `?pimms_id=1`.
 
 :::
 
 ::: faq
 
-### Je peux tracker plusieurs calendriers Cal.com sur le même site Framer ?
+### Puis-je suivre plusieurs calendriers Cal.com sur le même site Framer ?
 
-Oui ! Tu peux intégrer plusieurs calendriers Cal.com et tous les tracker avec Pimms. Assure-toi juste que chaque lien de calendrier a le bon paramètre `pimms_id`.
+Oui ! Tu peux intégrer plusieurs calendriers Cal.com et tous les suivre avec Pimms. Chaque réservation de calendrier sera attribuée à la campagne et page spécifiques qui ont amené le visiteur.
 
 :::
-
-## C'est parti ! 🎉
-
-Maintenant, chaque fois que quelqu'un réserve un rendez-vous via ton site Framer, tu le sauras instantanément avec toutes les infos d'attribution. Plus besoin de deviner quelle campagne marche vraiment !
-
-👉 [Crée ton premier lien Pimms](https://app.pimms.io)
 
 <CallToAction />

@@ -1,159 +1,115 @@
 ---
-title: Suivi Formulaires Framer: Analytics Site Web 2025
-summary: Connecte Pimms aux sites Framer en minutes avec configuration script simple. Suis chaque envoi avec des analytics complètes montrant quelles campagnes génèrent tes meilleurs leads.
+title: Suivre les formulaires Framer : analytics site web complet 2025
+summary: Connecte Pimms à tes sites Framer en quelques minutes avec une configuration script simple. Suis chaque soumission de formulaire avec des analytics complets montrant quelles campagnes génèrent tes meilleurs leads.
 publishedAt: 2025-05-14
-updatedAt: 2026-01-19
-slug: comment-suivre-formulaires-framer-attribution-marketing
+updatedAt: 2026-03-09
+slug: how-to-track-framer-form-submissions-marketing-attribution
 image: https://assets.pimms.io/framer-guide-pimms.webp
 author: alexandre
 categories:
   - guides
 related:
   - how-to-track-webflow-leads
+  - cal-com-framer-integration-complete-setup-guide
+  - how-to-track-elementor-form-leads
   - no-code-guide-for-website
 ---
 
-Le **suivi formulaires Framer** te permet de voir exactement quelles campagnes marketing génèrent tes meilleurs leads et les envois de formulaires depuis ton site web Framer. Ce guide complet montre comment configurer les **analytics Framer** et le **suivi conversion formulaire** en 5-10 minutes avec Pimms.
+Le **tracking des formulaires Framer** te permet de voir exactement quelles campagnes marketing génèrent tes meilleurs leads et soumissions de formulaires sur ton site Framer. Le tableau de bord Pimms inclut un **assistant de configuration interactif** qui gère tous les détails techniques pour toi.
 
-Tu obtiendras des **analytics formulaire en temps réel** montrant quelles publicités, posts réseaux sociaux, ou campagnes email génèrent vraiment des envois. Parfait pour la **génération leads Framer** avec **analytics site web** complètes du clic à la conversion.
+Tu obtiendras des **analytics de formulaires en temps réel** montrant quelles pubs, posts YouTube ou campagnes email génèrent de vraies soumissions de formulaires. Parfait pour la **génération de leads Framer** avec des **analytics site web** complets du clic à la conversion.
 
-**Ce que tu vas accomplir :** Intégration Framer complète, configuration suivi formulaire, et attribution campagne pour chaque envoi depuis ton site web.
+Framer est l'un des créateurs de sites les plus populaires pour les startups et fondateurs solo. Avec Pimms, tu peux suivre chaque soumission de formulaire sur ton site Framer et savoir exactement d'où vient chaque lead — pas besoin de développeur.
 
-<LinkCard
-  href="/articles/no-code-guide-for-website"
-  title="Tu souhaites tracker des outils externes ?"
-  description="Lis cet autre guide si ton site contient des liens vers des outils comme Cal.com, Tally, Stripe, etc."
-/>
+## Pourquoi suivre les formulaires Framer avec Pimms ?
 
-## 1. Ajoute le script de tracking Pimms
+- **Découvre quelle landing page convertit le mieux.** Tu as créé trois landing pages dans Framer, chacune ciblant une audience différente. Pimms te montre quelle page génère le plus de soumissions de formulaires — et depuis quelle source de trafic — pour que tu puisses te concentrer sur ce qui marche.
 
-1. Dans Framer, va dans les **paramètres du site** → **Custom Code**
-2. Colle le script suivant dans la section **Head** :
+- **Prouve que ton content marketing génère des leads.** Tu partages des articles de blog et guides qui mènent à ton site Framer. Sans Pimms, tu vois les soumissions de formulaires mais tu ne peux pas les relier à un contenu spécifique. Avec Pimms, chaque remplissage de formulaire est attribué à l'article ou au post qui a amené le visiteur.
 
-Important: Paste the following script in all the pages of your website.
+- **Mesure la qualité des leads payants vs organiques.** Tu lances des Google Ads et tu reçois aussi du trafic organique du SEO. Les deux génèrent des soumissions de formulaires. Pimms te montre quelle source produit le plus de leads — et tu peux voir le parcours complet du visiteur du clic à la soumission du formulaire.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
+## Prérequis
 
-In addition, paste the following script in all the pages where you have a form.
+- Un **plan Framer payant** (nécessaire pour l'accès au code personnalisé)
+- Un **compte Pimms** ([inscris-toi ici](https://app.pimms.io))
+- Au moins un formulaire sur ton site Framer
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.inject-form.js"></script>
-```
+## Ce que tu vas suivre
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Vérifiez votre installation de script"
-  description="Utilisez notre outil gratuit pour vérifier automatiquement si le script analytics Pimms est correctement installé sur votre site web."
-/>
+- **Les soumissions de formulaires Framer** — Chaque remplissage de formulaire sur tout ton site Framer, avec les détails du visiteur
+- **L'attribution des leads par campagne** — Quelle pub, email, post social ou contenu a généré chaque soumission de formulaire
+- **Les performances des campagnes** — Taux de conversion et nombre de leads détaillés par source de trafic
+- **Les analytics multi-formulaires** — Suis tous les formulaires sur toutes les pages depuis un seul tableau de bord
 
-![Framer custom code](https://assets.pimms.io/framer-custom-code.webp)
+## Comment le configurer
 
-3. Publie ton site
+Va sur ton [tableau de bord Pimms](https://app.pimms.io), ouvre **Integrations → Framer**, et lance l'assistant de configuration. Il te guide pour ajouter deux scripts sur ton site Framer, créer un formulaire compatible, configurer le webhook et vérifier avec une soumission test. La configuration prend environ 5 minutes.
 
-## 2. Crée un formulaire compatible Pimms
+## Ce que couvre l'assistant de configuration
 
-Pimms détecte automatiquement tes champs — voici les règles à suivre :
+L'assistant Framer comprend 6 étapes :
 
-Ajoute un **champ email obligatoire**  
-- Le nom du champ doit commencer par `email` (ex : `Email`, `email 1`, `e-mail perso`, etc.)
+1. **Installer les scripts de tracking** — Script de détection (site entier) et script d'injection de formulaire (sur les pages avec formulaires)
+2. **Vérifier l'installation des scripts** — Confirme que les deux scripts se chargent correctement
+3. **Créer un formulaire compatible Pimms** — Suis les exigences des champs de formulaire pour garantir que le tracking fonctionne
+4. **Configurer le webhook Framer** — Connecte les soumissions de formulaires à Pimms
+5. **Créer un lien test** — Génère un lien de tracking vers ta page Framer
+6. **Vérifier que le tracking fonctionne** — Soumets un formulaire test pour confirmer que tout est connecté
 
-Pour suivre les noms :  
-- Utilise un seul champ nommé `fullname`, `name`, etc.  
-- Ou deux champs : `firstname` et `lastname`
+## Comment ça fonctionne
 
-👉 Vérifie le nom du champ en sélectionnant l’input → **Name**.
+1. **Installe les scripts Pimms** sur ton site Framer — le script de détection identifie les visiteurs venant des liens Pimms, et le script d'injection de formulaire ajoute un champ de tracking caché à tes formulaires
+2. **Crée un lien Pimms** pointant vers ta page Framer (ex. `pim.ms/get-started`)
+3. **Un visiteur clique sur ton lien**, arrive sur ton site Framer et remplit un formulaire
+4. **Framer envoie un webhook** à Pimms avec les données du formulaire et l'ID de tracking, et Pimms attribue le lead à la campagne d'origine
 
-![Framer form field Name](https://assets.pimms.io/framer-form-field-name.webp)
+Le script d'injection de formulaire fonctionne automatiquement avec les composants de formulaire natifs de Framer — pas besoin de configuration manuelle des champs.
 
-## 3. Récupère ton Workspace ID
+## Meilleures façons de partager tes liens de tracking
 
-1. Connecte-toi à ton [dashboard Pimms](https://app.pimms.io)
-2. Va dans **Settings** → **Workspace ID**
-3. Copie ton ID (ex : `ws_abc123xyz`)
+- **Lancements Product Hunt** — Utilise un lien Pimms pour ta fiche Product Hunt pour suivre combien de leads viennent du jour du lancement
+- **Posts LinkedIn** — Partage la page contact de ton site Framer via Pimms pour mesurer quels posts génèrent des remplissages de formulaires
+- **Publicités payantes** — Pointe tes pubs Google ou Meta vers un lien Pimms pour voir quel créatif génère le plus de leads
+- **Campagnes email** — Remplace les URLs brutes par des liens Pimms dans tes newsletters pour suivre les leads venant de l'email
+- **Threads Twitter/X** — Ajoute un lien CTA tracké à la fin des threads pour mesurer les conversions liées au contenu
 
-## 4. Ajoute le webhook Framer pour le formulaire
+## Ce que tu verras dans ton tableau de bord
 
-📘 Pour créer un nouveau formulaire : [Guide des formulaires Framer](https://www.framer.com/features/forms/)
+Ton tableau de bord Pimms affiche chaque soumission de formulaire Framer en temps réel avec une attribution de campagne complète. Pour chaque lead, tu verras les données du formulaire (nom, email, message), quel lien Pimms ils ont cliqué, depuis quelle plateforme et quelle campagne. Filtre par date, source de trafic ou formulaire pour comprendre quels canaux et pages génèrent le plus de leads.
 
-1. Dans Framer, sélectionne ton formulaire
-2. Va dans **Form** → **Send to**
-3. Choisis **"Webhook"**
-4. Utilise l’URL suivante :
-
-```
-https://app.pimms.io/api/framer/webhook?workspace_id=your-id
-```
-
-Remplace `your-id` par ton **Workspace ID**
-
-**Exemple** :
-
-```
-https://app.pimms.io/api/framer/webhook?workspace_id=ws_abc123xyz
-```
-
-![Framer form webhook](https://assets.pimms.io/framer-form-webhook.webp?v=2)
-
-## 5. Crée ton lien de tracking Pimms
-
-1. Va sur [Pimms](https://app.pimms.io)
-2. Crée un lien court pointant vers ta **page Framer**
-3. Active le **Conversion tracking**
-
-**Exemple** :
-
-```
-https://pim.ms/mon-site-framer
-```
-
-Utilise ce lien dans tes publicités, emails, réseaux sociaux, etc.
-
-## 6. Teste ton installation
-
-1. Ouvre ton lien Pimms dans un **onglet incognito**
-2. Soumets ton formulaire Framer
-3. Va dans ton [dashboard Pimms](https://app.pimms.io)
-4. Tu devrais voir un nouveau lead avec attribution complète
-
-## 7. Conseils en cas de problème
-
-- Assure-toi que le **script** est bien dans le Head
-- Vérifie l’URL du **webhook** (et le `workspace_id`)
-- Utilise le **mode incognito** + un nouvel email pour tester
-- Commence toujours par cliquer sur ton **lien Pimms** — c’est comme ça que l’attribution fonctionne
-
-## FAQ
+## FAQs
 
 ::: faq
 
-### Le suivi formulaires Framer fonctionne-t-il avec le plan gratuit ?
+### Le tracking des formulaires Framer fonctionne-t-il avec les plans gratuits ?
 
-Non, le suivi formulaires Framer nécessite un plan Framer payant pour accéder aux fonctionnalités de code personnalisé. Le plan gratuit Framer ne permet pas d'ajouter des scripts de suivi nécessaires pour les analytics de formulaire et l'attribution des leads. La plupart des utilisateurs passent au plan Basic pour les capacités de suivi.
+Non, le tracking des formulaires Framer nécessite un plan Framer payant pour accéder aux fonctionnalités de code personnalisé. Le plan gratuit Framer ne permet pas d'ajouter les scripts de tracking nécessaires pour les analytics de formulaires et l'attribution des leads. La plupart des utilisateurs passent au plan Basic pour les capacités de tracking.
 
 :::
 
 ::: faq
 
-### Puis-je suivre plusieurs formulaires sur mon site web Framer ?
+### Je peux suivre plusieurs formulaires sur mon site Framer ?
 
-Oui ! Une fois que tu installes les scripts de suivi Pimms, tous les formulaires de ton site web Framer sont automatiquement suivis. Chaque envoi de formulaire est attribué à la campagne, publicité ou canal spécifique qui a amené le visiteur, te donnant une visibilité complète des analytics de site web.
+Oui ! Une fois que tu as installé les scripts Pimms, tous les formulaires sur tout ton site Framer sont automatiquement suivis. Chaque soumission de formulaire est attribuée à la campagne, pub ou canal spécifique qui a amené le visiteur, pour une visibilité complète sur les analytics de ton site.
 
 :::
 
 ::: faq
 
-### Est-ce que ça fonctionne avec les composants formulaire glisser-déposer de Framer ?
+### Ça fonctionne avec les composants de formulaire drag-and-drop de Framer ?
 
-Absolument ! Le suivi formulaires Framer fonctionne parfaitement avec tous les composants de formulaire natifs et templates de Framer. L'intégration webhook capture automatiquement les envois de tout composant formulaire que tu glisses sur tes pages, aucune configuration supplémentaire nécessaire.
+Absolument ! Le tracking des formulaires Framer fonctionne parfaitement avec tous les composants et templates de formulaire natifs de Framer. L'intégration webhook capture automatiquement les soumissions de n'importe quel composant de formulaire que tu glisses sur tes pages, sans configuration supplémentaire.
 
 :::
 
-## Et voilà 🎉
+::: faq
 
-Chaque lead Framer collecté via tes liens Pimms sera maintenant suivi — avec analytics de conversion complètes et données d'attribution.
+### Je peux utiliser le tracking Framer avec Cal.com ou Stripe ?
 
-👉 [Crée ton premier lien Pimms](https://app.pimms.io)
+Oui. Si tu intègres Cal.com sur ton site Framer ou que tu lies au checkout Stripe, tu peux configurer plusieurs intégrations. Le script de détection fonctionne avec toutes les intégrations Pimms — assure-toi juste de suivre l'assistant de chaque intégration dans le tableau de bord.
+
+:::
 
 <CallToAction />

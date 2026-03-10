@@ -2,7 +2,7 @@
 title: No-Code Website Tracking: Complete Analytics Guide 2025
 summary: Set up complete conversion tracking on no-code platforms in minutes. Track forms, bookings, and payments with full attribution across Webflow, Framer, Bubble, and AI builders.
 publishedAt: 2025-04-29
-updatedAt: 2025-09-14
+updatedAt: 2026-03-09
 slug: how-to-track-conversions-on-vibe-coding-ai-no-code-sites
 image: https://assets.pimms.io/no-code-guide-pimms.webp
 author: alexandre
@@ -10,74 +10,88 @@ categories:
   - guides
 related:
   - how-to-track-webflow-leads
-  - start-with-cal-com-and-zapier
-  - start-with-iclosed-and-zapier
+  - how-to-track-framer
+  - how-to-track-carrd
   - setup-stripe-for-website
 ---
 
-**No-code website tracking** lets you monitor every conversion across your entire website ecosystem without any coding skills. This complete guide shows you how to set up **conversion tracking** for **no-code platforms** in 5-10 minutes using Pimms.
+**No-code website tracking** lets you monitor every conversion across your entire website ecosystem without writing any code. The Pimms dashboard includes interactive setup wizards for each supported platform — Webflow, Framer, WordPress, and more — handling all technical details for you.
 
-You'll get **real-time analytics** for forms, bookings, and payments across Webflow, Framer, Bubble, and AI website builders. Perfect for **no-code entrepreneurs** who need complete **website analytics** without technical complexity.
+Whether you built your site with a no-code tool, an AI builder, or a vibe-coded MVP, Pimms gives you complete **conversion attribution** across forms, bookings, and payments. See which campaigns generate actual results, not just page views.
 
-**What you'll accomplish:** Universal tracking setup that works across all major no-code platforms, complete conversion monitoring, and campaign attribution for every interaction on your website.  
-This guide covers how to set up tracking on **supported tools only**:
+Most no-code platforms have basic analytics but lack one critical piece: **attribution**. You can see that 50 people submitted your form this week, but you have no idea which campaign brought them. Pimms fills that gap.
 
-- Calendars like **Cal.com**, **Lemcal**, **Calendly**
-- Forms like **Tally**, **Typeform**, **iClosed**
-- Stripe checkouts
+## Why use Pimms for no-code website tracking?
 
-## 1. Add Pimms to your site
+- **One dashboard for all your conversions.** Your Webflow site has forms, your Cal.com handles bookings, and Stripe processes payments. Instead of checking three separate tools, Pimms gives you one unified view showing which campaigns generate leads, meetings, and sales across all of them.
 
-1. Go to your site’s **custom code settings** or head section  
-2. Paste this script in the **Head** in all the pages of your website:
+- **No developer required.** Every Pimms integration has a guided setup wizard. You don't need to write code, configure APIs, or understand webhooks. The wizard walks you through each step and verifies everything works before you're done.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
+- **Works with any platform that allows custom code.** If your website builder lets you add JavaScript to the head section, Pimms can track conversions on it. This includes Webflow, Framer, WordPress, Bubble, Wix, Squarespace, and most AI-generated apps.
 
-For developers: alternatively, use the [Pimms SDK and Server-side tracking](/articles/introducing-conversion)
+## Prerequisites
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Verify your script installation"
-  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
-/>
+- A **Pimms account** ([sign up here](https://app.pimms.io))
+- A no-code website or app that allows adding custom code (most paid plans do)
+- At least one conversion point — a form, booking page, or payment checkout
 
-3. Save and publish
+## What you'll track
 
-✅ Works on builders like:
-- Webflow ([full guide](/articles/how-to-track-webflow-leads))
-- Framer ([full guide](/articles/how-to-track-framer))
-- Bubble (soon)
-- Wix (soon)
-- Squarespace (soon)
-- Lovable.dev (soon)
-- Bold.new (soon)
+- **Form submissions** — Leads from Webflow, Framer, Elementor, Tally, and other form tools
+- **Meeting bookings** — Appointments from Cal.com, Calendly, and Brevo Meetings
+- **Payments and sales** — Revenue from Stripe, Podia, and Systeme.io
+- **Full attribution** — Which campaign, ad, social post, or referral source drove each conversion
 
-If your builder supports global code (like Webflow Project Settings), paste the script once and it loads on every page.  
-Otherwise, paste it manually on pages that include supported tools (form, booking, Stripe).
+## How to set it up
 
-## Want to go further?
+Go to your [Pimms dashboard](https://app.pimms.io) and choose the setup wizard for your platform. Each integration has a guided step-by-step flow that handles script installation, webhook configuration, and verification. Most integrations take under 5 minutes to set up.
 
-We’ve written step-by-step guides for each supported tool — if you want to set up tracking with more precision:
+## How it works
 
-- [Track bookings with Cal.com](/articles/start-with-cal-com-and-zapier)
+1. **Pick your integration** in the Pimms dashboard — the wizard detects what type of tracking you need
+2. **Follow the guided steps** — typically: install a script, configure a webhook or OAuth, and verify
+3. **Create Pimms links** to your no-code site pages — these are the tracked URLs you'll share
+4. **Share your links** in campaigns — ads, emails, LinkedIn, YouTube, etc.
+5. **Pimms tracks every conversion** — when a visitor from your link submits a form, books a meeting, or makes a purchase, Pimms attributes it to the campaign
+
+## Supported platforms
+
+Pimms provides dedicated setup guides for each tool:
+
+**Calendars**
+
+- [Track bookings with Cal.com](/articles/calcom-direct-webhook-integration)
 - [Track bookings with Calendly](/articles/how-to-track-calendly)
 - [Track bookings with iClosed](/articles/start-with-iclosed-and-zapier)
+
+**Forms**
+
+- [Track leads with Tally](/articles/how-to-track-tally-webhook)
+- [Track leads with Brevo Forms](/articles/how-to-track-brevo-forms-and-meetings)
+
+**Website builders**
+
 - [Track leads with Webflow](/articles/how-to-track-webflow-leads)
 - [Track leads with Framer](/articles/how-to-track-framer)
 - [Track leads with Elementor forms](/articles/how-to-track-elementor-form-leads)
-- [Track leads with Systeme.io](/articles/how-to-track-systemeio-sales-and-leads)
-- Track leads with Bubble (soon)
-- Track leads with Wix (soon)
-- Track leads with Squarespace (soon)
-- Track leads with Lovable.dev (soon)
-- Track leads with Bold.new (soon)
-- [Track leads with Tally](/articles/how-to-track-tally)
-- Track leads with Typeform (soon)
-- [Track payments with Stripe](/articles/setup-stripe-for-website)
+- [Track leads and sales with Systeme.io](/articles/how-to-track-systemeio-sales-and-leads)
 
-Each guide shows exactly how to connect the tool, test your setup, and view conversions in Pimms.
+**Payments**
+
+- [Track payments with Stripe](/articles/setup-stripe-for-website)
+- [Track Podia payments via Stripe](/articles/how-to-track-podia-stripe-payments)
+
+## Best ways to share your tracking links
+
+- **Paid ads** — Use Pimms links in Google, Meta, and LinkedIn ads to see which ads generate actual conversions
+- **Social media** — Share tracked links on LinkedIn, Twitter, Instagram to measure social-driven leads
+- **Email campaigns** — Replace raw URLs with Pimms links in newsletters and outreach sequences
+- **YouTube and podcasts** — Add tracked links in show notes and video descriptions
+- **QR codes** — Generate QR codes from Pimms links for offline-to-online tracking
+
+## What you'll see in your dashboard
+
+Your Pimms dashboard gives you a unified view of all conversions across platforms. You'll see every form submission, meeting booking, and sale in real time with full attribution — which link was clicked, from which platform, and which campaign. Filter by integration type, date range, or traffic source to compare performance across channels and tools.
 
 ## FAQs
 
@@ -85,7 +99,7 @@ Each guide shows exactly how to connect the tool, test your setup, and view conv
 
 ### Which no-code platforms support Pimms tracking?
 
-Pimms works with any no-code platform that allows custom code in the head section, including Webflow, Framer, Bubble, Wix, and most AI website builders. The platform just needs to support adding JavaScript.
+Pimms works with any no-code platform that allows custom code in the head section, including Webflow, Framer, Bubble, Wix, and most AI website builders. Some integrations (like Calendly and Stripe) use OAuth and work regardless of your website platform.
 
 :::
 
@@ -93,7 +107,7 @@ Pimms works with any no-code platform that allows custom code in the head sectio
 
 ### Do I need separate tracking for each tool I use?
 
-No! Once you install the Pimms script on your no-code site, it automatically works with all supported tools (Cal.com, Tally, Stripe, etc.) without additional setup for each tool.
+Not always. The Pimms detection script is installed once on your website and works with all supported tools. However, some integrations (Stripe, Calendly, Brevo) have their own setup wizards that configure additional connections. Each wizard in the dashboard handles everything for you.
 
 :::
 
@@ -101,14 +115,16 @@ No! Once you install the Pimms script on your no-code site, it automatically wor
 
 ### Can I track conversions across different pages and funnels?
 
-Yes! Pimms tracks visitors across your entire no-code site. Whether someone fills a form on page 1 and books a meeting on page 3, you'll see the complete conversion path with full attribution.
+Yes! Pimms tracks visitors across your entire no-code site. Whether someone fills a form on page 1 and books a meeting on page 3, you'll see the complete conversion path with full attribution back to the original campaign.
 
 :::
 
-## You're all set 🎉
+::: faq
 
-Your no-code website is now equipped with complete conversion tracking and analytics — monitor every form, booking, and payment with full attribution data.
+### What if my no-code platform isn't listed?
 
-👉 [Create your first Pimms link](https://app.pimms.io)
+If your platform allows adding JavaScript to the page head, you can likely use the Pimms detection script. Check the [analytics script reference guide](/articles/pimms-analytics-script-complete-guide) for advanced configuration options, or contact support for help with unlisted platforms.
+
+:::
 
 <CallToAction />

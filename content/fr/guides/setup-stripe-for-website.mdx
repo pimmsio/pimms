@@ -1,176 +1,114 @@
 ---
-title: Suivre les paiements Stripe avec attribution des ventes | Analytics e-commerce complet 2025
-summary: Connecte Stripe à Pimms et suis chaque paiement avec une attribution de vente complète montrant exactement quelles campagnes et canaux génèrent tes meilleurs clients.
+title: Suivre les paiements Stripe : guide de configuration complet 2026
+summary: Connecte Stripe à Pimms en quelques minutes sans code. Suis chaque paiement avec une attribution des ventes complète montrant quelles campagnes génèrent tes meilleurs clients.
 publishedAt: 2025-05-16
-updatedAt: 2026-01-19
-slug: comment-suivre-ventes-stripe-attribution-marketing
+updatedAt: 2026-03-09
+slug: how-to-track-stripe-sales-marketing-attribution
 image: https://assets.pimms.io/stripe-guide-pimms.webp
 author: alexandre
 categories:
   - guides
 related:
-  - no-code-guide-for-website
   - how-to-track-sales-with-stripe-checkout
+  - how-to-track-podia-stripe-payments
+  - how-to-track-systemeio-sales-and-leads
+  - no-code-guide-for-website
 ---
 
-Suis chaque paiement Stripe avec une attribution de vente complète et des analytics de conversion e-commerce.
+Le **suivi des paiements Stripe** te permet de voir exactement quelles campagnes marketing génèrent des ventes sur ta boutique en ligne. Le tableau de bord Pimms dispose d'un assistant de configuration interactif qui gère tous les détails techniques — sans code requis.
 
-Vois exactement quelles campagnes génèrent tes meilleurs clients avec **Pimms** — obtiens une attribution de paiement complète dans ton tableau de bord.
+Tu obtiens une **attribution des ventes en temps réel** montrant quelles pubs, campagnes email ou posts YouTube génèrent des achats via ton checkout Stripe. Parfait pour les **analytics e-commerce** avec un **suivi des revenus** complet du clic à la vente.
 
-Pimms est officiellement listé sur la marketplace Stripe :  
-👉 [Voir la fiche](https://marketplace.stripe.com/apps/pimms)
+Que tu vendes des produits numériques, des abonnements SaaS ou des biens physiques, connecter Stripe à Pimms te donne une vue claire de ton **ROI marketing** en rattachant chaque euro de revenu à la campagne qui l'a généré.
 
-Tu as deux façons de connecter Stripe à Pimms :
+## Pourquoi suivre les paiements Stripe avec Pimms ?
 
-- **Option A :** Partager des liens courts traqués créés avec Pimms (idéal pour les emails, LinkedIn, réseaux sociaux, etc.)
-- **Option B :** Ajouter le tracking Pimms sur ton site tout en gardant les boutons Stripe tels quels
+- **Sache quelles pubs rapportent vraiment.** Tu dépenses 500 € en pubs Facebook et 300 € sur LinkedIn. Les deux génèrent des clics, mais Pimms te montre que LinkedIn a généré 8 ventes (2 400 € de revenus) tandis que Facebook n'en a apporté que 2 (180 €). Tu sais maintenant où miser.
 
-Allons-y étape par étape.
+- **Fini les hypothèses sur le ROI du contenu.** Tu as publié une vidéo YouTube et l'as partagée sur Twitter. Une semaine plus tard, tu vois 15 nouvelles ventes Stripe. Sans Pimms, tu ne saurais jamais quel canal les a générées. Avec Pimms, chaque vente est rattachée au post ou à la vidéo exacte qui a amené le client.
 
-## 1. Connecter Stripe à Pimms
+- **Suis les performances des affiliés et partenaires.** Donne à chaque affilié ou partenaire un lien Pimms unique vers ton checkout Stripe. Tu verras exactement qui génère des revenus et combien — plus besoin de tableurs ou de systèmes sur l'honneur.
 
-1. Connecte-toi à ton [dashboard Pimms](https://app.pimms.io)  
-2. Va dans **Intégrations → Stripe** et clique sur **Activer**  
-3. Choisis **mode Test** ou **Production**  
-4. Clique sur **Accepter** pour autoriser l’accès à Stripe
+## Prérequis
 
-![Autoriser Stripe](https://assets.pimms.io/stripe-accept-permissions.webp)
+- Un **compte Stripe** (gratuit ou payant — tous les plans fonctionnent)
+- Un **compte Pimms** ([inscris-toi ici](https://app.pimms.io))
+- Au moins un Payment Link Stripe ou une page Checkout prête
 
-5. Vérifie tes paramètres Stripe :
-   - [Paramètres production](https://dashboard.stripe.com/settings/apps/pimms.io)
-   - [Paramètres test](https://dashboard.stripe.com/test/settings/apps/pimms.io)
+## Ce que tu vas suivre
 
-Si besoin :
-- Va dans **Paramètres → Équipe et sécurité → Applications**
-- Trouve **Pimms** et clique sur **Connecter l’espace de travail**
+- **Les paiements Stripe** — Chaque paiement effectué via Payment Links et Stripe Checkout, avec le nom du produit, le montant et l'email du client
+- **L'attribution des ventes par campagne** — Quelle pub, email, post social ou lien partenaire précis a généré chaque vente
+- **Le revenu par campagne** — Le revenu total ventilé par source de trafic pour calculer ton vrai ROI
+- **Le parcours client** — Le chemin complet du premier clic à l'achat finalisé
 
-![Connexion Stripe](https://assets.pimms.io/stripe-connect-workspace.webp)
+## Comment configurer
 
-- Choisis ton workspace et confirme
+Va sur ton [tableau de bord Pimms](https://app.pimms.io), ouvre **Intégrations → Stripe**, et lance l'assistant de configuration. Il te guide étape par étape pour toute la connexion — connecte ton compte Stripe via OAuth, approuve les permissions et vérifie avec un achat test. Le processus complet prend moins de 5 minutes.
 
-![Autoriser Pimms Stripe](https://assets.pimms.io/stripe-authorize-permissions.webp)
+## Ce que couvre l'assistant de configuration
 
-✅ C’est connecté !
+L'assistant Stripe comprend 5 étapes :
 
-![Connexion réussie](https://assets.pimms.io/stripe-connected.webp)
+1. **Connecte ton compte Stripe** — OAuth, mode live et test
+2. **Approuve les permissions** — Dans le Stripe Dashboard
+3. **Crée un lien test** — Avec une URL Stripe Payment Link (expire sous 24h)
+4. **Effectue un achat test** — Attend la détection de la vente
+5. **Configuration sur un site web** — Optionnel, pour intégrer Stripe sur ton site
 
-## 2. Créer ton lien de paiement Stripe
+## Comment ça marche
 
-1. Dans ton [dashboard Stripe](https://dashboard.stripe.com), clique sur **Créer un lien de paiement**  
-2. Configure ton produit et ton tarif  
-3. Copie le lien de paiement généré (ex. `https://buy.stripe.com/xyz`)
+1. **Crée un lien Pimms** pointant vers ton Stripe Payment Link ou ta page checkout (ex. `pim.ms/mon-produit`)
+2. **Partage ce lien** dans tes campagnes — pubs, emails, posts sociaux, descriptions YouTube
+3. **Un visiteur clique**, arrive sur ta page Stripe et finalise un achat
+4. **Pimms attribue la vente** à la campagne, pub ou post exact qui a amené l'acheteur — visible immédiatement dans ton tableau de bord
 
-![Créer lien de paiement Stripe](https://assets.pimms.io/stripe-create-payment-link.webp)
+Aucun script ni code à installer. L'intégration OAuth Stripe gère tout côté serveur.
 
-## 3. Partager ton lien de paiement et suivre les ventes (2 options)
+## Meilleures façons de partager tes liens de suivi
 
-Tu as deux façons principales de suivre les paiements Stripe avec Pimms — selon la manière dont le lien de paiement est utilisé.
+- **Posts LinkedIn** — Partage le lien de ton produit avec une URL Pimms pour suivre quels posts génèrent des achats
+- **Campagnes email** — Remplace les liens Stripe bruts par des liens Pimms dans tes newsletters et séquences drip
+- **Descriptions YouTube** — Ajoute un lien tracké sous tes démos et tutoriels produit
+- **Pubs payantes** — Utilise des liens Pimms comme destination de tes pubs pour voir exactement quelle créative convertit
+- **Bio Twitter/X et Instagram** — Suis le trafic social qui se transforme en clients payants
 
-### ✅ Option A : Utiliser un lien court Pimms qui pointe directement vers Stripe
+## Ce que tu verras dans ton tableau de bord
 
-C’est la **façon la plus rapide et la plus simple de commencer**.
+Une fois connecté, ton tableau de bord Pimms affiche un flux en temps réel de chaque vente Stripe avec attribution complète. Pour chaque vente, tu verras le nom du produit, le montant, l'email du client et la piste campagne complète — quel lien ils ont cliqué, depuis quelle plateforme et quand. Tu peux filtrer par période, campagne ou source de trafic pour comparer les performances entre canaux.
 
-À utiliser lorsque tu partages un **lien de paiement Stripe directement**, sans passer par une autre page ou un site intermédiaire.
-
-1. Va sur [Pimms](https://app.pimms.io)  
-2. Crée un lien court et colle ton lien de paiement Stripe  
-
-Tu obtiendras un lien comme :
-
-```
-https://pim.ms/xyz
-```
-
-Quand quelqu’un clique sur ce lien et paie, Pimms attribue automatiquement la vente au lien d’origine — avec toutes les statistiques qui vont avec.
-
----
-
-### ✅ Option B : Déclencher le paiement Stripe depuis ton site web
-
-À utiliser si le lien de paiement Stripe est **déclenché par un clic sur ton propre site** (par exemple via un bouton "Acheter").
-
-Point essentiel :  
-**Ne colle pas un lien court Pimms directement dans le HTML de ton site.**
-
-Pourquoi ?  
-Parce que toutes les ventes seront attribuées à ce même lien intégré — **et non au lien Pimms d’origine** qui a amené le visiteur sur ton site.
-
-👉 Ce que tu veux, c’est attribuer la vente au **lien Pimms qui a été cliqué en premier** (email, pub, post, etc.)
-
-Voici comment faire :
-
-1. Utilise ton lien Stripe normal et **ajoute ce paramètre** :
-
-```html
-<a href="https://buy.stripe.com/xyz?pimms_client_reference_id=1">Acheter maintenant</a>
-```
-
-2. Intègre le script de tracking Pimms dans le HTML global de ton site (dans la balise `<head>`) :
-
-Important: Injecte le script suivant dans tous les pages de ton site.
-
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
-
-Pour les développeurs : alternativement, utilise le [SDK javascript et le tracking serveur](/articles/introducing-conversion)
-
-<LinkCard
-  href="/freetools/site-checker"
-  title="Vérifie que tout fonctionne"
-  description="Utilise notre outil gratuit pour vérifier que le script Pimms est correctement installé sur ton site."
-/>
-
-### ✅ Option C: Déclencher le paiement Stripe depuis ton site (Avec Stripe Checkout)
-
-Pour cette option, veuillez consulter ce guide spécifique : [Guide pour suivre les ventes avec Stripe Checkout](/articles/how-to-track-sales-with-stripe-checkout).
-
-Une fois ce setup en place — c’est bon ✅
-
-Tu peux créer **autant de liens courts Pimms que tu veux** qui pointent vers ton site.  
-Chaque lien attribuera automatiquement la vente à la bonne source, selon le clic d’origine du visiteur.
-
-## 4. Voir tes ventes Stripe dans Pimms
-
-Chaque vente traquée apparaîtra dans ton [dashboard Pimms](https://app.pimms.io), avec attribution complète :
-
-- Source (ex. LinkedIn, Email, Ads)
-- Canal
-- Campagne
-- Lien cliqué
-
-![Suivi des ventes avec Pimms](https://assets.pimms.io/stripe-sales-tracking.webp?v=2)
-
-## FAQ
+## FAQs
 
 ::: faq
 
-### Est-ce que ça fonctionne avec les Payment Links et Checkout Stripe ?
+### Ai-je besoin de compétences en code pour configurer le suivi des paiements Stripe ?
 
-Oui ! Ce guide couvre les Stripe Payment Links. Pour Stripe Checkout (l'option intégrée), consulte notre [guide dédié Stripe Checkout](/articles/how-to-track-sales-with-stripe-checkout) pour développeurs.
+Non ! Cette configuration de suivi des paiements Stripe ne nécessite aucune ligne de code. Tu vas simplement connecter ton compte Stripe à Pimms via le tableau de bord, créer des liens de suivi et commencer à voir les données d'attribution immédiatement. Parfait pour les propriétaires de boutique non techniques.
 
 :::
 
 ::: faq
 
-### Puis-je suivre les paiements d'abonnement et la facturation récurrente ?
+### Puis-je suivre les paiements ponctuels et les abonnements ?
 
-Oui ! Les paiements uniques et les inscriptions d'abonnement sont suivis. Pour les abonnements, tu verras la conversion initiale quand les clients s'abonnent pour la première fois, plus l'attribution du revenu récurrent.
+Oui ! Le suivi des paiements Stripe fonctionne pour tous les types de paiement : achats ponctuels, abonnements et facturation récurrente. Tu verras la conversion initiale quand les clients s'abonnent, plus l'attribution des revenus pour tous les paiements futurs.
 
 :::
 
 ::: faq
 
-### Et si j'ai plusieurs produits Stripe ou niveaux de prix ?
+### Et si je vends plusieurs produits à des prix différents ?
 
-Tous tes produits Stripe seront suivis automatiquement une fois connectés. Chaque vente affichera le produit spécifique, le montant et les données d'attribution dans ton tableau de bord Pimms.
+Tous tes produits Stripe sont suivis automatiquement une fois connectés. Chaque vente affiche le produit acheté, le montant, les détails du client et les données d'attribution complètes montrant exactement quelle campagne a généré le revenu.
 
 :::
 
-## Tout est prêt 🎉
+::: faq
 
-Chaque vente Stripe issue de tes liens Pimms est maintenant suivie — avec des analytics e-commerce complètes pour que tu puisses mesurer ce qui génère vraiment du revenu.
+### Le suivi Stripe fonctionne-t-il en mode test ?
 
-👉 [Crée ton premier lien traqué maintenant](https://app.pimms.io)
+Oui. L'assistant de configuration te permet de connecter Stripe en mode live et test. Utilise le mode test pour vérifier que tout fonctionne avant de passer en production — tu peux faire des achats test avec les numéros de carte test Stripe sans dépenser d'argent réel.
+
+:::
 
 <CallToAction />

@@ -284,8 +284,8 @@ const nextConfig: NextConfig = {
   // Modern browser targeting to reduce polyfills
   transpilePackages: [],
   // Enable experimental optimizations
+  staticPageGenerationTimeout: 180,
   experimental: {
-    // Use modern JavaScript features
     esmExternals: true,
     // Enhanced CSS optimization for better performance
     optimizeCss: {

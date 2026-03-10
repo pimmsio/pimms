@@ -2,7 +2,7 @@
 title: Systeme.io Sales Tracking: Complete Funnel Analytics 2025
 summary: Set up complete Systeme.io sales tracking in minutes. Track every sale across multi-step funnels with full attribution showing which campaigns generate revenue and customer acquisition.
 publishedAt: 2025-05-06
-updatedAt: 2026-01-19
+updatedAt: 2026-03-09
 slug: how-to-track-systemeio-sales-and-leads-marketing-attribution
 image: https://assets.pimms.io/systemeio-guide-pimms.webp
 author: alexandre
@@ -10,99 +10,72 @@ categories:
   - guides
 related:
   - unlock-systemeio-attribution-with-pimms
-  - how-to-track-webflow-leads
+  - setup-stripe-for-website
+  - how-to-track-podia-stripe-payments
   - no-code-guide-for-website
 ---
 
-**Systeme.io sales tracking** lets you see exactly which marketing campaigns generate actual revenue across your entire funnel system. This complete guide shows you how to set up **Systeme.io funnel analytics** and **conversion tracking** in 10-15 minutes using Pimms.
+**Systeme.io sales tracking** lets you see exactly which marketing campaigns generate actual revenue across your entire funnel system. The Pimms dashboard includes an interactive Systeme.io setup wizard that handles all technical details for you.
 
-You'll get **real-time sales attribution** showing which ads, email campaigns, or YouTube posts drive actual purchases through multi-step funnels. Perfect for **Systeme.io revenue analytics** with complete **customer journey tracking** from first click to final sale.
+Whether you sell online courses, coaching programs, or digital products, connecting Systeme.io to Pimms gives you complete **funnel attribution** — from the first click on your ad or social post all the way through to the completed purchase.
 
-**What you'll accomplish:** Complete sales tracking setup, webhook integration, and revenue attribution for every funnel in your Systeme.io account.
+Systeme.io is an all-in-one platform used by thousands of entrepreneurs and small businesses. With Pimms, you finally get the attribution data that Systeme.io's built-in analytics don't provide: **which specific campaign brought each customer**.
 
-## 1. Install the tracking script
+## Why track Systeme.io with Pimms?
 
-1. Go to your **Systeme.io dashboard**
+- **Find out which traffic source actually sells.** You promote your funnel on YouTube, in Facebook groups, and through email. Without Pimms, you see opt-ins and sales in Systeme.io but don't know which channel drove them. With Pimms, every sale and opt-in is linked to the exact campaign that generated it.
 
-![Paste Pimms script in footer settings](https://assets.pimms.io/systemeio-footer-code-settings.webp?v=2)
+- **Measure affiliate performance with real data.** You have 10 affiliates promoting your Systeme.io products. Give each one a unique Pimms link and see exactly who drives opt-ins and who drives actual sales — not just who sends the most clicks.
 
-2. Open your **Profile Settings**
-3. In the left menu, select **Sales funnels**
-4. Paste this script into the **Tracking code** field:
+- **Optimize multi-step funnels.** You run a webinar funnel: ad → opt-in → replay → sales page. Pimms tracks the entire journey, so you can see which ad creative generates not just opt-ins but actual purchases at the end of the funnel.
 
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js" data-forward-all="true"></script>
-```
+## Prerequisites
 
-5. Click **Save**
+- A **Systeme.io account** (free or paid)
+- A **Pimms account** ([sign up here](https://app.pimms.io))
+- At least one funnel page ready in Systeme.io
 
-<LinkCard
-  href="/freetools/site-checker"
-  title="Verify your script installation"
-  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
-/>
+## What you'll track
 
-## 2. Find your Workspace ID
+- **Systeme.io sales** — Every completed purchase with product name, amount, and customer email
+- **Opt-ins** — Every email signup from your funnel opt-in pages
+- **Lead attribution by campaign** — Which ad, email, social post, or affiliate drove each conversion
+- **Funnel analytics** — Track performance across all your Systeme.io funnels from one dashboard
 
-1. Log in to your [Pimms dashboard](https://app.pimms.io)
-2. Go to **Settings** → **Workspace ID**
-3. Copy your ID (e.g. `ws_abc123xyz`)
+## How to set it up
 
-## 3. Add the webhook
+Go to your [Pimms dashboard](https://app.pimms.io), open **Integrations → Systeme.io**, and launch the setup wizard. It walks you through adding the tracking script to your Systeme.io settings, configuring the webhook for opt-in and sale events, and verifying with a test submission. Setup takes about 5 minutes.
 
-1. In Systeme.io, go to your profile → **Settings**
-2. Scroll down to **Webhooks**
-3. Click **Create**
-4. Set it up like this:
-- **Name**: Pimms Webhook  
-- **Webhook URL**:  
+## What the setup wizard covers
 
-```
-https://app.pimms.io/api/systemeio/webhook?workspace_id=your-id
-```
+The Systeme.io wizard has 5 steps:
 
-*(Replace `your-id` with your actual Workspace ID)*  
-- **Secret**: Your Workspace ID  
-- **Events**:  
-  ✅ `Opt-in`  
-  ✅ `New sale`
+1. **Install the tracking script** — Add the Pimms detection script to Systeme.io's tracking code settings
+2. **Verify script installation** — Confirm the script is loading on your funnel pages
+3. **Configure webhook** — Set up webhooks for opt-in and new sale events
+4. **Create a test link** — Generate a tracking link to your Systeme.io funnel page
+5. **Verify tracking works** — Complete a test opt-in to confirm attribution is connected
 
-![Systeme.io Webhook Settings](https://assets.pimms.io/systemeio-webhook-settings.webp)
+## How it works
 
-⚠️ Make sure the URL and Secret both use the exact same Workspace ID.
+1. **Install the Pimms detection script** in Systeme.io's global tracking code settings — it runs on all your funnel pages and forwards attribution data through every step
+2. **Create a Pimms link** pointing to your Systeme.io funnel page (e.g. `pim.ms/webinar-signup`)
+3. **A visitor clicks your link**, enters your funnel, opts in, and potentially makes a purchase
+4. **Systeme.io fires a webhook** to Pimms for each event (opt-in and sale), and Pimms attributes each conversion to the original campaign
 
-## 4. Create a tracking link in Pimms
+The `data-forward-all` script attribute ensures that attribution data flows through every page of your multi-step funnel — from landing page to opt-in to checkout.
 
-1. Go to [Pimms](https://app.pimms.io)
-2. Create a new short link pointing to the **first step** of your Systeme.io funnel
+## Best ways to share your tracking links
 
-**Example**:  
-```
-https://pim.ms/my-sales-funnel
-```
+- **YouTube video descriptions** — Add a Pimms link to your Systeme.io funnel below your training videos and product demos
+- **Facebook group posts** — Share tracked links in communities where your audience hangs out
+- **Email campaigns** — Use Pimms links in your cold outreach and newsletter to measure email-to-sale conversion
+- **Affiliate partnerships** — Give each affiliate a unique Pimms link for transparent sales attribution
+- **Instagram bio and stories** — Drive social traffic through tracked links to your Systeme.io funnels
 
-Use this link in your ads, emails, and social channels—everywhere you get traffic.
+## What you'll see in your dashboard
 
-![Pimms short link](https://assets.pimms.io/systemeio-create-short-link.webp)
-
-## 5. Test your setup
-
-1. Open your Pimms link in an **incognito tab**
-2. Go through your funnel (opt-in + sale if applicable)
-3. Use a test email (like `test+pimms@yourdomain.com`)
-4. Check your [Pimms dashboard](https://app.pimms.io)
-
-You should see a new lead and, if applicable, a new sale—both with full attribution.
-
-![Pimms lead and sale recorded](https://assets.pimms.io/systemeio-dashboard-lead-sale.webp)
-
-## 6. Troubleshooting tips
-
-- Confirm that the Pimms script is saved in your funnel settings
-- Double-check that your **Workspace ID** is the same in both the webhook URL and the secret
-- Test in **incognito mode** with a fresh email address
-- Check the webhook logs in Systeme.io to verify that events were triggered
-- Make sure visitors enter your funnel via your **Pimms link**, not directly
+Your Pimms dashboard shows every Systeme.io opt-in and sale in real time with full campaign attribution. For each conversion, you'll see the customer's email, the event type (opt-in or sale), the product and amount (for sales), and the complete trail — which Pimms link they clicked, from which platform, and which campaign. Filter by date, channel, or funnel to compare performance.
 
 ## FAQs
 
@@ -130,10 +103,12 @@ Sales data appears in your Pimms dashboard within 1-2 minutes after the Systeme.
 
 :::
 
-## You're all set 🎉
+::: faq
 
-Every Systeme.io lead and sale collected via your Pimms links will now be tracked — with complete funnel conversion analytics and attribution data.
+### Does the tracking work across multi-step funnels?
 
-👉 [Create your first Pimms link](https://pimms.io)
+Yes. The Pimms detection script uses a special `data-forward-all` attribute that carries attribution data through every page of your Systeme.io funnel. Whether your funnel has 2 steps or 10 steps, the original traffic source is preserved all the way to the final conversion.
+
+:::
 
 <CallToAction />

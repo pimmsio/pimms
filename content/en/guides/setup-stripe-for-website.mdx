@@ -2,147 +2,80 @@
 title: Track Stripe Payments: Complete Setup Guide 2026
 summary: Connect Stripe to Pimms in minutes with no coding required. Track every payment with complete sales attribution showing which campaigns generate your best customers.
 publishedAt: 2025-05-16
-updatedAt: 2026-01-19
+updatedAt: 2026-03-09
 slug: how-to-track-stripe-sales-marketing-attribution
 image: https://assets.pimms.io/stripe-guide-pimms.webp
 author: alexandre
 categories:
   - guides
 related:
-  - no-code-guide-for-website
   - how-to-track-sales-with-stripe-checkout
+  - how-to-track-podia-stripe-payments
+  - how-to-track-systemeio-sales-and-leads
+  - no-code-guide-for-website
 ---
 
-**Stripe payment tracking** lets you see exactly which marketing campaigns generate actual sales from your online store. This complete guide shows you how to connect **Stripe to Pimms** in 5-10 minutes with zero coding required.
+**Stripe payment tracking** lets you see exactly which marketing campaigns generate sales from your online store. The Pimms dashboard has an interactive setup wizard that handles all the technical details — no coding required.
 
-You'll get **real-time sales attribution** showing which ads, email campaigns, or YouTube posts drive actual purchases through your Stripe checkout. Perfect for **e-commerce analytics** with complete **revenue tracking** from click to sale.
+You'll get **real-time sales attribution** showing which ads, email campaigns, or YouTube posts drive purchases through your Stripe checkout. Perfect for **e-commerce analytics** with complete **revenue tracking** from click to sale.
 
-**What you'll accomplish:** Complete Stripe integration, payment tracking setup, and sales attribution for every transaction in your store.
+Whether you sell digital products, SaaS subscriptions, or physical goods, connecting Stripe to Pimms gives you a clear picture of your **marketing ROI** by tying every dollar of revenue back to the campaign that generated it.
 
-Pimms is officially listed on the Stripe marketplace:  
-👉 [View listing](https://marketplace.stripe.com/apps/pimms)
+## Why track Stripe payments with Pimms?
 
-You have two ways to connect Stripe and Pimms:
+- **Know which ads actually make money.** You spend $500 on Facebook ads and $300 on LinkedIn. Both get clicks, but Pimms shows you that LinkedIn generated 8 sales ($2,400 revenue) while Facebook only brought 2 ($180). Now you know where to double down.
 
-- **Option A:** Share tracked short links created with Pimms (best for email, LinkedIn, social, etc.)
-- **Option B:** Add Pimms tracking on your website and keep Stripe buttons as-is
+- **Stop guessing about content ROI.** You published a YouTube video and shared it on Twitter. A week later, you see 15 new Stripe sales. Without Pimms, you'd never know which channel drove them. With Pimms, every sale is linked to the exact post or video that brought the customer.
 
-Let’s go through it step by step.
+- **Track affiliate and partner performance.** Give each affiliate or partner a unique Pimms link to your Stripe checkout. You'll see exactly who drives revenue and how much — no spreadsheets or honor system needed.
 
-## 1. Connect Stripe to Pimms
+## Prerequisites
 
-1. Log in to your [Pimms dashboard](https://app.pimms.io)
-2. Go to **Integrations → Stripe** and click **Enable**
-3. Choose **Test** or **Production** mode
-4. Click **Accept** to authorize Stripe
+- A **Stripe account** (free or paid — any plan works)
+- A **Pimms account** ([sign up here](https://app.pimms.io))
+- At least one Stripe Payment Link or Checkout page ready
 
-![Authorize Stripe permissions](https://assets.pimms.io/stripe-accept-permissions.webp)
+## What you'll track
 
-5. Double-check your Stripe settings:
-   - [Production settings](https://dashboard.stripe.com/settings/apps/pimms.io)
-   - [Test settings](https://dashboard.stripe.com/test/settings/apps/pimms.io)
+- **Stripe payments** — Every completed payment through Payment Links and Stripe Checkout, including product name, amount, and customer email
+- **Sales attribution by campaign** — Which specific ad, email, social post, or partner link drove each sale
+- **Revenue per campaign** — Total revenue broken down by traffic source so you can calculate true ROI
+- **Customer journey** — The full path from first click to completed purchase
 
-If needed:
-- Go to **Settings → Team and security → Apps**
-- Find **Pimms** and click **Connect workspace**
+## How to set it up
 
-![Connect workspace Stripe](https://assets.pimms.io/stripe-connect-workspace.webp)
+Go to your [Pimms dashboard](https://app.pimms.io), open **Integrations → Stripe**, and launch the setup wizard. It guides you step by step through the full connection — connect your Stripe account via OAuth, approve permissions, and verify with a test purchase. The whole process takes under 5 minutes.
 
-- Choose your workspace and confirm
+## What the setup wizard covers
 
-![Authorize Pimms Stripe](https://assets.pimms.io/stripe-authorize-permissions.webp)
+The Stripe wizard has 5 steps:
 
-✅ You’re now connected!
+1. **Connect your Stripe account** — OAuth, live and test mode
+2. **Approve permissions** — In the Stripe Dashboard
+3. **Create a test link** — With a Stripe Payment Link URL (expires in 24h)
+4. **Make a test purchase** — Waits for sale detection
+5. **Setup on a website** — Optional, for embedding Stripe on your site
 
-![Successful connection](https://assets.pimms.io/stripe-connected.webp)
+## How it works
 
-## 2. Create your Stripe payment link
+1. **Create a Pimms link** pointing to your Stripe Payment Link or checkout page (e.g. `pim.ms/my-product`)
+2. **Share that link** in your campaigns — ads, emails, social posts, YouTube descriptions
+3. **A visitor clicks**, lands on your Stripe page, and completes a purchase
+4. **Pimms attributes the sale** to the exact campaign, ad, or post that brought the buyer — visible instantly in your dashboard
 
-1. In your [Stripe dashboard](https://dashboard.stripe.com), click **Create payment link**
-2. Configure your product and pricing
-3. Copy the payment link (e.g. `https://buy.stripe.com/xyz`)
+No scripts or code to install. Stripe's OAuth integration handles everything server-side.
 
-![Create Stripe payment link](https://assets.pimms.io/stripe-create-payment-link.webp)
+## Best ways to share your tracking links
 
-## 3. Share your payment link and track sales (2 options)
+- **LinkedIn posts** — Share your product link with a Pimms URL to track which posts drive purchases
+- **Email campaigns** — Replace raw Stripe links with Pimms links in your newsletters and drip sequences
+- **YouTube descriptions** — Add a tracked link below your product demos and tutorials
+- **Paid ads** — Use Pimms links as your ad destination to see exactly which ad creative converts
+- **Twitter/X and Instagram bio** — Track social traffic that converts into paying customers
 
-You have two main ways to track Stripe payments with Pimms — depending on how the payment link is used.
+## What you'll see in your dashboard
 
-### ✅ Option A: Use a Pimms short link that points directly to Stripe
-
-This is the **fastest and easiest way to get started**.
-
-Use this when you want to share a **Stripe payment link directly** — without sending visitors to another web page first.
-
-1. Go to [Pimms](https://app.pimms.io)  
-2. Create a short link and paste your Stripe payment URL  
-
-You’ll get a link like:
-
-```
-https://pim.ms/xyz
-```
-
-When someone clicks this link and completes the payment, Pimms will automatically attribute the sale to the original link — with full statistics to follow.
-
----
-
-### ✅ Option B: Trigger the Stripe payment from your website (Using Stripe Payment Links)
-
-Use this when the Stripe payment link is **triggered by a button click on your website**.
-
-Here’s the key:  
-**Don’t embed a Pimms short link directly in your site’s HTML.**
-
-Why?  
-Because all sales will be attributed to that same embedded link — **not to the original Pimms link** that brought the visitor to your website.
-
-👉 What you want is to attribute the sale back to the Pimms link that was originally clicked (from an ad, email, post, etc.).
-
-To do that:
-
-1. Use your normal Stripe payment link and **append this parameter**:
-
-```html
-<a href="https://buy.stripe.com/xyz?pimms_client_reference_id=1">Buy now</a>
-```
-
-2. Include the Pimms tracking script in your global HTML (typically in the `<head>` of your site):
-
-Important: Paste the following script in all the pages of your website.
-
-```html
-<script defer src="https://cdn.pimms.io/analytics/script.detection.js"></script>
-```
-
-For developers: alternatively, use the [Pimms SDK and Server-side tracking](/articles/introducing-conversion)
-
-<LinkCard
-  href="/freetools/site-checker"
-  title="Verify your script installation"
-  description="Use our free tool to automatically check if the Pimms analytics script is properly installed on your website."
-/>
-
-### ✅ Option C: Trigger the Stripe payment from your website (Using Stripe Checkout)
-
-For this option, please refer to this specific [guide](/articles/how-to-track-sales-with-stripe-checkout).
-
-Once this setup is done — you’re all set ✅
-
-You can now generate **as many Pimms short links as you want** pointing to your website.  
-Each one will automatically track and attribute the sale correctly based on the visitor’s original click.
-
-## 4. See your Stripe sales in Pimms
-
-Every tracked sale will show up in your [Pimms dashboard](https://app.pimms.io), with full attribution:
-
-- Source (e.g. LinkedIn, Email, Ads)
-- Channel
-- Campaign
-- Clicked link
-
-![Sales tracking with Pimms](https://assets.pimms.io/stripe-sales-tracking.webp?v=2)
-
+Once connected, your Pimms dashboard shows a real-time feed of every Stripe sale with full attribution. For each sale, you'll see the product name, amount, customer email, and the complete campaign trail — which link they clicked, from which platform, and when. You can filter by date range, campaign, or traffic source to compare performance across channels.
 
 ## FAQs
 
@@ -170,10 +103,12 @@ All your Stripe products are tracked automatically once connected. Each sale sho
 
 :::
 
-## You're all set 🎉
+::: faq
 
-Every Stripe sale made through your Pimms links is now tracked — with complete e-commerce analytics so you can measure what truly drives revenue.
+### Does Stripe tracking work in test mode?
 
-👉 [Create your first tracked link now](https://app.pimms.io)
+Yes. The setup wizard lets you connect Stripe in both live and test mode. Use test mode to verify everything works before going live — you can make test purchases with Stripe's test card numbers without spending real money.
+
+:::
 
 <CallToAction />
