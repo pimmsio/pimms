@@ -215,28 +215,50 @@ utm_term=\{subscriber.segment\}
 
 Encode the audience segment in `utm_term` to see how different subscriber groups respond to the same email.
 
-## Frequently Asked Questions
+::: faq
 
 ### Should I use utm_source=newsletter or utm_source=mailchimp?
 
 Use the platform name (mailchimp, hubspot) as `utm_source` if you want to compare ESP performance. Use a descriptive name (newsletter, weekly-digest) if you only use one platform and care more about content type. The key is consistency — pick one convention and document it.
 
+:::
+
+::: faq
+
 ### Do UTM parameters work with AMP emails?
 
 Yes. AMP emails support standard URL parameters including UTM tags. The parameters are passed through when a subscriber clicks a link, just like in regular HTML emails. However, AMP email adoption remains limited, so ensure your fallback HTML version is also properly tagged.
+
+:::
+
+::: faq
 
 ### How many UTM parameters should I use per link?
 
 Use at least three: `utm_source`, `utm_medium`, and `utm_campaign`. Add `utm_content` when you have multiple links in the same email. Use `utm_term` for audience segmentation. More parameters give you more granular data, but do not add parameters you will never analyze.
 
+:::
+
+::: faq
+
 ### Can UTM tracking replace my ESP's built-in analytics?
 
 No. ESP analytics (open rates, click rates, unsubscribe rates) measure email engagement. UTM tracking measures what happens after the click — website behavior, conversions, and revenue. Use both together for the complete picture.
+
+:::
+
+::: faq
 
 ### How do I handle UTM tracking for emails with dozens of links?
 
 Use a smart link tool like [PIMMS](https://pimms.io) to create managed links with embedded UTM parameters. This is faster than manually tagging 20+ URLs per email and ensures consistency. Set `utm_content` to identify each link position (e.g., `intro-link`, `product-1`, `product-2`, `footer-cta`).
 
+:::
+
+::: faq
+
 ### Does Gmail clip emails with UTM-tagged links?
 
 Gmail clips emails that exceed approximately 102 KB in size. UTM parameters add bytes to each URL, but the impact is minimal — typically 100-200 bytes per link. If your email has 30+ tagged links, check the total size before sending. Using short links eliminates this concern entirely.
+
+:::

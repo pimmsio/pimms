@@ -197,28 +197,50 @@ Managing UTM parameters manually across dozens of campaigns is where most mistak
 - **Deep linking:** Links route mobile users directly to the right app screen, avoiding the in-app browser problem that loses conversion data.
 - **Team collaboration:** Multiple team members use the same link management workspace, reducing convention drift.
 
-## Frequently Asked Questions
+::: faq
 
 ### How do I audit my existing UTM data for mistakes?
 
 Export your GA4 acquisition report grouped by source, medium, and campaign. Sort alphabetically and look for near-duplicates: `facebook` vs `Facebook`, `email` vs `Email`, `cpc` vs `CPC`. Merge the duplicates in a spreadsheet to understand the true numbers, then fix the conventions going forward.
 
+:::
+
+::: faq
+
 ### Can I retroactively fix broken UTM data?
 
 No. Once data is recorded in Google Analytics with incorrect UTM values, it cannot be changed. You can create data filters or use BigQuery to normalize historical data in custom reports, but the raw data in GA4 is permanent. Prevention is the only reliable solution.
+
+:::
+
+::: faq
 
 ### Do UTM parameters affect SEO rankings?
 
 No. Google ignores UTM parameters for ranking purposes. However, if UTM-tagged URLs get indexed (which can happen if someone links to a UTM-tagged URL), you may see duplicate pages in search results. Add canonical tags to your pages to prevent this, or use a robots.txt rule to block UTM-tagged URL variants from indexing.
 
+:::
+
+::: faq
+
 ### How many UTM parameters is too many?
 
 There is no technical limit, but using all five parameters on every link is rarely necessary. Most campaigns need three (source, medium, campaign). Add `utm_content` when you have multiple links in the same message. Add `utm_term` only for paid search keywords or audience segments.
+
+:::
+
+::: faq
 
 ### Should every team member create their own UTM links?
 
 Ideally, no. Centralize link creation through a tool like [PIMMS](https://pimms.io) or a shared UTM builder template. The fewer people manually typing UTM values, the fewer errors you will have. If team members must create their own links, provide a template with dropdown menus for allowed values.
 
+:::
+
+::: faq
+
 ### What is the biggest UTM mistake that wastes the most budget?
 
 Tagging internal links. When internal links carry UTM parameters, they overwrite the original traffic source for every visitor who clicks them. A paid ad that cost $5,000 might show zero conversions because an internal banner link overwrote the attribution. This is both the most common and the most damaging mistake.
+
+:::

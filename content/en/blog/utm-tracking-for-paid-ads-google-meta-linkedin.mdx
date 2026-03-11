@@ -248,28 +248,50 @@ UTM tracking enables true cross-platform ROI calculation:
 
 Tools like [PIMMS](https://pimms.io) automate steps 1-4 by connecting your ad clicks directly to Stripe or Shopify revenue, showing ROAS per campaign in a single dashboard without manual data stitching.
 
-## Frequently Asked Questions
+::: faq
 
 ### Should I use auto-tagging or manual UTMs for Google Ads?
 
 Use auto-tagging as your primary method if GA4 is your analytics platform — it provides the most detailed data with zero maintenance. Add manual UTMs only if you use additional analytics tools that cannot read `gclid`, or if you need cross-platform naming consistency.
 
+:::
+
+::: faq
+
 ### What utm_medium should I use for paid social ads?
 
 Use `paid-social` or `paidsocial` for paid social campaigns on Meta, LinkedIn, TikTok, and Twitter/X. This keeps paid social separate from organic social (`utm_medium=social`) in your GA4 channel grouping reports.
+
+:::
+
+::: faq
 
 ### How do I track which ad creative converts best?
 
 Use `utm_content` to encode the creative variant. For example: `utm_content=video-testimonial-30s` vs `utm_content=static-product-image`. In GA4, create an exploration report grouped by `utm_content` with your conversion metric as the value.
 
+:::
+
+::: faq
+
 ### Do I need UTM tracking if I use Meta's Conversions API?
 
 Yes. Meta's Conversions API tracks events within Meta's ecosystem for ad optimization and reporting. UTM parameters track the same events in your own analytics platform (GA4, Mixpanel, PIMMS). Both serve different purposes and should be used together.
+
+:::
+
+::: faq
 
 ### How do I handle UTM tracking for retargeting campaigns?
 
 Tag retargeting campaigns with a distinct `utm_campaign` value, such as `2026-q1-retargeting-cart-abandon`. This separates retargeting conversions from prospecting conversions in your analytics, giving you accurate CPA and ROAS for each campaign type.
 
+:::
+
+::: faq
+
 ### Can UTM parameters track view-through conversions?
 
 No. UTM parameters only fire when a user clicks a link. View-through conversions (where someone sees an ad but does not click) require platform-specific tracking pixels (Meta Pixel, LinkedIn Insight Tag) or a multi-touch attribution tool. UTM tracking captures click-through attribution only.
+
+:::
