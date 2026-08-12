@@ -13,6 +13,8 @@
  * signals to fire, because a false positive here costs a real sales lead.
  */
 
+import { redis } from "@/lib/redis";
+
 const encoder = new TextEncoder();
 
 /* -------------------------------------------------------------------------- */
@@ -107,11 +109,11 @@ export const getClientIp = (request: Request) =>
   "unknown";
 
 /**
- * In-memory sliding window. Serverless instances don't share memory, so this
- * throttles rather than strictly enforces — enough to stop one bot hammering a
- * warm instance, without taking on a Redis dependency.
+ * Fallback for when Redis isn't configured. Serverless instances don't share
+ * memory, so the same visitor is counted separately per instance — it throttles
+ * rather than enforces.
  */
-export const rateLimit = (key: string, limit: number, windowMs: number) => {
+const rateLimitInMemory = (key: string, limit: number, windowMs: number) => {
   const now = Date.now();
   const recent = (hits.get(key) ?? []).filter((t) => now - t < windowMs);
 
@@ -125,6 +127,29 @@ export const rateLimit = (key: string, limit: number, windowMs: number) => {
   recent.push(now);
   hits.set(key, recent);
   return true;
+};
+
+/**
+ * Fixed window counted in Redis, so every serverless instance sees the same
+ * tally and the count survives an instance being recycled.
+ *
+ * The window starts at the visitor's first request and the key expires on its
+ * own, so nothing needs cleaning up. Falls back to the in-memory counter if
+ * Redis is unreachable — a storage outage must never block a real submission.
+ */
+export const rateLimit = async (key: string, limit: number, windowMs: number) => {
+  if (redis) {
+    try {
+      const redisKey = `spam:rate:${key}`;
+      const count = await redis.incr(redisKey);
+      if (count === 1) await redis.expire(redisKey, Math.ceil(windowMs / 1000));
+      return count <= limit;
+    } catch (error) {
+      console.error("[anti-spam] rate limit lookup failed, using memory:", error);
+    }
+  }
+
+  return rateLimitInMemory(key, limit, windowMs);
 };
 
 /* -------------------------------------------------------------------------- */

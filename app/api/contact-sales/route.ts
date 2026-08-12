@@ -60,7 +60,7 @@ export async function POST(request: NextRequest) {
     }
 
     // 3. Burst protection.
-    if (!rateLimit(`contact-sales:${ip}`, RATE_LIMIT.max, RATE_LIMIT.windowMs)) {
+    if (!(await rateLimit(`contact-sales:${ip}`, RATE_LIMIT.max, RATE_LIMIT.windowMs))) {
       return reject("rate limited", ip, body);
     }
 

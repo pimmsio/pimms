@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       return reject(token.reason, ip, body);
     }
 
-    if (!rateLimit(`lead-magnet:${ip}`, RATE_LIMIT.max, RATE_LIMIT.windowMs)) {
+    if (!(await rateLimit(`lead-magnet:${ip}`, RATE_LIMIT.max, RATE_LIMIT.windowMs))) {
       return reject("rate limited", ip, body);
     }
 

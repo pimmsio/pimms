@@ -7,12 +7,7 @@
  * that's actually worth eyeballing.
  */
 
-import { Redis } from "@upstash/redis";
-
-const redis =
-  process.env.UPSTASH_REDIS_REST_URL && process.env.UPSTASH_REDIS_REST_TOKEN
-    ? Redis.fromEnv()
-    : null;
+import { redis } from "@/lib/redis";
 
 const COUNTS_KEY = "spam:counts";
 const samplesKey = (bucket: string) => `spam:samples:${bucket}`;
@@ -78,15 +73,17 @@ export type DropReport = {
  * aid, not an audit log.
  */
 export const drainDrops = async (): Promise<DropReport | null> => {
-  if (!redis) return null;
+  // Bound to a local so the null check still narrows inside the callbacks below.
+  const db = redis;
+  if (!db) return null;
 
-  const counts = await redis.hgetall<Record<string, string>>(COUNTS_KEY);
+  const counts = await db.hgetall<Record<string, string>>(COUNTS_KEY);
   if (!counts || Object.keys(counts).length === 0) return { total: 0, buckets: [] };
 
   const buckets = await Promise.all(
     Object.entries(counts).map(async ([bucket, rawCount]) => {
       const [form, ...rest] = bucket.split(":");
-      const raw = await redis.lrange<string | DroppedSubmission>(samplesKey(bucket), 0, -1);
+      const raw = await db.lrange<string | DroppedSubmission>(samplesKey(bucket), 0, -1);
 
       return {
         form,
@@ -98,7 +95,7 @@ export const drainDrops = async (): Promise<DropReport | null> => {
     }),
   );
 
-  await redis.del(COUNTS_KEY, ...Object.keys(counts).map(samplesKey));
+  await db.del(COUNTS_KEY, ...Object.keys(counts).map(samplesKey));
 
   buckets.sort((a, b) => b.count - a.count);
   return { total: buckets.reduce((sum, b) => sum + b.count, 0), buckets };
