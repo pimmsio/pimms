@@ -10,9 +10,12 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+import { HoneypotField, useFormToken } from "@/components/forms/anti-spam";
+import { HONEYPOT_FIELD, MIN_FILL_MS } from "@/lib/forms";
 import { CheckCircle, Loader2 } from "@/components/icons/custom-icons";
 
 const GUIDE_IMAGE = "https://assets.pimms.io/tracking-plan.webp";
+
 
 interface LeadMagnetModalProps {
   open: boolean;
@@ -40,10 +43,13 @@ export function LeadMagnetModal({
   const [email, setEmail] = useState("");
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const resolveToken = useFormToken();
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (!email || !email.includes("@")) return;
+
+    const honeypot = new FormData(e.currentTarget).get(HONEYPOT_FIELD);
 
     setStatus("loading");
     setErrorMessage("");
@@ -52,7 +58,12 @@ export function LeadMagnetModal({
       const res = await fetch("/api/lead-magnet", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email, locale }),
+        body: JSON.stringify({
+          email,
+          locale,
+          [HONEYPOT_FIELD]: honeypot,
+          formToken: await resolveToken(MIN_FILL_MS.leadMagnet),
+        }),
       });
 
       if (!res.ok) {
@@ -118,7 +129,9 @@ export function LeadMagnetModal({
                 </DialogDescription>
               </DialogHeader>
 
-              <form onSubmit={handleSubmit} className="space-y-3">
+              <form onSubmit={handleSubmit} className="relative space-y-3">
+                <HoneypotField />
+
                 <input
                   type="email"
                   value={email}

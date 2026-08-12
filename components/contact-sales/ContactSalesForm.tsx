@@ -3,7 +3,10 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { HoneypotField, useFormToken } from "@/components/forms/anti-spam";
+import { HONEYPOT_FIELD, MIN_FILL_MS } from "@/lib/forms";
 import { cn } from "@/lib/utils";
+
 
 const companySizes = [
   { value: "", label: "Select company size" },
@@ -31,6 +34,7 @@ export function ContactSalesForm() {
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
+  const resolveToken = useFormToken();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -47,6 +51,8 @@ export function ContactSalesForm() {
       website: formData.get("website"),
       reason: formData.get("reason"),
       message: formData.get("message"),
+      [HONEYPOT_FIELD]: formData.get(HONEYPOT_FIELD),
+      formToken: await resolveToken(MIN_FILL_MS.contactSales),
     };
 
     try {
@@ -107,7 +113,9 @@ export function ContactSalesForm() {
         Our team will get back to you within 24 hours.
       </p>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form onSubmit={handleSubmit} className="relative space-y-4">
+        <HoneypotField />
+
         <Input
           type="text"
           name="fullName"
